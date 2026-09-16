@@ -66,6 +66,39 @@ body {
     color: var(--muted);
 }
 
+.section-author {
+    display: block;
+    margin-top: 0.15rem;
+    font-size: 0.75rem;
+    font-style: italic;
+    color: var(--muted);
+    opacity: 0.85;
+}
+
+.section-author::before {
+    content: "— ";
+}
+
+/* homepage intro: drop cap */
+.intro {
+    text-align: left;
+}
+
+.intro p {
+    margin: 0;
+}
+
+.intro p::first-letter {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 4rem;
+    line-height: 0.75;
+    float: left;
+    margin: 0.05em 0.15em 0 0;
+    color: var(--ink);
+}
+
 .site-footer {
     margin-top: 4.5rem;
     padding: 2rem 1rem;

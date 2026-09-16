@@ -1,5 +1,5 @@
 ---
-title: "Kahve Molasında Satranç Sohbeti"
+title: "Kahve molasında satranç sohbeti"
 author: "Elif Aksoy"
 column: "Fincan Başı Sohbetler"
 layout: post

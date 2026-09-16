@@ -1,5 +1,5 @@
 ---
-title: "Vezirli Oyun Sonlarında Sabır"
+title: "Vezirli oyun sonlarında sabır"
 author: "Elif Aksoy"
 column: "Oyun Sonu Notları"
 layout: post

@@ -1,5 +1,5 @@
 ---
-title: "Sicilya Savunmasına Giriş"
+title: "Sicilya savunmasına giriş"
 author: "Kerem Yıldız"
 column: "Açılış Sırları"
 layout: post
