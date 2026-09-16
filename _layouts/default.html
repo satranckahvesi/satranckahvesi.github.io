@@ -9,10 +9,28 @@
     <style>
         body { margin: 0; padding: 2.5rem 1rem; text-align: center; }
         .site-logo { max-width: 260px; width: 100%; height: auto; }
+        .logo {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 0.18em;
+            font-family: Georgia, 'Times New Roman', serif;
+            color: #16283a;
+        }
+        .logo-initial {
+            font-size: 4.2rem;
+            line-height: 1;
+            font-weight: 700;
+        }
+        .logo-rest {
+            font-size: 1.05rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.28em;
+        }
     </style>
 </head>
 <body>
-    <img class="site-logo" src="{{ '/assets/img/logo.jpg' | relative_url }}" alt="{{ page.title }}"><span class="logo">{{ page.title }}</span>
+    <img class="site-logo" src="{{ '/assets/img/logo.jpg' | relative_url }}" alt="{{ page.title }}"><span class="logo"><span class="logo-initial">{{ page.title | slice: 0, 1 }}</span><span class="logo-rest">{{ page.title | slice: 1, 100 }}</span></span>
     {{ content }}
     <script src="https://chesspublica.github.io/dist/ChessPublica.all.min.js"></script>
 </body>
