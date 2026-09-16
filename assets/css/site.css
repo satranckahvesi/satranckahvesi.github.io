@@ -103,3 +103,22 @@ body {
     text-decoration: none;
     font-size: 0.9rem;
 }
+
+/* archive (per column / per author) */
+.archive .post-list {
+    align-items: stretch;
+    gap: 1.5rem;
+}
+
+.archive .post-list li {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.archive .post-list a { font-size: 1.15rem; }
+
+.post-list-meta {
+    color: var(--muted);
+    font-size: 0.85rem;
+}

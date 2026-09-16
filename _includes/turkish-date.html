@@ -1,0 +1,16 @@
+{% assign ay_no = include.date | date: "%-m" %}
+{% case ay_no %}
+  {% when '1' %}{% assign ay = "Ocak" %}
+  {% when '2' %}{% assign ay = "Şubat" %}
+  {% when '3' %}{% assign ay = "Mart" %}
+  {% when '4' %}{% assign ay = "Nisan" %}
+  {% when '5' %}{% assign ay = "Mayıs" %}
+  {% when '6' %}{% assign ay = "Haziran" %}
+  {% when '7' %}{% assign ay = "Temmuz" %}
+  {% when '8' %}{% assign ay = "Ağustos" %}
+  {% when '9' %}{% assign ay = "Eylül" %}
+  {% when '10' %}{% assign ay = "Ekim" %}
+  {% when '11' %}{% assign ay = "Kasım" %}
+  {% when '12' %}{% assign ay = "Aralık" %}
+{% endcase %}
+{{- include.date | date: "%-d" }} {{ ay }} {{ include.date | date: "%Y" -}}
