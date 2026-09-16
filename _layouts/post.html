@@ -1,24 +1,16 @@
 ---
 layout: default
 ---
-{% assign ay_no = page.date | date: "%-m" %}
-{% case ay_no %}
-  {% when '1' %}{% assign ay = "Ocak" %}
-  {% when '2' %}{% assign ay = "Şubat" %}
-  {% when '3' %}{% assign ay = "Mart" %}
-  {% when '4' %}{% assign ay = "Nisan" %}
-  {% when '5' %}{% assign ay = "Mayıs" %}
-  {% when '6' %}{% assign ay = "Haziran" %}
-  {% when '7' %}{% assign ay = "Temmuz" %}
-  {% when '8' %}{% assign ay = "Ağustos" %}
-  {% when '9' %}{% assign ay = "Eylül" %}
-  {% when '10' %}{% assign ay = "Ekim" %}
-  {% when '11' %}{% assign ay = "Kasım" %}
-  {% when '12' %}{% assign ay = "Aralık" %}
-{% endcase %}
+{% assign author_slug = page.author | slugify: "latin" %}
+{% assign column_slug = page.column | slugify: "latin" %}
 <article class="post">
     <h1 class="post-title">{{ page.title }}</h1>
-    <p class="post-meta">{{ page.author }} · {{ page.column }} · {{ page.date | date: "%-d" }} {{ ay }} {{ page.date | date: "%Y" }}</p>
+    <p class="post-meta">
+        <a href="{{ '/yazarlar/' | append: author_slug | append: '/' | relative_url }}">{{ page.author }}</a>
+        ·
+        <a href="{{ '/koseler/' | append: column_slug | append: '/' | relative_url }}">{{ page.column }}</a>
+        · {% include turkish-date.html date=page.date %}
+    </p>
     <div class="post-body">
         {{ content }}
     </div>

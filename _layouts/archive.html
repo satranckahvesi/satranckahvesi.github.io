@@ -1,0 +1,23 @@
+---
+layout: default
+---
+{% if page.archive_type == "column" %}
+{% assign posts = site.posts | where: "column", page.archive_value %}
+{% else %}
+{% assign posts = site.posts | where: "author", page.archive_value %}
+{% endif %}
+<div class="section archive">
+    <h2>{{ page.title }}</h2>
+    <ul class="post-list">
+        {% for post in posts %}
+        <li>
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            <span class="post-list-meta">
+                {% if page.archive_type == "column" %}{{ post.author }}{% else %}{{ post.column }}{% endif %}
+                · {% include turkish-date.html date=post.date %}
+            </span>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+<a class="back-link" href="{{ '/' | relative_url }}">← Ana sayfaya dön</a>

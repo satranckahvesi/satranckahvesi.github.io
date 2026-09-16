@@ -13,8 +13,8 @@ layout: default
   <h2>Köşeler</h2>
   <ul>
     {% for col in columns %}
-    {% assign latest = site.posts | where: "column", col | first %}
-    <li><a href="{{ latest.url | relative_url }}">{{ col }}</a></li>
+    {% assign col_slug = col | slugify: "latin" %}
+    <li><a href="{{ '/koseler/' | append: col_slug | append: '/' | relative_url }}">{{ col }}</a></li>
     {% endfor %}
   </ul>
 </div>
@@ -23,8 +23,8 @@ layout: default
   <h2>Yazarlar</h2>
   <ul>
     {% for name in authors %}
-    {% assign latest = site.posts | where: "author", name | first %}
-    <li><a href="{{ latest.url | relative_url }}">{{ name }}</a></li>
+    {% assign author_slug = name | slugify: "latin" %}
+    <li><a href="{{ '/yazarlar/' | append: author_slug | append: '/' | relative_url }}">{{ name }}</a></li>
     {% endfor %}
   </ul>
 </div>
