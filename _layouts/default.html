@@ -6,6 +6,9 @@
     <title>{{ page.title }}</title>
     <link rel="icon" type="image/jpeg" href="{{ '/assets/img/logo.jpg' | relative_url }}">
     <link rel="stylesheet" href="https://chesspublica.github.io/dist/ChessPublica.all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <style>
         body { margin: 0; padding: 2.5rem 1rem; text-align: center; }
         .brand {
@@ -15,29 +18,17 @@
         }
         .site-logo { width: 128px; height: 128px; flex: none; }
         .logo {
-            display: inline-flex;
-            align-items: baseline;
-            gap: 0.15em;
-            font-family: Georgia, 'Times New Roman', serif;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.4rem;
+            font-weight: 600;
             color: #16283a;
-        }
-        .logo-initial {
-            font-size: 3.4rem;
-            line-height: 1;
-            font-weight: 700;
-        }
-        .logo-rest {
-            font-size: 0.85rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.24em;
         }
     </style>
 </head>
 <body>
     <div class="brand">
         <img class="site-logo" src="{{ '/assets/img/logo.jpg' | relative_url }}" alt="{{ page.title }}">
-        <span class="logo"><span class="logo-initial">{{ page.title | slice: 0, 1 }}</span><span class="logo-rest">{{ page.title | slice: 1, 100 }}</span></span>
+        <span class="logo">{{ page.title }}</span>
     </div>
     {{ content }}
     <script src="https://chesspublica.github.io/dist/ChessPublica.all.min.js"></script>
