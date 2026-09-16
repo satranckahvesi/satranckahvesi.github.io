@@ -15,4 +15,38 @@ layout: default
         {{ content }}
     </div>
 </article>
+
+{% assign other_column_posts = site.posts | where: "column", page.column | where_exp: "post", "post.url != page.url" %}
+{% assign other_author_posts = site.posts | where: "author", page.author | where_exp: "post", "post.url != page.url" %}
+
+{% if other_column_posts.size > 0 %}
+{% include ornament.html %}
+<div class="section post-related">
+    <h2>{{ page.column }} köşesindeki diğer yazılar</h2>
+    <ul class="post-list">
+        {% for post in other_column_posts %}
+        <li>
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            <span class="post-list-meta">{{ post.author }} · {% include turkish-date.html date=post.date %}</span>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
+{% if other_author_posts.size > 0 %}
+{% include ornament.html %}
+<div class="section post-related">
+    <h2>Yazarın diğer yazıları</h2>
+    <ul class="post-list">
+        {% for post in other_author_posts %}
+        <li>
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            <span class="post-list-meta">{{ post.column }} · {% include turkish-date.html date=post.date %}</span>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+
 <a class="back-link" href="{{ '/' | relative_url }}">← Ana sayfaya dön</a>
