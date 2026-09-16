@@ -1,79 +1,83 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 520" role="img" aria-label="Satranç Kahvesi">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 560" role="img" aria-label="Satranç Kahvesi">
   <title>Satranç Kahvesi</title>
   <defs>
-    <radialGradient id="cupGrad" cx="32%" cy="25%" r="80%">
+    <radialGradient id="cupGrad" cx="30%" cy="22%" r="85%">
       <stop offset="0%" stop-color="#4d7196"/>
       <stop offset="55%" stop-color="#26425e"/>
       <stop offset="100%" stop-color="#152230"/>
     </radialGradient>
-    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="60%" y2="100%">
+    <linearGradient id="bodyGrad" x1="10%" y1="0%" x2="70%" y2="100%">
       <stop offset="0%" stop-color="#3c6084"/>
-      <stop offset="100%" stop-color="#142130"/>
+      <stop offset="100%" stop-color="#12202e"/>
     </linearGradient>
-    <radialGradient id="coffeeGrad" cx="50%" cy="42%" r="62%">
-      <stop offset="0%" stop-color="#a9764a"/>
+    <radialGradient id="coffeeGrad" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#ad7a4d"/>
       <stop offset="100%" stop-color="#7c4f29"/>
     </radialGradient>
   </defs>
 
   <!-- gold double ring frame -->
-  <circle cx="260" cy="260" r="222" fill="none" stroke="#b8862e" stroke-width="3"/>
-  <circle cx="260" cy="260" r="207" fill="none" stroke="#b8862e" stroke-width="2" opacity="0.85"/>
+  <circle cx="270" cy="275" r="235" fill="none" stroke="#b8862e" stroke-width="3"/>
+  <circle cx="270" cy="275" r="219" fill="none" stroke="#b8862e" stroke-width="2" opacity="0.85"/>
 
   <!-- napkin corner -->
-  <polygon points="205,430 310,430 235,478" fill="#e7dcc4" opacity="0.9"/>
+  <polygon points="190,455 350,455 255,525" fill="#e7dcc4" opacity="0.9"/>
 
   <!-- saucer -->
-  <circle cx="260" cy="260" r="205" fill="#2d4a68"/>
-  <circle cx="260" cy="260" r="205" fill="none" stroke="#0f1922" stroke-width="1.5" opacity="0.4"/>
+  <ellipse cx="270" cy="455" rx="230" ry="42" fill="#2d4a68"/>
+  <ellipse cx="270" cy="455" rx="230" ry="42" fill="none" stroke="#0f1922" stroke-width="1.5" opacity="0.35"/>
 
-  <!-- cup rim (navy ceramic band) -->
-  <circle cx="260" cy="260" r="188" fill="url(#cupGrad)"/>
+  <!-- cup body (front wall, perspective frustum) -->
+  <path d="M75,200 A195,150 0 0,0 465,200 L420,430 A150,34 0 0,1 120,430 Z" fill="url(#bodyGrad)"/>
+  <path d="M120,430 A150,34 0 0,1 420,430" fill="none" stroke="#0f1922" stroke-width="1.5" opacity="0.4"/>
 
   <!-- handle -->
-  <path d="M446,222 C504,222 504,298 446,298" fill="none" stroke="url(#bodyGrad)" stroke-width="22" stroke-linecap="round"/>
-  <path d="M446,228 C494,228 494,292 446,292" fill="none" stroke="#5d84a8" stroke-width="2.5" opacity="0.45"/>
+  <path d="M462,192 C524,192 524,272 462,272" fill="none" stroke="url(#bodyGrad)" stroke-width="22" stroke-linecap="round"/>
+  <path d="M462,199 C512,199 512,265 462,265" fill="none" stroke="#5d84a8" stroke-width="2.5" opacity="0.45"/>
+
+  <!-- rim (navy ceramic band) -->
+  <ellipse cx="270" cy="200" rx="195" ry="150" fill="url(#cupGrad)"/>
 
   <!-- coffee surface -->
-  <circle cx="260" cy="260" r="161" fill="url(#coffeeGrad)"/>
-  <circle cx="260" cy="260" r="161" fill="none" stroke="#e7dcc4" stroke-width="2.5" opacity="0.4"/>
+  <ellipse cx="270" cy="200" rx="168" ry="128" fill="url(#coffeeGrad)"/>
+  <ellipse cx="270" cy="200" rx="168" ry="128" fill="none" stroke="#e7dcc4" stroke-width="2.5" opacity="0.4"/>
 
   <!-- swirl texture -->
   <g fill="none" stroke="#5f3d20" opacity="0.22" stroke-width="1.5">
-    <circle cx="260" cy="260" r="120"/>
-    <circle cx="260" cy="260" r="90"/>
+    <ellipse cx="270" cy="204" rx="124" ry="94"/>
+    <ellipse cx="270" cy="208" rx="92" ry="70"/>
   </g>
 
   <!-- rim gloss highlight -->
-  <path d="M118,182 A188,188 0 0,1 214,104" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" opacity="0.16"/>
+  <path d="M118,138 A195,150 0 0,1 226,58" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" opacity="0.16"/>
 
   <!-- cocoa dust -->
   <g fill="#5c3a1e">
-    <circle cx="172" cy="192" r="3" opacity="0.55"/>
-    <circle cx="193" cy="172" r="2" opacity="0.4"/>
-    <circle cx="158" cy="222" r="2.5" opacity="0.5"/>
-    <circle cx="348" cy="197" r="3" opacity="0.5"/>
-    <circle cx="332" cy="172" r="2" opacity="0.4"/>
-    <circle cx="362" cy="226" r="2.5" opacity="0.45"/>
-    <circle cx="178" cy="336" r="2.5" opacity="0.4"/>
-    <circle cx="342" cy="336" r="2.5" opacity="0.4"/>
-    <circle cx="203" cy="360" r="2" opacity="0.35"/>
-    <circle cx="317" cy="358" r="2" opacity="0.35"/>
+    <circle cx="178" cy="140" r="3" opacity="0.55"/>
+    <circle cx="200" cy="122" r="2" opacity="0.4"/>
+    <circle cx="162" cy="168" r="2.5" opacity="0.5"/>
+    <circle cx="362" cy="146" r="3" opacity="0.5"/>
+    <circle cx="344" cy="120" r="2" opacity="0.4"/>
+    <circle cx="378" cy="172" r="2.5" opacity="0.45"/>
+    <circle cx="182" cy="270" r="2.5" opacity="0.4"/>
+    <circle cx="358" cy="270" r="2.5" opacity="0.4"/>
+    <circle cx="210" cy="292" r="2" opacity="0.35"/>
+    <circle cx="330" cy="290" r="2" opacity="0.35"/>
   </g>
 
   <!-- latte art: crown (poured cream, cocoa outline) -->
-  <g transform="translate(260,258)" fill="#f2e6cf" stroke="#5c3a1e" stroke-width="3" stroke-linejoin="round">
-    <rect x="-46" y="28" width="92" height="15"/>
-    <polygon points="-40,28 -14,28 -27,-8"/>
-    <polygon points="-10,28 10,28 0,-26"/>
-    <polygon points="14,28 40,28 27,-8"/>
-    <circle cx="-27" cy="-8" r="6"/>
-    <circle cx="27" cy="-8" r="6"/>
-    <circle cx="0" cy="-30" r="7"/>
+  <g transform="translate(270,196)" fill="#f2e6cf" stroke="#5c3a1e" stroke-width="3" stroke-linejoin="round">
+    <rect x="-48" y="30" width="96" height="16"/>
+    <polygon points="-42,30 -15,30 -29,-8"/>
+    <polygon points="-11,30 11,30 0,-27"/>
+    <polygon points="15,30 42,30 29,-8"/>
+    <circle cx="-29" cy="-8" r="6.5"/>
+    <circle cx="29" cy="-8" r="6.5"/>
+    <circle cx="0" cy="-31" r="7.5"/>
   </g>
-  <g transform="translate(260,258)" fill="#5c3a1e">
-    <rect x="-3.5" y="-50" width="7" height="16"/>
-    <rect x="-11" y="-45" width="22" height="6"/>
+  <g transform="translate(270,196)" fill="#5c3a1e">
+    <rect x="-3.5" y="-53" width="7" height="17"/>
+    <rect x="-11.5" y="-48" width="23" height="6.5"/>
   </g>
-  <line x1="216" y1="291" x2="304" y2="291" stroke="#5c3a1e" stroke-width="2" opacity="0.65"/>
+  <line x1="223" y1="230" x2="317" y2="230" stroke="#5c3a1e" stroke-width="2" opacity="0.65"/>
 </svg>
