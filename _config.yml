@@ -3,3 +3,4 @@ baseurl: ""
 url: "https://satranckahvesi.github.io"
 
 markdown: kramdown
+permalink: /posts/:title/

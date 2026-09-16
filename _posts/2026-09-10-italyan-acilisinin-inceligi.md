@@ -1,0 +1,10 @@
+---
+title: "İtalyan Açılışının İnceliği"
+author: "Aylin Demir"
+column: "Açılış Sırları"
+layout: post
+---
+
+İtalyan Açılışı, satranç tarihinin en eski ve en çok incelenmiş açılışlarından biridir. 1.e4 e5 2.Nf3 Nc6 3.Bc4 hamleleriyle başlayan bu açılış, filin erken çıkışıyla merkeze ve f7 karesine baskı kurmayı hedefler.
+
+Yeni başlayanlar için sade bir plan sunması, İtalyan Açılışını hâlâ popüler kılan en önemli sebeplerden biri. Ancak sadelik, sığlık anlamına gelmiyor — üst düzey oyuncular da bu açılışta hâlâ yeni fikirler üretmeye devam ediyor.
