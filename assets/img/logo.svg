@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 500" role="img" aria-label="Satranç Kahvesi">
+  <title>Satranç Kahvesi</title>
+
+  <!-- steam -->
+  <g fill="none" stroke="#6b4226" stroke-width="4" stroke-linecap="round" opacity="0.75">
+    <path d="M155,95 C143,78 168,68 156,48 C146,32 165,22 158,6"/>
+    <path d="M265,95 C277,78 252,68 264,48 C274,32 255,22 262,6"/>
+  </g>
+
+  <!-- cup handle -->
+  <path d="M296,168 C336,168 336,224 296,224" fill="none" stroke="#4a2f22" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- cup body -->
+  <path d="M118,150 L302,150 L278,246 C278,262 250,272 210,272 C170,272 142,262 142,246 Z"
+        fill="#f4e4c9" stroke="#4a2f22" stroke-width="8" stroke-linejoin="round"/>
+
+  <!-- checkerboard band (chess x coffee mark) -->
+  <g>
+    <rect x="132" y="150" width="19.5" height="19.5" fill="#4a2f22"/>
+    <rect x="171" y="150" width="19.5" height="19.5" fill="#4a2f22"/>
+    <rect x="210" y="150" width="19.5" height="19.5" fill="#4a2f22"/>
+    <rect x="249" y="150" width="19.5" height="19.5" fill="#4a2f22"/>
+    <rect x="288" y="150" width="19.5" height="19.5" fill="#4a2f22"/>
+  </g>
+
+  <!-- cup rim -->
+  <path d="M112,150 L308,150" fill="none" stroke="#4a2f22" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- saucer -->
+  <ellipse cx="210" cy="286" rx="122" ry="16" fill="#e7cfa2" stroke="#4a2f22" stroke-width="7"/>
+
+  <!-- wordmark -->
+  <text x="210" y="372" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif" font-size="56" letter-spacing="2"
+        fill="#4a2f22">Satranç</text>
+  <text x="210" y="428" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif" font-size="56" letter-spacing="2"
+        fill="#4a2f26">Kahvesi</text>
+
+  <!-- hairline flourish -->
+  <line x1="150" y1="450" x2="270" y2="450" stroke="#8a5a35" stroke-width="2"/>
+  <circle cx="210" cy="450" r="4" fill="#8a5a35"/>
+</svg>

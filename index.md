@@ -1,4 +1,4 @@
 ---
-title: ŞAHvMAT
+title: Satranç Kahvesi
 layout: default
 ---

@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }}</title>
+    <link rel="icon" type="image/svg+xml" href="{{ '/assets/img/favicon.svg' | relative_url }}">
     <link rel="stylesheet" href="https://chesspublica.github.io/dist/ChessPublica.all.min.css">
+    <style>
+        body { margin: 0; padding: 2.5rem 1rem; text-align: center; }
+        .site-logo { max-width: 260px; width: 100%; height: auto; }
+    </style>
 </head>
 <body>
+    <img class="site-logo" src="{{ '/assets/img/logo.svg' | relative_url }}" alt="Satranç Kahvesi">
     {{ content }}
     <script src="https://chesspublica.github.io/dist/ChessPublica.all.min.js"></script>
 </body>
