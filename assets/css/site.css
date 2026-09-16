@@ -79,6 +79,12 @@ body {
     content: "— ";
 }
 
+.section .section-author a {
+    font-size: inherit;
+    font-style: inherit;
+    color: var(--muted);
+}
+
 /* homepage intro: drop cap */
 .intro {
     text-align: left;
@@ -174,7 +180,7 @@ body {
     gap: 1rem;
     max-width: 220px;
     margin: 2.5rem auto 0;
-    color: var(--accent);
+    color: var(--ink);
 }
 
 .ornament::before,
@@ -182,14 +188,14 @@ body {
     content: "";
     flex: 1;
     height: 1px;
-    background: var(--accent);
-    opacity: 0.45;
+    background: var(--ink);
+    opacity: 0.35;
 }
 
 .ornament-glyph {
     width: 7px;
     height: 7px;
     flex: none;
-    background: var(--accent);
+    background: var(--ink);
     transform: rotate(45deg);
 }

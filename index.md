@@ -8,7 +8,6 @@ layout: default
 {% include ornament.html %}
 
 {% assign columns = site.posts | map: "column" | uniq %}
-{% assign authors = site.posts | map: "author" | uniq %}
 
 <div class="section">
   <h2>Köşeler</h2>
@@ -16,25 +15,11 @@ layout: default
     {% for col in columns %}
     {% assign col_slug = col | slugify: "latin" %}
     {% assign latest = site.posts | where: "column", col | first %}
+    {% assign author_slug = latest.author | slugify: "latin" %}
     <li>
       <a href="{{ '/koseler/' | append: col_slug | append: '/' | relative_url }}">{{ col }}</a>
       <span class="section-latest"><a href="{{ latest.url | relative_url }}">{{ latest.title }}</a></span>
-      <span class="section-author">{{ latest.author }}</span>
-    </li>
-    {% endfor %}
-  </ul>
-</div>
-{% include ornament.html %}
-
-<div class="section">
-  <h2>Yazarlar</h2>
-  <ul>
-    {% for name in authors %}
-    {% assign author_slug = name | slugify: "latin" %}
-    {% assign latest = site.posts | where: "author", name | first %}
-    <li>
-      <a href="{{ '/yazarlar/' | append: author_slug | append: '/' | relative_url }}">{{ name }}</a>
-      <span class="section-latest"><a href="{{ latest.url | relative_url }}">{{ latest.title }}</a></span>
+      <span class="section-author"><a href="{{ '/yazarlar/' | append: author_slug | append: '/' | relative_url }}">{{ latest.author }}</a></span>
     </li>
     {% endfor %}
   </ul>
