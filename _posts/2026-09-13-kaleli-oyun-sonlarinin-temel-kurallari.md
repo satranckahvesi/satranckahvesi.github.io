@@ -1,5 +1,5 @@
 ---
-title: "Kaleli Oyun Sonlarının Temel Kuralları"
+title: "Kaleli oyun sonlarının temel kuralları"
 author: "Aylin Demir"
 column: "Oyun Sonu Notları"
 layout: post

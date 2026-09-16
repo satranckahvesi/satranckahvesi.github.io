@@ -1,5 +1,5 @@
 ---
-title: "Bir Fincan Kahve, Bin Bir Hamle"
+title: "Bir fincan kahve, bin bir hamle"
 author: "Kerem Yıldız"
 column: "Fincan Başı Sohbetler"
 layout: post
