@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Renkli İnciler"
+title: "Renkli inciler"
 author: "FM Nazmi Can Doğan"
 section: "Öğretici Partiler"
 event: "2022 Fide Grand Prix · 3. Tur"
