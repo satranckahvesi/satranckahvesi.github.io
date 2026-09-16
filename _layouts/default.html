@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }}</title>
+    <title>{% if page.title and page.title != site.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
     <link rel="icon" type="image/jpeg" href="{{ '/assets/img/logo.jpg' | relative_url }}">
     <link rel="stylesheet" href="https://chesspublica.github.io/dist/ChessPublica.all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
     <style>
-        body { margin: 0; padding: 2.5rem 1rem; text-align: center; }
         .brand {
             display: inline-flex;
             flex-direction: column;
@@ -33,11 +33,16 @@
     </style>
 </head>
 <body>
-    <div class="brand">
-        <img class="site-logo" src="{{ '/assets/img/logo.jpg' | relative_url }}" alt="{{ page.title }}">
-        <span class="logo">{{ page.title }}</span>
-    </div>
+    <header class="site-header">
+        <a class="brand" href="{{ '/' | relative_url }}">
+            <img class="site-logo" src="{{ '/assets/img/logo.jpg' | relative_url }}" alt="{{ site.title }}">
+            <span class="logo">{{ site.title }}</span>
+        </a>
+    </header>
     {{ content }}
+    <footer class="site-footer">
+        <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }} · Tüm hakları saklıdır.</p>
+    </footer>
     <script src="https://chesspublica.github.io/dist/ChessPublica.all.min.js"></script>
 </body>
 </html>
