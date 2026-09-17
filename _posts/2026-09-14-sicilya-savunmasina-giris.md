@@ -1,7 +1,7 @@
 ---
 title: "Sicilya savunmasına giriş"
 author: "Kerem Yıldız"
-column: "Açılış Sırları"
+column: "Açılış sırları"
 layout: post
 ---
 
