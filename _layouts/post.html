@@ -19,46 +19,69 @@ layout: default
 (function () {
     var body = document.querySelector('.post-body');
     if (!body) return;
-    var headerRe = /^\[[A-Za-z]+\s+"/;
-    var fenOnlyRe = /^\[FEN\s+"/;
+    var headerLineRe = /^\[[A-Za-z]+\s+"/;
+    var fenTagRe = /^\[FEN\s+"/;
     var movetextRe = /^(\{|\d+\.)/;
     var paragraphs = Array.prototype.slice.call(body.querySelectorAll('p'));
     for (var i = 0; i < paragraphs.length; i++) {
         var p = paragraphs[i];
         if (!p.parentNode) continue;
-        var headerText = p.textContent.trim();
-        if (!headerRe.test(headerText)) continue;
+        var lines = p.textContent.split('\n').map(function (s) { return s.trim(); }).filter(function (s) { return s.length; });
+        if (!lines.length || !headerLineRe.test(lines[0])) continue;
 
-        var next = p.nextElementSibling;
+        // Collect the leading run of "[Tag "value"]" header lines. Anything
+        // left over on the same paragraph (no blank line before it) is
+        // inline movetext, e.g. a puzzle's header immediately followed by
+        // its solution on the next markdown line.
+        var idx = 0;
+        while (idx < lines.length && headerLineRe.test(lines[idx])) idx++;
+        var headerLines = lines.slice(0, idx);
+        var inlineMoveText = idx < lines.length ? lines.slice(idx).join(' ') : null;
+        var hasFenTag = headerLines.some(function (l) { return fenTagRe.test(l); });
+
         var moveText = null;
-        if (next) {
-            if (next.tagName === 'P') {
-                var t = next.textContent.trim();
-                if (movetextRe.test(t)) moveText = t;
-            } else if (next.tagName === 'OL') {
-                // A movetext starting with "1. " is parsed by Markdown as an
-                // ordered list start; the "1. " marker itself gets consumed
-                // into list semantics and stripped from the <li> text, so
-                // we have to add it back to reconstruct valid PGN movetext.
-                var lis = Array.prototype.slice.call(next.querySelectorAll('li'));
-                if (lis.length) {
-                    moveText = '1. ' + lis.map(function (li) { return li.textContent.trim(); }).join(' ');
+        var next = null;
+        if (inlineMoveText !== null) {
+            if (movetextRe.test(inlineMoveText)) moveText = inlineMoveText;
+        } else {
+            next = p.nextElementSibling;
+            if (next) {
+                if (next.tagName === 'P') {
+                    var t = next.textContent.trim();
+                    if (movetextRe.test(t)) moveText = t;
+                } else if (next.tagName === 'OL') {
+                    // A movetext starting with "1. " is parsed by Markdown as
+                    // an ordered list start; the "1. " marker itself gets
+                    // consumed into list semantics and stripped from the
+                    // <li> text, so we have to add it back to reconstruct
+                    // valid PGN movetext.
+                    var lis = Array.prototype.slice.call(next.querySelectorAll('li'));
+                    if (lis.length) {
+                        moveText = '1. ' + lis.map(function (li) { return li.textContent.trim(); }).join(' ');
+                    }
                 }
             }
         }
 
-        // A [Event ...] header paired with movetext is a full game (<pgn>).
-        // A bare [FEN "..."] block (optionally with [Caption ...] etc. on
-        // following lines, still the same paragraph) with no movetext is a
+        // A header + movetext pair is a full game (<pgn>), unless the header
+        // carries a [FEN ...] tag, in which case it's a position + solution
+        // puzzle (<puzzle>). A bare [FEN "..."] header with no movetext is a
         // static diagram (<fen>).
-        var tagName = moveText !== null ? 'pgn' : (fenOnlyRe.test(headerText) ? 'fen' : null);
-        if (!tagName) continue;
+        var tagName;
+        if (moveText !== null) {
+            tagName = hasFenTag ? 'puzzle' : 'pgn';
+        } else if (hasFenTag) {
+            tagName = 'fen';
+        } else {
+            continue;
+        }
 
+        var headerText = headerLines.join('\n');
         var el = document.createElement(tagName);
         el.textContent = moveText !== null ? (headerText + '\n\n' + moveText) : headerText;
         p.parentNode.insertBefore(el, p);
         p.remove();
-        if (moveText !== null) next.remove();
+        if (next) next.remove();
     }
 })();
 </script>
