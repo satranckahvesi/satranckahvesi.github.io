@@ -1,7 +1,7 @@
 ---
 title: "İtalyan açılışının inceliği"
 author: "Aylin Demir"
-column: "Açılış Sırları"
+column: "Açılış sırları"
 layout: post
 ---
 
