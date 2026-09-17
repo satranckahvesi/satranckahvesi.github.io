@@ -4,3 +4,9 @@ url: "https://satranckahvesi.github.io"
 
 markdown: kramdown
 permalink: /posts/:title/
+kramdown:
+  smart_quotes: ["apos", "apos", "quot", "quot"]
+  typographic_symbols:
+    hellip: "..."
+    mdash: "---"
+    ndash: "--"
