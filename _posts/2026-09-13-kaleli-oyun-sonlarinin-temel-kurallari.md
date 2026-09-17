@@ -11,10 +11,8 @@ Pasif bir kale, maddi eşitlik olsa bile kaybettirebilir. Bu yazıda, kalenizi r
 
 Aktif bir kalenin gücünü küçük bir alıştırmayla görelim — sıra beyazda, doğru hamleyi bulabilecek misiniz?
 
-<puzzle>
 [Event "Kale Aktivitesi Alıştırması"]
 [FEN "6k1/5ppp/8/8/8/8/5PPP/R5K1 w - - 0 1"]
 [Orientation "White"]
 [Caption "Sıra beyazda. Kaleyi doğru kareye sürerek mat kurun."]
-1. Ra8# { 🎉 Doğru! Kale, açık 8. sırada siyah şahını mat ediyor — kendi piyonları şahın kaçış karelerini kapatıyor. } ( 1. Rb1? { 🚫 Kale pasif kalıyor, mat yok. } )
-</puzzle>
+{[P]} 1. Ra8# {🎉 Doğru! Kale, açık 8. yatayda siyah şahı mat ediyor. Şahın kaçış karelerini kendi piyonları kapatıyor.}
