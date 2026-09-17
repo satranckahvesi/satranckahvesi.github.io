@@ -20,6 +20,7 @@ layout: default
     var body = document.querySelector('.post-body');
     if (!body) return;
     var headerRe = /^\[[A-Za-z]+\s+"/;
+    var fenOnlyRe = /^\[FEN\s+"/;
     var movetextRe = /^(\{|\d+\.)/;
     var paragraphs = Array.prototype.slice.call(body.querySelectorAll('p'));
     for (var i = 0; i < paragraphs.length; i++) {
@@ -27,28 +28,37 @@ layout: default
         if (!p.parentNode) continue;
         var headerText = p.textContent.trim();
         if (!headerRe.test(headerText)) continue;
+
         var next = p.nextElementSibling;
-        if (!next) continue;
         var moveText = null;
-        if (next.tagName === 'P') {
-            var t = next.textContent.trim();
-            if (movetextRe.test(t)) moveText = t;
-        } else if (next.tagName === 'OL') {
-            // A movetext starting with "1. " is parsed by Markdown as an
-            // ordered list start; the "1. " marker itself gets consumed
-            // into list semantics and stripped from the <li> text, so we
-            // have to add it back to reconstruct valid PGN movetext.
-            var lis = Array.prototype.slice.call(next.querySelectorAll('li'));
-            if (lis.length) {
-                moveText = '1. ' + lis.map(function (li) { return li.textContent.trim(); }).join(' ');
+        if (next) {
+            if (next.tagName === 'P') {
+                var t = next.textContent.trim();
+                if (movetextRe.test(t)) moveText = t;
+            } else if (next.tagName === 'OL') {
+                // A movetext starting with "1. " is parsed by Markdown as an
+                // ordered list start; the "1. " marker itself gets consumed
+                // into list semantics and stripped from the <li> text, so
+                // we have to add it back to reconstruct valid PGN movetext.
+                var lis = Array.prototype.slice.call(next.querySelectorAll('li'));
+                if (lis.length) {
+                    moveText = '1. ' + lis.map(function (li) { return li.textContent.trim(); }).join(' ');
+                }
             }
         }
-        if (moveText === null) continue;
-        var pgn = document.createElement('pgn');
-        pgn.textContent = headerText + '\n\n' + moveText;
-        p.parentNode.insertBefore(pgn, p);
+
+        // A [Event ...] header paired with movetext is a full game (<pgn>).
+        // A bare [FEN "..."] block (optionally with [Caption ...] etc. on
+        // following lines, still the same paragraph) with no movetext is a
+        // static diagram (<fen>).
+        var tagName = moveText !== null ? 'pgn' : (fenOnlyRe.test(headerText) ? 'fen' : null);
+        if (!tagName) continue;
+
+        var el = document.createElement(tagName);
+        el.textContent = moveText !== null ? (headerText + '\n\n' + moveText) : headerText;
+        p.parentNode.insertBefore(el, p);
         p.remove();
-        next.remove();
+        if (moveText !== null) next.remove();
     }
 })();
 </script>
