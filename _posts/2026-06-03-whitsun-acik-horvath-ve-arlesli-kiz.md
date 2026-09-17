@@ -303,8 +303,8 @@ Bilmediğim şey ise konser salonunun Gasteig HP8 denilen bir komplekste olduğu
 
 ### Künye
 
-Kalacak yer: Hotel Leonardo Munich City North
-Yemek: Hofbraeuhaus München, Alter Wirt (Moosach)
-Ulaşım: Pegasus ile İstanbul-Münih
-Maliyet: Her şey dahil yaklaşık 1000 Euro
+Kalacak yer: Hotel Leonardo Munich City North  
+Yemek: Hofbraeuhaus München, Alter Wirt (Moosach)  
+Ulaşım: Pegasus ile İstanbul-Münih  
+Maliyet: Her şey dahil yaklaşık 1000 Euro  
 Soundtrack: Anekdoten — <em>Gravity</em> (2003)
