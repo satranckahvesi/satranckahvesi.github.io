@@ -1,7 +1,7 @@
 ---
 title: "Bir fincan kahve, bin bir hamle"
 author: "Kerem Yıldız"
-column: "Fincan Başı Sohbetler"
+column: "Fincan başı sohbetler"
 layout: post
 ---
 
