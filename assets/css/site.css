@@ -85,6 +85,45 @@ body {
     color: var(--muted);
 }
 
+.avatar-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.75rem;
+}
+
+.avatar-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    width: 88px;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 0.9rem;
+    line-height: 1.25;
+    text-align: center;
+}
+
+.avatar {
+    width: 72px;
+    height: 72px;
+    flex: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--ink);
+    color: #fff;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.4rem;
+    transition: background-color 0.15s ease;
+}
+
+.avatar-link:hover .avatar { background: var(--accent); }
+
 /* homepage intro: drop cap */
 .intro {
     text-align: left;
