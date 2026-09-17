@@ -1,7 +1,7 @@
 ---
 title: "Vezirli oyun sonlarında sabır"
 author: "Elif Aksoy"
-column: "Oyun Sonu Notları"
+column: "Oyun sonu notları"
 layout: post
 ---
 
