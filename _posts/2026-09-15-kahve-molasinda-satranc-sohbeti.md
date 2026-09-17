@@ -1,7 +1,7 @@
 ---
 title: "Kahve molasında satranç sohbeti"
 author: "Elif Aksoy"
-column: "Fincan Başı Sohbetler"
+column: "Fincan başı sohbetler"
 layout: post
 ---
 
