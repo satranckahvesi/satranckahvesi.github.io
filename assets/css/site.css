@@ -226,6 +226,23 @@ body {
     font-size: 1rem;
 }
 
+/* On desktop, pgn-study's two columns are already meant to split 1fr/2fr
+   (moves list / board) — but the board's own size is separately capped at
+   a flat min(600px, 94cqw), which decouples its rendered width from its
+   column's actual share and makes the two sides read as roughly even
+   instead of 1/3-2/3. Dropping the flat cap lets the board fill its
+   column proportionally, so the grid's own 1fr/2fr ratio actually shows. */
+@media (min-width: 900px) {
+    .post-body pgn-study {
+        --left-col-width: 1fr;
+        --right-col-width: 2fr;
+    }
+
+    .post-body pgn-study pgn-player {
+        --board-size: 94cqw;
+    }
+}
+
 .pgn-switcher {
     display: flex;
     justify-content: center;
