@@ -301,13 +301,10 @@ Bilmediğim şey ise konser salonunun Gasteig HP8 denilen bir komplekste olduğu
 
 ![Gasteig HP8]({{ '/assets/img/munich6.jpg' | relative_url }} "Konser salonunun bulunduğu Gasteig HP8 kompleksinin fuayesi.")
 
-<aside class="post-colophon">
-  <h3 class="colophon-title">Künye</h3>
-  <dl class="colophon-list">
-    <dt>Kalacak yer</dt><dd>Hotel Leonardo Munich City North</dd>
-    <dt>Yemek</dt><dd>Hofbraeuhaus München, Alter Wirt (Moosach)</dd>
-    <dt>Ulaşım</dt><dd>Pegasus ile İstanbul-Münih</dd>
-    <dt>Maliyet</dt><dd>Her şey dahil yaklaşık 1000 Euro</dd>
-    <dt>Soundtrack</dt><dd>Anekdoten — <em>Gravity</em> (2003)</dd>
-  </dl>
-</aside>
+### Künye
+
+Kalacak yer: Hotel Leonardo Munich City North
+Yemek: Hofbraeuhaus München, Alter Wirt (Moosach)
+Ulaşım: Pegasus ile İstanbul-Münih
+Maliyet: Her şey dahil yaklaşık 1000 Euro
+Soundtrack: Anekdoten — <em>Gravity</em> (2003)
