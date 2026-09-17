@@ -1,5 +1,5 @@
 ---
-title: "İtalyan açılışının inceliği"
+title: "İtalyan Açılışının inceliği"
 author: "Aylin Demir"
 column: "Açılış sırları"
 layout: post
