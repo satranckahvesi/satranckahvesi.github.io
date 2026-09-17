@@ -184,6 +184,14 @@ body {
 
 .post-body p { margin: 0 0 1.2rem; }
 
+/* ChessPublica's .pgn-container adds its own 0 1rem side padding, which
+   stacks on top of .post's own padding and indents the move list,
+   variations and comments further in than the surrounding paragraphs. */
+.post-body .pgn-container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 .post-figure {
     margin: 2rem auto;
     text-align: center;
