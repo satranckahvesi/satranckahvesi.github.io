@@ -160,6 +160,39 @@ layout: default
     }
 })();
 </script>
+<script>
+(function () {
+    // pgn-study's two desktop columns (move list / board) are user-resizable
+    // via a drag splitter, which sets grid-template-columns as an inline
+    // style — that means a plain stylesheet rule can never fix the split
+    // ChessPublica opens with (an inline style always wins over a
+    // non-!important stylesheet rule), and using !important to force it
+    // would equally block the reader from ever dragging it afterward. So
+    // instead: wait for each pgn-study element to finish ChessPublica's own
+    // setup (signaled by its "cp-ready" class), set the column split once
+    // to 1fr/2fr right then, and stop watching — any later drag just
+    // updates the same inline style normally, same as if we'd never touched it.
+    var studies = Array.prototype.slice.call(document.querySelectorAll('.post-body pgn-study'));
+    studies.forEach(function (study) {
+        function applyInitialSplit() {
+            study.style.setProperty('--left-col-width', '1fr');
+            study.style.setProperty('--right-col-width', '2fr');
+            study.style.setProperty('grid-template-columns', '1fr 6px 2fr');
+        }
+        if (study.classList.contains('cp-ready')) {
+            applyInitialSplit();
+            return;
+        }
+        var observer = new MutationObserver(function () {
+            if (study.classList.contains('cp-ready')) {
+                applyInitialSplit();
+                observer.disconnect();
+            }
+        });
+        observer.observe(study, { attributes: true, attributeFilter: ['class'] });
+    });
+})();
+</script>
 
 {% assign other_column_posts = site.posts | where: "column", page.column | where_exp: "post", "post.url != page.url" %}
 {% assign other_author_posts = site.posts | where: "author", page.author | where_exp: "post", "post.url != page.url" %}

@@ -226,25 +226,16 @@ body {
     font-size: 1rem;
 }
 
-/* On desktop, pgn-study's two columns are already meant to split 1fr/2fr
-   (moves list / board), but that alone wasn't enough to make it show: this
-   still rendered as roughly 50/50 after only overriding the CSS custom
-   properties and the board's size cap, which means something (most likely
-   a JS-driven drag-to-resize splitter — a ".pgn-study-resizer" class
-   exists in ChessPublica's CSS) is setting grid-template-columns directly
-   via an inline style, which a plain stylesheet rule can't beat regardless
-   of selector specificity. !important is the one legitimate way to win
-   against that. This does mean the split is pinned at 1fr/2fr and a
-   resizer, if present, can no longer drag it to something else. */
+/* The board's own size is separately capped at a flat min(600px, 94cqw),
+   which would otherwise keep it a fixed pixel size regardless of how wide
+   its grid column actually is. Dropping the flat cap keeps the board
+   proportional to its column at any width, including after a reader drags
+   the column splitter (see the pgn-study-init script below, which sets the
+   *initial* 1fr/2fr column split — this part only concerns the board's own
+   size within whatever column width results). */
 @media (min-width: 900px) {
-    .post-body pgn-study {
-        --left-col-width: 1fr !important;
-        --right-col-width: 2fr !important;
-        grid-template-columns: 1fr 6px 2fr !important;
-    }
-
     .post-body pgn-study pgn-player {
-        --board-size: 94cqw !important;
+        --board-size: 94cqw;
     }
 }
 
