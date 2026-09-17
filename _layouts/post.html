@@ -45,6 +45,21 @@ layout: default
     var headerLineRe = /^\[[A-Za-z]+\s+"/;
     var fenTagRe = /^\[FEN\s+"/;
     var movetextRe = /^(\{|\d+\.)/;
+
+    // For a plain <pgn> game (not <fen>/<puzzle>), the reader can switch
+    // between the three ways ChessPublica can show a game. The library only
+    // scans the DOM once on load, so switching can't re-render an element
+    // in place — instead we remember the reader's choice per game and
+    // reload the page, so the right tag exists before that scan runs.
+    var pgnViews = ['pgn', 'pgn-player', 'pgn-study'];
+    var pgnViewLabels = { pgn: 'Parti görünümü', 'pgn-player': 'Oynatıcı görünümü', 'pgn-study': 'Çalışma görünümü' };
+    var pgnViewIcons = {
+        pgn: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="20" y2="12"/><line x1="8" y1="18" x2="20" y2="18"/><circle cx="4" cy="6" r="1.2" fill="currentColor" stroke="none"/><circle cx="4" cy="12" r="1.2" fill="currentColor" stroke="none"/><circle cx="4" cy="18" r="1.2" fill="currentColor" stroke="none"/></svg>',
+        'pgn-player': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polygon points="10,8 16,12 10,16" fill="currentColor" stroke="none"/></svg>',
+        'pgn-study': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5-10-5z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg>'
+    };
+    var pgnBlockIndex = 0;
+
     var paragraphs = Array.prototype.slice.call(body.querySelectorAll('p'));
     for (var i = 0; i < paragraphs.length; i++) {
         var p = paragraphs[i];
@@ -100,9 +115,46 @@ layout: default
         }
 
         var headerText = headerLines.join('\n');
+        var storageKey = null;
+        if (tagName === 'pgn') {
+            storageKey = 'pgn-view:' + location.pathname + ':' + pgnBlockIndex;
+            pgnBlockIndex++;
+            var savedView = localStorage.getItem(storageKey);
+            if (pgnViews.indexOf(savedView) !== -1) tagName = savedView;
+        }
+
         var el = document.createElement(tagName);
         el.textContent = moveText !== null ? (headerText + '\n\n' + moveText) : headerText;
-        p.parentNode.insertBefore(el, p);
+
+        if (storageKey) {
+            var wrap = document.createElement('div');
+            wrap.className = 'pgn-switcher-block';
+            var switcher = document.createElement('div');
+            switcher.className = 'pgn-switcher';
+            switcher.setAttribute('role', 'group');
+            switcher.setAttribute('aria-label', 'Görünüm seç');
+            pgnViews.forEach(function (view) {
+                var btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'pgn-switcher-btn' + (view === tagName ? ' is-active' : '');
+                btn.setAttribute('aria-pressed', view === tagName ? 'true' : 'false');
+                btn.title = pgnViewLabels[view];
+                btn.setAttribute('aria-label', pgnViewLabels[view]);
+                btn.innerHTML = pgnViewIcons[view];
+                btn.addEventListener('click', (function (key, chosenView) {
+                    return function () {
+                        localStorage.setItem(key, chosenView);
+                        location.reload();
+                    };
+                })(storageKey, view));
+                switcher.appendChild(btn);
+            });
+            wrap.appendChild(switcher);
+            wrap.appendChild(el);
+            p.parentNode.insertBefore(wrap, p);
+        } else {
+            p.parentNode.insertBefore(el, p);
+        }
         p.remove();
         if (next) next.remove();
     }
