@@ -192,6 +192,33 @@ body {
     padding-right: 0;
 }
 
+/* By default <pgn-study> renders as a near-fullscreen app panel — 90vw by
+   90vh, up to 1600px wide, with 10% larger text — meant for a standalone
+   study tool, not an element embedded inline in a post. Constrain it to
+   the post column and drop the font-size bump; ChessPublica sizes its
+   internal board off the resulting (now much narrower) container width,
+   so this also brings the board down to a normal inline size. */
+.post-body pgn-study {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    margin: 0 0 1.5rem;
+    font-size: 1rem;
+    --frame-pad: 1rem;
+    --frame-pad-bottom: 0.6rem;
+}
+
+.post-body pgn-study > pgn-player,
+.post-body pgn-study > .pgn-container {
+    overflow: visible;
+}
+
+@media (min-width: 900px) {
+    .post-body pgn-study {
+        grid-template-rows: auto;
+    }
+}
+
 .pgn-switcher {
     display: flex;
     justify-content: center;
