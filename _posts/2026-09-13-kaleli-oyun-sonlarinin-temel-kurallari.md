@@ -1,7 +1,7 @@
 ---
 title: "Kaleli oyun sonlarının temel kuralları"
 author: "Aylin Demir"
-column: "Oyun Sonu Notları"
+column: "Oyun sonu notları"
 layout: post
 ---
 
