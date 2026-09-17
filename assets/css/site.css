@@ -192,6 +192,38 @@ body {
     padding-right: 0;
 }
 
+.pgn-switcher {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0 0 1rem;
+}
+
+.pgn-switcher-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border: 1px solid var(--hairline);
+    border-radius: 50%;
+    background: #fff;
+    color: var(--muted);
+    cursor: pointer;
+    transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+}
+
+.pgn-switcher-btn svg { width: 18px; height: 18px; }
+
+.pgn-switcher-btn:hover { color: var(--ink); border-color: var(--ink); }
+
+.pgn-switcher-btn.is-active {
+    color: #fff;
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
 .post-figure {
     margin: 2rem auto;
     text-align: center;
