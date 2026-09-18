@@ -172,20 +172,42 @@ layout: default
     // setup (signaled by its "cp-ready" class), set the column split once
     // to 1fr/2fr right then, and stop watching — any later drag just
     // updates the same inline style normally, same as if we'd never touched it.
+    //
+    // The same "cp-ready" signal is also the first point at which the
+    // ribbon's buttons exist, so it's reused here to prune/relabel them.
+    // ChessPublica doesn't expose stable class names or data attributes for
+    // individual ribbon buttons that we could target directly, so buttons
+    // are matched by their own accessible name (title/aria-label) instead —
+    // the same text a reader sees on hover, in whatever language
+    // ChessPublica renders it.
     var studies = Array.prototype.slice.call(document.querySelectorAll('.post-body pgn-study'));
     studies.forEach(function (study) {
-        function applyInitialSplit() {
+        function onReady() {
             study.style.setProperty('--left-col-width', '1fr');
             study.style.setProperty('--right-col-width', '2fr');
             study.style.setProperty('grid-template-columns', '1fr 6px 2fr');
+
+            var buttons = Array.prototype.slice.call(study.querySelectorAll('.pgn-study-ribbon-btn'));
+            buttons.forEach(function (btn) {
+                var label = (btn.getAttribute('aria-label') || btn.getAttribute('title') || btn.textContent || '').trim();
+                if (/table.*of.*contents|\btoc\b/i.test(label) || /collapse|expand/i.test(label)) {
+                    btn.remove();
+                } else if (/^play\b/i.test(label)) {
+                    btn.setAttribute('aria-label', 'Oynat');
+                    btn.title = 'Oynat';
+                } else if (/setting/i.test(label)) {
+                    btn.setAttribute('aria-label', 'Ayarlar');
+                    btn.title = 'Ayarlar';
+                }
+            });
         }
         if (study.classList.contains('cp-ready')) {
-            applyInitialSplit();
+            onReady();
             return;
         }
         var observer = new MutationObserver(function () {
             if (study.classList.contains('cp-ready')) {
-                applyInitialSplit();
+                onReady();
                 observer.disconnect();
             }
         });
