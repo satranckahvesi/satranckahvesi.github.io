@@ -1,3 +1,13 @@
+/* Single control point for the whole site's type scale: every font-size
+   in this file (and in ChessPublica's own CSS) is expressed in rem, em or
+   %, so this is the one place that needs to change to make all text —
+   including inside pgn/fen/puzzle/pgn-player/pgn-study — a bit bigger. A
+   percentage (rather than a fixed px value) scales relative to the
+   visitor's own browser default instead of overriding it. */
+html {
+    font-size: 106.25%;
+}
+
 :root {
     --ink: #16283a;
     --muted: #5b6b78;
