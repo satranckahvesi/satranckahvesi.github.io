@@ -85,9 +85,28 @@
         // author's own annotation), not PGN syntax, so they still want
         // curly quotes — just applied once ChessPublica actually renders
         // them, matched by the same handful of classes it renders them
-        // under (confirmed directly in its CSS) regardless of which of
-        // the three views (pgn/pgn-player/pgn-study) is showing.
-        var commentSelector = '.pgn-comment, .pgn-comment-inline, .video-comment, .variation-comment, .comment-text-block';
+        // under (confirmed directly in its bundle's source, ChessPublica.all.min.js).
+        //
+        // .pgn-variation-line carries no such wrapper of its own — it's
+        // there for a different reason. In the plain, non-interactive
+        // "Parti görünümü" view (the default for a bare <pgn> block, no
+        // clicking required), ChessPublica's renderer only gives a
+        // comment its own dedicated element on the mainline; inside a
+        // side-line it instead concatenates the move notation and any
+        // {...} comment text into one plain string and drops the whole
+        // thing, unwrapped, straight into a single <p class="pgn-variation-line">
+        // (confirmed directly by feeding this site's real PGN text through
+        // the real bundle and inspecting the result: zero .pgn-comment-inline
+        // elements came out, and the comment prose sat as bare text next to
+        // the move numbers). So the paragraph itself is the closest thing to
+        // a "comment element" a side-line ever gets, and has to be in this
+        // list for its prose to be reachable at all — every one of this
+        // site's straight-apostrophe reports has traced back to exactly this
+        // paragraph, not to a missed mutation on some inner element. Curly-quoting
+        // the whole paragraph (moves included) is safe: algebraic notation
+        // and NAGs never contain a straight quote character, so nothing in
+        // there can be mistaken for one.
+        var commentSelector = '.pgn-comment, .pgn-comment-inline, .video-comment, .variation-comment, .comment-text-block, .pgn-variation-line';
 
         // Walks up from a text node (or the node itself) looking for a
         // comment element, without ever climbing past one — unlike
@@ -111,25 +130,20 @@
 
         var body = document.querySelector('.post-body');
         if (body && (body.querySelector('pgn, pgn-player, pgn-study'))) {
-            // Stepping through a side-line replaces a comment element's
-            // text in place rather than swapping in a fresh element:
-            // confirmed directly in assets/js/pgn-player-variation-fix.js,
-            // ChessPublica wipes and rebuilds .video-comment on every ply
-            // and keeps reusing the same live .variation-content node
-            // across that rebuild. A plain childList/subtree observer
-            // still fires for that update, but its addedNodes entry is
-            // the new Text node dropped into the *existing* element, not
-            // a new element — the old code's `added.nodeType !== 1`
-            // check discarded exactly that record, so a side-line's
-            // reused comment element only ever got curly-quoted once,
-            // for whatever text it happened to hold the first time a
-            // matching *element* was added. Every straight apostrophe
-            // this site has shipped in prose (as opposed to raw PGN) has
-            // turned out to sit inside a side-line for exactly this
-            // reason. Handling text-node addedNodes, and also watching
+            // Stepping through a side-line in the interactive player can
+            // replace a comment element's text in place rather than
+            // swapping in a fresh element: documented directly in
+            // assets/js/pgn-player-variation-fix.js, ChessPublica wipes
+            // and rebuilds .video-comment on every ply and keeps reusing
+            // the same live .variation-content node across that rebuild.
+            // A plain childList/subtree observer still fires for that
+            // update, but its addedNodes entry is the new Text node
+            // dropped into the *existing* element, not a new element —
+            // `added.nodeType !== 1` alone discards exactly that record.
+            // Handling text-node addedNodes, and also watching
             // characterData directly (in case a future ChessPublica
             // version sets node.data instead of replacing children),
-            // covers both ways that reused element could end up with new
+            // covers both ways a reused element could end up with new
             // text without ever firing as an added *element*.
             var observer = new MutationObserver(function (mutations) {
                 mutations.forEach(function (mutation) {
