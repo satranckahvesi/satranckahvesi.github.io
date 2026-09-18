@@ -57,11 +57,32 @@ body {
     font-family: 'Playfair Display', Georgia, serif;
     font-style: italic;
     font-weight: 600;
-    /* Below the masthead's own <h1> (.logo) at every viewport width —
-       including its 1.35rem mobile-safe floor, the narrowest point in
-       its fluid clamp() — not just at typical desktop/tablet widths
-       where the gap is already wide. */
-    font-size: 1.3rem;
+    /* Never larger than the masthead's own <h1> (.logo) at any
+       viewport width: 1.35rem exactly matches its fluid clamp()'s
+       mobile-safe floor, the narrowest point that clamp ever reaches
+       — everywhere wider, the h1 has already grown past it. */
+    font-size: 1.35rem;
+    line-height: 1.2;
+    color: var(--ink);
+    margin: 0 0 1.25rem;
+}
+
+/* An archive page's own title (e.g. "Fincan başı sohbetler" on
+   /koseler/fincan-basi-sohbetler/, or an author's name on
+   /yazarlar/elif-aksoy/) is the same column/author name the homepage
+   shows as an <h3> (.section-title), so it's an <h3> here too — as
+   are a post page's own "X köşesindeki diğer yazılar"/"Yazarın diğer
+   yazıları" headings. Scoped to .archive/.post-related specifically
+   (both a direct child of their own wrapper, never nested in an li)
+   rather than .section h3, which would also match the homepage's own
+   <h3> wrapper around .section-title and fight with its own font
+   declarations for no reason. */
+.archive h3,
+.post-related h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.1rem;
     line-height: 1.2;
     color: var(--ink);
     margin: 0 0 1.25rem;
@@ -90,6 +111,7 @@ body {
     color: var(--ink);
     text-decoration: none;
     font-size: 1.1rem;
+    font-weight: bold;
     border-bottom: 1px solid transparent;
     padding-bottom: 0.1em;
     transition: border-color 0.15s ease;
@@ -141,6 +163,7 @@ body {
 .section .section-latest a {
     color: var(--ink);
     font-size: 1.1rem;
+    font-weight: bold;
     text-decoration: none;
     border-bottom: 1px solid transparent;
     padding-bottom: 0.1em;

@@ -27,7 +27,7 @@ layout: default
 {% if other_column_posts.size > 0 %}
 {% include ornament.html %}
 <div class="section post-related">
-    <h2>{{ page.column }} köşesindeki diğer yazılar</h2>
+    <h3>{{ page.column }} köşesindeki diğer yazılar</h3>
     <ul class="post-list">
         {% for post in other_column_posts %}
         <li>
@@ -42,7 +42,7 @@ layout: default
 {% if other_author_posts.size > 0 %}
 {% include ornament.html %}
 <div class="section post-related">
-    <h2>Yazarın diğer yazıları</h2>
+    <h3>Yazarın diğer yazıları</h3>
     <ul class="post-list">
         {% for post in other_author_posts %}
         <li>

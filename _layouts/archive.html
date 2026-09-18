@@ -7,7 +7,7 @@ layout: default
 {% assign posts = site.posts | where: "author", page.archive_value | sort: "date" | reverse %}
 {% endif %}
 <div class="section archive">
-    <h2>{{ page.title }}</h2>
+    <h3>{{ page.title }}</h3>
     <ul class="post-list">
         {% for post in posts %}
         {% assign author_slug = post.author | slugify: "latin" %}
