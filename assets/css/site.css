@@ -328,14 +328,38 @@ body {
     font-size: 1rem;
 }
 
-/* Prev/next move buttons, inserted by post.html's script directly after
-   the board (.cp-board-wrapper). Same visual style as .pgn-switcher-btn,
-   for consistency across the site's pgn-related icon buttons. */
+/* Prev/next move buttons, appended by post.html's script at the end of
+   pgn-study's children (after <pgn-player>, its resizer and
+   .pgn-container — see the script for why). Same visual style as
+   .pgn-switcher-btn, for consistency across the site's pgn-related icon
+   buttons. */
 .pgn-study-nav {
     display: flex;
     justify-content: center;
     gap: 0.5rem;
     margin: 0.75rem 0;
+}
+
+/* On desktop, pgn-study is display: grid with an explicit 1fr/6px/2fr
+   column template (board / resizer / move list), filled by plain
+   auto-placement — none of its three original children carry an explicit
+   grid-column. Appending our own new children after all three (see the
+   script) keeps that trio's own placement untouched, but they'd still
+   need somewhere to go themselves: left unpositioned, they'd auto-place
+   into individual column tracks — including the 6px resizer track,
+   which is exactly what broke visibly (verified directly: an unpositioned
+   item auto-placed there measures only 6px wide). Spanning the full
+   width, the same way the ribbon already does with grid-column: 1 / -1,
+   gives them their own row instead. ChessPublica's own variation picker
+   (.pgn-study-move-picker) is a plain, likely also-unpositioned sibling
+   inserted the same dynamic way, so it gets the same treatment
+   defensively. */
+@media (min-width: 900px) {
+    .pgn-study-nav,
+    .pgn-study-mobile-comment,
+    .pgn-study-move-picker {
+        grid-column: 1 / -1;
+    }
 }
 
 .pgn-study-nav-btn {

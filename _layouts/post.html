@@ -225,41 +225,47 @@ layout: default
                 }
             });
 
-            if (!study.querySelector('.pgn-study-nav')) {
-                // Anchored to the <pgn-player> element itself, not an inner
-                // class name like .cp-board-wrapper — pgn-player is the one
-                // piece of this structure confirmed directly (it's the
-                // literal custom element ChessPublica creates), whereas
-                // internal class names are inferred from its stylesheet and
-                // not something we can verify against the live DOM here.
-                var pgnPlayer = study.querySelector('pgn-player');
-                if (pgnPlayer) {
-                    var nav = document.createElement('div');
-                    nav.className = 'pgn-study-nav';
-                    ['prev', 'next'].forEach(function (dir) {
-                        var btn = document.createElement('button');
-                        btn.type = 'button';
-                        btn.className = 'pgn-study-nav-btn';
-                        btn.setAttribute('aria-label', pgnStudyNavLabels[dir]);
-                        btn.title = pgnStudyNavLabels[dir];
-                        btn.innerHTML = pgnStudyNavIcons[dir];
-                        btn.addEventListener('click', function () {
-                            var moves = Array.prototype.slice.call(study.querySelectorAll('.pgn-move'));
-                            if (!moves.length) return;
-                            var activeIndex = moves.findIndex(function (m) { return m.classList.contains('pgn-move-active'); });
-                            var targetIndex = dir === 'next' ? (activeIndex === -1 ? 0 : activeIndex + 1) : activeIndex - 1;
-                            var target = moves[targetIndex];
-                            if (target) target.click();
-                        });
-                        nav.appendChild(btn);
+            if (!study.querySelector('.pgn-study-nav') && study.querySelector('pgn-player')) {
+                // Appended at the true end of pgn-study's children, after
+                // <pgn-player>, its resizer and .pgn-container alike — not
+                // inserted right after <pgn-player> specifically. On
+                // desktop, pgn-study is display: grid with an explicit
+                // three-column template (board / 6px resizer / move list),
+                // and those three existing children fill it via plain
+                // auto-placement (confirmed directly: no explicit
+                // grid-column on any of them in ChessPublica's CSS).
+                // Wedging a new, unpositioned sibling between two of them —
+                // as inserting "after <pgn-player>" does — throws that
+                // auto-placement off entirely (verified: the very next
+                // auto-placed item then restarts at column 1 instead of
+                // continuing into its intended column, corrupting the
+                // whole layout). Appending after all three leaves their
+                // mutual placement untouched.
+                var nav = document.createElement('div');
+                nav.className = 'pgn-study-nav';
+                ['prev', 'next'].forEach(function (dir) {
+                    var btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'pgn-study-nav-btn';
+                    btn.setAttribute('aria-label', pgnStudyNavLabels[dir]);
+                    btn.title = pgnStudyNavLabels[dir];
+                    btn.innerHTML = pgnStudyNavIcons[dir];
+                    btn.addEventListener('click', function () {
+                        var moves = Array.prototype.slice.call(study.querySelectorAll('.pgn-move'));
+                        if (!moves.length) return;
+                        var activeIndex = moves.findIndex(function (m) { return m.classList.contains('pgn-move-active'); });
+                        var targetIndex = dir === 'next' ? (activeIndex === -1 ? 0 : activeIndex + 1) : activeIndex - 1;
+                        var target = moves[targetIndex];
+                        if (target) target.click();
                     });
-                    pgnPlayer.insertAdjacentElement('afterend', nav);
+                    nav.appendChild(btn);
+                });
+                study.appendChild(nav);
 
-                    var commentDisplay = document.createElement('div');
-                    commentDisplay.className = 'pgn-study-mobile-comment';
-                    nav.insertAdjacentElement('afterend', commentDisplay);
-                    syncActiveComment();
-                }
+                var commentDisplay = document.createElement('div');
+                commentDisplay.className = 'pgn-study-mobile-comment';
+                study.appendChild(commentDisplay);
+                syncActiveComment();
             }
         }
         function stripCollapsed() {
@@ -267,21 +273,20 @@ layout: default
                 study.classList.remove('pgn-study-collapsed');
             }
         }
-        // ChessPublica inserts the variation picker right after the board
-        // too, whenever a branch point comes up during navigation — after
-        // our nav buttons (and comment display) already exist. Re-asserting
-        // their position on every mutation (instead of only once) means
-        // however late the picker shows up, it always ends up pushed below
-        // them rather than wedged in between.
+        // ChessPublica inserts the variation picker somewhere in this same
+        // subtree too, whenever a branch point comes up during navigation
+        // — after our nav buttons and comment display already exist, and
+        // regardless of exactly where. Keeping both of them pinned as the
+        // very last two children on every mutation (instead of only once)
+        // means however the picker gets inserted, it always ends up
+        // pushed above them rather than wedged in between or after.
         function keepLayoutOrder() {
-            var pgnPlayer = study.querySelector('pgn-player');
             var nav = study.querySelector('.pgn-study-nav');
             var commentDisplay = study.querySelector('.pgn-study-mobile-comment');
-            if (pgnPlayer && nav && pgnPlayer.nextElementSibling !== nav) {
-                pgnPlayer.insertAdjacentElement('afterend', nav);
-            }
-            if (nav && commentDisplay && nav.nextElementSibling !== commentDisplay) {
-                nav.insertAdjacentElement('afterend', commentDisplay);
+            if (!nav || !commentDisplay) return;
+            if (nav.nextElementSibling !== commentDisplay || study.lastElementChild !== commentDisplay) {
+                study.appendChild(nav);
+                study.appendChild(commentDisplay);
             }
         }
         // .pgn-container (the full move list, with comments interleaved in
