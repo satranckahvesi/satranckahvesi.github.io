@@ -9,10 +9,22 @@ html {
 }
 
 :root {
-    --ink: #16283a;
-    --muted: #5b6b78;
-    --accent: #a9772c;
-    --hairline: #e2e5e8;
+    /* Warm paper background and a slightly lighter card surface, both
+       tuned to sit next to the logo's navy cup and brass ring rather
+       than a neutral gray/white system. */
+    --paper: #f7f2e7;
+    --surface: #fffdf8;
+    --ink: #17263a;
+    --ink-soft: #34495f;
+    --muted: #75695a;
+    --accent: #b3822f;
+    --accent-deep: #8a6321;
+    --hairline: #e6dac2;
+    --shadow: 0 10px 24px rgba(23, 38, 58, 0.12);
+
+    --serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    --display: 'Playfair Display', Georgia, serif;
+    --sans: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -20,9 +32,10 @@ html {
 body {
     margin: 0;
     padding: 2.5rem 1rem 0;
-    font-family: Georgia, 'Times New Roman', serif;
+    font-family: var(--serif);
+    background: var(--paper);
     color: var(--ink);
-    line-height: 1.65;
+    line-height: 1.7;
     /* pgn-study breaks out of the post column to center itself on the
        viewport (see below); on a page with a vertical scrollbar, the vw
        units involved slightly overshoot the visible width, so guard
@@ -30,9 +43,121 @@ body {
     overflow-x: hidden;
 }
 
-.site-header { text-align: center; }
+/* masthead */
+.site-header {
+    position: relative;
+    text-align: center;
+    padding-bottom: 2.25rem;
+    border-bottom: 1px solid var(--hairline);
+}
 
-.brand { text-decoration: none; }
+/* A faint checkerboard, cropped to the masthead only by the header's own
+   border-bottom, nods at the site's subject without illustrating it
+   literally. Low-opacity brass squares on the paper color keep it a
+   texture rather than a graphic. */
+.site-header::before {
+    content: "";
+    position: absolute;
+    top: -2.5rem;
+    right: -1rem;
+    bottom: 0;
+    left: -1rem;
+    background-image: repeating-conic-gradient(var(--paper) 0% 25%, rgba(179, 130, 47, 0.07) 0% 50%);
+    background-size: 26px 26px;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.site-header::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -1px;
+    width: 46px;
+    height: 3px;
+    transform: translateX(-50%);
+    background: var(--accent);
+}
+
+.brand {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.9rem;
+    text-decoration: none;
+}
+
+.site-logo {
+    width: 96px;
+    height: 96px;
+    flex: none;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px var(--hairline), var(--shadow);
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.logo {
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 1.9rem;
+    font-weight: 600;
+    color: var(--ink);
+}
+
+.tagline {
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-deep);
+}
+
+@media (min-width: 640px) {
+    .brand { flex-direction: row; gap: 1.4rem; }
+    .site-logo { width: 112px; height: 112px; }
+    .brand-text { align-items: flex-start; }
+    .logo { font-size: 2.6rem; }
+}
+
+/* small caps section kicker, reused for the homepage's section labels,
+   the post-page column kicker, and the header tagline above */
+.eyebrow {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-deep);
+    margin: 0 0 0.6rem;
+}
+
+.eyebrow a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s ease;
+}
+
+.eyebrow a:hover { border-bottom-color: currentColor; }
+
+/* homepage hero */
+.hero {
+    max-width: 600px;
+    margin: 3.25rem auto 0;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.hero .intro {
+    margin-top: 0.5rem;
+}
 
 .section {
     max-width: 640px;
@@ -41,14 +166,18 @@ body {
     text-align: center;
 }
 
+.section--wide {
+    max-width: 840px;
+}
+
 .section h2 {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: var(--display);
     font-style: italic;
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 1.65rem;
     line-height: 1.2;
     color: var(--ink);
-    margin: 0 0 1.25rem;
+    margin: 0 0 1.5rem;
 }
 
 .section ul {
@@ -78,15 +207,15 @@ body {
 }
 
 .section .section-latest a {
-    font-size: 0.85rem;
+    font-size: 0.88rem;
     color: var(--muted);
 }
 
 .section-author {
     display: block;
-    margin-top: 0.2rem;
-    font-size: 0.8rem;
-    font-style: italic;
+    margin-top: 0.25rem;
+    font-family: var(--sans);
+    font-size: 0.78rem;
     color: var(--muted);
 }
 
@@ -96,8 +225,59 @@ body {
 
 .section .section-author a {
     font-size: inherit;
-    font-style: inherit;
+    font-family: inherit;
     color: var(--muted);
+}
+
+/* Köşeler grid: the plain centered list becomes a set of bordered cards,
+   one per column, so the homepage reads as a table of contents rather
+   than a stacked menu. */
+.section .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.25rem;
+    text-align: left;
+}
+
+.card-grid li {
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-radius: 6px;
+    padding: 1.5rem 1.5rem 1.75rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card-grid li:hover {
+    border-color: var(--accent);
+    box-shadow: var(--shadow);
+    transform: translateY(-3px);
+}
+
+.card-grid .card-title,
+.post-list a {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 600;
+}
+
+.card-grid .card-title {
+    font-size: 1.3rem;
+}
+
+.card-grid .section-latest {
+    margin-top: 0.5rem;
+}
+
+.card-grid .section-latest a {
+    font-family: var(--serif);
+    color: var(--ink-soft);
+}
+
+.card-grid .section-latest a::before { content: "\201C"; color: var(--accent); }
+.card-grid .section-latest a::after { content: "\201D"; color: var(--accent); }
+
+.card-grid .section-author {
+    margin-top: 0.4rem;
 }
 
 .avatar-list {
@@ -130,16 +310,25 @@ body {
     justify-content: center;
     background: var(--ink);
     color: #fff;
-    font-family: 'Playfair Display', Georgia, serif;
+    box-shadow: 0 0 0 1px var(--hairline);
+    font-family: var(--display);
     font-style: italic;
     font-weight: 600;
     font-size: 1.4rem;
-    transition: background-color 0.15s ease;
+    transition: background-color 0.15s ease, box-shadow 0.15s ease;
 }
 
-.avatar-link:hover .avatar { background: var(--accent); }
+.avatar-name {
+    font-family: var(--sans);
+    font-weight: 500;
+}
 
-/* homepage intro: drop cap */
+.avatar-link:hover .avatar {
+    background: var(--accent);
+    box-shadow: 0 0 0 1px var(--accent);
+}
+
+/* homepage intro + post opener: drop cap */
 .intro {
     text-align: left;
 }
@@ -149,7 +338,7 @@ body {
 }
 
 .intro p::first-letter {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: var(--display);
     font-style: italic;
     font-weight: 700;
     font-size: 4rem;
@@ -159,26 +348,54 @@ body {
     color: var(--ink);
 }
 
+.post-body > p:first-of-type::first-letter {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 700;
+    font-size: 3.2rem;
+    line-height: 0.7;
+    float: left;
+    margin: 0.05em 0.12em 0 0;
+    color: var(--ink);
+}
+
 .site-footer {
+    position: relative;
     margin-top: 4.5rem;
-    padding: 2rem 1rem;
+    padding: 2.25rem 1rem 2rem;
     text-align: center;
     border-top: 1px solid var(--hairline);
     color: var(--muted);
-    font-size: 0.85rem;
-    letter-spacing: 0.02em;
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    letter-spacing: 0.03em;
+}
+
+.site-footer::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: 50%;
+    width: 46px;
+    height: 3px;
+    transform: translateX(-50%);
+    background: var(--accent);
 }
 
 /* single post */
 .post {
-    max-width: 640px;
+    max-width: 660px;
     margin: 3.5rem auto 0;
     padding: 0 1rem;
     text-align: left;
 }
 
+.post-kicker {
+    text-align: center;
+}
+
 .post-title {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: var(--display);
     font-style: italic;
     font-weight: 600;
     font-size: 2.1rem;
@@ -190,8 +407,9 @@ body {
 
 .post-meta {
     text-align: center;
+    font-family: var(--sans);
     color: var(--muted);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     margin: 0 0 2.5rem;
 }
 
@@ -199,7 +417,7 @@ body {
 
 .post-body p { margin: 0 0 1.2rem; }
 
-/* ChessPublica's .pgn-container adds its own 0 1rem side padding, which
+/* ChessPublica's own .pgn-container adds its own 0 1rem side padding, which
    stacks on top of .post's own padding and indents the move list,
    variations and comments further in than the surrounding paragraphs. */
 .post-body .pgn-container {
@@ -484,7 +702,7 @@ body {
     padding: 0;
     border: 1px solid var(--hairline);
     border-radius: 50%;
-    background: #fff;
+    background: var(--surface);
     color: var(--muted);
     cursor: pointer;
     transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
@@ -510,13 +728,14 @@ body {
     max-height: 480px;
     width: auto;
     height: auto;
-    border: 8px solid #fff;
+    border: 8px solid var(--surface);
     outline: 1px solid var(--hairline);
-    box-shadow: 0 1px 3px rgba(22, 40, 58, 0.12);
+    box-shadow: 0 1px 3px rgba(23, 38, 58, 0.12);
 }
 
 .post-figure figcaption {
     margin-top: 0.7rem;
+    font-family: var(--sans);
     font-size: 0.85rem;
     font-style: italic;
     color: var(--muted);
@@ -526,10 +745,14 @@ body {
     display: block;
     text-align: center;
     margin: 3rem 0 1rem;
-    color: var(--accent);
+    font-family: var(--sans);
+    color: var(--accent-deep);
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
 }
+
+.back-link:hover { text-decoration: underline; }
 
 /* shared post list (archive pages + post "related" sections) */
 .post-list {
@@ -540,12 +763,13 @@ body {
 .post-list li {
     display: flex;
     flex-direction: column;
-    gap: 0.2rem;
+    gap: 0.25rem;
 }
 
-.post-list a { font-size: 1.15rem; }
+.post-list a { font-size: 1.2rem; }
 
 .post-list-meta {
+    font-family: var(--sans);
     color: var(--muted);
     font-size: 0.85rem;
 }
@@ -558,7 +782,7 @@ body {
     gap: 1rem;
     max-width: 220px;
     margin: 2.5rem auto 0;
-    color: var(--ink);
+    color: var(--accent);
 }
 
 .ornament::before,
@@ -566,14 +790,11 @@ body {
     content: "";
     flex: 1;
     height: 1px;
-    background: var(--ink);
-    opacity: 0.35;
+    background: var(--accent);
+    opacity: 0.4;
 }
 
 .ornament-glyph {
-    width: 7px;
-    height: 7px;
     flex: none;
-    background: var(--ink);
-    transform: rotate(45deg);
+    color: var(--accent);
 }

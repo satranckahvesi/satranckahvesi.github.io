@@ -4,11 +4,10 @@ layout: default
 {% assign author_slug = page.author | slugify: "latin" %}
 {% assign column_slug = page.column | slugify: "latin" %}
 <article class="post">
+    <p class="eyebrow post-kicker"><a href="{{ '/koseler/' | append: column_slug | append: '/' | relative_url }}">{{ page.column }}</a></p>
     <h1 class="post-title">{{ page.title }}</h1>
     <p class="post-meta">
         <a href="{{ '/yazarlar/' | append: author_slug | append: '/' | relative_url }}">{{ page.author }}</a>
-        ·
-        <a href="{{ '/koseler/' | append: column_slug | append: '/' | relative_url }}">{{ page.column }}</a>
         · {% include turkish-date.html date=page.date %}
     </p>
     <div class="post-body">
@@ -25,6 +24,7 @@ layout: default
 {% if other_column_posts.size > 0 %}
 {% include ornament.html %}
 <div class="section post-related">
+    <p class="eyebrow">İlgili yazılar</p>
     <h2>{{ page.column }} köşesindeki diğer yazılar</h2>
     <ul class="post-list">
         {% for post in other_column_posts %}
@@ -40,6 +40,7 @@ layout: default
 {% if other_author_posts.size > 0 %}
 {% include ornament.html %}
 <div class="section post-related">
+    <p class="eyebrow">Aynı kalemden</p>
     <h2>Yazarın diğer yazıları</h2>
     <ul class="post-list">
         {% for post in other_author_posts %}
