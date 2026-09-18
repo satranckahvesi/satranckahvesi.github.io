@@ -99,11 +99,11 @@ Yön hareketi gibi benim de ne kadar başarılı olduğum sorgulanabilir kuşkus
 
 Bu arada tabii ki Münih'i de gezmeye çalışıyordum. Marienplatz ana meydanı merkezli eski şehir Alman Ortaçağ kentlerini sevenleri -her ne kadar savaş sonrası neredeyse yeniden inşa edildiyse de- belki tatmin edebilir fakat eğer benim gibi ana meydanda eski belediye binası, katedral ve etrafına sıralanmış binalar şeklindeki şehir planından nefret ediyorsanız Sultanahmet'ten devam etmenizi öneririm. Fakat Münih'e gezmeye gelmiş X. ile buluştuğumuz gün gittiğimiz meşhur Hofbraeuhaus München'in fazla turistik yerleri sevmeyen beni şaşırtan güzel bir yemek ve bira sunduğunu kabul etmem gerekiyor. Turdan önce bira mı içtin diye soracak olanlara şimdiden söyleyeyim, cevabım tabii ki de evet.
 
-![Hofbräuhaus München'de bir ayran]({{ '/assets/img/whitsun/hofbraeuhaus.jpg' | relative_url }} "Hofbraeuhaus München'in meşhur bardağında bir ayran.")
+![Hofbräuhaus München'de bir ayran]({{ '/assets/img/whitsun/hofbraeuhaus.jpg' | relative_url }} "Hofbraeuhaus München'in meşhur bardağında bir ayran."){: loading="lazy" decoding="async"}
 
 Bir parantez de kitapçı Hugendubel'a açmam lazım. Stuttgart'ta da gittiğim bu kitapçının Münih şubesi çok etkileyici değilse de yine de bana paramı harcatmayı başardı. Buradan aldığım Ödon von Horvath'ın "Jugend ohne Gott" (Tanrısız Gençlik) adlı kısa romanı bana ilk turlarda eşlik etti. Nazi döneminin çocuklara ve okullara kadar inen korkunçluğunu anlatan çarpıcı bir eser ve bunu Münih'te okumuş olmam da belki kitabın etkisini artırdı. Türkçeye de çevrilmiş bu novellayı okumadıysanız okumanızı tavsiye ederim.
 
-![Jugend ohne Gott]({{ '/assets/img/whitsun/jugend-ohne-gott.jpg' | relative_url }} "Ödon von Horvath'ın Jugend ohne Gott'u, açık hava kahvesinde bir ayranla.")
+![Jugend ohne Gott]({{ '/assets/img/whitsun/jugend-ohne-gott.jpg' | relative_url }} "Ödon von Horvath'ın Jugend ohne Gott'u, açık hava kahvesinde bir ayranla."){: loading="lazy" decoding="async"}
 
 İlk üç tur sonunda böylece iki puandaydım ve dördüncü tur eşlendirmesi açıklanmadan kimin geleceğini biliyordum. Aslında daha başlangıç listesini gördüğüm andan itibaren oynayacağımızı biliyordum zira genç Bulgar IM Stoyanov ile aynı turnuvada oynayıp da karşılaşmadığımız hiç olmadı! Skorum bir mağlubiyet ve beraberlik şeklindeydi ve durumu eşitlemek istiyordum. Maalesef bunu başaramadım ama kısa ve acısız bir beraberlik oldu, şikayetçi değilim.
 
@@ -295,11 +295,11 @@ Günümüzde oynanan açık turnuvaları takip ediyorsanız özellikle son turla
 
 Shakespeare'in dediği gibi "all's well that ends well", sonu iyi biten her şey iyidir. Mutlu bir şekilde son turdan çıkıp yemeğimi yedim ve akşamki konserin yolunu tuttum. Genç Gürcü piyanist Giorgi Gigaşvili'ye aslında Kütahyalı bir Ermeni olan anne tarafımdan hemşerim Fransız Alexandre Altınoğlu'nun şefliğindeki Münih Filharmoni eşlik ediyordu ve bu Küçük Asya-Kafkasya paktına bir Türk olarak mutlaka eşlik etmem gerekiyordu. Mussorgski'nin "Hovanşçina" uvertürü, Haçaturyan'ın Ermeni ezgilerinin yer yer hissedildiği piyano konçertosu ve Bizet'in meşhur "L'Arlesienne" süitleri romantik ve popüler bir program sunuyordu ve birçok ihtiyar Almanla aynı salonda olacağımı maalesef biliyordum.
 
-![Münih Filarmoni konseri]({{ '/assets/img/whitsun/konser-salonu.jpg' | relative_url }} "Münih Filarmoni'nin konser salonundan, orkestranın hazırlığı esnasında.")
+![Münih Filarmoni konseri]({{ '/assets/img/whitsun/konser-salonu.jpg' | relative_url }} "Münih Filarmoni'nin konser salonundan, orkestranın hazırlığı esnasında."){: loading="lazy" decoding="async"}
 
 Bilmediğim şey ise konser salonunun Gasteig HP8 denilen bir komplekste olduğu ve bu kültür merkezinin tam da Hitler'in 1923'teki başarısız Birahane Darbesi'nin cereyan ettiği birahanenin üzerine kurulduğuydu! Işıklar kararıp konser başladığında salonun siyah panelleri faşizmin karasına karıştı, Horvath'ın Allahsız gençliği Mussorgski'nin ezgileriyle hopak oynarken yanımdaki ihtiyar amcalar yeniden 1939 senesinde oldukları gibi tonton bebeler halinde "Ich bin" diyerek gülüyorlardı. Arlesli kızın aşkından Frederi deliye dönerken Klaus Junge bir kombinezon patlatıyor, Alman tankları Maginot hattını Tal gibi ezip geçiyor, Alekhine eşinin malvarlığını kurtarmak için şeytanla iş birliği yapıyordu. Fakat neden sonra müzik kesildi ve coşkulu alkışlardan yorulmuş ihtiyar Almanlarla birlikte sel halinde dışarı çıkarken satrancın ve müziğin tadının bilardodan da Almanlıktan da daha üstün olduğunu düşünüyordum. Otele geldim ve 13 ELO kazancının huzuruyla derin bir uykuya daldım.
 
-![Gasteig HP8]({{ '/assets/img/whitsun/gasteig.jpg' | relative_url }} "Konser salonunun bulunduğu Gasteig HP8 kompleksinin fuayesi.")
+![Gasteig HP8]({{ '/assets/img/whitsun/gasteig.jpg' | relative_url }} "Konser salonunun bulunduğu Gasteig HP8 kompleksinin fuayesi."){: loading="lazy" decoding="async"}
 
 ### Künye
 
