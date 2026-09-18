@@ -289,14 +289,27 @@ body {
     .post-body pgn-study > pgn-player {
         flex: 0 1 auto;
     }
+}
 
-    /* By default (outside its "article view" toggle), ChessPublica shows
-       only the board on mobile and hides .pgn-container — which is where
-       the comments actually live, interleaved with the move text — so
-       comments never appear unless the reader taps the toggle. Show it
-       stacked under the board instead of hiding it behind that toggle. */
-    .post-body pgn-study > .pgn-container {
+/* By default (outside its "article view" toggle), ChessPublica shows only
+   the board on mobile and keeps .pgn-container — the full move list, with
+   comments interleaved in the move text — hidden. Showing that whole
+   thing under the board was too much (a wall of move text with the one
+   active comment barely standing out); instead post.html's script mirrors
+   just the active comment's own HTML into this element, which lives right
+   after the nav buttons. Hidden by default (including on desktop, where
+   the full move list with inline comments is already visible in the side
+   panel); shown only on mobile, and only once it actually has content. */
+.pgn-study-mobile-comment {
+    display: none;
+}
+
+@media (max-width: 899px) {
+    .pgn-study-mobile-comment.has-content {
         display: block;
+        margin: 0.75rem 0 0;
+        padding: 0 0.5rem;
+        color: var(--ink);
     }
 }
 
