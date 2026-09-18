@@ -10,7 +10,7 @@ layout: default
   <ul>
     {% for col in columns %}
     {% assign col_slug = col | slugify: "latin" %}
-    {% assign latest = site.posts | where: "column", col | first %}
+    {% assign latest = site.posts | where: "column", col | sort: "date" | last %}
     {% assign author_slug = latest.author | slugify: "latin" %}
     <li>
       <a href="{{ '/koseler/' | append: col_slug | append: '/' | relative_url }}">{{ col }}</a>
