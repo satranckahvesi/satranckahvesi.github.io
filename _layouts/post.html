@@ -188,6 +188,17 @@ layout: default
     // Rather than guess at every trigger, the observer below keeps running
     // for the life of the page and strips that class the instant it's
     // added, so the panel can never actually end up collapsed.
+    // Prev/next buttons under the board simulate a click on the
+    // corresponding move in the move list instead of calling into
+    // ChessPublica directly — there's no documented API for "step to move
+    // N", but clicking a move to jump to it is confirmed, real behavior
+    // (.pgn-move has its own hover/active styling for exactly this).
+    var pgnStudyNavIcons = {
+        prev: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 6 9 12 15 18"/></svg>',
+        next: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>'
+    };
+    var pgnStudyNavLabels = { prev: 'Bir hamle geri', next: 'Bir hamle ileri' };
+
     var studies = Array.prototype.slice.call(document.querySelectorAll('.post-body pgn-study'));
     studies.forEach(function (study) {
         var readyHandled = false;
@@ -209,10 +220,49 @@ layout: default
                     btn.title = 'Ayarlar';
                 }
             });
+
+            if (!study.querySelector('.pgn-study-nav')) {
+                var boardWrapper = study.querySelector('.cp-board-wrapper');
+                if (boardWrapper) {
+                    var nav = document.createElement('div');
+                    nav.className = 'pgn-study-nav';
+                    ['prev', 'next'].forEach(function (dir) {
+                        var btn = document.createElement('button');
+                        btn.type = 'button';
+                        btn.className = 'pgn-study-nav-btn';
+                        btn.setAttribute('aria-label', pgnStudyNavLabels[dir]);
+                        btn.title = pgnStudyNavLabels[dir];
+                        btn.innerHTML = pgnStudyNavIcons[dir];
+                        btn.addEventListener('click', function () {
+                            var moves = Array.prototype.slice.call(study.querySelectorAll('.pgn-move'));
+                            if (!moves.length) return;
+                            var activeIndex = moves.findIndex(function (m) { return m.classList.contains('pgn-move-active'); });
+                            var targetIndex = dir === 'next' ? (activeIndex === -1 ? 0 : activeIndex + 1) : activeIndex - 1;
+                            var target = moves[targetIndex];
+                            if (target) target.click();
+                        });
+                        nav.appendChild(btn);
+                    });
+                    boardWrapper.insertAdjacentElement('afterend', nav);
+                }
+            }
         }
         function stripCollapsed() {
             if (study.classList.contains('pgn-study-collapsed')) {
                 study.classList.remove('pgn-study-collapsed');
+            }
+        }
+        // ChessPublica inserts the variation picker right after the board
+        // too, whenever a branch point comes up during navigation — after
+        // our nav buttons already exist. Re-asserting the buttons'
+        // position on every mutation (instead of only once) means however
+        // late the picker shows up, it always ends up pushed below the
+        // buttons rather than between them and the board.
+        function keepNavUnderBoard() {
+            var boardWrapper = study.querySelector('.cp-board-wrapper');
+            var nav = study.querySelector('.pgn-study-nav');
+            if (boardWrapper && nav && boardWrapper.nextElementSibling !== nav) {
+                boardWrapper.insertAdjacentElement('afterend', nav);
             }
         }
         stripCollapsed();
@@ -226,8 +276,9 @@ layout: default
                 onReady();
                 readyHandled = true;
             }
+            keepNavUnderBoard();
         });
-        observer.observe(study, { attributes: true, attributeFilter: ['class'] });
+        observer.observe(study, { attributes: true, attributeFilter: ['class'], childList: true, subtree: true });
     });
 })();
 </script>

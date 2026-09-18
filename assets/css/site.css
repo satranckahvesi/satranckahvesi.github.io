@@ -302,6 +302,35 @@ body {
     font-size: 1rem;
 }
 
+/* Prev/next move buttons, inserted by post.html's script directly after
+   the board (.cp-board-wrapper). Same visual style as .pgn-switcher-btn,
+   for consistency across the site's pgn-related icon buttons. */
+.pgn-study-nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0.75rem 0;
+}
+
+.pgn-study-nav-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    padding: 0;
+    border: 1px solid var(--hairline);
+    border-radius: 50%;
+    background: #fff;
+    color: var(--muted);
+    cursor: pointer;
+    transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+}
+
+.pgn-study-nav-btn svg { width: 1.5rem; height: 1.5rem; }
+
+.pgn-study-nav-btn:hover { color: var(--ink); border-color: var(--ink); }
+
 /* The board's own size is separately capped at a flat min(600px, 94cqw),
    which would otherwise keep it a fixed pixel size regardless of how wide
    its grid column actually is. Dropping the flat cap keeps the board
