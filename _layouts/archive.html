@@ -10,10 +10,16 @@ layout: default
     <h2>{{ page.title }}</h2>
     <ul class="post-list">
         {% for post in posts %}
+        {% assign author_slug = post.author | slugify: "latin" %}
+        {% assign column_slug = post.column | slugify: "latin" %}
         <li>
             <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
             <span class="post-list-meta">
-                {% if page.archive_type == "column" %}{{ post.author }}{% else %}{{ post.column }}{% endif %}
+                {% if page.archive_type == "column" %}
+                <a href="{{ '/yazarlar/' | append: author_slug | append: '/' | relative_url }}">{{ post.author }}</a>
+                {% else %}
+                <a href="{{ '/koseler/' | append: column_slug | append: '/' | relative_url }}">{{ post.column }}</a>
+                {% endif %}
                 · {% include turkish-date.html date=post.date %}
             </span>
         </li>

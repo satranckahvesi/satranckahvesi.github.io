@@ -613,6 +613,11 @@ body {
     font-size: 0.85rem;
 }
 
+.post-list-meta a {
+    color: var(--muted);
+    text-decoration: none;
+}
+
 /* section-end ornament (fleuron) */
 .ornament {
     display: flex;
