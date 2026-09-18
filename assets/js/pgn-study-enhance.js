@@ -237,6 +237,23 @@
             var commentDisplay = study.querySelector('.pgn-study-mobile-comment');
             if (!commentDisplay) return;
             var active = study.querySelector('.pgn-comment.pgn-comment-active, .pgn-comment-inline.pgn-comment-active');
+            // Only a variation's own first move carries a comment of its
+            // own — every step after it has none, so without this check
+            // this would blank the display right after that first step,
+            // even though the reader is still inside the very same
+            // variation (confirmed directly: engine._variation on the
+            // study's internal <pgn-player> stays truthy the whole time
+            // they're in it, only going false once they leave it back to
+            // the mainline). Leaving whatever was last mirrored in place
+            // while that holds keeps the variation's text under the board
+            // for as long as they're still in it; the moment they leave,
+            // this same function runs again for the mainline position
+            // that follows and clears/updates normally.
+            if (!active) {
+                var innerPlayer = study.querySelector('pgn-player');
+                var engine = innerPlayer && innerPlayer._engine;
+                if (engine && engine._variation) return;
+            }
             // Identity check rather than a content diff: this re-runs on
             // every DOM mutation the observer below sees, most of which
             // have nothing to do with which comment is active, and the

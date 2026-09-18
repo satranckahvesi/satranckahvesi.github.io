@@ -19,6 +19,7 @@ layout: default
 <script src="{{ '/assets/js/pgn-detect.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/pgn-study-enhance.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/pgn-study-glyph-fix.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/pgn-player-variation-fix.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/js/puzzle-localize.js' | relative_url }}" defer></script>
 
 {% assign other_column_posts = site.posts | where: "column", page.column | where_exp: "post", "post.url != page.url" %}
