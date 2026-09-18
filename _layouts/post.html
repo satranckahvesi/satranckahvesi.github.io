@@ -260,6 +260,28 @@ layout: default
                     btn.title = pgnStudyNavLabels[dir];
                     btn.innerHTML = pgnStudyNavIcons[dir];
                     btn.addEventListener('click', function () {
+                        // At a branch point, ChessPublica shows a
+                        // .pgn-study-move-picker instead of just advancing
+                        // — its own goTo() is wrapped to refuse a plain
+                        // "next" step there (confirmed directly in its
+                        // bundle: calling goTo(index + 1) at that exact
+                        // index resets right back to index and pauses,
+                        // rather than moving), until the reader picks a
+                        // row. Its own mainline row (always present
+                        // whenever a picker is, whether for the main line
+                        // or a branch inside a variation) is what actually
+                        // continues past it — its click handler is the one
+                        // thing that flips the internal flag goTo's guard
+                        // checks, which nothing outside the bundle can set
+                        // directly. Clicking that row ourselves reproduces
+                        // exactly what a reader clicking it would do; the
+                        // plain ArrowRight dispatch below would otherwise
+                        // silently do nothing at a branch point.
+                        var mainlineRow = dir === 'next' ? study.querySelector('.pgn-study-picker-row.mainline') : null;
+                        if (mainlineRow) {
+                            mainlineRow.click();
+                            return;
+                        }
                         study.dispatchEvent(new MouseEvent('mouseenter'));
                         document.dispatchEvent(new KeyboardEvent('keydown', {
                             code: dir === 'next' ? 'ArrowRight' : 'ArrowLeft',
