@@ -258,6 +258,36 @@ layout: default
 
             var ribbon = study.querySelector('.pgn-study-ribbon');
             if (ribbon && !study.querySelector('[data-pgn-nav]')) {
+                function navigate(dir) {
+                    // At a branch point, ChessPublica shows a
+                    // .pgn-study-move-picker instead of just advancing —
+                    // its own goTo() is wrapped to refuse a plain "next"
+                    // step there (confirmed directly in its bundle:
+                    // calling goTo(index + 1) at that exact index resets
+                    // right back to index and pauses, rather than
+                    // moving), until the reader picks a row. Its own
+                    // mainline row (always present whenever a picker is,
+                    // whether for the main line or a branch inside a
+                    // variation) is what actually continues past it —
+                    // its click handler is the one thing that flips the
+                    // internal flag goTo's guard checks, which nothing
+                    // outside the bundle can set directly. Clicking that
+                    // row ourselves reproduces exactly what a reader
+                    // clicking it would do; the plain ArrowRight dispatch
+                    // below would otherwise silently do nothing at a
+                    // branch point.
+                    var mainlineRow = dir === 'next' ? study.querySelector('.pgn-study-picker-row.mainline') : null;
+                    if (mainlineRow) {
+                        mainlineRow.click();
+                        return;
+                    }
+                    study.dispatchEvent(new MouseEvent('mouseenter'));
+                    document.dispatchEvent(new KeyboardEvent('keydown', {
+                        code: dir === 'next' ? 'ArrowRight' : 'ArrowLeft',
+                        bubbles: true
+                    }));
+                }
+
                 var insertAfter = playBtn;
                 ['prev', 'next'].forEach(function (dir) {
                     var btn = document.createElement('button');
@@ -268,33 +298,7 @@ layout: default
                     btn.title = pgnStudyNavLabels[dir];
                     btn.innerHTML = pgnStudyNavIcons[dir];
                     btn.addEventListener('click', function () {
-                        // At a branch point, ChessPublica shows a
-                        // .pgn-study-move-picker instead of just advancing
-                        // — its own goTo() is wrapped to refuse a plain
-                        // "next" step there (confirmed directly in its
-                        // bundle: calling goTo(index + 1) at that exact
-                        // index resets right back to index and pauses,
-                        // rather than moving), until the reader picks a
-                        // row. Its own mainline row (always present
-                        // whenever a picker is, whether for the main line
-                        // or a branch inside a variation) is what actually
-                        // continues past it — its click handler is the one
-                        // thing that flips the internal flag goTo's guard
-                        // checks, which nothing outside the bundle can set
-                        // directly. Clicking that row ourselves reproduces
-                        // exactly what a reader clicking it would do; the
-                        // plain ArrowRight dispatch below would otherwise
-                        // silently do nothing at a branch point.
-                        var mainlineRow = dir === 'next' ? study.querySelector('.pgn-study-picker-row.mainline') : null;
-                        if (mainlineRow) {
-                            mainlineRow.click();
-                            return;
-                        }
-                        study.dispatchEvent(new MouseEvent('mouseenter'));
-                        document.dispatchEvent(new KeyboardEvent('keydown', {
-                            code: dir === 'next' ? 'ArrowRight' : 'ArrowLeft',
-                            bubbles: true
-                        }));
+                        navigate(dir);
                     });
                     if (insertAfter) {
                         insertAfter.insertAdjacentElement('afterend', btn);
@@ -302,6 +306,37 @@ layout: default
                         ribbon.appendChild(btn);
                     }
                     insertAfter = btn;
+                });
+
+                // A real ArrowLeft/ArrowRight press already reaches
+                // ChessPublica's own keydown handler directly (it's
+                // listening on document too), which is exactly right
+                // outside a branch point — nothing to add there. At one,
+                // its own handler is the thing that silently does
+                // nothing (see navigate()'s own comment above), so this
+                // only steps in for that one case, via the same
+                // mainline-row click navigate() uses, leaving every
+                // other key handled exactly as ChessPublica already
+                // handles it (including which study counts as "active":
+                // a real key event carries that naturally, unlike the
+                // buttons' own synthetic one, so there's no need to
+                // reproduce that part here). isTrusted excludes
+                // navigate()'s own synthetic dispatch, so this can't
+                // loop back into itself; the input/textarea guard
+                // mirrors ChessPublica's own same check for a real key
+                // event, so typing elsewhere on the page isn't hijacked.
+                document.addEventListener('keydown', function (e) {
+                    if (!e.isTrusted) return;
+                    var dir = e.code === 'ArrowRight' ? 'next' : e.code === 'ArrowLeft' ? 'prev' : null;
+                    if (!dir) return;
+                    var active = document.activeElement;
+                    var tag = active && active.tagName;
+                    if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || (active && active.isContentEditable)) return;
+                    var mainlineRow = dir === 'next' ? study.querySelector('.pgn-study-picker-row.mainline') : null;
+                    if (mainlineRow) {
+                        e.preventDefault();
+                        mainlineRow.click();
+                    }
                 });
             }
 
