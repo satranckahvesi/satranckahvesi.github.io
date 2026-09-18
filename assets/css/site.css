@@ -93,6 +93,18 @@ body {
 
 .section li > a:hover { border-bottom-color: var(--ink); }
 
+/* Matches .section h2 exactly (font, style, weight, size): this link
+   shows the same column name an archive page's own title does (e.g.
+   "Fincan başı sohbetler" on /koseler/fincan-basi-sohbetler/), so it
+   should look identical, not just share the base .section li > a
+   link treatment every other link in this list gets. */
+.section .section-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
 .section-latest {
     display: block;
     margin-top: 0.3rem;
@@ -132,6 +144,7 @@ body {
 .section .section-meta a {
     font-size: inherit;
     color: var(--muted);
+    text-decoration: none;
 }
 
 .avatar-list {
