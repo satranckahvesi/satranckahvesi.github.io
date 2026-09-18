@@ -2,9 +2,9 @@
 layout: default
 ---
 {% if page.archive_type == "column" %}
-{% assign posts = site.posts | where: "column", page.archive_value %}
+{% assign posts = site.posts | where: "column", page.archive_value | sort: "date" | reverse %}
 {% else %}
-{% assign posts = site.posts | where: "author", page.archive_value %}
+{% assign posts = site.posts | where: "author", page.archive_value | sort: "date" | reverse %}
 {% endif %}
 <div class="section archive">
     <h2>{{ page.title }}</h2>
