@@ -164,9 +164,9 @@ layout: default
 (function () {
     // pgn-study's two desktop columns are sized by its own CSS as
     // var(--left-col-width) 6px var(--right-col-width) — ChessPublica's
-    // own default for those two custom properties (1fr/2fr) reads as a
-    // roughly-even split in practice, not the 2fr/1fr (board noticeably
-    // wider than the move list) this site wants, so they're set once
+    // own default for those two custom properties reads as a
+    // roughly-even split in practice, not the 1fr/2fr (move list wider
+    // than the board) this site wants, so they're set explicitly once
     // here, at "cp-ready". Only the custom properties are touched, never
     // grid-template-columns itself: an earlier version of this script set
     // that whole property directly, as a hardcoded literal — a plain
@@ -220,8 +220,8 @@ layout: default
     studies.forEach(function (study) {
         var readyHandled = false;
         function onReady() {
-            study.style.setProperty('--left-col-width', '2fr');
-            study.style.setProperty('--right-col-width', '1fr');
+            study.style.setProperty('--left-col-width', '1fr');
+            study.style.setProperty('--right-col-width', '2fr');
 
             var buttons = Array.prototype.slice.call(study.querySelectorAll('.pgn-study-ribbon-btn'));
             var playBtn = null;
