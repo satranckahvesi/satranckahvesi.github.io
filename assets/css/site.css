@@ -57,11 +57,15 @@ body {
     font-family: 'Playfair Display', Georgia, serif;
     font-style: italic;
     font-weight: 600;
-    /* Never larger than the masthead's own <h1> (.logo) at any
-       viewport width: 1.35rem exactly matches its fluid clamp()'s
-       mobile-safe floor, the narrowest point that clamp ever reaches
-       — everywhere wider, the h1 has already grown past it. */
-    font-size: 1.35rem;
+    /* Standard heading scale (h1 2em / h2 1.5em / h3 1.17em, the same
+       ratios browsers use by default) rather than a hand-tuned rem
+       value. The masthead's own <h1> (.logo) is deliberately still a
+       fluid clamp() rather than a flat 2em (it has to fit on one
+       line next to the logo image down to a 320px viewport), so
+       unlike before, this flat 1.5em isn't guaranteed to stay under
+       it at every width — only at the typical ones where the clamp
+       has already grown well past its 1.35rem mobile floor. */
+    font-size: 1.5em;
     line-height: 1.2;
     color: var(--ink);
     margin: 0 0 1.25rem;
@@ -82,7 +86,7 @@ body {
     font-family: 'Playfair Display', Georgia, serif;
     font-style: italic;
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1.17em;
     line-height: 1.2;
     color: var(--ink);
     margin: 0 0 1.25rem;
@@ -123,12 +127,15 @@ body {
    page's own <h1> masthead and this section's <h2>), so it's no
    longer a direct child of li and .section li > a's cascade doesn't
    reach it — styled fully standalone instead of layering on top of
-   that rule. Shares .section h2's font (this link shows the same
-   column name an archive page's own title does, e.g. "Fincan başı
-   sohbetler" on /koseler/fincan-basi-sohbetler/) but not its size:
-   as an <h3>, one step below that <h2>, it needs to read smaller. */
+   that rule. font-size set here, on the <h3> itself, rather than on
+   .section-title below: the browser's own default h3 size is already
+   1.17em (confirmed directly — it's the same standard heading scale
+   this site now uses explicitly elsewhere), so declaring 1.17em again
+   on the <a> inside it would compound to 1.17em of 1.17em. Setting it
+   once here and letting .section-title simply inherit avoids that. */
 .section li h3 {
     margin: 0;
+    font-size: 1.17em;
 }
 
 .section .section-title {
@@ -140,9 +147,6 @@ body {
     font-family: 'Playfair Display', Georgia, serif;
     font-style: italic;
     font-weight: 600;
-    /* Below .section h2's own 1.3rem, same reasoning: an <h3> should
-       read smaller than the <h2> above it. */
-    font-size: 1.1rem;
 }
 
 .section .section-title:hover { border-bottom-color: var(--ink); }
@@ -276,7 +280,8 @@ body {
     font-family: 'Playfair Display', Georgia, serif;
     font-style: italic;
     font-weight: 600;
-    font-size: 2.1rem;
+    /* Standard heading scale (h1 2em / h2 1.5em / h3 1.17em). */
+    font-size: 2em;
     line-height: 1.2;
     color: var(--ink);
     margin: 0 0 0.5rem;
