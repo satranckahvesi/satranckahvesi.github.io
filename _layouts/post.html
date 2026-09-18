@@ -162,16 +162,20 @@ layout: default
 </script>
 <script>
 (function () {
-    // pgn-study's two desktop columns (move list / board) are user-resizable
-    // via a drag splitter, which sets grid-template-columns as an inline
-    // style — that means a plain stylesheet rule can never fix the split
-    // ChessPublica opens with (an inline style always wins over a
-    // non-!important stylesheet rule), and using !important to force it
-    // would equally block the reader from ever dragging it afterward. So
-    // instead: wait for each pgn-study element to finish ChessPublica's own
-    // setup (signaled by its "cp-ready" class), set the column split once
-    // to 1fr/2fr right then, and stop watching — any later drag just
-    // updates the same inline style normally, same as if we'd never touched it.
+    // pgn-study's two desktop columns are sized by its own CSS as
+    // var(--left-col-width) 6px var(--right-col-width), with
+    // --left-col-width/--right-col-width already defaulting to 1fr/2fr in
+    // ChessPublica's own stylesheet (confirmed directly) — its drag
+    // splitter almost certainly works by updating those same custom
+    // properties, not the grid-template-columns shorthand itself. An
+    // earlier version of this script set grid-template-columns directly,
+    // as a hardcoded literal, once at "cp-ready" — that's a plain value,
+    // not a var() reference, so it silently froze the split forever and
+    // made the splitter stop doing anything visible, however it updates
+    // the custom properties afterward. Left alone (not touched here at
+    // all — the 1fr/2fr default already matches what we want), the
+    // stylesheet's own var()-based rule keeps reacting normally to
+    // whatever sets those properties next, including a drag.
     //
     // The same "cp-ready" signal is also the first point at which the
     // ribbon's buttons exist, so it's reused here to prune/relabel them.
@@ -207,10 +211,6 @@ layout: default
     studies.forEach(function (study) {
         var readyHandled = false;
         function onReady() {
-            study.style.setProperty('--left-col-width', '1fr');
-            study.style.setProperty('--right-col-width', '2fr');
-            study.style.setProperty('grid-template-columns', '1fr 6px 2fr');
-
             var buttons = Array.prototype.slice.call(study.querySelectorAll('.pgn-study-ribbon-btn'));
             var playBtn = null;
             buttons.forEach(function (btn) {
