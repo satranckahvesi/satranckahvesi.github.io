@@ -14,24 +14,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
     <style>
+        /* Logo, wordmark and gap scale fluidly with viewport width instead
+           of jumping at a single breakpoint, so the masthead actually
+           widens to fill typical phone screens (previously pinned at its
+           narrow 320px-safe minimum on every mobile width) while still
+           fitting one line down to a 320px viewport and matching the
+           existing desktop size once it reaches 640px. Each clamp's
+           preferred value is a straight line through those same two
+           reference points (320px -> mobile minimum, 640px -> desktop
+           size), so nothing changes at either end — only the sizes
+           between them are now filled in continuously. */
         .brand {
             display: inline-flex;
             flex-direction: row;
             align-items: center;
-            gap: 0.75rem;
+            gap: clamp(0.75rem, 0.2rem + 2.9vw, 1.3rem);
         }
-        .site-logo { width: 56px; height: 56px; flex: none; }
+        .site-logo {
+            width: clamp(56px, 17.5vw, 112px);
+            height: clamp(56px, 17.5vw, 112px);
+            flex: none;
+        }
         .logo {
             font-family: 'Playfair Display', serif;
             font-style: italic;
-            font-size: 1.35rem;
+            font-size: clamp(1.35rem, 0.1rem + 6.6vw, 2.6rem);
             font-weight: 400;
             color: #16283a;
-        }
-        @media (min-width: 640px) {
-            .brand { gap: 1.3rem; }
-            .site-logo { width: 112px; height: 112px; }
-            .logo { font-size: 2.6rem; }
         }
     </style>
 </head>
