@@ -88,11 +88,62 @@
         // under (confirmed directly in its CSS) regardless of which of
         // the three views (pgn/pgn-player/pgn-study) is showing.
         var commentSelector = '.pgn-comment, .pgn-comment-inline, .video-comment, .variation-comment, .comment-text-block';
+
+        // Walks up from a text node (or the node itself) looking for a
+        // comment element, without ever climbing past one — unlike
+        // insideSkippedElement this has no root to stop at, so it's only
+        // ever handed nodes that are already inside .post-body. Finding
+        // one here is exactly the signal that a node belongs to genuine
+        // author prose (a comment ChessPublica rendered) rather than
+        // still-raw PGN/FEN source text, which is what actually keeps
+        // this safe to use without also re-checking skipTags: raw PGN
+        // sitting under <pgn>/<pgn-player>/<pgn-study> before ChessPublica
+        // has parsed it is never inside a commentSelector element, so it
+        // can never match here and get curly-quoted early.
+        function closestCommentAncestor(node) {
+            var el = node.nodeType === 1 ? node : node.parentElement;
+            while (el) {
+                if (el.matches && el.matches(commentSelector)) return el;
+                el = el.parentElement;
+            }
+            return null;
+        }
+
         var body = document.querySelector('.post-body');
         if (body && (body.querySelector('pgn, pgn-player, pgn-study'))) {
+            // Stepping through a side-line replaces a comment element's
+            // text in place rather than swapping in a fresh element:
+            // confirmed directly in assets/js/pgn-player-variation-fix.js,
+            // ChessPublica wipes and rebuilds .video-comment on every ply
+            // and keeps reusing the same live .variation-content node
+            // across that rebuild. A plain childList/subtree observer
+            // still fires for that update, but its addedNodes entry is
+            // the new Text node dropped into the *existing* element, not
+            // a new element — the old code's `added.nodeType !== 1`
+            // check discarded exactly that record, so a side-line's
+            // reused comment element only ever got curly-quoted once,
+            // for whatever text it happened to hold the first time a
+            // matching *element* was added. Every straight apostrophe
+            // this site has shipped in prose (as opposed to raw PGN) has
+            // turned out to sit inside a side-line for exactly this
+            // reason. Handling text-node addedNodes, and also watching
+            // characterData directly (in case a future ChessPublica
+            // version sets node.data instead of replacing children),
+            // covers both ways that reused element could end up with new
+            // text without ever firing as an added *element*.
             var observer = new MutationObserver(function (mutations) {
                 mutations.forEach(function (mutation) {
+                    if (mutation.type === 'characterData') {
+                        var owner = closestCommentAncestor(mutation.target);
+                        if (owner) curlyPass(owner);
+                        return;
+                    }
                     mutation.addedNodes.forEach(function (added) {
+                        if (added.nodeType === 3) {
+                            var textOwner = closestCommentAncestor(added);
+                            if (textOwner) curlyPass(textOwner);
+                            return;
+                        }
                         if (added.nodeType !== 1) return;
                         if (added.matches && added.matches(commentSelector)) curlyPass(added);
                         if (added.querySelectorAll) {
@@ -101,7 +152,7 @@
                     });
                 });
             });
-            observer.observe(body, { childList: true, subtree: true });
+            observer.observe(body, { childList: true, subtree: true, characterData: true });
         }
     }
 
