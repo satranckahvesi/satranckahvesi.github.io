@@ -385,6 +385,35 @@ body {
     height: 2rem;
 }
 
+/* On mobile, pgn-study's ribbon can hold up to 7 buttons at once: Play,
+   our own prev/next, and ChessPublica's own download/speed/flip-board/
+   settings — all still fixed at their desktop size (3rem square,
+   .25rem gaps; ChessPublica only shrinks the icon glyphs themselves at
+   this width, not the buttons around them, confirmed directly in its
+   CSS), which doesn't fit a typical phone width — reported directly,
+   with a screenshot showing Settings clipped off the right edge.
+   Shrinking the buttons and tightening the gap between them (matched
+   here by shrinking our own nav icons and ChessPublica's own icons,
+   which it already scales to 1.6rem at this width, to fit their
+   smaller buttons proportionally) buys back enough width for all 7 to
+   fit without needing to touch the ribbon's own horizontal padding. */
+@media (max-width: 899px) {
+    .post-body pgn-study .pgn-study-ribbon-btn {
+        width: 2.25rem;
+        height: 2.25rem;
+    }
+
+    .post-body pgn-study .pgn-study-ribbon-btn .lucide-icon,
+    .post-body pgn-study .pgn-study-ribbon-btn[data-pgn-nav] svg {
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+
+    .post-body pgn-study .pgn-study-ribbon-group {
+        gap: 0.1rem;
+    }
+}
+
 /* On desktop, pgn-study is display: grid with an explicit 1fr/6px/2fr
    column template (board / resizer / move list), filled by plain
    auto-placement — none of its three original children carry an explicit
