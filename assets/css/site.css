@@ -74,17 +74,16 @@ body {
 }
 
 /* Direct-child combinator, not a plain descendant selector: .section
-   li also contains .section-latest/.section-date/.section-author,
-   each with their own link and size, nested inside a span rather
-   than sitting as a direct child of li like the column-name link
-   this rule is actually meant for. A descendant selector here used
-   to match those nested links too and had to be out-specificity'd by
-   .section .section-latest a / .section .section-author a further
-   down — a losing fight once .is-home's own font-size for this rule
-   entered the same specificity tier (confirmed directly: the
-   author's name was rendering at the column-link's 1.32rem instead
-   of inheriting its own span's 0.96rem). Scoping to > fixes it at
-   the source instead. */
+   li also contains .section-latest/.section-meta, each with their own
+   link and size, nested inside a span rather than sitting as a direct
+   child of li like the column-name link this rule is actually meant
+   for. A descendant selector here used to match those nested links
+   too and had to be out-specificity'd by .section .section-latest a /
+   .section .section-meta a further down — a losing fight once
+   .is-home's own font-size for this rule entered the same specificity
+   tier (confirmed directly: the author's name was rendering at the
+   column-link's 1.32rem instead of inheriting its own span's
+   0.96rem). Scoping to > fixes it at the source instead. */
 .section li > a {
     color: var(--ink);
     text-decoration: none;
@@ -101,30 +100,36 @@ body {
     margin-top: 0.3rem;
 }
 
+/* Same properties .section li > a itself renders (color, size,
+   underline-on-hover) — duplicated rather than shared, since this link
+   sits nested inside .section-latest and so isn't matched by that
+   direct-child selector. The point is to look exactly like a post
+   title on an archive page (.post-list a, itself just this same base
+   look — its own font-size: 1.15rem never wins against .section li >
+   a's 1.1rem, so 1.1rem is genuinely what renders there today), not a
+   distinct, homepage-only treatment. */
 .section .section-latest a {
-    font-size: 0.85rem;
-    font-weight: bold;
-    color: var(--muted);
+    color: var(--ink);
+    font-size: 1.1rem;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 0.1em;
+    transition: border-color 0.15s ease;
 }
 
-.section-date {
+.section .section-latest a:hover { border-bottom-color: var(--ink); }
+
+/* Matches .post-list-meta (archive.html), which shows the same two
+   fields — author and date — side by side the same way. */
+.section-meta {
     display: block;
-    margin-top: 0.2rem;
+    margin-top: 0.3rem;
     font-size: 0.8rem;
     color: var(--muted);
 }
 
-.section-author {
-    display: block;
-    margin-top: 0.2rem;
-    font-size: 0.8rem;
-    font-style: italic;
-    color: var(--muted);
-}
-
-.section .section-author a {
+.section .section-meta a {
     font-size: inherit;
-    font-style: inherit;
     color: var(--muted);
 }
 
@@ -174,10 +179,13 @@ body {
    smaller sizes untouched. body only carries "is-home" on "/" (see
    default.html). */
 .is-home .section h2 { font-size: 1.8rem; }
-.is-home .section li > a { font-size: 1.32rem; }
-.is-home .section .section-latest a { font-size: 1.02rem; }
-.is-home .section-date { font-size: 0.96rem; }
-.is-home .section-author { font-size: 0.96rem; }
+.is-home .section li > a {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.32rem;
+}
+.is-home .section-meta { font-size: 0.96rem; }
 .is-home .avatar-link { width: 106px; font-size: 1.08rem; }
 .is-home .avatar { width: 86px; height: 86px; font-size: 1.68rem; }
 
