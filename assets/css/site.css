@@ -245,6 +245,21 @@ body {
     --frame-pad-bottom: 0.6rem;
 }
 
+/* Below its 900px breakpoint, ChessPublica switches pgn-study to a single-
+   panel flex layout where the visible panel (pgn-player, by default) is
+   sized with flex: 1 1 0 and min-height: 0 — a combination that needs the
+   flex *container* to have a definite height to distribute any space into.
+   Our height: auto above (for the desktop CSS Grid layout, which handles
+   auto-height fine) leaves that undefined on mobile, so the panel
+   collapses to nothing instead of showing. Giving it a definite height
+   here — the same 90vh the un-modified library default used — restores
+   it; height still isn't forced on desktop, where it isn't needed. */
+@media (max-width: 899px) {
+    .post-body pgn-study {
+        height: 90vh;
+    }
+}
+
 /* Comments inherit pgn-study's own type scale rather than the post's; pin
    them to the same size as a plain paragraph. */
 .post-body pgn-study .pgn-comment,
