@@ -42,6 +42,30 @@
             font-weight: 400;
             color: #16283a;
         }
+
+        /* Homepage only, mobile: logo/wordmark/gap scale steeply enough
+           that the masthead fills the viewport down to just the 1rem
+           each side .site-header's own full-bleed padding already
+           leaves — visibly wider than the site-wide clamp above, which
+           deliberately stays conservative since it also has to fit
+           under a post title or column heading on every other page.
+           Each clamp's preferred value is a straight line fit (not a
+           hand-derived ratio — solved by measuring the exact size that
+           fills width-2rem without wrapping to two lines at several
+           widths, then fitting vw/px coefficients through those points)
+           through 320px and 430px; the shared 112px/2.6rem/1.3rem max
+           still caps it at the existing desktop size once the line
+           would otherwise grow past that. */
+        .is-home .site-logo {
+            width: clamp(56px, 25.5vw - 8.5px, 112px);
+            height: clamp(56px, 25.5vw - 8.5px, 112px);
+        }
+        .is-home .logo {
+            font-size: clamp(1.35rem, 10.4vw - 0.21rem, 2.6rem);
+        }
+        .is-home .brand {
+            gap: clamp(0.75rem, 5.8vw - 0.12rem, 1.3rem);
+        }
     </style>
 </head>
 <body{% if page.url == "/" %} class="is-home"{% endif %}>
