@@ -105,6 +105,19 @@
         var mainlineRow = dir === 'next' ? activeStudy.querySelector('.pgn-study-picker-row.mainline') : null;
         if (mainlineRow) {
             e.preventDefault();
+            // Without this, the keydown still reaches ChessPublica's own
+            // keydown listener right after — it's on the same document
+            // node ours is, so a plain stopPropagation() doesn't stop it
+            // (that only blocks propagation to *other* nodes; a sibling
+            // listener on the identical node still fires unless it's
+            // stopImmediatePropagation specifically). Resolving the
+            // branch via mainlineRow.click() already advances one ply,
+            // so that second handler saw a position no longer at a
+            // branch point and advanced a *second* ply on the very same
+            // keypress (confirmed directly: one ArrowRight at a branch
+            // point played both the picked mainline move and the reply
+            // after it).
+            e.stopImmediatePropagation();
             mainlineRow.click();
         }
     });
