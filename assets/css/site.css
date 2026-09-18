@@ -77,13 +77,11 @@ body {
    li also contains .section-latest/.section-meta, each with their own
    link and size, nested inside a span rather than sitting as a direct
    child of li like the column-name link this rule is actually meant
-   for. A descendant selector here used to match those nested links
-   too and had to be out-specificity'd by .section .section-latest a /
-   .section .section-meta a further down — a losing fight once
-   .is-home's own font-size for this rule entered the same specificity
-   tier (confirmed directly: the author's name was rendering at the
-   column-link's 1.32rem instead of inheriting its own span's
-   0.96rem). Scoping to > fixes it at the source instead. */
+   for. A plain descendant selector here matched those nested links
+   too, which then needed out-specificity'ing by .section
+   .section-latest a / .section .section-meta a further down just to
+   render at their own sizes. Scoping to > fixes it at the source
+   instead. */
 .section li > a {
     color: var(--ink);
     text-decoration: none;
@@ -119,12 +117,15 @@ body {
 
 .section .section-latest a:hover { border-bottom-color: var(--ink); }
 
-/* Matches .post-list-meta (archive.html), which shows the same two
-   fields — author and date — side by side the same way. */
+/* Matches .post-list-meta (archive.html) exactly, font-size included:
+   same two fields (author and date), shown side by side the same way,
+   for the same underlying posts — a reader comparing the homepage to
+   an archive page should see identical text, not just identical
+   wording. */
 .section-meta {
     display: block;
     margin-top: 0.3rem;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: var(--muted);
 }
 
@@ -171,23 +172,6 @@ body {
 }
 
 .avatar-link:hover .avatar { background: var(--muted); }
-
-/* Homepage only: every homepage text element scaled up by the same
-   ~1.2x factor, keeping their sizes proportionate to each other — the
-   underlying classes are shared with archive pages and post "related"
-   sections (post.html, archive.html), which keep their existing,
-   smaller sizes untouched. body only carries "is-home" on "/" (see
-   default.html). */
-.is-home .section h2 { font-size: 1.8rem; }
-.is-home .section li > a {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-style: italic;
-    font-weight: 600;
-    font-size: 1.32rem;
-}
-.is-home .section-meta { font-size: 0.96rem; }
-.is-home .avatar-link { width: 106px; font-size: 1.08rem; }
-.is-home .avatar { width: 86px; height: 86px; font-size: 1.68rem; }
 
 /* homepage intro: drop cap */
 .intro {

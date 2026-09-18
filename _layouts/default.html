@@ -42,38 +42,9 @@
             font-weight: 400;
             color: #16283a;
         }
-
-        /* Homepage only, mobile: logo/wordmark/gap scale steeply enough
-           that the masthead fills most of the viewport — visibly wider
-           than the site-wide clamp above, which deliberately stays
-           conservative since it also has to fit under a post title or
-           column heading on every other page. Each clamp's preferred
-           value is a straight line fit (not a hand-derived ratio —
-           solved by measuring the largest size that still fits on one
-           line at several widths, then fitting vw/px coefficients
-           through those points) through 320px and 430px, targeting a
-           24px margin each side rather than the bare minimum: a
-           razor's-edge fit (tried first, ~17px each side) rendered fine in
-           headless Chromium but wrapped to two lines on a real Android
-           Chrome, where Playfair Display's actual metrics apparently
-           run fractionally wider — this leaves real slack against that
-           kind of cross-browser font-metric variance instead of
-           re-chasing the exact boundary. The shared 112px/2.6rem/1.3rem
-           max still caps it at the existing desktop size once the line
-           would otherwise grow past that. */
-        .is-home .site-logo {
-            width: clamp(56px, 25.5vw - 12.4px, 112px);
-            height: clamp(56px, 25.5vw - 12.4px, 112px);
-        }
-        .is-home .logo {
-            font-size: clamp(1.35rem, 10.45vw - 0.295rem, 2.6rem);
-        }
-        .is-home .brand {
-            gap: clamp(0.75rem, 5.81vw - 0.165rem, 1.3rem);
-        }
     </style>
 </head>
-<body{% if page.url == "/" %} class="is-home"{% endif %}>
+<body>
     <header class="site-header">
         <a class="brand" href="{{ '/' | relative_url }}">
             <img class="site-logo" src="{{ '/assets/img/logo.jpg' | relative_url }}" alt="{{ site.title }}">
