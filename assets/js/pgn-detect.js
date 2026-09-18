@@ -153,7 +153,13 @@
     // already existing so it knows what PGN/FEN text to leave untouched —
     // converting a straight quote inside literal, still-unconverted PGN
     // header text would corrupt it. Both scripts happen to load in a fixed
-    // order today (this one first), but curly-quotes.js waits for this
-    // event explicitly instead of relying on that load order.
+    // order today (this one first, finishing before curly-quotes.js is
+    // even fetched), so the event itself will always have already fired
+    // by the time curly-quotes.js goes looking for it — a plain
+    // addEventListener there would wait forever for an event that already
+    // happened. The flag lets it check "did this already happen?" first;
+    // the event stays too, as the correct answer if that order is ever
+    // reversed.
+    window.satranckahvesiPgnTagsReady = true;
     document.dispatchEvent(new CustomEvent('satranckahvesi:pgn-tags-ready'));
 })();
