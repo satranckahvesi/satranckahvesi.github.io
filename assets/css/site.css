@@ -214,14 +214,42 @@ body {
 .post-body pgn-player {
     margin-left: auto;
     margin-right: auto;
+    /* Belt-and-suspenders: nothing inside should need to spill past this
+       box once the fix below is in place, but clip instead of silently
+       pushing the page wider if something still does. */
+    overflow-x: hidden;
+}
+
+/* .video-title is a flex row, and .video-title-text a flex column inside
+   it, holding a long, unwrapped ("white-space: nowrap") player/event
+   name. Flex items default to min-width: auto, meaning they refuse to
+   shrink below their content's natural width — so on a narrow (mobile)
+   screen this drags the whole title, and the fit-content-sized pgn-player
+   around it, wider than the viewport. Verified directly, independent of
+   ChessPublica: with the same structure, a long title's own span ends up
+   282px past a 360px viewport; adding min-width: 0 and letting the text
+   wrap keeps it exactly within bounds. */
+.post-body pgn-player .video-title,
+.post-body pgn-player .video-title-text {
+    min-width: 0;
+}
+
+.post-body pgn-player .video-title-players,
+.post-body pgn-player .video-title-event {
+    white-space: normal;
+    overflow-wrap: break-word;
 }
 
 /* In pgn-study's desktop two-column layout, .pgn-container (the move list)
    sits directly right of the 6px divider between it and the board, flush
    against it once the general zero-padding rule above strips its own side
-   padding. Give that side some breathing room back. */
-.post-body pgn-study > .pgn-container {
-    padding-left: 1rem;
+   padding. Give that side some breathing room back — desktop only, since
+   there's no divider to sit next to once it's stacked under the board on
+   mobile (see below). */
+@media (min-width: 900px) {
+    .post-body pgn-study > .pgn-container {
+        padding-left: 1rem;
+    }
 }
 
 /* <pgn-study> is meant to float as its own centered panel, capped at 90% of
@@ -247,16 +275,28 @@ body {
 
 /* Below its 900px breakpoint, ChessPublica switches pgn-study to a single-
    panel flex layout where the visible panel (pgn-player, by default) is
-   sized with flex: 1 1 0 and min-height: 0 — a combination that needs the
-   flex *container* to have a definite height to distribute any space into.
-   Our height: auto above (for the desktop CSS Grid layout, which handles
-   auto-height fine) leaves that undefined on mobile, so the panel
-   collapses to nothing instead of showing. Giving it a definite height
-   here — the same 90vh the un-modified library default used — restores
-   it; height still isn't forced on desktop, where it isn't needed. */
+   sized with flex: 1 1 0 — grow to fill whatever space the flex container
+   has. Rather than give pgn-study a definite height for that to grow
+   into (which would make it always exactly that tall, empty space and
+   all, regardless of the board's actual size), override the panel to
+   flex: 0 1 auto instead: it then sizes to its own natural (board)
+   height, and pgn-study's own height: auto, from the rule above, simply
+   wraps to match — capped by the existing max-height: 90vh, with the
+   panel's own min-height: 0 (already set by ChessPublica) letting it
+   shrink and scroll internally in the rare case content is taller than
+   that cap allows. */
 @media (max-width: 899px) {
-    .post-body pgn-study {
-        height: 90vh;
+    .post-body pgn-study > pgn-player {
+        flex: 0 1 auto;
+    }
+
+    /* By default (outside its "article view" toggle), ChessPublica shows
+       only the board on mobile and hides .pgn-container — which is where
+       the comments actually live, interleaved with the move text — so
+       comments never appear unless the reader taps the toggle. Show it
+       stacked under the board instead of hiding it behind that toggle. */
+    .post-body pgn-study > .pgn-container {
+        display: block;
     }
 }
 
@@ -274,6 +314,35 @@ body {
 .post-body pgn-study .pgn-title .video-title-text {
     font-size: 1rem;
 }
+
+/* Prev/next move buttons, inserted by post.html's script directly after
+   the board (.cp-board-wrapper). Same visual style as .pgn-switcher-btn,
+   for consistency across the site's pgn-related icon buttons. */
+.pgn-study-nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0.75rem 0;
+}
+
+.pgn-study-nav-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    padding: 0;
+    border: 1px solid var(--hairline);
+    border-radius: 50%;
+    background: #fff;
+    color: var(--muted);
+    cursor: pointer;
+    transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+}
+
+.pgn-study-nav-btn svg { width: 1.5rem; height: 1.5rem; }
+
+.pgn-study-nav-btn:hover { color: var(--ink); border-color: var(--ink); }
 
 /* The board's own size is separately capped at a flat min(600px, 94cqw),
    which would otherwise keep it a fixed pixel size regardless of how wide
