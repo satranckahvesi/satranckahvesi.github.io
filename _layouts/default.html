@@ -23,7 +23,11 @@
            preferred value is a straight line through those same two
            reference points (320px -> mobile minimum, 640px -> desktop
            size), so nothing changes at either end — only the sizes
-           between them are now filled in continuously. */
+           between them are now filled in continuously. Deliberately kept
+           fluid rather than switched to the standard-heading-scale 2em
+           other h1/h2/h3 elements use now: this one still has to fit
+           next to the logo image on one line down to a 320px viewport,
+           which a flat size can't guarantee the way this clamp does. */
         .brand {
             display: inline-flex;
             flex-direction: row;
