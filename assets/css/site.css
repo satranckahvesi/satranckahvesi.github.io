@@ -57,7 +57,11 @@ body {
     font-family: 'Playfair Display', Georgia, serif;
     font-style: italic;
     font-weight: 600;
-    font-size: 1.5rem;
+    /* Below the masthead's own <h1> (.logo) at every viewport width —
+       including its 1.35rem mobile-safe floor, the narrowest point in
+       its fluid clamp() — not just at typical desktop/tablet widths
+       where the gap is already wide. */
+    font-size: 1.3rem;
     line-height: 1.2;
     color: var(--ink);
     margin: 0 0 1.25rem;
@@ -93,17 +97,33 @@ body {
 
 .section li > a:hover { border-bottom-color: var(--ink); }
 
-/* Matches .section h2 exactly (font, style, weight, size): this link
-   shows the same column name an archive page's own title does (e.g.
-   "Fincan başı sohbetler" on /koseler/fincan-basi-sohbetler/), so it
-   should look identical, not just share the base .section li > a
-   link treatment every other link in this list gets. */
+/* Wrapped in an <h3> (column names are a heading level below the
+   page's own <h1> masthead and this section's <h2>), so it's no
+   longer a direct child of li and .section li > a's cascade doesn't
+   reach it — styled fully standalone instead of layering on top of
+   that rule. Shares .section h2's font (this link shows the same
+   column name an archive page's own title does, e.g. "Fincan başı
+   sohbetler" on /koseler/fincan-basi-sohbetler/) but not its size:
+   as an <h3>, one step below that <h2>, it needs to read smaller. */
+.section li h3 {
+    margin: 0;
+}
+
 .section .section-title {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 0.1em;
+    transition: border-color 0.15s ease;
     font-family: 'Playfair Display', Georgia, serif;
     font-style: italic;
     font-weight: 600;
-    font-size: 1.5rem;
+    /* Below .section h2's own 1.3rem, same reasoning: an <h3> should
+       read smaller than the <h2> above it. */
+    font-size: 1.1rem;
 }
+
+.section .section-title:hover { border-bottom-color: var(--ink); }
 
 .section-latest {
     display: block;
