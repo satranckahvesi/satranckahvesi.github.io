@@ -362,11 +362,12 @@ body {
 /* The board's own size is separately capped at a flat min(600px, 94cqw),
    which would otherwise keep it a fixed pixel size regardless of how wide
    its grid column actually is. Dropping the flat cap keeps the board
-   proportional to its column at any width, including after a reader drags
-   the column splitter (post.html's script leaves the column split itself
-   alone — ChessPublica's own 1fr/2fr default already matches what we
-   want — this part only concerns the board's own size within whatever
-   column width results). */
+   proportional to its column at any width, including after a reader
+   drags the column splitter (post.html's script sets the *initial*
+   2fr/1fr column split via --left-col-width/--right-col-width only,
+   never grid-template-columns itself, so a later drag keeps working —
+   this part only concerns the board's own size within whatever column
+   width results). */
 @media (min-width: 900px) {
     .post-body pgn-study pgn-player {
         --board-size: 94cqw;
