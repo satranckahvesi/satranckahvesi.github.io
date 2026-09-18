@@ -15,8 +15,8 @@ layout: default
     <li>
       <a href="{{ '/koseler/' | append: col_slug | append: '/' | relative_url }}">{{ col }}</a>
       <span class="section-latest"><a href="{{ latest.url | relative_url }}">{{ latest.title }}</a></span>
-      <span class="section-date">{% include turkish-date.html date=latest.date %}</span>
       <span class="section-author"><a href="{{ '/yazarlar/' | append: author_slug | append: '/' | relative_url }}">{{ latest.author }}</a></span>
+      <span class="section-date">{% include turkish-date.html date=latest.date %}</span>
     </li>
     {% endfor %}
   </ul>
