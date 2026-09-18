@@ -70,12 +70,15 @@ body {
 /* An archive page's own title (e.g. "Fincan başı sohbetler" on
    /koseler/fincan-basi-sohbetler/, or an author's name on
    /yazarlar/elif-aksoy/) is the same column/author name the homepage
-   shows as an <h3> (.section-title), so it's an <h3> here too —
-   scoped to .archive specifically (a direct child of that wrapper,
-   never nested in an li) rather than .section h3, which would also
-   match the homepage's own <h3> wrapper around .section-title and
-   fight with its own font declarations for no reason. */
-.archive h3 {
+   shows as an <h3> (.section-title), so it's an <h3> here too — as
+   are a post page's own "X köşesindeki diğer yazılar"/"Yazarın diğer
+   yazıları" headings. Scoped to .archive/.post-related specifically
+   (both a direct child of their own wrapper, never nested in an li)
+   rather than .section h3, which would also match the homepage's own
+   <h3> wrapper around .section-title and fight with its own font
+   declarations for no reason. */
+.archive h3,
+.post-related h3 {
     font-family: 'Playfair Display', Georgia, serif;
     font-style: italic;
     font-weight: 600;
