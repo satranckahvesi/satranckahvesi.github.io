@@ -210,7 +210,11 @@ layout: default
             var buttons = Array.prototype.slice.call(study.querySelectorAll('.pgn-study-ribbon-btn'));
             buttons.forEach(function (btn) {
                 var label = (btn.getAttribute('aria-label') || btn.getAttribute('title') || btn.textContent || '').trim();
-                if (/table.*of.*contents|\btoc\b/i.test(label) || /collapse|expand/i.test(label)) {
+                // .pgn-study-article-btn is the mobile-only board/article-view
+                // toggle — redundant now that the board stays visible and the
+                // active comment is mirrored automatically below it, so it's
+                // removed by class rather than guessed-at label text.
+                if (btn.classList.contains('pgn-study-article-btn') || /table.*of.*contents|\btoc\b/i.test(label) || /collapse|expand/i.test(label)) {
                     btn.remove();
                 } else if (/^play\b/i.test(label)) {
                     btn.setAttribute('aria-label', 'Oynat');
@@ -222,8 +226,14 @@ layout: default
             });
 
             if (!study.querySelector('.pgn-study-nav')) {
-                var boardWrapper = study.querySelector('.cp-board-wrapper');
-                if (boardWrapper) {
+                // Anchored to the <pgn-player> element itself, not an inner
+                // class name like .cp-board-wrapper — pgn-player is the one
+                // piece of this structure confirmed directly (it's the
+                // literal custom element ChessPublica creates), whereas
+                // internal class names are inferred from its stylesheet and
+                // not something we can verify against the live DOM here.
+                var pgnPlayer = study.querySelector('pgn-player');
+                if (pgnPlayer) {
                     var nav = document.createElement('div');
                     nav.className = 'pgn-study-nav';
                     ['prev', 'next'].forEach(function (dir) {
@@ -243,11 +253,12 @@ layout: default
                         });
                         nav.appendChild(btn);
                     });
-                    boardWrapper.insertAdjacentElement('afterend', nav);
+                    pgnPlayer.insertAdjacentElement('afterend', nav);
 
                     var commentDisplay = document.createElement('div');
                     commentDisplay.className = 'pgn-study-mobile-comment';
                     nav.insertAdjacentElement('afterend', commentDisplay);
+                    syncActiveComment();
                 }
             }
         }
@@ -263,11 +274,11 @@ layout: default
         // however late the picker shows up, it always ends up pushed below
         // them rather than wedged in between.
         function keepLayoutOrder() {
-            var boardWrapper = study.querySelector('.cp-board-wrapper');
+            var pgnPlayer = study.querySelector('pgn-player');
             var nav = study.querySelector('.pgn-study-nav');
             var commentDisplay = study.querySelector('.pgn-study-mobile-comment');
-            if (boardWrapper && nav && boardWrapper.nextElementSibling !== nav) {
-                boardWrapper.insertAdjacentElement('afterend', nav);
+            if (pgnPlayer && nav && pgnPlayer.nextElementSibling !== nav) {
+                pgnPlayer.insertAdjacentElement('afterend', nav);
             }
             if (nav && commentDisplay && nav.nextElementSibling !== commentDisplay) {
                 nav.insertAdjacentElement('afterend', commentDisplay);
