@@ -165,7 +165,12 @@ body {
     font-size: inherit;
     color: var(--muted);
     text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 0.1em;
+    transition: border-color 0.15s ease;
 }
+
+.section .section-meta a:hover { border-bottom-color: var(--muted); }
 
 .avatar-list {
     display: flex;
@@ -626,7 +631,12 @@ body {
     gap: 0.2rem;
 }
 
-.post-list a { font-size: 1.15rem; }
+/* No font-size of its own: .section li > a (post-list's <a> is a
+   direct child of its li, same as every other list this site builds
+   this way) already renders these at 1.1rem, matching .section
+   .section-latest a's own 1.1rem on the homepage exactly — a separate
+   1.15rem here previously was dead weight, never actually winning
+   against that higher-specificity rule. */
 
 .post-list-meta {
     color: var(--muted);
@@ -636,7 +646,12 @@ body {
 .post-list-meta a {
     color: var(--muted);
     text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 0.1em;
+    transition: border-color 0.15s ease;
 }
+
+.post-list-meta a:hover { border-bottom-color: var(--muted); }
 
 /* section-end ornament (fleuron) */
 .ornament {
