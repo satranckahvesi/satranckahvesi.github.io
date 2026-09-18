@@ -367,10 +367,22 @@ body {
    1fr/2fr column split via --left-col-width/--right-col-width only,
    never grid-template-columns itself, so a later drag keeps working —
    this part only concerns the board's own size within whatever column
-   width results). */
+   width results).
+
+   94cqw alone is width-only: drag the column wide enough (ChessPublica's
+   own resizer lets the board column grow to whatever's left of a ~600px
+   board at 94%, which can still be quite wide) and the board — always
+   square, sized off that one width — grows taller than pgn-study's own
+   90vh cap has room for once the ribbon and padding are subtracted, with
+   nothing below the fold to indicate it's even happening. Capping the
+   same --board-size at a share of the viewport height too means it
+   simply stops growing past that point instead — leaving unused space
+   in an aggressively widened column rather than an invisible bottom
+   edge. 78vh (vs. pgn-study's own 90vh) leaves headroom for the ribbon
+   and frame padding above/around the board on any viewport height. */
 @media (min-width: 900px) {
     .post-body pgn-study pgn-player {
-        --board-size: 94cqw;
+        --board-size: min(94cqw, 78vh);
     }
 }
 
