@@ -289,6 +289,20 @@ body {
     .post-body pgn-study > pgn-player {
         flex: 0 1 auto;
     }
+
+    /* pgn-player's own board wrapper carries a flat min-height: 500px
+       (confirmed directly in ChessPublica's CSS, ungated by any
+       breakpoint) — presumably sized for a desktop-width board with
+       room for an eval bar alongside it, not a mobile board that's
+       often well under 400px square. The fix above makes pgn-player
+       itself size to its natural content height, but that "natural"
+       height still includes this same flat 500px floor underneath it,
+       leaving blank space below the board before the mirrored active
+       comment that follows. Dropping it to the board's own actual
+       height on mobile closes that gap. */
+    .post-body pgn-study pgn-player .player-wrapper {
+        min-height: 0;
+    }
 }
 
 /* By default (outside its "article view" toggle), ChessPublica shows only
