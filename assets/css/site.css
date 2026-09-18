@@ -197,6 +197,14 @@ body {
     padding-right: 0;
 }
 
+/* In pgn-study's desktop two-column layout, .pgn-container (the move list)
+   sits directly right of the 6px divider between it and the board, flush
+   against it once the general zero-padding rule above strips its own side
+   padding. Give that side some breathing room back. */
+.post-body pgn-study > .pgn-container {
+    padding-left: 1rem;
+}
+
 /* <pgn-study> is meant to float as its own centered panel, capped at 90% of
    the viewport in each dimension (not forced to exactly that size, so it
    can be shorter for a short game), and to keep switching to ChessPublica's
