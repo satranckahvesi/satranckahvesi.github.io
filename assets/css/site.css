@@ -31,6 +31,19 @@ body {
 
 .site-header { text-align: center; }
 
+/* Breaks the masthead out of body's 1rem side padding so the row spans
+   the full viewport edge to edge on mobile, then re-adds that same
+   1rem as the header's own padding so the logo/wordmark sit exactly
+   where they did before — only the box itself is now full-bleed.
+   Uses the same margin-trick already relied on for pgn-study below. */
+@media (max-width: 639px) {
+    .site-header {
+        width: 100vw;
+        margin: 0 calc(50% - 50vw);
+        padding: 0 1rem;
+    }
+}
+
 .brand { text-decoration: none; }
 
 .section {
