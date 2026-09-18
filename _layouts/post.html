@@ -163,18 +163,17 @@ layout: default
 <script>
 (function () {
     // pgn-study's two desktop columns are sized by its own CSS as
-    // var(--left-col-width) 6px var(--right-col-width), with
-    // --left-col-width/--right-col-width already defaulting to 1fr/2fr in
-    // ChessPublica's own stylesheet (confirmed directly) — its drag
-    // splitter almost certainly works by updating those same custom
-    // properties, not the grid-template-columns shorthand itself. An
-    // earlier version of this script set grid-template-columns directly,
-    // as a hardcoded literal, once at "cp-ready" — that's a plain value,
-    // not a var() reference, so it silently froze the split forever and
-    // made the splitter stop doing anything visible, however it updates
-    // the custom properties afterward. Left alone (not touched here at
-    // all — the 1fr/2fr default already matches what we want), the
-    // stylesheet's own var()-based rule keeps reacting normally to
+    // var(--left-col-width) 6px var(--right-col-width) — ChessPublica's
+    // own default for those two custom properties (1fr/2fr) reads as a
+    // roughly-even split in practice, not the 2fr/1fr (board noticeably
+    // wider than the move list) this site wants, so they're set once
+    // here, at "cp-ready". Only the custom properties are touched, never
+    // grid-template-columns itself: an earlier version of this script set
+    // that whole property directly, as a hardcoded literal — a plain
+    // value, not a var() reference, so it silently froze the split
+    // forever and made the drag splitter stop doing anything visible.
+    // Setting only the custom properties leaves the stylesheet's own
+    // var()-based rule in charge, so it keeps reacting normally to
     // whatever sets those properties next, including a drag.
     //
     // The same "cp-ready" signal is also the first point at which the
@@ -196,11 +195,21 @@ layout: default
     // as .pgn-study-ribbon-btn like ChessPublica's own Play/Settings so
     // they blend in rather than looking like a separate, bolted-on control
     // (our own .pgn-switcher-btn look would clash with the ribbon's actual
-    // transparent/no-border style). They simulate a click on the
-    // corresponding move in the move list instead of calling into
-    // ChessPublica directly — there's no documented API for "step to move
-    // N", but clicking a move to jump to it is confirmed, real behavior
-    // (.pgn-move has its own hover/active styling for exactly this).
+    // transparent/no-border style). Clicking a .pgn-move to jump to it
+    // (a confirmed, real interaction) was tried first, but has no
+    // equivalent element for "before the first move" — there's no
+    // .pgn-move for the starting position, so going back from move 1
+    // always failed. ChessPublica's own left/right arrow-key shortcuts
+    // call goTo(index ± 1) directly, and goTo clamps to 0 (the starting
+    // position, before any move) instead of failing, so the buttons
+    // dispatch those same ArrowLeft/ArrowRight keydown events on
+    // document instead — the exact mechanism ChessPublica's own keyboard
+    // shortcut uses, inherits its correct start/end clamping for free.
+    // That handler only acts on whichever pgn-study/pgn-player last
+    // received a click/hover/touch (a page can hold several); a synthetic
+    // mouseenter dispatched on this study right before the key event
+    // marks this one active first, since our own click handler runs
+    // before the real click would otherwise bubble up and do the same.
     var pgnStudyNavIcons = {
         prev: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 6 9 12 15 18"/></svg>',
         next: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>'
@@ -211,6 +220,9 @@ layout: default
     studies.forEach(function (study) {
         var readyHandled = false;
         function onReady() {
+            study.style.setProperty('--left-col-width', '2fr');
+            study.style.setProperty('--right-col-width', '1fr');
+
             var buttons = Array.prototype.slice.call(study.querySelectorAll('.pgn-study-ribbon-btn'));
             var playBtn = null;
             buttons.forEach(function (btn) {
@@ -243,12 +255,11 @@ layout: default
                     btn.title = pgnStudyNavLabels[dir];
                     btn.innerHTML = pgnStudyNavIcons[dir];
                     btn.addEventListener('click', function () {
-                        var moves = Array.prototype.slice.call(study.querySelectorAll('.pgn-move'));
-                        if (!moves.length) return;
-                        var activeIndex = moves.findIndex(function (m) { return m.classList.contains('pgn-move-active'); });
-                        var targetIndex = dir === 'next' ? (activeIndex === -1 ? 0 : activeIndex + 1) : activeIndex - 1;
-                        var target = moves[targetIndex];
-                        if (target) target.click();
+                        study.dispatchEvent(new MouseEvent('mouseenter'));
+                        document.dispatchEvent(new KeyboardEvent('keydown', {
+                            code: dir === 'next' ? 'ArrowRight' : 'ArrowLeft',
+                            bubbles: true
+                        }));
                     });
                     if (insertAfter) {
                         insertAfter.insertAdjacentElement('afterend', btn);
