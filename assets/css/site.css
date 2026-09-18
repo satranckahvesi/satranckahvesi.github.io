@@ -108,6 +108,7 @@ body {
     color: var(--ink);
     text-decoration: none;
     font-size: 1.1rem;
+    font-weight: bold;
     border-bottom: 1px solid transparent;
     padding-bottom: 0.1em;
     transition: border-color 0.15s ease;
@@ -159,6 +160,7 @@ body {
 .section .section-latest a {
     color: var(--ink);
     font-size: 1.1rem;
+    font-weight: bold;
     text-decoration: none;
     border-bottom: 1px solid transparent;
     padding-bottom: 0.1em;
