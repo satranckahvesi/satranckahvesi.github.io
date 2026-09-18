@@ -88,14 +88,6 @@ body {
     margin: 0 0 1.25rem;
 }
 
-/* Matches .section .section-latest a's own 1rem on the homepage —
-   scoped to .archive specifically (not .post-related, a post page's
-   "related posts" list built from the same .post-list markup, left
-   at .section li > a's 1.1rem since this wasn't asked for there). */
-.archive .post-list li > a {
-    font-size: 1rem;
-}
-
 .section ul {
     list-style: none;
     margin: 0;
@@ -118,7 +110,7 @@ body {
 .section li > a {
     color: var(--ink);
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: bold;
     border-bottom: 1px solid transparent;
     padding-bottom: 0.1em;
