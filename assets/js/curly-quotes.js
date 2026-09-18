@@ -110,16 +110,21 @@
     // this can safely run — insideSkippedElement above only knows to skip
     // those tags once they exist; running any earlier would curly-quote
     // literal, still-unconverted PGN text sitting in a plain <p> and
-    // corrupt it (see the comment at the top of this file). Both scripts
-    // load on every post page in a fixed order today (pgn-detect.js first),
-    // but waiting for its explicit "done" event instead of relying on that
-    // load order means this keeps working correctly even if that order
-    // ever changes. Pages with no .post-body (the homepage, archive pages)
-    // never load pgn-detect.js at all, so they run immediately instead of
-    // waiting for an event that would never come.
-    if (document.querySelector('.post-body')) {
-        document.addEventListener('satranckahvesi:pgn-tags-ready', run, { once: true });
-    } else {
+    // corrupt it (see the comment at the top of this file). pgn-detect.js
+    // loads and finishes earlier on every post page today (it's part of
+    // post.html, which default.html always inserts before this script's
+    // own <script> tag in its footer), so by the time this runs, that work
+    // is already done and its "ready" flag is already set — checked first,
+    // since a plain addEventListener here would otherwise wait forever for
+    // an event that already fired before this listener could exist. The
+    // event stays too, as a fallback for the reverse order. Pages with no
+    // .post-body (the homepage, archive pages) never load pgn-detect.js at
+    // all, so they run immediately instead of waiting on either.
+    if (!document.querySelector('.post-body')) {
         run();
+    } else if (window.satranckahvesiPgnTagsReady) {
+        run();
+    } else {
+        document.addEventListener('satranckahvesi:pgn-tags-ready', run, { once: true });
     }
 })();
