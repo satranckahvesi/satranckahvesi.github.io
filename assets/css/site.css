@@ -419,8 +419,7 @@ body {
 .pgn-switcher-btn:hover { color: var(--ink); border-color: var(--ink); }
 
 .pgn-switcher-btn.is-active {
-    color: #fff;
-    background: var(--accent);
+    color: var(--accent);
     border-color: var(--accent);
 }
 
