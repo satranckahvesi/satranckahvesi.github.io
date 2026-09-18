@@ -151,6 +151,19 @@ body {
 
 .avatar-link:hover .avatar { background: var(--muted); }
 
+/* Homepage only: every homepage text element scaled up by the same
+   ~1.2x factor, keeping their sizes proportionate to each other — the
+   underlying classes are shared with archive pages and post "related"
+   sections (post.html, archive.html), which keep their existing,
+   smaller sizes untouched. body only carries "is-home" on "/" (see
+   default.html). */
+.is-home .section h2 { font-size: 1.8rem; }
+.is-home .section li a { font-size: 1.32rem; }
+.is-home .section .section-latest a { font-size: 1.02rem; }
+.is-home .section-author { font-size: 0.96rem; }
+.is-home .avatar-link { width: 106px; font-size: 1.08rem; }
+.is-home .avatar { width: 86px; height: 86px; font-size: 1.68rem; }
+
 /* homepage intro: drop cap */
 .intro {
     text-align: left;
@@ -230,6 +243,19 @@ body {
        box once the fix below is in place, but clip instead of silently
        pushing the page wider if something still does. */
     overflow-x: hidden;
+}
+
+/* <puzzle> is replaced wholesale by ChessPublica's own init with a plain
+   .cp-puzzle div (confirmed directly in its bundle — the custom element
+   itself never stays in the DOM), which its CSS sizes as
+   width:100%;max-width:var(--board-size) but never centers: with no
+   margin:auto of its own, a .cp-puzzle narrower than the post column
+   (the ordinary case, since --board-size defaults to 400px) just sits
+   flush against the left edge — title, board and caption together,
+   since all three live inside this one box. */
+.post-body .cp-puzzle {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* .video-title is a flex row, and .video-title-text a flex column inside

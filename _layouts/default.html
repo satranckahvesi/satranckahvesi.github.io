@@ -44,7 +44,7 @@
         }
     </style>
 </head>
-<body>
+<body{% if page.url == "/" %} class="is-home"{% endif %}>
     <header class="site-header">
         <a class="brand" href="{{ '/' | relative_url }}">
             <img class="site-logo" src="{{ '/assets/img/logo.jpg' | relative_url }}" alt="{{ site.title }}">
