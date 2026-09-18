@@ -119,12 +119,15 @@ body {
 
 .section .section-latest a:hover { border-bottom-color: var(--ink); }
 
-/* Matches .post-list-meta (archive.html), which shows the same two
-   fields — author and date — side by side the same way. */
+/* Matches .post-list-meta (archive.html) exactly, font-size included:
+   same two fields (author and date), shown side by side the same way,
+   for the same underlying posts — a reader comparing the homepage to
+   an archive page should see identical text, not just identical
+   wording. */
 .section-meta {
     display: block;
     margin-top: 0.3rem;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: var(--muted);
 }
 
@@ -179,13 +182,17 @@ body {
    smaller sizes untouched. body only carries "is-home" on "/" (see
    default.html). */
 .is-home .section h2 { font-size: 1.8rem; }
+/* font-size matches .section h2's own 1.5rem on an archive page
+   (e.g. "Fincan başı sohbetler" on /koseler/fincan-basi-sohbetler/)
+   exactly, not just its font — same name, same size, whether it's
+   showing as a homepage card's heading or an archive page's own
+   title. */
 .is-home .section li > a {
     font-family: 'Playfair Display', Georgia, serif;
     font-style: italic;
     font-weight: 600;
-    font-size: 1.32rem;
+    font-size: 1.5rem;
 }
-.is-home .section-meta { font-size: 0.96rem; }
 .is-home .avatar-link { width: 106px; font-size: 1.08rem; }
 .is-home .avatar { width: 86px; height: 86px; font-size: 1.68rem; }
 
