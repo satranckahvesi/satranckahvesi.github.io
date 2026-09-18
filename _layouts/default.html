@@ -61,9 +61,17 @@
             CODE: 1, PRE: 1, SCRIPT: 1, STYLE: 1
         };
 
-        function insideSkippedElement(node) {
+        // Stops climbing at `root` rather than going all the way to the
+        // document root: the initial pass below walks the whole body, so
+        // there `root` is document.body and every ancestor gets checked
+        // as expected. The comment pass further down calls this with
+        // `root` set to the comment element itself — climbing past it
+        // would reach the very <pgn-study>/<pgn-player>/<pgn> tag that
+        // pass exists specifically to reach *inside* of, incorrectly
+        // skipping every comment it was meant to convert.
+        function insideSkippedElement(node, root) {
             var el = node.parentElement;
-            while (el) {
+            while (el && el !== root) {
                 if (skipTags[el.tagName]) return true;
                 el = el.parentElement;
             }
@@ -88,17 +96,57 @@
                 .replace(/"/g, '”');
         }
 
-        var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null);
-        var targets = [];
-        var node;
-        while ((node = walker.nextNode())) {
-            if (node.nodeValue.indexOf('"') === -1 && node.nodeValue.indexOf("'") === -1) continue;
-            if (insideSkippedElement(node)) continue;
-            targets.push(node);
+        function curlyPass(root) {
+            var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+            var targets = [];
+            var node;
+            while ((node = walker.nextNode())) {
+                if (node.nodeValue.indexOf('"') === -1 && node.nodeValue.indexOf("'") === -1) continue;
+                if (insideSkippedElement(node, root)) continue;
+                targets.push(node);
+            }
+            targets.forEach(function (node) {
+                var next = toCurly(node.nodeValue);
+                // Comments get re-checked on every mutation below; skip
+                // the write entirely once a comment's already been
+                // converted, rather than relying on toCurly's own
+                // idempotence (real, since a second pass finds no more
+                // straight quotes to match) — a same-value nodeValue
+                // write isn't guaranteed to be a no-op for every engine's
+                // MutationObserver, and this codebase has hit that exact
+                // "assignment alone re-triggers the observer" bug before.
+                if (node.nodeValue !== next) node.nodeValue = next;
+            });
         }
-        targets.forEach(function (node) {
-            node.nodeValue = toCurly(node.nodeValue);
-        });
+
+        curlyPass(document.body);
+
+        // The pass above runs before ChessPublica has loaded, so it can
+        // only see and skip the raw, unrendered <pgn>/<pgn-player>/
+        // <pgn-study> source text — never the comments they render,
+        // since those don't exist as DOM elements yet. Comments are
+        // exactly the part of that source text that's genuine prose (an
+        // author's own annotation), not PGN syntax, so they still want
+        // curly quotes — just applied once ChessPublica actually renders
+        // them, matched by the same handful of classes it renders them
+        // under (confirmed directly in its CSS) regardless of which of
+        // the three views (pgn/pgn-player/pgn-study) is showing.
+        var commentSelector = '.pgn-comment, .pgn-comment-inline, .video-comment, .variation-comment, .comment-text-block';
+        var body = document.querySelector('.post-body');
+        if (body && (body.querySelector('pgn, pgn-player, pgn-study'))) {
+            var observer = new MutationObserver(function (mutations) {
+                mutations.forEach(function (mutation) {
+                    mutation.addedNodes.forEach(function (added) {
+                        if (added.nodeType !== 1) return;
+                        if (added.matches && added.matches(commentSelector)) curlyPass(added);
+                        if (added.querySelectorAll) {
+                            added.querySelectorAll(commentSelector).forEach(curlyPass);
+                        }
+                    });
+                });
+            });
+            observer.observe(body, { childList: true, subtree: true });
+        }
     })();
     </script>
     <script src="https://chesspublica.github.io/dist/ChessPublica.all.min.js"></script>
