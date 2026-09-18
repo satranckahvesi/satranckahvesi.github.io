@@ -174,7 +174,12 @@ body {
    smaller sizes untouched. body only carries "is-home" on "/" (see
    default.html). */
 .is-home .section h2 { font-size: 1.8rem; }
-.is-home .section li > a { font-size: 1.32rem; }
+.is-home .section li > a {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 1.32rem;
+}
 .is-home .section .section-latest a { font-size: 1.02rem; }
 .is-home .section-date { font-size: 0.96rem; }
 .is-home .section-author { font-size: 0.96rem; }
