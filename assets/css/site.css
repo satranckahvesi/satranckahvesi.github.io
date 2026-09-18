@@ -207,6 +207,15 @@ body {
     padding-right: 0;
 }
 
+/* pgn-player is display:block with width:fit-content, so left to itself it
+   just sits flush against the left edge of the post column instead of
+   centering. (Inside pgn-study, its own pgn-player is width:100% of its
+   grid column, so this has no visible effect there — nothing to center.) */
+.post-body pgn-player {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* In pgn-study's desktop two-column layout, .pgn-container (the move list)
    sits directly right of the 6px divider between it and the board, flush
    against it once the general zero-padding rule above strips its own side
@@ -234,6 +243,21 @@ body {
     font-size: 1rem;
     --frame-pad: 1rem;
     --frame-pad-bottom: 0.6rem;
+}
+
+/* Below its 900px breakpoint, ChessPublica switches pgn-study to a single-
+   panel flex layout where the visible panel (pgn-player, by default) is
+   sized with flex: 1 1 0 and min-height: 0 — a combination that needs the
+   flex *container* to have a definite height to distribute any space into.
+   Our height: auto above (for the desktop CSS Grid layout, which handles
+   auto-height fine) leaves that undefined on mobile, so the panel
+   collapses to nothing instead of showing. Giving it a definite height
+   here — the same 90vh the un-modified library default used — restores
+   it; height still isn't forced on desktop, where it isn't needed. */
+@media (max-width: 899px) {
+    .post-body pgn-study {
+        height: 90vh;
+    }
 }
 
 /* Comments inherit pgn-study's own type scale rather than the post's; pin
