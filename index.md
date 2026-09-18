@@ -2,13 +2,7 @@
 layout: default
 ---
 
-<!--
-<div class="section intro">
-<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-<p>Fusce varius tempor elit vitae interdum. Cras eros enim, dapibus vel congue sed, congue vel quam. Donec at consequat urna, ac dictum erat.</p>
-</div>
 {% include ornament.html %}
--->
 
 <div class="section">
   <h2>Köşeler</h2>
