@@ -180,8 +180,17 @@ layout: default
     // are matched by their own accessible name (title/aria-label) instead —
     // the same text a reader sees on hover, in whatever language
     // ChessPublica renders it.
+    //
+    // Collapsing is disabled outright, not just by removing its button:
+    // ChessPublica's own CSS shows a collapsed pgn-study is click-to-expand
+    // (cursor: pointer on the whole panel), meaning something besides the
+    // button we remove can still toggle the "pgn-study-collapsed" class.
+    // Rather than guess at every trigger, the observer below keeps running
+    // for the life of the page and strips that class the instant it's
+    // added, so the panel can never actually end up collapsed.
     var studies = Array.prototype.slice.call(document.querySelectorAll('.post-body pgn-study'));
     studies.forEach(function (study) {
+        var readyHandled = false;
         function onReady() {
             study.style.setProperty('--left-col-width', '1fr');
             study.style.setProperty('--right-col-width', '2fr');
@@ -201,14 +210,21 @@ layout: default
                 }
             });
         }
+        function stripCollapsed() {
+            if (study.classList.contains('pgn-study-collapsed')) {
+                study.classList.remove('pgn-study-collapsed');
+            }
+        }
+        stripCollapsed();
         if (study.classList.contains('cp-ready')) {
             onReady();
-            return;
+            readyHandled = true;
         }
         var observer = new MutationObserver(function () {
-            if (study.classList.contains('cp-ready')) {
+            stripCollapsed();
+            if (!readyHandled && study.classList.contains('cp-ready')) {
                 onReady();
-                observer.disconnect();
+                readyHandled = true;
             }
         });
         observer.observe(study, { attributes: true, attributeFilter: ['class'] });

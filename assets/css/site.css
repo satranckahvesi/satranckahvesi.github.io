@@ -244,6 +244,13 @@ body {
     font-size: 1rem;
 }
 
+/* Inside pgn-study, the game title picks up a 1.1rem bump (vs. 1rem
+   elsewhere ChessPublica shows a game title, e.g. in pgn-player). Match
+   the other contexts instead. */
+.post-body pgn-study .pgn-title .video-title-text {
+    font-size: 1rem;
+}
+
 /* The board's own size is separately capped at a flat min(600px, 94cqw),
    which would otherwise keep it a fixed pixel size regardless of how wide
    its grid column actually is. Dropping the flat cap keeps the board
