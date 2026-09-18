@@ -243,9 +243,13 @@ body {
 /* In pgn-study's desktop two-column layout, .pgn-container (the move list)
    sits directly right of the 6px divider between it and the board, flush
    against it once the general zero-padding rule above strips its own side
-   padding. Give that side some breathing room back. */
-.post-body pgn-study > .pgn-container {
-    padding-left: 1rem;
+   padding. Give that side some breathing room back — desktop only, since
+   there's no divider to sit next to once it's stacked under the board on
+   mobile (see below). */
+@media (min-width: 900px) {
+    .post-body pgn-study > .pgn-container {
+        padding-left: 1rem;
+    }
 }
 
 /* <pgn-study> is meant to float as its own centered panel, capped at 90% of
@@ -284,6 +288,15 @@ body {
 @media (max-width: 899px) {
     .post-body pgn-study > pgn-player {
         flex: 0 1 auto;
+    }
+
+    /* By default (outside its "article view" toggle), ChessPublica shows
+       only the board on mobile and hides .pgn-container — which is where
+       the comments actually live, interleaved with the move text — so
+       comments never appear unless the reader taps the toggle. Show it
+       stacked under the board instead of hiding it behind that toggle. */
+    .post-body pgn-study > .pgn-container {
+        display: block;
     }
 }
 
