@@ -240,6 +240,39 @@ body {
     overflow-wrap: break-word;
 }
 
+/* The title fix above stops the title itself from overflowing, but the
+   board is a separate problem: its size comes from --board-size, which
+   defaults to a flat 400px (confirmed directly in ChessPublica's own
+   CSS — :root{--board-size: 400px}) with no responsiveness of its own.
+   ChessPublica does have a narrower, viewport-aware default
+   (min(400px, 94cqw)), but only scopes it to a pgn-player that's
+   nested inside pgn-study — a standalone <pgn-player>, the one the
+   view switcher's "Oynatıcı görünümü" choice actually uses, never gets
+   it, and a flat 400px board doesn't fit plenty of phone screens
+   (verified directly: a 400px board against a ~360px viewport clips
+   its last file, exactly as reported).
+
+   Mirroring that formula here needs more than just adding
+   container-type: inline-size, though — pgn-player is width: fit-content
+   by default, sized off its own content, and that content (the board)
+   is what the cqw unit would need to measure. A container can't be
+   sized by content that's itself measured against the container's own
+   size — verified directly: with fit-content still in place, 94cqw
+   resolves to 0, not a fraction of anything real. Giving pgn-player a
+   definite width (100% of its own, already width-constrained parent)
+   first breaks that circularity; cqw then has an actual number to work
+   from. ChessPublica's own player-wrapper already centers itself
+   within whatever pgn-player's width ends up being (margin-left/right:
+   auto, confirmed in its CSS), so the board still reads centered
+   rather than flush against the left edge. */
+@media (max-width: 899px) {
+    .post-body pgn-player {
+        width: 100%;
+        container-type: inline-size;
+        --board-size: min(400px, 94cqw);
+    }
+}
+
 /* In pgn-study's desktop two-column layout, .pgn-container (the move list)
    sits directly right of the 6px divider between it and the board, flush
    against it once the general zero-padding rule above strips its own side
