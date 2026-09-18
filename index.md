@@ -2,26 +2,18 @@
 layout: default
 ---
 
-<div class="hero">
-  <p class="eyebrow">Satranç · Kahve · Sohbet</p>
-  <div class="intro">
-    <p>Her hamlede bir hikâye, her yudumda bir mola vardır. Satranç Kahvesi'nde ustalar ve meraklılar aynı masada buluşur; açılış sırlarından oyun sonu inceliklerine, turnuva günlüklerinden fincan başı sohbetlere uzanan yazılarla satrancı biraz daha derinden tanırız.</p>
-  </div>
-</div>
-
 {% include ornament.html %}
 
-<div class="section section--wide">
-  <p class="eyebrow">Yazı dizileri</p>
+<div class="section">
   <h2>Köşeler</h2>
-  <ul class="card-grid">
-    {% assign columns = site.posts | map: "column" | uniq %}
+  {% assign columns = site.posts | map: "column" | uniq %}
+  <ul>
     {% for col in columns %}
     {% assign col_slug = col | slugify: "latin" %}
     {% assign latest = site.posts | where: "column", col | sort: "date" | last %}
     {% assign author_slug = latest.author | slugify: "latin" %}
     <li>
-      <a class="card-title" href="{{ '/koseler/' | append: col_slug | append: '/' | relative_url }}">{{ col }}</a>
+      <a href="{{ '/koseler/' | append: col_slug | append: '/' | relative_url }}">{{ col }}</a>
       <span class="section-latest"><a href="{{ latest.url | relative_url }}">{{ latest.title }}</a></span>
       <span class="section-author"><a href="{{ '/yazarlar/' | append: author_slug | append: '/' | relative_url }}">{{ latest.author }}</a></span>
     </li>
@@ -31,7 +23,6 @@ layout: default
 {% include ornament.html %}
 
 <div class="section">
-  <p class="eyebrow">Kahve molasında</p>
   <h2>Yazarlar</h2>
   <div class="avatar-list">
     {% assign authors = site.posts | map: "author" | uniq %}

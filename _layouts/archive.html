@@ -7,7 +7,6 @@ layout: default
 {% assign posts = site.posts | where: "author", page.archive_value | sort: "date" | reverse %}
 {% endif %}
 <div class="section archive">
-    <p class="eyebrow">{% if page.archive_type == "column" %}Köşe{% else %}Yazar{% endif %}</p>
     <h2>{{ page.title }}</h2>
     <ul class="post-list">
         {% for post in posts %}
