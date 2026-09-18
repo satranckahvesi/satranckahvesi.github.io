@@ -73,7 +73,19 @@ body {
     gap: 1.1rem;
 }
 
-.section li a {
+/* Direct-child combinator, not a plain descendant selector: .section
+   li also contains .section-latest/.section-date/.section-author,
+   each with their own link and size, nested inside a span rather
+   than sitting as a direct child of li like the column-name link
+   this rule is actually meant for. A descendant selector here used
+   to match those nested links too and had to be out-specificity'd by
+   .section .section-latest a / .section .section-author a further
+   down — a losing fight once .is-home's own font-size for this rule
+   entered the same specificity tier (confirmed directly: the
+   author's name was rendering at the column-link's 1.32rem instead
+   of inheriting its own span's 0.96rem). Scoping to > fixes it at
+   the source instead. */
+.section li > a {
     color: var(--ink);
     text-decoration: none;
     font-size: 1.1rem;
@@ -82,7 +94,7 @@ body {
     transition: border-color 0.15s ease;
 }
 
-.section li a:hover { border-bottom-color: var(--ink); }
+.section li > a:hover { border-bottom-color: var(--ink); }
 
 .section-latest {
     display: block;
@@ -91,6 +103,7 @@ body {
 
 .section .section-latest a {
     font-size: 0.85rem;
+    font-weight: bold;
     color: var(--muted);
 }
 
@@ -161,7 +174,7 @@ body {
    smaller sizes untouched. body only carries "is-home" on "/" (see
    default.html). */
 .is-home .section h2 { font-size: 1.8rem; }
-.is-home .section li a { font-size: 1.32rem; }
+.is-home .section li > a { font-size: 1.32rem; }
 .is-home .section .section-latest a { font-size: 1.02rem; }
 .is-home .section-date { font-size: 0.96rem; }
 .is-home .section-author { font-size: 0.96rem; }
