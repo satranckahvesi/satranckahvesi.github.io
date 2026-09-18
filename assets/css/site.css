@@ -244,6 +244,13 @@ body {
     font-size: 1rem;
 }
 
+/* Inside pgn-study, the game title picks up a 1.1rem bump (vs. 1rem
+   elsewhere ChessPublica shows a game title, e.g. in pgn-player). Match
+   the other contexts instead. */
+.post-body pgn-study .pgn-title .video-title-text {
+    font-size: 1rem;
+}
+
 /* The board's own size is separately capped at a flat min(600px, 94cqw),
    which would otherwise keep it a fixed pixel size regardless of how wide
    its grid column actually is. Dropping the flat cap keeps the board
@@ -268,8 +275,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 34px;
-    height: 34px;
+    /* Match pgn-study's own ribbon buttons (.pgn-study-ribbon-btn), which
+       are 3rem square. */
+    width: 3rem;
+    height: 3rem;
     padding: 0;
     border: 1px solid var(--hairline);
     border-radius: 50%;
@@ -279,7 +288,7 @@ body {
     transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
 }
 
-.pgn-switcher-btn svg { width: 18px; height: 18px; }
+.pgn-switcher-btn svg { width: 1.5rem; height: 1.5rem; }
 
 .pgn-switcher-btn:hover { color: var(--ink); border-color: var(--ink); }
 
