@@ -244,6 +244,10 @@ layout: default
                         nav.appendChild(btn);
                     });
                     boardWrapper.insertAdjacentElement('afterend', nav);
+
+                    var commentDisplay = document.createElement('div');
+                    commentDisplay.className = 'pgn-study-mobile-comment';
+                    nav.insertAdjacentElement('afterend', commentDisplay);
                 }
             }
         }
@@ -254,16 +258,43 @@ layout: default
         }
         // ChessPublica inserts the variation picker right after the board
         // too, whenever a branch point comes up during navigation — after
-        // our nav buttons already exist. Re-asserting the buttons'
-        // position on every mutation (instead of only once) means however
-        // late the picker shows up, it always ends up pushed below the
-        // buttons rather than between them and the board.
-        function keepNavUnderBoard() {
+        // our nav buttons (and comment display) already exist. Re-asserting
+        // their position on every mutation (instead of only once) means
+        // however late the picker shows up, it always ends up pushed below
+        // them rather than wedged in between.
+        function keepLayoutOrder() {
             var boardWrapper = study.querySelector('.cp-board-wrapper');
             var nav = study.querySelector('.pgn-study-nav');
+            var commentDisplay = study.querySelector('.pgn-study-mobile-comment');
             if (boardWrapper && nav && boardWrapper.nextElementSibling !== nav) {
                 boardWrapper.insertAdjacentElement('afterend', nav);
             }
+            if (nav && commentDisplay && nav.nextElementSibling !== commentDisplay) {
+                nav.insertAdjacentElement('afterend', commentDisplay);
+            }
+        }
+        // .pgn-container (the full move list, with comments interleaved in
+        // the move text) stays hidden on mobile; instead this mirrors just
+        // the currently active comment's own HTML into the dedicated
+        // display next to the nav buttons, updating live as the reader
+        // steps through moves (each step toggles which comment carries
+        // .pgn-comment-active, which this same observer already watches
+        // for via subtree: true).
+        function syncActiveComment() {
+            var commentDisplay = study.querySelector('.pgn-study-mobile-comment');
+            if (!commentDisplay) return;
+            var active = study.querySelector('.pgn-comment.pgn-comment-active, .pgn-comment-inline.pgn-comment-active');
+            var newHTML = active ? active.innerHTML : '';
+            // Setting innerHTML always mutates the DOM (new node objects),
+            // even when assigned the same markup it already had — and this
+            // observer is watching that same subtree, including this
+            // element. Without this guard, every firing would trigger
+            // another firing purely by re-writing identical content,
+            // forever.
+            if (commentDisplay.innerHTML !== newHTML) {
+                commentDisplay.innerHTML = newHTML;
+            }
+            commentDisplay.classList.toggle('has-content', !!active);
         }
         stripCollapsed();
         if (study.classList.contains('cp-ready')) {
@@ -276,7 +307,8 @@ layout: default
                 onReady();
                 readyHandled = true;
             }
-            keepNavUnderBoard();
+            keepLayoutOrder();
+            syncActiveComment();
         });
         observer.observe(study, { attributes: true, attributeFilter: ['class'], childList: true, subtree: true });
     });
