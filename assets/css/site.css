@@ -100,11 +100,24 @@ body {
     margin-top: 0.3rem;
 }
 
+/* Same properties .section li > a itself renders (color, size,
+   underline-on-hover) — duplicated rather than shared, since this link
+   sits nested inside .section-latest and so isn't matched by that
+   direct-child selector. The point is to look exactly like a post
+   title on an archive page (.post-list a, itself just this same base
+   look — its own font-size: 1.15rem never wins against .section li >
+   a's 1.1rem, so 1.1rem is genuinely what renders there today), not a
+   distinct, homepage-only treatment. */
 .section .section-latest a {
-    font-size: 0.85rem;
-    font-weight: bold;
-    color: var(--muted);
+    color: var(--ink);
+    font-size: 1.1rem;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 0.1em;
+    transition: border-color 0.15s ease;
 }
+
+.section .section-latest a:hover { border-bottom-color: var(--ink); }
 
 /* Matches .post-list-meta (archive.html), which shows the same two
    fields — author and date — side by side the same way. */
@@ -172,7 +185,6 @@ body {
     font-weight: 600;
     font-size: 1.32rem;
 }
-.is-home .section .section-latest a { font-size: 1.02rem; }
 .is-home .section-meta { font-size: 0.96rem; }
 .is-home .avatar-link { width: 106px; font-size: 1.08rem; }
 .is-home .avatar { width: 86px; height: 86px; font-size: 1.68rem; }
