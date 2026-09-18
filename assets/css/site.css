@@ -214,6 +214,30 @@ body {
 .post-body pgn-player {
     margin-left: auto;
     margin-right: auto;
+    /* Belt-and-suspenders: nothing inside should need to spill past this
+       box once the fix below is in place, but clip instead of silently
+       pushing the page wider if something still does. */
+    overflow-x: hidden;
+}
+
+/* .video-title is a flex row, and .video-title-text a flex column inside
+   it, holding a long, unwrapped ("white-space: nowrap") player/event
+   name. Flex items default to min-width: auto, meaning they refuse to
+   shrink below their content's natural width — so on a narrow (mobile)
+   screen this drags the whole title, and the fit-content-sized pgn-player
+   around it, wider than the viewport. Verified directly, independent of
+   ChessPublica: with the same structure, a long title's own span ends up
+   282px past a 360px viewport; adding min-width: 0 and letting the text
+   wrap keeps it exactly within bounds. */
+.post-body pgn-player .video-title,
+.post-body pgn-player .video-title-text {
+    min-width: 0;
+}
+
+.post-body pgn-player .video-title-players,
+.post-body pgn-player .video-title-event {
+    white-space: normal;
+    overflow-wrap: break-word;
 }
 
 /* In pgn-study's desktop two-column layout, .pgn-container (the move list)
