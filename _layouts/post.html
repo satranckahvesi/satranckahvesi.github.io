@@ -49,8 +49,11 @@ layout: default
     // For a plain <pgn> game (not <fen>/<puzzle>), the reader can switch
     // between the three ways ChessPublica can show a game. The library only
     // scans the DOM once on load, so switching can't re-render an element
-    // in place — instead we remember the reader's choice per game and
-    // reload the page, so the right tag exists before that scan runs.
+    // in place — instead the chosen view is stashed and the page reloaded,
+    // so the right tag exists before that scan runs. Every ordinary visit
+    // (a fresh load, or a manual refresh) is meant to start at <pgn> again
+    // — the stash is read and immediately cleared, so it only survives the
+    // one reload it was written for, not any load after that.
     var pgnViews = ['pgn', 'pgn-player', 'pgn-study'];
     var pgnViewLabels = { pgn: 'Parti görünümü', 'pgn-player': 'Oynatıcı görünümü', 'pgn-study': 'Çalışma görünümü' };
     // Same Lucide icons ChessPublica's own ribbon already uses elsewhere
@@ -124,7 +127,12 @@ layout: default
         if (tagName === 'pgn') {
             storageKey = 'pgn-view:' + location.pathname + ':' + pgnBlockIndex;
             pgnBlockIndex++;
-            var savedView = localStorage.getItem(storageKey);
+            // sessionStorage, not localStorage, and consumed (removed)
+            // the moment it's read: it only needs to survive the single
+            // reload a switcher click triggers, not be remembered for a
+            // future visit.
+            var savedView = sessionStorage.getItem(storageKey);
+            sessionStorage.removeItem(storageKey);
             if (pgnViews.indexOf(savedView) !== -1) tagName = savedView;
         }
 
@@ -148,7 +156,7 @@ layout: default
                 btn.innerHTML = pgnViewIcons[view];
                 btn.addEventListener('click', (function (key, chosenView) {
                     return function () {
-                        localStorage.setItem(key, chosenView);
+                        sessionStorage.setItem(key, chosenView);
                         location.reload();
                     };
                 })(storageKey, view));
