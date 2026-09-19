@@ -414,7 +414,11 @@ body {
    the post column so the panel can be centered on the viewport instead of
    the (much narrower) column. Leaving overflow/grid-row behavior alone
    lets ChessPublica's own internal scrolling work once max-height caps the
-   panel's height. */
+   panel's height. ChessPublica leaves the panel itself transparent (its own
+   background rules only cover pieces inside it, like the ribbon and move
+   list), so against the page's dark obsidian canvas outside body's column
+   it would show as a dark gap around those inner white pieces; give it an
+   explicit light background so the whole panel reads as one light card. */
 .post-body pgn-study {
     width: auto;
     max-width: 90vw;
@@ -422,6 +426,7 @@ body {
     max-height: 90vh;
     margin: 0 calc(50% - 45vw) 1.5rem;
     font-size: 1rem;
+    background: #fff;
     --frame-pad: 1rem;
     --frame-pad-bottom: 0.6rem;
 }
