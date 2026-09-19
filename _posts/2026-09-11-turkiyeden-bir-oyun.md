@@ -29,8 +29,7 @@ Qe6 { c4 piyonuna saldırıyor. } 12. Nd5!? { [D] En iyi savunma saldırıdır!
 Burada rakibim aynı anda hem savunma yapıyor, hem de hücum! } 12... Rc8 13. Bg5 { Bir
 ciddi tehdit daha! Nxf6'nın ardından Bg4 } 13... Nbd7 (13... c6?? 14. Nxf6+ Bxf6
 15. Bg4 $18) 14. h3! { [D] ...ve bir tehdit daha! Bu noktada "tahtada ne oluyor" diye
-düşündüm; rakibimin oyunu inanılmaz güçlüydü ve Türkiye'de satrancın ne kadar hafife
-alındığını gösteriyordu! } 14... h5 { Bg4'ü önlemem gerekiyordu } (14... c6?? {
+düşündüm; rakibimin oyunu inanılmaz güçlüydü ve Türkiye'de oyuncuların reytinglerinin oyun kuvvetlerinin ne kadar altında olduğunu gösteriyordu! } 14... h5 { Bg4'ü önlemem gerekiyordu } (14... c6?? {
 Yine de atı kovalayamıyorum. } 15. Bg4 Nxg4 (15... Qe8 16. Nxf6+) 16. Ne7+ Kh8
 17. Nxc8 $18) 15. Be3 c6 { Sonunda atı kovmayı başardım, ama dinamik bir oyun
 yaratma ve kazanma şansım hayli azaldı. } 16. bxc6 bxc6 17. Nxf6+ Nxf6 (17... Bxf6 18.
