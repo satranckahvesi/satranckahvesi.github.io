@@ -67,8 +67,18 @@ a {
 
 a:hover { border-bottom-style: dotted; }
 
+/* border-bottom-width set explicitly rather than left to the shorthand's
+   own reset (border-bottom: none resets width to its initial "medium"
+   ~3px, invisible while style stays none but exposed the moment
+   something re-enables the style — e.g. a:hover below turning it
+   dotted on nav links gave them a noticeably thicker hover line than
+   ordinary text links, whose width was already explicitly 1px/2px via
+   the `a`/.link-primary rules). */
 .no-underline,
-.no-underline-hover { border-bottom: none; }
+.no-underline-hover {
+    border-bottom-style: none;
+    border-bottom-width: 1px;
+}
 
 .no-underline-hover:hover { border-bottom: none; }
 
@@ -97,16 +107,24 @@ a:hover { border-bottom-style: dotted; }
    masthead down), switching at 52em+ to a column stacked in the header's
    top-right corner — pinned there with position:absolute so it overlaps
    the header instead of pushing the title down. */
+/* Below 52em the reading order is the mirror of the desktop column
+   (Yazılar first, the toggle last) so the item nearest the thumb/eye
+   on a narrow screen is the one a reader most likely wants — row-
+   reverse flips the visual order without touching the DOM order the
+   desktop column below still relies on. justify-content: flex-start
+   packs that reversed row against the main-start, which row-reverse
+   puts on the right, so the group still hugs the right edge. */
 .site-nav {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    flex-direction: row-reverse;
     flex-wrap: wrap;
-    gap: 1rem 1.5rem;
+    gap: 0.5rem 0.85rem;
     max-width: 42rem;
     margin: 0 auto 1rem;
     font-style: italic;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 @media (min-width: 52em) {
@@ -119,6 +137,7 @@ a:hover { border-bottom-style: dotted; }
         gap: 0.5rem;
         max-width: none;
         margin: 0;
+        font-size: 1.1rem;
     }
 }
 
@@ -148,9 +167,13 @@ a:hover { border-bottom-style: dotted; }
     :root:not([data-theme="light"]) .theme-toggle-icon-light { display: inline; }
 }
 
+/* Matches the generous gap real Athena has above its own title
+   (confirmed directly against broccolini.net/athena: its container's
+   own mt-4 plus the h1's own mt-4/py-2 add up to ~144px above the
+   title) rather than the ~40px this masthead had before. */
 .masthead {
     max-width: 42rem;
-    margin: 1rem auto 0;
+    margin: 7rem auto 0;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -204,7 +227,7 @@ a:hover { border-bottom-style: dotted; }
 .section {
     max-width: 42rem;
     margin: 3.5rem auto 0;
-    padding: 0 1rem;
+    padding: 0;
     text-align: left;
 }
 
@@ -288,7 +311,7 @@ a:hover { border-bottom-style: dotted; }
 .site-footer {
     max-width: 42rem;
     margin: 4.5rem auto 0;
-    padding: 1.5rem 1rem 2.5rem;
+    padding: 1.5rem 0 2.5rem;
     border-top: 2px solid var(--ink);
     display: flex;
     justify-content: space-between;
@@ -312,15 +335,15 @@ a:hover { border-bottom-style: dotted; }
 .section-divider {
     max-width: 42rem;
     margin: 3rem auto 0;
-    padding: 0 1rem;
+    padding: 0;
     border-top: 2px solid var(--ink);
 }
 
 /* single post */
 .post {
-    max-width: 640px;
+    max-width: 42rem;
     margin: 3.5rem auto 0;
-    padding: 0 1rem;
+    padding: 0;
     text-align: left;
 }
 
@@ -623,6 +646,53 @@ a:hover { border-bottom-style: dotted; }
     .post-body pgn-study pgn-player {
         --board-size: min(94cqw, 78vh, 480px);
     }
+}
+
+/* ChessPublica's own bundle hardcodes these colors regardless of theme
+   (confirmed directly in its CSS: .video-title-players{color:#111},
+   .video-title-event{color:#555}) — a pgn/pgn-player game's own title
+   header sits on this page's ambient background (ChessPublica sets no
+   background of its own there), so in dark mode that hardcoded dark
+   text became dark-on-dark and unreadable. Applied unconditionally
+   (not just under dark mode) since matching this site's own ink/muted
+   exactly is strictly more correct in light mode too. */
+.post-body .video-title-players { color: var(--ink); }
+.post-body .video-title-event { color: var(--muted); }
+
+/* pgn-study's own ribbon header and its highlighted active comment
+   *do* carry an explicit background of their own (#fff / #fff3cd), so
+   they stay legible in dark mode on their own terms — just visibly
+   stuck on ChessPublica's light-mode colors instead of following this
+   site's theme. Scoped to dark mode only, since the light-mode values
+   already match this site's own light palette. */
+:root[data-theme="dark"] .post-body .pgn-study-ribbon,
+:root[data-theme="dark"] .post-body .pgn-container .pgn-comment.pgn-comment-active,
+:root[data-theme="dark"] .post-body .pgn-container .pgn-comment-inline.pgn-comment-active {
+    background: var(--hairline);
+    color: var(--ink);
+}
+
+:root[data-theme="dark"] .post-body .pgn-study-ribbon {
+    border-bottom-color: var(--hairline);
+}
+
+:root[data-theme="dark"] .post-body .pgn-study-ribbon-title-text { color: var(--ink); }
+:root[data-theme="dark"] .post-body .pgn-study-ribbon-title-subtext { color: var(--muted); }
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .post-body .pgn-study-ribbon,
+    :root:not([data-theme="light"]) .post-body .pgn-container .pgn-comment.pgn-comment-active,
+    :root:not([data-theme="light"]) .post-body .pgn-container .pgn-comment-inline.pgn-comment-active {
+        background: var(--hairline);
+        color: var(--ink);
+    }
+
+    :root:not([data-theme="light"]) .post-body .pgn-study-ribbon {
+        border-bottom-color: var(--hairline);
+    }
+
+    :root:not([data-theme="light"]) .post-body .pgn-study-ribbon-title-text { color: var(--ink); }
+    :root:not([data-theme="light"]) .post-body .pgn-study-ribbon-title-subtext { color: var(--muted); }
 }
 
 .pgn-switcher {

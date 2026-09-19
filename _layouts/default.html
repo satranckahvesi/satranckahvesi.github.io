@@ -6,13 +6,13 @@
     <script>
     (function () {
         try {
-            var t = localStorage.getItem('satranckahvesi-theme');
+            var t = sessionStorage.getItem('satranckahvesi-theme');
             if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
         } catch (e) {}
     })();
     </script>
     <title>{% if page.title and page.title != site.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-    <link rel="icon" type="image/jpeg" href="{{ '/assets/img/logo.jpg' | relative_url }}">
+    <link rel="icon" type="image/svg+xml" href="{{ '/assets/img/favicon.svg' | relative_url }}">
     {% if page.layout == "post" %}
     <link rel="preconnect" href="https://chesspublica.github.io">
     <link rel="stylesheet" href="https://chesspublica.github.io/dist/ChessPublica.all.min.css">
@@ -27,13 +27,13 @@
                 <svg class="theme-toggle-icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
             </button>
             <a class="no-underline" href="{{ '/hakkinda/' | relative_url }}">Hakkında</a>
-            <a class="no-underline" href="{{ '/#koseler' | relative_url }}">Köşeler</a>
-            <a class="no-underline" href="{{ '/#yazarlar' | relative_url }}">Yazarlar</a>
-            <a class="no-underline" href="{{ '/#yazilar' | relative_url }}">Yazılar</a>
+            <a class="no-underline" href="{{ '/koseler/' | relative_url }}">Köşeler</a>
+            <a class="no-underline" href="{{ '/yazarlar/' | relative_url }}">Yazarlar</a>
+            <a class="no-underline" href="{{ '/yazilar/' | relative_url }}">Yazılar</a>
         </nav>
         <div class="masthead">
             <h1 class="masthead-title"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
-            <p class="masthead-tagline">Bir fincan kahve eşliğinde satranç üzerine köşeler ve sohbetler.</p>
+            <p class="masthead-tagline">Kahve eşliğinde satranç sohbetleri.</p>
             <div class="masthead-rule"></div>
         </div>
     </header>
@@ -42,9 +42,9 @@
         <p class="footer-credit">{{ site.title }} &copy; {{ site.time | date: '%Y' }}</p>
         <nav class="footer-nav">
             <a class="no-underline" href="{{ '/hakkinda/' | relative_url }}">Hakkında</a>
-            <a class="no-underline" href="{{ '/#koseler' | relative_url }}">Köşeler</a>
-            <a class="no-underline" href="{{ '/#yazarlar' | relative_url }}">Yazarlar</a>
-            <a class="no-underline" href="{{ '/#yazilar' | relative_url }}">Yazılar</a>
+            <a class="no-underline" href="{{ '/koseler/' | relative_url }}">Köşeler</a>
+            <a class="no-underline" href="{{ '/yazarlar/' | relative_url }}">Yazarlar</a>
+            <a class="no-underline" href="{{ '/yazilar/' | relative_url }}">Yazılar</a>
             <a class="no-underline" href="{{ '/' | relative_url }}">Ana sayfa</a>
         </nav>
     </footer>
