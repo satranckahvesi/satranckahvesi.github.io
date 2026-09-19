@@ -14,36 +14,38 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
     <style>
-        /* Logo, wordmark and gap scale fluidly with viewport width instead
-           of jumping at a single breakpoint, so the masthead actually
-           widens to fill typical phone screens (previously pinned at its
-           narrow 320px-safe minimum on every mobile width) while still
-           fitting one line down to a 320px viewport and matching the
-           existing desktop size once it reaches 640px. Each clamp's
-           preferred value is a straight line through those same two
-           reference points (320px -> mobile minimum, 640px -> desktop
-           size), so nothing changes at either end — only the sizes
-           between them are now filled in continuously. Deliberately kept
-           fluid rather than switched to the standard-heading-scale 2em
-           other h1/h2/h3 elements use now: this one still has to fit
-           next to the logo image on one line down to a 320px viewport,
-           which a flat size can't guarantee the way this clamp does. */
+        /* Logo, wordmark and gap scale fluidly with the masthead's own box
+           (site.css makes .site-header a cqw query container) rather than
+           the raw browser viewport, so the reference point for "fully
+           grown" is how wide that box actually is, not the window — the
+           two only used to coincide by accident, back when .site-header
+           was capped at the page's own narrow content width. Each clamp's
+           preferred value is a straight line through two reference points
+           (320px container -> mobile minimum, ~900px container -> desktop
+           size) via cqw, so it keeps widening on a big full-bleed
+           masthead past where the old vw version plateaued at 640px,
+           while still fitting one line down to a 320px-wide container.
+           Deliberately kept fluid rather than switched to the
+           standard-heading-scale 2em other h1/h2/h3 elements use now:
+           this one still has to fit next to the logo image on one line
+           down to a 320px container, which a flat size can't guarantee
+           the way this clamp does. */
         .brand {
             display: inline-flex;
             flex-direction: row;
             align-items: center;
-            gap: clamp(0.75rem, 0.2rem + 2.9vw, 1.3rem);
+            gap: clamp(0.75rem, 0.2rem + 2.9cqw, 1.75rem);
         }
         .site-logo {
-            width: clamp(56px, 17.5vw, 112px);
-            height: clamp(56px, 17.5vw, 112px);
+            width: clamp(56px, 17.5cqw, 160px);
+            height: clamp(56px, 17.5cqw, 160px);
             flex: none;
         }
         .logo {
             margin: 0;
             font-family: 'Playfair Display', serif;
             font-style: italic;
-            font-size: clamp(1.35rem, 0.1rem + 6.6vw, 2.6rem);
+            font-size: clamp(1.35rem, 0.1rem + 6.6cqw, 3.6rem);
             font-weight: 400;
             color: #16283a;
         }
