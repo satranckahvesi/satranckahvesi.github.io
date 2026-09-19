@@ -1087,13 +1087,17 @@ a:hover { border-bottom-style: dotted; }
 }
 
 /* A post's own "X köşesindeki diğer yazılar"/"Yazarın diğer yazıları"
-   sections, and the homepage's own "Yazılar" section, list post titles
-   without the underline .post-list normally gives them (still bold/
-   sized the same — only the border-bottom goes). */
+   sections, the homepage's own "Yazılar" section, and a yazar/köşe
+   archive page's own post list (.archive, shared by both via
+   _layouts/archive.html) all list post titles without the underline
+   .post-list normally gives them (still bold/sized the same — only
+   the border-bottom goes). */
 .post-related .post-list li > a,
 .post-related .post-list li > a:hover,
 #yazilar .post-list li > a,
-#yazilar .post-list li > a:hover {
+#yazilar .post-list li > a:hover,
+.archive .post-list li > a,
+.archive .post-list li > a:hover {
     border-bottom: none;
 }
 
