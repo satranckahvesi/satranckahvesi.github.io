@@ -10,9 +10,35 @@ html {
 
 :root {
     --ink: #2b2826;
+    --bg: #fff;
     --muted: rgba(43, 40, 38, 0.62);
     --hairline: #d7d5d1;
     --font-serif: Athelas, Palatino, 'Palatino Linotype', Georgia, 'Times New Roman', serif;
+    color-scheme: light;
+}
+
+/* Dark palette applies when the reader's OS prefers dark and they haven't
+   explicitly picked light via the toggle (data-theme="light" always wins),
+   or whenever they've explicitly picked dark (data-theme="dark" — set by
+   assets/js/theme-toggle.js, independent of OS preference). Same warm
+   ink-on-paper pairing, inverted: off-white ink on a near-black warm
+   ground rather than a literal black/white swap. */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --ink: #ece6e0;
+        --bg: #1c1917;
+        --muted: rgba(236, 230, 224, 0.62);
+        --hairline: rgba(236, 230, 224, 0.16);
+        color-scheme: dark;
+    }
+}
+
+:root[data-theme="dark"] {
+    --ink: #ece6e0;
+    --bg: #1c1917;
+    --muted: rgba(236, 230, 224, 0.62);
+    --hairline: rgba(236, 230, 224, 0.16);
+    color-scheme: dark;
 }
 
 * { box-sizing: border-box; }
@@ -22,8 +48,9 @@ body {
     padding: 0 1rem;
     font-family: var(--font-serif);
     color: var(--ink);
-    background: #fff;
+    background: var(--bg);
     line-height: 1.5;
+    transition: background-color 0.15s ease, color 0.15s ease;
     /* pgn-study breaks out of the post column to center itself on the
        viewport (see below); on a page with a vertical scrollbar, the vw
        units involved slightly overshoot the visible width, so guard
@@ -62,24 +89,75 @@ a:hover { border-bottom-style: dotted; }
     width: 100vw;
     margin: 0 calc(50% - 50vw);
     padding: 1.5rem 1rem 0;
+    position: relative;
 }
 
+/* Matches Athena's own nav exactly: a right-aligned row of items above
+   the title below its 52em breakpoint (in normal flow, so it pushes the
+   masthead down), switching at 52em+ to a column stacked in the header's
+   top-right corner — pinned there with position:absolute so it overlaps
+   the header instead of pushing the title down. */
 .site-nav {
     display: flex;
+    align-items: center;
     justify-content: flex-end;
-    gap: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem 1.5rem;
     max-width: 42rem;
-    margin: 0 auto;
+    margin: 0 auto 1rem;
     font-style: italic;
     font-size: 1.1rem;
 }
 
+@media (min-width: 52em) {
+    .site-nav {
+        position: absolute;
+        top: 1.5rem;
+        right: 1rem;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.5rem;
+        max-width: none;
+        margin: 0;
+    }
+}
+
+.theme-toggle {
+    display: inline-flex;
+    font-style: normal;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: inherit;
+    cursor: pointer;
+}
+
+.theme-toggle svg {
+    width: 1.1em;
+    height: 1.1em;
+}
+
+.theme-toggle-icon-light { display: none; }
+
+:root[data-theme="dark"] .theme-toggle-icon-dark { display: none; }
+:root[data-theme="dark"] .theme-toggle-icon-light { display: inline; }
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .theme-toggle-icon-dark { display: none; }
+    :root:not([data-theme="light"]) .theme-toggle-icon-light { display: inline; }
+}
+
 .masthead {
+    /* Shared by the title and the logo below, so the logo can be sized
+       directly off the title's own font-size instead of duplicating its
+       clamp() formula. */
+    --title-size: clamp(2.5rem, 1.4rem + 6vw, 5rem);
     max-width: 42rem;
     margin: 1rem auto 0;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.5rem;
 }
 
 /* Logo and title links never take the global hover-underline treatment
@@ -92,9 +170,20 @@ a:hover { border-bottom-style: dotted; }
 
 .brand { display: block; }
 
+/* Sized to match the title's own capital-letter height (the "S" of
+   "Satranç Kahvesi") rather than an arbitrary pixel value, so the mark
+   always reads as one unit with the wordmark at any viewport width. The
+   calc() is a ~0.72em cap-height approximation for the serif stack in
+   --font-serif; browsers that support the `cap` unit get the font's
+   actual cap-height instead (an unsupported value is simply ignored, so
+   the calc() above it stands as the fallback). */
 .site-logo {
-    width: clamp(56px, 17.5vw, 96px);
-    height: clamp(56px, 17.5vw, 96px);
+    width: calc(var(--title-size) * 0.72);
+    height: calc(var(--title-size) * 0.72);
+    font-family: var(--font-serif);
+    font-size: var(--title-size);
+    width: 1cap;
+    height: 1cap;
 }
 
 .masthead-title {
@@ -102,7 +191,7 @@ a:hover { border-bottom-style: dotted; }
     font-weight: bold;
     font-style: normal;
     line-height: 1.02;
-    font-size: clamp(2.5rem, 1.4rem + 6vw, 5rem);
+    font-size: var(--title-size);
     color: var(--ink);
 }
 
@@ -561,7 +650,7 @@ a:hover { border-bottom-style: dotted; }
     padding: 0;
     border: 1px solid var(--hairline);
     border-radius: 50%;
-    background: #fff;
+    background: var(--bg);
     color: var(--muted);
     cursor: pointer;
     transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
@@ -572,7 +661,7 @@ a:hover { border-bottom-style: dotted; }
 .pgn-switcher-btn:hover { color: var(--ink); border-color: var(--ink); }
 
 .pgn-switcher-btn.is-active {
-    color: #fff;
+    color: var(--bg);
     background: var(--ink);
     border-color: var(--ink);
 }
@@ -588,7 +677,7 @@ a:hover { border-bottom-style: dotted; }
     max-height: 480px;
     width: auto;
     height: auto;
-    border: 8px solid #fff;
+    border: 8px solid var(--bg);
     outline: 1px solid var(--hairline);
     box-shadow: 0 1px 3px rgba(43, 40, 38, 0.12);
 }
