@@ -52,3 +52,5 @@ Kd3 Kg8 60. Ke2 Kf7 61. Kd3 Ke6 62. Kc4 Bd8 63. Be1 Kf6 64. Kd3 Bc7 65. Ke2 Kg6
 73. Be7 Kf7 74. Bh4 Ke8 75. Bf6 Kd7 76. Bh4 Ba5 77. Bf6 Ke6 78. Bh4 Kf7 79. Bg5
 Bc7 80. Bh4 Kg8 81. Be7 Kf7 82. Bh4 Ke8 83. Bg5 Kd7 84. Bf6 Bb8 85. Bh4 Bc7 86.
 Bf6 Ke8 87. Bh4 Bd8 1/2-1/2
+
+Bu nasıl reyting, bu nasıl bir oyun kuvveti? Beyazın reytinginin 1653 olduğuna inanmak mümkün mü? Türkiye'de oyuncuların reytingleri hak ettiklerinin çok altında.
