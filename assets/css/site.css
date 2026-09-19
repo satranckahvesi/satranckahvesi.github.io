@@ -3,14 +3,9 @@
    %, so this is the one place that needs to change to make all text —
    including inside pgn/fen/puzzle/pgn-player/pgn-study — a bit bigger. A
    percentage (rather than a fixed px value) scales relative to the
-   visitor's own browser default instead of overriding it. Also carries the
-   page's dark obsidian canvas: painted on html rather than body so it
-   still fills the full scrollable height even on a short page, with
-   body's own background below showing through only inside its own
-   max-width. */
+   visitor's own browser default instead of overriding it. */
 html {
     font-size: 106.25%;
-    background: #12141a;
 }
 
 :root {
@@ -22,10 +17,8 @@ html {
 * { box-sizing: border-box; }
 
 body {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 0 1rem 0;
-    background: #fff;
+    margin: 0;
+    padding: 2.5rem 1rem 0;
     font-family: Georgia, 'Times New Roman', serif;
     color: var(--ink);
     line-height: 1.65;
@@ -36,31 +29,19 @@ body {
     overflow-x: hidden;
 }
 
-/* Full-bleed at every width, not just mobile: the same margin-trick
-   pgn-study uses below to escape the (now narrower, 700px) body column
-   and span the true viewport edge to edge, with its own background so
-   the masthead reads as one solid bar rather than just a wider,
-   still-invisible box — a plain width change alone wouldn't show
-   anything, since the centered logo/wordmark already sat in the middle
-   either way. Carries the top spacing body used to supply (removed
-   above) as its own padding, so the white bar covers that gap too
-   instead of leaving a sliver of the dark canvas showing above it. */
-.site-header {
-    text-align: center;
-    width: 100vw;
-    margin: 0 calc(50% - 50vw);
-    padding: 2.5rem 0;
-    background: #fff;
-    /* Makes .site-header a query container so the logo/wordmark clamps
-       below (default.html's inline <style>) can size off its own box —
-       now that box is this full-bleed bar, not the page's true
-       viewport — via cqw instead of vw. vw would keep measuring the
-       raw browser window regardless of what box it's used in, which is
-       exactly why full-bleeding this element alone didn't grow the
-       masthead: vw already equalled 100% of the viewport before, so
-       nothing about that calculation changed. */
-    container-type: inline-size;
-    border-bottom: 1px solid var(--hairline);
+.site-header { text-align: center; }
+
+/* Breaks the masthead out of body's 1rem side padding so the row spans
+   the full viewport edge to edge on mobile, then re-adds that same
+   1rem as the header's own padding so the logo/wordmark sit exactly
+   where they did before — only the box itself is now full-bleed.
+   Uses the same margin-trick already relied on for pgn-study below. */
+@media (max-width: 639px) {
+    .site-header {
+        width: 100vw;
+        margin: 0 calc(50% - 50vw);
+        padding: 0 1rem;
+    }
 }
 
 .brand { text-decoration: none; }
@@ -426,11 +407,7 @@ body {
    the post column so the panel can be centered on the viewport instead of
    the (much narrower) column. Leaving overflow/grid-row behavior alone
    lets ChessPublica's own internal scrolling work once max-height caps the
-   panel's height. ChessPublica leaves the panel itself transparent (its own
-   background rules only cover pieces inside it, like the ribbon and move
-   list), so against the page's dark obsidian canvas outside body's column
-   it would show as a dark gap around those inner white pieces; give it an
-   explicit light background so the whole panel reads as one light card. */
+   panel's height. */
 .post-body pgn-study {
     width: auto;
     max-width: 90vw;
@@ -438,7 +415,6 @@ body {
     max-height: 90vh;
     margin: 0 calc(50% - 45vw) 1.5rem;
     font-size: 1rem;
-    background: #fff;
     --frame-pad: 1rem;
     --frame-pad-bottom: 0.6rem;
 }
