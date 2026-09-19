@@ -485,10 +485,16 @@ a:hover { border-bottom-style: dotted; }
 
 /* ChessPublica's .pgn-container adds its own 0 1rem side padding, which
    stacks on top of .post's own padding and indents the move list,
-   variations and comments further in than the surrounding paragraphs. */
+   variations and comments further in than the surrounding paragraphs.
+   container-type is set here (rather than needing pgn-player's own
+   width: 100% workaround below) because .pgn-container is already a
+   plain block element with a real width of its own — the full post
+   column, not width: fit-content — so cqw units in a descendant
+   already have something real to measure against. */
 .post-body .pgn-container {
     padding-left: 0;
     padding-right: 0;
+    container-type: inline-size;
 }
 
 /* pgn-player is display:block with width:fit-content, so left to itself it
@@ -703,6 +709,27 @@ a:hover { border-bottom-style: dotted; }
 .post-body .pgn-container .cp-board-wrapper {
     margin-left: auto;
     margin-right: auto;
+}
+
+/* Every diagram a plain <pgn> game can render inline — a move's own
+   %csl/%cal comment, a [D]/[#] flag, or the game's own starting
+   position if it has one — is a .cp-board-wrapper, sized off
+   --diagram-max-width (confirmed directly in ChessPublica's CSS:
+   --diagram-max-width: var(--board-size) normally, or
+   calc(var(--board-size) * .75) with its own .cp-board-wrapper--small
+   modifier, which %csl/%cal and [D]/[#] diagrams both carry). Neither
+   is responsive on its own — a flat 400px or 300px regardless of
+   viewport — and the --small ones read noticeably smaller than
+   pgn-player's own board besides. Setting --diagram-max-width
+   directly (rather than --board-size, which --small would still
+   shrink by another 25% on top of) makes every one of them exactly
+   pgn-player's own size at any width: min(400px, 94cqw) resolves the
+   same way here as it does there, since .pgn-container already
+   forces cqw to mean something (see above) at every width, not just
+   pgn-player's own sub-900px case. */
+.post-body .pgn-container .cp-board-wrapper,
+.post-body .pgn-container .cp-board-wrapper--small {
+    --diagram-max-width: min(400px, 94cqw);
 }
 
 /* pgn-study already shows the live, moving board in its own left column;
