@@ -1,11 +1,21 @@
-/* Single control point for the whole site's type scale: every font-size
-   in this file (and in ChessPublica's own CSS) is expressed in rem, em or
-   %, so this is the one place that needs to change to make all text —
-   including inside pgn/fen/puzzle/pgn-player/pgn-study — a bit bigger. A
-   percentage (rather than a fixed px value) scales relative to the
-   visitor's own browser default instead of overriding it. */
+/* Single control point for the whole site's type scale, matching how
+   Athena itself sets its own base (confirmed directly in its CSS:
+   body{font-size:16px}, with html left at the browser default, itself
+   16px in effect once a fixed px value like this stops it tracking the
+   visitor's own browser setting) — a fixed px number here rather than
+   the relative % this rule used before. Every other font-size in this
+   file (and in ChessPublica's own CSS, which pgn/fen/puzzle/pgn-player/
+   pgn-study are built from) is expressed in rem or em, so this one
+   declaration is still the only place the whole scale needs to change,
+   and every element derives from it consistently — nothing pins itself
+   back to a size independent of it. html carries the actual value,
+   since rem is always relative to the root regardless of which element
+   declares it; body restates the same number, matching Athena's own
+   (redundant, but keeps the two in agreement for anything that
+   inherits through body via em rather than reading rem off the root
+   directly). */
 html {
-    font-size: 106.25%;
+    font-size: 17px;
 }
 
 :root {
@@ -46,6 +56,7 @@ html {
 body {
     margin: 0;
     padding: 0 1rem;
+    font-size: 17px;
     font-family: var(--font-serif);
     color: var(--ink);
     background: var(--bg);
@@ -398,33 +409,6 @@ a:hover { border-bottom-style: dotted; }
     font-size: 1.5rem;
 }
 
-/* ChessPublica's pgn-study sizes its own internal chrome off a
-   font-size: 110% rule of its own (confirmed directly in its CSS),
-   meant to read as "110% of the surrounding page" — a page whose own
-   ambient size, before this file existed, was always the plain root
-   size. Left alone, .post-body's own new 1.5rem base above would feed
-   into that 110% and inflate the whole widget (buttons, icons, move
-   list) well past its intended scale. Pinning each custom element's
-   own font-size back to the root's 1rem keeps them exactly as sized
-   as before this change, and doing the same for table (which, like
-   p, had no font-size of its own to override) matches Athena's own
-   table staying at the un-enlarged base rather than the prose size.
-
-   <pgn>, <puzzle> and <fen> never keep their own tag in the DOM —
-   ChessPublica's own init replaces each wholesale with a plain div
-   (.pgn-container, .cp-puzzle, .fen-container respectively, confirmed
-   directly), so those are what need pinning here, not the custom
-   element names themselves; <pgn-player> and <pgn-study> are the two
-   that do keep their own tag. */
-.post-body pgn-player,
-.post-body pgn-study,
-.post-body .pgn-container,
-.post-body .cp-puzzle,
-.post-body .fen-container,
-.post-body table {
-    font-size: 1rem;
-}
-
 .post-body h1,
 .post-body h2,
 .post-body h3,
@@ -620,7 +604,12 @@ a:hover { border-bottom-style: dotted; }
    the viewport in each dimension (not forced to exactly that size, so it
    can be shorter for a short game), and to keep switching to ChessPublica's
    own built-in mobile layout below its 900px breakpoint. It also drops the
-   10% font-size bump. The margin-left/right formula is the standard
+   10% font-size bump ChessPublica's own font-size: 110% rule would
+   otherwise add on top of the post's own ambient size — 100% (rather than
+   the 1rem this used before Athena's own type scale went into .post-body)
+   passes that ambient size through unchanged instead of pinning back to
+   the root's, so pgn-study's own text still tracks the same base as the
+   rest of the post. The margin-left/right formula is the standard
    full-bleed trick generalized for a box narrower than 100vw: it escapes
    the post column so the panel can be centered on the viewport instead of
    the (much narrower) column. Leaving overflow/grid-row behavior alone
@@ -632,7 +621,7 @@ a:hover { border-bottom-style: dotted; }
     height: auto;
     max-height: 90vh;
     margin: 0 calc(50% - 45vw) 1.5rem;
-    font-size: 1rem;
+    font-size: 100%;
     --frame-pad: 1rem;
     --frame-pad-bottom: 0.6rem;
 }
@@ -692,18 +681,21 @@ a:hover { border-bottom-style: dotted; }
 }
 
 /* Comments inherit pgn-study's own type scale rather than the post's; pin
-   them to the same size as a plain paragraph. */
+   them to the same size as a plain paragraph — 1em of pgn-study's own
+   (now ambient-tracking, see above) font-size, rather than a flat 1rem,
+   so this still holds regardless of what the post's own base is. */
 .post-body pgn-study .pgn-comment,
 .post-body pgn-study .pgn-comment-inline,
 .post-body pgn-study .video-comment {
-    font-size: 1rem;
+    font-size: 1em;
 }
 
 /* Inside pgn-study, the game title picks up a 1.1rem bump (vs. 1rem
    elsewhere ChessPublica shows a game title, e.g. in pgn-player). Match
-   the other contexts instead. */
+   the other contexts instead — 1em of pgn-study's own font-size, same
+   reasoning as the comments above. */
 .post-body pgn-study .pgn-title .video-title-text {
-    font-size: 1rem;
+    font-size: 1em;
 }
 
 /* A move comment carrying %csl/%cal marks renders a small inline board
