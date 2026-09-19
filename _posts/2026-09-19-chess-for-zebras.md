@@ -158,7 +158,7 @@ oynadı, yanıt olarak biraz fazla yaratıcı oynadım ve sonradan gaf olduğu o
 bir hamle yaptım... Bu açıklamayı birkaç kez yaptığımı ve 11...Vf6 hamlesinden söz ettiğimi
 hatırlıyorum. Daha sonra dinleyenlerden &#39;Ya! Yani 12.d5 hamlesini kaçırdın?&#39; diyerek araya
 girenlere çabucak &#39;Hayır! 12.d5&#39;i gördüm fakat d5&#39;i iki kez alabildiğini görmedim.&#39; yanıtını
-verdim. Bu kulağa makul geliyor, fakat aslında, tamamen yalan.
+verdim. **Bu kulağa makul geliyor, fakat aslında, tamamen yalan.**
 
 Belki de kendime karşı fazla acımasızım ve belki buna kendini kandırma demek daha adildir.
 Sanıyorum bu hikayeyi ilk söylediğimde egomu korumak ve bu oyunun özel durumunu
@@ -170,7 +170,7 @@ Bu hikaye şunu demek istiyordu: O yaratıcıydı ve ben de yaratıcıydım. Ama
 yaratıcıydım ki kendimi kaptırdım ve onun anahtar hamlesini görmeme rağmen (çünkü, hey,
 ben bir büyükustayım), devamını kaçırdım (çünkü, hey, kimse mükemmel değil).
 Bu hikaye uydurmada (fabulation) beni en çok vuran şey, üçüncü ya da dördüncü kez
-olayların bu versiyonunu anlattığımda artık kendim de böyle olduğuna inanmaya başladım!
+olayların bu versiyonunu anlattığımda **artık kendim de böyle olduğuna inanmaya başladım**!
 O akşam kız arkadaşımla konuştuğumda dahi benzer şeyler söyledim. Yalnız oyunu
 bilgisayara verdiğimde basitçe 12.d5 hamlesini kaçırdığım gerçeğiyle yüzleştim. Hamleyi
 görmüştüm fakat yalnızca 11...Vf6 hamlesini oynadıktan ‘sonra’. 11...Vf6 hamlesini
