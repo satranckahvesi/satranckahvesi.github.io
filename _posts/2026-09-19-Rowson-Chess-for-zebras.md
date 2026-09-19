@@ -80,11 +80,10 @@ umduğum- “sihirli formülü” yok; tam tersine her şeyin kesin olduğu iddi
 şüpheyle yaklaşılmasını öğütlüyor ve her şeyin kesin olduğu alandan belirsizliğe geçmeyi
 ilerleme sayıyor. Bunu ise her bölüm için iyi seçilmiş, bazıları yazarın kendisi tarafından
 oynanmış partilerle örnekliyor.
-- “Oyuncunun gücü arttıkça, kendisine bir konumda ne olduğu sorulduğunda daha büyük
+ “Oyuncunun gücü arttıkça, kendisine bir konumda ne olduğu sorulduğunda daha büyük
 ihtimalle ‘bilmiyorum’ diyerek başlayacaktır.”
-- “Satranca, ‘bilmiyorum, düşünelim’ zihniyeti ile yaklaşmak, ‘bu böyle ve bunu
+ “Satranca, ‘bilmiyorum, düşünelim’ zihniyeti ile yaklaşmak, ‘bu böyle ve bunu
 kanıtlayacağım’ şeklinde yaklaşmaktan çok daha akıllıcadır.”
-
 Aynı yaklaşımla, “atak bir oyuncuyum”, “konumsal oynamayı severim”, “hesap yapmam, sezgilerimle oynarım” gibi yaklaşımlarla oyuncunun kendi tarzına ve hamlelerine sınırlar çizmesini, onun satrancının gelişimi önündeki en büyük engellerden biri olarak
 görüyor ve kitabın her bölümüne özenle seçilerek konmuş epigraflarından Karpov’a ait olan sözüyle bunu açıklıyor. “Tarz mı? Benim bir tarzım yok.” Burada söylenmek istenen “oyuncunun bir tarzı olmamalı” değil, bu yaklaşımın oyuncunun oynadığı oyuna damga vurması, hamleleri üzerinde etkiye sahip olmasıdır elbette. Karpov’un kendi stili üzerine böyle düşünmesi onun bir tarza sahip olmadığını gösterir mi? Kitap boyunca konuya eşlik eden örneklerde kendi partilerini, oynarkenki düşüncelerini ve hissettiklerini içten (belki de aşırı içten!) bir şekilde paylaşması kitabın en büyük artılarından. Şimdi ilk bölümün kaba bir özeti sayılabilecek bir kısmını paylaşmak istiyorum. Bir satranç kitabında içtenliğiyle böylesine beni yakalayan ve söyledikleriyle bana ayna tutan başka bir bölüm hatırlamıyorum. Sözünü ettiğim, Hikaye Uydurma (Fabulation) alt başlığında Rowson’ın yakın zamanda hayata gözlerini yuman Viktor Korchnoi ile karşılaşmasıdır.
 
