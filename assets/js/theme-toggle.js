@@ -21,7 +21,7 @@
     btn.addEventListener('click', function () {
         var next = isDark() ? 'light' : 'dark';
         root.setAttribute('data-theme', next);
-        try { localStorage.setItem(STORAGE_KEY, next); } catch (e) {}
+        try { sessionStorage.setItem(STORAGE_KEY, next); } catch (e) {}
         updateLabel();
     });
 })();
