@@ -111,6 +111,22 @@
             if (pgnViewKeys.indexOf(savedView) !== -1) tagName = savedView;
         }
 
+        // ChessPublica reads a comment's own [P] / [P n] marker (n plies,
+        // defaulting to 1) as "make this position a puzzle" — the reader
+        // has to find the actual move themselves before the game
+        // continues. Fine for a dedicated <puzzle>, but jarring in
+        // <pgn-study>: a reader working through a whole annotated game
+        // doesn't expect to be quizzed mid-read. Stripped before
+        // ChessPublica ever sees it (same regex it uses itself, so the
+        // comment text left behind reads exactly as it would if the
+        // marker had been recognized and removed) rather than turning
+        // puzzle mode off after the fact, which isn't exposed as an
+        // option. <pgn>/<pgn-player> keep the marker, since only
+        // <pgn-study>'s reading experience is the problem here.
+        if (tagName === 'pgn-study' && moveText !== null) {
+            moveText = moveText.replace(/\[P\s*\d*\]/g, '');
+        }
+
         var el = document.createElement(tagName);
         el.textContent = moveText !== null ? (headerText + '\n\n' + moveText) : headerText;
 
