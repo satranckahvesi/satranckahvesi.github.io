@@ -694,6 +694,17 @@ a:hover { border-bottom-style: dotted; }
 :root[data-theme="dark"] .post-body .pgn-study-toc-entry:hover {
     background: var(--hairline);
 }
+/* The currently-selected row in the variation picker (shown when a
+   move has more than one recorded continuation) keeps a light green
+   highlight (#c8e6c9) regardless of theme — low-contrast against the
+   light ink text it holds once that text follows dark mode. */
+:root[data-theme="dark"] .post-body .pgn-study-picker-row.active {
+    background: var(--ink);
+    color: var(--bg);
+}
+:root[data-theme="dark"] .post-body .pgn-study-picker-row.active .pgn-study-picker-icon {
+    color: var(--bg);
+}
 :root[data-theme="dark"] .post-body .pgn-study-speed-badge {
     background: var(--ink);
     color: var(--bg);
@@ -716,6 +727,22 @@ a:hover { border-bottom-style: dotted; }
 :root[data-theme="dark"] .post-body .pgn-study-picker-icon,
 :root[data-theme="dark"] .post-body .pgn-study-toc-move {
     color: var(--muted);
+}
+/* Hovering a move in pgn-study's own move list, and the "currently
+   active" move highlight shared across pgn/pgn-player/pgn-study
+   (.cp-inline-move, the inline move-list's own .white-half, and a
+   variation's .var-move) are both a light-mode gray/green regardless
+   of theme. */
+:root[data-theme="dark"] .post-body .pgn-move:hover {
+    background: var(--hairline);
+}
+:root[data-theme="dark"] .post-body .cp-inline-move.active,
+:root[data-theme="dark"] .post-body .move .white-half.active,
+:root[data-theme="dark"] .post-body .var-move.active,
+:root[data-theme="dark"] .post-body .pgn-move-active {
+    background: var(--hairline);
+    color: var(--ink);
+    box-shadow: 0 0 0 2px var(--hairline);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -765,6 +792,17 @@ a:hover { border-bottom-style: dotted; }
     :root:not([data-theme="light"]) .post-body .pgn-study-picker-icon,
     :root:not([data-theme="light"]) .post-body .pgn-study-toc-move {
         color: var(--muted);
+    }
+    :root:not([data-theme="light"]) .post-body .pgn-move:hover {
+        background: var(--hairline);
+    }
+    :root:not([data-theme="light"]) .post-body .cp-inline-move.active,
+    :root:not([data-theme="light"]) .post-body .move .white-half.active,
+    :root:not([data-theme="light"]) .post-body .var-move.active,
+    :root:not([data-theme="light"]) .post-body .pgn-move-active {
+        background: var(--hairline);
+        color: var(--ink);
+        box-shadow: 0 0 0 2px var(--hairline);
     }
 }
 
