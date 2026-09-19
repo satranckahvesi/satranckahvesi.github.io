@@ -11,17 +11,17 @@
     {% endif %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
     <style>
-        /* Logo, wordmark and gap scale fluidly with the masthead's own box
+        /* Logo and wordmark scale fluidly with the masthead's own box
            (site.css makes .site-header a cqw query container, now with no
            side padding of its own) rather than the raw browser viewport,
            so the reference point for "fully grown" is how wide that box
            actually is, not the window.
 
            A plain cqw percentage keeps a fixed ratio to the container at
-           any size — confirmed directly, e.g. the original 17.5/6.6/2.9
+           any size — confirmed directly, e.g. the original 17.5/6.6
            coefficients held the row at a constant ~68% of the container
            from 320px up to 3840px, never more, never less. That's exactly
            what makes a single coefficient set usable for "no whitespace
@@ -34,12 +34,17 @@
            container — font rendering isn't perfectly linear at every
            size (hinting/rounding), so aiming for exactly 100% would risk
            tipping over it right when the measurement doesn't quite line
-           up. Confirmed directly at containers from 320px to 3840px. */
+           up. Confirmed directly at containers from 320px to 3840px.
+
+           The gap between logo and wordmark is deliberately NOT part of
+           that fluid system — a flat 1rem keeps the two sitting close
+           together as one lockup at every size, rather than drifting
+           apart as the gap scaled up to 80px+ on a wide screen. */
         .brand {
             display: inline-flex;
             flex-direction: row;
             align-items: center;
-            gap: 4.18cqw;
+            gap: 1rem;
         }
         .site-logo {
             width: 25.22cqw;
@@ -51,6 +56,11 @@
             font-family: 'Playfair Display', serif;
             font-style: italic;
             font-size: 9.51cqw;
+            /* Google Fonts is asked for italic 400 explicitly (see the
+               <link> above) — without it in that request, the browser
+               has no 400 italic file to use and falls back to the
+               nearest weight it did fetch (600), silently overriding
+               this. */
             font-weight: 400;
             color: #16283a;
         }
