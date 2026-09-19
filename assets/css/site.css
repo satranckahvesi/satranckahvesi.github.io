@@ -9,19 +9,21 @@ html {
 }
 
 :root {
-    --ink: #16283a;
-    --muted: #5b6b78;
-    --hairline: #e2e5e8;
+    --ink: #2b2826;
+    --muted: rgba(43, 40, 38, 0.62);
+    --hairline: #d7d5d1;
+    --font-serif: Athelas, Palatino, 'Palatino Linotype', Georgia, 'Times New Roman', serif;
 }
 
 * { box-sizing: border-box; }
 
 body {
     margin: 0;
-    padding: 2.5rem 1rem 0;
-    font-family: Georgia, 'Times New Roman', serif;
+    padding: 0 1rem;
+    font-family: var(--font-serif);
     color: var(--ink);
-    line-height: 1.65;
+    background: #fff;
+    line-height: 1.5;
     /* pgn-study breaks out of the post column to center itself on the
        viewport (see below); on a page with a vertical scrollbar, the vw
        units involved slightly overshoot the visible width, so guard
@@ -29,67 +31,117 @@ body {
     overflow-x: hidden;
 }
 
-.site-header { text-align: center; }
+a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 1px;
+}
+
+a:hover { border-bottom-style: dotted; }
+
+.no-underline,
+.no-underline-hover { border-bottom: none; }
+
+.no-underline-hover:hover { border-bottom: none; }
+
+.link-primary {
+    font-weight: bold;
+    border-bottom: 2px solid currentColor;
+    padding-bottom: 1px;
+}
+
+.link-primary:hover { border-bottom-style: dotted; }
 
 /* Breaks the masthead out of body's 1rem side padding so the row spans
    the full viewport edge to edge on mobile, then re-adds that same
    1rem as the header's own padding so the logo/wordmark sit exactly
    where they did before — only the box itself is now full-bleed.
    Uses the same margin-trick already relied on for pgn-study below. */
-@media (max-width: 639px) {
-    .site-header {
-        width: 100vw;
-        margin: 0 calc(50% - 50vw);
-        padding: 0 1rem;
-    }
+.site-header {
+    width: 100vw;
+    margin: 0 calc(50% - 50vw);
+    padding: 1.5rem 1rem 0;
 }
 
-.brand { text-decoration: none; }
+.site-nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.5rem;
+    max-width: 42rem;
+    margin: 0 auto;
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+.masthead {
+    max-width: 42rem;
+    margin: 1rem auto 0;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: clamp(0.75rem, 0.2rem + 2.9vw, 1.3rem);
+}
+
+.site-logo {
+    width: clamp(56px, 17.5vw, 96px);
+    height: clamp(56px, 17.5vw, 96px);
+    flex: none;
+}
+
+.masthead-title {
+    margin: 0;
+    font-weight: bold;
+    font-style: normal;
+    line-height: 1.02;
+    font-size: clamp(2.5rem, 1.4rem + 6vw, 5rem);
+    color: var(--ink);
+}
+
+.masthead-tagline {
+    margin: 1rem 0 0;
+    font-size: 1.25rem;
+    line-height: 1.3;
+    color: var(--ink);
+}
+
+.masthead-rule {
+    max-width: 42rem;
+    margin: 1.5rem auto 0;
+    border-top: 2px solid var(--ink);
+}
 
 .section {
-    max-width: 640px;
+    max-width: 42rem;
     margin: 3.5rem auto 0;
     padding: 0 1rem;
-    text-align: center;
+    text-align: left;
 }
 
 .section h2 {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-style: italic;
-    font-weight: 600;
-    /* Standard heading scale (h1 2em / h2 1.5em / h3 1.17em, the same
-       ratios browsers use by default) rather than a hand-tuned rem
-       value. The masthead's own <h1> (.logo) is deliberately still a
-       fluid clamp() rather than a flat 2em (it has to fit on one
-       line next to the logo image down to a 320px viewport), so
-       unlike before, this flat 1.5em isn't guaranteed to stay under
-       it at every width — only at the typical ones where the clamp
-       has already grown well past its 1.35rem mobile floor. */
-    font-size: 1.5em;
+    font-family: var(--font-serif);
+    font-weight: bold;
+    font-size: 2rem;
     line-height: 1.2;
     color: var(--ink);
-    margin: 0 0 1.25rem;
+    margin: 0 0 1.5rem;
 }
 
 /* An archive page's own title (e.g. "Fincan başı sohbetler" on
    /koseler/fincan-basi-sohbetler/, or an author's name on
    /yazarlar/elif-aksoy/) is the same column/author name the homepage
-   shows as an <h3> (.section-title), so it's an <h3> here too — as
-   are a post page's own "X köşesindeki diğer yazılar"/"Yazarın diğer
-   yazıları" headings. Scoped to .archive/.post-related specifically
-   (both a direct child of their own wrapper, never nested in an li)
-   rather than .section h3, which would also match the homepage's own
-   <h3> wrapper around .section-title and fight with its own font
-   declarations for no reason. */
+   shows, so it gets the same treatment here — as do a post page's own
+   "X köşesindeki diğer yazılar"/"Yazarın diğer yazıları" headings. */
 .archive h3,
 .post-related h3 {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-style: italic;
-    font-weight: 600;
-    font-size: 1.17em;
+    font-family: var(--font-serif);
+    font-weight: bold;
+    font-size: 1.5rem;
     line-height: 1.2;
     color: var(--ink);
-    margin: 0 0 1.25rem;
+    margin: 0 0 1.5rem;
 }
 
 .section ul {
@@ -98,145 +150,33 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 1.1rem;
-}
-
-/* Direct-child combinator, not a plain descendant selector: .section
-   li also contains .section-latest/.section-meta, each with their own
-   link and size, nested inside a span rather than sitting as a direct
-   child of li like the column-name link this rule is actually meant
-   for. A plain descendant selector here matched those nested links
-   too, which then needed out-specificity'ing by .section
-   .section-latest a / .section .section-meta a further down just to
-   render at their own sizes. Scoping to > fixes it at the source
-   instead. */
-.section li > a {
-    color: var(--ink);
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: bold;
-    border-bottom: 1px solid transparent;
-    padding-bottom: 0.1em;
-    transition: border-color 0.15s ease;
-}
-
-.section li > a:hover { border-bottom-color: var(--ink); }
-
-/* Wrapped in an <h3> (column names are a heading level below the
-   page's own <h1> masthead and this section's <h2>), so it's no
-   longer a direct child of li and .section li > a's cascade doesn't
-   reach it — styled fully standalone instead of layering on top of
-   that rule. font-size set here, on the <h3> itself, rather than on
-   .section-title below: the browser's own default h3 size is already
-   1.17em (confirmed directly — it's the same standard heading scale
-   this site now uses explicitly elsewhere), so declaring 1.17em again
-   on the <a> inside it would compound to 1.17em of 1.17em. Setting it
-   once here and letting .section-title simply inherit avoids that. */
-.section li h3 {
-    margin: 0;
-    font-size: 1.17em;
-}
-
-.section .section-title {
-    color: var(--ink);
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    padding-bottom: 0.1em;
-    transition: border-color 0.15s ease;
-    font-family: 'Playfair Display', Georgia, serif;
-    font-style: italic;
-    font-weight: 600;
-}
-
-.section .section-title:hover { border-bottom-color: var(--ink); }
-
-.section-latest {
-    display: block;
-    margin-top: 0.3rem;
-}
-
-/* Same properties .section li > a itself renders (color, size,
-   underline-on-hover) — duplicated rather than shared, since this link
-   sits nested inside .section-latest and so isn't matched by that
-   direct-child selector. The point is to look exactly like a post
-   title on an archive page (.post-list a, itself just this same base
-   look — its own font-size: 1.15rem never wins against .section li >
-   a's 1.1rem, so 1.1rem is genuinely what renders there today), not a
-   distinct, homepage-only treatment. */
-.section .section-latest a {
-    color: var(--ink);
-    font-size: 1rem;
-    font-weight: bold;
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    padding-bottom: 0.1em;
-    transition: border-color 0.15s ease;
-}
-
-.section .section-latest a:hover { border-bottom-color: var(--ink); }
-
-/* Matches .post-list-meta (archive.html) exactly, font-size included:
-   same two fields (author and date), shown side by side the same way,
-   for the same underlying posts — a reader comparing the homepage to
-   an archive page should see identical text, not just identical
-   wording. */
-.section-meta {
-    display: block;
-    margin-top: 0.3rem;
-    font-size: 0.85rem;
-    color: var(--muted);
-}
-
-.section .section-meta a {
-    font-size: inherit;
-    color: var(--muted);
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    padding-bottom: 0.1em;
-    transition: border-color 0.15s ease;
-}
-
-.section .section-meta a:hover { border-bottom-color: var(--muted); }
-
-.avatar-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     gap: 1.75rem;
 }
 
-.avatar-link {
+/* homepage index blocks: Köşeler and Yazarlar, each rendered as a
+   title + latest post + meta block, mirroring a post-preview entry. */
+.index-list li {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 0.6rem;
-    width: 88px;
-    color: var(--ink);
-    text-decoration: none;
-    font-size: 0.9rem;
+    gap: 0.25rem;
+}
+
+.index-list h3 {
+    margin: 0;
+    font-size: 1.5rem;
     line-height: 1.25;
-    text-align: center;
 }
 
-.avatar {
-    width: 72px;
-    height: 72px;
-    flex: none;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--ink);
-    color: #fff;
-    font-family: 'Playfair Display', Georgia, serif;
-    font-style: italic;
-    font-weight: 600;
-    font-size: 1.4rem;
-    transition: background-color 0.15s ease;
+.index-latest {
+    font-size: 1.1rem;
 }
 
-.avatar-link:hover .avatar { background: var(--muted); }
+.index-meta {
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+.index-meta a { color: inherit; }
 
 /* homepage intro: drop cap */
 .intro {
@@ -248,9 +188,8 @@ body {
 }
 
 .intro p::first-letter {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-style: italic;
-    font-weight: 700;
+    font-family: var(--font-serif);
+    font-weight: bold;
     font-size: 4rem;
     line-height: 0.75;
     float: left;
@@ -259,13 +198,29 @@ body {
 }
 
 .site-footer {
-    margin-top: 4.5rem;
-    padding: 2rem 1rem;
-    text-align: center;
-    border-top: 1px solid var(--hairline);
-    color: var(--muted);
-    font-size: 0.85rem;
-    letter-spacing: 0.02em;
+    max-width: 42rem;
+    margin: 4.5rem auto 0;
+    padding: 1.5rem 1rem 2.5rem;
+    border-top: 2px solid var(--ink);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    color: var(--ink);
+    font-size: 0.9rem;
+}
+
+.site-footer p { margin: 0; }
+
+.footer-top { font-size: 0.9rem; }
+
+/* section-end divider (thick rule, mirroring the masthead's own) */
+.section-divider {
+    max-width: 42rem;
+    margin: 3rem auto 0;
+    padding: 0 1rem;
+    border-top: 2px solid var(--ink);
 }
 
 /* single post */
@@ -277,19 +232,17 @@ body {
 }
 
 .post-title {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-style: italic;
-    font-weight: 600;
-    /* Standard heading scale (h1 2em / h2 1.5em / h3 1.17em). */
-    font-size: 2em;
-    line-height: 1.2;
+    font-family: var(--font-serif);
+    font-weight: bold;
+    font-size: 2.5rem;
+    line-height: 1.15;
     color: var(--ink);
     margin: 0 0 0.5rem;
-    text-align: center;
+    text-align: left;
 }
 
 .post-meta {
-    text-align: center;
+    text-align: left;
     color: var(--muted);
     font-size: 0.9rem;
     margin: 0 0 2.5rem;
@@ -626,7 +579,7 @@ body {
     height: auto;
     border: 8px solid #fff;
     outline: 1px solid var(--hairline);
-    box-shadow: 0 1px 3px rgba(22, 40, 58, 0.12);
+    box-shadow: 0 1px 3px rgba(43, 40, 38, 0.12);
 }
 
 .post-figure figcaption {
@@ -638,14 +591,11 @@ body {
 
 .back-link {
     display: block;
-    text-align: center;
+    text-align: left;
     margin: 3rem 0 1rem;
     color: var(--muted);
-    text-decoration: none;
     font-size: 0.9rem;
 }
-
-.back-link:hover { text-decoration: underline; }
 
 /* shared post list (archive pages + post "related" sections) */
 .post-list {
@@ -659,52 +609,16 @@ body {
     gap: 0.2rem;
 }
 
-/* No font-size of its own: .section li > a (post-list's <a> is a
-   direct child of its li, same as every other list this site builds
-   this way) already renders these at 1.1rem, matching .section
-   .section-latest a's own 1.1rem on the homepage exactly — a separate
-   1.15rem here previously was dead weight, never actually winning
-   against that higher-specificity rule. */
+.post-list li > a {
+    font-weight: bold;
+    font-size: 1.25rem;
+    border-bottom: 2px solid currentColor;
+}
 
 .post-list-meta {
     color: var(--muted);
     font-size: 0.85rem;
 }
 
-.post-list-meta a {
-    color: var(--muted);
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    padding-bottom: 0.1em;
-    transition: border-color 0.15s ease;
-}
+.post-list-meta a { color: inherit; }
 
-.post-list-meta a:hover { border-bottom-color: var(--muted); }
-
-/* section-end ornament (fleuron) */
-.ornament {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    max-width: 220px;
-    margin: 2.5rem auto 0;
-    color: var(--ink);
-}
-
-.ornament::before,
-.ornament::after {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background: var(--ink);
-    opacity: 0.35;
-}
-
-.ornament-glyph {
-    width: 7px;
-    height: 7px;
-    flex: none;
-    background: var(--ink);
-    transform: rotate(45deg);
-}
