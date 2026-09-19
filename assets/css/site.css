@@ -377,8 +377,16 @@ a:hover { border-bottom-style: dotted; }
 .post-meta a { color: var(--muted); }
 
 /* Matches Athena's own .prose type scale exactly (measured directly on
-   its markdown-sample page): body text at 1.5rem with headings scaled
-   up from there (2.5/2/1.5/1.25/1/0.75rem for h1-h6), every size paired
+   its markdown-sample page): Athena sets its enlarged base font-size
+   once, on the prose container itself, and lets ordinary body text
+   (p/ul/ol/li) inherit it as a plain, unstyled default rather than
+   restating the size on every text element — headings and everything
+   else are then sized in relation to that same base. .post-body's own
+   font-size is that base here; every rem value below it (2.5/2/1.5/
+   1.25/1/0.75rem for h1-h6) is still root-relative, so headings render
+   at exactly the sizes they did before this rule existed, and only
+   plain text (which had no font-size of its own) picks up the new
+   ambient size through ordinary inheritance. Margins pair each size
    with a margin-top equal to its own font-size and a margin-bottom a
    quarter of it — line-height stays the inherited 1.5 from body (also
    Athena's own ratio throughout), so it doesn't need repeating here.
@@ -386,6 +394,37 @@ a:hover { border-bottom-style: dotted; }
    this is prose read at length, unlike the site's own UI headings
    (masthead, section titles, card titles) which already have their own
    sizes tuned for their own layouts. */
+.post-body {
+    font-size: 1.5rem;
+}
+
+/* ChessPublica's pgn-study sizes its own internal chrome off a
+   font-size: 110% rule of its own (confirmed directly in its CSS),
+   meant to read as "110% of the surrounding page" — a page whose own
+   ambient size, before this file existed, was always the plain root
+   size. Left alone, .post-body's own new 1.5rem base above would feed
+   into that 110% and inflate the whole widget (buttons, icons, move
+   list) well past its intended scale. Pinning each custom element's
+   own font-size back to the root's 1rem keeps them exactly as sized
+   as before this change, and doing the same for table (which, like
+   p, had no font-size of its own to override) matches Athena's own
+   table staying at the un-enlarged base rather than the prose size.
+
+   <pgn>, <puzzle> and <fen> never keep their own tag in the DOM —
+   ChessPublica's own init replaces each wholesale with a plain div
+   (.pgn-container, .cp-puzzle, .fen-container respectively, confirmed
+   directly), so those are what need pinning here, not the custom
+   element names themselves; <pgn-player> and <pgn-study> are the two
+   that do keep their own tag. */
+.post-body pgn-player,
+.post-body pgn-study,
+.post-body .pgn-container,
+.post-body .cp-puzzle,
+.post-body .fen-container,
+.post-body table {
+    font-size: 1rem;
+}
+
 .post-body h1,
 .post-body h2,
 .post-body h3,
@@ -410,7 +449,6 @@ a:hover { border-bottom-style: dotted; }
 .post-body p,
 .post-body ul,
 .post-body ol {
-    font-size: 1.5rem;
     margin: 0 0 1em;
 }
 
