@@ -328,22 +328,24 @@ On bir sene sonra Karpov'a karşı FIDE Dünya Şampiyonası maçında (O sırad
 Son tura turnuva şampiyonluğu garanti şekilde giren Timman, bir başka efsane Polugaevsky'nin gözünü korkutmuşa benziyor.
 
 
-|   |    |    |                | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 0 | 1 | 2 | 3 | 4 |    |
-|---|----|----|----------------|---|---|---|---|---|---|---|---|---|---|---|---|---|---|----|
-|   | 1  | GM | Timman         | * | 1 | 0 | 1 | ½ | ½ | 0 | 1 | 1 | ½ | 1 | 1 | 1 | 1 | 9½ |
-|   | 2  | GM | Portisch       | 0 | * | 1 | ½ | 1 | ½ | 0 | ½ | ½ | 1 | ½ | 1 | 1 | ½ | 8 |
-| = | 3  | GM | Seirawan       | 1 | 0 | * | ½ | 1 | ½ | 0 | ½ | ½ | 0 | ½ | 1 | 1 | 1 | 7½ |
-| = | 3  | GM | Karpov         | 0 | ½ | ½ | * | ½ | ½ | 1 | 0 | 1 | 1 | ½ | ½ | 1 | ½ | 7½ |
-| = | 3  | GM | Polugaevsky    | ½ | 0 | 0 | ½ | * | ½ | ½ | 1 | ½ | 1 | 1 | ½ | 1 | ½ | 7½ |
-|   | 6  | GM | Andersson      | ½ | ½ | ½ | ½ | ½ | * | ½ | 1 | ½ | ½ | ½ | ½ | ½ | ½ | 7 |
-|   | 7  | GM | Larsen         | 1 | 1 | 1 | 0 | ½ | ½ | * | 0 | 1 | 0 | ½ | 0 | ½ | ½ | 6½ |
-| = | 8  | IM | Garcia Palermo | 0 | ½ | ½ | 1 | 0 | 0 | 1 | * | ½ | ½ | 0 | ½ | 1 | ½ | 6 |
-| = | 8  | GM | Najdorf        | 0 | ½ | ½ | 0 | ½ | ½ | 0 | ½ | * | 1 | ½ | ½ | 1 | ½ | 6 |
-| = | 10 |    | Braga          | ½ | 0 | 1 | 0 | 0 | ½ | 1 | ½ | 0 | * | ½ | 1 | 0 | ½ | 5½ |
-| = | 10 | GM | Panno          | 0 | ½ | ½ | ½ | 0 | ½ | ½ | 1 | ½ | ½ | * | ½ | 0 | ½ | 5½ |
-| = | 12 | GM | Quinteros      | 0 | 0 | 0 | ½ | ½ | ½ | 1 | ½ | ½ | 0 | ½ | * | 0 | 1 | 5 |
-| = | 12 |    | Franco         | 0 | 0 | 0 | 0 | 0 | ½ | ½ | 0 | 0 | 1 | 1 | 1 | * | 1 | 5 |
-|   | 14 |    | Giardelli      | 0 | ½ | 0 | ½ | ½ | ½ | ½ | ½ | ½ | ½ | ½ | 0 | 0 | * | 4½ |
+<div class="crosstable"><pre><strong>Hotel Hermitage (Salón Versailles), Mar del Plata, Argentina, 8-26 February 1982</strong>
+
+                         1  2  3  4  5  6  7  8  9  0  1  2  3  4
+
+   1 GM Timman           * 1 0 1 ½ ½ 0 1 1 ½ 1 1 1 1  9½
+   2 GM Portisch         0 * 1 ½ 1 ½ 0 ½ ½ 1 ½ 1 1 ½  8
+  =3 GM Seirawan         1 0 * ½ 1 ½ 0 ½ ½ 0 ½ 1 1 1  7½
+  =3 GM Karpov           0 ½ ½ * ½ ½ 1 0 1 1 ½ ½ 1 ½  7½
+  =3 GM Polugaevsky      ½ 0 0 ½ * ½ ½ 1 ½ 1 1 ½ 1 ½  7½
+   6 GM Andersson        ½ ½ ½ ½ ½ * ½ 1 ½ ½ ½ ½ ½ ½  7
+   7 GM Larsen           1 1 1 0 ½ ½ * 0 1 0 ½ 0 ½ ½  6½
+  =8 IM Garcia Palermo   0 ½ ½ 1 0 0 1 * ½ ½ 0 ½ 1 ½  6
+  =8 GM Najdorf          0 ½ ½ 0 ½ ½ 0 ½ * 1 ½ ½ 1 ½  6
+ =10    Braga            ½ 0 1 0 0 ½ 1 ½ 0 * ½ 1 0 ½  5½
+ =10 GM Panno            0 ½ ½ ½ 0 ½ ½ 1 ½ ½ * ½ 0 ½  5½
+ =12 GM Quinteros        0 0 0 ½ ½ ½ 1 ½ ½ 0 ½ * 0 1  5
+ =12    Franco           0 0 0 0 0 ½ ½ 0 0 1 1 1 * 1  5
+  14    Giardelli        0 ½ 0 ½ ½ ½ ½ ½ ½ ½ ½ 0 0 *  4½</pre></div>
 
 > Mar del Plata 1982 Uluslararası Satranç Turnuvası çapraz tablosu
 
