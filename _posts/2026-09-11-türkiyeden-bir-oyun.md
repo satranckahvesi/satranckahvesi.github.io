@@ -8,7 +8,7 @@ date: 2026-09-19
 
 Marmaris'te oynadığım bir turnuvanın yedinci turunda karşımda kendimden beş yüz puana yakın düşük reytingli bir rakip vardı ve itiraf etmeliyim ki tahtaya otururken aklımdan rahat bir galibiyet geçiyordu. Şah-Hint Savunmasında küçük bir yan varyantla rakibimi şaşırtabileceğimi düşündüm ama karşımdaki rakibin hiç de kolay lokma olmadığını hemen fark ettim.
 
-Parti ilerledikçe pozisyonu kontrol altına almayı başarsam da rakibimin filiyle kurduğu dirençli savunma bütün kazanma çabalarımı boşa çıkardı. Sonunda elimde kalan tek şey, bir fincan kahvenin başında anlatmaya değer bir hikâye ve pek de gurur duymadığım yarım bir puan oldu. Yorumlar o gün tahta başında aklımdan geçenlerin ta kendisi.
+Parti ilerledikçe pozisyonu kontrol altına almayı başarsam da rakibimin filiyle kurduğu dirençli savunma bütün kazanma çabalarımı boşa çıkardı. Sonunda elimde kalan tek şey, bir fincan kahvenin başında anlatmaya değer bir hikâye ve pek de gurur duymadığım bir yarım puan oldu. Yorumlar o gün tahta başında aklımdan geçenlerin ta kendisi.
 
 [Event "Marmaris"]
 [Date "2022.01.25"]
