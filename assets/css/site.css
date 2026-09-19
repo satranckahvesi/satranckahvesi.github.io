@@ -378,6 +378,42 @@ a:hover { border-bottom-style: dotted; }
 
 .post-body p { margin: 0 0 1.2rem; }
 
+/* Matches Athena's own table styling exactly (its .prose table rules):
+   no vertical borders or shading, just a hairline between every row —
+   doubled and bolder under a real header row, where one exists — with
+   generous right-hand padding standing in for a column gap. display:
+   block + overflow:auto (rather than a fixed layout) lets a wide table
+   scroll horizontally instead of forcing the whole page wider. */
+.post-body table {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-collapse: collapse;
+    margin: 0 0 1.5em;
+}
+
+.post-body table th {
+    font-weight: bold;
+    text-align: left;
+}
+
+.post-body table th,
+.post-body table td {
+    padding: 1rem 2rem 1rem 0.125rem;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+}
+
+.post-body table tr {
+    border-top: 1px solid var(--ink);
+}
+
+.post-body table tr th {
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+}
+
 /* ChessPublica's .pgn-container adds its own 0 1rem side padding, which
    stacks on top of .post's own padding and indents the move list,
    variations and comments further in than the surrounding paragraphs. */
