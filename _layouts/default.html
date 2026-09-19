@@ -19,12 +19,14 @@
            the raw browser viewport, so the reference point for "fully
            grown" is how wide that box actually is, not the window — the
            two only used to coincide by accident, back when .site-header
-           was capped at the page's own narrow content width. Each clamp's
-           preferred value is a straight line through two reference points
-           (320px container -> mobile minimum, ~900px container -> desktop
-           size) via cqw, so it keeps widening on a big full-bleed
-           masthead past where the old vw version plateaued at 640px,
-           while still fitting one line down to a 320px-wide container.
+           was capped at the page's own narrow content width. No upper
+           bound: the masthead itself is meant to be full-bleed, so its
+           content keeps scaling in direct proportion to the container
+           right along with it instead of plateauing at some fixed
+           desktop size and leaving a fixed-size logo stranded in a lot
+           of empty bar on a wide screen. Only a floor remains (max(),
+           not clamp()), tuned so the wordmark still fits next to the
+           logo image on one line down to a 320px-wide container.
            Deliberately kept fluid rather than switched to the
            standard-heading-scale 2em other h1/h2/h3 elements use now:
            this one still has to fit next to the logo image on one line
@@ -34,18 +36,18 @@
             display: inline-flex;
             flex-direction: row;
             align-items: center;
-            gap: clamp(0.75rem, 0.2rem + 2.9cqw, 1.75rem);
+            gap: max(0.75rem, 0.2rem + 2.9cqw);
         }
         .site-logo {
-            width: clamp(56px, 17.5cqw, 160px);
-            height: clamp(56px, 17.5cqw, 160px);
+            width: max(56px, 17.5cqw);
+            height: max(56px, 17.5cqw);
             flex: none;
         }
         .logo {
             margin: 0;
             font-family: 'Playfair Display', serif;
             font-style: italic;
-            font-size: clamp(1.35rem, 0.1rem + 6.6cqw, 3.6rem);
+            font-size: max(1.35rem, 0.1rem + 6.6cqw);
             font-weight: 400;
             color: #16283a;
         }
