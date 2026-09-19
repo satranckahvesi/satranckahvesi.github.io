@@ -966,6 +966,31 @@ a:hover { border-bottom-style: dotted; }
     color: var(--muted);
 }
 
+/* A YouTube <iframe> has no intrinsic size of its own to scale from —
+   without an aspect-ratio box it renders at its bare width/height
+   attributes (or the browser default 300x150) regardless of the
+   column's actual width. The box below keeps it at a normal 16:9
+   video shape at any column width instead. */
+.video-embed {
+    margin: 2rem auto;
+    max-width: 100%;
+}
+
+.video-embed iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+}
+
+.video-embed figcaption {
+    margin-top: 0.7rem;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--muted);
+    text-align: center;
+}
+
 /* shared post list (archive pages + post "related" sections) */
 .post-list {
     align-items: stretch;
