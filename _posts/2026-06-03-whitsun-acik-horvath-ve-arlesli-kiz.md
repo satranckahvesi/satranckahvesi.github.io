@@ -307,4 +307,4 @@ Bilmediğim şey ise konser salonunun Gasteig HP8 denilen bir komplekste olduğu
 | Yemek: | Hofbraeuhaus München, Alter Wirt (Moosach) |
 | Ulaşım: | Pegasus ile İstanbul-Münih |
 | Maliyet: | Her şey dahil yaklaşık 1000 Euro |
-| Soundtrack: | [Anekdoten — _Gravity_ (2003)](https://www.youtube.com/watch?v=0l8krfkTWk4) |
+| Soundtrack: | [Anekdoten — _Gravity_ (2003)](https://www.youtube.com/watch?v=0l8krfkTWk4){:target="_blank"} |
