@@ -327,10 +327,9 @@ On bir sene sonra Karpov'a karşı FIDE Dünya Şampiyonası maçında (O sırad
 
 Son tura turnuva şampiyonluğu garanti şekilde giren Timman, bir başka efsane **Polugaevsky**'nin gözünü korkutmuşa benziyor.
 
+Mar del Plata 1982 Uluslararası Satranç Turnuvası çapraz tablosu:
 
-<div class="crosstable">
-    <pre>
-<strong>Mar del Plata 1982 Uluslararası Satranç Turnuvası çapraz tablosu</strong>
+<pre>        
                          1 2 3 4 5 6 7 8 9 0 1 2 3 4
    1 GM Timman           * 1 0 1 ½ ½ 0 1 1 ½ 1 1 1 1  9½
    2 GM Portisch         0 * 1 ½ 1 ½ 0 ½ ½ 1 ½ 1 1 ½  8
@@ -346,8 +345,7 @@ Son tura turnuva şampiyonluğu garanti şekilde giren Timman, bir başka efsane
  =12 GM Quinteros        0 0 0 ½ ½ ½ 1 ½ ½ 0 ½ * 0 1  5
  =12    Franco           0 0 0 0 0 ½ ½ 0 0 1 1 1 * 1  5
   14    Giardelli        0 ½ 0 ½ ½ ½ ½ ½ ½ ½ ½ 0 0 *  4½
-  </pre>
-  </div>
+</pre>
 
 
 
