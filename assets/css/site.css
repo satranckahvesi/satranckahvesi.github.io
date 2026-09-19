@@ -3,9 +3,14 @@
    %, so this is the one place that needs to change to make all text —
    including inside pgn/fen/puzzle/pgn-player/pgn-study — a bit bigger. A
    percentage (rather than a fixed px value) scales relative to the
-   visitor's own browser default instead of overriding it. */
+   visitor's own browser default instead of overriding it. Also carries the
+   page's dark obsidian canvas: painted on html rather than body so it
+   still fills the full scrollable height even on a short page, with
+   body's own background below showing through only inside its own
+   max-width. */
 html {
     font-size: 106.25%;
+    background: #12141a;
 }
 
 :root {
@@ -17,8 +22,10 @@ html {
 * { box-sizing: border-box; }
 
 body {
-    margin: 0;
+    max-width: 1000px;
+    margin: 0 auto;
     padding: 2.5rem 1rem 0;
+    background: #fff;
     font-family: Georgia, 'Times New Roman', serif;
     color: var(--ink);
     line-height: 1.65;
