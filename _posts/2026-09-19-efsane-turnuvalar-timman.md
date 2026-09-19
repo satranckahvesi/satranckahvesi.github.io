@@ -1,9 +1,9 @@
 ---
 layout: post
 date: 2026-09-19
-title: "Jan TIMMAN: Batı'nın En İyisi"
+title: "Jan Timman: Batı'nın en iyisi"
 author: "FM Nazmi Can Doğan"
-column: "Efsane Turnuvalar"
+column: "Efsane turnuvalar"
 ---
 
 Bu yazı, bir satranç efsanesinin yaşantısından küçük bir bölüme odaklanacak. Timman'ın reyting listesinde Dünya Şampiyonu Karpov'un ardından ikinci sırada yer aldığı 1982 senesine gideceğiz. Buenos Aires'in iyileştirici havasında Timman'ın partilerinin öğretici anlarına odaklanacağız. Yazının ikinci bölümünde ise, Timman'ın kariyerinin farklı bölümlerinden derlediğim öğretici konumlar yer alıyor.
