@@ -106,9 +106,7 @@ görüyor ve kitabın her bölümüne özenle seçilerek konmuş epigraflarında
 [Annotator "https://lichess.org/@/NaSil"]
 
 1. Nf3 Nf6 2. c4 g6 3. Nc3 d5 4. cxd5 Nxd5 5. Qa4+ Bd7 6. Qb3 Nb6 7. Ng5!? { Korchnoi'un açılışta genellikle garip biçimde oynadığını fark ettim.
-Rakibine alışılmadık problemler çıkarmaktan hoşlanıyormuş gibi
-görünürken, fikirlerinin objektif doğruluğundan fazla endişe ediyor gibi
-durmuyor. } 7... e6 8. d4 Bc6 9. Be3 (9. Bf4!? { Golubev tarafından belirtildi,
+Rakibine sıra dışı problemler yaşatmaktan zevk alıyor gibi görünse de, fikirlerinin ne kadar doğru olduğu pek umurunda değilmiş gibi duruyor. } 7... e6 8. d4 Bc6 9. Be3 (9. Bf4!? { Golubev tarafından belirtildi,
 fakat fikri gördüğünüzde acaba Fritz de işin içine girmiş olabilir mi
 diye merak ediyorsunuz: } 9... Qxd4? 10. Nxe6 fxe6 11. Qxe6+ Be7 12. Be5) 9... Bg7 10. Rd1 { Burada bir süre düşündüm. Rok atmak istemiyordum çünkü h4
 oynamaktan açıkça memnun olacaktı. 10...Nd5 hamlesi mümkündü fakat
