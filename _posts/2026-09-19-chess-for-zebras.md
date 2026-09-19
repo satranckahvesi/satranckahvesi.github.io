@@ -76,7 +76,7 @@ dolaşa aynı şeyi hatırlatıyor okura: **“Gelişme, konfor alanınızın s�
 (“Improvement begins at the edge of your comfort zone”) Yani sınırlarınızı zorlamadığımız
 sürece gelişme yok. Yalnız yanlış anlaşılmasın Rowson’un her derde deva -ve bulmayı
 umduğum- “sihirli formülü” yok; tam tersine her şeyin kesin olduğu iddia edilen çözümlere
-şüpheyle yaşlaşılmasını öğütlüyor ve her şeyin kesin olduğu alandan belirsizliğe geçmeyi
+şüpheyle yaklaşılmasını öğütlüyor ve her şeyin kesin olduğu alandan belirsizliğe geçmeyi
 ilerleme sayıyor. Bunu ise her bölüm için iyi seçilmiş, bazıları yazarın kendisi tarafından
 oynanmış partilerle örnekliyor.
 - “Oyuncunun gücü arttıkça, kendisine bir konumda ne olduğu sorulduğunda daha büyük
@@ -96,7 +96,6 @@ düşüncelerini ve hissettiklerini içten (belki de aşırı içten!) bir şeki
 büyük artılarından. Şimdi ilk bölümün kaba bir özeti sayılabilecek bir kısmını paylaşmak
 istiyorum. Bir satranç kitabında içtenliğiyle böylesine beni yakalayan ve söyledikleriyle bana
 ayna tutan başka bir bölüm hatırlamıyorum. Sözünü ettiğim, Hikaye Uydurma (Fabulation) alt
-
 başlığında Rowson’un yakın zamanda hayata gözlerini yuman Viktor Korchnoi ile
 karşılaşmasıdır.
 
@@ -118,9 +117,7 @@ karşılaşmasıdır.
 [Annotator "https://lichess.org/@/NaSil"]
 
 1. Nf3 Nf6 2. c4 g6 3. Nc3 d5 4. cxd5 Nxd5 5. Qa4+ Bd7 6. Qb3 Nb6 7. Ng5!? { Korchnoi'un açılışta genellikle garip biçimde oynadığını fark ettim.
-Rakibine alışılmadık problemler çıkarmaktan hoşlanıyormuş gibi
-görünürken, fikirlerinin objektif doğruluğundan fazla endişe ediyor gibi
-durmuyor. } 7... e6 8. d4 Bc6 9. Be3 (9. Bf4!? { Golubev tarafından belirtildi,
+Rakibine sıra dışı problemler yaşatmaktan zevk alıyor gibi görünse de, fikirlerinin ne kadar doğru olduğu pek umurunda değilmiş gibi duruyor. } 7... e6 8. d4 Bc6 9. Be3 (9. Bf4!? { Golubev tarafından belirtildi,
 fakat fikri gördüğünüzde acaba Fritz de işin içine girmiş olabilir mi
 diye merak ediyorsunuz: } 9... Qxd4? 10. Nxe6 fxe6 11. Qxe6+ Be7 12. Be5) 9... Bg7 10. Rd1 { Burada bir süre düşündüm. Rok atmak istemiyordum çünkü h4
 oynamaktan açıkça memnun olacaktı. 10...Nd5 hamlesi mümkündü fakat
@@ -178,7 +175,7 @@ Bu hikaye uydurmada (fabulation) beni en çok vuran şey, üçüncü ya da dörd
 olayların bu versiyonunu anlattığımda artık kendim de böyle olduğuna inanmaya başladım!
 O akşam kız arkadaşımla konuştuğumda dahi benzer şeyler söyledim. Yalnız oyunu
 bilgisayara verdiğimde basitçe 12.d5 hamlesini kaçırdığım gerçeğiyle yüzleştim. Hamleyi
-görmüştüm fakat, yalnızca 11...Vf6 hamlesini oynadıktan ‘sonra’. 11...Vf6 hamlesini
+görmüştüm, fakat yalnızca 11...Vf6 hamlesini oynadıktan ‘sonra’. 11...Vf6 hamlesini
 oynadıktan hemen sonra 12.d5 hamlesinin o kadar ciddi olmadığını (rahatlama) hissettim,
 fakat sonra 14.Kxd5 (of!) hamlesini gördüm, muhtemelen oyunun kalanında öz güvenimi
 sağlam tutmak için kendime kaçırdığım şeyin bu olduğunu söyledim.
