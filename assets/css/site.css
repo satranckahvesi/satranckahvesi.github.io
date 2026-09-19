@@ -611,18 +611,27 @@ a:hover { border-bottom-style: dotted; }
 /* Below its 900px breakpoint, ChessPublica switches pgn-study to a single-
    panel flex layout where the visible panel (pgn-player, by default) is
    sized with flex: 1 1 0 — grow to fill whatever space the flex container
-   has. Rather than give pgn-study a definite height for that to grow
-   into (which would make it always exactly that tall, empty space and
-   all, regardless of the board's actual size), override the panel to
-   flex: 0 1 auto instead: it then sizes to its own natural (board)
-   height, and pgn-study's own height: auto, from the rule above, simply
-   wraps to match — capped by the existing max-height: 90vh, with the
-   panel's own min-height: 0 (already set by ChessPublica) letting it
-   shrink and scroll internally in the rare case content is taller than
-   that cap allows. */
+   has, and shrink if the whole column doesn't fit under pgn-study's own
+   max-height: 90vh. That shrinking is the actual bug behind "a long
+   comment makes the board disappear": pgn-player and the mirrored
+   comment below it both compete for space with equal flex-shrink, but
+   only the board can actually shrink (it's an image-like box, so the
+   layout engine compresses it smoothly all the way toward 0 height);
+   the comment is text, which doesn't compress the same way, so nearly
+   all of the give comes out of the board instead — down to invisible
+   on a long enough comment, confirmed directly. flex: 0 0 auto removes
+   the board from that contest entirely: it always renders at its own
+   full natural (board) height regardless of how long the comment is.
+   overflow-y reverts ChessPublica's own overflow-y: auto on this same
+   element (confirmed in its CSS) — needed there to let a squeezed
+   board scroll internally, meaningless now that it's never squeezed,
+   and left in place would still (harmlessly, but pointlessly) add a
+   scrollbar the instant rounding gave the board even 1px less than it
+   asked for. */
 @media (max-width: 899px) {
     .post-body pgn-study > pgn-player {
-        flex: 0 1 auto;
+        flex: 0 0 auto;
+        overflow-y: visible;
     }
 
     /* pgn-player's own board wrapper carries a flat min-height: 500px
@@ -656,6 +665,9 @@ a:hover { border-bottom-style: dotted; }
 @media (max-width: 899px) {
     .pgn-study-mobile-comment.has-content {
         display: block;
+        flex: 1 1 auto;
+        min-height: 0;
+        overflow-y: auto;
         margin: 0.75rem 0 0;
         padding: 0 0.5rem;
         color: var(--ink);
