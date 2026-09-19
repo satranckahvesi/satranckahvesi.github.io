@@ -19,7 +19,7 @@ olduğunu satranç sever dostlarımdan, hayat hikayelerini bildiğim satranç us
 sonra öğrendim. Bu sorunların bir büyükusta tarafından incelenmiş olduğunu duyduğumda
 açıkçası çok merak etmiş ve bana satrancı daha iyi oynamanın “sihirli formülünü” sunacağını
 ummuştum. Daha sonra basım tarihi 2005 olan bu kitapla şimdi elinizde tutmakta olduğunuz
-derginin basılmasını sağlayan Analiz Yayıncılık standında karşılaştım.
+derginin basılmasını sağlayan **Analiz Yayıncılık** standında karşılaştım.
 O halde, yazılışından kısa bir süre sonra satranç literatüründe saygın bir yer
 edinmeyi başarmış bu eserin yazarından kısaca söz ederek başlayalım: Sayısız turnuva
 zaferinin yanında İngiltere ve İskoçya şampiyonlukları bulunan İskoç Büyükusta Jonathan
@@ -28,13 +28,13 @@ psikoloji öğrenimlerini de eklemiş. Nöroloji bilimi ve öğrenmenin psikoloj
 satranç oyunculuğu ve antrenörlükten edindiği tecrübelerle birleştirmiş: “Kitabı yazmaya
 başladığım sırada 2600’a çok yakındım ve İngiltere şampiyonuydum. Paylaşılmaya değer
 şeylerin izini sürdüğümü hissediyordum.” diyor. Satranç otoriteleri tarafından takdirle
-karşılanan “Seven Deadly Chess Sins” (“Yedi Ölümcül Satranç Günahı”)’den sonra
-karşımızda yine en az onun kadar etkileyici bir kitap var: “Chess for Zebras”! (“Zebralar İçin
+karşılanan **“Seven Deadly Chess Sins”** (“Yedi Ölümcül Satranç Günahı”)’den sonra
+karşımızda yine en az onun kadar etkileyici bir kitap var: **“Chess for Zebras”**! (“Zebralar İçin
 Satranç”)
 Kitap üç bölümden oluşuyor: İlk bölüm daha çok satranç oyuncusunun psikolojisine
 değinirken, ikinci bölüm Rowson’un da belirttiği gibi, oyuncu psikolojisi konusundan ziyade
 teknik olarak satrancın kendisiyle en dolu bölüm. “Benim İçin İşe Yarayan Bir Şey” kısmında
-Rowson, Kasparov’un “artık satrancı tam olarak kapsamadığını düşündüğü” üç boyutlu
+Rowson, **Kasparov**’un “artık satrancı tam olarak kapsamadığını düşündüğü” üç boyutlu
 düşünüşünü (Materyal, Nitelik ve Zaman) eleştirip üzerine saat (“clock ticking”) faktörünü
 ekleyerek ileriyor. Özellikle bu kısımlar benim gibi zaman sıkışmasına sık giren oyuncular
 için önemli bölümler barındırıyor. Yazarın “düşünme zamanının fırsat maliyeti” diyerek
@@ -52,9 +52,9 @@ odaklanıyor: “Çok garip bulduğum bir şey, çoğu oyuncunun en üst seviyel
 hazırlığının pek çok oyuncu ve hatta iyi büyükustalar için bile olduğundan çok daha fazla
 önemli olduğunu fark edemiyor görünmeleri. (...) Sevdiğiniz oyuncuların hamlelerine ve
 fikirlerine özenmeye çalışmak mantıklı ancak onların yaptığı satranç çalışmasına özenmek
+büyük bir hata olur, **çünkü 2650’yi 2750’ye ulaştırmaya faydalı olacak bir çalışma 1650’yi
+1750’ye ve hatta 2550’yi 2650’ye ulaştırmak için faydalı olmayabilir**.”
 
-büyük bir hata olur, çünkü 2650’yi 2750’ye ulaştırmaya faydalı olacak bir çalışma 1650’yi
-1750’ye ve hatta 2550’yi 2650’ye ulaştırmak için faydalı olmayabilir.”
 Oldukça eğlenceli (Şu başlıklara bakın: “Cebinizde Bir Delik Olduğunu Düşünüyorken
 Ne Yapmalı?”, “Satranç Neden Çok Zor?” ya da “Konsantre ol! Konsantre ol? Konsantre ol.”)
 ama derin meselelere el atmaktan çekinmeyen bir serbestlikle yazılmış olması çok hoşuma
@@ -72,7 +72,7 @@ Rowson, bize zebraları işaret ediyor. Mesaj ise kısaca şudur: “Kendinize f
 izin verin”. Peki bu nasıl yapılabilir? Kitap düşünce kalıplarını yıkma fikriyle “farklı
 düşünmenin” izini sürüyor. Daha doğrusu Rowson ustalığa giden yolunda neler öğrendiğini
 ve neleri “unutması”(unlearning) gerektiğini anlatıyor. İlerleyen bölümler boyunca döne
-dolaşa aynı şeyi hatırlatıyor okura: “Gelişme, konfor alanınızın sınırında başlar.”
+dolaşa aynı şeyi hatırlatıyor okura: **“Gelişme, konfor alanınızın sınırında başlar.”**
 (“Improvement begins at the edge of your comfort zone”) Yani sınırlarınızı zorlamadığımız
 sürece gelişme yok. Yalnız yanlış anlaşılmasın Rowson’un her derde deva -ve bulmayı
 umduğum- “sihirli formülü” yok; tam tersine her şeyin kesin olduğu iddia edilen çözümlere
@@ -159,7 +159,7 @@ başlar gibiyken, derince düşündü ve yıkıcı taktiklerin pimini çekti. } 
 örneğidir. }) 32. axb7+ Kb8 33. Bxf6 Rd2 34. Bc4 Rxd1 35. Bxa2 Rxf1+ 36. Kxf1 Kxb7 37. Bf7 Rf8 38. Bd5+ Kb6 39. Bc3 Kb5 40. Bxe4 Kc4 41. Be5 Re8 42. f4 Kb3 43. Ke2 Rd8 44. g4 c4 45. f5 gxf5 46. gxf5 c3 47. Bd4 Rc8 48. Bd5+ Kb4 49. Kd1 { 1-0 White wins. } 1-0
 
 “Korchnoi ile oynamak çok özel bir durum, hele onunla daha önce hiç
-oynamadıysanız. Böylesine sıradışı bir oyundan ve maç sonrası analizinden sonra, pek çok
+oynamadıysanız. Böylesine sıradışı bir oyundan ve oyun sonrası analizinden sonra, pek çok
 insan bana bu tecrübeyi sormak istedi. Benim açıklamam şu şekildeydi: Düzensiz bir açılış
 oynadı, yanıt olarak biraz fazla yaratıcı oynadım ve sonradan gaf olduğu ortaya çıkan zekice
 bir hamle yaptım... Bu açıklamayı birkaç kez yaptığımı ve 11...Vf6 hamlesinden söz ettiğimi
