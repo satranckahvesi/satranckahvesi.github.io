@@ -3,7 +3,7 @@ layout: post
 date: 2026-09-19
 title: "Zebralar için satranç!"
 author: "FM Nazmi Can Doğan"
-column: "Kitap incelemesi"
+column: "Kitap incelemeleri"
 ---
 
 Satranca başladığımızda her şeyin iyi gittiği, oyundan zevk alınan güzel bir dönemin
