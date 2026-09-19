@@ -679,6 +679,45 @@ a:hover { border-bottom-style: dotted; }
 :root[data-theme="dark"] .post-body .pgn-study-ribbon-title-text { color: var(--ink); }
 :root[data-theme="dark"] .post-body .pgn-study-ribbon-title-subtext { color: var(--muted); }
 
+/* pgn-study's ribbon buttons (play/prev/next/download/speed/flip/
+   settings), its column resizer handle, and its move-picker/table-of-
+   contents rows are all ChessPublica controls tuned for a white
+   ribbon — icon color, hover fill and badge colors that read fine on
+   #fff go low-contrast or invisible once the ribbon itself is dark. */
+:root[data-theme="dark"] .post-body .pgn-study-ribbon-btn,
+:root[data-theme="dark"] .post-body .pgn-study-ribbon-title .lucide-icon {
+    color: var(--ink);
+}
+:root[data-theme="dark"] .post-body .pgn-study-ribbon-btn:hover:not(:disabled),
+:root[data-theme="dark"] .post-body .pgn-study-article-btn.active,
+:root[data-theme="dark"] .post-body .pgn-study-picker-row:hover,
+:root[data-theme="dark"] .post-body .pgn-study-toc-entry:hover {
+    background: var(--hairline);
+}
+:root[data-theme="dark"] .post-body .pgn-study-speed-badge {
+    background: var(--ink);
+    color: var(--bg);
+}
+:root[data-theme="dark"] .post-body .pgn-study-resizer:after,
+:root[data-theme="dark"] .post-body .pgn-study-resizer-handle {
+    background: var(--hairline);
+}
+:root[data-theme="dark"] .post-body .pgn-study-resizer-handle {
+    border-color: var(--hairline);
+    color: var(--muted);
+}
+:root[data-theme="dark"] .post-body .pgn-study-resizer:hover:after,
+:root[data-theme="dark"] .post-body .pgn-study-resizer.dragging:after,
+:root[data-theme="dark"] .post-body .pgn-study-resizer:hover .pgn-study-resizer-handle,
+:root[data-theme="dark"] .post-body .pgn-study-resizer.dragging .pgn-study-resizer-handle {
+    background: var(--muted);
+    border-color: var(--muted);
+}
+:root[data-theme="dark"] .post-body .pgn-study-picker-icon,
+:root[data-theme="dark"] .post-body .pgn-study-toc-move {
+    color: var(--muted);
+}
+
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) .post-body .pgn-study-ribbon,
     :root:not([data-theme="light"]) .post-body .pgn-container .pgn-comment.pgn-comment-active,
@@ -693,6 +732,40 @@ a:hover { border-bottom-style: dotted; }
 
     :root:not([data-theme="light"]) .post-body .pgn-study-ribbon-title-text { color: var(--ink); }
     :root:not([data-theme="light"]) .post-body .pgn-study-ribbon-title-subtext { color: var(--muted); }
+
+    :root:not([data-theme="light"]) .post-body .pgn-study-ribbon-btn,
+    :root:not([data-theme="light"]) .post-body .pgn-study-ribbon-title .lucide-icon {
+        color: var(--ink);
+    }
+    :root:not([data-theme="light"]) .post-body .pgn-study-ribbon-btn:hover:not(:disabled),
+    :root:not([data-theme="light"]) .post-body .pgn-study-article-btn.active,
+    :root:not([data-theme="light"]) .post-body .pgn-study-picker-row:hover,
+    :root:not([data-theme="light"]) .post-body .pgn-study-toc-entry:hover {
+        background: var(--hairline);
+    }
+    :root:not([data-theme="light"]) .post-body .pgn-study-speed-badge {
+        background: var(--ink);
+        color: var(--bg);
+    }
+    :root:not([data-theme="light"]) .post-body .pgn-study-resizer:after,
+    :root:not([data-theme="light"]) .post-body .pgn-study-resizer-handle {
+        background: var(--hairline);
+    }
+    :root:not([data-theme="light"]) .post-body .pgn-study-resizer-handle {
+        border-color: var(--hairline);
+        color: var(--muted);
+    }
+    :root:not([data-theme="light"]) .post-body .pgn-study-resizer:hover:after,
+    :root:not([data-theme="light"]) .post-body .pgn-study-resizer.dragging:after,
+    :root:not([data-theme="light"]) .post-body .pgn-study-resizer:hover .pgn-study-resizer-handle,
+    :root:not([data-theme="light"]) .post-body .pgn-study-resizer.dragging .pgn-study-resizer-handle {
+        background: var(--muted);
+        border-color: var(--muted);
+    }
+    :root:not([data-theme="light"]) .post-body .pgn-study-picker-icon,
+    :root:not([data-theme="light"]) .post-body .pgn-study-toc-move {
+        color: var(--muted);
+    }
 }
 
 .pgn-switcher {
