@@ -14,48 +14,45 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
     <style>
-        /* Logo and wordmark scale fluidly with the masthead's own box
-           (site.css makes .site-header a cqw query container, now with no
-           side padding of its own) rather than the raw browser viewport,
-           so the reference point for "fully grown" is how wide that box
-           actually is, not the window.
+        /* Three stacked rows — logo, "Satranç", "Kahvesi" — each centered
+           and each sized off the masthead's own box (site.css makes
+           .site-header a cqw query container) rather than the raw
+           viewport. A flat 1rem gap separates all three, deliberately
+           NOT part of the fluid cqw sizing below: it keeps the rows
+           close together as one lockup at every size instead of the gap
+           itself growing on a wide screen.
 
-           A plain cqw percentage keeps a fixed ratio to the container at
-           any size — confirmed directly, e.g. the original 17.5/6.6
-           coefficients held the row at a constant ~68% of the container
-           from 320px up to 3840px, never more, never less. That's exactly
-           what makes a single coefficient set usable for "no whitespace
-           at any width, mobile or desktop alike" instead of needing a
-           breakpoint: solve for the coefficients once so the ratio comes
-           out near 100%, and it reads as edge-to-edge everywhere, with no
-           separate mobile-vs-desktop case to keep in sync. The ~2%
-           left over (98%, not 100%) is deliberate headroom against the
-           row actually wrapping to two lines or overflowing the
-           container — font rendering isn't perfectly linear at every
-           size (hinting/rounding), so aiming for exactly 100% would risk
-           tipping over it right when the measurement doesn't quite line
-           up. Confirmed directly at containers from 320px to 3840px.
-
-           The gap between logo and wordmark is deliberately NOT part of
-           that fluid system — a flat 1rem keeps the two sitting close
-           together as one lockup at every size, rather than drifting
-           apart as the gap scaled up to 80px+ on a wide screen. */
+           The two wordmark lines share one font-size, sized off
+           "Satranç" specifically (the wider of the two words) so IT
+           reads as close to edge-to-edge as the single-line wordmark
+           used to — "Kahvesi", a touch narrower at that same size,
+           just centers under it. A plain cqw percentage keeps a fixed
+           ratio to the container at any size (confirmed in the previous
+           single-line layout: unchanging from a 320px container up to
+           a 3840px one), so one coefficient, solved once, holds that
+           fill for "Satranç" at every width — no separate mobile/desktop
+           case needed. Logo width is its own independent cqw coefficient
+           now that it's no longer sharing a row with the wordmark. */
         .brand {
             display: inline-flex;
-            flex-direction: row;
+            flex-direction: column;
             align-items: center;
             gap: 1rem;
         }
         .site-logo {
-            width: 25.22cqw;
-            height: 25.22cqw;
+            width: 55cqw;
+            height: 55cqw;
             flex: none;
         }
         .logo {
             margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             font-family: 'Playfair Display', serif;
             font-style: italic;
-            font-size: 9.51cqw;
+            font-size: 28.6cqw;
+            line-height: 1.15;
             /* Google Fonts is asked for italic 400 explicitly (see the
                <link> above) — without it in that request, the browser
                has no 400 italic file to use and falls back to the
@@ -70,7 +67,8 @@
     <header class="site-header">
         <a class="brand" href="{{ '/' | relative_url }}">
             <img class="site-logo" src="{{ '/assets/img/logo.jpg' | relative_url }}" alt="{{ site.title }}">
-            <h1 class="logo">{{ site.title }}</h1>
+            {% assign title_words = site.title | split: " " %}
+            <h1 class="logo">{% for word in title_words %}<span class="logo-line">{{ word }}</span>{% endfor %}</h1>
         </a>
     </header>
     {{ content }}
