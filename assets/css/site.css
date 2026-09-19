@@ -149,10 +149,6 @@ a:hover { border-bottom-style: dotted; }
 }
 
 .masthead {
-    /* Shared by the title and the logo below, so the logo can be sized
-       directly off the title's own font-size instead of duplicating its
-       clamp() formula. */
-    --title-size: clamp(2.5rem, 1.4rem + 6vw, 5rem);
     max-width: 42rem;
     margin: 1rem auto 0;
     display: flex;
@@ -160,30 +156,12 @@ a:hover { border-bottom-style: dotted; }
     gap: 0.5rem;
 }
 
-/* Logo and title links never take the global hover-underline treatment
-   (see the plain `a:hover` rule above) — the masthead is the site's own
+/* The title link never takes the global hover-underline treatment (see
+   the plain `a:hover` rule above) — the masthead is the site's own
    brand mark, not reading-flow prose. */
 .masthead a,
 .masthead a:hover {
     border-bottom: none;
-}
-
-.brand { display: block; }
-
-/* Sized to match the title's own capital-letter height (the "S" of
-   "Satranç Kahvesi") rather than an arbitrary pixel value, so the mark
-   always reads as one unit with the wordmark at any viewport width. The
-   calc() is a ~0.72em cap-height approximation for the serif stack in
-   --font-serif; browsers that support the `cap` unit get the font's
-   actual cap-height instead (an unsupported value is simply ignored, so
-   the calc() above it stands as the fallback). */
-.site-logo {
-    width: calc(var(--title-size) * 0.72);
-    height: calc(var(--title-size) * 0.72);
-    font-family: var(--font-serif);
-    font-size: var(--title-size);
-    width: 1cap;
-    height: 1cap;
 }
 
 .masthead-title {
@@ -191,7 +169,7 @@ a:hover { border-bottom-style: dotted; }
     font-weight: bold;
     font-style: normal;
     line-height: 1.02;
-    font-size: var(--title-size);
+    font-size: clamp(2.5rem, 1.4rem + 6vw, 5rem);
     color: var(--ink);
 }
 
@@ -207,10 +185,20 @@ a:hover { border-bottom-style: dotted; }
     color: var(--ink);
 }
 
+/* Matches Athena's own rule under its tagline/page-title exactly (its
+   `col-1 sm-width-full border-top-thick`): a short tick — 1/12 the
+   width of the reading column — rather than a full-width divider,
+   widening to the full column only below its own 52em breakpoint. */
 .masthead-rule {
-    max-width: 42rem;
-    margin: 1.5rem auto 0;
+    width: 8.3333%;
+    margin-top: 1rem;
     border-top: 2px solid var(--ink);
+}
+
+@media (max-width: 52em) {
+    .masthead-rule {
+        width: 100%;
+    }
 }
 
 .section {
@@ -713,10 +701,13 @@ a:hover { border-bottom-style: dotted; }
 }
 
 /* A post's own "X köşesindeki diğer yazılar"/"Yazarın diğer yazıları"
-   sections list post titles without the underline .post-list normally
-   gives them (still bold/sized the same — only the border-bottom goes). */
+   sections, and the homepage's own "Yazılar" section, list post titles
+   without the underline .post-list normally gives them (still bold/
+   sized the same — only the border-bottom goes). */
 .post-related .post-list li > a,
-.post-related .post-list li > a:hover {
+.post-related .post-list li > a:hover,
+#yazilar .post-list li > a,
+#yazilar .post-list li > a:hover {
     border-bottom: none;
 }
 
