@@ -2,7 +2,7 @@
 layout: post
 date: 2026-09-19
 title: "Jan TIMMAN: Batı'nın En İyisi"
-author: "Nazmi Can Doğan"
+author: "FM Nazmi Can Doğan"
 column: "Efsane Turnuvalar"
 ---
 
