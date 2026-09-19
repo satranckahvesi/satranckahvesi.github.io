@@ -1,21 +1,13 @@
-/* Single control point for the whole site's type scale, matching how
-   Athena itself sets its own base (confirmed directly in its CSS:
-   body{font-size:16px}, with html left at the browser default, itself
-   16px in effect once a fixed px value like this stops it tracking the
-   visitor's own browser setting) — a fixed px number here rather than
-   the relative % this rule used before. Every other font-size in this
-   file (and in ChessPublica's own CSS, which pgn/fen/puzzle/pgn-player/
-   pgn-study are built from) is expressed in rem or em, so this one
-   declaration is still the only place the whole scale needs to change,
-   and every element derives from it consistently — nothing pins itself
-   back to a size independent of it. html carries the actual value,
-   since rem is always relative to the root regardless of which element
-   declares it; body restates the same number, matching Athena's own
-   (redundant, but keeps the two in agreement for anything that
-   inherits through body via em rather than reading rem off the root
-   directly). */
+/* Single control point for the whole site's type scale: every other
+   font-size in this file (and in ChessPublica's own CSS, which pgn/
+   fen/puzzle/pgn-player/pgn-study are built from) is expressed in rem
+   or em against this one value, so it's the only place the whole
+   scale needs to change. html carries the actual value, since rem is
+   always relative to the root regardless of which element declares
+   it; body restates the same number for anything that inherits
+   through it via em rather than reading rem off the root directly. */
 html {
-    font-size: 17px;
+    font-size: 18px;
 }
 
 :root {
@@ -56,7 +48,7 @@ html {
 body {
     margin: 0;
     padding: 0 1rem;
-    font-size: 17px;
+    font-size: 18px;
     font-family: var(--font-serif);
     color: var(--ink);
     background: var(--bg);
@@ -387,28 +379,18 @@ a:hover { border-bottom-style: dotted; }
 
 .post-meta a { color: var(--muted); }
 
-/* Matches Athena's own .prose type scale exactly (measured directly on
-   its markdown-sample page): Athena sets its enlarged base font-size
-   once, on the prose container itself, and lets ordinary body text
-   (p/ul/ol/li) inherit it as a plain, unstyled default rather than
-   restating the size on every text element — headings and everything
-   else are then sized in relation to that same base. .post-body's own
-   font-size is that base here; every rem value below it (2.5/2/1.5/
-   1.25/1/0.75rem for h1-h6) is still root-relative, so headings render
-   at exactly the sizes they did before this rule existed, and only
-   plain text (which had no font-size of its own) picks up the new
-   ambient size through ordinary inheritance. Margins pair each size
+/* Post body text (p/ul/ol/li, and by inheritance table/pgn/pgn-player/
+   pgn-study, none of which have a font-size of their own to override)
+   is a plain, unstyled 1rem — the html/body rule above is the only
+   place that number comes from. Headings are sized in rem relative to
+   that same root (2.5/2/1.5/1.25/1/0.75rem for h1-h6), each paired
    with a margin-top equal to its own font-size and a margin-bottom a
-   quarter of it — line-height stays the inherited 1.5 from body (also
-   Athena's own ratio throughout), so it doesn't need repeating here.
-   Scoped to .post-body rather than every heading in the codebase since
-   this is prose read at length, unlike the site's own UI headings
-   (masthead, section titles, card titles) which already have their own
-   sizes tuned for their own layouts. */
-.post-body {
-    font-size: 1.5rem;
-}
-
+   quarter of it — line-height stays the inherited 1.5 from body, so
+   it doesn't need repeating here. Scoped to .post-body rather than
+   every heading in the codebase since this is prose read at length,
+   unlike the site's own UI headings (masthead, section titles, card
+   titles) which already have their own sizes tuned for their own
+   layouts. */
 .post-body h1,
 .post-body h2,
 .post-body h3,
