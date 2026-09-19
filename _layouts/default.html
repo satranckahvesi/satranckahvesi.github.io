@@ -39,14 +39,14 @@
     </header>
     {{ content }}
     <footer class="site-footer">
-        <p class="footer-credit">{{ site.title }} &copy; {{ site.time | date: '%Y' }}</p>
         <nav class="footer-nav">
+            <a class="no-underline" href="{{ '/' | relative_url }}">Ana sayfa</a>
             <a class="no-underline" href="{{ '/hakkinda/' | relative_url }}">Hakkında</a>
             <a class="no-underline" href="{{ '/koseler/' | relative_url }}">Köşeler</a>
             <a class="no-underline" href="{{ '/yazarlar/' | relative_url }}">Yazarlar</a>
             <a class="no-underline" href="{{ '/yazilar/' | relative_url }}">Yazılar</a>
-            <a class="no-underline" href="{{ '/' | relative_url }}">Ana sayfa</a>
         </nav>
+        <p class="footer-credit">{{ site.title }} &copy; {{ site.time | date: '%Y' }}</p>
     </footer>
     <script src="{{ '/assets/js/curly-quotes.js' | relative_url }}" defer></script>
     <script src="{{ '/assets/js/theme-toggle.js' | relative_url }}" defer></script>
