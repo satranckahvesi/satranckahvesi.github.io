@@ -603,6 +603,56 @@ a:hover { border-bottom-style: dotted; }
     font-size: 1rem;
 }
 
+/* A move comment carrying %csl/%cal marks renders a small inline board
+   (.cp-board-wrapper) directly in the movetext. ChessPublica's own
+   margin:auto centering for it only exists inside a max-width:640px
+   media query (confirmed directly in its CSS) — meant for the mobile
+   layout, where the board already spans the full column width and
+   centering is moot either way. On desktop, with no such rule in force,
+   the board is left at its shorthand-set margin-left/right: 0 and sits
+   flush against the movetext's left edge instead. */
+.post-body .pgn-container .cp-board-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* pgn-study already shows the live, moving board in its own left column;
+   an inline diagram in the move-list (right) column next to it is pure
+   clutter, repeating the same position in miniature. Suppress both
+   diagram forms ChessPublica can render inline (.cp-board-wrapper for a
+   move's own %csl/%cal comment, .comment-diagram for one flagged via
+   diagramByMove) so the right column stays move list only. */
+.post-body pgn-study .pgn-container .cp-board-wrapper,
+.post-body pgn-study .pgn-container .comment-diagram {
+    display: none;
+}
+
+/* A standalone <pgn-player>'s own comment box (.video-comment, below the
+   board) can likewise embed a %csl/%cal diagram (.comment-diagram) — at
+   the comment text's own width that's too small to read anything on,
+   and the full-size board sits right above it already showing the same
+   position, so it never shows here either. */
+.post-body pgn-player .video-comment .comment-diagram {
+    display: none;
+}
+
+/* ChessPublica's own comment-play-btn (replay-this-line) is
+   position: absolute; bottom: 0; right: 0 inside .video-comment, whose
+   padding-bottom (0.5rem, its own CSS) is far shorter than the button
+   itself (2.5rem) — confirmed directly, the button sits within that
+   padding's box but is taller than it, so it extends upward over the
+   comment's own last line(s) of text once the comment is long enough to
+   reach the bottom-right corner. Padding sized to the button's own
+   footprint (height on the box, width on the text column it sits next
+   to) keeps flowed text out of that corner entirely, at any length. */
+.post-body pgn-player .video-comment {
+    padding-bottom: 2.75rem;
+}
+
+.post-body pgn-player .comment-text-block {
+    padding-right: 2.75rem;
+}
+
 /* Prev/next buttons live inside the ribbon itself now (see post.html's
    script — inserted as plain .pgn-study-ribbon-btn elements right after
    Play, identified via [data-pgn-nav]), so they already inherit the
@@ -815,6 +865,13 @@ a:hover { border-bottom-style: dotted; }
     :root:not([data-theme="light"]) .post-body .pgn-study-picker-row:hover,
     :root:not([data-theme="light"]) .post-body .pgn-study-toc-entry:hover {
         background: var(--hairline);
+    }
+    :root:not([data-theme="light"]) .post-body .pgn-study-picker-row.active {
+        background: var(--ink);
+        color: var(--bg);
+    }
+    :root:not([data-theme="light"]) .post-body .pgn-study-picker-row.active .pgn-study-picker-icon {
+        color: var(--bg);
     }
     :root:not([data-theme="light"]) .post-body .pgn-study-speed-badge {
         background: var(--ink);
