@@ -24,7 +24,7 @@ html {
 body {
     max-width: 700px;
     margin: 0 auto;
-    padding: 2.5rem 1rem 0;
+    padding: 0 1rem 0;
     background: #fff;
     font-family: Georgia, 'Times New Roman', serif;
     color: var(--ink);
@@ -36,19 +36,22 @@ body {
     overflow-x: hidden;
 }
 
-.site-header { text-align: center; }
-
-/* Breaks the masthead out of body's 1rem side padding so the row spans
-   the full viewport edge to edge on mobile, then re-adds that same
-   1rem as the header's own padding so the logo/wordmark sit exactly
-   where they did before — only the box itself is now full-bleed.
-   Uses the same margin-trick already relied on for pgn-study below. */
-@media (max-width: 639px) {
-    .site-header {
-        width: 100vw;
-        margin: 0 calc(50% - 50vw);
-        padding: 0 1rem;
-    }
+/* Full-bleed at every width, not just mobile: the same margin-trick
+   pgn-study uses below to escape the (now narrower, 700px) body column
+   and span the true viewport edge to edge, with its own background so
+   the masthead reads as one solid bar rather than just a wider,
+   still-invisible box — a plain width change alone wouldn't show
+   anything, since the centered logo/wordmark already sat in the middle
+   either way. Carries the top spacing body used to supply (removed
+   above) as its own padding, so the white bar covers that gap too
+   instead of leaving a sliver of the dark canvas showing above it. */
+.site-header {
+    text-align: center;
+    width: 100vw;
+    margin: 0 calc(50% - 50vw);
+    padding: 2.5rem 1rem;
+    background: #fff;
+    border-bottom: 1px solid var(--hairline);
 }
 
 .brand { text-decoration: none; }
@@ -414,7 +417,11 @@ body {
    the post column so the panel can be centered on the viewport instead of
    the (much narrower) column. Leaving overflow/grid-row behavior alone
    lets ChessPublica's own internal scrolling work once max-height caps the
-   panel's height. */
+   panel's height. ChessPublica leaves the panel itself transparent (its own
+   background rules only cover pieces inside it, like the ribbon and move
+   list), so against the page's dark obsidian canvas outside body's column
+   it would show as a dark gap around those inner white pieces; give it an
+   explicit light background so the whole panel reads as one light card. */
 .post-body pgn-study {
     width: auto;
     max-width: 90vw;
@@ -422,6 +429,7 @@ body {
     max-height: 90vh;
     margin: 0 calc(50% - 45vw) 1.5rem;
     font-size: 1rem;
+    background: #fff;
     --frame-pad: 1rem;
     --frame-pad-bottom: 0.6rem;
 }
