@@ -3,6 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+    (function () {
+        try {
+            var t = localStorage.getItem('satranckahvesi-theme');
+            if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+        } catch (e) {}
+    })();
+    </script>
     <title>{% if page.title and page.title != site.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
     <link rel="icon" type="image/jpeg" href="{{ '/assets/img/logo.jpg' | relative_url }}">
     {% if page.layout == "post" %}
@@ -14,8 +22,14 @@
 <body>
     <header class="site-header">
         <nav class="site-nav">
+            <a class="no-underline" href="{{ '/#tum-yazilar' | relative_url }}">Tüm yazılar</a>
             <a class="no-underline" href="{{ '/#koseler' | relative_url }}">Köşeler</a>
             <a class="no-underline" href="{{ '/#yazarlar' | relative_url }}">Yazarlar</a>
+            <a class="no-underline" href="{{ '/hakkinda/' | relative_url }}">Hakkında</a>
+            <button type="button" class="theme-toggle" aria-label="Karanlık temaya geç">
+                <svg class="theme-toggle-icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                <svg class="theme-toggle-icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+            </button>
         </nav>
         <div class="masthead">
             <a class="brand" href="{{ '/' | relative_url }}">
@@ -32,6 +46,7 @@
         <a class="no-underline footer-top" href="{{ '/' | relative_url }}">Ana sayfa</a>
     </footer>
     <script src="{{ '/assets/js/curly-quotes.js' | relative_url }}" defer></script>
+    <script src="{{ '/assets/js/theme-toggle.js' | relative_url }}" defer></script>
     {% if page.layout == "post" %}
     <script src="https://chesspublica.github.io/dist/ChessPublica.all.min.js" defer></script>
     {% endif %}
