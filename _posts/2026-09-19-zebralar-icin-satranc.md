@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2026-09-19
-title: "Chess for Zebras"
+title: "Zebralar için satranç!"
 author: "FM Nazmi Can Doğan"
 column: "Kitap incelemesi"
 ---
