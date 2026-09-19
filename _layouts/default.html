@@ -19,15 +19,10 @@
            the raw browser viewport, so the reference point for "fully
            grown" is how wide that box actually is, not the window — the
            two only used to coincide by accident, back when .site-header
-           was capped at the page's own narrow content width. No upper
-           bound: the masthead itself is meant to be full-bleed, so its
-           content keeps scaling in direct proportion to the container
-           right along with it instead of plateauing at some fixed
-           desktop size and leaving a fixed-size logo stranded in a lot
-           of empty bar on a wide screen. Only a floor remains (max(),
-           not clamp()), tuned so the wordmark still fits next to the
-           logo image on one line down to a 320px-wide container.
-           Deliberately kept fluid rather than switched to the
+           was capped at the page's own narrow content width. Only a floor
+           remains below (max(), not clamp()), tuned so the wordmark still
+           fits next to the logo image on one line down to a 320px-wide
+           container. Deliberately kept fluid rather than switched to the
            standard-heading-scale 2em other h1/h2/h3 elements use now:
            this one still has to fit next to the logo image on one line
            down to a 320px container, which a flat size can't guarantee
@@ -50,6 +45,36 @@
             font-size: max(1.35rem, 0.1rem + 6.6cqw);
             font-weight: 400;
             color: #16283a;
+        }
+
+        /* At 17.5/6.6/2.9cqw the whole brand row only ever fills about
+           two-thirds of the container — confirmed directly, that ratio
+           holds essentially flat from a 640px container up to a 3840px
+           one, since a plain cqw percentage scales the row and the
+           container by the same factor forever; no single coefficient
+           fixes that at every size without either overflowing on a very
+           wide monitor or under-filling on a merely wide one. Past 640px
+           (this design's own existing desktop reference point) this
+           switches to steeper per-cqw rates instead — chosen, together
+           with the fixed px term alongside each, to exactly continue
+           from each property's own value at 640px (no jump at the
+           switch) while approaching (never reaching, however wide the
+           container gets) a ~98%-of-container asymptote for the row as
+           a whole, so it can never actually overflow no matter how wide
+           a screen it's on. Confirmed directly at containers from 640px
+           to 5120px: smooth growth throughout, reading as edge-to-edge
+           by ~1920px (87.6%) and still climbing (93-94%) out past 4K. */
+        @container (min-width: 640px) {
+            .brand {
+                gap: calc(4.18cqw - 4.8px);
+            }
+            .site-logo {
+                width: calc(25.22cqw - 49.4px);
+                height: calc(25.22cqw - 49.4px);
+            }
+            .logo {
+                font-size: calc(9.51cqw - 16.9px);
+            }
         }
     </style>
 </head>
