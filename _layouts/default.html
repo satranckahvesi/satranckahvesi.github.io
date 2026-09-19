@@ -14,52 +14,64 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
     <style>
-        /* Three stacked rows — logo, "Satranç", "Kahvesi" — each centered
-           and each sized off the masthead's own box (site.css makes
-           .site-header a cqw query container) rather than the raw
-           viewport. A flat 1rem gap separates all three, deliberately
-           NOT part of the fluid cqw sizing below: it keeps the rows
-           close together as one lockup at every size instead of the gap
-           itself growing on a wide screen.
+        /* Modeled on the Athena Jekyll theme's own masthead
+           (_layouts/home.html + _sass/_utilities.scss in
+           github.com/broccolini/athena): a left-aligned, bold, upright
+           (not italic) title contained in a reading-width column, sized
+           on a simple two-point fluid scale rather than stretched to
+           fill the bar — Athena leaves generous whitespace around it
+           instead of chasing edge-to-edge, and just lets the title wrap
+           to a second line naturally on a narrow container instead of
+           forcing a fixed line split. A short accent rule under the
+           title echoes Athena's own .border-top-thick.
 
-           The two wordmark lines share one font-size, sized off
-           "Satranç" specifically (the wider of the two words) so IT
-           reads as close to edge-to-edge as the single-line wordmark
-           used to — "Kahvesi", a touch narrower at that same size,
-           just centers under it. A plain cqw percentage keeps a fixed
-           ratio to the container at any size (confirmed in the previous
-           single-line layout: unchanging from a 320px container up to
-           a 3840px one), so one coefficient, solved once, holds that
-           fill for "Satranç" at every width — no separate mobile/desktop
-           case needed. Logo width is its own independent cqw coefficient
-           now that it's no longer sharing a row with the wordmark. */
+           Kept from this site's own version rather than copied
+           verbatim: the logo image (Athena's theme doesn't have one)
+           and the full-bleed white bar it sits on (site.css's
+           .site-header), since that's this site's own established
+           chrome, not part of what was asked to resemble. */
         .brand {
-            display: inline-flex;
-            flex-direction: column;
+            display: flex;
+            flex-direction: row;
             align-items: center;
+            justify-content: flex-start;
             gap: 1rem;
+            max-width: 700px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 1rem;
+            box-sizing: border-box;
         }
         .site-logo {
-            width: 55cqw;
-            height: 55cqw;
+            width: clamp(40px, 7vw, 72px);
+            height: clamp(40px, 7vw, 72px);
             flex: none;
         }
         .logo {
             margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            text-align: left;
             font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-size: 28.6cqw;
-            line-height: 1.15;
-            /* Google Fonts is asked for italic 400 explicitly (see the
-               <link> above) — without it in that request, the browser
-               has no 400 italic file to use and falls back to the
-               nearest weight it did fetch (600), silently overriding
-               this. */
-            font-weight: 400;
+            font-style: normal;
+            font-weight: 700;
+            font-size: clamp(2rem, 1rem + 5vw, 4rem);
+            line-height: 1.1;
             color: #16283a;
+        }
+        /* Same box model as .brand (max-width/margin/padding) so the
+           short line inside lands under the title's own left edge
+           rather than centering itself as an unrelated 3rem block in
+           the full-bleed bar. */
+        .masthead-rule-wrap {
+            max-width: 700px;
+            margin: 1rem auto 0;
+            padding: 0 1rem;
+            box-sizing: border-box;
+        }
+        .masthead-rule {
+            display: block;
+            width: 3rem;
+            height: 2px;
+            background: #16283a;
         }
     </style>
 </head>
@@ -67,9 +79,9 @@
     <header class="site-header">
         <a class="brand" href="{{ '/' | relative_url }}">
             <img class="site-logo" src="{{ '/assets/img/logo.jpg' | relative_url }}" alt="{{ site.title }}">
-            {% assign title_words = site.title | split: " " %}
-            <h1 class="logo">{% for word in title_words %}<span class="logo-line">{{ word }}</span>{% endfor %}</h1>
+            <h1 class="logo">{{ site.title }}</h1>
         </a>
+        <div class="masthead-rule-wrap"><span class="masthead-rule"></span></div>
     </header>
     {{ content }}
     <footer class="site-footer">
