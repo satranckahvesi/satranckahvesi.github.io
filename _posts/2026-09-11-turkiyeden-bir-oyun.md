@@ -36,7 +36,7 @@ yaratma ve kazanma şansım hayli azaldı. } 16. bxc6 bxc6 17. Nxf6+ Nxf6 (17...
 g4 h4 19. g5) 18. c5 Nd7 19. Qc2 Nf8 20. Be2 Qe7 21. Bc4 Ne6 22. Bxe6 Qxe6 23.
 Rab1 Rc7 { Yedinci yatayı koruyor. } 24. Rfd1 Bf8 25. Qb3?! { İşimi biraz kolaylaştırdı. }
 (25. a4! { Piyonu a6'ya koyup Rb7 hazırlamak harika bir fikirdi. })
-25... Qxb3 26. Rxb3 f6 27. a4 Kf7 28. Kf1 Ke6 29. a5 Be7 (29... a6) 30. a6 f5
+25... Qxb3 26. Rxb3 f6 27. a4 Kf7 28. Kf1 Ke6 29. a5 Be7 (29... a6? { b6 karesini zayıflatarak beyaz kalenin içeri girmesine izin verirdi. }) 30. a6 f5
 31. f3 f4 32. Bf2 g5 33. Ke2 Rg8 34. Rdb1 Rgc8 { Pasif bir şekilde beklemeye
 devam etmek durumundayım. } 35. Rb7 Kd7 36. Kd3 Rxb7 37. Rxb7+ Rc7 38. Rb3 (38. Rb8 Rc8
 39. Rb7+ Rc7) 38... Kc8 39. Kc4?! { [D] Şüpheli bir hamle. En iyi hamle Ke2 olurdu: } (39. Ke2 Bf8
