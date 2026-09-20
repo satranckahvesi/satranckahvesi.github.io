@@ -1237,7 +1237,7 @@ a:hover { border-bottom-style: dotted; }
 
 .post-list-meta {
     color: var(--muted);
-    font-size: 0.85rem;
+    font-size: 0.9rem;
 }
 
 .post-list-meta a {
