@@ -24,6 +24,7 @@ fazla düşünmeden oynadığımız bir anda bunu nasıl başardığımızı anl
 kadar kolay olmayabilir. Sahiden satranç tahtası üzerinde verilen kararların tam olarak neye
 dayanması gerektiğini nasıl açıklayabiliriz?
 
+~~~
 [Event "Wijk Aan Zee"]
 [Site "?"]
 [Date "1982.??.??"]
@@ -36,6 +37,7 @@ dayanması gerektiğini nasıl açıklayabiliriz?
 [PlyCount "0"]
 
  1-0
+~~~
 
 “**Antrenör**: Konuma bakma şansın oldu. Neler oluyor? Konumun en önemli özellikleri
 nelerdir? Fikrin var mı, Paul?
@@ -75,6 +77,7 @@ görmüyorsak (öncesinde veya aynı anda) f7-karesinde zayıflık görmeyiz.”
 Yazarın eleştirilerine maruz kalan **Carsten Hansen**’in Pozisyonel Satrancınızı İlerletin
 (**Improve Your Positional Chess**) kitabıyla ilgili konumu analiz ederken şöyle eleştiriyor:
 
+~~~
 [Event "Linares 14th"]
 [Site "Linares"]
 [Date "1997.02.15"]
@@ -115,6 +118,7 @@ resim sanatıyla ilgili bir kılavuz hazırlar gibi, iyi hedeflenmiş hassas
 fırça darbeleri ve olası eserinizle ilgili iyi bir fikirle en güzel
 resimleri yapabileceğinizi iddia edip bunun yanına da Monet’nin bir
 resmini örnek olarak koyuyorsunuz.”} 0-1
+~~~
 
 Sadece kitaplara değil, iyi bildiğimiz “atasözlerine” dair de eleştirilerde bulunuyor Hendriks:
 “Satranç bize öğretilirken, bir sürü atasözü-gibi tavsiyeler verilir. ‘Kanattaki piyon sürüşünü
@@ -163,6 +167,7 @@ Meraklısı için farklı seviyelerden oyunculara sunulan De Groot’un test kon
 arasında Keres, Alekhine, Euwe gibi Dünya Şampiyonları da bulunmaktaydı). Konumu
 düşünerek siz de teste katılabilirsiniz.
 
+~~~
 [Event "?"]
 [Site "?"]
 [Date "????.??.??"]
@@ -175,6 +180,7 @@ düşünerek siz de teste katılabilirsiniz.
 [PlyCount "0"]
 
  *
+~~~
 
 İkinci bölümde, ülkemizde de yoğun ilgiyle karşılanan ve örneklerinin bolluğuyla Hendriks’in
 de beğenisini kazanan **Cor van Wijgerden**’in **Step-by-Step** serisinde önerilmeyen “**deneme-
@@ -185,6 +191,7 @@ biri olarak değiniyor. Hendriks’in eleştirilerine maruz kalan John Watson bu
 conventional-wisdom) taktik konumlarda “deneme yanılma” yönteminin “konumu anlama”
 yöntemine kıyasla daha verimli olduğu konusunda yazara katıldığını ifade ediyor.
 
+~~~
 [Event "Leningrad"]
 [Site "Leningrad"]
 [Date "1987.??.??"]
@@ -224,6 +231,7 @@ düşündüm."  Ve bu hamleyi böylesine ibretlik, akıllıca bir biçimde
 bulduğunuza **kendinizi inandırabilirsiniz**. Böylece öğrencilerinizin
 tıpkı sizin gibi konumun özelliklerine bakarak bu hamleyi bulmalarını
 umabilirsiniz.} 0-1
+~~~
 
 Kitap 27 bölüm ve 138 egzersizden oluşuyor ve her bölüm konuya dair egzersizlerle başlıyor.
 Mantıklı olmasa da vurgulanmak istenen her şeyin örneklerle kanıtlanabileceğini ispatlamak

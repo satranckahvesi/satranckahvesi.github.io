@@ -45,45 +45,39 @@
     var pgnViewKeys = pgnViews.map(function (v) { return v.key; });
     var pgnBlockIndex = 0;
 
-    var paragraphs = Array.prototype.slice.call(body.querySelectorAll('p'));
-    for (var i = 0; i < paragraphs.length; i++) {
-        var p = paragraphs[i];
-        if (!p.parentNode) continue;
-        var lines = p.textContent.split('\n').map(function (s) { return s.trim(); }).filter(function (s) { return s.length; });
+    // Every [Tag "..."] header (plus its movetext, if any) must be authored
+    // inside a ~~~ fenced code block, not as a bare paragraph. Markdown's
+    // block-level parsing — lists, blockquotes, emphasis, smart quotes —
+    // never runs inside a fenced block, so a movetext line that happens to
+    // start with "20." or "41." can never be mistaken for an ordered-list
+    // marker and silently lose that number the way it once did as plain
+    // paragraph text (kramdown would parse "1. e4 e5 ... 20. Rd4" as an
+    // ordered list continuing from "1.", consuming "20." as list markup and
+    // discarding it from the text). A <pre><code> block's textContent is
+    // also handed back byte-for-byte (HTML-entity-decoded, but otherwise
+    // untouched) — no ambiguity about where one line ends and the next
+    // begins, unlike reassembling text split across a <p>/<ol> pair.
+    var codeBlocks = Array.prototype.slice.call(body.querySelectorAll('pre > code'));
+    for (var i = 0; i < codeBlocks.length; i++) {
+        var codeEl = codeBlocks[i];
+        var pre = codeEl.parentNode;
+        if (!pre || !pre.parentNode) continue;
+        var lines = codeEl.textContent.split('\n').map(function (s) { return s.trim(); }).filter(function (s) { return s.length; });
         if (!lines.length || !headerLineRe.test(lines[0])) continue;
 
-        // Collect the leading run of "[Tag "value"]" header lines. Anything
-        // left over on the same paragraph (no blank line before it) is
-        // inline movetext, e.g. a puzzle's header immediately followed by
-        // its solution on the next markdown line.
+        // Collect the leading run of "[Tag "value"]" header lines; every
+        // remaining non-blank line is movetext (there's no more "inline vs.
+        // next sibling" distinction to make — header and movetext share one
+        // fenced block, blank line between them or not).
         var idx = 0;
         while (idx < lines.length && headerLineRe.test(lines[idx])) idx++;
         var headerLines = lines.slice(0, idx);
-        var inlineMoveText = idx < lines.length ? lines.slice(idx).join(' ') : null;
+        var moveLines = lines.slice(idx);
         var hasFenTag = headerLines.some(function (l) { return fenTagRe.test(l); });
 
         var moveText = null;
-        var next = null;
-        if (inlineMoveText !== null) {
-            if (movetextRe.test(inlineMoveText)) moveText = inlineMoveText;
-        } else {
-            next = p.nextElementSibling;
-            if (next) {
-                if (next.tagName === 'P') {
-                    var t = next.textContent.trim();
-                    if (movetextRe.test(t)) moveText = t;
-                } else if (next.tagName === 'OL') {
-                    // A movetext starting with "1. " is parsed by Markdown as
-                    // an ordered list start; the "1. " marker itself gets
-                    // consumed into list semantics and stripped from the
-                    // <li> text, so we have to add it back to reconstruct
-                    // valid PGN movetext.
-                    var lis = Array.prototype.slice.call(next.querySelectorAll('li'));
-                    if (lis.length) {
-                        moveText = '1. ' + lis.map(function (li) { return li.textContent.trim(); }).join(' ');
-                    }
-                }
-            }
+        if (moveLines.length && movetextRe.test(moveLines[0])) {
+            moveText = moveLines.join(' ');
         }
 
         // A header + movetext pair is a game (<pgn>) whether or not it
@@ -162,12 +156,11 @@
             });
             wrap.appendChild(switcher);
             wrap.appendChild(el);
-            p.parentNode.insertBefore(wrap, p);
+            pre.parentNode.insertBefore(wrap, pre);
         } else {
-            p.parentNode.insertBefore(el, p);
+            pre.parentNode.insertBefore(el, pre);
         }
-        p.remove();
-        if (next) next.remove();
+        pre.remove();
     }
 
     // Signals that every [Tag "..."] header block on this page has been

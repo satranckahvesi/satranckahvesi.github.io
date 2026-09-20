@@ -95,6 +95,7 @@ kanıtlayacağım’ şeklinde yaklaşmaktan çok daha akıllıcadır.”
 Aynı yaklaşımla, “atak bir oyuncuyum”, “konumsal oynamayı severim”, “hesap yapmam, sezgilerimle oynarım” gibi yaklaşımlarla oyuncunun kendi tarzına ve hamlelerine sınırlar çizmesini, onun satrancının gelişimi önündeki en büyük engellerden biri olarak
 görüyor ve kitabın her bölümüne özenle seçilerek konmuş epigraflarından Karpov’a ait olan sözüyle bunu açıklıyor. “Tarz mı? Benim bir tarzım yok.” Burada söylenmek istenen “oyuncunun bir tarzı olmamalı” değil, bu yaklaşımın oyuncunun oynadığı oyuna damga vurması, hamleleri üzerinde etkiye sahip olmasıdır elbette. Karpov’un kendi stili üzerine böyle düşünmesi onun bir tarza sahip olmadığını gösterir mi? Kitap boyunca konuya eşlik eden örneklerde kendi partilerini, oynarkenki düşüncelerini ve hissettiklerini içten (belki de aşırı içten!) bir şekilde paylaşması kitabın en büyük artılarından. Şimdi ilk bölümün kaba bir özeti sayılabilecek bir kısmını paylaşmak istiyorum. Bir satranç kitabında içtenliğiyle böylesine beni yakalayan ve söyledikleriyle bana ayna tutan başka bir bölüm hatırlamıyorum. Sözünü ettiğim, Hikaye Uydurma (Fabulation) alt başlığında Rowson’ın yakın zamanda hayata gözlerini yuman Viktor Korchnoi ile karşılaşmasıdır.
 
+~~~
 [Event "Monarch Assurance 13th"]
 [Site "Port Erin"]
 [Date "2004.09.29"]
@@ -150,6 +151,7 @@ yakın. Şahımın güvenli bir yeri yok, vezirim ofsaytta ve siyah-kare
 kontrolüm bulunmuyor. Oldukça iyi direndim, tam sorunlarımı çözmeye
 başlar gibiyken, derince düşündü ve yıkıcı taktiklerin pimini çekti. } 19. e3 O-O-O 20. Be2 Nc5 21. O-O Ne4 22. Qc2 Rd6 23. Bd4 Re8 24. Ne5 f6 25. Nd3 Rc6 26. Qd1 Qa5 27. b4 Qa2 28. Nc5 a6 29. Nxe4 dxe4 30. b5 Rc2 31. bxa6 c5 (31... Rxe2 32. a7 Kd7 33. Bb2+ { varyantı Korchnoi'un dehasının hoş bir
 örneğidir. }) 32. axb7+ Kb8 33. Bxf6 Rd2 34. Bc4 Rxd1 35. Bxa2 Rxf1+ 36. Kxf1 Kxb7 37. Bf7 Rf8 38. Bd5+ Kb6 39. Bc3 Kb5 40. Bxe4 Kc4 41. Be5 Re8 42. f4 Kb3 43. Ke2 Rd8 44. g4 c4 45. f5 gxf5 46. gxf5 c3 47. Bd4 Rc8 48. Bd5+ Kb4 49. Kd1 { 1-0 White wins. } 1-0
+~~~
 
 “Korchnoi ile oynamak çok özel bir durum, hele onunla daha önce hiç
 oynamadıysanız. Böylesine sıradışı bir oyundan ve oyun sonrası analizinden sonra, pek çok
