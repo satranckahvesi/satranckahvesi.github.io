@@ -797,6 +797,23 @@ a:hover { border-bottom-style: dotted; }
     font-size: 1em;
 }
 
+/* .pgn-comment is a <p>, so the post-body paragraph rule above
+   (.post-body p { margin: 0 0 1em }) wins over ChessPublica's own
+   margin-top: 1rem for it — same specificity count as ChessPublica's own
+   plain .pgn-comment selector, but ours also matches the tag, which
+   decides the tie. The result (confirmed directly: computed margin-top
+   came back 0px) is a comment sitting right up against whatever precedes
+   it, most visibly right after a move whose own inline diagram we hide
+   (see .cp-board-wrapper below) — nothing else is left to create any
+   visual gap there, unlike a .pgn-variation's own div (a different tag,
+   so unaffected by the paragraph rule), which still gets its full
+   intended margin. Restoring just the top margin here — the bottom one
+   already matches what ChessPublica intended — brings every .pgn-comment
+   back to the same spacing a .pgn-variation already has. */
+.post-body .pgn-comment {
+    margin-top: 1em;
+}
+
 /* Inside pgn-study, the game title picks up a 1.1rem bump (vs. 1rem
    elsewhere ChessPublica shows a game title, e.g. in pgn-player). Match
    the other contexts instead — 1em of pgn-study's own font-size, same
