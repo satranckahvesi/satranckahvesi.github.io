@@ -281,3 +281,5 @@ gerek...
 1...exd5 2.Qf3 Qd8 (2...Kg7 3.Ng4) 3.Rce1 Beyazlar baskıyı artırır ve siyahın iyi bir
 savunması yoktur, örneğin; 3...Re8 4.Nxc6 Rxc6 5.Rxe7 Qxe7 6.Nxd5 Beyaz materyal
 kazanır.
+
+_Not: Bu yazı ilk olarak 2016 yılında **Satrançsever** dergisinin 4. sayısında yayımlanmıştır._   
