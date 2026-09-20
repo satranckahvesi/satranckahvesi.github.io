@@ -188,6 +188,34 @@
                 });
             }
 
+            // A move that starts a branch point (the position right before
+            // it has recorded variations) can only be entered through
+            // .pgn-study-picker-row.mainline's own click handler — the same
+            // guard the ArrowRight fix above already works around, confirmed
+            // directly: clicking that exact move's own .pgn-move span in the
+            // move list (its data-ply equal to the engine's current index,
+            // i.e. this move IS the position a picker is already showing
+            // for) leaves the board and the active move both unchanged,
+            // silently. Every other move click — before the branch, or
+            // skipping past it to a later ply — already works without this,
+            // so this only needs to step in for that one exact case:
+            // redirect it to the picker's own mainline row, the same
+            // "reproduce what a reader clicking it would do" trick the
+            // ArrowRight fix uses.
+            var moveList = study.querySelector('.pgn-container');
+            var innerPlayerForClicks = study.querySelector('pgn-player');
+            if (moveList && innerPlayerForClicks) {
+                moveList.addEventListener('click', function (e) {
+                    var moveEl = e.target.closest('.pgn-move[data-ply]');
+                    if (!moveEl) return;
+                    var engine = innerPlayerForClicks._engine;
+                    if (!engine || !engine.state) return;
+                    if (parseInt(moveEl.getAttribute('data-ply'), 10) !== engine.state.index) return;
+                    var mainlineRow = study.querySelector('.pgn-study-picker-row.mainline');
+                    if (mainlineRow) mainlineRow.click();
+                });
+            }
+
             if (!study.querySelector('.pgn-study-mobile-comment') && study.querySelector('pgn-player')) {
                 // Appended at the true end of pgn-study's children, after
                 // <pgn-player>, its resizer and .pgn-container alike. On
