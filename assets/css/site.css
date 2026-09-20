@@ -87,11 +87,10 @@ a:hover { border-bottom-style: dotted; }
 
 .link-primary {
     font-weight: bold;
-    border-bottom: 2px solid currentColor;
+    border-bottom-style: none;
+    border-bottom-width: 2px;
     padding-bottom: 1px;
 }
-
-.link-primary:hover { border-bottom-style: dotted; }
 
 /* Breaks the masthead out of body's 1rem side padding so the row spans
    the full viewport edge to edge on mobile, then re-adds that same
@@ -1241,5 +1240,11 @@ a:hover { border-bottom-style: dotted; }
     font-size: 0.85rem;
 }
 
-.post-list-meta a { color: inherit; }
+.post-list-meta a {
+    color: inherit;
+    border-bottom-style: none;
+    border-bottom-width: 1px;
+}
+
+.post-list-meta a:hover { border-bottom: none; }
 
