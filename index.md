@@ -31,8 +31,9 @@ layout: default
     {% assign column_slug = latest.column | slugify: "latin" %}
     <li>
       <h3><a class="link-primary" href="{{ '/yazarlar/' | append: author_slug | append: '/' | relative_url }}">{{ author }}</a></h3>
-      <span class="index-meta"><a class="no-underline-hover" href="{{ '/koseler/' | append: column_slug | append: '/' | relative_url }}">{{ latest.column }}</a> · {% include turkish-date.html date=latest.date %}</span>
+      <a class="index-meta no-underline-hover" href="{{ '/koseler/' | append: column_slug | append: '/' | relative_url }}">{{ latest.column }}</a>
       <a class="index-latest no-underline-hover" href="{{ latest.url | relative_url }}">{{ latest.title }}</a>
+      <span class="index-meta">{% include turkish-date.html date=latest.date %}</span>
     </li>
     {% endfor %}
   </ul>
