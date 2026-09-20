@@ -5,7 +5,7 @@
     var fenTagRe = /^\[FEN\s+"/;
     var movetextRe = /^(\{|\d+\.)/;
 
-    // For a plain <pgn> game (not <fen>/<puzzle>), the reader can switch
+    // For a <pgn> game (not a bare <fen> diagram), the reader can switch
     // between the three ways ChessPublica can show a game. The library only
     // scans the DOM once on load, so switching can't re-render an element
     // in place — instead the chosen view is stashed and the page reloaded,
@@ -86,13 +86,19 @@
             }
         }
 
-        // A header + movetext pair is a full game (<pgn>), unless the header
-        // carries a [FEN ...] tag, in which case it's a position + solution
-        // puzzle (<puzzle>). A bare [FEN "..."] header with no movetext is a
-        // static diagram (<fen>).
+        // A header + movetext pair is a game (<pgn>) whether or not it
+        // starts from a custom [FEN ...] position — PGN's SetUp/FEN tags
+        // just say where move 1 (or move N, for an excerpt) begins, and
+        // ChessPublica's <pgn> renders that natively. Auto-routing a FEN
+        // header into <puzzle> instead used to happen here, but <puzzle>
+        // renders as a bare, flipped diagram with no move list or comments
+        // at all — verified against both a one-move example and a full
+        // annotated excerpt, neither showed anything past the diagram — so
+        // there's no working case left for it. A bare [FEN "..."] header
+        // with no movetext is still a static diagram (<fen>).
         var tagName;
         if (moveText !== null) {
-            tagName = hasFenTag ? 'puzzle' : 'pgn';
+            tagName = 'pgn';
         } else if (hasFenTag) {
             tagName = 'fen';
         } else {
@@ -165,7 +171,7 @@
     }
 
     // Signals that every [Tag "..."] header block on this page has been
-    // replaced by its real <pgn>/<fen>/<puzzle>/... element. site.css's
+    // replaced by its real <pgn>/<fen>/... element. site.css's
     // curly-quote pass (assets/js/curly-quotes.js) depends on those tags
     // already existing so it knows what PGN/FEN text to leave untouched —
     // converting a straight quote inside literal, still-unconverted PGN
