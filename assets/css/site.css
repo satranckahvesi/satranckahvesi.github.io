@@ -292,25 +292,6 @@ a:hover { border-bottom-style: dotted; }
 
 .index-meta a { color: inherit; }
 
-/* homepage intro: drop cap */
-.intro {
-    text-align: left;
-}
-
-.intro p {
-    margin: 0;
-}
-
-.intro p::first-letter {
-    font-family: var(--font-serif);
-    font-weight: bold;
-    font-size: 4rem;
-    line-height: 0.75;
-    float: left;
-    margin: 0.05em 0.15em 0 0;
-    color: var(--ink);
-}
-
 .site-footer {
     max-width: 42rem;
     margin: 4.5rem auto 0;
@@ -458,29 +439,20 @@ a:hover { border-bottom-style: dotted; }
     border-bottom: 2px solid var(--ink);
 }
 
-/* A tournament crosstable (rank/name/round-by-round score grid) reads as
-   a single aligned block of monospace text, not a bordered HTML table —
-   matching the plain, fixed-width listings tournament databases print.
-   Kept a fixed cream-on-black-ink pairing rather than following
-   light/dark mode: it's meant to read as a quoted, archival scoresheet,
-   not a themed part of the page. overflow-x lets a table wider than the
-   post column scroll horizontally instead of forcing the whole page
-   wider (same reasoning as .post-body table above). */
-.post-body .crosstable {
+/* A bare <pre> (an author's crosstable dropped straight in, or any other
+   fixed-width block) doesn't wrap its own text and has no width limit of
+   its own, so content wider than the post column doesn't scroll — it
+   pushes the box itself wider, and everything inside .post-body along
+   with it. This one rule contains that at its actual source rather than
+   leaning on body's own overflow-x: hidden (already set, further up)
+   to just clip the visible result afterward: max-width keeps <pre> from
+   growing past the column in the first place, and overflow-x turns that
+   same box into its own scroll container the instant its content
+   doesn't fit, so only the <pre> itself — never the page — scrolls
+   sideways. */
+.post-body pre {
+    max-width: 100%;
     overflow-x: auto;
-    margin: 0 0 1.5em;
-    padding: 1.25rem 1.5rem;
-    background: #fffdf0;
-    border: 1px solid #e5decb;
-    border-radius: 4px;
-}
-
-.post-body .crosstable pre {
-    margin: 0;
-    color: #2b2826;
-    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
-    font-size: 0.8rem;
-    line-height: 1.5;
 }
 
 /* ChessPublica's .pgn-container adds its own 0 1rem side padding, which
