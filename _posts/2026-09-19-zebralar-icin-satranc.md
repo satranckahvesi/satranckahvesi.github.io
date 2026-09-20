@@ -63,15 +63,15 @@ Oldukça eğlenceli (Şu başlıklara bakın: “Cebinizde Bir Delik Olduğunu D
 Ne Yapmalı?”, “Satranç Neden Çok Zor?” ya da “Konsantre ol! Konsantre ol? Konsantre ol.”)
 ama derin meselelere el atmaktan çekinmeyen bir serbestlikle yazılmış olması çok hoşuma
 gitti. Bu yönüyle daha çok satrançta belli bir seviyeye gelmiş ilerlemekte güçlük çeken
-yetişkin sporcu veya antrenörlere hitap eder görünümde. Örneğin; konsantre olmak
-konusunda dair söze başlarken Blaise Pascal’dan alıntı yapmaktan çekinmiyor yazar:
+yetişkin sporcu veya antrenörlere hitap eder görünümde. Örneğin; konsantre olmaya
+dair söze başlarken Blaise Pascal’dan alıntı yapmaktan çekinmiyor yazar:
 “İnsanlığın bütün sorunları, kişinin tek başına bir odada sessizce oturamamasından
 kaynaklanır.”. Çünkü yazara göre insan kendi düşüncelerine konsantre olmamak için uğraşır
 ve “konsantre olmak” için satranç oynamayı ister.
 
 Kitabına pek çok farklı isimler düşündükten sonra “Chess for Zebras Thinking
 Differently about Black and White” (Zebralar İçin Satranç Siyah ve Beyaz Hakkında Farklı
-Düşünme) adında karar kılan Jonathan Rowson, bir sufi deyişindan etkilenmiş: “Toynak sesi
+Düşünme) adında karar kılan Jonathan Rowson, bir sufi deyişinden etkilenmiş: “Toynak sesi
 duyunca zebra gelsin aklına”. Toynak seslerinin atları çağrıştırması üzerinden yola çıkan
 Rowson, bize zebraları işaret ediyor. Mesaj ise kısaca şudur: “Kendinize farklı düşünmek için
 izin verin”. 
@@ -119,7 +119,7 @@ diye merak ediyorsunuz: } 9... Qxd4? 10. Nxe6 fxe6 11. Qxe6+ Be7 12. Be5) 9... B
 oynamaktan açıkça memnun olacaktı. 10...Nd5 hamlesi mümkündü fakat
 sonunda... } 10... N8d7 { hamlesini tercih ettim. Korchnoi oyundan sonra sordu: "Bu
 hamlenin amacı nedir?" Cevap verdim: "Ana fikir ...Nf6-d5 ve vezir
-kanadındaki beyaz kareleri kontrol atlına almak." Kafasını salladı ve
+kanadındaki beyaz kareleri kontrol altına almak." Kafasını salladı ve
 ekledi: "Anlıyorum.", tahminime göre beni yalnızca test ediyordu. } 11. Nf3 { Bu hamleden sonra bana yardımı olmayan bir iyimserlik büyüsüne kapıldım.
 Bu "iyimserlik etkisi" satrançta kaçınmamız gereken temel psikolojik
 tuzaklardan biridir çünkü konum hakkındaki değerlendirmemizi
@@ -134,7 +134,7 @@ fakat hiçbiri bana konumun gereklerini tamamen yerine getiriyor gibi gelmedi.
 Beyazın e3'ten filini oynayıp ardından e-piyonunu oynaması problemine
 radikal bir çözüm sunuyor. 12.Bg5'ten sonra 12...Qf5 veya 12.Bc1 Qf5 ve
 fikrim mükemmel işliyor ve beyaz hamle bulmakta zorlanıyor olacaktı. Fakat
-malesef, e3-filinin gizli bir maksadı var. } (11... Bxf3 12. gxf3 Qh4 13. Ne4 { varyantını gördüğüm zaman bu
+maalesef, e3-filinin gizli bir maksadı var. } (11... Bxf3 12. gxf3 Qh4 13. Ne4 { varyantını gördüğüm zaman bu
 fikirden bir şekilde vazgeçtim, çünkü Bg5'in görünüşünü beğenmedim.
 Derken birdenbire anlamlı gelen ve ruh halime uyan ilginç bir hamle gördüm. }) (11... Nd5 12. Bg5) (11... O-O 12. h4!) (11... h6 12. Bc1!) 12. d5! { Diagram [#] Bu hamle
 özellikle derin veya zor değil, yine de Korchnoi'un bu hamleyi bir dakika

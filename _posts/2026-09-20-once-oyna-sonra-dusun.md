@@ -51,7 +51,7 @@ göremiyorum, alırsa ben de alacağım ve Ad5 geliyor, peki ne yapabilir?
 Pek çok satranç kitabı buradaki antrenörünkiyle aynı sıkıcı tonda yazılmıştır. Bu kitaplar
 hamlelerinizi rastgele denememeniz gerektiği fikri üzerine kuruludur; ilk önce konumun
 özelliklerine bakmalı, genel bir plan kurmaya çalışmalı ve ancak ondan sonra gerçek bir
-hamle düzeyinde kesin bir ‘sonuç’ aramalısınız. **Bu tam bir saçmalık**! Hiç bir satranç
+hamle düzeyinde kesin bir ‘sonuç’ aramalısınız. **Bu tam bir saçmalık**! Hiçbir satranç
 oyuncusu böyle düşünmez, kimse satranç oynamayı bu şekilde düşünerek öğrenmez ve
 hatta antrenörler ve satranç kitaplarının yazarları da böyle düşünmezler.
 Ancak, pek çok kitapta bu görüş bize gösterilir: eğer konumun özelliklerine bakarsak, iyi
@@ -60,8 +60,8 @@ hamle otomatik olarak gelip bizi bulacaktır.
 Bu yazarlar çoğunlukla kendilerinin de aslında diğer türlü yaptıklarını unuturlar: konuyu
 anlatmak için seçtikleri örnekte en kuvvetli hamleyi bilirler. Sonra bu hamle konumun
 özelliklerine dair açıklamalarının mantıklı bir sonucuymuş gibi davranırlar, halbuki bu
-açıklamarı sadece güçlü olduğunu zaten bildikleri hamle üzerine uygularlar.”
-Kitabın ilk bölümünü son derece sert görünen bu eleştiriyle açılıyor. Hendriks’in eleştirilerinin
+açıklamaları sadece güçlü olduğunu zaten bildikleri hamle üzerine uygularlar.”
+Kitabın ilk bölümü son derece sert görünen bu eleştiriyle açılıyor. Hendriks’in eleştirilerinin
 odağında Jeremy Silman, John Watson, Carsten Hansen, Andrew Soltis, Drazen Marovic ve
 hatta Kotov gibi bilinen yazarlar da var ve Hendriks’e göre:
 “Aslında belli bir sıralama yok! Önce konumu değerlendirip hamlelere bakmıyoruz. **Hepsi
@@ -128,7 +128,7 @@ söylüyor: “**Hiçbir atasözü iyi bir hamleyi alt edemez**.”
 Kitabın iddiasını yazarın sözleriyle kabaca özetleyecek olursak:
 
 “Belki oyunları, egzersizleri üst seviyelere geçiş için anahtar olacak sihirli bir sözcük
-arayışında incelemeden atlayan okurlar için çok hoş bir haber değil ama seviyesini arttırmak
+arayışında incelemeden atlayan okurlar için çok hoş bir haber değil ama seviyesini artırmak
 isteyen okurlar, verilen materyal üzerinde çalışmaya başlamalı ve kelimelerin bulunduğu
 bölümden fazla bir şey beklememeliler. **Konumlar, daha genel prensipleri açıklamak için
 örnekler değil, asıl öğrenme materyalini oluştururlar! Bir antrenör buna karşı en büyük
@@ -153,7 +153,7 @@ Beşinci bölümde paylaşılan **Adrian De Groot**’un “Satranç oyuncusunun
 araştırmasının da gösterdiği gibi, büyükusta daha düşük seviyedeki oyuncudan çok daha
 farklı hesaplamaz, fark nitelikseldir: büyükusta çabucak konumun “ne hakkında” olduğunu,
 umut vaat eden olasılıkları anlarken amatör oyuncu bunları yapabilmek için çok daha fazla
-zamana ihityaç duyar ya da hiç o sonuçlara ulaşamaz. Büyükusa kendisine sunulan
+zamana ihtiyaç duyar ya da hiç o sonuçlara ulaşamaz. Büyükusta kendisine sunulan
 konumun özüne o konumu daha önce görmemişse bile, muazzam deneyimi ve farklı
 konumların, modellerin, planların, kombinezonların bilgisiyle ulaşacaktır: “(...)**Büyükusta
 tahtada zaten bildiği şeyi görür. Eğer görmüyorsanız, daha iyi bakmanız ya da farklı bir yol
@@ -212,7 +212,7 @@ yöntemine kıyasla daha verimli olduğu konusunda yazara katıldığını ifade
 
 15... Be8 {Nikolic bu hamleyi oynadı ve konumdaki en iyi hamleydi. Pek çok
 öğrencim 1...e5 hamlesini tercih etti ve o da çekici bir başka
-olasılıktır.  1...Fe8 hamlesini nasıl buldunuz? Büyük olasılıka bu
+olasılıktır.  1...Fe8 hamlesini nasıl buldunuz? Büyük olasılıkla bu
 planı "biliyordunuz". Bd7-e8-h5 manevrasını buna az çok benzeyen
 konumlarda gördünüz ve bu konuma bakarken aklınızda canlandı. Bu her
 zaman bilinçli bir seviyede olmak zorunda değildir. "Evet, filin piyonlarım
@@ -225,7 +225,7 @@ bulduğunuza **kendinizi inandırabilirsiniz**. Böylece öğrencilerinizin
 tıpkı sizin gibi konumun özelliklerine bakarak bu hamleyi bulmalarını
 umabilirsiniz.} 0-1
 
-Kitap 27 bölüm ve 138 egzersizden oluşuyor ve her bölüm konuya dair egzersizler başlıyor.
+Kitap 27 bölüm ve 138 egzersizden oluşuyor ve her bölüm konuya dair egzersizlerle başlıyor.
 Mantıklı olmasa da vurgulanmak istenen her şeyin örneklerle kanıtlanabileceğini ispatlamak
 için bile bir bölüm ayrılmış ve adı şöyle: “Eğer beyaz g4 oynarsa sen de ...g5 ile bu saldırıya
 karşı koy.” Yazar satrancın zenginliğinden faydalanarak seçtiği örneklerle bunu kanıtlamakta
@@ -278,6 +278,6 @@ yaşayan efsaneleri bilmiyorum fakat bizim gibiler için görünen tek yol var, 
 gerek...
 
 **De Groot testinin cevabı**: 1.Bxd5! (1...Bxd5 2.Bxf6 Bxf6 3.Nd7; 1...Nxd5 2.Nxd5 ve e7'deki fil düşer.)
-1...exd5 2.Qf3 Qd8 (2...Kg7 3.Ng4) 3.Rce1 Beyazlar baskıyı arttırır ve siyahın iyi bir
+1...exd5 2.Qf3 Qd8 (2...Kg7 3.Ng4) 3.Rce1 Beyazlar baskıyı artırır ve siyahın iyi bir
 savunması yoktur, örneğin; 3...Re8 4.Nxc6 Rxc6 5.Rxe7 Qxe7 6.Nxd5 Beyaz materyal
 kazanır.
