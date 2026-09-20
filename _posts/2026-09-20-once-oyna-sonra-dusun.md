@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2026-09-20
-title: "Önce Oyna Sonra Düşün"
+title: "Önce oyna sonra düşün"
 author: "FM Nazmi Can Doğan"
 column: "Kitap incelemeleri"
 ---
