@@ -523,6 +523,20 @@ a:hover { border-bottom-style: dotted; }
     margin-right: auto;
 }
 
+/* <fen> (a standalone diagram, no movetext) is likewise replaced wholesale
+   with a plain .fen-container div, width:100%;max-width:var(--board-size)
+   same as .cp-puzzle above — and ChessPublica's own margin-left/right:auto
+   for it (confirmed directly in its CSS) only exists inside a
+   max-width:640px media query, meant for the mobile layout where the
+   diagram already spans the full column width and centering is moot
+   either way. Outside that query — i.e. on desktop, where --board-size's
+   400px default leaves real room on either side — nothing centers it and
+   it sits flush left instead, the same gap .cp-puzzle had above. */
+.post-body .fen-container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* .video-title is a flex row, and .video-title-text a flex column inside
    it, holding a long, unwrapped ("white-space: nowrap") player/event
    name. Flex items default to min-width: auto, meaning they refuse to
