@@ -9,10 +9,12 @@
     // between the three ways ChessPublica can show a game. The library only
     // scans the DOM once on load, so switching can't re-render an element
     // in place — instead the chosen view is stashed and the page reloaded,
-    // so the right tag exists before that scan runs. Every ordinary visit
-    // (a fresh load, or a manual refresh) is meant to start at <pgn> again
-    // — the stash is read and immediately cleared, so it only survives the
-    // one reload it was written for, not any load after that.
+    // so the right tag exists before that scan runs. The stash is kept
+    // (not cleared on read), so it survives every subsequent reload for
+    // the rest of the tab's session — including the reload triggered by
+    // switching a *different* block's view — until the reader picks a
+    // different view for that same block. sessionStorage rather than
+    // localStorage so it doesn't outlive the tab.
     //
     // One config entry per view (key/label/icon together) rather than three
     // parallel key->value maps: adding a fourth view used to mean touching
@@ -102,12 +104,11 @@
         if (tagName === 'pgn') {
             storageKey = 'pgn-view:' + location.pathname + ':' + pgnBlockIndex;
             pgnBlockIndex++;
-            // sessionStorage, not localStorage, and consumed (removed)
-            // the moment it's read: it only needs to survive the single
-            // reload a switcher click triggers, not be remembered for a
-            // future visit.
+            // Left in place (not removed after reading): switching another
+            // block's view reloads the page too, and clearing this on read
+            // would wipe out this block's remembered choice on that reload
+            // even though the reader never touched this block.
             var savedView = sessionStorage.getItem(storageKey);
-            sessionStorage.removeItem(storageKey);
             if (pgnViewKeys.indexOf(savedView) !== -1) tagName = savedView;
         }
 
