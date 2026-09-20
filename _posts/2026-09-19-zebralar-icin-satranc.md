@@ -192,3 +192,6 @@ konsantre olmayı kolaylaştıracaktır.”
 Şimdiye kadar sadece üç kitabı bulunan Büyükusta Jonathan Rowson’ın sıradaki
 eserinin konusunu bilemiyorum fakat, düşünmeyi teşvik eden her cümlesi okunmaya değer
 görünüyor...
+
+
+_Not: Bu yazı ilk olarak 2016 yılında **Satrançsever** dergisinin 3. sayısında yayımlanmıştır._
