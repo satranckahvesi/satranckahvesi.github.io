@@ -614,6 +614,99 @@ a:hover { border-bottom-style: dotted; }
     --frame-pad-bottom: 0.6rem;
 }
 
+/* <pgn-study> inserts a placeholder (#pgnStudyLoading, class
+   .pgn-study-loading) as its own preceding sibling the instant it upgrades,
+   shown until the game text is parsed — unconditionally, even for our own
+   inline-authored PGN with nothing to fetch, so it flashes briefly on every
+   load. ChessPublica's own CSS sizes and positions it to match pgn-study's
+   *default* box exactly (confirmed directly in its CSS: identical
+   width/height/max-width/margin, and a padding that tracks the same
+   --frame-pad/--frame-pad-bottom variables pgn-study itself uses) — it's
+   only after the two overrides above are applied that the real panel
+   stops matching its own placeholder. Reapplying the same overrides here
+   keeps the empty board from jumping position or size once the real one
+   swaps in. */
+.post-body .pgn-study-loading {
+    width: auto;
+    max-width: 90vw;
+    height: auto;
+    max-height: 90vh;
+    margin: 0 calc(50% - 45vw) 1.5rem;
+    padding: 1rem 1rem 0.6rem;
+}
+
+/* Desktop-only: the real panel's board column is 1fr of a 1fr/6px/2fr
+   split (--left-col-width/--right-col-width, untouched above), but the
+   placeholder's own desktop layout (confirmed in its CSS) is a plain
+   2fr/3fr grid with no resizer column at all. Rebuilding the same
+   1fr/6px/2fr template and placing the two placeholder boxes either side
+   of the gap (rather than leaving them to auto-place into columns 1 and
+   2, which would squeeze the second box into the 6px resizer track)
+   gives the placeholder's board the same column width the real board
+   will render into. */
+@media (min-width: 900px) {
+    .post-body .pgn-study-loading {
+        /* --left-col-width/--right-col-width live on <pgn-study> itself, and
+           .pgn-study-loading is only ever its preceding sibling, so those
+           custom properties never actually inherit in here — written out
+           as the same 1fr/2fr they currently hold instead. Its own
+           mobile-layout gap: 1.5rem (a flex gap there) carries straight
+           over into this grid and would land as *two* extra gaps around
+           the new middle column below (confirmed directly: it silently
+           ate 54px, exactly 2 * 1.5rem, from the two real columns) — the
+           real panel has no such gap at all, relying only on its explicit
+           6px column as spacing, so it's zeroed here to match. */
+        grid-template-columns: 1fr 6px 2fr;
+        gap: 0;
+    }
+
+    .post-body .pgn-study-loading-board {
+        grid-column: 1;
+    }
+
+    .post-body .pgn-study-loading-side {
+        grid-column: 3;
+    }
+}
+
+/* The placeholder board is a flat 400px (600px from 900px up) square
+   painted directly on .pgn-study-loading-board itself — sized off nothing
+   but its own fixed pixel value, unlike the real board, which is
+   min(400px, 94cqw) on mobile and min(94cqw, 78vh, 480px) from 900px up
+   (both confirmed above/elsewhere in this file). Matching that needs the
+   same container-type trick used for pgn-player's own board: the
+   cqw-consuming size can't live on the element declaring container-type
+   itself (that's the circularity already worked out above), so the
+   checkerboard pattern moves to a ::before sized against the wrapper's
+   own inline size, while the wrapper is given a plain, non-cqw 100%
+   width — of its flex column on mobile, of its new grid column (see
+   above) from 900px up — for that inline size to actually mean something.
+   Colors/pattern copied verbatim from ChessPublica's own CSS. */
+.post-body .pgn-study-loading-board {
+    width: 100%;
+    max-width: none;
+    aspect-ratio: auto;
+    background-image: none;
+    container-type: inline-size;
+}
+
+.post-body .pgn-study-loading-board::before {
+    content: "";
+    display: block;
+    width: min(400px, 94cqw);
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+    border-radius: 4px;
+    background-image: conic-gradient(#b58863 90deg, #f0d9b5 90deg 180deg, #b58863 180deg 270deg, #f0d9b5 270deg);
+    background-size: 25% 25%;
+}
+
+@media (min-width: 900px) {
+    .post-body .pgn-study-loading-board::before {
+        width: min(94cqw, 78vh, 480px);
+    }
+}
+
 /* Below its 900px breakpoint, ChessPublica switches pgn-study to a single-
    panel flex layout where the visible panel (pgn-player, by default) is
    sized with flex: 1 1 0 — grow to fill whatever space the flex container
