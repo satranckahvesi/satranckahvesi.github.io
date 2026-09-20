@@ -58,6 +58,32 @@
     var studies = Array.prototype.slice.call(document.querySelectorAll('.post-body pgn-study'));
     if (!studies.length) return;
 
+    // Every branch point our own nav buttons/ArrowRight/move-click handlers
+    // resolve goes through this one row's own click handler (see the
+    // ArrowRight fix below for why). ChessPublica's own handler for it
+    // calls play() to continue past the branch — meant for when the reader
+    // already had Play running, but all three of our own paths call this
+    // from a *paused*, one-step-at-a-time context instead. Confirmed
+    // directly: right after this click, state.playing comes back true and,
+    // about a second later (its own autoplay tick), one further move plays
+    // on its own before stopping again — a whole extra, unrequested ply
+    // beyond the single branch step the click was meant to resolve, which
+    // reads to a reader stepping through a paused study as the board
+    // suddenly, unpredictably starting to play itself. Toggling play back
+    // off immediately, in the same tick as the click, cancels that pending
+    // autoplay tick before it fires (confirmed directly: the position stays
+    // put and no further move follows) without touching the one ply the
+    // click above already, correctly, committed.
+    function resolvePickerMainline(mainlineRow) {
+        var studyEl = mainlineRow.closest('pgn-study');
+        var player = studyEl && studyEl.querySelector('pgn-player');
+        var engine = player && player._engine;
+        mainlineRow.click();
+        if (engine && engine.state && engine.state.playing && typeof engine.togglePlay === 'function') {
+            engine.togglePlay();
+        }
+    }
+
     // Which study a page-wide ArrowLeft/ArrowRight keypress should act on.
     // Defaults to the first (and, on the overwhelming majority of posts,
     // only) study so keyboard nav works immediately without requiring a
@@ -118,7 +144,7 @@
             // point played both the picked mainline move and the reply
             // after it).
             e.stopImmediatePropagation();
-            mainlineRow.click();
+            resolvePickerMainline(mainlineRow);
         }
     });
 
@@ -154,7 +180,7 @@
                 function navigate(dir) {
                     var mainlineRow = dir === 'next' ? study.querySelector('.pgn-study-picker-row.mainline') : null;
                     if (mainlineRow) {
-                        mainlineRow.click();
+                        resolvePickerMainline(mainlineRow);
                         return;
                     }
                     // Marks this study active first (see activeStudy above),
@@ -212,7 +238,7 @@
                     if (!engine || !engine.state) return;
                     if (parseInt(moveEl.getAttribute('data-ply'), 10) !== engine.state.index) return;
                     var mainlineRow = study.querySelector('.pgn-study-picker-row.mainline');
-                    if (mainlineRow) mainlineRow.click();
+                    if (mainlineRow) resolvePickerMainline(mainlineRow);
                 });
             }
 
