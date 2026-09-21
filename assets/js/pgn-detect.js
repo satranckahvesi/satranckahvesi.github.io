@@ -108,6 +108,12 @@
         var headerText = headerLines.join('\n');
         var storageKey = null;
         if (tagName === 'pgn') {
+            // A [P]/[P n] marker turns the game into a puzzle the reader
+            // must solve, which only makes sense in the interactive
+            // <pgn-player> view (<pgn>'s move list would just print the
+            // answer). So default such games to <pgn-player> instead of
+            // <pgn> — still overridable below by a saved preference.
+            if (/\[P\s*\d*\]/.test(moveText)) tagName = 'pgn-player';
             storageKey = 'pgn-view:' + location.pathname + ':' + pgnBlockIndex;
             pgnBlockIndex++;
             // Left in place (not removed after reading): switching another
