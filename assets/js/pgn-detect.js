@@ -111,17 +111,21 @@
             // A [P]/[P n] marker turns the game into a puzzle the reader
             // must solve, which only makes sense in the interactive
             // <pgn-player> view (<pgn>'s move list would just print the
-            // answer). So default such games to <pgn-player> instead of
-            // <pgn> — still overridable below by a saved preference.
-            if (/\[P\s*\d*\]/.test(moveText)) tagName = 'pgn-player';
+            // answer). So a puzzle always opens in <pgn-player>, even
+            // overriding a saved preference from some other, non-puzzle
+            // block that happened to land on the same block index.
+            var isPuzzle = /\[P\s*\d*\]/.test(moveText);
+            if (isPuzzle) tagName = 'pgn-player';
             storageKey = 'pgn-view:' + location.pathname + ':' + pgnBlockIndex;
             pgnBlockIndex++;
             // Left in place (not removed after reading): switching another
             // block's view reloads the page too, and clearing this on read
             // would wipe out this block's remembered choice on that reload
             // even though the reader never touched this block.
-            var savedView = sessionStorage.getItem(storageKey);
-            if (pgnViewKeys.indexOf(savedView) !== -1) tagName = savedView;
+            if (!isPuzzle) {
+                var savedView = sessionStorage.getItem(storageKey);
+                if (pgnViewKeys.indexOf(savedView) !== -1) tagName = savedView;
+            }
         }
 
         // ChessPublica reads a comment's own [P] / [P n] marker (n plies,
