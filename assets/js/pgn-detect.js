@@ -3,7 +3,62 @@
     if (!body) return;
     var headerLineRe = /^\[[A-Za-z]+\s+"/;
     var fenTagRe = /^\[FEN\s+"/;
+    var orientationTagRe = /^\[Orientation\s+"/i;
     var movetextRe = /^(\{|\d+\.)/;
+    var puzzleMarkerRe = /\[P\s*\d*\]/;
+
+    // Whoever is on move where the *first* mainline [P] marker sits is who
+    // ChessPublica's puzzle mode will prompt for as soon as the viewer
+    // loads (a marker buried in a sideline only matters once the reader
+    // wanders into that sideline, so it can't drive the board's initial
+    // orientation). Found by walking the raw movetext by hand rather than
+    // asking Chess.js to replay it, since all that's needed is a ply count
+    // parity, not a validated position.
+    function puzzleMoverColor(headerLines, moveText) {
+        var startColor = 'w';
+        for (var i = 0; i < headerLines.length; i++) {
+            var m = headerLines[i].match(/^\[FEN\s+"([^"]+)"\]/);
+            if (m) {
+                var side = m[1].split(/\s+/)[1];
+                if (side === 'w' || side === 'b') startColor = side;
+                break;
+            }
+        }
+
+        function isMoveToken(tok) {
+            var stripped = tok.replace(/^\d+\.+/, '');
+            if (!stripped) return false; // bare move-number marker, e.g. "31." / "31..."
+            if (/^\$\d+$/.test(stripped)) return false; // NAG, e.g. "$19"
+            if (/^(1-0|0-1|1\/2-1\/2|\*)$/.test(stripped)) return false; // result
+            return true;
+        }
+
+        var plyCount = 0;
+        var variationDepth = 0;
+        var pos = 0;
+        var len = moveText.length;
+        while (pos < len) {
+            var ch = moveText[pos];
+            if (ch === '{') {
+                var end = moveText.indexOf('}', pos + 1);
+                if (end === -1) end = len;
+                if (variationDepth === 0 && puzzleMarkerRe.test(moveText.slice(pos + 1, end))) {
+                    var isEvenPlies = plyCount % 2 === 0;
+                    return isEvenPlies === (startColor === 'w') ? 'white' : 'black';
+                }
+                pos = end + 1;
+                continue;
+            }
+            if (ch === '(') { variationDepth++; pos++; continue; }
+            if (ch === ')') { variationDepth = Math.max(0, variationDepth - 1); pos++; continue; }
+            if (/\s/.test(ch)) { pos++; continue; }
+            var tokenEnd = pos;
+            while (tokenEnd < len && !/[\s{}()]/.test(moveText[tokenEnd])) tokenEnd++;
+            if (variationDepth === 0 && isMoveToken(moveText.slice(pos, tokenEnd))) plyCount++;
+            pos = tokenEnd;
+        }
+        return null; // no mainline [P] marker found
+    }
 
     // For a <pgn> game (not a bare <fen> diagram), the reader can switch
     // between the three ways ChessPublica can show a game. The library only
@@ -114,7 +169,7 @@
             // answer). So a puzzle always opens in <pgn-player>, even
             // overriding a saved preference from some other, non-puzzle
             // block that happened to land on the same block index.
-            var isPuzzle = /\[P\s*\d*\]/.test(moveText);
+            var isPuzzle = puzzleMarkerRe.test(moveText);
             if (isPuzzle) tagName = 'pgn-player';
             storageKey = 'pgn-view:' + location.pathname + ':' + pgnBlockIndex;
             pgnBlockIndex++;
@@ -125,6 +180,19 @@
             if (!isPuzzle) {
                 var savedView = sessionStorage.getItem(storageKey);
                 if (pgnViewKeys.indexOf(savedView) !== -1) tagName = savedView;
+            }
+        }
+
+        // "Find the best move for Black" is disorienting with the board
+        // still drawn from White's side. ChessPublica already honors a
+        // [Orientation "black"] header on <pgn-player> (it just doesn't
+        // infer one from a puzzle position itself), so it's added here
+        // when the puzzle the reader lands on first asks Black to move —
+        // unless the header already states its own Orientation, which
+        // wins over anything inferred here.
+        if (tagName === 'pgn-player' && isPuzzle && !headerLines.some(function (l) { return orientationTagRe.test(l); })) {
+            if (puzzleMoverColor(headerLines, moveText) === 'black') {
+                headerText += '\n[Orientation "black"]';
             }
         }
 
