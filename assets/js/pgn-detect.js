@@ -180,7 +180,15 @@
             // would wipe out this block's remembered choice on that reload
             // even though the reader never touched this block.
             var savedView = sessionStorage.getItem(storageKey);
-            if (pgnViewKeys.indexOf(savedView) !== -1) tagName = savedView;
+            if (pgnViewKeys.indexOf(savedView) !== -1) {
+                tagName = savedView;
+                // A puzzle's switch is honored for the reload it triggers
+                // — proving the button works — but isn't remembered past
+                // it: the whole point of defaulting a puzzle to
+                // <pgn-player> is that it should still open there next
+                // time, not stay on whatever view the reader last poked.
+                if (isPuzzle) sessionStorage.removeItem(storageKey);
+            }
         }
 
         // "Find the best move for Black" is disorienting with the board
