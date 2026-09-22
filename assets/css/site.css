@@ -291,6 +291,21 @@ a:hover { border-bottom-style: dotted; }
 
 .index-meta a { color: inherit; }
 
+/* homepage Köşeler/Yazarlar sections: just the names, flowing side by
+   side (wrapping as needed) rather than stacked one per line. The
+   .section ul rule above sets flex-direction: column at equal (0,1,1)
+   specificity, so this needs the same "X ul" shape to win by source
+   order. */
+.section ul.tag-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.75rem;
+}
+
+.tag-list a {
+    font-size: 1.15rem;
+}
+
 .site-footer {
     max-width: 42rem;
     margin: 4.5rem auto 0;
