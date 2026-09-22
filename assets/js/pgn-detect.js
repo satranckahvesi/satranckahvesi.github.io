@@ -166,9 +166,11 @@
             // A [P]/[P n] marker turns the game into a puzzle the reader
             // must solve, which only makes sense in the interactive
             // <pgn-player> view (<pgn>'s move list would just print the
-            // answer). So a puzzle always opens in <pgn-player>, even
-            // overriding a saved preference from some other, non-puzzle
-            // block that happened to land on the same block index.
+            // answer) — so a puzzle defaults to <pgn-player> instead of
+            // <pgn>. That default still yields to a saved preference below:
+            // the switcher's whole point is to let the reader override it,
+            // and forcing <pgn-player> back every reload would make its
+            // buttons look broken for exactly the blocks this exists for.
             var isPuzzle = puzzleMarkerRe.test(moveText);
             if (isPuzzle) tagName = 'pgn-player';
             storageKey = 'pgn-view:' + location.pathname + ':' + pgnBlockIndex;
@@ -177,10 +179,8 @@
             // block's view reloads the page too, and clearing this on read
             // would wipe out this block's remembered choice on that reload
             // even though the reader never touched this block.
-            if (!isPuzzle) {
-                var savedView = sessionStorage.getItem(storageKey);
-                if (pgnViewKeys.indexOf(savedView) !== -1) tagName = savedView;
-            }
+            var savedView = sessionStorage.getItem(storageKey);
+            if (pgnViewKeys.indexOf(savedView) !== -1) tagName = savedView;
         }
 
         // "Find the best move for Black" is disorienting with the board
