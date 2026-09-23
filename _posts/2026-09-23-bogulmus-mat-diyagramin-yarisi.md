@@ -17,6 +17,17 @@ Bazı pozisyonlarda tahtanın tamamı değil, yalnızca bir köşesi konuşur. A
 
 Siyah şah h8'de kendi kalesi ve piyonları tarafından tam anlamıyla boğulmuş durumda; f7'deki beyaz at hem şahı hem de olası tüm kaçış karelerini kontrol ediyor ve mat. Bu pozisyona genellikle bir vezir feda hamlesiyle ulaşılır: ...Qg8+ karşısında kale mecburen g8'e geri alır (Rxg8), ardından at f7'ye giderek boğulmuş matı tamamlar (Nf7#). Bu klasik motife bazen "Philidor'un Mirası" da denir.
 
+Yukarıdaki yarım tahtanın bile a, b, c ve d dikeyleri tamamen boş; bütün taşlar e-h dikeyleri arasında. O zaman tahtanın dörtte birine, yalnızca e-h dikeyleri ve 5-8. yataylarının kesiştiği köşeye kadar inebiliriz:
+
+[Event "Boğulmuş mat örneği"]
+[SetUp "1"]
+[FEN "6rk/5Npp/8/8/8/8/8/6K1 b - - 0 1"]
+[Crop "top-right-quarter"]
+
+*
+
+Tahtanın tam dörtte biri, ama mat motifinin tamamı hâlâ elimizde.
+
 Aynı pozisyonun tam tahtası da şöyle görünüyor; alt dört sırada gerçekten hiçbir şey olmadığını kendiniz de görebilirsiniz:
 
 [Event "Boğulmuş mat örneği"]
