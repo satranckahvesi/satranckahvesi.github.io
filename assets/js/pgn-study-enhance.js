@@ -122,14 +122,14 @@
     studies.forEach(function (study) {
         var readyHandled = false;
         var lastMirroredSource = null;
-        // Tracks the engine's own ply index as of the last time
-        // resolveBranch (below) looked at it — not touched anywhere else —
-        // so it can tell a branch point the reader just stepped *into*
-        // (index is exactly one past what it was) from one a direct
-        // move-list click *landed on directly* (index jumped by more than
-        // one, or this is the very first observation). See resolveBranch's
-        // own comment for why that distinction matters.
-        var lastKnownIndex = null;
+        // Tracks engine.state.playing as of the last time resolveBranch
+        // (below) looked at the engine with *no* branch point pending —
+        // i.e. whether autoplay was actually running the moment before
+        // whatever branch is showing now first appeared. See
+        // resolveBranch's own comment for why that, and not a step/jump
+        // distinction tried first, is the right signal for its passive
+        // path.
+        var lastKnownPlaying = false;
         function onReady() {
             study.style.setProperty('--left-col-width', '1fr');
             study.style.setProperty('--right-col-width', '2fr');
@@ -335,29 +335,44 @@
         // always means clicking that row, one way or another.
         //
         // "One way or another" matters here: this function is called both
-        // passively, from the observer below on every DOM change (so
-        // autoplay never dies stuck at a branch it steps into on its own —
-        // confirmed directly: without this, it just stops dead there with
-        // nothing left to click), and forced, from a reader's own explicit
-        // step (next button, a real arrow key, or re-clicking the exact
-        // move a picker is already showing for — see those call sites).
-        // Those need different rules for *when* to actually click:
-        // stepping (forced) should always resolve whatever's sitting
-        // there, but the passive path firing unconditionally turned out to
-        // have a real bug (confirmed directly, reported live): landing on
-        // a branch point via a direct, multi-ply move-list click — e.g.
-        // clicking a move several plies ahead whose own resulting position
-        // is itself a fresh branch for the *next* ply — was resolving that
-        // next branch too, before the reader ever saw the position they
-        // actually clicked for. Comparing the engine's index against the
-        // last one this function itself observed tells the two apart: a
-        // step changes it by exactly one, a jump (almost always) doesn't.
-        // Passive calls only resolve on that one-step case; forced calls
-        // (an explicit "move forward" request, so whatever's currently
-        // sitting there is exactly what should resolve) skip the check
-        // entirely. Returns whether it actually resolved something, so a
-        // caller like navigate() below can tell whether it still needs to
-        // take its own next step afterward.
+        // passively, from the observer below on every DOM change, and
+        // forced, from a reader's own explicit single step (next button, a
+        // real arrow key, or re-clicking the exact move a picker is
+        // already showing for — see those call sites). A forced call
+        // always resolves whatever's sitting there — that step is exactly
+        // what the reader just asked for. The passive call exists for
+        // exactly one thing: autoplay, which has no button of its own to
+        // force a click from — confirmed directly, it just stops dead at a
+        // branch point with nothing left to click, unless something
+        // resolves it on its own.
+        //
+        // That passive call can't just resolve every picker it sees,
+        // though (confirmed directly, reported live, twice): a single
+        // deliberate "next" step can itself land exactly on a *fresh*
+        // branch — the position it moves to is the start of a new choice
+        // — and if the passive path resolves that immediately too, the
+        // reader's one step silently becomes two (or, chained, however
+        // many branches happen to sit back to back), well past the single
+        // move they asked to see. Comparing the engine's ply index against
+        // where it was last observed doesn't tell "autoplay ticking
+        // forward" apart from "the reader's own single step" — both
+        // change it by exactly one, so that was tried and discarded.
+        // engine.state.playing does distinguish them, with one wrinkle:
+        // ChessPublica sets it false the instant autoplay itself hits an
+        // unresolved branch (confirmed directly), before this function
+        // ever sees it — so the passive path can't read "was it playing
+        // *just now*", only "was it playing the last time this function
+        // looked and found no branch pending", which is what
+        // lastKnownPlaying (declared above, updated only on that
+        // no-branch-pending path) actually holds. A branch that appears
+        // while that's true is one autoplay stepped into on its own and
+        // should keep going without the reader lifting a finger; one that
+        // appears while it's false — whether the reader just clicked a
+        // move that landed there, or forced-resolved a first branch that
+        // happened to land on a second — waits for its own explicit step.
+        // Returns whether it actually resolved something, so a caller like
+        // navigate() below can tell whether it still needs to take its own
+        // next step afterward.
         //
         // Clicking the row has a side effect worth guarding, though:
         // confirmed directly, it sets state.playing true regardless of
@@ -376,34 +391,17 @@
             var mainlineRow = study.querySelector('.pgn-study-picker-row.mainline');
             var player = study.querySelector('pgn-player');
             var engine = player && player._engine;
-            var currentIndex = engine && engine.state ? engine.state.index : null;
-            var arrivedByStep = mainlineRow && lastKnownIndex !== null && currentIndex === lastKnownIndex + 1;
-            if (!mainlineRow || !(force || arrivedByStep)) {
-                lastKnownIndex = currentIndex;
+            if (!mainlineRow) {
+                lastKnownPlaying = !!(engine && engine.state && engine.state.playing);
                 return false;
             }
+            if (!force && !lastKnownPlaying) return false;
             var wasPlaying = !!(engine && engine.state && engine.state.playing);
             mainlineRow.click();
             if (!wasPlaying && engine && engine.state && engine.state.playing && typeof engine.togglePlay === 'function') {
                 engine.togglePlay();
             }
-            // The resulting position, not the one this call started from:
-            // clicking the mainline row can itself land exactly on a
-            // *second* branch point (the game's next recorded choice
-            // sitting immediately after this one) — confirmed directly,
-            // reported live. Left at the pre-click index, that second
-            // picker's own appearance (a subtree mutation, same as any
-            // other) would read to the observer's own passive call as "the
-            // reader just stepped one ply forward into this" — true only
-            // in the sense that this call itself produced that step, not
-            // that the reader asked for a second one — and it would
-            // resolve that one too, before a forced call like navigate()'s
-            // next-button handling ever got to decide whether it should.
-            // Recording where THIS click actually left things closes that
-            // gap: the next observation sees no further delta from here,
-            // so a second branch right on top of this one waits for its
-            // own genuine step, same as the first one did.
-            lastKnownIndex = engine && engine.state ? engine.state.index : currentIndex;
+            lastKnownPlaying = !!(engine && engine.state && engine.state.playing);
             return true;
         }
         study.resolveBranch = resolveBranch;
