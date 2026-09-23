@@ -1,9 +1,11 @@
 ---
+---
 layout: post
+title: "Artı mı, Eksi mi, Nötr mü?"
 author: "Özgün Yalçın"
 date: 2026-09-23
 column: "Analizli oyunlar"
-title: "Artı mı, Eksi mi, Nötr mü?"
+---
 
 [Event "European Club Cup"]
 [Date "2022.10.06"]
