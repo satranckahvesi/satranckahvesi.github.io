@@ -28,10 +28,11 @@
     // Rather than guess at every trigger, the observer below keeps running
     // for the life of the page and strips that class the instant it's
     // added, so the panel can never actually end up collapsed.
-    // Prev/next buttons live in the ribbon itself, right after Play, styled
-    // as .pgn-study-ribbon-btn like ChessPublica's own Play/Settings so
-    // they blend in rather than looking like a separate, bolted-on control
-    // (our own .pgn-switcher-btn look would clash with the ribbon's actual
+    // Prev/next buttons live in the ribbon itself, at the front (Play and
+    // its speed control are gone — see onReady below), styled as
+    // .pgn-study-ribbon-btn like ChessPublica's own Settings so they blend
+    // in rather than looking like a separate, bolted-on control (our own
+    // .pgn-switcher-btn look would clash with the ribbon's actual
     // transparent/no-border style). Clicking a .pgn-move to jump to it
     // (a confirmed, real interaction) was tried first, but has no
     // equivalent element for "before the first move" — there's no
@@ -82,11 +83,11 @@
     // than moving), until the reader picks a row. Its own mainline row is
     // what actually continues past it — its click handler is the one thing
     // that flips the internal flag goTo's guard checks, which nothing
-    // outside the bundle can set directly. Forcing that click ourselves
-    // (via resolveBranch(true), defined per-study below) reproduces exactly
-    // what a reader clicking it would have done back when it was still
-    // visible; a plain ArrowRight dispatch would otherwise silently do
-    // nothing at a branch point.
+    // outside the bundle can set directly. Clicking it ourselves (via
+    // resolveBranch, defined per-study below) reproduces exactly what a
+    // reader clicking it would have done back when it was still visible;
+    // a plain ArrowRight dispatch would otherwise silently do nothing at
+    // a branch point.
     //
     // Registered once, page-wide, rather than once per study as an earlier
     // version did: that version's copy of this same handler checked its own
@@ -102,7 +103,7 @@
         var active = document.activeElement;
         var tag = active && active.tagName;
         if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || (active && active.isContentEditable)) return;
-        if (dir === 'next' && activeStudy.resolveBranch && activeStudy.resolveBranch(true)) {
+        if (dir === 'next' && activeStudy.resolveBranch && activeStudy.resolveBranch()) {
             // Without this, the keydown still reaches ChessPublica's own
             // keydown listener right after — it's on the same document
             // node ours is, so a plain stopPropagation() doesn't stop it
@@ -122,37 +123,24 @@
     studies.forEach(function (study) {
         var readyHandled = false;
         var lastMirroredSource = null;
-        // Tracks engine.state.playing as of the last time resolveBranch
-        // (below) looked at the engine with *no* branch point pending —
-        // i.e. whether autoplay was actually running the moment before
-        // whatever branch is showing now first appeared. See
-        // resolveBranch's own comment for why that, and not a step/jump
-        // distinction tried first, is the right signal for its passive
-        // path.
-        var lastKnownPlaying = false;
-        // A passive resolve currently scheduled (see resolveBranch's own
-        // comment on why it's deferred rather than immediate) — tracked so
-        // a second, unrelated mutation while it's pending doesn't queue a
-        // duplicate, and so a forced resolve arriving first can cancel it.
-        var pendingResolveTimer = null;
         function onReady() {
             study.style.setProperty('--left-col-width', '1fr');
             study.style.setProperty('--right-col-width', '2fr');
 
             var buttons = Array.prototype.slice.call(study.querySelectorAll('.pgn-study-ribbon-btn'));
-            var playBtn = null;
             buttons.forEach(function (btn) {
                 var label = (btn.getAttribute('aria-label') || btn.getAttribute('title') || btn.textContent || '').trim();
                 // .pgn-study-article-btn is the mobile-only board/article-view
                 // toggle — redundant now that the board stays visible and the
                 // active comment is mirrored automatically below it, so it's
-                // removed by class rather than guessed-at label text.
-                if (btn.classList.contains('pgn-study-article-btn') || /table.*of.*contents|\btoc\b/i.test(label) || /collapse|expand/i.test(label)) {
+                // removed by class rather than guessed-at label text. Play and
+                // its speed control go the same way: moves are next/prev
+                // button or arrow-key only now, no autoplay to start or pace
+                // (see resolveBranch's own comment for why removing it turned
+                // out to be far more robust than pacing it against a picker
+                // ChessPublica itself refuses to advance past on a timer).
+                if (btn.classList.contains('pgn-study-article-btn') || /table.*of.*contents|\btoc\b/i.test(label) || /collapse|expand/i.test(label) || /^play\b/i.test(label) || /speed/i.test(label)) {
                     btn.remove();
-                } else if (/^play\b/i.test(label)) {
-                    btn.setAttribute('aria-label', 'Oynat');
-                    btn.title = 'Oynat';
-                    playBtn = btn;
                 } else if (/setting/i.test(label)) {
                     btn.setAttribute('aria-label', 'Ayarlar');
                     btn.title = 'Ayarlar';
@@ -166,12 +154,12 @@
                     // branch point — reached by a direct move-list click
                     // rather than stepping into it (see resolveBranch's own
                     // comment on why those two are treated differently) —
-                    // "next" has to resolve it first: resolveBranch(true)
-                    // forces that regardless of how we got here, and its
-                    // own click on the mainline row already *is* the single
-                    // forward step this call is for, so nothing else needs
-                    // to run afterward.
-                    if (dir === 'next' && resolveBranch(true)) return;
+                    // "next" has to resolve it first: resolveBranch() forces
+                    // that regardless of how we got here, and its own click
+                    // on the mainline row already *is* the single forward
+                    // step this call is for, so nothing else needs to run
+                    // afterward.
+                    if (dir === 'next' && resolveBranch()) return;
                     // ChessPublica's own document-level keydown listener acts
                     // on whichever pgn-study/pgn-player it last saw a
                     // hover/click/touch on — dispatching a real mouseenter on
@@ -185,7 +173,22 @@
                     }));
                 }
 
-                var insertAfter = playBtn;
+                // Inserted into .pgn-study-ribbon-left — Play used to live
+                // there (its own always-visible left-hand group, part of
+                // .pgn-study-ribbon-toprow, distinct from the title in the
+                // middle and Download/Flip/Settings on the right), so that
+                // was also where its own "insert right after Play" anchor
+                // pointed. With Play gone the group is empty, but it's
+                // still the right home for these: confirmed directly, the
+                // *other* remaining buttons (Download, Flip) don't live in
+                // that always-visible row at all — they're tucked inside
+                // .pgn-study-settings-inline, a panel this width keeps
+                // display: none until the reader opens Settings, so an
+                // earlier version anchoring off "whichever
+                // .pgn-study-ribbon-btn happens to come first in the whole
+                // ribbon" silently inserted prev/next into that same
+                // hidden panel instead.
+                var leftGroup = study.querySelector('.pgn-study-ribbon-left') || ribbon;
                 pgnStudyNavButtons.forEach(function (nav) {
                     var btn = document.createElement('button');
                     btn.type = 'button';
@@ -197,12 +200,7 @@
                     btn.addEventListener('click', function () {
                         navigate(nav.dir);
                     });
-                    if (insertAfter) {
-                        insertAfter.insertAdjacentElement('afterend', btn);
-                    } else {
-                        ribbon.appendChild(btn);
-                    }
-                    insertAfter = btn;
+                    leftGroup.appendChild(btn);
                 });
             }
 
@@ -233,7 +231,7 @@
                     var engine = innerPlayerForClicks._engine;
                     if (!engine || !engine.state) return;
                     if (parseInt(moveEl.getAttribute('data-ply'), 10) !== engine.state.index) return;
-                    resolveBranch(true);
+                    resolveBranch();
                 });
             }
 
@@ -337,148 +335,48 @@
         // "next" step at a branch point until its picker's own mainline
         // row is clicked — nothing outside its bundle can flip the
         // internal flag that click sets any other way — so resolving one
-        // always means clicking that row, one way or another.
+        // always means clicking that row.
         //
-        // "One way or another" matters here: this function is called both
-        // passively, from the observer below on every DOM change, and
-        // forced, from a reader's own explicit single step (next button, a
-        // real arrow key, or re-clicking the exact move a picker is
-        // already showing for — see those call sites). A forced call
-        // always resolves whatever's sitting there — that step is exactly
-        // what the reader just asked for. The passive call exists for
-        // exactly one thing: autoplay, which has no button of its own to
-        // force a click from — confirmed directly, it just stops dead at a
-        // branch point with nothing left to click, unless something
-        // resolves it on its own.
-        //
-        // That passive call can't just resolve every picker it sees,
-        // though (confirmed directly, reported live, twice): a single
-        // deliberate "next" step can itself land exactly on a *fresh*
-        // branch — the position it moves to is the start of a new choice
-        // — and if the passive path resolves that immediately too, the
-        // reader's one step silently becomes two (or, chained, however
-        // many branches happen to sit back to back), well past the single
-        // move they asked to see. Comparing the engine's ply index against
-        // where it was last observed doesn't tell "autoplay ticking
-        // forward" apart from "the reader's own single step" — both
-        // change it by exactly one, so that was tried and discarded.
-        // engine.state.playing does distinguish them, with one wrinkle:
-        // ChessPublica sets it false the instant autoplay itself hits an
-        // unresolved branch (confirmed directly), before this function
-        // ever sees it — so the passive path can't read "was it playing
-        // *just now*", only "was it playing the last time this function
-        // looked and found no branch pending", which is what
-        // lastKnownPlaying (declared above, updated only on that
-        // no-branch-pending path) actually holds. A branch that appears
-        // while that's true is one autoplay stepped into on its own and
-        // should keep going without the reader lifting a finger; one that
-        // appears while it's false — whether the reader just clicked a
-        // move that landed there, or forced-resolved a first branch that
-        // happened to land on a second — waits for its own explicit step.
-        // Returns whether it actually resolved something, so a caller like
-        // navigate() below can tell whether it still needs to take its own
+        // Called only from a reader's own explicit single step — next
+        // button, a real arrow key, or re-clicking the exact move a picker
+        // is already showing for (see those call sites) — never on its
+        // own. An earlier version also called this passively, from the
+        // observer below, so autoplay could step through a branch with no
+        // button of its own to force a click from; getting that right
+        // turned out to need its own delay (to pace a resolved branch like
+        // any other move instead of an instant jump cut) and its own
+        // "was this really still autoplaying" signal (ChessPublica doesn't
+        // set state.playing false the instant it hits a branch, only after
+        // a few more of its own ticks keep failing — long enough to run
+        // into that same delay and read a stale false back). Autoplay
+        // itself is gone now (see onReady's button pruning above), so none
+        // of that is needed any more: every call here is already the one
+        // explicit step it resolves, immediately, every time. Returns
+        // whether it actually resolved something, so a caller like
+        // navigate() above can tell whether it still needs to take its own
         // next step afterward.
         //
         // Clicking the row has a side effect worth guarding, though:
         // confirmed directly, it sets state.playing true regardless of
-        // whether Play was already running, not just when it was. Left
-        // alone, a reader who reaches a branch by stepping one move at a
-        // time (next button/arrow key, Play never pressed) would see the
-        // game silently start autoplaying on its own right after — this
-        // click didn't ask for that, so it's undone, same as a real
-        // reader's own click on a now-hidden mainline row would have done
-        // before this went automatic. Left *on* when Play was already
-        // running before this click, though, since that's the one case
-        // the passive path exists for: without it, autoplay hits a branch
-        // point and simply stops dead with no way for a reader who can't
-        // see the picker to ever restart it.
-        //
-        // A passive resolve doesn't click immediately, though (confirmed
-        // directly, reported live): the observer fires the instant the
-        // picker's own DOM appears, which is far sooner than ChessPublica's
-        // own autoplay tick would otherwise have taken to reach the next
-        // position — its own loop paces one ply per 1000/state.speed ms
-        // (confirmed directly in its bundle), same interval every other
-        // move already reads at. Clicking right away skips that wait for
-        // exactly the plies that happen to be branches, so two adjacent
-        // branches (a choice immediately followed by another) rendered as
-        // two moves landing on the board in the same instant instead of
-        // one after another like every other pair of moves does. Deferring
-        // the click by that same interval makes a resolved branch read
-        // like a normal tick instead of a jump cut.
-        //
-        // intendedPlaying, not a fresh read of engine.state.playing, is
-        // what decides whether clicking's own playing:true side effect
-        // gets undone afterward: confirmed directly, ChessPublica doesn't
-        // set state.playing false the instant autoplay first hits a
-        // branch — only after a few more of its own ticks keep failing to
-        // advance, which the deferred delay above is long enough to run
-        // into. A fresh read at click time, after that delay, comes back
-        // false for a branch autoplay is still very much trying to get
-        // past, indistinguishable from the reader never having pressed
-        // Play at all — undoing playing:true right then would silently
-        // stop autoplay on the very move meant to carry it through the
-        // branch (confirmed directly, exactly this way). The passive path
-        // below already only ever schedules a delayed click while
-        // lastKnownPlaying is true, so it always passes true here; a
-        // forced call passes a fresh read since it never waits, so
-        // ChessPublica hasn't had the chance to flip anything out from
-        // under it yet.
-        function clickMainline(mainlineRow, engine, intendedPlaying) {
-            mainlineRow.click();
-            if (!intendedPlaying && engine && engine.state && engine.state.playing && typeof engine.togglePlay === 'function') {
-                engine.togglePlay();
-            }
-            // lastKnownPlaying is deliberately *not* touched here (unlike
-            // an earlier version): confirmed directly, once ChessPublica's
-            // own autoplay loop has sat blocked on a branch long enough
-            // for its own state.playing false to show up (the whole
-            // reason intendedPlaying exists above), clicking mainline
-            // resolves that one branch but doesn't necessarily restart the
-            // loop itself — a fresh read right after can still come back
-            // false even though the reader's autoplay is very much still
-            // meant to be running, and writing that stale false back into
-            // lastKnownPlaying would silently strand every branch chained
-            // after this one. Only the no-branch-pending path below (a
-            // real, unobstructed observation) gets to update it.
-        }
-        function resolveBranch(force) {
+        // whether it was already running. Nothing in this file starts
+        // autoplay any more, but there's no guarantee ChessPublica's own
+        // bundle never does on its own (a keyboard shortcut it binds
+        // itself, say) — undoing it here costs nothing when it was already
+        // false, and keeps this file's "no autoplay" story true regardless.
+        function resolveBranch() {
             var mainlineRow = study.querySelector('.pgn-study-picker-row.mainline');
+            if (!mainlineRow) return false;
             var player = study.querySelector('pgn-player');
             var engine = player && player._engine;
-            if (!mainlineRow) {
-                lastKnownPlaying = !!(engine && engine.state && engine.state.playing);
-                if (pendingResolveTimer !== null) {
-                    clearTimeout(pendingResolveTimer);
-                    pendingResolveTimer = null;
-                }
-                return false;
+            mainlineRow.click();
+            if (engine && engine.state && engine.state.playing && typeof engine.togglePlay === 'function') {
+                engine.togglePlay();
             }
-            if (!force && !lastKnownPlaying) return false;
-            if (force) {
-                if (pendingResolveTimer !== null) {
-                    clearTimeout(pendingResolveTimer);
-                    pendingResolveTimer = null;
-                }
-                clickMainline(mainlineRow, engine, !!(engine && engine.state && engine.state.playing));
-                return true;
-            }
-            if (pendingResolveTimer !== null) return true;
-            var delay = engine && engine.state && engine.state.speed ? 1000 / engine.state.speed : 1000;
-            pendingResolveTimer = setTimeout(function () {
-                pendingResolveTimer = null;
-                // A genuine forced resolve (the reader taking over with
-                // next/an arrow key) already clears this timer itself, so
-                // the only thing left to check is whether the picker it
-                // was scheduled for is still there to click.
-                var freshRow = study.querySelector('.pgn-study-picker-row.mainline');
-                if (freshRow) clickMainline(freshRow, engine, true);
-            }, delay);
             return true;
         }
         study.resolveBranch = resolveBranch;
         stripCollapsed();
-        resolveBranch(false);
+        resolveBranch();
         if (study.classList.contains('cp-ready')) {
             onReady();
             readyHandled = true;
@@ -491,7 +389,6 @@
             }
             keepLayoutOrder();
             syncActiveComment();
-            resolveBranch(false);
         });
         observer.observe(study, { attributes: true, attributeFilter: ['class'], childList: true, subtree: true });
     });
