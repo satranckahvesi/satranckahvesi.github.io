@@ -770,70 +770,95 @@ a:hover { border-bottom-style: dotted; }
     }
 }
 
-/* Below its 900px breakpoint, ChessPublica switches pgn-study to a single-
-   panel flex layout where the visible panel (pgn-player, by default) is
-   sized with flex: 1 1 0 — grow to fill whatever space the flex container
-   has, and shrink if the whole column doesn't fit under pgn-study's own
-   max-height: 90vh. That shrinking is the actual bug behind "a long
-   comment makes the board disappear": pgn-player and the mirrored
-   comment below it both compete for space with equal flex-shrink, but
-   only the board can actually shrink (it's an image-like box, so the
-   layout engine compresses it smoothly all the way toward 0 height);
-   the comment is text, which doesn't compress the same way, so nearly
-   all of the give comes out of the board instead — down to invisible
-   on a long enough comment, confirmed directly. flex: 0 0 auto removes
-   the board from that contest entirely: it always renders at its own
-   full natural (board) height regardless of how long the comment is.
-   overflow-y reverts ChessPublica's own overflow-y: auto on this same
-   element (confirmed in its CSS) — needed there to let a squeezed
-   board scroll internally, meaningless now that it's never squeezed,
-   and left in place would still (harmlessly, but pointlessly) add a
-   scrollbar the instant rounding gave the board even 1px less than it
-   asked for. */
+/* Below its 900px breakpoint, pgn-study is rebuilt as a fixed 50/50
+   vertical stack — board on top, the full move list (.pgn-container,
+   comments interleaved in the move text, same content the desktop
+   right-hand panel shows) below, each independently scrollable within
+   its own half — instead of ChessPublica's own single-panel toggle
+   (board OR the full list via its own .mobile-article-view class,
+   never both at once; see its CSS: "pgn-study>.pgn-container{display:
+   none}" by default, swapped for "pgn-study>pgn-player{display:none}"
+   only once that class is added).
+
+   No divider: an even flex: 1 1 0 split on both panes already gives a
+   stable, predictable half each without a drag handle to build, and a
+   phone's vertical space is tight enough (address bar/home indicator
+   eating into a viewport already shorter than it is wide) that there's
+   much less slack to redistribute than the desktop split has between
+   its generous left/right columns.
+
+   pgn-study's own height has to be a real number (not the auto it uses
+   everywhere else, sized to content) for that even split to have
+   something to actually divide — flex distributes *free* space, and
+   free space only exists once the parent's own size stops being
+   "however tall its content happens to be." The ribbon and mobile
+   title above the two panes take their own natural height first, out
+   of this same total; the two flex: 1 1 0 panes then split whatever's
+   left between them. */
 @media (max-width: 899px) {
-    .post-body pgn-study > pgn-player {
-        flex: 0 0 auto;
-        overflow-y: visible;
+    .post-body pgn-study {
+        height: 90vh;
     }
 
-    /* pgn-player's own board wrapper carries a flat min-height: 500px
-       (confirmed directly in ChessPublica's CSS, ungated by any
-       breakpoint) — presumably sized for a desktop-width board with
-       room for an eval bar alongside it, not a mobile board that's
-       often well under 400px square. The fix above makes pgn-player
-       itself size to its natural content height, but that "natural"
-       height still includes this same flat 500px floor underneath it,
-       leaving blank space below the board before the mirrored active
-       comment that follows. Dropping it to the board's own actual
-       height on mobile closes that gap. */
+    /* --board-size normally reacts only to width (94cqw) — fine when
+       the board's own box is left to size itself around it, as it is
+       everywhere else. Here the box's *height* is fixed externally
+       instead (its flex: 1 1 0 share of the 50/50 split above), so the
+       board also needs a height ceiling or it just overflows its half
+       the moment its width-driven size comes out taller than that
+       share turns out to be. container-type: size (rather than
+       ChessPublica's own inline-size) adds a block-size query axis
+       alongside the existing cqw one so cqh means something here;
+       92cqh (not 100) leaves a sliver of breathing room rather than
+       touching the pane's edges exactly. */
+    .post-body pgn-study > pgn-player {
+        flex: 1 1 0;
+        min-height: 0;
+        overflow: hidden;
+        container-type: size;
+        --board-size: min(400px, 94cqw, 92cqh);
+    }
+
+    /* Same flat 500px floor worked around for the standalone-pgn-player
+       case below — pointless once the board's own height comes from
+       its half of the split above, not from this wrapper's content. */
     .post-body pgn-study pgn-player .player-wrapper {
         min-height: 0;
     }
-}
 
-/* By default (outside its "article view" toggle), ChessPublica shows only
-   the board on mobile and keeps .pgn-container — the full move list, with
-   comments interleaved in the move text — hidden. Showing that whole
-   thing under the board was too much (a wall of move text with the one
-   active comment barely standing out); instead post.html's script mirrors
-   just the active comment's own HTML into this element, appended as
-   pgn-study's last child. Hidden by default (including on desktop, where
-   the full move list with inline comments is already visible in the side
-   panel); shown only on mobile, and only once it actually has content. */
-.pgn-study-mobile-comment {
-    display: none;
-}
-
-@media (max-width: 899px) {
-    .pgn-study-mobile-comment.has-content {
+    /* ChessPublica hides this by default and only shows it in place of
+       the board via its own .mobile-article-view toggle (see the note
+       above) — overridden here to show *alongside* the board instead,
+       as this split's other half, rather than swapped in for it. */
+    .post-body pgn-study > .pgn-container {
         display: block;
-        flex: 1 1 auto;
+        /* Cross-axis stretch (the flex column's default) doesn't reach
+           this element on its own — confirmed directly: it collapses to
+           0 width instead unless width is also spelled out here, which
+           only shows up once .pgn-container also carries its own
+           container-type: inline-size (set globally above, needed for
+           its cqw-based diagram sizing), rather than with either alone. */
+        width: 100%;
+        flex: 1 1 0;
         min-height: 0;
         overflow-y: auto;
-        margin: 0.75rem 0 0;
-        padding: 0 0.5rem;
-        color: var(--ink);
+        margin-top: 0.75rem;
     }
+}
+
+/* Now that the full move list shows on mobile too (see the 50/50 split
+   above), a second copy of the active comment mirrored underneath the
+   board would just repeat text already visible one scroll away in that
+   same list — so this earlier mobile-only mirror (built back when the
+   move list stayed hidden there) is left inert everywhere. The element
+   itself still has to exist, though: keepLayoutOrder() in
+   pgn-study-enhance.js relies on it as a pinned last child to stop
+   ChessPublica's own variation-picker insertions from corrupting
+   pgn-study's desktop grid auto-placement (see that function's own
+   comment), a job that has nothing to do with whether this element is
+   ever shown. */
+.pgn-study-mobile-comment {
+    display: none;
 }
 
 /* Comments inherit pgn-study's own type scale rather than the post's; pin
@@ -1319,17 +1344,6 @@ a:hover { border-bottom-style: dotted; }
     color: var(--bg);
     background: var(--ink);
     border-color: var(--ink);
-}
-
-/* <pgn-study>'s own layout drops to ChessPublica's built-in mobile
-   layout below its 900px breakpoint (see the .post-body pgn-study
-   rules above), which isn't a fit for a small screen — so the reader
-   isn't offered it as a switcher option there; "Parti" and
-   "Oynatıcı" stay available. */
-@media (max-width: 899px) {
-    .pgn-switcher-btn[data-view="pgn-study"] {
-        display: none;
-    }
 }
 
 .post-figure {
