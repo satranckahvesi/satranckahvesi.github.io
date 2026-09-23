@@ -553,6 +553,25 @@ a:hover { border-bottom-style: dotted; }
     overflow-x: hidden;
 }
 
+/* Centering pgn-player itself (above) only matters when it's wider than
+   its own content, which only happens once the sub-900px rule below forces
+   it to width:100% — otherwise it stays fit-content, exactly as wide as
+   the board, and there's no slack to center within. In that forced-100%
+   case, the board (ChessPublica's own .player-wrapper/.player-container)
+   needs its own centering inside pgn-player's now-wider box — and
+   ChessPublica's own margin-left/right:auto for it, like .fen-container's
+   above, only exists inside its max-width:640px query, meant for the
+   mobile layout where the board already spans the column. Between 640px
+   and pgn-player's own 899px breakpoint nothing centers it, so it sits
+   flush left instead (confirmed directly: reported with a screenshot at
+   ~884px). Centering unconditionally here is a no-op above 899px, where
+   pgn-player is back to fit-content and there's nothing to center within. */
+.post-body pgn-player .player-wrapper,
+.post-body pgn-player .player-container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* <fen> (a standalone diagram, no movetext) is replaced wholesale by
    ChessPublica's own init with a plain .fen-container div, sized
    width:100%;max-width:var(--board-size) — and ChessPublica's own
