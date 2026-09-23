@@ -130,6 +130,11 @@
         // distinction tried first, is the right signal for its passive
         // path.
         var lastKnownPlaying = false;
+        // A passive resolve currently scheduled (see resolveBranch's own
+        // comment on why it's deferred rather than immediate) — tracked so
+        // a second, unrelated mutation while it's pending doesn't queue a
+        // duplicate, and so a forced resolve arriving first can cancel it.
+        var pendingResolveTimer = null;
         function onReady() {
             study.style.setProperty('--left-col-width', '1fr');
             study.style.setProperty('--right-col-width', '2fr');
@@ -387,21 +392,88 @@
         // the passive path exists for: without it, autoplay hits a branch
         // point and simply stops dead with no way for a reader who can't
         // see the picker to ever restart it.
+        //
+        // A passive resolve doesn't click immediately, though (confirmed
+        // directly, reported live): the observer fires the instant the
+        // picker's own DOM appears, which is far sooner than ChessPublica's
+        // own autoplay tick would otherwise have taken to reach the next
+        // position — its own loop paces one ply per 1000/state.speed ms
+        // (confirmed directly in its bundle), same interval every other
+        // move already reads at. Clicking right away skips that wait for
+        // exactly the plies that happen to be branches, so two adjacent
+        // branches (a choice immediately followed by another) rendered as
+        // two moves landing on the board in the same instant instead of
+        // one after another like every other pair of moves does. Deferring
+        // the click by that same interval makes a resolved branch read
+        // like a normal tick instead of a jump cut.
+        //
+        // intendedPlaying, not a fresh read of engine.state.playing, is
+        // what decides whether clicking's own playing:true side effect
+        // gets undone afterward: confirmed directly, ChessPublica doesn't
+        // set state.playing false the instant autoplay first hits a
+        // branch — only after a few more of its own ticks keep failing to
+        // advance, which the deferred delay above is long enough to run
+        // into. A fresh read at click time, after that delay, comes back
+        // false for a branch autoplay is still very much trying to get
+        // past, indistinguishable from the reader never having pressed
+        // Play at all — undoing playing:true right then would silently
+        // stop autoplay on the very move meant to carry it through the
+        // branch (confirmed directly, exactly this way). The passive path
+        // below already only ever schedules a delayed click while
+        // lastKnownPlaying is true, so it always passes true here; a
+        // forced call passes a fresh read since it never waits, so
+        // ChessPublica hasn't had the chance to flip anything out from
+        // under it yet.
+        function clickMainline(mainlineRow, engine, intendedPlaying) {
+            mainlineRow.click();
+            if (!intendedPlaying && engine && engine.state && engine.state.playing && typeof engine.togglePlay === 'function') {
+                engine.togglePlay();
+            }
+            // lastKnownPlaying is deliberately *not* touched here (unlike
+            // an earlier version): confirmed directly, once ChessPublica's
+            // own autoplay loop has sat blocked on a branch long enough
+            // for its own state.playing false to show up (the whole
+            // reason intendedPlaying exists above), clicking mainline
+            // resolves that one branch but doesn't necessarily restart the
+            // loop itself — a fresh read right after can still come back
+            // false even though the reader's autoplay is very much still
+            // meant to be running, and writing that stale false back into
+            // lastKnownPlaying would silently strand every branch chained
+            // after this one. Only the no-branch-pending path below (a
+            // real, unobstructed observation) gets to update it.
+        }
         function resolveBranch(force) {
             var mainlineRow = study.querySelector('.pgn-study-picker-row.mainline');
             var player = study.querySelector('pgn-player');
             var engine = player && player._engine;
             if (!mainlineRow) {
                 lastKnownPlaying = !!(engine && engine.state && engine.state.playing);
+                if (pendingResolveTimer !== null) {
+                    clearTimeout(pendingResolveTimer);
+                    pendingResolveTimer = null;
+                }
                 return false;
             }
             if (!force && !lastKnownPlaying) return false;
-            var wasPlaying = !!(engine && engine.state && engine.state.playing);
-            mainlineRow.click();
-            if (!wasPlaying && engine && engine.state && engine.state.playing && typeof engine.togglePlay === 'function') {
-                engine.togglePlay();
+            if (force) {
+                if (pendingResolveTimer !== null) {
+                    clearTimeout(pendingResolveTimer);
+                    pendingResolveTimer = null;
+                }
+                clickMainline(mainlineRow, engine, !!(engine && engine.state && engine.state.playing));
+                return true;
             }
-            lastKnownPlaying = !!(engine && engine.state && engine.state.playing);
+            if (pendingResolveTimer !== null) return true;
+            var delay = engine && engine.state && engine.state.speed ? 1000 / engine.state.speed : 1000;
+            pendingResolveTimer = setTimeout(function () {
+                pendingResolveTimer = null;
+                // A genuine forced resolve (the reader taking over with
+                // next/an arrow key) already clears this timer itself, so
+                // the only thing left to check is whether the picker it
+                // was scheduled for is still there to click.
+                var freshRow = study.querySelector('.pgn-study-picker-row.mainline');
+                if (freshRow) clickMainline(freshRow, engine, true);
+            }, delay);
             return true;
         }
         study.resolveBranch = resolveBranch;
