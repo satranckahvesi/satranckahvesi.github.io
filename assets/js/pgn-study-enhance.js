@@ -58,96 +58,6 @@
     var studies = Array.prototype.slice.call(document.querySelectorAll('.post-body pgn-study'));
     if (!studies.length) return;
 
-    // Every branch point our own nav buttons/ArrowRight/move-click handlers
-    // resolve goes through this one row's own click handler (see the
-    // ArrowRight fix below for why). ChessPublica's own handler for it
-    // calls play() to continue past the branch — meant for when the reader
-    // already had Play running, but all three of our own paths call this
-    // from a *paused*, one-step-at-a-time context instead. Confirmed
-    // directly: right after this click, state.playing comes back true and,
-    // about a second later (its own autoplay tick), one further move plays
-    // on its own before stopping again — a whole extra, unrequested ply
-    // beyond the single branch step the click was meant to resolve, which
-    // reads to a reader stepping through a paused study as the board
-    // suddenly, unpredictably starting to play itself. Toggling play back
-    // off immediately, in the same tick as the click, cancels that pending
-    // autoplay tick before it fires (confirmed directly: the position stays
-    // put and no further move follows) without touching the one ply the
-    // click above already, correctly, committed.
-    function resolvePickerMainline(mainlineRow) {
-        var studyEl = mainlineRow.closest('pgn-study');
-        var player = studyEl && studyEl.querySelector('pgn-player');
-        var engine = player && player._engine;
-        mainlineRow.click();
-        if (engine && engine.state && engine.state.playing && typeof engine.togglePlay === 'function') {
-            engine.togglePlay();
-        }
-    }
-
-    // Which study a page-wide ArrowLeft/ArrowRight keypress should act on.
-    // Defaults to the first (and, on the overwhelming majority of posts,
-    // only) study so keyboard nav works immediately without requiring a
-    // hover first; updated below whenever a study is actually
-    // hovered/clicked/touched, mirroring how ChessPublica itself decides
-    // which pgn-study/pgn-player last received a click/hover/touch.
-    var activeStudy = studies[0];
-    studies.forEach(function (study) {
-        function markActive() { activeStudy = study; }
-        study.addEventListener('mouseenter', markActive);
-        study.addEventListener('click', markActive);
-        study.addEventListener('touchstart', markActive, { passive: true });
-    });
-
-    // A real ArrowLeft/ArrowRight press already reaches ChessPublica's own
-    // keydown handler directly (it's listening on document too), which is
-    // exactly right outside a branch point — nothing to add there. At a
-    // branch point, ChessPublica shows a .pgn-study-move-picker instead of
-    // just advancing — its own goTo() is wrapped to refuse a plain "next"
-    // step there (confirmed directly in its bundle: calling goTo(index + 1)
-    // at that exact index resets right back to index and pauses, rather
-    // than moving), until the reader picks a row. Its own mainline row
-    // (always present whenever a picker is, whether for the main line or a
-    // branch inside a variation) is what actually continues past it — its
-    // click handler is the one thing that flips the internal flag goTo's
-    // guard checks, which nothing outside the bundle can set directly.
-    // Clicking that row ourselves reproduces exactly what a reader clicking
-    // it would do; a plain ArrowRight dispatch would otherwise silently do
-    // nothing at a branch point.
-    //
-    // Registered once, page-wide, rather than once per study as an earlier
-    // version did: that version's copy of this same handler checked its
-    // own study's branch-point state unconditionally on every keypress, so
-    // a single ArrowRight with two studies both sitting at a branch point
-    // would advance *both* instead of just the one the reader was actually
-    // looking at. Gating on activeStudy fixes that and also means only one
-    // listener exists regardless of how many studies the page has.
-    document.addEventListener('keydown', function (e) {
-        if (!e.isTrusted) return;
-        var dir = e.code === 'ArrowRight' ? 'next' : e.code === 'ArrowLeft' ? 'prev' : null;
-        if (!dir) return;
-        var active = document.activeElement;
-        var tag = active && active.tagName;
-        if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || (active && active.isContentEditable)) return;
-        var mainlineRow = dir === 'next' ? activeStudy.querySelector('.pgn-study-picker-row.mainline') : null;
-        if (mainlineRow) {
-            e.preventDefault();
-            // Without this, the keydown still reaches ChessPublica's own
-            // keydown listener right after — it's on the same document
-            // node ours is, so a plain stopPropagation() doesn't stop it
-            // (that only blocks propagation to *other* nodes; a sibling
-            // listener on the identical node still fires unless it's
-            // stopImmediatePropagation specifically). Resolving the
-            // branch via mainlineRow.click() already advances one ply,
-            // so that second handler saw a position no longer at a
-            // branch point and advanced a *second* ply on the very same
-            // keypress (confirmed directly: one ArrowRight at a branch
-            // point played both the picked mainline move and the reply
-            // after it).
-            e.stopImmediatePropagation();
-            resolvePickerMainline(mainlineRow);
-        }
-    });
-
     studies.forEach(function (study) {
         var readyHandled = false;
         var lastMirroredSource = null;
@@ -178,14 +88,16 @@
             var ribbon = study.querySelector('.pgn-study-ribbon');
             if (ribbon && !study.querySelector('[data-pgn-nav]')) {
                 function navigate(dir) {
-                    var mainlineRow = dir === 'next' ? study.querySelector('.pgn-study-picker-row.mainline') : null;
-                    if (mainlineRow) {
-                        resolvePickerMainline(mainlineRow);
-                        return;
-                    }
-                    // Marks this study active first (see activeStudy above),
-                    // since our own click handler runs before the real click
-                    // would otherwise bubble up and do the same.
+                    // ChessPublica's own document-level keydown listener acts
+                    // on whichever pgn-study/pgn-player it last saw a
+                    // hover/click/touch on — dispatching a real mouseenter on
+                    // this study first (our button click alone never bubbles
+                    // one to it) makes sure that's this study, not whichever
+                    // one the reader last actually touched. Any branch point
+                    // in the way is resolved automatically the moment it
+                    // appears (see autoResolveBranch below), so a plain
+                    // ArrowRight/ArrowLeft dispatch is all "next"/"prev" ever
+                    // needs.
                     study.dispatchEvent(new MouseEvent('mouseenter'));
                     document.dispatchEvent(new KeyboardEvent('keydown', {
                         code: dir === 'next' ? 'ArrowRight' : 'ArrowLeft',
@@ -211,34 +123,6 @@
                         ribbon.appendChild(btn);
                     }
                     insertAfter = btn;
-                });
-            }
-
-            // A move that starts a branch point (the position right before
-            // it has recorded variations) can only be entered through
-            // .pgn-study-picker-row.mainline's own click handler — the same
-            // guard the ArrowRight fix above already works around, confirmed
-            // directly: clicking that exact move's own .pgn-move span in the
-            // move list (its data-ply equal to the engine's current index,
-            // i.e. this move IS the position a picker is already showing
-            // for) leaves the board and the active move both unchanged,
-            // silently. Every other move click — before the branch, or
-            // skipping past it to a later ply — already works without this,
-            // so this only needs to step in for that one exact case:
-            // redirect it to the picker's own mainline row, the same
-            // "reproduce what a reader clicking it would do" trick the
-            // ArrowRight fix uses.
-            var moveList = study.querySelector('.pgn-container');
-            var innerPlayerForClicks = study.querySelector('pgn-player');
-            if (moveList && innerPlayerForClicks) {
-                moveList.addEventListener('click', function (e) {
-                    var moveEl = e.target.closest('.pgn-move[data-ply]');
-                    if (!moveEl) return;
-                    var engine = innerPlayerForClicks._engine;
-                    if (!engine || !engine.state) return;
-                    if (parseInt(moveEl.getAttribute('data-ply'), 10) !== engine.state.index) return;
-                    var mainlineRow = study.querySelector('.pgn-study-picker-row.mainline');
-                    if (mainlineRow) resolvePickerMainline(mainlineRow);
                 });
             }
 
@@ -333,7 +217,49 @@
             }
             commentDisplay.classList.toggle('has-content', !!active);
         }
+        // The move-picker itself is hidden outright now (see site.css's
+        // .pgn-study-move-picker) — pgn-study no longer asks the reader to
+        // choose at a branch point at all; it just keeps going on the
+        // mainline, as if the variation weren't there (still readable as
+        // parenthetical text in the move list itself, same as any other
+        // variation). ChessPublica's own goTo() still refuses a plain
+        // "next" step at a branch point until its picker's own mainline
+        // row is clicked — nothing outside its bundle can flip the
+        // internal flag that click sets any other way — so this clicks it
+        // automatically, the instant one appears, before a reader who can
+        // no longer see it ever could. That instant resolution is also
+        // why nothing else in this file needs its own branch-point
+        // special case any more (an earlier version had three: nav
+        // buttons, the ArrowRight/Left handler, and a move-list click
+        // handler) — by the time any of those could run, the branch is
+        // already gone.
+        //
+        // Clicking that row has a side effect worth guarding, though:
+        // confirmed directly, it sets state.playing true regardless of
+        // whether Play was already running, not just when it was. Left
+        // alone, a reader who reaches a branch by stepping one move at a
+        // time (next button/arrow key, Play never pressed) would see the
+        // game silently start autoplaying on its own right after — this
+        // click didn't ask for that, so it's undone, same as a real
+        // reader's own click on a now-hidden mainline row would have done
+        // before this went automatic. Left *on* when Play was already
+        // running before this click, though, since that's the one case
+        // this whole function exists for: without it, autoplay hits a
+        // branch point and simply stops dead (confirmed directly) with no
+        // way for a reader who can't see the picker to ever restart it.
+        function autoResolveBranch() {
+            var mainlineRow = study.querySelector('.pgn-study-picker-row.mainline');
+            if (!mainlineRow) return;
+            var player = study.querySelector('pgn-player');
+            var engine = player && player._engine;
+            var wasPlaying = !!(engine && engine.state && engine.state.playing);
+            mainlineRow.click();
+            if (!wasPlaying && engine && engine.state && engine.state.playing && typeof engine.togglePlay === 'function') {
+                engine.togglePlay();
+            }
+        }
         stripCollapsed();
+        autoResolveBranch();
         if (study.classList.contains('cp-ready')) {
             onReady();
             readyHandled = true;
@@ -346,6 +272,7 @@
             }
             keepLayoutOrder();
             syncActiveComment();
+            autoResolveBranch();
         });
         observer.observe(study, { attributes: true, attributeFilter: ['class'], childList: true, subtree: true });
     });
