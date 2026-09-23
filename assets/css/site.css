@@ -1213,6 +1213,17 @@ a:hover { border-bottom-style: dotted; }
     border-color: var(--ink);
 }
 
+/* <pgn-study>'s own layout drops to ChessPublica's built-in mobile
+   layout below its 900px breakpoint (see the .post-body pgn-study
+   rules above), which isn't a fit for a small screen — so the reader
+   isn't offered it as a switcher option there; "Parti" and
+   "Oynatıcı" stay available. */
+@media (max-width: 899px) {
+    .pgn-switcher-btn[data-view="pgn-study"] {
+        display: none;
+    }
+}
+
 .post-figure {
     margin: 2rem auto;
     text-align: center;
