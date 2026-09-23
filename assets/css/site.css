@@ -791,13 +791,21 @@ a:hover { border-bottom-style: dotted; }
    everywhere else, sized to content) for that even split to have
    something to actually divide — flex distributes *free* space, and
    free space only exists once the parent's own size stops being
-   "however tall its content happens to be." The ribbon and mobile
-   title above the two panes take their own natural height first, out
-   of this same total; the two flex: 1 1 0 panes then split whatever's
-   left between them. */
+   "however tall its content happens to be." The ribbon above the two
+   panes takes its own natural height first, out of this same total;
+   the two flex: 1 1 0 panes then split whatever's left between them. */
 @media (max-width: 899px) {
     .post-body pgn-study {
         height: 90vh;
+    }
+
+    /* ChessPublica's own mobile title row (game/players, shown above
+       whichever single panel its own toggle has picked) would otherwise
+       repeat the same title .pgn-container already prints as its own
+       first line now that both panes show at once — one copy, at the
+       top of the text pane, reads better than the same line twice. */
+    .post-body pgn-study > .pgn-study-mobile-title {
+        display: none;
     }
 
     /* --board-size normally reacts only to width (94cqw) — fine when
