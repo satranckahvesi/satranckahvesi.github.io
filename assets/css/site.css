@@ -1113,15 +1113,20 @@ a:hover { border-bottom-style: dotted; }
    track, which is exactly what broke visibly (verified directly: an
    unpositioned item auto-placed there measures only 6px wide). Spanning
    the full width, the same way the ribbon already does with
-   grid-column: 1 / -1, gives it its own row instead. ChessPublica's own
-   variation picker (.pgn-study-move-picker) is a plain, likely
-   also-unpositioned sibling inserted the same dynamic way, so it gets the
-   same treatment defensively. */
+   grid-column: 1 / -1, gives it its own row instead. */
 @media (min-width: 900px) {
-    .pgn-study-mobile-comment,
-    .pgn-study-move-picker {
+    .pgn-study-mobile-comment {
         grid-column: 1 / -1;
     }
+}
+
+/* pgn-study no longer offers the reader a choice at a branch point at
+   all (see autoResolveBranch() in pgn-study-enhance.js, which clicks
+   the picker's own mainline row the instant one appears, before a
+   human ever sees it) — hidden outright, at every width, rather than
+   left to render for the one frame before that auto-click resolves it. */
+.post-body pgn-study .pgn-study-move-picker {
+    display: none;
 }
 
 /* The board's own size used to be a flat min(600px, 94cqw), which kept
@@ -1187,30 +1192,18 @@ a:hover { border-bottom-style: dotted; }
 :root[data-theme="dark"] .post-body .pgn-study-ribbon-title-subtext { color: var(--muted); }
 
 /* pgn-study's ribbon buttons (play/prev/next/download/speed/flip/
-   settings), its column resizer handle, and its move-picker/table-of-
-   contents rows are all ChessPublica controls tuned for a white
-   ribbon — icon color, hover fill and badge colors that read fine on
-   #fff go low-contrast or invisible once the ribbon itself is dark. */
+   settings), its column resizer handle, and its table-of-contents rows
+   are all ChessPublica controls tuned for a white ribbon — icon color,
+   hover fill and badge colors that read fine on #fff go low-contrast
+   or invisible once the ribbon itself is dark. */
 :root[data-theme="dark"] .post-body .pgn-study-ribbon-btn,
 :root[data-theme="dark"] .post-body .pgn-study-ribbon-title .lucide-icon {
     color: var(--ink);
 }
 :root[data-theme="dark"] .post-body .pgn-study-ribbon-btn:hover:not(:disabled),
 :root[data-theme="dark"] .post-body .pgn-study-article-btn.active,
-:root[data-theme="dark"] .post-body .pgn-study-picker-row:hover,
 :root[data-theme="dark"] .post-body .pgn-study-toc-entry:hover {
     background: var(--hairline);
-}
-/* The currently-selected row in the variation picker (shown when a
-   move has more than one recorded continuation) keeps a light green
-   highlight (#c8e6c9) regardless of theme — low-contrast against the
-   light ink text it holds once that text follows dark mode. */
-:root[data-theme="dark"] .post-body .pgn-study-picker-row.active {
-    background: var(--ink);
-    color: var(--bg);
-}
-:root[data-theme="dark"] .post-body .pgn-study-picker-row.active .pgn-study-picker-icon {
-    color: var(--bg);
 }
 :root[data-theme="dark"] .post-body .pgn-study-speed-badge {
     background: var(--ink);
@@ -1231,7 +1224,6 @@ a:hover { border-bottom-style: dotted; }
     background: var(--muted);
     border-color: var(--muted);
 }
-:root[data-theme="dark"] .post-body .pgn-study-picker-icon,
 :root[data-theme="dark"] .post-body .pgn-study-toc-move {
     color: var(--muted);
 }
@@ -1273,16 +1265,8 @@ a:hover { border-bottom-style: dotted; }
     }
     :root:not([data-theme="light"]) .post-body .pgn-study-ribbon-btn:hover:not(:disabled),
     :root:not([data-theme="light"]) .post-body .pgn-study-article-btn.active,
-    :root:not([data-theme="light"]) .post-body .pgn-study-picker-row:hover,
     :root:not([data-theme="light"]) .post-body .pgn-study-toc-entry:hover {
         background: var(--hairline);
-    }
-    :root:not([data-theme="light"]) .post-body .pgn-study-picker-row.active {
-        background: var(--ink);
-        color: var(--bg);
-    }
-    :root:not([data-theme="light"]) .post-body .pgn-study-picker-row.active .pgn-study-picker-icon {
-        color: var(--bg);
     }
     :root:not([data-theme="light"]) .post-body .pgn-study-speed-badge {
         background: var(--ink);
@@ -1303,7 +1287,6 @@ a:hover { border-bottom-style: dotted; }
         background: var(--muted);
         border-color: var(--muted);
     }
-    :root:not([data-theme="light"]) .post-body .pgn-study-picker-icon,
     :root:not([data-theme="light"]) .post-body .pgn-study-toc-move {
         color: var(--muted);
     }
