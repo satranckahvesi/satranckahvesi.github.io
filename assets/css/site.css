@@ -533,10 +533,24 @@ a:hover { border-bottom-style: dotted; }
    width: 100% workaround below) because .pgn-container is already a
    plain block element with a real width of its own — the full post
    column, not width: fit-content — so cqw units in a descendant
-   already have something real to measure against. */
+   already have something real to measure against.
+
+   padding-right isn't a flat 0 like padding-left, though: .pgn-container
+   itself is overflow-x: hidden (ChessPublica's own rule, stopping wide
+   content from forcing a horizontal scrollbar), and the active-comment
+   highlight (pgn-study's own .pgn-comment-active) is a box-shadow, not a
+   border — box-shadow:0 0 0 2px, spreading 2px past the comment's own box
+   on every side, including the right. With zero padding there, that
+   right-side 2px has nowhere to go but past .pgn-container's own edge,
+   exactly where its overflow-x clips it (confirmed directly: the active
+   comment's own right edge landed flush with .pgn-container's, 0px gap).
+   ChessPublica's own left/right 1rem padding gave that overhang room by
+   default; this gives back just enough of it (not the full 1rem, which
+   would reintroduce the over-indent this rule exists to remove) rather
+   than none. */
 .post-body .pgn-container {
     padding-left: 0;
-    padding-right: 0;
+    padding-right: 4px;
     container-type: inline-size;
 }
 
