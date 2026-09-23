@@ -6,7 +6,9 @@ date: 2026-09-23
 column: Analizli oyunlar
 ---
 
-Bu yazımda siyahla sıklıkla tercih edilen savunmaların beyazla oynanması durumunda neler olabileceğini inceleyeceğim. Bazı konumların tersten (reversed) oynandığı durumlarda beyazla fazladan bir hamle hakkımızın olması, sanki siyahken art arda iki hamle yapıyormuşuz gibi tahtaya yansırken; bazı konumlarda ise bu tersten oynama durumu etkisiz kalabiliyor ve hatta dezavantaja bile dönüşebiliyor. Karmaşık bir giriş yaptığımın farkındayım. İyisi mi ne anlatmaya çalıştığımı tahta üzerinde inceleyelim. İncelemelere önce büyükustaların oyunlarından başlayacağım. Sonra da 2019 yılında aynı turnuvada, birinde siyah diğerinde beyaz taşlarla oynayıp aynı konumu elde ettiğim iki farklı oyunu inceleyerek yazımı bitireceğim.
+Bu yazımda siyahla sıklıkla tercih edilen savunmaların beyazla oynanması durumunda neler olabileceğini inceleyeceğim. 
+Bazı konumların tersten (reversed) oynandığı durumlarda beyazla fazladan bir hamle hakkımızın olması, sanki siyahken art arda iki hamle yapıyormuşuz gibi tahtaya yansırken; bazı konumlarda ise bu tersten oynama durumu etkisiz kalabiliyor ve hatta dezavantaja bile dönüşebiliyor. 
+Karmaşık bir giriş yaptığımın farkındayım. İyisi mi ne anlatmaya çalıştığımı tahta üzerinde inceleyelim. İncelemelere önce büyükustaların oyunlarından başlayacağım. Sonra da 2019 yılında aynı turnuvada, birinde siyah diğerinde beyaz taşlarla oynayıp aynı konumu elde ettiğim iki farklı oyunu inceleyerek yazımı bitireceğim.
 
 [Event "European Club Cup"]
 [Date "2022.10.06"]
