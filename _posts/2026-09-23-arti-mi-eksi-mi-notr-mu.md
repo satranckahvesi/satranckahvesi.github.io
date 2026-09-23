@@ -25,7 +25,7 @@ Karmaşık bir giriş yaptığımın farkındayım. İyisi mi ne anlatmaya çal�
 [ChapterURL "https://lichess.org/study/wlA44Flg/w9A1IbLb"]
 [Annotator "https://lichess.org/@/hayir_olayneyani"]
 
-1. c4 e5 2. d3 Nf6 3. Nf3 Nc6 4. a3 d5 5. cxd5 Nxd5 { Deyim yerindeyse Beyaz, Sicilya Savunması Najdorf varyantını oynuyor ve sıra kendisinde. Burada Beyaz e3 sürüp Najdorf/Scheveningen tarzında oynamayı, e4 sürüp keskin Najdorf konumlarına girmeyi, ya da g3 sürüp konumu Dragodorf sularına çekmeyi hedefleyebilir. } 6. e3 g5 { Arjun'dan Keres Atak yaklaşımı! Bu konumun beyazla oynanan Keres Atak'tan farkı; siyahın beyaz filinin e6'da değil, c8'de duruyor olması. } 7. b4?! { Daha iyisi: } (7. d4 { olurdu. } 7... exd4 8. Nxd4 Nde7 9. Nc3 Bg7 10. Nxc6 Bxc3+ 11. bxc3 Qxd1+ 12. Kxd1 Nxc6 13. e4 { Beyaz, sahip olduğu fil çifti ile daha rahat bir oyunsonuna girerdi. }) (7. e4 Nf4 8. g3?! { oynansaydı, bu kez Beyaz hamle önde olmanın ''dezavantajını'' yaşayacaktı ve Siyah ...Be6 oynamamış olmayı } 8... Ne6! $15 { hamlesi ile avantaja çevirebilecekti. }) 7... a6?! { Aslında Erigaisi konumun yabancısı değil. Fakat siyahla alışılagelmiş savunma olan Najdorf/Scheveningen türevi bir konumu beyazla oynayan Korobov'un ''fazladan bir hamle'' sahibi olması, konumu yeniliklerle açık bir hale getiriyor. Siyah adına daha iyisi: } (7... g4 { olurdu. } 8. b5 gxf3 9. bxc6 fxg2 10. Bxg2 bxc6 11. Bb2 Rg8 12. Bf3 Bd6 $17 { Beyaz'ın piyona karşılık ciddi bir kompansasyonu yoktur. }) 8. Bb2 Bg7 9. Be2 f5 10. Nfd2 O-O 11. Nc3 Be6 12. Rc1 Nxc3 13. Rxc3 Ne7 14. e4 Ng6 15. exf5! Bxf5 16. g3! { [%cal Rg6f4] } 16... Bh3 17. Ne4! $16 { Art arda üç tane ünlem çeken Korobov, üstün konum elde etti. Her ne kadar Korobov; oyunun devamında konumun eşitlenmesine engel olamasa da, oyunsonunda Erigaisi'nin yaptığı kaba hata üzerine kazanmayı bildi. } *
+1. c4 e5 2. d3 Nf6 3. Nf3 Nc6 4. a3 d5 5. cxd5 Nxd5 { Deyim yerindeyse Beyaz, Sicilya Savunması Najdorf varyantını oynuyor ve sıra kendisinde. Burada Beyaz e3 sürüp Najdorf/Scheveningen tarzında oynamayı, e4 sürüp keskin Najdorf konumlarına girmeyi, ya da g3 sürüp konumu Dragodorf sularına çekmeyi hedefleyebilir. } 6. e3 g5 { Arjun'dan Keres Atak yaklaşımı! Bu konumun beyazla oynanan Keres Atak'tan farkı; siyahın beyaz filinin e6'da değil, c8'de duruyor olması. } 7. b4?! { Daha iyisi: } (7. d4 { olurdu. } 7... exd4 8. Nxd4 Nde7 9. Nc3 Bg7 10. Nxc6 Bxc3+ 11. bxc3 Qxd1+ 12. Kxd1 Nxc6 13. e4 { Beyaz, sahip olduğu fil çifti ile daha rahat bir oyunsonuna girerdi. }) (7. e4 Nf4 8. g3?! { oynansaydı, bu kez Beyaz hamle önde olmanın ''dezavantajını'' yaşayacaktı ve Siyah ...Be6 oynamamış olmayı } 8... Ne6! $15 { hamlesi ile avantaja çevirebilecekti. }) 7... a6?! { Aslında Erigaisi konumun yabancısı değil. Fakat siyahla alışılagelmiş savunma olan Najdorf/Scheveningen türevi bir konumu beyazla oynayan Korobov'un ''fazladan bir hamle'' sahibi olması, konumu yeniliklerle açık bir hale getiriyor. Siyah adına daha iyisi: } (7... g4 { olurdu. } 8. b5 gxf3 9. bxc6 fxg2 10. Bxg2 bxc6 11. Bb2 Rg8 12. Bf3 Bd6 $17 { Beyaz'ın piyona karşılık ciddi bir kompansasyonu yoktur. }) 8. Bb2 Bg7 9. Be2 f5 10. Nfd2 O-O 11. Nc3 Be6 12. Rc1 Nxc3 13. Rxc3 Ne7 14. e4 Ng6 15. exf5! Bxf5 16. g3! { [%cal Rg6f4] } 16... Bh3 17. Ne4! $16 { 15. exf5!, 16. g3! ve 17.Ne4! hamlelerini bulan Korobov, pozisyonun hakkını verdi ve üstün konum dizmeyi başardı. Her ne kadar Korobov; oyunun devamında konumun eşitlenmesine engel olamasa da, oyunsonunda Erigaisi'nin yaptığı kaba hata üzerine kazanmayı bildi. } *
 
 [Event "World Blitz 2019"]
 [Date "2019.12.29"]
@@ -40,7 +40,22 @@ Karmaşık bir giriş yaptığımın farkındayım. İyisi mi ne anlatmaya çal�
 [ChapterURL "https://lichess.org/study/wlA44Flg/A7AEczuU"]
 [Annotator "https://lichess.org/@/hayir_olayneyani"]
 
-1. c4 e5 2. g3 c6 3. Nf3 e4 4. Nd4 { 1. e4 c5 2. c3 Nf6 3. e5 Nd5 biçiminde ilerleyen Sicilya Alapin konumunun tersten halinde Beyaz'ın fazladan g3'ü var gibi düşünebiliriz. ''Yarım tempo neyi değiştirir ki?'' diye düşünebilirsiniz. Ancak oyunun ilk 30 hamlesinde Tomashevsky o kadar incelikli oynuyor ki, Grischuk nerede kötü kaldığını bile anlayamıyor. } 4... d5 5. cxd5 Qxd5 6. Nc2 Nf6 7. Nc3 Qe5 8. Bg2 Na6 9. O-O Be7 10. d3 exd3 11. Qxd3 Nc5 12. Qd4 Qxd4 13. Nxd4 O-O 14. Bf4 g6 15. b4 Ne6 16. Nxe6 Bxe6 17. b5 Nd5 18. Nxd5 cxd5 19. Rfd1 Rfd8 20. Rac1 Rd7 21. Be5 f5 22. Bd4 Kf7 23. e3 Bd8 24. Rc2 Bb6 25. a4 Ke7 26. f4 Rad8 27. Kf2 Ra8 28. Rdc1 Rad8 29. Ke2 Ra8 30. Kd3 $16 { Konumu incelikle işleyen Tomashevsky, üstün konumu elde edip sonrasında da kazanmayı bildi. } *
+[Event "World Blitz 2019"]
+[Date "2019.12.29"]
+[White "Evgeny Tomashevsky"]
+[Black "Alexander Grischuk"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "A20"]
+[Opening "English Opening: King's English Variation"]
+[StudyName "Sahvmat Deneme 1"]
+[ChapterName "Tersten Alapin"]
+[ChapterURL "https://lichess.org/study/wlA44Flg/A7AEczuU"]
+[Annotator "https://lichess.org/@/hayir_olayneyani"]
+
+1. c4 e5 2. g3 c6 3. Nf3 e4 4. Nd4 { 1. e4 c5 2. c3 Nf6 3. e5 Nd5 biçiminde ilerleyen Sicilya Alapin konumunun tersten halinde Beyaz'ın fazladan g3'ü var gibi düşünebiliriz. ''Yarım tempo neyi değiştirir ki?'' diye düşünebilirsiniz. Ancak oyunun ilk 30 hamlesinde Tomashevsky o kadar incelikli oynuyor ki, Grischuk bir anda kendini kötü pozisyonda buluyor. } 4... d5 5. cxd5 Qxd5 6. Nc2 Nf6 7. Nc3 Qe5 8. Bg2 Na6 9. O-O Be7 10. d3 exd3 11. Qxd3 Nc5 12. Qd4 Qxd4 13. Nxd4 O-O 14. Bf4 g6 15. b4 Ne6 16. Nxe6 Bxe6 17. b5 Nd5 18. Nxd5 cxd5 19. Rfd1 Rfd8 20. Rac1 Rd7 21. Be5 f5 22. Bd4 Kf7 23. e3 Bd8 24. Rc2 Bb6 25. a4 Ke7 26. f4 Rad8 27. Kf2 Ra8 28. Rdc1 Rad8 29. Ke2 Ra8? { Siyahın kötü e6-fili ve d5'teki izole piyonu göz önünde bulundurulursa, Grischuk'un bu kritik anı değerlendirip } (29... Bxd4 $7 30. exd4 Ra8 { varyantına girmesi gerekirdi. Bu konumda Siyah'ın kötü fili olsa da, kendisinin berabere şansları olurdu. }) 30. Kd3 $16 { Konumu incelikle işleyen Tomashevsky, üstün konumu elde edip sonrasında da kazanmayı bildi. } *
+
+
 
 [Event "7th Gashimov Memorial Rapid"]
 [Date "2021.12.19"]
