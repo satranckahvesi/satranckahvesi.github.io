@@ -1,7 +1,7 @@
 ---
 layout: post
 author: "Özgün Yalçın"
-date: 2026-09-19
+date: 2026-09-23
 column: "Analizli oyunlar"
 title: "Artı mı, Eksi mi, Nötr mü?"
 
