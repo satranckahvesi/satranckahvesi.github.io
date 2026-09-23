@@ -1065,27 +1065,30 @@ a:hover { border-bottom-style: dotted; }
 }
 
 /* Prev/next buttons live inside the ribbon itself now (see post.html's
-   script — inserted as plain .pgn-study-ribbon-btn elements right after
-   Play, identified via [data-pgn-nav]), so they already inherit the
-   ribbon's own layout and hover styling. Only their icon needs sizing to
-   match the ribbon's other (Lucide) icons, which are 2rem square. */
+   script — inserted as plain .pgn-study-ribbon-btn elements at the
+   front of the ribbon, identified via [data-pgn-nav]), so they already
+   inherit the ribbon's own layout and hover styling. Only their icon
+   needs sizing to match the ribbon's other (Lucide) icons, which are
+   2rem square. */
 .pgn-study-ribbon-btn[data-pgn-nav] svg {
     width: 2rem;
     height: 2rem;
 }
 
-/* On mobile, pgn-study's ribbon can hold up to 7 buttons at once: Play,
-   our own prev/next, and ChessPublica's own download/speed/flip-board/
-   settings — all still fixed at their desktop size (3rem square,
-   .25rem gaps; ChessPublica only shrinks the icon glyphs themselves at
-   this width, not the buttons around them, confirmed directly in its
-   CSS), which doesn't fit a typical phone width — reported directly,
-   with a screenshot showing Settings clipped off the right edge.
+/* On mobile, pgn-study's ribbon can hold several buttons at once: our
+   own prev/next and ChessPublica's own download/flip-board/settings —
+   all still fixed at their desktop size (3rem square, .25rem gaps;
+   ChessPublica only shrinks the icon glyphs themselves at this width,
+   not the buttons around them, confirmed directly in its CSS), which
+   doesn't fit a typical phone width — reported directly, with a
+   screenshot showing Settings clipped off the right edge (back when
+   Play and its speed control were still part of that same row).
    Shrinking the buttons and tightening the gap between them (matched
    here by shrinking our own nav icons and ChessPublica's own icons,
    which it already scales to 1.6rem at this width, to fit their
-   smaller buttons proportionally) buys back enough width for all 7 to
-   fit without needing to touch the ribbon's own horizontal padding. */
+   smaller buttons proportionally) buys back enough width for all of
+   them to fit without needing to touch the ribbon's own horizontal
+   padding. */
 @media (max-width: 899px) {
     .post-body pgn-study .pgn-study-ribbon-btn {
         width: 2.25rem;
@@ -1191,11 +1194,12 @@ a:hover { border-bottom-style: dotted; }
 :root[data-theme="dark"] .post-body .pgn-study-ribbon-title-text { color: var(--ink); }
 :root[data-theme="dark"] .post-body .pgn-study-ribbon-title-subtext { color: var(--muted); }
 
-/* pgn-study's ribbon buttons (play/prev/next/download/speed/flip/
-   settings), its column resizer handle, and its table-of-contents rows
-   are all ChessPublica controls tuned for a white ribbon — icon color,
-   hover fill and badge colors that read fine on #fff go low-contrast
-   or invisible once the ribbon itself is dark. */
+/* pgn-study's ribbon buttons (prev/next/download/flip/settings — no
+   play or speed control, removed along with the whole play/pause
+   mechanism), its column resizer handle, and its table-of-contents
+   rows are all ChessPublica controls tuned for a white ribbon — icon
+   color and hover fill that read fine on #fff go low-contrast or
+   invisible once the ribbon itself is dark. */
 :root[data-theme="dark"] .post-body .pgn-study-ribbon-btn,
 :root[data-theme="dark"] .post-body .pgn-study-ribbon-title .lucide-icon {
     color: var(--ink);
@@ -1204,10 +1208,6 @@ a:hover { border-bottom-style: dotted; }
 :root[data-theme="dark"] .post-body .pgn-study-article-btn.active,
 :root[data-theme="dark"] .post-body .pgn-study-toc-entry:hover {
     background: var(--hairline);
-}
-:root[data-theme="dark"] .post-body .pgn-study-speed-badge {
-    background: var(--ink);
-    color: var(--bg);
 }
 :root[data-theme="dark"] .post-body .pgn-study-resizer:after,
 :root[data-theme="dark"] .post-body .pgn-study-resizer-handle {
@@ -1267,10 +1267,6 @@ a:hover { border-bottom-style: dotted; }
     :root:not([data-theme="light"]) .post-body .pgn-study-article-btn.active,
     :root:not([data-theme="light"]) .post-body .pgn-study-toc-entry:hover {
         background: var(--hairline);
-    }
-    :root:not([data-theme="light"]) .post-body .pgn-study-speed-badge {
-        background: var(--ink);
-        color: var(--bg);
     }
     :root:not([data-theme="light"]) .post-body .pgn-study-resizer:after,
     :root:not([data-theme="light"]) .post-body .pgn-study-resizer-handle {
