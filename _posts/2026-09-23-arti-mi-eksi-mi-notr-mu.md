@@ -40,20 +40,12 @@ Karmaşık bir giriş yaptığımın farkındayım. İyisi mi ne anlatmaya çal�
 [ChapterURL "https://lichess.org/study/wlA44Flg/A7AEczuU"]
 [Annotator "https://lichess.org/@/hayir_olayneyani"]
 
-[Event "World Blitz 2019"]
-[Date "2019.12.29"]
-[White "Evgeny Tomashevsky"]
-[Black "Alexander Grischuk"]
-[Result "*"]
-[Variant "Standard"]
-[ECO "A20"]
-[Opening "English Opening: King's English Variation"]
-[StudyName "Sahvmat Deneme 1"]
-[ChapterName "Tersten Alapin"]
-[ChapterURL "https://lichess.org/study/wlA44Flg/A7AEczuU"]
-[Annotator "https://lichess.org/@/hayir_olayneyani"]
-
 1. c4 e5 2. g3 c6 3. Nf3 e4 4. Nd4 { 1. e4 c5 2. c3 Nf6 3. e5 Nd5 biçiminde ilerleyen Sicilya Alapin konumunun tersten halinde Beyaz'ın fazladan g3'ü var gibi düşünebiliriz. ''Yarım tempo neyi değiştirir ki?'' diye düşünebilirsiniz. Ancak oyunun ilk 30 hamlesinde Tomashevsky o kadar incelikli oynuyor ki, Grischuk bir anda kendini kötü pozisyonda buluyor. } 4... d5 5. cxd5 Qxd5 6. Nc2 Nf6 7. Nc3 Qe5 8. Bg2 Na6 9. O-O Be7 10. d3 exd3 11. Qxd3 Nc5 12. Qd4 Qxd4 13. Nxd4 O-O 14. Bf4 g6 15. b4 Ne6 16. Nxe6 Bxe6 17. b5 Nd5 18. Nxd5 cxd5 19. Rfd1 Rfd8 20. Rac1 Rd7 21. Be5 f5 22. Bd4 Kf7 23. e3 Bd8 24. Rc2 Bb6 25. a4 Ke7 26. f4 Rad8 27. Kf2 Ra8 28. Rdc1 Rad8 29. Ke2 Ra8? { Siyahın kötü e6-fili ve d5'teki izole piyonu göz önünde bulundurulursa, Grischuk'un bu kritik anı değerlendirip } (29... Bxd4 $7 30. exd4 Ra8 { varyantına girmesi gerekirdi. Bu konumda Siyah'ın kötü fili olsa da, kendisinin berabere şansları olurdu. }) 30. Kd3 $16 { Konumu incelikle işleyen Tomashevsky, üstün konumu elde edip sonrasında da kazanmayı bildi. } *
+
+
+
+
+
 
 
 
