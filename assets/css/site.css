@@ -886,6 +886,41 @@ a:hover { border-bottom-style: dotted; }
     --diagram-max-width: min(400px, 94cqw);
 }
 
+/* A [Crop "top-half"/"bottom-half"] diagram (see pgn-detect.js, which wraps
+   the resulting <fen> in this) — for a position where only one side of the
+   board matters, so showing the empty (or irrelevant) other half is just
+   clutter. ChessPublica still renders the full square board at its normal
+   size inside here; aspect-ratio makes this wrapper only half as tall as
+   it is wide, and overflow:hidden leaves just that half visible. The
+   board's own margin is zeroed so it doesn't eat into that half. */
+.post-body .board-crop {
+    overflow: hidden;
+    position: relative;
+    margin: 1rem 0;
+    width: 100%;
+    max-width: var(--board-size);
+    aspect-ratio: 2 / 1;
+}
+
+.post-body .board-crop .fen-container {
+    margin: 0;
+}
+
+/* ChessPublica always draws rank 8 first (the board's own top, in normal
+   document flow), so a top-half crop needs nothing more than the
+   overflow:hidden above — the bottom four ranks simply render past the
+   wrapper's bottom edge and get clipped. A bottom-half crop needs the
+   board pulled up instead, so its own second half lands in the visible
+   window: positioning it from the wrapper's bottom edge (rather than
+   e.g. a negative top offset) does that without needing to know the
+   board's rendered height in pixels, which varies by viewport. */
+.post-body .board-crop--bottom-half .fen-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
 /* pgn-study already shows the live, moving board in its own left column;
    an inline diagram in the move-list (right) column next to it is pure
    clutter, repeating the same position in miniature. Suppress both

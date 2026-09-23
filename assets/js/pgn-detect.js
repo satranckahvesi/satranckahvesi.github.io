@@ -6,6 +6,12 @@
     var orientationTagRe = /^\[Orientation\s+"/i;
     var movetextRe = /^(\{|\d+\.)/;
     var puzzleMarkerRe = /\[P\s*\d*\]/;
+    // Site-specific pseudo-header, not part of PGN itself (like the [P]
+    // puzzle marker below): tells a bare <fen> diagram to render only its
+    // top or bottom four ranks. Stripped from the header before
+    // ChessPublica ever sees it, same reasoning as [P] in <pgn-study>
+    // below — an unrecognized tag would otherwise just sit there unused.
+    var cropTagRe = /^\[Crop\s+"(top-half|bottom-half)"\]$/i;
 
     // Whoever is on move where the *first* mainline [P] marker sits is who
     // ChessPublica's puzzle mode will prompt for as soon as the viewer
@@ -116,6 +122,14 @@
         var headerLines = lines.slice(0, idx);
         var inlineMoveText = idx < lines.length ? lines.slice(idx).join(' ') : null;
         var hasFenTag = headerLines.some(function (l) { return fenTagRe.test(l); });
+
+        var cropValue = null;
+        headerLines = headerLines.filter(function (l) {
+            var m = l.match(cropTagRe);
+            if (!m) return true;
+            cropValue = m[1].toLowerCase();
+            return false;
+        });
 
         var moveText = null;
         var next = null;
@@ -232,6 +246,17 @@
         var el = document.createElement(tagName);
         el.textContent = moveText !== null ? (headerText + '\n\n' + moveText) : headerText;
 
+        // Only a bare diagram is cropped, never a game: <pgn>/<pgn-player>/
+        // <pgn-study> stay interactive (move list, replay), and chopping
+        // half their board off would just make that unusable.
+        var insertNode = el;
+        if (cropValue && tagName === 'fen') {
+            var cropWrap = document.createElement('div');
+            cropWrap.className = 'board-crop board-crop--' + cropValue;
+            cropWrap.appendChild(el);
+            insertNode = cropWrap;
+        }
+
         if (storageKey) {
             var wrap = document.createElement('div');
             wrap.className = 'pgn-switcher-block';
@@ -257,10 +282,10 @@
                 switcher.appendChild(btn);
             });
             wrap.appendChild(switcher);
-            wrap.appendChild(el);
+            wrap.appendChild(insertNode);
             p.parentNode.insertBefore(wrap, p);
         } else {
-            p.parentNode.insertBefore(el, p);
+            p.parentNode.insertBefore(insertNode, p);
         }
         p.remove();
         if (next) next.remove();
