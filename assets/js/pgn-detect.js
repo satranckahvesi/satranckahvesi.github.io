@@ -7,11 +7,12 @@
     var movetextRe = /^(\{|\d+\.)/;
     var puzzleMarkerRe = /\[P\s*\d*\]/;
     // Site-specific pseudo-header, not part of PGN itself (like the [P]
-    // puzzle marker below): tells a bare <fen> diagram to render only its
-    // top or bottom four ranks. Stripped from the header before
-    // ChessPublica ever sees it, same reasoning as [P] in <pgn-study>
-    // below — an unrecognized tag would otherwise just sit there unused.
-    var cropTagRe = /^\[Crop\s+"(top-half|bottom-half)"\]$/i;
+    // puzzle marker below): tells a bare <fen> diagram to render only a
+    // half (top/bottom four ranks) or a quarter (one 4x4 corner) of the
+    // board. Stripped from the header before ChessPublica ever sees it,
+    // same reasoning as [P] in <pgn-study> below — an unrecognized tag
+    // would otherwise just sit there unused.
+    var cropTagRe = /^\[Crop\s+"(top-half|bottom-half|top-left-quarter|top-right-quarter|bottom-left-quarter|bottom-right-quarter)"\]$/i;
 
     // Whoever is on move where the *first* mainline [P] marker sits is who
     // ChessPublica's puzzle mode will prompt for as soon as the viewer

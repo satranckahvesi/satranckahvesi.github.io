@@ -928,6 +928,53 @@ a:hover { border-bottom-style: dotted; }
     bottom: 0;
 }
 
+/* A quarter crop needs the wrapper itself cut down to a quarter of the
+   board's own footprint — half the width *and* half the height, hence
+   1:1 rather than the half crop's 2:1 — instead of the full board's
+   max-width above. */
+.post-body .board-crop--top-left-quarter,
+.post-body .board-crop--top-right-quarter,
+.post-body .board-crop--bottom-left-quarter,
+.post-body .board-crop--bottom-right-quarter {
+    max-width: calc(var(--board-size) / 2);
+    aspect-ratio: 1 / 1;
+}
+
+/* Doubling the board's own width (rather than e.g. scaling it up with a
+   transform) keeps it at the exact same pixel size a half crop or a full
+   board would render it at, so a reader flipping between this post's
+   three diagrams never sees the pieces themselves change size — only how
+   much of the board surrounds them. top-left needs nothing beyond that:
+   the board's default top-left static position already puts files a-d,
+   ranks 8-5 in view, past which the other three sides get clipped by
+   the wrapper above. The other three corners need pulling into view from
+   whichever edge(s) top-left leaves off-screen, the same left/bottom
+   anchoring the plain half crops above already use. */
+.post-body .board-crop--top-left-quarter .fen-container,
+.post-body .board-crop--top-right-quarter .fen-container,
+.post-body .board-crop--bottom-left-quarter .fen-container,
+.post-body .board-crop--bottom-right-quarter .fen-container {
+    width: 200%;
+}
+
+.post-body .board-crop--top-right-quarter .fen-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.post-body .board-crop--bottom-left-quarter .fen-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.post-body .board-crop--bottom-right-quarter .fen-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
 /* pgn-study already shows the live, moving board in its own left column;
    an inline diagram in the move-list (right) column next to it is pure
    clutter, repeating the same position in miniature. Suppress both
