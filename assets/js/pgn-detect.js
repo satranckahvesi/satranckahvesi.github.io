@@ -179,8 +179,17 @@
             // block's view reloads the page too, and clearing this on read
             // would wipe out this block's remembered choice on that reload
             // even though the reader never touched this block.
+            // <pgn-study> has no switcher button below ChessPublica's own
+            // 900px mobile breakpoint (see .pgn-switcher-btn[data-view=
+            // "pgn-study"] in site.css), so a preference saved from an
+            // earlier, wider viewport in this same tab (e.g. the window
+            // was resized) must not resurrect it here with no way back.
+            var isNarrowViewport = window.matchMedia('(max-width: 899px)').matches;
+            var restorableViewKeys = isNarrowViewport
+                ? pgnViewKeys.filter(function (k) { return k !== 'pgn-study'; })
+                : pgnViewKeys;
             var savedView = sessionStorage.getItem(storageKey);
-            if (pgnViewKeys.indexOf(savedView) !== -1) {
+            if (restorableViewKeys.indexOf(savedView) !== -1) {
                 tagName = savedView;
                 // A puzzle's switch is honored for the reload it triggers
                 // — proving the button works — but isn't remembered past
@@ -234,6 +243,7 @@
                 var btn = document.createElement('button');
                 btn.type = 'button';
                 btn.className = 'pgn-switcher-btn' + (view.key === tagName ? ' is-active' : '');
+                btn.setAttribute('data-view', view.key);
                 btn.setAttribute('aria-pressed', view.key === tagName ? 'true' : 'false');
                 btn.title = view.label;
                 btn.setAttribute('aria-label', view.label);
