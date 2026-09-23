@@ -378,13 +378,32 @@
             var engine = player && player._engine;
             var currentIndex = engine && engine.state ? engine.state.index : null;
             var arrivedByStep = mainlineRow && lastKnownIndex !== null && currentIndex === lastKnownIndex + 1;
-            lastKnownIndex = currentIndex;
-            if (!mainlineRow || !(force || arrivedByStep)) return false;
+            if (!mainlineRow || !(force || arrivedByStep)) {
+                lastKnownIndex = currentIndex;
+                return false;
+            }
             var wasPlaying = !!(engine && engine.state && engine.state.playing);
             mainlineRow.click();
             if (!wasPlaying && engine && engine.state && engine.state.playing && typeof engine.togglePlay === 'function') {
                 engine.togglePlay();
             }
+            // The resulting position, not the one this call started from:
+            // clicking the mainline row can itself land exactly on a
+            // *second* branch point (the game's next recorded choice
+            // sitting immediately after this one) — confirmed directly,
+            // reported live. Left at the pre-click index, that second
+            // picker's own appearance (a subtree mutation, same as any
+            // other) would read to the observer's own passive call as "the
+            // reader just stepped one ply forward into this" — true only
+            // in the sense that this call itself produced that step, not
+            // that the reader asked for a second one — and it would
+            // resolve that one too, before a forced call like navigate()'s
+            // next-button handling ever got to decide whether it should.
+            // Recording where THIS click actually left things closes that
+            // gap: the next observation sees no further delta from here,
+            // so a second branch right on top of this one waits for its
+            // own genuine step, same as the first one did.
+            lastKnownIndex = engine && engine.state ? engine.state.index : currentIndex;
             return true;
         }
         study.resolveBranch = resolveBranch;
