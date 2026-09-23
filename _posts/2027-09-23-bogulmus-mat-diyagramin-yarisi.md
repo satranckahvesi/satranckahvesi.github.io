@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2026-09-23
+date: 2027-09-23
 title: "Boğulmuş mat: Diyagramın yarısı yeter"
 author: "FM Nazmi Can Doğan"
 column: "Analizli oyunlar"
