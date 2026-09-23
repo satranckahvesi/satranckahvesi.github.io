@@ -98,11 +98,28 @@
     // listener exists regardless of how many studies the page has.
     document.addEventListener('keydown', function (e) {
         if (!e.isTrusted) return;
-        var dir = e.code === 'ArrowRight' ? 'next' : e.code === 'ArrowLeft' ? 'prev' : null;
-        if (!dir) return;
         var active = document.activeElement;
         var tag = active && active.tagName;
         if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || (active && active.isContentEditable)) return;
+        if (e.code === 'Space') {
+            // ChessPublica binds Space to togglePlay() itself, straight
+            // from each player's own setup code — there's no button behind
+            // it we could have removed above, since it never routes
+            // through the ribbon at all. That listener is also registered
+            // on document, added once a player's ready, which is always
+            // after this one (registered synchronously as soon as this
+            // script runs) — so, same ordering the ArrowRight case below
+            // already relies on, this one sees Space first every time.
+            // stopImmediatePropagation alone (no preventDefault) keeps
+            // that handler from ever running — and so from calling its own
+            // preventDefault — without touching the page's normal
+            // space-to-scroll behavior, which is otherwise untouched by
+            // removing Play.
+            e.stopImmediatePropagation();
+            return;
+        }
+        var dir = e.code === 'ArrowRight' ? 'next' : e.code === 'ArrowLeft' ? 'prev' : null;
+        if (!dir) return;
         if (dir === 'next' && activeStudy.resolveBranch && activeStudy.resolveBranch()) {
             // Without this, the keydown still reaches ChessPublica's own
             // keydown listener right after — it's on the same document
