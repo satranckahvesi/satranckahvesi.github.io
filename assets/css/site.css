@@ -902,7 +902,14 @@ a:hover { border-bottom-style: dotted; }
     aspect-ratio: 2 / 1;
 }
 
-.post-body .board-crop .fen-container {
+/* Both .fen-container (ChessPublica: margin:1rem 0) and its own child
+   .cp-board (ChessPublica: margin:1rem 0 again, not a duplicate — the two
+   stack) carry that gap; zeroing only the outer one still left .cp-board's
+   own 18px pushing the board down inside the crop box, silently eating
+   into the visible half from the bottom (confirmed directly: it read back
+   part of the 5th rank instead of a clean cut after the 4th). */
+.post-body .board-crop .fen-container,
+.post-body .board-crop .cp-board {
     margin: 0;
 }
 
