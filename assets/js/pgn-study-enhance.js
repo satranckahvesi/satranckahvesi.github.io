@@ -144,12 +144,98 @@
         }
     });
 
+    // The board itself carries two separate click listeners of
+    // ChessPublica's own, confirmed directly in its bundle: one on
+    // boardEl straight to togglePlay(), and a second, independent one (in
+    // the same function, Hn, that also carries the ArrowRight/ArrowLeft
+    // keydown handler this file's own synthetic dispatches rely on, so
+    // that whole listener set can't just be torn down) that reads any
+    // click landing within 300ms of a previous one on the same board as a
+    // double-click and jumps ±10 plies — left half for -10, right half
+    // for +10, a video-scrubber-style "skip 10" gesture. A reader's own
+    // plain double-click, nowhere near any move ten plies away, lands
+    // there anyway, reading as a jump to an arbitrary, unrelated
+    // position.
+    //
+    // Neither listener does anything a reader should still be able to
+    // reach from the board itself: puzzle mode — the one case a board
+    // click is actually meant to do something — never turns on inside
+    // pgn-study in the first place (pgn-detect.js strips a [P] marker
+    // before ChessPublica ever sees pgn-study's own movetext, precisely
+    // because pgn-study's reading experience doesn't want it; see that
+    // file's own comment). So every click landing on the board is simply
+    // stopped here before either listener sees it, rather than trying to
+    // replicate Hn's own 300ms same-board timing check to single out
+    // only the second click of a pair: an earlier version that did
+    // turned out flaky under repeated testing (occasionally leaving next/
+    // prev unresponsive afterward, seemingly tied to pause() actually
+    // running on that second click) for reasons that didn't fully turn
+    // up even with the bundle in hand — not a risk worth carrying for a
+    // click this file has no legitimate use for anyway.
+    //
+    // Capture phase on document, rather than another listener on the
+    // board itself, is what makes this reliable regardless of script
+    // load order: a capture-phase listener on an ancestor always runs
+    // before a bubble-phase one on a descendant, by spec, so this is
+    // guaranteed to see the click before either of ChessPublica's own
+    // board listeners do, unlike matching their registration order by
+    // chance (the ArrowRight case above only works because this script
+    // happens to run first).
+    document.addEventListener('click', function (e) {
+        if (e.target.closest && e.target.closest('.post-body pgn-study .board-wrap')) {
+            e.stopImmediatePropagation();
+        }
+    }, true);
+
     studies.forEach(function (study) {
         var readyHandled = false;
         var lastMirroredSource = null;
         function onReady() {
             study.style.setProperty('--left-col-width', '1fr');
             study.style.setProperty('--right-col-width', '2fr');
+
+            // Removing the ribbon's own Play button (below) and blocking
+            // Space (see the page-wide keydown handler above) still isn't
+            // "no autoplay": ChessPublica's base engine binds a *board*
+            // click straight to togglePlay() too, in its own setup code,
+            // entirely independent of both of those — confirmed directly
+            // in its bundle: `this.boardEl.addEventListener("click", p =>
+            // {... this.togglePlay(!0)}, {signal:a})`. play() itself is
+            // also what the mainline picker row's own confirm handler
+            // calls to step past a branch (confirmed directly:
+            // `()=>{X=true,b.play()}`) — resolveBranch() below already
+            // has to undo the state.playing:true that leaves behind — so
+            // play() itself can't just be replaced outright; a first
+            // version that did broke branch resolution entirely (confirmed
+            // directly: clicking the mainline row stopped advancing past
+            // it at all).
+            //
+            // play()'s own body does two separate things: a one-time
+            // step (state.index++, goTo) — the part resolveBranch()
+            // depends on — and, as its last line, starting the actual
+            // continuous ticking loop via this._loopRAF(). Overriding
+            // just _loopRAF() to a no-op leaves the one-time step alone
+            // but means that loop can never actually start, from any
+            // caller, so nothing plays on. this._loopRAF is also called
+            // from exactly one place in ChessPublica's own bundle — the
+            // last line of play() itself — so nothing else depends on it
+            // doing anything.
+            //
+            // This still doesn't chase every trigger one at a time the
+            // way blocking Space does — the board click above wasn't
+            // known about until a reader found it, and there could be
+            // others — every path that could ever start the loop still
+            // resolves the same instance's own ._loopRAF at call time
+            // (.bind() in ChessPublica's own wrappers only fixes `this`,
+            // not which method a later `this._loopRAF()` looks up), so
+            // this covers all of them regardless. Scoped to this study's
+            // own internal <pgn-player> only: a standalone <pgn-player>
+            // block (not inside a pgn-study) keeps its own working Play
+            // button and real autoplay, since removing play/pause was
+            // only ever asked for inside pgn-study.
+            var innerPlayerForPlay = study.querySelector('pgn-player');
+            var innerEngineForPlay = innerPlayerForPlay && innerPlayerForPlay._engine;
+            if (innerEngineForPlay) innerEngineForPlay._loopRAF = function () {};
 
             var buttons = Array.prototype.slice.call(study.querySelectorAll('.pgn-study-ribbon-btn'));
             buttons.forEach(function (btn) {
@@ -285,20 +371,96 @@
         // the reader here to see (see pgnCenterPending above) — every
         // other study's own data-pgn-block-key won't match, so this is a
         // no-op for them. Run at the very end of onReady(), once the
-        // panel's own layout (ribbon, nav buttons, board) is fully in
-        // place, so the height this measures is the real, settled one.
+        // panel's own layout (ribbon, nav buttons, board) is in place —
+        // but the board's own piece images are still loading at that
+        // point (confirmed directly: 24-40 of a board's ~58 <img>s still
+        // incomplete right as cp-ready appears), each one arriving with
+        // its own real size and nudging the panel's height as it does.
+        // Centering against the panel's height *now* uses a still-settling
+        // number, and the browser's own scroll anchoring then "corrects"
+        // the scroll position to compensate as each image keeps landing —
+        // confirmed directly: with nothing waiting for them, the centered
+        // position drifted back down to 0 anywhere from under a second to
+        // a couple of seconds later, only sometimes caught by a fixed
+        // wait in testing (which is what made this look like a race in
+        // the click handling itself before this was traced here). Waiting
+        // for every one of this study's own images to finish first — load
+        // or error, either settles its slot in the layout — means the
+        // rect this reads is the panel's real, final height.
         function centerIfPending() {
             if (!pgnCenterPending || study.getAttribute('data-pgn-block-key') !== pgnCenterPending) return;
-            var rect = study.getBoundingClientRect();
-            var elementCenter = rect.top + window.scrollY + rect.height / 2;
-            window.scrollTo(0, Math.max(0, elementCenter - window.innerHeight / 2));
-            sessionStorage.removeItem('pgn-center-pending');
-            // Back to normal so a later, unrelated refresh of this same
-            // page still restores the reader's own scroll position instead
-            // of always reopening at the top (see pgn-detect.js's own top
-            // for why this was turned off in the first place).
-            history.scrollRestoration = 'auto';
             pgnCenterPending = null;
+            var images = Array.prototype.slice.call(study.querySelectorAll('img'));
+            var remaining = images.length;
+            var centered = false;
+            if (remaining === 0) {
+                doCenter();
+                return;
+            }
+            // A fallback in case some image never settles (a genuinely
+            // dropped network request, say): centering late off a still-
+            // incomplete board beats never centering at all.
+            var fallback = setTimeout(doCenter, 3000);
+            images.forEach(function (img) {
+                var settled = false;
+                function onSettled() {
+                    if (settled) return;
+                    settled = true;
+                    remaining--;
+                    if (remaining <= 0) doCenter();
+                }
+                img.addEventListener('load', onSettled, { once: true });
+                img.addEventListener('error', onSettled, { once: true });
+                // The image can finish loading in the gap between this
+                // study's own .complete check further up and this
+                // listener actually attaching — checked again here, after
+                // attaching, so that race can't leave onSettled waiting
+                // on a load/error event that already fired without it.
+                if (img.complete) onSettled();
+            });
+            function doCenter() {
+                if (centered) return;
+                centered = true;
+                clearTimeout(fallback);
+                var rect = study.getBoundingClientRect();
+                var elementCenter = rect.top + window.scrollY + rect.height / 2;
+                var target = Math.max(0, elementCenter - window.innerHeight / 2);
+                // A single scrollTo call here isn't reliable on its own —
+                // confirmed directly: something (never caught red-handed
+                // despite patching every scroll-adjacent API — scrollTo,
+                // scrollBy, scrollIntoView, focus, even the scrollTop
+                // setter directly, all with zero hits, and overflow-anchor
+                // set to none had no effect either) sometimes nudges the
+                // page back to the top within a single animation frame of
+                // this call succeeding, and sometimes as much as a second
+                // later, unpredictably. Reasserting the same target on
+                // every frame for a second is a blunt fix for a mechanism
+                // that's still unidentified, but it reliably wins — this
+                // file's own onReady() only runs once per study, so a
+                // second's worth of re-assertion is a small, one-time
+                // cost. Backing off the moment the reader actually
+                // touches a scroll input (wheel, touch-drag, or any key)
+                // is what keeps this from fighting a reader who scrolls
+                // away on their own right after landing here.
+                var deadline = Date.now() + 1000;
+                var interrupted = false;
+                function markInterrupted() { interrupted = true; }
+                window.addEventListener('wheel', markInterrupted, { passive: true, once: true });
+                window.addEventListener('touchmove', markInterrupted, { passive: true, once: true });
+                window.addEventListener('keydown', markInterrupted, { once: true });
+                (function reassert() {
+                    if (interrupted) return;
+                    window.scrollTo(0, target);
+                    if (Date.now() < deadline) requestAnimationFrame(reassert);
+                })();
+                sessionStorage.removeItem('pgn-center-pending');
+                // Back to normal so a later, unrelated refresh of this
+                // same page still restores the reader's own scroll
+                // position instead of always reopening at the top (see
+                // pgn-detect.js's own top for why this was turned off in
+                // the first place).
+                history.scrollRestoration = 'auto';
+            }
         }
         function stripCollapsed() {
             if (study.classList.contains('pgn-study-collapsed')) {
