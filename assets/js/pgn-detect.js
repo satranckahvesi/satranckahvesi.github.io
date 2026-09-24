@@ -1,4 +1,21 @@
 (function () {
+    // Opening a second pgn-study while one's already showing that view
+    // (see the switcher's own click handler below) sets this, right
+    // before reloading, to say which block should end up centered once
+    // its own <pgn-study> is ready. Read as the very first thing this
+    // script does, before .post-body is even looked up: a plain reload
+    // otherwise restores whatever scroll position the reader was already
+    // at (their own scrollRestoration: 'auto' default), and that restore
+    // can happen before this script gets a chance to react — turning it
+    // off here, as early as possible, is what keeps that from being a
+    // visible jump on top of the deliberate one further down.
+    var pgnCenterPending = null;
+    try { pgnCenterPending = sessionStorage.getItem('pgn-center-pending'); } catch (e) {}
+    if (pgnCenterPending) {
+        history.scrollRestoration = 'manual';
+        window.scrollTo(0, 0);
+    }
+
     var body = document.querySelector('.post-body');
     if (!body) return;
     var headerLineRe = /^\[[A-Za-z]+\s+"/;
@@ -106,6 +123,14 @@
     ];
     var pgnViewKeys = pgnViews.map(function (v) { return v.key; });
     var pgnBlockIndex = 0;
+    // Every switcher-backed block's own storage key, in the order they're
+    // found — the switcher click handler below walks this to revert any
+    // *other* block currently on pgn-study back to its own default view,
+    // so opening a second one doesn't leave two large panels open at
+    // once. Built up as blocks are found, but only ever read from a click
+    // handler, which can't fire until the reader's had the whole page
+    // (and so this whole loop) to load first.
+    var allStorageKeys = [];
 
     var paragraphs = Array.prototype.slice.call(body.querySelectorAll('p'));
     for (var i = 0; i < paragraphs.length; i++) {
@@ -190,6 +215,7 @@
             if (isPuzzle) tagName = 'pgn-player';
             storageKey = 'pgn-view:' + location.pathname + ':' + pgnBlockIndex;
             pgnBlockIndex++;
+            allStorageKeys.push(storageKey);
             // Left in place (not removed after reading): switching another
             // block's view reloads the page too, and clearing this on read
             // would wipe out this block's remembered choice on that reload
@@ -237,6 +263,11 @@
 
         var el = document.createElement(tagName);
         el.textContent = moveText !== null ? (headerText + '\n\n' + moveText) : headerText;
+        // pgn-study-enhance.js's own centering (see pgnCenterPending above)
+        // needs to find *this specific* block's <pgn-study> once it's
+        // ready — attributes set before a custom element upgrades survive
+        // the upgrade, so this is still readable from there later.
+        if (storageKey) el.setAttribute('data-pgn-block-key', storageKey);
 
         // Only a bare diagram is cropped, never a game: <pgn>/<pgn-player>/
         // <pgn-study> stay interactive (move list, replay), and chopping
@@ -267,6 +298,22 @@
                 btn.innerHTML = view.icon;
                 btn.addEventListener('click', (function (key, chosenView) {
                     return function () {
+                        if (chosenView === 'pgn-study') {
+                            // Revert every *other* block currently on
+                            // pgn-study back to its own default — removing
+                            // the key rather than forcing it to 'pgn'
+                            // specifically matters for a puzzle block (see
+                            // isPuzzle above): its default is 'pgn-player',
+                            // not 'pgn', and 'pgn' would print its answer
+                            // straight into the move list.
+                            allStorageKeys.forEach(function (otherKey) {
+                                if (otherKey !== key && sessionStorage.getItem(otherKey) === 'pgn-study') {
+                                    sessionStorage.removeItem(otherKey);
+                                }
+                            });
+                            sessionStorage.setItem('pgn-center-pending', key);
+                            history.scrollRestoration = 'manual';
+                        }
                         sessionStorage.setItem(key, chosenView);
                         location.reload();
                     };
