@@ -565,6 +565,17 @@ a:hover { border-bottom-style: dotted; }
        box once the fix below is in place, but clip instead of silently
        pushing the page wider if something still does. */
     overflow-x: hidden;
+    /* A puzzle's own "your move" highlight (ChessPublica's own
+       .puzzle-active .board-wrap .board-XXXXX rule) is a box-shadow, not a
+       border — box-shadow:0 0 0 3px, spreading 3px past the board's own
+       edges on every side. The board sits flush against this element's
+       own left edge with zero gap (confirmed directly: 0px, vs. 4px of
+       natural slack already on the right — some small asymmetry in how
+       ChessPublica itself sizes the innermost board element inside its
+       wrapper), so that left-side 3px had nowhere to go but past this
+       element's own overflow-x:hidden boundary, exactly where it was
+       clipped. */
+    padding-left: 4px;
 }
 
 /* Centering pgn-player itself (above) only matters when it's wider than
