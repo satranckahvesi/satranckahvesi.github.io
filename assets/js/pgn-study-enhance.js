@@ -59,6 +59,13 @@
     var studies = Array.prototype.slice.call(document.querySelectorAll('.post-body pgn-study'));
     if (!studies.length) return;
 
+    // Set by pgn-detect.js's switcher right before the reload that follows
+    // opening a pgn-study — this page's own way of saying which block
+    // should end up centered once its <pgn-study> is ready (see
+    // centerIfPending below, and pgn-detect.js's own top for why
+    // scrollRestoration is already off by this point).
+    var pgnCenterPending = sessionStorage.getItem('pgn-center-pending');
+
     // Which study a page-wide ArrowLeft/ArrowRight keypress should act on.
     // Defaults to the first (and, on the overwhelming majority of posts,
     // only) study so keyboard nav works immediately without requiring a
@@ -271,6 +278,27 @@
                 study.appendChild(commentDisplay);
                 syncActiveComment();
             }
+
+            centerIfPending();
+        }
+        // Only true for the one block pgn-detect.js's switcher just sent
+        // the reader here to see (see pgnCenterPending above) — every
+        // other study's own data-pgn-block-key won't match, so this is a
+        // no-op for them. Run at the very end of onReady(), once the
+        // panel's own layout (ribbon, nav buttons, board) is fully in
+        // place, so the height this measures is the real, settled one.
+        function centerIfPending() {
+            if (!pgnCenterPending || study.getAttribute('data-pgn-block-key') !== pgnCenterPending) return;
+            var rect = study.getBoundingClientRect();
+            var elementCenter = rect.top + window.scrollY + rect.height / 2;
+            window.scrollTo(0, Math.max(0, elementCenter - window.innerHeight / 2));
+            sessionStorage.removeItem('pgn-center-pending');
+            // Back to normal so a later, unrelated refresh of this same
+            // page still restores the reader's own scroll position instead
+            // of always reopening at the top (see pgn-detect.js's own top
+            // for why this was turned off in the first place).
+            history.scrollRestoration = 'auto';
+            pgnCenterPending = null;
         }
         function stripCollapsed() {
             if (study.classList.contains('pgn-study-collapsed')) {
