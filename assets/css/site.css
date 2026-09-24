@@ -1234,19 +1234,36 @@ a:hover { border-bottom-style: dotted; }
 :root[data-theme="dark"] .post-body .pgn-study-toc-entry:hover {
     background: var(--hairline);
 }
-:root[data-theme="dark"] .post-body .pgn-study-resizer:after,
-:root[data-theme="dark"] .post-body .pgn-study-resizer-handle {
+:root[data-theme="dark"] .post-body .pgn-study-resizer:after {
     background: var(--hairline);
 }
+/* Not var(--hairline)/var(--muted) directly, unlike the line (:after)
+   above and its own hover/dragging state below — both are translucent
+   (rgba, see :root's own dark values), and the handle sits (z-index: 1)
+   directly on top of that same line, covering its full height. Two
+   translucent fills of the *same* color stacked don't read as one —
+   compositing that pale rgba a second time over itself lightens the
+   result again, so the overlap comes out visibly lighter than the rest
+   of the handle, showing as a seam bisecting it right where the line
+   runs underneath (confirmed directly, pixel by pixel: a consistent
+   lighter stripe down the handle's full height in dark mode only —
+   light mode's own --hairline is a plain opaque hex, so the same
+   stacking there is invisible). color-mix() pre-composites the same
+   effective shade against the panel's own background as a solid color
+   instead, so the handle actually hides the line behind it rather than
+   blending with it. */
 :root[data-theme="dark"] .post-body .pgn-study-resizer-handle {
+    background: color-mix(in srgb, var(--ink) 16%, var(--bg));
     border-color: var(--hairline);
     color: var(--muted);
 }
 :root[data-theme="dark"] .post-body .pgn-study-resizer:hover:after,
-:root[data-theme="dark"] .post-body .pgn-study-resizer.dragging:after,
+:root[data-theme="dark"] .post-body .pgn-study-resizer.dragging:after {
+    background: var(--muted);
+}
 :root[data-theme="dark"] .post-body .pgn-study-resizer:hover .pgn-study-resizer-handle,
 :root[data-theme="dark"] .post-body .pgn-study-resizer.dragging .pgn-study-resizer-handle {
-    background: var(--muted);
+    background: color-mix(in srgb, var(--ink) 62%, var(--bg));
     border-color: var(--muted);
 }
 :root[data-theme="dark"] .post-body .pgn-study-toc-move {
@@ -1293,19 +1310,25 @@ a:hover { border-bottom-style: dotted; }
     :root:not([data-theme="light"]) .post-body .pgn-study-toc-entry:hover {
         background: var(--hairline);
     }
-    :root:not([data-theme="light"]) .post-body .pgn-study-resizer:after,
-    :root:not([data-theme="light"]) .post-body .pgn-study-resizer-handle {
+    :root:not([data-theme="light"]) .post-body .pgn-study-resizer:after {
         background: var(--hairline);
     }
+    /* Opaque, not var(--hairline) directly — see the data-theme="dark"
+       copy of this rule above for why: the handle sits right on top of
+       this same translucent line, and stacking two fills of the same
+       translucent color reads as a visible seam, not as one color. */
     :root:not([data-theme="light"]) .post-body .pgn-study-resizer-handle {
+        background: color-mix(in srgb, var(--ink) 16%, var(--bg));
         border-color: var(--hairline);
         color: var(--muted);
     }
     :root:not([data-theme="light"]) .post-body .pgn-study-resizer:hover:after,
-    :root:not([data-theme="light"]) .post-body .pgn-study-resizer.dragging:after,
+    :root:not([data-theme="light"]) .post-body .pgn-study-resizer.dragging:after {
+        background: var(--muted);
+    }
     :root:not([data-theme="light"]) .post-body .pgn-study-resizer:hover .pgn-study-resizer-handle,
     :root:not([data-theme="light"]) .post-body .pgn-study-resizer.dragging .pgn-study-resizer-handle {
-        background: var(--muted);
+        background: color-mix(in srgb, var(--ink) 62%, var(--bg));
         border-color: var(--muted);
     }
     :root:not([data-theme="light"]) .post-body .pgn-study-toc-move {
