@@ -283,6 +283,17 @@
         if (storageKey) {
             var wrap = document.createElement('div');
             wrap.className = 'pgn-switcher-block';
+            // Also carried by el itself (see data-pgn-block-key above),
+            // which is enough for pgn-study-enhance.js's own centering:
+            // that only ever targets a <pgn-study>, and ChessPublica
+            // never replaces that tag, just upgrades it in place. A
+            // <pgn> is different — ChessPublica fully replaces it with
+            // its own rendered markup once processed, discarding
+            // whatever attributes were on the original tag — so the
+            // *wrapper*, which ChessPublica never touches, needs its own
+            // copy for the pgn-view centering below to still be able to
+            // find this block after that swap.
+            wrap.setAttribute('data-pgn-block-key', storageKey);
             var switcher = document.createElement('div');
             switcher.className = 'pgn-switcher';
             switcher.setAttribute('role', 'group');
@@ -311,6 +322,19 @@
                                     sessionStorage.removeItem(otherKey);
                                 }
                             });
+                        }
+                        // Switching to/from pgn-study's own tall panel
+                        // isn't the only way this block's height (and so
+                        // everything below it) changes on reload — going
+                        // back to plain 'pgn' from either pgn-study or
+                        // pgn-player collapses it just as much, and a
+                        // plain reload's native scroll restoration
+                        // doesn't account for that either. 'pgn-study'
+                        // is handled by pgn-study-enhance.js's own
+                        // centering once its <pgn-study> reports
+                        // cp-ready; 'pgn' is handled below, once this
+                        // script finds ChessPublica has replaced it.
+                        if (chosenView === 'pgn-study' || chosenView === 'pgn') {
                             sessionStorage.setItem('pgn-center-pending', key);
                             history.scrollRestoration = 'manual';
                         }
@@ -328,6 +352,115 @@
         }
         p.remove();
         if (next) next.remove();
+    }
+
+    // pgn-study-enhance.js's own centering only ever matches a
+    // <pgn-study> by data-pgn-block-key, and only runs at all when the
+    // page still has at least one <pgn-study> left on it (its own guard
+    // returns immediately otherwise) — neither holds once the reader has
+    // switched *to* plain 'pgn': ChessPublica replaces a <pgn> element
+    // with its own rendered markup once it processes it, discarding
+    // whatever attributes were on the original tag (confirmed directly:
+    // no data-pgn-block-key, not even a <pgn> tag, survives in the DOM
+    // afterward), and the page may have no other pgn-study block left at
+    // all. .pgn-switcher-block, the wrapper this file creates and
+    // ChessPublica never touches, is what actually persists, so the key
+    // was also stamped there above — read back here instead.
+    if (pgnCenterPending && sessionStorage.getItem(pgnCenterPending) === 'pgn') {
+        var pendingWrap = document.querySelector('.pgn-switcher-block[data-pgn-block-key="' + pgnCenterPending + '"]');
+        if (pendingWrap) centerPgnBlockWhenReady(pendingWrap);
+    }
+
+    // ChessPublica processes a freshly-inserted <pgn> reactively — a
+    // MutationObserver, not a synchronous scan (confirmed directly: it
+    // still gets replaced correctly even though this script builds it
+    // after ChessPublica's own script has already finished running) —
+    // and never dispatches a 'cp-ready' event for it the way it does for
+    // <pgn-player>/<pgn-study> (confirmed directly: nothing ever fires),
+    // so there's no readiness signal to wait for here the way
+    // pgn-study-enhance.js's own centering waits for cp-ready. A single
+    // requestAnimationFrame isn't enough of a wait either — confirmed
+    // directly: wrap still held the raw, unprocessed <pgn> element (no
+    // .pgn-container child yet) a full frame later, so centering against
+    // it there measured the wrong, pre-render height. ChessPublica's own
+    // replacement reliably lands within a few hundred ms in practice, but
+    // nothing here depends on that number: a MutationObserver on wrap
+    // waits for an actual .pgn-container to show up before measuring
+    // anything, with a 3s fallback in case that never happens for some
+    // reason (centering off whatever's there beats never centering at
+    // all). Waiting for any diagram images inside it after that mirrors
+    // pgn-study-enhance.js's own centering, which waits for a study's
+    // board pieces the same way — kept separate rather than shared from
+    // there, since that file doesn't run at all in the no-pgn-study-left
+    // case this exists for.
+    function centerPgnBlockWhenReady(wrap) {
+        if (wrap.querySelector('.pgn-container')) {
+            waitForImagesThenCenter();
+            return;
+        }
+        var contentTimeout = setTimeout(function () {
+            contentObserver.disconnect();
+            waitForImagesThenCenter();
+        }, 3000);
+        var contentObserver = new MutationObserver(function () {
+            if (!wrap.querySelector('.pgn-container')) return;
+            clearTimeout(contentTimeout);
+            contentObserver.disconnect();
+            waitForImagesThenCenter();
+        });
+        contentObserver.observe(wrap, { childList: true, subtree: true });
+
+        function waitForImagesThenCenter() {
+            var images = Array.prototype.slice.call(wrap.querySelectorAll('img'));
+            var remaining = images.length;
+            var centered = false;
+            function doCenter() {
+                if (centered) return;
+                centered = true;
+                var rect = wrap.getBoundingClientRect();
+                var elementCenter = rect.top + window.scrollY + rect.height / 2;
+                var target = Math.max(0, elementCenter - window.innerHeight / 2);
+                // Same one-second reassertion pgn-study-enhance.js's own
+                // doCenter uses, for the same reason (see its own
+                // comment): a single scrollTo isn't reliable against
+                // whatever occasionally nudges the page back afterward,
+                // and backing off the moment the reader actually scrolls
+                // themselves is what keeps this from fighting them.
+                var deadline = Date.now() + 1000;
+                var interrupted = false;
+                function markInterrupted() { interrupted = true; }
+                window.addEventListener('wheel', markInterrupted, { passive: true, once: true });
+                window.addEventListener('touchmove', markInterrupted, { passive: true, once: true });
+                window.addEventListener('keydown', markInterrupted, { once: true });
+                (function reassert() {
+                    if (interrupted) return;
+                    window.scrollTo(0, target);
+                    if (Date.now() < deadline) requestAnimationFrame(reassert);
+                })();
+                sessionStorage.removeItem('pgn-center-pending');
+                history.scrollRestoration = 'auto';
+            }
+            if (remaining === 0) {
+                doCenter();
+                return;
+            }
+            var fallback = setTimeout(doCenter, 3000);
+            images.forEach(function (img) {
+                var settled = false;
+                function onSettled() {
+                    if (settled) return;
+                    settled = true;
+                    remaining--;
+                    if (remaining <= 0) {
+                        clearTimeout(fallback);
+                        doCenter();
+                    }
+                }
+                img.addEventListener('load', onSettled, { once: true });
+                img.addEventListener('error', onSettled, { once: true });
+                if (img.complete) onSettled();
+            });
+        }
     }
 
     // Signals that every [Tag "..."] header block on this page has been
