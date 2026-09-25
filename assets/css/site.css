@@ -921,6 +921,22 @@ a:hover { border-bottom-style: dotted; }
     margin-top: 1em;
 }
 
+/* ChessPublica's own base .pgn-comment rule also carries padding-top:
+   1rem — on top of the margin-top restored above, that stacks into a
+   visibly larger gap before a comment than after one (margin-bottom
+   alone). ChessPublica clears that padding-top itself, but only with a
+   selector scoped to pgn-study (`pgn-study .pgn-container .pgn-comment`);
+   a plain <pgn>/<pgn-player> view — e.g. a post's default "parti
+   görünümü" — never gets that reset, so every comment there sits roughly
+   twice as far from the move before it as from the move after (confirmed
+   directly: computed padding-top came back 1rem outside pgn-study, 0px
+   inside it). Reapplying the same reset unscoped brings both views to the
+   same, consistent spacing; it's a no-op inside pgn-study, where
+   ChessPublica's own rule already wins. */
+.post-body .pgn-comment {
+    padding-top: 0;
+}
+
 /* Inside pgn-study, the game title picks up a 1.1rem bump (vs. 1rem
    elsewhere ChessPublica shows a game title, e.g. in pgn-player). Match
    the other contexts instead — 1em of pgn-study's own font-size, same
