@@ -132,6 +132,20 @@
     // (and so this whole loop) to load first.
     var allStorageKeys = [];
 
+    // Set below, for whichever block's storageKey matches pgnCenterPending,
+    // to that block's own final tagName === 'pgn' — captured at that exact
+    // moment because a puzzle block's own sessionStorage entry (see
+    // isPuzzle handling below) gets deleted later in this very same pass,
+    // before the pending-scroll check further down ever gets to read it
+    // back. Reading sessionStorage.getItem(pgnCenterPending) again down
+    // there used to silently see that deletion instead of the 'pgn' value
+    // that was actually current when this block was built — a puzzle
+    // switched to "Parti görünümü" reloaded onto a page whose own
+    // scroll-restoration was already forced to manual and left at the
+    // very top (see the window.scrollTo(0, 0) above), with nothing left
+    // to correct it, since the pending-scroll block below never ran.
+    var pgnCenterPendingIsPlainPgn = false;
+
     var paragraphs = Array.prototype.slice.call(body.querySelectorAll('p'));
     for (var i = 0; i < paragraphs.length; i++) {
         var p = paragraphs[i];
@@ -230,6 +244,7 @@
                 // time, not stay on whatever view the reader last poked.
                 if (isPuzzle) sessionStorage.removeItem(storageKey);
             }
+            if (storageKey === pgnCenterPending) pgnCenterPendingIsPlainPgn = (tagName === 'pgn');
         }
 
         // "Find the best move for Black" is disorienting with the board
@@ -366,7 +381,7 @@
     // all. .pgn-switcher-block, the wrapper this file creates and
     // ChessPublica never touches, is what actually persists, so the key
     // was also stamped there above — read back here instead.
-    if (pgnCenterPending && sessionStorage.getItem(pgnCenterPending) === 'pgn') {
+    if (pgnCenterPendingIsPlainPgn) {
         var pendingWrap = document.querySelector('.pgn-switcher-block[data-pgn-block-key="' + pgnCenterPending + '"]');
         if (pendingWrap) scrollPgnBlockIntoViewWhenReady(pendingWrap);
     }
