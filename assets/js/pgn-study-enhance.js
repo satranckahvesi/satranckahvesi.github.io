@@ -109,6 +109,34 @@
         if (container) container.scrollIntoView({ block: 'nearest' });
     }
 
+    // ChessPublica's own "which engine should a keydown act on" tracking
+    // is a single, page-wide static (confirmed directly in its bundle:
+    // a plain class field, not one instance per player) — claimed by
+    // whichever pgn-player/pgn-study engine is constructed *first* on
+    // the page, self-activating in its own constructor the moment
+    // nothing else already has, and only ever reassigned afterward by a
+    // real click/mouseenter/touchstart landing on .player-wrapper
+    // specifically (confirmed directly too: that's the exact element the
+    // listener is attached to, not this <pgn-study> itself or any other
+    // ancestor). A post with even one puzzle earlier in it — each one
+    // its own pgn-player, defaulting to that view — already has an
+    // engine that claimed this before the reader ever switches a later
+    // block to pgn-study, so neither a real keypress nor the ribbon's
+    // own buttons do anything at all there, confirmed directly:
+    // completely unrelated to container visibility (ensureContainerInView
+    // above), and not fixed by the plain `study.dispatchEvent(new
+    // MouseEvent('mouseenter'))` already used elsewhere in this file —
+    // that primes only this file's own activeStudy tracking, since
+    // mouseenter doesn't bubble and .player-wrapper is a *descendant* of
+    // <pgn-study>, not an ancestor a dispatch there could ever reach
+    // regardless of event type. Dispatching directly at .player-wrapper
+    // reclaims activeEngine for this study's own engine the same way a
+    // reader's real cursor entering the board area would.
+    function activateEngineFor(targetStudy) {
+        var wrapper = targetStudy && targetStudy.querySelector('.player-wrapper');
+        if (wrapper) wrapper.dispatchEvent(new MouseEvent('mouseenter'));
+    }
+
     // A real ArrowLeft/ArrowRight press already reaches ChessPublica's own
     // keydown handler directly (it's listening on document too), which is
     // exactly right outside a branch point — nothing to add there. At a
@@ -157,6 +185,7 @@
         var dir = e.code === 'ArrowRight' ? 'next' : e.code === 'ArrowLeft' ? 'prev' : null;
         if (!dir) return;
         ensureContainerInView(activeStudy);
+        activateEngineFor(activeStudy);
         if (dir === 'next' && activeStudy.resolveBranch && activeStudy.resolveBranch()) {
             // Without this, the keydown still reaches ChessPublica's own
             // keydown listener right after — it's on the same document
@@ -305,12 +334,17 @@
                     // ChessPublica's own listener under the exact same
                     // out-of-view condition a real press is.
                     ensureContainerInView(study);
-                    // ChessPublica's own document-level keydown listener acts
-                    // on whichever pgn-study/pgn-player it last saw a
-                    // hover/click/touch on — dispatching a real mouseenter on
-                    // this study first (our button click alone never bubbles
-                    // one to it) makes sure that's this study, not whichever
-                    // one the reader last actually touched.
+                    // Reclaims activeEngine for this study specifically —
+                    // see activateEngineFor's own comment, above — before
+                    // simulating the key press below, the same way a real
+                    // click on the board itself would.
+                    activateEngineFor(study);
+                    // This file's own page-wide keydown handler acts on
+                    // whichever pgn-study it last saw a hover/click/touch
+                    // on — dispatching a real mouseenter on this study
+                    // first (our button click alone never bubbles one to
+                    // it) makes sure that's this study, not whichever one
+                    // the reader last actually touched.
                     study.dispatchEvent(new MouseEvent('mouseenter'));
                     document.dispatchEvent(new KeyboardEvent('keydown', {
                         code: dir === 'next' ? 'ArrowRight' : 'ArrowLeft',
@@ -400,26 +434,21 @@
                 syncActiveComment();
             }
 
-            // ChessPublica's own document-level keydown listener only
-            // acts on whichever pgn-study/pgn-player it last saw a
-            // hover/click/touch on (see this file's own page-wide
-            // keydown handler and navigate()'s own comment on it,
-            // above) — confirmed directly: right after this panel first
-            // becomes ready, nothing has touched it yet, so a reader's
-            // very first real ArrowRight press (with no prior click or
-            // hover of their own) does nothing at all, even though the
-            // ribbon's own next/prev buttons already work on the very
-            // first click — they dispatch this same synthetic
-            // mouseenter themselves before simulating the key press
-            // (see navigate() above), which a real keypress never gets
-            // the chance to do on its own. Firing it here once, as soon
-            // as the panel is actually ready to be stepped through,
-            // establishes that "last touched" state proactively so the
-            // keyboard already works on the reader's first real press —
+            // Two separate "last touched" trackers both gate keyboard
+            // navigation and both start out wrong for a freshly-opened
+            // study, confirmed directly: this file's own activeStudy
+            // (see its own comment, above) and ChessPublica's own
+            // per-page activeEngine (see activateEngineFor's own comment,
+            // above) — the second one especially so on a post with an
+            // earlier puzzle, whose own pgn-player already claimed it
+            // before this study was ever opened. Establishing both here,
+            // once, as soon as the panel is actually ready to be stepped
+            // through, means the keyboard already works on the reader's
+            // very first real press instead of silently doing nothing —
             // most noticeably right after switching a block to
-            // pgn-study, when its <pgn-study> is brand new and nothing
-            // has touched it yet.
+            // pgn-study, when nothing has touched it yet.
             study.dispatchEvent(new MouseEvent('mouseenter'));
+            activateEngineFor(study);
             activeStudy = study;
 
             centerIfPending();
