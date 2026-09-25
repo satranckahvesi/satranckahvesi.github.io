@@ -151,7 +151,7 @@ kontrolüm bulunmuyor. Oldukça iyi direndim, tam sorunlarımı çözmeye
 başlar gibiyken, derince düşündü ve yıkıcı taktiklerin pimini çekti. } 19. e3 O-O-O 20. Be2 Nc5 21. O-O Ne4 22. Qc2 Rd6 23. Bd4 Re8 24. Ne5 f6 25. Nd3 Rc6 26. Qd1 Qa5 27. b4 Qa2 28. Nc5 a6 29. Nxe4 dxe4 30. b5 Rc2 31. bxa6 c5 (31... Rxe2 32. a7 Kd7 33. Bb2+ { varyantı Korchnoi'un dehasının hoş bir
 örneğidir. }) 32. axb7+ Kb8 33. Bxf6 Rd2 34. Bc4 Rxd1 35. Bxa2 Rxf1+ 36. Kxf1 Kxb7 37. Bf7 Rf8 38. Bd5+ Kb6 39. Bc3 Kb5 40. Bxe4 Kc4 41. Be5 Re8 42. f4 Kb3 43. Ke2 Rd8 44. g4 c4 45. f5 gxf5 46. gxf5 c3 47. Bd4 Rc8 48. Bd5+ Kb4 49. Kd1 { 1-0 White wins. } 1-0
 
-> “Korchnoi ile oynamak çok özel bir durum, hele onunla daha önce hiç
+“Korchnoi ile oynamak çok özel bir durum, hele onunla daha önce hiç
 oynamadıysanız. Böylesine sıradışı bir oyundan ve oyun sonrası analizinden sonra, pek çok
 insan bana bu tecrübeyi sormak istedi. Benim açıklamam şu şekildeydi: Düzensiz bir açılış
 oynadı, yanıt olarak biraz fazla yaratıcı oynadım ve sonradan gaf olduğu ortaya çıkan zekice
@@ -160,13 +160,13 @@ hatırlıyorum. Daha sonra dinleyenlerden &#39;Ya! Yani 12.d5 hamlesini kaçırd
 girenlere çabucak &#39;Hayır! 12.d5&#39;i gördüm fakat d5&#39;i iki kez alabildiğini görmedim.&#39; yanıtını
 verdim. **Bu kulağa makul geliyor, fakat aslında, tamamen yalan.**
 
-> Belki de kendime karşı fazla acımasızım ve belki buna kendini kandırma demek daha adildir.
+Belki de kendime karşı fazla acımasızım ve belki buna kendini kandırma demek daha adildir.
 Sanıyorum bu hikayeyi ilk söylediğimde egomu korumak ve bu oyunun özel durumunu
 muhafaza etmek istiyordum. Yaşayan efsaneye karşı oyunun böylesine erken bölümünde
 acemice bir gafla kaybettiğim fikrine isyan ediyordum. Bunun yerine, oyun hakkında kulağa
 daha anlamlı gelen bir hikaye anlattım.
 
-> Bu hikaye şunu demek istiyordu: O yaratıcıydı ve ben de yaratıcıydım. Ama ben o kadar
+Bu hikaye şunu demek istiyordu: O yaratıcıydı ve ben de yaratıcıydım. Ama ben o kadar
 yaratıcıydım ki kendimi kaptırdım ve onun anahtar hamlesini görmeme rağmen (çünkü, hey,
 ben bir büyükustayım), devamını kaçırdım (çünkü, hey, kimse mükemmel değil).
 Bu hikaye uydurmada (fabulation) beni en çok vuran şey, üçüncü ya da dördüncü kez
@@ -176,7 +176,7 @@ bilgisayara verdiğimde basitçe 12.d5 hamlesini kaçırdığım gerçeğiyle y�
 görmüştüm fakat yalnızca 11...Vf6 hamlesini oynadıktan ‘sonra’. 11...Vf6 hamlesini
 oynadıktan hemen sonra 12.d5 hamlesinin o kadar ciddi olmadığını (rahatlama) hissettim fakat sonra 14.Kxd5 (of!) hamlesini gördüm, muhtemelen oyunun kalanında öz güvenimi sağlam tutmak için kendime kaçırdığım şeyin bu olduğunu söyledim.
 
-> Şimdi bu itirafı okuyucuların kendilerine karşı daha dürüst olmaları için cesaretlenmeleri
+Şimdi bu itirafı okuyucuların kendilerine karşı daha dürüst olmaları için cesaretlenmeleri
 amacıyla paylaşıyorum. Kendini kandırma, neredeyse tanımı gereği, çok aldatıcı bir olgudur
 fakat inanıyorum ki bu bizim tecrübelerimizi hikayeleştirme eğilimimizle yakından ilişkilidir.
 Tecrübelerimiz çoğu defa tutarsız ve benlik algımızı tehdit edici olduğunda, tutarlı ya da ilgi
