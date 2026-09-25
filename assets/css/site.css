@@ -470,6 +470,43 @@ a:hover { border-bottom-style: dotted; }
     margin: 0 0 1em;
 }
 
+/* New Yorker-style drop cap on the opening paragraph: a large initial
+   letter set into the first two lines, the rest of that first word left
+   in small caps for a smoother transition. Scoped to the very first
+   paragraph of the body only (:first-child, not :first-of-type) so a
+   post that opens with something else (a figure, a pgn) never gets a
+   stray drop cap floating over unrelated content. */
+.post-body > p:first-child::first-letter {
+    float: left;
+    font-weight: bold;
+    font-size: 3.4em;
+    line-height: 0.82;
+    padding: 0.05em 0.08em 0 0;
+    margin-bottom: -0.05em;
+}
+
+/* Pull-quote treatment for blockquotes: set off with hairline rules
+   above/below rather than the usual left border, in a slightly larger
+   italic serif — closer to how a magazine breaks a quote out of the
+   column than to a chat/code-style quote block. */
+.post-body blockquote {
+    margin: 1.75em 0;
+    padding: 0.9em 0;
+    border-top: 1px solid var(--hairline);
+    border-bottom: 1px solid var(--hairline);
+    font-style: italic;
+    font-size: 1.2em;
+    line-height: 1.4;
+}
+
+.post-body blockquote p {
+    margin: 0 0 0.5em;
+}
+
+.post-body blockquote p:last-child {
+    margin-bottom: 0;
+}
+
 .post-body li {
     margin: 0 0 0.5em;
 }
