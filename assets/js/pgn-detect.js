@@ -368,7 +368,7 @@
     // was also stamped there above — read back here instead.
     if (pgnCenterPending && sessionStorage.getItem(pgnCenterPending) === 'pgn') {
         var pendingWrap = document.querySelector('.pgn-switcher-block[data-pgn-block-key="' + pgnCenterPending + '"]');
-        if (pendingWrap) centerPgnBlockWhenReady(pendingWrap);
+        if (pendingWrap) scrollPgnBlockIntoViewWhenReady(pendingWrap);
     }
 
     // ChessPublica processes a freshly-inserted <pgn> reactively — a
@@ -381,45 +381,62 @@
     // pgn-study-enhance.js's own centering waits for cp-ready. A single
     // requestAnimationFrame isn't enough of a wait either — confirmed
     // directly: wrap still held the raw, unprocessed <pgn> element (no
-    // .pgn-container child yet) a full frame later, so centering against
-    // it there measured the wrong, pre-render height. ChessPublica's own
-    // replacement reliably lands within a few hundred ms in practice, but
-    // nothing here depends on that number: a MutationObserver on wrap
-    // waits for an actual .pgn-container to show up before measuring
-    // anything, with a 3s fallback in case that never happens for some
-    // reason (centering off whatever's there beats never centering at
-    // all). Waiting for any diagram images inside it after that mirrors
-    // pgn-study-enhance.js's own centering, which waits for a study's
-    // board pieces the same way — kept separate rather than shared from
-    // there, since that file doesn't run at all in the no-pgn-study-left
-    // case this exists for.
-    function centerPgnBlockWhenReady(wrap) {
+    // .pgn-container child yet) a full frame later, so measuring its own
+    // top against it there read the wrong, pre-render position.
+    // ChessPublica's own replacement reliably lands within a few hundred
+    // ms in practice, but nothing here depends on that number: a
+    // MutationObserver on wrap waits for an actual .pgn-container to show
+    // up before measuring anything, with a 3s fallback in case that never
+    // happens for some reason (scrolling to whatever's there beats never
+    // scrolling at all). Waiting for any diagram images inside it after
+    // that mirrors pgn-study-enhance.js's own centering, which waits for
+    // a study's board pieces the same way — kept separate rather than
+    // shared from there, since that file doesn't run at all in the
+    // no-pgn-study-left case this exists for.
+    function scrollPgnBlockIntoViewWhenReady(wrap) {
         if (wrap.querySelector('.pgn-container')) {
-            waitForImagesThenCenter();
+            waitForImagesThenScroll();
             return;
         }
         var contentTimeout = setTimeout(function () {
             contentObserver.disconnect();
-            waitForImagesThenCenter();
+            waitForImagesThenScroll();
         }, 3000);
         var contentObserver = new MutationObserver(function () {
             if (!wrap.querySelector('.pgn-container')) return;
             clearTimeout(contentTimeout);
             contentObserver.disconnect();
-            waitForImagesThenCenter();
+            waitForImagesThenScroll();
         });
         contentObserver.observe(wrap, { childList: true, subtree: true });
 
-        function waitForImagesThenCenter() {
+        function waitForImagesThenScroll() {
             var images = Array.prototype.slice.call(wrap.querySelectorAll('img'));
             var remaining = images.length;
-            var centered = false;
-            function doCenter() {
-                if (centered) return;
-                centered = true;
+            var scrolled = false;
+            function scrollToTop() {
+                if (scrolled) return;
+                scrolled = true;
                 var rect = wrap.getBoundingClientRect();
-                var elementCenter = rect.top + window.scrollY + rect.height / 2;
-                var target = Math.max(0, elementCenter - window.innerHeight / 2);
+                // Aligned to the block's own top (plus a small resting
+                // margin), not centered on its overall middle the way
+                // pgn-study-enhance.js's own doCenter centers a
+                // pgn-study panel — confirmed directly, centering here
+                // instead landed the reader mid-scroll through some
+                // unrelated comment several screens into the game's own
+                // full movetext, with the title and switcher buttons
+                // they just clicked scrolled off above. Centering makes
+                // sense for pgn-study/pgn-player: both are a
+                // fixed-height interactive panel (board + a bounded
+                // ribbon), so the panel's own middle is close to where
+                // the reader's attention already is. A plain <pgn> (this
+                // post's "parti görünümü") is just flowing article text
+                // with no such bound — a full annotated game can run
+                // thousands of pixels tall, so centering its overall
+                // midpoint can land anywhere in that text instead of
+                // where the reader actually asked to be sent: the top of
+                // the block they just switched to.
+                var target = Math.max(0, rect.top + window.scrollY - 16);
                 // Same one-second reassertion pgn-study-enhance.js's own
                 // doCenter uses, for the same reason (see its own
                 // comment): a single scrollTo isn't reliable against
@@ -441,10 +458,10 @@
                 history.scrollRestoration = 'auto';
             }
             if (remaining === 0) {
-                doCenter();
+                scrollToTop();
                 return;
             }
-            var fallback = setTimeout(doCenter, 3000);
+            var fallback = setTimeout(scrollToTop, 3000);
             images.forEach(function (img) {
                 var settled = false;
                 function onSettled() {
@@ -453,7 +470,7 @@
                     remaining--;
                     if (remaining <= 0) {
                         clearTimeout(fallback);
-                        doCenter();
+                        scrollToTop();
                     }
                 }
                 img.addEventListener('load', onSettled, { once: true });
