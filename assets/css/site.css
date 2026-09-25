@@ -1101,6 +1101,24 @@ a:hover { border-bottom-style: dotted; }
     padding-bottom: 2.75rem;
 }
 
+/* .video-moves (the compact, always-present move-number scrubber under
+   the board) and .video-comment are always adjacent siblings — a fixed
+   part of ChessPublica's own template, not something that varies by
+   mode — and each carries its own 0.5rem top margin from ChessPublica's
+   own CSS. Stacked on top of .video-moves's own ~29px height, that reads
+   as a single ~59px gap between whatever precedes .video-moves (the
+   board, or a puzzle's own "find the best move" hint prompt) and the
+   comment's first line — confirmed directly, consistently, across every
+   pgn-player/puzzle example that has a comment, well past the ~25px a
+   .pgn-comment elsewhere on the site settles for once padding-top is
+   reset (see above). .video-moves's own margin already separates both
+   of them from whatever comes before it; .video-comment's own second
+   margin right after it is the redundant one, so only that one goes,
+   leaving a single, standard-sized gap instead of two stacked ones. */
+.post-body pgn-player .video-moves + .video-comment {
+    margin-top: 0;
+}
+
 .post-body pgn-player .comment-text-block {
     padding-right: 2.75rem;
 }
