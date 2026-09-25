@@ -80,6 +80,35 @@
         study.addEventListener('touchstart', markActive, { passive: true });
     });
 
+    // ChessPublica's own document-level keydown listener silently no-ops
+    // for ArrowRight/ArrowLeft whenever the engine's own .player-container
+    // isn't at least partially inside the viewport (confirmed directly in
+    // its bundle: it reads the container's own getBoundingClientRect and
+    // bails if top/bottom don't straddle the visible window before doing
+    // anything else) — exactly the state a reader can land in right after
+    // switching a block to pgn-study: centerIfPending's own doCenter()
+    // computes its one-time scroll target from a single rect measurement
+    // and only re-asserts that same frozen value for one second before
+    // giving up for good (see its own comment on why), so any further
+    // page-height shift after that — a later image elsewhere on a long,
+    // image-heavy post finishing its own load, say — can leave the
+    // container stale and out of view by the time the reader actually
+    // tries to step through the game, with nothing left to correct it.
+    // Confirmed directly: with the container left short of the viewport
+    // like that, neither a real ArrowRight press nor the ribbon's own next
+    // button (which just simulates one, see navigate() below) advances a
+    // single ply. scrollIntoView's own 'nearest' block value is a no-op
+    // whenever the container is already visible, so calling this on every
+    // navigation attempt costs nothing the overwhelming majority of the
+    // time — it only ever does something the one time it's actually
+    // needed, and does it synchronously, so the geometry ChessPublica's
+    // own listener reads right after already reflects the corrected
+    // scroll position instead of the stale one.
+    function ensureContainerInView(targetStudy) {
+        var container = targetStudy && targetStudy.querySelector('.player-container');
+        if (container) container.scrollIntoView({ block: 'nearest' });
+    }
+
     // A real ArrowLeft/ArrowRight press already reaches ChessPublica's own
     // keydown handler directly (it's listening on document too), which is
     // exactly right outside a branch point — nothing to add there. At a
@@ -127,6 +156,7 @@
         }
         var dir = e.code === 'ArrowRight' ? 'next' : e.code === 'ArrowLeft' ? 'prev' : null;
         if (!dir) return;
+        ensureContainerInView(activeStudy);
         if (dir === 'next' && activeStudy.resolveBranch && activeStudy.resolveBranch()) {
             // Without this, the keydown still reaches ChessPublica's own
             // keydown listener right after — it's on the same document
@@ -270,6 +300,11 @@
                     // step this call is for, so nothing else needs to run
                     // afterward.
                     if (dir === 'next' && resolveBranch()) return;
+                    // See ensureContainerInView's own comment, above: the
+                    // synthetic keydown below is silently ignored by
+                    // ChessPublica's own listener under the exact same
+                    // out-of-view condition a real press is.
+                    ensureContainerInView(study);
                     // ChessPublica's own document-level keydown listener acts
                     // on whichever pgn-study/pgn-player it last saw a
                     // hover/click/touch on — dispatching a real mouseenter on
@@ -364,6 +399,28 @@
                 study.appendChild(commentDisplay);
                 syncActiveComment();
             }
+
+            // ChessPublica's own document-level keydown listener only
+            // acts on whichever pgn-study/pgn-player it last saw a
+            // hover/click/touch on (see this file's own page-wide
+            // keydown handler and navigate()'s own comment on it,
+            // above) — confirmed directly: right after this panel first
+            // becomes ready, nothing has touched it yet, so a reader's
+            // very first real ArrowRight press (with no prior click or
+            // hover of their own) does nothing at all, even though the
+            // ribbon's own next/prev buttons already work on the very
+            // first click — they dispatch this same synthetic
+            // mouseenter themselves before simulating the key press
+            // (see navigate() above), which a real keypress never gets
+            // the chance to do on its own. Firing it here once, as soon
+            // as the panel is actually ready to be stepped through,
+            // establishes that "last touched" state proactively so the
+            // keyboard already works on the reader's first real press —
+            // most noticeably right after switching a block to
+            // pgn-study, when its <pgn-study> is brand new and nothing
+            // has touched it yet.
+            study.dispatchEvent(new MouseEvent('mouseenter'));
+            activeStudy = study;
 
             centerIfPending();
         }
