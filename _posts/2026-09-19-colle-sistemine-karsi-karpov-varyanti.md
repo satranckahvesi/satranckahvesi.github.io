@@ -6,7 +6,7 @@ column: "Analizli oyunlar"
 title: "Colle Sistemine karşı Karpov varyantı"
 ---
 
-Değerli okurlarımız, ben Özgün Yalçın. Sizler için Türkiye 1. Satranç Ligi'nin dokuzuncu turunda CM Batuhan Özen'e karşı siyah taşlarla oynadığım oyunu analiz ettim. Colle Sistemi'ne karşı tercih ettiğim Karpov varyantının pratikte nasıl bir sonuç verdiğini görmek isteyenler için faydalı olmasını dilerim.
+Bu yazı, ilk kez Türkiye Satranç Federasyonu Yayın Kurulunun katkılarıyla hazırlanan '2025 Türkiye Satranç Birinci Ligi İncelemesi'nde yayımlanmıştır.
 
 [Event "Türkiye 1. Lig"]
 [Round "9"]
