@@ -6,7 +6,9 @@ author: "FM Nazmi Can Doğan"
 column: "Efsane turnuvalar"
 ---
 
-Uzun ömürlü olmasını umduğumuz dergimiz **Satrançsever**’in ilk sayısında sizlerle birlikteyiz. Bu köşede sizlerle unutulmaz turnuvaların unutulmaz hamlelerini paylaşmak istiyorum. Elbette büyük oyuncuların oynadığı turnuvaların her bir oyunu ve hamlesi değerli; ama, ben yine de **Bronstein**’in belirttiği üzere “Satrancı sanat olarak gördüğüm halde, (...) bir müzede gördüğünüz her sanat eserini beğenemezsiniz. Fransız gurmelerinin dediği gibi, damak tadı oldukça kişisel bir konudur.” düşüncesiyle, kendi beğenime hitap eden unutulmaz fikirleri paylaşmak istedim. İlk makalemize konu olacak turnuva 1953 yılında Zürih’te oynanan Adaylar Turnuvası. 
+_Bu yazı ilk olarak 2016 yılında **Satrançsever** dergisinin 1. sayısında yayımlanmıştır._ 
+
+Dev oyuncuların oynadığı turnuvaların her bir oyunu, her bir hamlesi elbette satranççıların kalbinde büyük değer taşır. Ama, ben yine de **Bronstein**’in belirttiği üzere “Satrancı sanat olarak gördüğüm halde, (...) bir müzede gördüğünüz her sanat eserini beğenemezsiniz. Fransız gurmelerinin dediği gibi, damak tadı oldukça kişisel bir konudur.” düşüncesiyle, kendi beğenime hitap eden unutulmaz fikirleri paylaşmak istedim. İlk makalemize konu olacak turnuva 1953 yılında Zürih’te oynanan Adaylar Turnuvası. 
 
 Zamanın Dünya Şampiyonu **Mikhail Botvinnik**’in rakibini belirlemek üzere düzenlenen bu turnuva için yazılmış iki önemli kitap bulunmakta: **Miguel Najdorf** ’un ve **David Bronstein**’ın turnuvada oynanmış her oyunu detaylı analiz ettikleri muazzam kitapları, hala satranç literatüründe yer alan en değerli yapıtlar arasında görülüyor. 28(!) turluk turnuva sonunda Smyslov 18 puanla birinci olurken, ardından 16 puanla **Bronstein**, **Keres** ve **Reshevsky** geliyordu. Ertesi yıl 1954’te oynanan unvan maçı 12-12 beraberlikle bitecek ve **Botvinnik**, **Smyslov**'a karşı unvanını koruyacaktı. Tartışmalara konu olan bu durumun bir benzerini **Bronstein**’e karşı 1951 yılındaki maçında da yaşamış olan Botvinnik, o maç da 12-12 bitince unvanını korumuştu. O zamanki kurallarda Dünya Şampiyonu beraberlik halinde herhangi bir eşitlik bozmaya gitmeksizin unvanını koruyabiliyordu.
 
@@ -263,24 +265,5 @@ taçlandırıyor.} 39. Rd8 $1  Qxd8 40. Qh8+ Kf7 41. Qxd8 g5 42. Rh6 1-0
 [EventDate "1953.??.??"]
 
 {[P]} {Beyaz atağını sürdürmenin uygun bir yolunu buluyor.} 24. Rd6 $1  Bb7 25. Rad1 Rxd6 26. exd6 f6 27. d7 Bc6 28. h4 Bxd7 29. h5 gxh5 30. e4 e5 31. f4 exf4 32. Rd6 Qe8 33. Bxf6 Rf7 34. Rd5 1-0
-
-_Not: Bu yazı ilk olarak 2016 yılında **Satrançsever** dergisinin 1. sayısında yayımlanmıştır._   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
