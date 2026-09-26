@@ -6,6 +6,8 @@ author: "FM Nazmi Can Doğan"
 column: "Kitap incelemeleri"
 ---
 
+_Bu yazı ilk olarak 2016 yılında **Satrançsever** dergisinin 4. sayısında yayınlanmıştır._
+
 Dünya Şampiyonu **Magnus Carlsen**’in (Bu yazı yazıldığı sırada Carlsen dünya şampiyonuydu) hayatını konu alan filmin fragmanında “kararlarımı
 sezgilerimden yola çıkarak veriyorum” cümlesini duyduktan sonra, “acaba bütün oyuncular
 tahta başında nasıl karar veriyorlar?” sorusu aklıma takıldı. Carlsen’in kıyaslanamaz bir oyun
@@ -280,6 +282,4 @@ gerek...
 **De Groot testinin cevabı**: 1.Bxd5! (1...Bxd5 2.Bxf6 Bxf6 3.Nd7; 1...Nxd5 2.Nxd5 ve e7'deki fil düşer.)
 1...exd5 2.Qf3 Qd8 (2...Kg7 3.Ng4) 3.Rce1 Beyazlar baskıyı artırır ve siyahın iyi bir
 savunması yoktur, örneğin; 3...Re8 4.Nxc6 Rxc6 5.Rxe7 Qxe7 6.Nxd5 Beyaz materyal
-kazanır.
-
-_Not: Bu yazı ilk olarak 2016 yılında **Satrançsever** dergisinin 4. sayısında yayımlanmıştır._   
+kazanır.   
