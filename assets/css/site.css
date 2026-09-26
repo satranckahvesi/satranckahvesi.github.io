@@ -470,6 +470,7 @@ a:hover { border-bottom-style: dotted; }
     font-weight: normal;
     font-style: italic;
     text-align: right;
+    color: var(--muted);
     margin: -1.75rem 0 1rem;
 }
 
