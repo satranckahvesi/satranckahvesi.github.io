@@ -1,9 +1,11 @@
 ---
 layout: post
-title: "Yarım Tempo Önde: Açılışı Tersten Oynamak"
+title: "Artı mı Eksi mi Nötr mü?"
+date: 2026-09-23 12:00:00 +0300
 author: Özgün Yalçın
-date: 2026-09-23
-column: Analizli oyunlar
+categories: [genel]
+tags: [satranç]
+published: true
 ---
 
 Bu yazımda siyahla sıklıkla tercih edilen savunmaların beyazla oynanması durumunda neler olabileceğini inceleyeceğim. 
