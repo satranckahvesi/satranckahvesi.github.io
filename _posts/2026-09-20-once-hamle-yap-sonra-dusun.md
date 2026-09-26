@@ -6,7 +6,7 @@ author: "FM Nazmi Can Doğan"
 column: "Kitap incelemeleri"
 ---
 
-_Bu yazı ilk olarak 2016 yılında **Satrançsever** dergisinin 4. sayısında yayınlanmıştır._
+###### Bu yazı ilk olarak 2016 yılında **Satrançsever** dergisinin 4. sayısında yayınlanmıştır.
 
 Dünya Şampiyonu **Magnus Carlsen**’in (Bu yazı yazıldığı sırada Carlsen dünya şampiyonuydu) hayatını konu alan filmin fragmanında “kararlarımı
 sezgilerimden yola çıkarak veriyorum” cümlesini duyduktan sonra, “acaba bütün oyuncular

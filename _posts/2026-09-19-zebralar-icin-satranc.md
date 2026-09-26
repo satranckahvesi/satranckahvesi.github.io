@@ -6,7 +6,7 @@ author: "FM Nazmi Can Doğan"
 column: "Kitap incelemeleri"
 ---
 
-_Bu yazı ilk olarak 2016 yılında **Satrançsever** dergisinin 3. sayısında yayınlanmıştır._
+###### Bu yazı ilk olarak 2016 yılında **Satrançsever** dergisinin 3. sayısında yayınlanmıştır.
 
 Satranca başladığımızda her şeyin iyi gittiği, oyundan zevk alınan güzel bir dönemin
 ardından bazı engellerle karşılaşırız. O engeller, aslında yeterince iyi olmadığımızı fark
