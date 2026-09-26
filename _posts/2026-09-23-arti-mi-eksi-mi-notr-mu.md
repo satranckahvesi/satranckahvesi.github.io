@@ -1,10 +1,8 @@
 ---
 layout: post
-title: "Artı mı Eksi mi Nötr mü?"
-date: 2026-09-23 12:00:00 +0300
-author: Özgün Yalçın
-categories: [genel]
-tags: [satranç]
+title: Yarım Tempo Önde: Açılışı Tersten Oynamak
+author: Ozgun Yalcin
+date: 2026-09-23
 published: true
 ---
 
