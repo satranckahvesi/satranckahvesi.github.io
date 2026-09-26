@@ -1,16 +1,16 @@
 ---
-title: "Türkiye'den bir oyun"
+title: "Türkiye'de reytingler yalan mı söylüyor?"
 author: "GM Ahmad Al-Khatib"
 column: "Analizli oyunlar"
 layout: post
 date: 2026-09-19
 ---
 
-Marmaris'te oynadığım bir turnuvanın yedinci turunda karşımda kendimden beş yüz puana yakın düşük reytingli bir rakip vardı ve itiraf etmeliyim ki tahtaya otururken aklımdan rahat bir galibiyet geçiyordu. Şah-Hint Savunmasında küçük bir yan varyantla rakibimi şaşırtabileceğimi düşündüm ama karşımdaki rakibin hiç de kolay lokma olmadığını hemen fark ettim.
+Amman'daki evimden binlerce kilometre uzakta, Muğla'da oynadığım uluslararası bir turnuvanın yedinci turunda kendimden beş yüz puana yakın düşük reytingli bir rakiple karşı karşıyaydım. İtiraf etmeliyim ki masaya otururken aklımdan rahat bir galibiyet geçiyordu. Şah-Hint Savunmasında küçük bir yan varyantla rakibimi şaşırtabileceğimi düşündüm ama karşımdaki rakibin hiç de kolay lokma olmadığını hemen fark ettim.
 
-Parti ilerledikçe pozisyonu kontrol altına almayı başarsam da rakibimin kurduğu dirençli savunma bütün kazanma çabalarımı boşa çıkardı. Sonunda elimde kalan tek şey, bir fincan kahvenin başında anlatmaya değer bir hikâye ve pek de gurur duymadığım bir yarım puan oldu. Yorumlar o gün tahta başında aklımdan geçenlerin ta kendisi.
+Parti ilerledikçe pozisyonu kontrol altına almayı başarsam da rakibimin kurduğu dirençli savunma bütün kazanma çabalarımı boşa çıkardı. Sonunda elimde kalan tek şey, anlatmaya değer bir hikâye ve pek de gurur duymadığım bir yarım puan oldu. Yorumlar o gün tahta başında aklımdan geçenlerin ta kendisi.
 
-[Event "Marmaris"]
+[Event "Muğla"]
 [Date "2022.01.25"]
 [Round "7.1"]
 [White "Okan İnci"]
@@ -36,8 +36,7 @@ yaratma ve kazanma şansım hayli azaldı. } 16. bxc6 bxc6 17. Nxf6+ Nxf6 (17...
 g4 h4 19. g5) 18. c5 Nd7 19. Qc2 Nf8 20. Be2 Qe7 21. Bc4 Ne6 22. Bxe6 Qxe6 23.
 Rab1 Rc7 { Yedinci yatayı koruyor. } 24. Rfd1 Bf8 25. Qb3?! { İşimi biraz kolaylaştırdı. }
 (25. a4! { Piyonu a6'ya koyup Rb7 hazırlamak harika bir fikirdi. })
-25... Qxb3 26. Rxb3 f6 27. a4 Kf7 28. Kf1 Ke6 29. a5 Be7 (29... a6? { b6 karesini zayıflatarak beyaz kalenin içeri girmesine izin verirdi. }) 30. a6 f5
-31. f3 f4 32. Bf2 g5 33. Ke2 Rg8 34. Rdb1 Rgc8 { Pasif bir şekilde beklemeye
+25... Qxb3 26. Rxb3 f6 27. a4 Kf7 28. Kf1 Ke6 29. a5 Be7 (29... a6? { b6 karesini zayıflatarak beyaz kalenin içeri girmesine izin verirdi. }) 30. a6 f5 31. f3 f4 32. Bf2 g5 33. Ke2 Rg8 34. Rdb1 Rgc8 { Pasif bir şekilde beklemeye
 devam etmek durumundayım. } 35. Rb7 Kd7 36. Kd3 Rxb7 37. Rxb7+ Rc7 38. Rb3 (38. Rb8 Rc8
 39. Rb7+ Rc7) 38... Kc8 39. Kc4?! { [D] Şüpheli bir hamle. En iyi hamle Ke2 olurdu: } (39. Ke2 Bf8
 40. Rb2 Rg7 41. Rb1 Rh7 42. Be1 Bxc5 43. Rc1 Bd4 44. Rxc6+ Kd7 45. Rg6 g4) 39...
@@ -52,4 +51,4 @@ Kd3 Kg8 60. Ke2 Kf7 61. Kd3 Ke6 62. Kc4 Bd8 63. Be1 Kf6 64. Kd3 Bc7 65. Ke2 Kg6
 Bc7 80. Bh4 Kg8 81. Be7 Kf7 82. Bh4 Ke8 83. Bg5 Kd7 84. Bf6 Bb8 85. Bh4 Bc7 86.
 Bf6 Ke8 87. Bh4 Bd8 1/2-1/2
 
-Bu nasıl reyting, bu nasıl bir oyun kuvveti? Beyazın reytinginin 1653 olduğuna inanmak mümkün mü? Türkiye'de oyuncuların reytingleri hak ettiklerinin çok altında.
+Bu oyun kuvvetiyle beyazın reytinginin 1653 olduğuna inanmak mümkün mü? Türkiye'de oyuncuların reytingleri hak ettiklerinin çok altında.
