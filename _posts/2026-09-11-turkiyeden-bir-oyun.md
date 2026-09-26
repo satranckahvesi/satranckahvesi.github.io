@@ -1,5 +1,5 @@
 ---
-title: "Türkiye'de reytingler yalan mı söylüyor?"
+title: "Amman'dan Muğla'ya: Türkiye'de reytingler yalan mı söylüyor?"
 author: "GM Ahmad Al-Khatib"
 column: "Analizli oyunlar"
 layout: post
@@ -20,7 +20,7 @@ Parti ilerledikçe pozisyonu kontrol altına almayı başarsam da rakibimin kurd
 [BlackElo "2226"]
 
 1. d4 Nf6 2. Nf3 g6 3. c4 Bg7 4. Nc3 O-O 5. e4 d6 6. Be2 Qe8!? { [D] Burada rakibimi
-ufak bir yan varyantla şaşırtabileceğimi düşünmüştüm, ama rakibim en iyi hamleyi
+ufak bir yan varyantla şaşırtabileceğimi düşünmüştüm, ama rakibim art arda en iyi hamleleri
 buldu. Böyle bir ara varyanta dahi çok iyi hazırlanmıştı! } 7. O-O e5 8. dxe5 dxe5 9. b4! { [D] Bu, b5'i
 olabildiğince çabuk oynamak için güçlü bir hamle; böylece d4 karesi için mücadele
 etmek benim için kolay olmayacak! } 9... Bg4 { Burada güçlü bir stratejik tehdidim var:
