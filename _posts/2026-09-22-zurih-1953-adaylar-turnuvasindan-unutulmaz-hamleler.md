@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2026-09-22
-title: "Zürih 1953"
+title: "Zürih 1953 Adaylar Turnuvasından unutulmaz hamleler"
 author: "FM Nazmi Can Doğan"
 column: "Efsane turnuvalar"
 ---
