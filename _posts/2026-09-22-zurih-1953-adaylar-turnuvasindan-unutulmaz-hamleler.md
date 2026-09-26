@@ -6,7 +6,7 @@ author: "FM Nazmi Can Doğan"
 column: "Efsane turnuvalar"
 ---
 
-_Bu yazı ilk olarak 2016 yılında **Satrançsever** dergisinin 1. sayısında yayınlanmıştır._ 
+###### Bu yazı ilk olarak 2016 yılında **Satrançsever** dergisinin 1. sayısında yayınlanmıştır.
 
 Dev oyuncuların oynadığı turnuvaların her bir oyunu, her bir hamlesi elbette satranççıların kalbinde büyük değer taşır. Ama, ben yine de **Bronstein**’in belirttiği üzere “Satrancı sanat olarak gördüğüm halde, (...) bir müzede gördüğünüz her sanat eserini beğenemezsiniz. Fransız gurmelerinin dediği gibi, damak tadı oldukça kişisel bir konudur.” düşüncesiyle, kendi beğenime hitap eden unutulmaz fikirleri paylaşmak istedim. İlk makalemize konu olacak turnuva 1953 yılında Zürih’te oynanan Adaylar Turnuvası. 
 

@@ -460,8 +460,8 @@ a:hover { border-bottom-style: dotted; }
 
 .post-body h6 {
     font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
+    font-style: italic;
+    text-align: right;
 }
 
 .post-body p,
@@ -475,8 +475,11 @@ a:hover { border-bottom-style: dotted; }
    in small caps for a smoother transition. Scoped to the very first
    paragraph of the body only (:first-child, not :first-of-type) so a
    post that opens with something else (a figure, a pgn) never gets a
-   stray drop cap floating over unrelated content. */
-.post-body > p:first-child::first-letter {
+   stray drop cap floating over unrelated content. The h6 variant covers
+   posts that open with the "originally published in..." note, so the
+   drop cap lands on the paragraph right after it instead. */
+.post-body > p:first-child::first-letter,
+.post-body > h6:first-child + p::first-letter {
     float: left;
     font-weight: bold;
     font-size: 3.4em;
