@@ -6,6 +6,8 @@ author: "FM Nazmi Can Doğan"
 column: "Kitap incelemeleri"
 ---
 
+_Bu yazı ilk olarak 2016 yılında **Satrançsever** dergisinin 3. sayısında yayınlanmıştır._
+
 Satranca başladığımızda her şeyin iyi gittiği, oyundan zevk alınan güzel bir dönemin
 ardından bazı engellerle karşılaşırız. O engeller, aslında yeterince iyi olmadığımızı fark
 ettiğimiz anlar ya da daha doğru bir deyişle satrancın daha iyi oynanabileceğine bizi ikna
@@ -192,6 +194,3 @@ konsantre olmayı kolaylaştıracaktır.”
 Şimdiye kadar sadece üç kitabı bulunan Büyükusta Jonathan Rowson’ın sıradaki
 eserinin konusunu bilemiyorum fakat, düşünmeyi teşvik eden her cümlesi okunmaya değer
 görünüyor...
-
-
-_Not: Bu yazı ilk olarak 2016 yılında **Satrançsever** dergisinin 3. sayısında yayımlanmıştır._
