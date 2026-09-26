@@ -1,7 +1,6 @@
 ---
 layout: default
 title: "Yarım Tempo Önde: Açılışı Tersten Oynamak"
----
 author: Özgün Yalçın
 date: 2026-09-23
 column: Analizli oyunlar
