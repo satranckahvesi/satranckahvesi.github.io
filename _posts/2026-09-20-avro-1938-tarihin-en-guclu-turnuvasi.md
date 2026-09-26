@@ -6,11 +6,12 @@ author: "FM Nazmi Can Doğan"
 column: "Efsane turnuvalar"
 ---
 
-**Satrançsever**’in bu ayki Unutulmaz Turnuvalar köşesinde gelmiş geçmiş en güçlü*
-turnuvalardan kabul edilen **AVRO 1938** satranç turnuvasını ele alacağız. Oyuncuların gücü
+_Bu yazı ilk olarak 2016 yılında **Satrançsever** dergisinin 2. sayısında yayımlanmıştır._   
+
+Bu yazıda gelmiş geçmiş en güçlü* turnuvalardan kabul edilen **AVRO 1938** satranç turnuvasını ele alacağız. Oyuncuların gücü
 bakımından ender sayılabilecek turnuva dünyanın en iyi sekiz oyuncusunu bir araya
 getiriyordu: Üç dünya şampiyonu **Alekhine**, **Capablanca**, **Euwe**, geleceğin şampiyonu
-Botvinnik, “yeni Morphy” **Keres** ve **Fine**, **Flohr**, **Reshevsky**. Her oyuncu birbiriyle iki kere
+**Botvinnik**, “yeni Morphy” **Keres**, **Fine**, **Flohr** ve **Reshevsky**. Her oyuncu birbiriyle ikişer oyun
 oynayacaktı ve turnuva Hollanda’nın değişik kentlerinde sürecekti. O zamanlar 48 yaşındaki
 Alekhine ve ellisinde olan Capablanca için zorlayıcı olan bu koşullarda gençler ilk sıraları
 elde ediyordu. Turnuvayı kayıpsız tamamlayan Keres ve turnuvaya 5 galibiyet ve bir
@@ -290,5 +291,3 @@ Kaynaklar:
 - Mikhail Botvinnik, One Hundred Selected Games
 - Garry Kasparov, My Great Predecessors (Cilt I ve II)
 - chesshistory.com
-
-_Not: Bu yazı ilk olarak 2016 yılında **Satrançsever** dergisinin 2. sayısında yayımlanmıştır._   
