@@ -458,10 +458,19 @@ a:hover { border-bottom-style: dotted; }
 .post-body h4 { font-size: 1.25rem; }
 .post-body h5 { font-size: 1rem; }
 
+/* This note is always the first element in .post-body, so its 1em
+   top margin collapses with .post-meta's much larger 2.5rem bottom
+   margin, leaving a big gap above it and almost none below (its own
+   0.25em bottom margin against the following paragraph's unset top
+   margin). The negative top margin below claws the collapsed gap
+   back down to a normal-looking size; the explicit bottom margin
+   gives it breathing room from the paragraph that follows. */
 .post-body h6 {
     font-size: 0.75rem;
+    font-weight: normal;
     font-style: italic;
     text-align: right;
+    margin: -1.75rem 0 1rem;
 }
 
 .post-body p,
