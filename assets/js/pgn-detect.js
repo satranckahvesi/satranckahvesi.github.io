@@ -398,32 +398,50 @@
     // directly: wrap still held the raw, unprocessed <pgn> element (no
     // .pgn-container child yet) a full frame later, so measuring its own
     // top against it there read the wrong, pre-render position.
-    // ChessPublica's own replacement reliably lands within a few hundred
-    // ms in practice, but nothing here depends on that number: a
-    // MutationObserver on wrap waits for an actual .pgn-container to show
-    // up before measuring anything, with a 3s fallback in case that never
-    // happens for some reason (scrolling to whatever's there beats never
-    // scrolling at all). Waiting for any diagram images inside it after
-    // that mirrors pgn-study-enhance.js's own centering, which waits for
-    // a study's board pieces the same way — kept separate rather than
-    // shared from there, since that file doesn't run at all in the
-    // no-pgn-study-left case this exists for.
+    //
+    // .pgn-container's first appearance isn't "done" either, only
+    // "started" — confirmed directly (instrumented every MutationObserver
+    // on the page): for a long, heavily-annotated game ChessPublica keeps
+    // appending move text and inline diagrams in many more batches well
+    // after that first one, one game logging past 900 further mutations
+    // after .pgn-container already existed. Disconnecting and measuring
+    // right then, as an earlier version did, read the block's height
+    // before it had finished growing, computed the scroll target off
+    // that too-short number, and left the reader stranded above the
+    // block's real, final position — its title scrolled just out of
+    // view above the fold, looking like a scroll to nowhere. Waiting for
+    // a quiet stretch with no further mutations — not just the first
+    // sighting of .pgn-container — is what actually means the block is
+    // done growing. A 5s cap forces things along regardless in case
+    // mutations never quiet down for some reason (scrolling to whatever
+    // rendered beats never scrolling at all). Waiting for any diagram
+    // images inside it after that mirrors pgn-study-enhance.js's own
+    // centering, which waits for a study's board pieces the same way —
+    // kept separate rather than shared from there, since that file
+    // doesn't run at all in the no-pgn-study-left case this exists for.
     function scrollPgnBlockIntoViewWhenReady(wrap) {
-        if (wrap.querySelector('.pgn-container')) {
+        var finalized = false;
+        var settleTimer = null;
+
+        function finalizeContent() {
+            if (finalized) return;
+            finalized = true;
+            clearTimeout(settleTimer);
+            clearTimeout(maxWaitTimer);
+            contentObserver.disconnect();
             waitForImagesThenScroll();
-            return;
         }
-        var contentTimeout = setTimeout(function () {
-            contentObserver.disconnect();
-            waitForImagesThenScroll();
-        }, 3000);
+        function finalizeIfSettled() {
+            if (wrap.querySelector('.pgn-container')) finalizeContent();
+        }
+
+        var maxWaitTimer = setTimeout(finalizeContent, 5000);
         var contentObserver = new MutationObserver(function () {
-            if (!wrap.querySelector('.pgn-container')) return;
-            clearTimeout(contentTimeout);
-            contentObserver.disconnect();
-            waitForImagesThenScroll();
+            clearTimeout(settleTimer);
+            settleTimer = setTimeout(finalizeIfSettled, 300);
         });
         contentObserver.observe(wrap, { childList: true, subtree: true });
+        settleTimer = setTimeout(finalizeIfSettled, 300);
 
         function waitForImagesThenScroll() {
             var images = Array.prototype.slice.call(wrap.querySelectorAll('img'));
