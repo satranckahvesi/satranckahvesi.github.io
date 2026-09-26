@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2026-09-19
-title: "Zebralar için satranç!"
+title: "Zebralar için satranç"
 author: "FM Nazmi Can Doğan"
 column: "Kitap incelemeleri"
 ---
