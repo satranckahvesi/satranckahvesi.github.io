@@ -6,7 +6,7 @@ author: "FM Nazmi Can Doğan"
 column: "Efsane turnuvalar"
 ---
 
-_Bu yazı ilk olarak 2016 yılında **Satrançsever** dergisinin 2. sayısında yayımlanmıştır._   
+_Bu yazı ilk olarak 2016 yılında **Satrançsever** dergisinin 2. sayısında yayınlanmıştır._   
 
 Bu yazıda gelmiş geçmiş en güçlü* turnuvalardan kabul edilen **AVRO 1938** satranç turnuvasını ele alacağız. Oyuncuların gücü
 bakımından ender sayılabilecek turnuva dünyanın en iyi sekiz oyuncusunu bir araya
