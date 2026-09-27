@@ -1,9 +1,9 @@
 ---
 layout: post
 date: 2026-09-27
-title: "Capablanca Mağlup Edilebilir Mi?"
+title: "Capablanca mağlup edilebilir mi?"
 author: "FM Tarık Selbes"
-column: "Satranç Tarihi"
+column: "Satranç tarihi"
 ---
 
 Her savaşçı nihayetinde yaşlandığı, zayıfladığı ve bitap düştüğü için
