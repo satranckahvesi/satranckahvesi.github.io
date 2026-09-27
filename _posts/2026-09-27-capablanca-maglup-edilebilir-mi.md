@@ -10,8 +10,8 @@ Her savaşçı nihayetinde yaşlandığı, zayıfladığı ve bitap düştüğü
 esasen başlıkta yer alan soruyu şu şekilde değiştirmek lazım:
 "Capablanca şimdiki yüksek formundayken mağlup edilebilir mi?"
 
-Cevabı yakınlarda yayınlanan ve belli bir teslimiyet göze çarpan
-röportajıyla kısmen Dünya Şampiyonu'nun kendisi veriyor. Hadi belki bu
+Dünya Şampiyonu yakınlarda yayınlanan ve belli bir teslimiyet göze çarpan
+röportajıyla cevabı kısmen kendisi veriyor. Hadi belki bu
 fazlasıyla sevilen bir "alçakgönüllülük" stratejisi olarak
 addedilebilir. Fakat her hâlükârda gerçek şu ki Capablanca hiçbir
 şekilde satranç bilgisinin, becerisinin ve çabasının sonsözü anlamına
