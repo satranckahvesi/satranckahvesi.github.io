@@ -36,6 +36,7 @@ bir yüzeysellik gösteriyor, gerçi böyle bir durumda da harika taktik
 yeteneği daha parlak bir şekilde ışıldıyor!
 
 ![Savielly Grigorievitch Tartakower](/assets/img/tarta/Ksawery_Tartakower.jpg)
+*Dr. Savielly Tartakower (1887–1956)*
 
 Capablanca'yı mağlup edebilmek için parlak bir fantezi ve yeterli bir
 teknik eğitim gösteren gözüpek bir yeni satranççı (Alekhine? Reti?)
