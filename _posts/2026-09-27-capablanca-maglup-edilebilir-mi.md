@@ -23,13 +23,13 @@ etmeye eğilimi var. Örneğin Marshall ile olan maçında Lasker'in
 serbestleştirme manevrası 6...Af6-e4'ü (Vezir Gambiti'nin Ortodoks devam
 yolunda) sıklıkla kullanıyor. Hatta Lasker'e karşı maçın ünlü 10.
 partisinde artık -kendisine bir dizi iyileştirmenin ardından zaferi
-getiren- arkaik sayılabilecek Steinitz Manevrası'nı (Va5, Fd7, Kd8 vs.)
+getiren- arkaik sayılabilecek Steinitz Manevrası'nı (Qa5, Bd7, Rd8 vs.)
 uyguluyor. Siyah taşlarla istisnasız bir şekilde sağlam İspanyol ve
 Vezir Gambiti açılışlarını seçmesi bu gözlemimizin ardından elbette son
 derece tabii görünüyor. Mac-Cutcheon Savunması'na karşı kendisi,
 Lasker'in sadeleştirme sistemi 5.exd5'i kesin bir doğru olarak kabul
 ederken New York'ta da gördüğümüz gibi Lasker daha yeni ve keskin
-metotlara başvuruyor (5.Ae2?!). Eğer Capablanca'nın fazla analiz
+metotlara başvuruyor (5.Ne2?!). Eğer Capablanca'nın fazla analiz
 edilmemiş herhangi bir varyantta takip edeceği parlak bir model yoksa
 oyun anlayışı (örneğin Sicilya veya Hollanda Savunması'na karşı) belli
 bir yüzeysellik gösteriyor, gerçi böyle bir durumda da harika taktik
