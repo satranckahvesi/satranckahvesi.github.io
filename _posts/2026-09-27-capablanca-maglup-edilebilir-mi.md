@@ -4,6 +4,7 @@ date: 2026-09-27
 title: "Capablanca Mağlup Edilebilir Mi?"
 author: "FM Tarık Selbes"
 column: "Satranç Tarihi"
+published: true
 ---
 
 Her savaşçı nihayetinde yaşlandığı, zayıfladığı ve bitap düştüğü için
