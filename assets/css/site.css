@@ -466,7 +466,7 @@ a:hover { border-bottom-style: dotted; }
    back down to a normal-looking size; the explicit bottom margin
    gives it breathing room from the paragraph that follows. */
 .post-body h6 {
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     font-weight: normal;
     font-style: italic;
     text-align: right;
