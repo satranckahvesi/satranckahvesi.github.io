@@ -15,7 +15,9 @@ html {
     --bg: #fff;
     --muted: rgba(43, 40, 38, 0.62);
     --hairline: #d7d5d1;
-    --font-serif: Athelas, Palatino, 'Palatino Linotype', Georgia, 'Times New Roman', serif;
+    --font-serif: 'PT Serif', Georgia, 'Times New Roman', serif;
+    /* PT Mono ships Regular only: use it where text is neither bold nor italic. */
+    --font-mono: 'PT Mono', ui-monospace, Menlo, Consolas, monospace;
     color-scheme: light;
 }
 
@@ -125,8 +127,8 @@ a:hover { border-bottom-style: dotted; }
     gap: 0.5rem 0.85rem;
     max-width: 42rem;
     margin: 0 auto 1rem;
-    font-style: italic;
-    font-size: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
 }
 
 @media (min-width: 52em) {
@@ -285,7 +287,8 @@ a:hover { border-bottom-style: dotted; }
 }
 
 .index-meta {
-    font-size: 0.9rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
     color: var(--muted);
 }
 
@@ -380,6 +383,7 @@ a:hover { border-bottom-style: dotted; }
 .site-footer p { margin: 0; }
 
 .footer-nav {
+    font-family: var(--font-mono);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -425,7 +429,8 @@ a:hover { border-bottom-style: dotted; }
 .post-meta {
     text-align: left;
     color: var(--muted);
-    font-size: 0.9rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
     margin: 0 0 2.5rem;
 }
 
@@ -1549,7 +1554,8 @@ a:hover { border-bottom-style: dotted; }
 
 .post-list-meta {
     color: var(--muted);
-    font-size: 0.9rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
 }
 
 .post-list-meta a {
