@@ -133,6 +133,10 @@
     // handler, which can't fire until the reader's had the whole page
     // (and so this whole loop) to load first.
     var allStorageKeys = [];
+    // Every switcher-backed block's wrapper, in document order, so the
+    // pass after the loop below can tell which ones ended up directly
+    // next to each other.
+    var switcherBlocks = [];
 
     // Set below, for whichever block's storageKey matches pgnCenterPending,
     // to that block's own final tagName === 'pgn' — captured at that exact
@@ -364,12 +368,29 @@
             wrap.appendChild(switcher);
             wrap.appendChild(insertNode);
             p.parentNode.insertBefore(wrap, p);
+            switcherBlocks.push(wrap);
         } else {
             p.parentNode.insertBefore(insertNode, p);
         }
         p.remove();
         if (next) next.remove();
     }
+
+    // Two games in a row with nothing between them (no paragraph, no
+    // heading) would otherwise run together, each one's switcher sitting
+    // right under the previous board. A short centered rule — the same
+    // tick the masthead uses under the site tagline — marks the break.
+    // Looked up after the whole loop rather than while inserting, since
+    // only then are the paragraphs that sat between two blocks (and the
+    // movetext <p>/<ol> just consumed above) known to be gone.
+    switcherBlocks.forEach(function (wrap) {
+        var prev = wrap.previousElementSibling;
+        if (!prev || !prev.classList.contains('pgn-switcher-block')) return;
+        var divider = document.createElement('div');
+        divider.className = 'pgn-divider';
+        divider.setAttribute('aria-hidden', 'true');
+        wrap.parentNode.insertBefore(divider, wrap);
+    });
 
     // pgn-study-enhance.js's own centering only ever matches a
     // <pgn-study> by data-pgn-block-key, and only runs at all when the

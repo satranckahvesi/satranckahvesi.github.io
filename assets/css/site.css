@@ -222,6 +222,17 @@ a:hover { border-bottom-style: dotted; }
     border-top: 2px solid var(--ink);
 }
 
+/* Between two consecutive pgn blocks in a post (inserted by
+   pgn-detect.js): the same short 2px tick as .masthead-rule, centered, at
+   1/12 of the 42rem reading column (3.5rem). Unlike the masthead's own,
+   it stays short on narrow screens too — there's no full-width layout to
+   fall back to here. */
+.pgn-divider {
+    width: 3.5rem;
+    margin: 2.5rem auto;
+    border-top: 2px solid var(--ink);
+}
+
 @media (max-width: 52em) {
     .masthead-rule {
         width: 100%;
