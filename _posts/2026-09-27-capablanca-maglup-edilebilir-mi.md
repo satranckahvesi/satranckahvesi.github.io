@@ -7,7 +7,7 @@ original_author: "Savielly Tartakower"
 column: "Satranç tarihi"
 ---
 
-###### Bu yazının orijinali ilk olarak Macaristan'da yayınlanan satranç dergisi _Magyar Sakkvillag_’da basılmış, çeviride kullanılan metin ise Avusturya'da yayınlanan _Wiener Schachzeitung_'da 1925 yılında basılmıştır.
+###### Bu yazının orijinali ilk olarak Macaristan'da yayınlanan satranç dergisi _Magyar Sakkvillag_’da, çeviride kullanılan metin ise Avusturya'da yayınlanan _Wiener Schachzeitung_'da 1925 yılında basılmıştır.
 
 Her savaşçı nihayetinde yaşlandığı, zayıfladığı ve bitap düştüğü için esasen başlıkta yer alan soruyu şu şekilde değiştirmek lazım: "Capablanca şimdiki yüksek formundayken mağlup edilebilir mi?"
 
