@@ -1146,13 +1146,14 @@ a:hover { border-bottom-style: dotted; }
 /* ChessPublica's own comment-play-btn (replay-this-line) is
    position: absolute; bottom: 0; right: 0 inside .video-comment, where it
    sits over the comment's own last line(s) of text once the comment is
-   long enough to reach the bottom-right corner. Moved into the left
-   column instead, directly under the comment icon (.comment-icon, 2rem
-   square, first thing in the box once .comment-diagram is hidden above):
-   same 2rem width as that icon so it lines up with it and never eats into
-   the text column, and the box gets a min-height that fits icon + gap +
-   button so a one-line comment doesn't let the button spill out below
-   it. */
+   long enough to reach the bottom-right corner, and it's drawn as a dark
+   filled disc with a small white icon. Moved into the left column instead,
+   directly under the comment icon (.comment-icon, 2rem square, first thing
+   in the box once .comment-diagram is hidden above), and restyled to match
+   it: the same plain 2rem circle-play glyph in the text color, no disc, so
+   the two read as one icon column and the button never eats into the text
+   column. The box gets a min-height that fits icon + gap + button so a
+   one-line comment doesn't let the button spill out below it. */
 .post-body pgn-player .video-comment > .comment-play-btn {
     top: 2.25rem;
     left: 0;
@@ -1160,11 +1161,20 @@ a:hover { border-bottom-style: dotted; }
     bottom: auto;
     width: 2rem;
     height: 2rem;
+    padding: 0;
+    background: none;
+    border-radius: 0;
+    color: inherit;
+}
+
+.post-body pgn-player .video-comment > .comment-play-btn:hover {
+    background: none;
+    opacity: 0.7;
 }
 
 .post-body pgn-player .video-comment > .comment-play-btn .lucide-icon {
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 2rem;
+    height: 2rem;
 }
 
 .post-body pgn-player .video-comment:has(> .comment-play-btn) {
