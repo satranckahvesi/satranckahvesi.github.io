@@ -1,7 +1,7 @@
 ---
 layout: post
 author: "Özgün Yalçın"
-date: 2026-09-19
+date: 2036-09-19
 column: "Analizli oyunlar"
 title: "Colle Sistemine karşı Karpov varyantı"
 ---
