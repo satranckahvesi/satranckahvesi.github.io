@@ -1531,6 +1531,31 @@ a:hover { border-bottom-style: dotted; }
     transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
 }
 
+/* One button plus its visible caption (the view's name, formerly only a
+   hover tooltip) stacked in a column. Fixed width so the three columns
+   are even and a long name ("Oynatıcı görünümü") wraps onto a second
+   line instead of widening its column and pushing the others off-center. */
+.pgn-switcher-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 6rem;
+}
+
+.pgn-switcher-caption {
+    margin-top: 0.4rem;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    line-height: 1.3;
+    color: var(--muted);
+    cursor: pointer;
+}
+
+.pgn-switcher-caption.is-active { color: var(--ink); }
+
+.pgn-switcher-item:hover .pgn-switcher-caption { color: var(--ink); }
+
 .pgn-switcher-btn svg { width: 1.5rem; height: 1.5rem; }
 
 .pgn-switcher-btn:hover { color: var(--ink); border-color: var(--ink); }
