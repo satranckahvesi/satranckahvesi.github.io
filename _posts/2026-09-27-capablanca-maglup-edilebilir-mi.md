@@ -34,11 +34,9 @@ Satranç tahtı sallanıyor. Dünya şampiyonluğu sorunu aslında şöyle de if
 [White "Frank James Marshall"]
 [Black "Jose Raul Capablanca"]
 [ECO "D50"]
-[WhiteElo "?"]
-[BlackElo "?"]
 [PlyCount "72"]
 
-1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 Be7 5.Nf3 Nbd7 6.e3 Ne4 7.Bxe7 Qxe7 8.cxd5
+1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 Be7 5.Nf3 Nbd7 6.e3 Ne4 {[D]} 7.Bxe7 Qxe7 8.cxd5
 Nxc3 9.bxc3 exd5 10.Qb3 c6 11.Bd3 O-O 12.O-O Nf6 13.Rab1 b6 14.Ne5 c5 15.Qa3 Re8
 16.Bb5 c4 17.Qa4 Rf8 18.Bc6 Bb7 19.Qc2 Bxc6 20.Nxc6 Qd6 21.Ne5 a6 22.a4 Rfb8 23.Rb4
 b5 24.axb5 Rxb5 25.Rxb5 axb5 26.Rb1 Ra5 27.f3 Qa6 28.Qb2 Qd6 29.Qc2 g6 30.h3 Kg7
@@ -53,12 +51,10 @@ b5 24.axb5 Rxb5 25.Rxb5 axb5 26.Rb1 Ra5 27.f3 Qa6 28.Qb2 Qd6 29.Qc2 g6 30.h3 Kg7
 [White "Emanuel Lasker"]
 [Black "Jose Raul Capablanca"]
 [ECO "D61"]
-[WhiteElo "?"]
-[BlackElo "?"]
 [PlyCount "136"]
 
 1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 Be7 5.e3 O-O 6.Nf3 Nbd7 7.Qc2 c5 8.Rd1
-Qa5 9.Bd3 h6 10.Bh4 cxd4 11.exd4 dxc4 12.Bxc4 Nb6 13.Bb3 Bd7 14.O-O Rac8 15.Ne5 Bb5
+Qa5 {[D]} 9.Bd3 h6 10.Bh4 cxd4 11.exd4 dxc4 12.Bxc4 Nb6 13.Bb3 Bd7 14.O-O Rac8 15.Ne5 Bb5
 16.Rfe1 Nbd5 17.Bxd5 Nxd5 18.Bxe7 Nxe7 19.Qb3 Bc6 20.Nxc6 bxc6 21.Re5 Qb6 22.Qc2 Rfd8 23.Ne2
 Rd5 24.Rxd5 cxd5 25.Qd2 Nf5 26.b3 h5 27.h3 h4 28.Qd3 Rc6 29.Kf1 g6 30.Qb1 Qb4
 31.Kg1 a5 32.Qb2 a4 33.Qd2 Qxd2 34.Rxd2 axb3 35.axb3 Rb6 36.Rd3 Ra6 37.g4 hxg3 38.fxg3
@@ -77,11 +73,9 @@ Kd5 0-1
 [White "Jose Raul Capablanca"]
 [Black "Alexander Alekhine"]
 [ECO "C12"]
-[WhiteElo "?"]
-[BlackElo "?"]
 [PlyCount "124"]
 
-1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. Bg5 Bb4 5. exd5 Qxd5 6. Bxf6 Bxc3+ 7. bxc3 gxf6 8. Qd2 Nd7 9. c4 Qe4+ 10. Ne2 Nb6 11. f3 Qc6 12. c5 Nd5 13. c4 Ne7 14. Nc3 f5 15. Be2 Rg8 16. O-O Bd7 17. Qe3 b6 18. Rfd1 bxc5 19. d5 Qd6 20. dxe6 Qxe6 21. Qxc5 Qb6 22. Qf2 f4 23. Rab1 Qxf2+ 24. Kxf2 Bc6 25. Rd4 Ng6 26. Bd3 Nh4 27. Bf1 Ng6 28. Ne2 Ke7 29. Re1 Rgb8 30. Nxf4+ Kf8 31. Nxg6+ hxg6 32. Bd3 Rb2+ 33. Re2 Rab8 34. Be4 Rxe2+ 35. Kxe2 Bxe4 36. fxe4 Ke7 37. Rd2 Ke6 38. Ke3 c6 39. h4 Rh8 40. g3 Rh5 41. Rh2 Ra5 42. Kf4 f6 43. Rc2 Re5 44. c5 Rh5 45. Rc3 a5 46. Rc2 Re5 47. Rc3 Rh5 48. Kf3 Ke7 49. Kg4 Kf7 50. Rc4 Kg7 51. Rd4 Rxc5 52. Rd7+ Kf8 53. Kf4 Kg8 54. Ra7 Kf8 55. a4 Kg8 56. g4 g5+ 57. hxg5 Rxg5 58. Ra6 Rc5 59. Ke3 Kf7 60. Kd4 Rg5 61. Rxc6 Rxg4 62. Rc5 Rg5 1/2-1/2
+1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. Bg5 Bb4 5. exd5 {[D]} Qxd5 6. Bxf6 Bxc3+ 7. bxc3 gxf6 8. Qd2 Nd7 9. c4 Qe4+ 10. Ne2 Nb6 11. f3 Qc6 12. c5 Nd5 13. c4 Ne7 14. Nc3 f5 15. Be2 Rg8 16. O-O Bd7 17. Qe3 b6 18. Rfd1 bxc5 19. d5 Qd6 20. dxe6 Qxe6 21. Qxc5 Qb6 22. Qf2 f4 23. Rab1 Qxf2+ 24. Kxf2 Bc6 25. Rd4 Ng6 26. Bd3 Nh4 27. Bf1 Ng6 28. Ne2 Ke7 29. Re1 Rgb8 30. Nxf4+ Kf8 31. Nxg6+ hxg6 32. Bd3 Rb2+ 33. Re2 Rab8 34. Be4 Rxe2+ 35. Kxe2 Bxe4 36. fxe4 Ke7 37. Rd2 Ke6 38. Ke3 c6 39. h4 Rh8 40. g3 Rh5 41. Rh2 Ra5 42. Kf4 f6 43. Rc2 Re5 44. c5 Rh5 45. Rc3 a5 46. Rc2 Re5 47. Rc3 Rh5 48. Kf3 Ke7 49. Kg4 Kf7 50. Rc4 Kg7 51. Rd4 Rxc5 52. Rd7+ Kf8 53. Kf4 Kg8 54. Ra7 Kf8 55. a4 Kg8 56. g4 g5+ 57. hxg5 Rxg5 58. Ra6 Rc5 59. Ke3 Kf7 60. Kd4 Rg5 61. Rxc6 Rxg4 62. Rc5 Rg5 1/2-1/2
 
 [Event "New York"]
 [Site "New York, NY USA"]
@@ -92,11 +86,9 @@ Kd5 0-1
 [White "Emanuel Lasker"]
 [Black "Richard Reti"]
 [ECO "C12"]
-[WhiteElo "?"]
-[BlackElo "?"]
 [PlyCount "63"]
 
-1.e4 e6 2.d4 d5 3.Nc3 Nf6 4.Bg5 Bb4 5.Ne2 dxe4 6.a3 Be7 7.Bxf6 gxf6 8.Nxe4
+1.e4 e6 2.d4 d5 3.Nc3 Nf6 4.Bg5 Bb4 5.Ne2 {[D]} dxe4 6.a3 Be7 7.Bxf6 gxf6 8.Nxe4
 f5 9.N4c3 Bd7 10.Qd2 Bd6 11.O-O-O Qe7 12.Ng3 Qh4 13.Qe1 Nc6 14.Nxf5 Qf4+ 15.Ne3 Nxd4
 16.g3 Qe5 17.Bg2 Nc6 18.f4 Qg7 19.Nb5 O-O 20.Nxd6 cxd6 21.Rxd6 Rfd8 22.Qd2 Be8 23.Rd1
 Rdc8 24.f5 e5 25.f6 Qf8 26.Nf5 Kh8 27.Qg5 Rc7 28. Bxc6 Rxc6 29.Rd8 Rcc8 30.Qg7+
