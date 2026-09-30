@@ -373,7 +373,12 @@
                 var caption = document.createElement('span');
                 caption.className = 'pgn-switcher-caption' + (view.key === tagName ? ' is-active' : '');
                 caption.setAttribute('aria-hidden', 'true');
-                caption.textContent = view.label;
+                // Always two lines ("Metin / görünümü"), not left to the
+                // column's width to decide: the shorter name would
+                // otherwise fit on one line and sit out of step with the
+                // other two. white-space: pre-line in the CSS turns this
+                // newline into the break.
+                caption.textContent = view.label.replace(' ', '\n');
                 caption.addEventListener('click', function () { btn.click(); });
                 item.appendChild(btn);
                 item.appendChild(caption);
