@@ -325,7 +325,8 @@
                 btn.className = 'pgn-switcher-btn' + (view.key === tagName ? ' is-active' : '');
                 btn.setAttribute('data-view', view.key);
                 btn.setAttribute('aria-pressed', view.key === tagName ? 'true' : 'false');
-                btn.title = view.label;
+                // The view's name is printed under the button (see the
+                // caption below) instead of living in a hover tooltip.
                 btn.setAttribute('aria-label', view.label);
                 btn.innerHTML = view.icon;
                 btn.addEventListener('click', (function (key, chosenView) {
@@ -363,7 +364,20 @@
                         location.reload();
                     };
                 })(storageKey, view.key));
-                switcher.appendChild(btn);
+                // Each button gets its own visible caption underneath, so
+                // the two sit in one column. The caption is decoration for
+                // screen readers (the button's aria-label already names it)
+                // but still clickable, like a <label> would be.
+                var item = document.createElement('div');
+                item.className = 'pgn-switcher-item';
+                var caption = document.createElement('span');
+                caption.className = 'pgn-switcher-caption' + (view.key === tagName ? ' is-active' : '');
+                caption.setAttribute('aria-hidden', 'true');
+                caption.textContent = view.label;
+                caption.addEventListener('click', function () { btn.click(); });
+                item.appendChild(btn);
+                item.appendChild(caption);
+                switcher.appendChild(item);
             });
             // Purely a visual caption for the buttons; the group's own
             // aria-label already says the same thing to a screen reader.
