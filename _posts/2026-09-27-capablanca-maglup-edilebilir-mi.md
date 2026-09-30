@@ -23,7 +23,8 @@ Satranç tahtı sallanıyor. Dünya şampiyonluğu sorunu aslında şöyle de if
 
 **Dr. S. G. Tartakower**
 
-### Yazıda bahsi geçen bazı oyunlar:
+### Yazıda bahsi geçen bazı oyunlar
+<br>
 
 [Event "Capablanca - Marshall"]
 [Site "New York, NY USA"]
