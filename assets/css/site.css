@@ -1144,16 +1144,31 @@ a:hover { border-bottom-style: dotted; }
 }
 
 /* ChessPublica's own comment-play-btn (replay-this-line) is
-   position: absolute; bottom: 0; right: 0 inside .video-comment, whose
-   padding-bottom (0.5rem, its own CSS) is far shorter than the button
-   itself (2.5rem) — confirmed directly, the button sits within that
-   padding's box but is taller than it, so it extends upward over the
-   comment's own last line(s) of text once the comment is long enough to
-   reach the bottom-right corner. Padding sized to the button's own
-   footprint (height on the box, width on the text column it sits next
-   to) keeps flowed text out of that corner entirely, at any length. */
-.post-body pgn-player .video-comment {
-    padding-bottom: 2.75rem;
+   position: absolute; bottom: 0; right: 0 inside .video-comment, where it
+   sits over the comment's own last line(s) of text once the comment is
+   long enough to reach the bottom-right corner. Moved into the left
+   column instead, directly under the comment icon (.comment-icon, 2rem
+   square, first thing in the box once .comment-diagram is hidden above):
+   same 2rem width as that icon so it lines up with it and never eats into
+   the text column, and the box gets a min-height that fits icon + gap +
+   button so a one-line comment doesn't let the button spill out below
+   it. */
+.post-body pgn-player .video-comment > .comment-play-btn {
+    top: 2.25rem;
+    left: 0;
+    right: auto;
+    bottom: auto;
+    width: 2rem;
+    height: 2rem;
+}
+
+.post-body pgn-player .video-comment > .comment-play-btn .lucide-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.post-body pgn-player .video-comment:has(> .comment-play-btn) {
+    min-height: 4.25rem;
 }
 
 /* .video-moves (the compact, always-present move-number scrubber under
@@ -1172,10 +1187,6 @@ a:hover { border-bottom-style: dotted; }
    leaving a single, standard-sized gap instead of two stacked ones. */
 .post-body pgn-player .video-moves + .video-comment {
     margin-top: 0;
-}
-
-.post-body pgn-player .comment-text-block {
-    padding-right: 2.75rem;
 }
 
 /* Prev/next buttons live inside the ribbon itself now (see post.html's

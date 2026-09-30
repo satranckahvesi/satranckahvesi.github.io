@@ -100,10 +100,12 @@
     // three separate objects that had to stay in sync by convention alone.
     // Icons are the same Lucide icons ChessPublica's own ribbon already
     // uses elsewhere (confirmed directly from its bundle's icon map —
-    // "text-initial" for its own Article-view toggle, "play" for its Play
-    // button, "search" for the magnifying glass), reused here so the
+    // "text-initial" for its own Article-view toggle), reused here so the
     // switcher reads as part of the same icon language instead of a
-    // bespoke set.
+    // bespoke set. The player view uses "list-video" rather than "play"
+    // (a bare play triangle reads as a play/pause control, not a view
+    // switch), and the study view uses "microscope" rather than "search"
+    // (a magnifying glass reads as a search box, not an analysis view).
     var pgnViews = [
         {
             key: 'pgn',
@@ -113,12 +115,12 @@
         {
             key: 'pgn-player',
             label: 'Oynatıcı görünümü',
-            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>'
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 5H3"/><path d="M10 12H3"/><path d="M10 19H3"/><path d="M15 12.003a1 1 0 0 1 1.517-.859l4.997 2.997a1 1 0 0 1 0 1.718l-4.997 2.997a1 1 0 0 1-1.517-.859z"/></svg>'
         },
         {
             key: 'pgn-study',
             label: 'Çalışma görünümü',
-            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>'
+            icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg>'
         }
     ];
     var pgnViewKeys = pgnViews.map(function (v) { return v.key; });
