@@ -384,13 +384,6 @@
                 item.appendChild(caption);
                 switcher.appendChild(item);
             });
-            // Purely a visual caption for the buttons; the group's own
-            // aria-label already says the same thing to a screen reader.
-            var switcherLabel = document.createElement('div');
-            switcherLabel.className = 'pgn-switcher-label';
-            switcherLabel.setAttribute('aria-hidden', 'true');
-            switcherLabel.textContent = 'Görünüm seçimi';
-            wrap.appendChild(switcherLabel);
             wrap.appendChild(switcher);
             wrap.appendChild(insertNode);
             p.parentNode.insertBefore(wrap, p);
