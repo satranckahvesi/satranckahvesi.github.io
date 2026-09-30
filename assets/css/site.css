@@ -1550,6 +1550,7 @@ a:hover { border-bottom-style: dotted; }
     line-height: 1.3;
     color: var(--muted);
     cursor: pointer;
+    white-space: pre-line;
 }
 
 .pgn-switcher-caption.is-active { color: var(--ink); }
