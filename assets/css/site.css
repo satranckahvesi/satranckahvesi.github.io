@@ -942,6 +942,11 @@ a:hover { border-bottom-style: dotted; }
         min-height: 0;
         overflow-y: auto;
         margin-top: 0.75rem;
+        /* overflow-y: auto also turns overflow-x into a clipping edge, and
+           the global padding-left: 0 above leaves the active comment's
+           2px box-shadow no room on the left — it got cut off. Same small
+           allowance already given on the right. */
+        padding-left: 4px;
     }
 }
 
