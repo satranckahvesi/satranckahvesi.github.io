@@ -3,6 +3,7 @@ layout: post
 date: 2026-09-27
 title: "Capablanca mağlup edilebilir mi?"
 author: "FM Tarık Selbes"
+original_author: "Savielly Tartakower"
 column: "Satranç tarihi"
 ---
 
