@@ -89,7 +89,7 @@
         //
         // .pgn-variation-line carries no such wrapper of its own — it's
         // there for a different reason. In the plain, non-interactive
-        // "Parti görünümü" view (the default for a bare <pgn> block, no
+        // "Metin görünümü" view (the default for a bare <pgn> block, no
         // clicking required), ChessPublica's renderer only gives a
         // comment its own dedicated element on the mainline; inside a
         // side-line it instead concatenates the move notation and any
