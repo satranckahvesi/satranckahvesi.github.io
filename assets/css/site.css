@@ -1193,17 +1193,20 @@ a:hover { border-bottom-style: dotted; }
 }
 
 /* A puzzle's "show solution move" button (.puzzle-hint-btn) ships as a
-   dark filled disc with a small white "key" glyph, which is the same look
-   the replay button above had. Restyled the same way: no disc, the plain
-   glyph in the text color at the same 2rem as the puzzle icon on the other
-   end of .puzzle-hint-row, and the "key-round" glyph instead of "key".
-   ChessPublica sets the glyph through an inline --icon custom property
-   (from data-lucide), so the swap needs !important to win over it. */
+   dark filled disc with a small white "key" glyph. Restyled here as an
+   outline instead: a 2rem circle (the same footprint as the puzzle icon on
+   the other end of .puzzle-hint-row) drawn as a 2px ring in the text
+   color, with the "key-round" glyph shrunk to fit inside it. ChessPublica
+   sets the glyph through an inline --icon custom property (from
+   data-lucide), so the swap needs !important to win over it. */
 .post-body .puzzle-hint-btn {
+    box-sizing: border-box;
     width: 2rem;
     height: 2rem;
+    padding: 0;
     background: none;
-    border-radius: 0;
+    border: 2px solid currentColor;
+    border-radius: 50%;
     color: inherit;
 }
 
@@ -1213,8 +1216,8 @@ a:hover { border-bottom-style: dotted; }
 }
 
 .post-body .puzzle-hint-btn .lucide-icon {
-    width: 2rem;
-    height: 2rem;
+    width: 1.05rem;
+    height: 1.05rem;
     --icon: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M2.586%2017.414A2%202%200%200%200%202%2018.828V21a1%201%200%200%200%201%201h3a1%201%200%200%200%201-1v-1a1%201%200%200%201%201-1h1a1%201%200%200%200%201-1v-1a1%201%200%200%201%201-1h.172a2%202%200%200%200%201.414-.586l.814-.814a6.5%206.5%200%201%200-4-4z%22%2F%3E%3Ccircle%20cx%3D%2216.5%22%20cy%3D%227.5%22%20r%3D%22.5%22%20fill%3D%22currentColor%22%2F%3E%3C%2Fsvg%3E") !important;
 }
 
