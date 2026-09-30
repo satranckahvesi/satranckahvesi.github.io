@@ -109,7 +109,7 @@
     var pgnViews = [
         {
             key: 'pgn',
-            label: 'Parti görünümü',
+            label: 'Metin görünümü',
             icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5h6"/><path d="M15 12h6"/><path d="M3 19h18"/><path d="m3 12 3.553-7.724a.5.5 0 0 1 .894 0L11 12"/><path d="M3.92 10h6.16"/></svg>'
         },
         {
@@ -146,7 +146,7 @@
     // back. Reading sessionStorage.getItem(pgnCenterPending) again down
     // there used to silently see that deletion instead of the 'pgn' value
     // that was actually current when this block was built — a puzzle
-    // switched to "Parti görünümü" reloaded onto a page whose own
+    // switched to "Metin görünümü" reloaded onto a page whose own
     // scroll-restoration was already forced to manual and left at the
     // very top (see the window.scrollTo(0, 0) above), with nothing left
     // to correct it, since the pending-scroll block below never ran.
@@ -318,7 +318,7 @@
             var switcher = document.createElement('div');
             switcher.className = 'pgn-switcher';
             switcher.setAttribute('role', 'group');
-            switcher.setAttribute('aria-label', 'Görünüm seç');
+            switcher.setAttribute('aria-label', 'Görünümü değiştir');
             pgnViews.forEach(function (view) {
                 var btn = document.createElement('button');
                 btn.type = 'button';
@@ -365,6 +365,13 @@
                 })(storageKey, view.key));
                 switcher.appendChild(btn);
             });
+            // Purely a visual caption for the buttons; the group's own
+            // aria-label already says the same thing to a screen reader.
+            var switcherLabel = document.createElement('div');
+            switcherLabel.className = 'pgn-switcher-label';
+            switcherLabel.setAttribute('aria-hidden', 'true');
+            switcherLabel.textContent = 'Görünümü değiştir:';
+            wrap.appendChild(switcherLabel);
             wrap.appendChild(switcher);
             wrap.appendChild(insertNode);
             p.parentNode.insertBefore(wrap, p);
