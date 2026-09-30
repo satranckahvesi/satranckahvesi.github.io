@@ -6,13 +6,12 @@ layout: default
   <ul class="post-list">
     {% assign all_posts = site.posts | sort: "date" | reverse %}
     {% for post in all_posts %}
-    {% assign author_slug = post.author | slugify: "latin" %}
     {% assign column_slug = post.column | slugify: "latin" %}
     <li>
       <span class="post-list-meta"><a href="{{ '/koseler/' | append: column_slug | append: '/' | relative_url }}">{{ post.column }}</a></span>
       <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
       <span class="post-list-meta">
-        <a href="{{ '/yazarlar/' | append: author_slug | append: '/' | relative_url }}">{{ post.author }}</a>
+        {% include post-author.html post=post %}
         · {% include turkish-date.html date=post.date %}
       </span>
     </li>
