@@ -318,7 +318,7 @@
             var switcher = document.createElement('div');
             switcher.className = 'pgn-switcher';
             switcher.setAttribute('role', 'group');
-            switcher.setAttribute('aria-label', 'Görünümü değiştir');
+            switcher.setAttribute('aria-label', 'Görünüm seçimi');
             pgnViews.forEach(function (view) {
                 var btn = document.createElement('button');
                 btn.type = 'button';
@@ -370,7 +370,7 @@
             var switcherLabel = document.createElement('div');
             switcherLabel.className = 'pgn-switcher-label';
             switcherLabel.setAttribute('aria-hidden', 'true');
-            switcherLabel.textContent = 'Görünümü değiştir:';
+            switcherLabel.textContent = 'Görünüm seçimi';
             wrap.appendChild(switcherLabel);
             wrap.appendChild(switcher);
             wrap.appendChild(insertNode);
