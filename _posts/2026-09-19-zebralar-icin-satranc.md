@@ -195,5 +195,5 @@ düşünüyorum. Bunu olabildiğince sık, uzun vadeli ve disiplinli bir şekild
 konsantre olmayı kolaylaştıracaktır.”
 
 Şimdiye kadar sadece üç kitabı bulunan Büyükusta Jonathan Rowson’ın sıradaki
-eserinin konusunu bilemiyorum, fakat düşünmeyi teşvik eden her cümlesi okunmaya değer
+eserinin konusunu bilemiyorum fakat, düşünmeyi teşvik eden her cümlesi okunmaya değer
 görünüyor...

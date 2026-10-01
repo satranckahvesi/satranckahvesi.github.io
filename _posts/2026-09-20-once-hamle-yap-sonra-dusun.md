@@ -144,7 +144,7 @@ suçu pozisyonları bir genel kuralın içine sıkıştırma yoluyla işleyebili
 Jeremy Silman’a göre “yürekten önerdiği” kitabında Hendriks farklı bir şey söylemiyor.
 Hendriks’in eleştirdiği prensipler yeni başlayanlara yol göstermek için vardır diyor ve ekliyor:
 “Beni budalaca eğitimin başrahibi ilan eden Hendriks fikirlerimin bütün bir öğretmen grubunu
-kötü yönde etkilediğini belirtiyor, ama kendisi de benim hamleleri açıklarken kullandığım
+kötü yönde etkilediğini belirtiyor ama, kendisi de benim hamleleri açıklarken kullandığım
 terminolojiyi kullanıyor.” 
 
 Durumu bir yarışmaya benzetirsek; “daha çok mu konum mu bilmeli”, yoksa “konumları daha

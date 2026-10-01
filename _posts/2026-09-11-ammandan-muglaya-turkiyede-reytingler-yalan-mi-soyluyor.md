@@ -6,7 +6,7 @@ layout: post
 date: 2026-09-19
 ---
 
-Amman'daki evimden binlerce kilometre uzakta, Muğla'da oynadığım uluslararası bir turnuvanın yedinci turunda kendimden beş yüz puana yakın düşük reytingli bir rakiple karşı karşıyaydım. İtiraf etmeliyim ki masaya otururken aklımdan rahat bir galibiyet geçiyordu. Şah-Hint Savunması'nda küçük bir yan varyantla rakibimi şaşırtabileceğimi düşündüm, ama karşımdakinin hiç de kolay lokma olmadığını hemen fark ettim.
+Amman'daki evimden binlerce kilometre uzakta, Muğla'da oynadığım uluslararası bir turnuvanın yedinci turunda kendimden beş yüz puana yakın düşük reytingli bir rakiple karşı karşıyaydım. İtiraf etmeliyim ki masaya otururken aklımdan rahat bir galibiyet geçiyordu. Şah-Hint Savunması'nda küçük bir yan varyantla rakibimi şaşırtabileceğimi düşündüm ama karşımdakinin hiç de kolay lokma olmadığını hemen fark ettim.
 
 Parti ilerledikçe pozisyonu kontrol altına almayı başarsam da rakibimin kurduğu dirençli savunma bütün kazanma çabalarımı boşa çıkardı. Sonunda elimde kalan tek şey, anlatmaya değer bir hikâye ve pek de gurur duymadığım bir yarım puan oldu. Yorumlar o gün tahta başında aklımdan geçenlerin ta kendisi.
 
