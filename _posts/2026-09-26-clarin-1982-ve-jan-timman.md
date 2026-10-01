@@ -10,7 +10,7 @@ Bu yazı, geçtiğimiz aylarda yaşamını yitiren satranç efsanesi **Jan Timma
 
 Oyunların önemli anlarında okuyucuyu Timman ile birlikte hamleleri bulmaya davet ediyorum. Timman'ın turnuva oyunlarını incelerken satranç tarihinin başka efsane isimlerine de elbette değinme şansımız olacak. Benim için öğretici olan bu denemenin okuyucu için de faydalı olacağını umuyorum.
 
-[Event "IV Magistral Clarín"]
+[Event "Mar del Plata"]
 [Site "Mar del Plata ARG"]
 [Date "1982.02.08"]
 [Round "1"]
@@ -30,7 +30,7 @@ Dünyanın ilk on isminden beşinin katıldığı (**Karpov, Timman, Polugaevsky
 
 Clarin turnuvasını 1979 senesinde Spassky ve Petrosian'ı da yenerek (!), 1980'de ise Karpov ve Timman önünde kazanan Bent Larsen, 1982'ye gelindiğinde harika bir sonuç elde edemese de ilk tura zaferle başlamıştı. Aynı yıl Buenos Aires'e taşınan Larsen ömrünün sonuna kadar orada ikamet etmiştir.
 
-[Event "IV Magistral Clarín"]
+[Event "Mar del Plata"]
 [Site "Mar del Plata ARG"]
 [Date "1982.02.09"]
 [Round "2"]
@@ -57,7 +57,7 @@ Oyunun kendisi belki çok heyecan verici değil, ancak bu videoyu paylaşmama ve
 
 Sade, teknik konumlara olan hâkimiyeti nedeniyle bir oyunsonu efsanesi olarak anılan Andersson, 1982 Clarin turnuvasını 1 galibiyet ve 12 beraberlikle bitirmişti.
 
-[Event "IV Magistral Clarín"]
+[Event "Mar del Plata"]
 [Site "Mar del Plata ARG"]
 [Date "1982.02.10"]
 [Round "3"]
@@ -78,7 +78,7 @@ Kasparov şöyle aktarıyor: *"Najdorf, tıpkı Arjantin Şampiyonası'nda oldu�
 
 İkinci Dünya Savaşı nedeniyle ülkesine dönmeyerek Arjantin'de kalan Najdorf, ülke satrancının gelişimine katkı sunmuş ve Oscar Panno gibi isimlere ilham kaynağı olmuştu.
 
-[Event "IV Magistral Clarín"]
+[Event "Mar del Plata"]
 [Site "Mar del Plata ARG"]
 [Date "1982.02.12"]
 [Round "4"]
@@ -102,7 +102,7 @@ Arjantin satrancına damga vuran 1935 doğumlu Büyükusta **Oscar Panno**, 1953
 
 1982'ye dönecek olursak, acaba Timman 0,5/2 ile başladığı turnuvanın geri kalanını **8/8 ile** devam ettirebileceğini hayal edebilir miydi?
 
-[Event "IV Magistral Clarín"]
+[Event "Mar del Plata"]
 [Site "Mar del Plata ARG"]
 [Date "1982.02.13"]
 [Round "5"]
@@ -119,7 +119,7 @@ Reyting sıralamasında Karpov'dan sonra ikinci sırada yer alan Timman'ın, Mer
 
 Ne olursa olsun, Timman'ın kariyerindeki **en beğendiği oyunu** olarak nitelediği bir parti var sırada.
 
-[Event "IV Magistral Clarín"]
+[Event "Mar del Plata"]
 [Site "Mar del Plata ARG"]
 [Date "1982.02.14"]
 [Round "6"]
@@ -139,7 +139,7 @@ Dünyanın iki numarası için yine kazanılması gereken bir oyun. Henüz Ulusl
 
 Daha sonra Uluslararası Usta unvanına kavuşacak **Sergio Carlos Giardelli** (1955-2015) bu turnuvada sonuncu olsa da, ülkesini olimpiyatlarda temsil etmiş ve ülke şampiyonasında dereceler elde etmiş Arjantin satrancının önemli isimlerindendi.
 
-[Event "IV Magistral Clarín"]
+[Event "Mar del Plata"]
 [Site "Mar del Plata ARG"]
 [Date "1982.02.17"]
 [Round "7"]
@@ -156,7 +156,7 @@ Daha sonra Büyükusta unvanına kavuşacak olan Garcia Palermo ülkesini ziyare
 
 **Carlos Garcia Palermo** bu başarıyı elde ettiğinde 15 yaşındaydı. (Kaynak: Arjantin'de bulunan <i>Rosario ve Güney Santa Fe Satranç Derneği</i> internet sitesinde, Christian Sánchez imzasıyla 2014 yılında yayımlanan <i>Satranç İncileri: Özelde Rosario'nun, genelde ise Arjantin'in satranç tarihine bir yolculuk</i> başlıklı İspanyolca [makale](https://www.ara.org.ar/chs/ajedrez/perlas/#PA32)).
 
-[Event "IV Magistral Clarín"]
+[Event "Mar del Plata"]
 [Site "Mar del Plata ARG"]
 [Date "1982.02.18"]
 [Round "8"]
@@ -174,7 +174,7 @@ Stockfish gerçek hatanın bu olduğunu söylüyor. Filin nereden geliştirildi�
 
 Fischer'in en yakın dostu ve yardımcısı Arjantinli Büyükusta **Miguel Quinteros** 1972'de Spassky'e karşı hazırlanırken Fischer'e yardım etmiş ve hatta 1992 senesindeki rövanş maçında da Fischer'in yanında bulunmuştur. Orijinal oyun stiliyle bilinen Quinteros, aynı zamanda **Apartheid** rejimi zamanında yasaklı Güney Afrika'da satranç oynayıp yasağı delen ve bundan ötürü "3 yıl men" cezası alan oldukça tartışmalı bir figürdür.
 
-[Event "IV Magistral Clarín"]
+[Event "Mar del Plata"]
 [Site "Mar del Plata ARG"]
 [Date "1982.02.19"]
 [Round "9"]
@@ -199,7 +199,7 @@ Timman'ın Macar Büyükusta **Lajos Portisch** ile olan partileri her zaman inc
 
 Timman, turnuva hakkında kapsamlı yazılar yayınlayan turnuvanın sponsoru Clarin'e şöyle demişti: *"Beyaz taşlarla oynayan Portisch'in her zaman zaferi hedefleyeceğini biliyordum. Dahası, sıralamada yarım puan geride olduğu için beni yakalamasının tek yolu kazanmaktı. Bu yüzden bu oyun önemliydi ve dikkatlice hazırlandım."*
 
-[Event "IV Magistral Clarín"]
+[Event "Mar del Plata"]
 [Site "Mar del Plata ARG"]
 [Date "1982.02.21"]
 [Round "10"]
@@ -216,7 +216,7 @@ Timman, turnuva hakkında kapsamlı yazılar yayınlayan turnuvanın sponsoru Cl
 Beyazın sonraki hamlesinin oynanabildiği durumlarda ...c5 sürüşü dikkatle oynanmalı. Timman Siyah taşlarla Vezir-Hint Savunması uzmanı olduğu için Beyazla oynarken karşısına çıkan bu fırsatı elbette kaçırmıyor. } 10. d5! exd5 { [P] } 11. Ne1! (11. Nh4 Ne4 { [%cal Ge7h4] } 12. Nf5 Bf6 $10) 11... Na6?! (11... Ne4 12. Nxd5 Bxd5 13. cxd5 Nxd2 14. Qxd2 d6 $14 { Veritabanında bu konumdan başlayan yazışmalı partiler beraberlik ile sonuçlanmış. Objektif olarak Benoni formasyonunda iki hafif taş kesmiş olan Siyahın endişe edecek çok şey olmaması gerekir. Beyazın merkezde ve vezir kanadında ilerleyişine Siyah vezir kanadında yanıt üretecek. } { [%csl Gg3][%cal Ge2e4,Gf2f4,Ge4e5,Gg3g4,Gb6b5] }) 12. cxd5 d6 13. Nd3 (13. e4! $14 { [%csl Gf4][%cal Gf2f4] }) 13... Nc7 (13... Nb4! { Benoni'de taş değişimi olanakları kollanmalı. Zira siyah taşların manevra alanı kısıtlı. }) 14. e4 Nd7 15. f4 Rb8 { Bu hamle ...♗f6'yı hazırlıyor. } (15... Bf6! { Taktik olarak yanlış gibi dursa da Stockfish'in bize öğreteceği bir şeyler var. } { [%cal Rf6d4] } 16. e5 dxe5 17. d6 { Siyah materyal kaybetti gibi duruyor. } 17... e4 18. dxc7 Qxc7 { [%cal Rf6d4,Ge4e3] } 19. Ne5 Nxe5 20. fxe5 Bxe5 $13 { Stockfish 0.00 sularında geziniyor, biz ise şunu biliyoruz: At karşılığında alınan üç piyon, siyahın aktif taşları sayesinde güzel bir oyun sunar. } { [%cal Ge5d4,Ge4e3,Ga8d8] }) 16. Qc2 Bf6 17. Rad1 Ba6 { Benoni'de Beyaz e4-e5 ilerleyişini başarırsa rahat üstünlük iddiasında bulunabiliyor. Bu nedenle çoğu zaman Siyahın agresif bir tutum sergilemesi gerekiyor. } (17... Bd4+ 18. Kh1 f5 $132 19. exf5 (19. e5 dxe5 20. fxe5 Nxe5 21. Nxe5 Bxe5 22. Rxf5 $10) 19... Nf6) 18. Rfe1 { [%cal Ge4e5] } 18... Nb5 { 13. hamlede yapılması gereken bu attan kurtulmaya çalışmaktı. } 19. Nxb5 Bxb5 20. Nf2 Re8 21. Kh1 Bd4 22. Be3 Bxe3 23. Rxe3 { Siyah iki çift taş değiştirmeyi başardı fakat Beyazın e4-e5 fikrine karşı oyunu nerede? } 23... Qf6 24. Qd2 Rbc8 25. Ree1 h5 (25... Qd4 { Stockfish'in ...c4-sürüşü ile karşı oyun elde etmek için bir başka öğretici fikri. } 26. Qc1! (26. Qxd4 cxd4 $132 { [%cal Gc8c2] }) 26... Qb4 { [%csl Gc4][%cal Gc5c4] } (26... Qxf2 27. Rd2 $18) 27. Re3! { [%cal Ga2a3] } 27... c4 28. a3 Qc5 29. b4 Qc7 30. Qc3 $16 { Beyaz e4-e5 sürüşü için çalışmalarına devam eder. }) 26. Bh3 Rc7 27. Kg1 Qh6 { [P]
 Siyah e4-e5 ardından vezirleri değişerek rahatlama peşinde, ancak vezir oyuna dönemeyecek. } 28. e5! { Uzun süredir beklenen tipik ilerleme gerçekleştirildi. d dikeyinde çok güçlü bir geçer ve merkezileşen beyaz taşların dağınık siyah taşlara karşı oyunu öğreticidir. } 28... dxe5 { [P] } 29. a4! { Çok akıllıca bir saptırma. d6 sürüşünün ardından gelebilecek ... ♗c6 dönüşü engellenmiş oldu. } 29... Ba6 30. d6 Rb7 31. Qd5 Nf6 32. Qc6 { [%csl Gd6][%cal Gd6d7] } 32... Rbb8 33. d7 Rf8 34. Qc7 { Ordusu dağılan Siyah terk etti. } { [%csl Ga6][%cal Gc7a7,Gd7d8] } 1-0
 
-[Event "IV Magistral Clarín"]
+[Event "Mar del Plata"]
 [Site "Mar del Plata ARG"]
 [Date "1982.02.22"]
 [Round "11"]
@@ -233,7 +233,7 @@ Siyah e4-e5 ardından vezirleri değişerek rahatlama peşinde, ancak vezir oyun
 1. e4 c6 2. d4 d5 3. e5 Bf5 4. Nc3 { 80'li yıllarda popülerlik kazanan ve günümüzde de görülen sert bir devam yolu. Beyaz güçlü rakibinden çekinmediğini gösteriyor. } 4... e6 5. g4 Bg6 6. Nge2 { Hemen 6.h4 h5! ile yanıtlanabildiği için Beyaz h4 fikrini Nf4 ile birlikte uygulamak istiyor. } 6... c5! 7. Be3 (7. h4 h5 8. Nf4 { Daha yaygındır. }) 7... Nc6 8. dxc5 Nxe5 9. Nd4 Nf6!? { Timman'ın stiline uygun bir hamle. } (9... Bxc5 10. Bb5+ Nd7 11. Nxe6 fxe6 12. Bxc5 a6 13. Bxd7+ { Daha sade bir oyun verirdi. }) 10. f4 Nexg4! { Daha fazla karmaşa! } 11. Bb5+ Ke7 12. Bg1 { Belki bu aşamada hızla beyaz şahın da güvenliğini hazırlamak ve saldırıyı hızlandırmak daha pratik olabilirdi. } (12. Qe2 { [%csl Gf5][%cal Ge1c1,Gf4f5] } 12... a6 13. Ba4 Nxe3 14. Qxe3 Be4 15. O-O-O $13 { [%cal Ge4h1,Bd4f5] }) 12... Qc7 { [%csl Gf4,Gc5] } 13. c6 b6 { İki tarafın da her hamlede pek çok olanağı bulunuyor. } (13... Rc8 14. Qe2 { Beyaz oyundaki gibi oynamak istiyorsa belki de bu sıralamayı kullanmalı. } { [%cal Gf4f5] }) 14. Qe2 { Beyaz hatların açılması düşüncesiyle f4-piyonunu feda ediyor ancak bu kendi şahı için de bir güvenlik sorunu yaratacak. } { [%cal Gf4f5] } (14. Qf3 a6 15. Be2 Nh6 { [%csl Gf5][%cal Yf4f5,Gh6f5] } 16. O-O-O $14) 14... Qxf4! 15. c7? { Beyaz çok fazla risk alıyor. } (15. h3 Ne5 16. Be3 Qg3+ 17. Bf2 Qf4 $10) 15... Ne4! 16. Nc6+ Kd6 { Hangi şahın daha zayıf olduğunu söylemek güçtür. } 17. h3 Qg3+ 18. Kf1 Qf4+ 19. Ke1 Qg3+ 20. Kf1 { [P] } 20... Qxc3! { [%cal Ge4g3] } 21. Qxg4 Qxb2 { [%csl Rb5,Ra1] } 22. a4 { Buraya kadar her şey Siyahın bir şekilde kazanacağı hissini yaratıyordu, ancak şimdi her şey altüst olacak. } 22... Qxa1+? (22... Qf6+ 23. Kg2 Kxc7 $19 { Pratik bir çözüm olurdu. }) 23. Kg2 f5?? { [P] } (23... Qxg1+ 24. Rxg1 Kxc7 { Siyahın veziri karşılamaya yeterli materyali fazlasıyla bulunmaktadır. }) 24. Qh4?? (24. Bh2+! e5 25. Qh4 { Aniden beliren kritik durumda Siyah vezirinden vazgeçse bile sıkıntıları bitmeyecekti. } { [%cal Gh4d8,Gh2e5] } 25... Qxh1+ 26. Kxh1 Kxc7 27. Nxe5 (27. Bxe5+ Kb7 28. Nd8+ $18) 27... Bd6 28. Nxg6 hxg6 29. Qe7+ $18) 24... Qf6 25. Bh2+ Kc5 26. Nb8 { Harika bir deneme! } { [%cal Gc7c8] } (26. Bg1+ Kd6 27. Bh2+ $10) 26... Qxh4 27. c8=Q+ Kb4 28. Rb1+ Ka3 { Konum tam bir görsel şölen sunuyor! } 29. Ra1+ Kb4 30. Rb1+ Ka3 31. Ra1+ Kb4 { 1/2-1/2 } 1/2-1/2
 
 
-[Event "IV Magistral Clarín"]
+[Event "Mar del Plata"]
 [Site "Mar del Plata ARG"]
 [Date "1982.02.23"]
 [Round "12"]
@@ -250,7 +250,7 @@ Siyah e4-e5 ardından vezirleri değişerek rahatlama peşinde, ancak vezir oyun
 
 On bir sene sonra Karpov'a karşı FIDE Dünya Şampiyonası maçında (o sırada FIDE'ye bayrak açan **Kasparov** da **Short** ile PCA Dünya Şampiyonası maçında karşılaşıyordu) **Ulf Andersson** ve **Jeroen Piket** ile birlikte Timman'a yardımcı olacak **Yasser Seirawan**, turnuva liderine karşı Siyah taşlarla gözde silahı Caro-Kann'a sarılmıştı.
 
-[Event "IV Magistral Clarín"]
+[Event "Mar del Plata"]
 [Site "Mar del Plata ARG"]
 [Date "1982.02.26"]
 [Round "13"]
