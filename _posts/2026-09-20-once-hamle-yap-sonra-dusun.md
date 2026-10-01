@@ -73,8 +73,8 @@ Konumun özelliklerini ve onlarla eşleşen hamleleri aynı anda görürüz, kon
 hamleyle bağlantılı olmayan bir özelliği basitçe ilgisizdir. Eğer Ng5 ya da Bxf7 gibi hamleler
 görmüyorsak (öncesinde veya aynı anda) f7 karesinde zayıflık görmeyiz.”
 
-Yazarın eleştirilerine maruz kalan **Carsten Hansen**’in Pozisyonel Satrancınızı İlerletin
-(**Improve Your Positional Chess**) kitabıyla ilgili konumu analiz ederken şöyle eleştiriyor:
+Yazarın eleştirilerine maruz kalan **Carsten Hansen**’in "Pozisyonel Satrancınızı İlerletin"
+(**_Improve Your Positional Chess_**) kitabıyla ilgili konumu analiz ederken yazarı şöyle eleştiriyor:
 
 [Event "Linares 14th"]
 [Site "Linares"]
@@ -140,7 +140,7 @@ suçu pozisyonları bir genel kuralın içine sıkıştırma yoluyla işleyebili
     <figcaption>Yazar Willy Hendriks London Chess Classic esnasında ödül alan kitabı hakkında konuşuyor.</figcaption>
 </figure>
 
-Jeremy Silman’a göre “yürekten önerdiği” kitabında Hendriks farklı bir şey söylemiyor.
+Jeremy Silman’a göre Hendriks kitabında pek farklı bir şey söylemiyor.
 "Hendriks’in eleştirdiği prensipler yeni başlayanlara yol göstermek için vardır" diyor ve ekliyor:
 “Beni budalaca eğitimin başrahibi ilan eden Hendriks fikirlerimin bütün bir öğretmen grubunu
 kötü yönde etkilediğini belirtiyor ama kendisi de benim hamleleri açıklarken kullandığım
