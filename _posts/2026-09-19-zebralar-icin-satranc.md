@@ -11,16 +11,16 @@ column: "Kitap incelemeleri"
 Satranca başladığımızda her şeyin iyi gittiği, oyundan zevk alınan güzel bir dönemin
 ardından bazı engellerle karşılaşırız. O engeller, aslında yeterince iyi olmadığımızı fark
 ettiğimiz anlar ya da daha doğru bir deyişle satrancın daha iyi oynanabileceğine bizi ikna
-eden rakiplerdir çoğunlukla. İlk kitabımızı ve bizi yenen rakibimizin tavsiyelerini alır çalışırız.
+eden rakiplerdir çoğunlukla. İlk kitabımızı ve bizi yenen rakibimizin tavsiyelerini alıp oyunumuz üzerine çalışırız.
 Taktikler, klasikler, açılışlar, oyunortası ve oyunsonu. İşler tekrar yoluna girer, ta ki ayağımız
 başka bir taşa takılana kadar. Bu taş çoğunlukla sağlam bir kaya olur; ne yapsak etsek de
 belli bir seviyenin ötesine geçmenin imkânsız olduğunu hissederiz. 
 
 Böylesine bir kayaya ilk toslayışım epey uzun zaman öncesine dayansa da, hâlâ benzer kayalara toslamaya devam
 ediyorum. Bu konuda yalnız olmadığımı ve sözünü ettiğim durumun yaygın bir sorun
-olduğunu satranç sever dostlarımdan, hayat hikâyelerini bildiğim satranç ustalarından daha
+olduğunu satrançsever dostlarımdan, hayat hikâyelerini bildiğim satranç ustalarından daha
 sonra öğrendim. Bu sorunların bir büyükusta tarafından incelenmiş olduğunu duyduğumda
-açıkçası çok merak etmiş ve bana satrancı daha iyi oynamanın “sihirli formülünü” sunacağını
+açıkçası çok merak etmiş, bana satrancı daha iyi oynamanın "sihirli formülünü" sunacağını
 ummuştum. Daha sonra basım tarihi 2005 olan bu kitapla şimdi elinizde tutmakta olduğunuz
 derginin basılmasını sağlayan **Analiz Yayıncılık** standında karşılaştım.
 
@@ -29,64 +29,64 @@ edinmeyi başarmış bu eserin yazarından kısaca söz ederek başlayalım: Say
 zaferinin yanında İngiltere ve İskoçya şampiyonlukları bulunan İskoç Büyükusta Jonathan
 Rowson, satrançtaki tescilli başarısının yanına Oxford ve Harvard’da gördüğü felsefe ve
 psikoloji öğrenimlerini de eklemiş. Nöroloji bilimi ve öğrenmenin psikolojisi üzerine bilgilerini
-satranç oyunculuğu ve antrenörlükten edindiği tecrübelerle birleştirmiş: “Kitabı yazmaya
+satranç oyunculuğu ve antrenörlükten edindiği tecrübelerle birleştirmiş: "Kitabı yazmaya
 başladığım sırada 2600’a çok yakındım ve İngiltere şampiyonuydum. Paylaşılmaya değer
-şeylerin izini sürdüğümü hissediyordum.” diyor. Satranç otoriteleri tarafından takdirle
-karşılanan **“Seven Deadly Chess Sins”** (“Yedi Ölümcül Satranç Günahı”)’den sonra
-karşımızda yine en az onun kadar etkileyici bir kitap var: **“Chess for Zebras”**! (“Zebralar İçin
-Satranç”)
+şeylerin izini sürdüğümü hissediyordum" diyor. Satranç otoriteleri tarafından takdirle
+karşılanan **_"Seven Deadly Chess Sins"_** ("Yedi Ölümcül Satranç Günahı") kitabından sonra
+karşımızda yine en az onun kadar etkileyici bir kitap var: **_"Chess for Zebras"_** ("Zebralar için
+Satranç").
 
 Kitap üç bölümden oluşuyor: İlk bölüm daha çok satranç oyuncusunun psikolojisine
 değinirken, ikinci bölüm Rowson’ın da belirttiği gibi, oyuncu psikolojisi konusundan ziyade
-teknik olarak satrancın kendisiyle en dolu bölüm. “Benim İçin İşe Yarayan Bir Şey” kısmında
+teknik olarak satrancın kendisiyle en dolu bölüm. "Benim için işe yarayan bir şey" kısmında
 Rowson, **Kasparov**’un “artık satrancı tam olarak kapsamadığını düşündüğü” üç boyutlu
-düşünüşünü (Materyal, Nitelik ve Zaman) eleştirip üzerine saat (“clock ticking”) faktörünü
-ekleyerek ileriyor. Özellikle bu kısımlar benim gibi zaman sıkışmasına sık giren oyuncular
-için önemli bölümler barındırıyor. Yazarın “düşünme zamanının fırsat maliyeti” diyerek
-açıkladığı bölüm gibi: “Örneğin, bazen iki hamle arasında tercih yapmanız gerekir. Birinin
+düşünüşünü (Materyal, Nitelik ve Zaman) eleştirip üzerine saat ("clock ticking") faktörünü
+ekleyerek ilerliyor. Özellikle bu kısımlar benim gibi zaman sıkışmasına sık giren oyuncular
+için önemli bölümler barındırıyor. Yazarın "düşünme zamanının fırsat maliyeti" diyerek
+açıkladığı bölüm gibi: "Örneğin, bazen iki hamle arasında tercih yapmanız gerekir. Birinin
 yeterli diğerinin çok daha kuvvetli ve hatta forse kazandığını görebiliyorsunuzdur. Ancak,
 kazanç olup olmadığını bulabilmek için dakikalarca düşünmeniz gerekmektedir. (...) Pratik
-gücün en önemli parçalarından birinin, Zamanı böyle anlarda değerlendirebilmek olduğuna
+gücün en önemli parçalarından birinin zaman faktörünü böyle anlarda değerlendirebilmek olduğuna
 inanıyorum. (...) Şimdi yirmi dakika kaybedersem, daha sonraki fırsatları kesinlikle
-kaçıracağım; peki böyle bir yatırım yapmaya değer mi?” 
+kaçıracağım; peki böyle bir yatırım yapmaya değer mi?"
 
 Kitap ilerledikçe pek çok büyükustanın fikirlerine, konuşmalarına (Motwani, Suba, Psakhis, McShane, Hübner,
 Seirawan vs.), başka eserlerden referanslara yer verilmesi okumayı çok daha sürükleyici ve
-keyifli kılıyor. Üçüncü Bölüm olan “Siyah ve Beyaz Hakkında Rengarenk Düşünme”
-bölümünde ise Siyah ve Beyazın avantaj ve dezavantajlarına, açılış ve hazırlık meselesine
-odaklanıyor: “Çok garip bulduğum bir şey, çoğu oyuncunun en üst seviyelerde açılış
+keyifli kılıyor. Üçüncü bölüm olan "Siyah ve beyaz hakkında rengarenk düşünme"
+bölümünde ise Siyah ve Beyaz'ın avantaj ve dezavantajlarına, açılış ve hazırlık meselesine
+odaklanıyor: "Çok garip bulduğum bir şey, çoğu oyuncunun en üst seviyelerde açılış
 hazırlığının pek çok oyuncu ve hatta iyi büyükustalar için bile olduğundan çok daha fazla
 önemli olduğunu fark edemiyor görünmeleri. (...) Sevdiğiniz oyuncuların hamlelerine ve
 fikirlerine özenmeye çalışmak mantıklı ancak onların yaptığı satranç çalışmasına özenmek
-büyük bir hata olur, **çünkü 2650’yi 2750’ye ulaştırmaya faydalı olacak bir çalışma 1650’yi
-1750’ye ve hatta 2550’yi 2650’ye ulaştırmak için faydalı olmayabilir**.”
+büyük bir hata olur, **çünkü 2650'yi 2750'ye ulaştırmaya faydalı olacak bir çalışma 1650'yi
+1750'ye ve hatta 2550'yi 2650'ye ulaştırmak için faydalı olmayabilir**."
 
-Oldukça eğlenceli (Şu başlıklara bakın: “Cebinizde Bir Delik Olduğunu Düşünüyorken
-Ne Yapmalı?”, “Satranç Neden Çok Zor?” ya da “Konsantre ol! Konsantre ol? Konsantre ol.”)
+Oldukça eğlenceli (şu başlıklara bir bakın: _"Cebinizde bir delik olduğunu düşünürken
+ne yapmalı?"_, _"Satranç neden çok zor?"_ ya da _"Konsantre ol! Konsantre ol? Konsantre ol."_)
 ama derin meselelere el atmaktan çekinmeyen bir serbestlikle yazılmış olması çok hoşuma
-gitti. Bu yönüyle daha çok satrançta belli bir seviyeye gelmiş ilerlemekte güçlük çeken
+gitti. Bu yönüyle daha çok satrançta belli bir seviyeye gelmiş, ilerlemekte güçlük çeken
 yetişkin sporcu veya antrenörlere hitap eder görünümde. Örneğin, konsantre olmaya
 dair söze başlarken Blaise Pascal’dan alıntı yapmaktan çekinmiyor yazar:
-“İnsanlığın bütün sorunları, kişinin tek başına bir odada sessizce oturamamasından
-kaynaklanır.”. Çünkü yazara göre insan kendi düşüncelerine konsantre olmamak için uğraşır
+"İnsanlığın bütün sorunları, kişinin tek başına bir odada sessizce oturamamasından
+kaynaklanır." Çünkü yazara göre insan kendi düşüncelerine konsantre olmamak için uğraşır
 ve “konsantre olmak” için satranç oynamayı ister.
 
-Kitabına pek çok farklı isimler düşündükten sonra “Chess for Zebras Thinking
-Differently about Black and White” (Zebralar İçin Satranç Siyah ve Beyaz Hakkında Farklı
-Düşünme) adında karar kılan Jonathan Rowson, bir sufi deyişinden etkilenmiş: “Toynak sesi
-duyunca zebra gelsin aklına”. Toynak seslerinin atları çağrıştırması üzerinden yola çıkan
-Rowson, bize zebraları işaret ediyor. Mesaj ise kısaca şudur: “Kendinize farklı düşünmek için
-izin verin”. 
+Kitabı için pek çok farklı isim düşündükten sonra _"Chess for Zebras: Thinking
+Differently about Black and White"_ (Zebralar İçin Satranç: Siyah ve Beyaz Hakkında Farklı
+Düşünme) adında karar kılan Jonathan Rowson, bir sufi deyişinden etkilenmiş: "Toynak sesi
+duyunca zebra gelsin aklına." Toynak seslerinin atları çağrıştırması üzerinden yola çıkan
+Rowson, bize zebraları işaret ediyor. Mesaj ise kısaca şudur: "Kendinize farklı düşünmek için
+izin verin."
 
 Peki bu nasıl yapılabilir? Kitap düşünce kalıplarını yıkma fikriyle “farklı
 düşünmenin” izini sürüyor. Daha doğrusu Rowson ustalığa giden yolunda neler öğrendiğini
 ve neleri “unutması”(unlearning) gerektiğini anlatıyor. İlerleyen bölümler boyunca döne
 dolaşa aynı şeyi hatırlatıyor okura: **“Gelişme, konfor alanınızın sınırında başlar.”**
-(“Improvement begins at the edge of your comfort zone”) Yani sınırlarınızı zorlamadığımız
+("Improvement begins at the edge of your comfort zone") Yani sınırlarınızı zorlamadığınız
 sürece gelişme yok. 
 
-Yalnız yanlış anlaşılmasın Rowson’ın her derde deva -ve bulmayı
-umduğum- “sihirli formülü” yok; tam tersine her şeyin kesin olduğu iddia edilen çözümlere
+Yalnız yanlış anlaşılmasın, Rowson’ın her derde deva olacak --ve bulmayı
+umduğum-- türden bir "sihirli formülü" yok. Tam tersine her şeyin kesin olduğu iddia edilen çözümlere
 şüpheyle yaklaşılmasını öğütlüyor ve her şeyin kesin olduğu alandan belirsizliğe geçmeyi
 ilerleme sayıyor. Bunu ise her bölüm için iyi seçilmiş, bazıları yazarın kendisi tarafından
 oynanmış partilerle örnekliyor.
@@ -124,7 +124,7 @@ oynamaktan açıkça memnun olacaktı. 10...Nd5 hamlesi mümkündü fakat
 sonunda... } 10... N8d7 { hamlesini tercih ettim. Korchnoi oyundan sonra sordu: "Bu
 hamlenin amacı nedir?" Cevap verdim: "Ana fikir ...Nf6-d5 ve vezir
 kanadındaki beyaz kareleri kontrol altına almak." Kafasını salladı ve
-ekledi: "Anlıyorum.", tahminime göre beni yalnızca test ediyordu. } 11. Nf3 { Bu hamleden sonra bana yardımı olmayan bir iyimserlik büyüsüne kapıldım.
+ekledi: "Anlıyorum", tahminime göre beni yalnızca test ediyordu. } 11. Nf3 { Bu hamleden sonra bana yardımı olmayan bir iyimserlik büyüsüne kapıldım.
 Bu "iyimserlik etkisi" satrançta kaçınmamız gereken temel psikolojik
 tuzaklardan biridir çünkü konum hakkındaki değerlendirmemizi
 renklendirerek hatalara yol açar. Her hâlükârda, oyundan önce gergindim
@@ -137,10 +137,10 @@ fakat hiçbiri bana konumun gereklerini tamamen yerine getiriyor gibi gelmedi.
 Örneğin, } 11... Qf6? { Bu tuhaf görünümlü hamle iyi olmak için fazla zekice.
 Beyazın e3'ten filini oynayıp ardından e-piyonunu oynaması problemine
 radikal bir çözüm sunuyor. 12.Bg5'ten sonra 12...Qf5 veya 12.Bc1 Qf5 ve
-fikrim mükemmel işliyor ve beyaz hamle bulmakta zorlanıyor olacaktı. Fakat
+fikrim mükemmel işlerken beyaz hamle bulmakta zorlanıyor olacaktı. Fakat
 maalesef, e3-filinin gizli bir maksadı var. } (11... Bxf3 12. gxf3 Qh4 13. Ne4 { varyantını gördüğüm zaman bu
 fikirden bir şekilde vazgeçtim, çünkü Bg5'in görünüşünü beğenmedim.
-Derken birdenbire anlamlı gelen ve ruh halime uyan ilginç bir hamle gördüm. }) (11... Nd5 12. Bg5) (11... O-O 12. h4!) (11... h6 12. Bc1!) 12. d5! { Diagram [#] Bu hamle
+Derken birdenbire anlamlı gelen ve ruh halime uyan ilginç bir hamle gördüm. }) (11... Nd5 12. Bg5) (11... O-O 12. h4!) (11... h6 12. Bc1!) 12. d5! { [#] Bu hamle
 özellikle derin veya zor değil, yine de Korchnoi'un bu hamleyi bir dakika
 içinde oynamasından ötürü şaşkına dönmüştüm. 11...Qf6 hamlesini
 oynadığım zaman gülmedi ya da (böyle durumlarda yaptığı bilindiği
@@ -153,15 +153,15 @@ bir oyun kazanmama yardımcı olduğuna inanıyorum (Rowson-Sarakauskas) } 12...
 yakın. Şahımın güvenli bir yeri yok, vezirim ofsaytta ve siyah-kare
 kontrolüm bulunmuyor. Oldukça iyi direndim, tam sorunlarımı çözmeye
 başlar gibiyken, derince düşündü ve yıkıcı taktiklerin pimini çekti. } 19. e3 O-O-O 20. Be2 Nc5 21. O-O Ne4 22. Qc2 Rd6 23. Bd4 Re8 24. Ne5 f6 25. Nd3 Rc6 26. Qd1 Qa5 27. b4 Qa2 28. Nc5 a6 29. Nxe4 dxe4 30. b5 Rc2 31. bxa6 c5 (31... Rxe2 32. a7 Kd7 33. Bb2+ { varyantı Korchnoi'un dehasının hoş bir
-örneğidir. }) 32. axb7+ Kb8 33. Bxf6 Rd2 34. Bc4 Rxd1 35. Bxa2 Rxf1+ 36. Kxf1 Kxb7 37. Bf7 Rf8 38. Bd5+ Kb6 39. Bc3 Kb5 40. Bxe4 Kc4 41. Be5 Re8 42. f4 Kb3 43. Ke2 Rd8 44. g4 c4 45. f5 gxf5 46. gxf5 c3 47. Bd4 Rc8 48. Bd5+ Kb4 49. Kd1 { 1-0 White wins. } 1-0
+örneğidir. }) 32. axb7+ Kb8 33. Bxf6 Rd2 34. Bc4 Rxd1 35. Bxa2 Rxf1+ 36. Kxf1 Kxb7 37. Bf7 Rf8 38. Bd5+ Kb6 39. Bc3 Kb5 40. Bxe4 Kc4 41. Be5 Re8 42. f4 Kb3 43. Ke2 Rd8 44. g4 c4 45. f5 gxf5 46. gxf5 c3 47. Bd4 Rc8 48. Bd5+ Kb4 49. Kd1 1-0
 
 “Korchnoi ile oynamak çok özel bir durum, hele onunla daha önce hiç
 oynamadıysanız. Böylesine sıra dışı bir oyundan ve oyun sonrası analizinden sonra, pek çok
 insan bana bu tecrübeyi sormak istedi. Benim açıklamam şu şekildeydi: Düzensiz bir açılış
 oynadı, yanıt olarak biraz fazla yaratıcı oynadım ve sonradan gaf olduğu ortaya çıkan zekice
 bir hamle yaptım... Bu açıklamayı birkaç kez yaptığımı ve 11...Vf6 hamlesinden söz ettiğimi
-hatırlıyorum. Daha sonra dinleyenlerden &#39;Ya! Yani 12.d5 hamlesini kaçırdın?&#39; diyerek araya
-girenlere çabucak &#39;Hayır! 12.d5&#39;i gördüm fakat d5&#39;i iki kez alabildiğini görmedim.&#39; yanıtını
+hatırlıyorum. Daha sonra dinleyenlerden "Ya! Demek 12.d5 hamlesini kaçırdın!" diyerek araya
+girenlere çabucak "Hayır, 12. d5'i gördüm fakat d5'i iki kez alabildiğini görmedim" yanıtını
 verdim. **Bu kulağa makul geliyor, fakat aslında, tamamen yalan.**
 
 Belki de kendime karşı fazla acımasızım ve belki buna kendini kandırma demek daha adildir.
@@ -173,27 +173,24 @@ daha anlamlı gelen bir hikâye anlattım.
 Bu hikâye şunu demek istiyordu: O yaratıcıydı ve ben de yaratıcıydım. Ama ben o kadar
 yaratıcıydım ki kendimi kaptırdım ve onun anahtar hamlesini görmeme rağmen (çünkü, hey,
 ben bir büyükustayım), devamını kaçırdım (çünkü, hey, kimse mükemmel değil).
-Bu hikâye uydurmada (fabulation) beni en çok vuran şey, üçüncü ya da dördüncü kez
+Bu hikâye uydurmada (_fabulation_) beni en çok vuran şey, üçüncü ya da dördüncü kez
 olayların bu versiyonunu anlattığımda **artık kendim de böyle olduğuna inanmaya başladım**!
-O akşam kız arkadaşımla konuştuğumda dahi benzer şeyler söyledim. Yalnız oyunu
-bilgisayara verdiğimde basitçe 12.d5 hamlesini kaçırdığım gerçeğiyle yüzleştim. Hamleyi
-görmüştüm fakat yalnızca 11...Vf6 hamlesini oynadıktan ‘sonra’. 11...Vf6 hamlesini
-oynadıktan hemen sonra 12.d5 hamlesinin o kadar ciddi olmadığını (rahatlama) hissettim fakat sonra 14.Kxd5 (of!) hamlesini gördüm, muhtemelen oyunun kalanında özgüvenimi sağlam tutmak için kendime kaçırdığım şeyin bu olduğunu söyledim.
+O akşam kız arkadaşımla konuştuğumda dahi benzer şeyler söyledim. Ama oyunu
+bilgisayara verdiğimde basitçe 12. d5 hamlesini kaçırdığım gerçeğiyle yüzleştim. Hamleyi
+görmüştüm fakat yalnızca 11... Qf6 hamlesini oynadıktan *sonra*. 11... Qf6 hamlesini
+oynadıktan hemen sonra 12. d5 hamlesinin o kadar ciddi olmadığını (rahatlama) hissettim fakat sonra 14. Rxd5 (of!) hamlesini gördüm, muhtemelen oyunun kalanında özgüvenimi sağlam tutmak için kendime kaçırdığım şeyin bu olduğunu söyledim.
 
 Şimdi bu itirafı okuyucuların kendilerine karşı daha dürüst olmaları için cesaretlenmeleri
 amacıyla paylaşıyorum. Kendini kandırma, neredeyse tanımı gereği, çok aldatıcı bir olgudur
 fakat inanıyorum ki bu bizim tecrübelerimizi hikâyeleştirme eğilimimizle yakından ilişkilidir.
 Tecrübelerimiz çoğu defa tutarsız ve benlik algımızı tehdit edici olduğunda, tutarlı ya da ilgi
-çeken hikâyeler yaratacak şekilde evrimleşmemiz anlamlı görünüyor.”
+çeken hikâyeler yaratacak şekilde evrimleşmemiz anlamlı görünüyor."
 
-Uzunca bir bölümünü alıntıladığımı kitabın en güzel tavsiyelerinden birisiyle bitiriyorum
-yazımı: “ Daha iyi oyuncu olmak istiyorsanız, daha iyi alışkanlıklara sahip olmak gerekir ve
-daha iyi alışkanlıkları antrenman ile geliştirirsiniz. En iyi antrenman, güç kararlar için
+Uzunca bir bölümünü alıntıladığım yazımı kitabın en güzel tavsiyelerinden birisiyle bitiriyorum: "Daha iyi oyuncu olmak istiyorsanız daha iyi alışkanlıklara sahip olmak gerekir ve daha iyi alışkanlıklar antrenman ile gelişir. En iyi antrenman, güç kararlar için
 kendinizi sorumluluk almaya zorladığınızda, sizi konfor alanınızın dışına çıkmaya itendir. (...)
 Sonuçlarımızı geliştirmenin en kesin yolunun evde kompleks örnekler çözmekten geçtiğini
-düşünüyorum. Bunu olabildiğince sık, uzun vadeli ve disiplinli bir şekilde yapmalı. Bu konsantre olmayı alışkanlığa çevirmede yardımcı olacak ve oyunlarımızın kritik konumlarında
-konsantre olmayı kolaylaştıracaktır.”
+düşünüyorum. Bunu olabildiğince sık, uzun vadeli ve disiplinli bir şekilde yapmalı. Bu konsantre olmayı alışkanlığa çevirmede yardımcı olacak ve oyunlarımızın kritik konumlarında konsantre olmayı kolaylaştıracaktır."
 
-Şimdiye kadar sadece üç kitabı bulunan Büyükusta Jonathan Rowson’ın sıradaki
+Şimdiye kadar sadece üç kitabı bulunan Büyükusta Jonathan Rowson'ın sıradaki
 eserinin konusunu bilemiyorum, fakat düşünmeyi teşvik eden her cümlesi okunmaya değer
-görünüyor...
+görünüyor.
