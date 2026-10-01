@@ -12,7 +12,7 @@ Oyunların önemli anlarında okuyucuyu Timman ile birlikte hamleleri bulmaya da
 
 [Event "Mar del Plata Clarin Masters"]
 [Date "2026.06.19"]
-[White "Timman, Jan H"]
+[White "Timman, Jan"]
 [Black "Larsen, Bent"]
 [Result "0-1"]
 [WhiteElo "2655"]
