@@ -152,11 +152,54 @@
     // to correct it, since the pending-scroll block below never ran.
     var pgnCenterPendingIsPlainPgn = false;
 
+    // The PGN lives in the post's Markdown, so kramdown has already turned
+    // any **bold**, *italic* or [link](url) inside a {comment} into
+    // <strong>/<em>/<a> by the time this script runs, and plain
+    // textContent would throw that formatting away (links would lose their
+    // URL too). ChessPublica renders exactly that Markdown inside PGN
+    // comments, so it's put back here — but only inside {...}: outside a
+    // comment (header lines, move text) the tags are dropped as before, so
+    // stray emphasis around moves can never reach the PGN parser.
+    var MD_BOLD = '\uE000', MD_EM = '\uE001', MD_LINK_OPEN = '\uE002', MD_LINK_MID = '\uE003', MD_LINK_CLOSE = '\uE004';
+    function markedText(node) {
+        var out = '';
+        for (var n = node.firstChild; n; n = n.nextSibling) {
+            if (n.nodeType === 3) {
+                out += n.nodeValue;
+            } else if (n.nodeType === 1) {
+                var inner = markedText(n);
+                if (n.tagName === 'STRONG' || n.tagName === 'B') out += MD_BOLD + inner + MD_BOLD;
+                else if (n.tagName === 'EM' || n.tagName === 'I') out += MD_EM + inner + MD_EM;
+                else if (n.tagName === 'A' && n.getAttribute('href')) out += MD_LINK_OPEN + inner + MD_LINK_MID + n.getAttribute('href') + MD_LINK_CLOSE;
+                else if (n.tagName === 'BR') out += '\n';
+                else out += inner;
+            }
+        }
+        return out;
+    }
+    function pgnText(node) {
+        var marked = markedText(node);
+        var out = '', depth = 0, linkText = '', inLink = false;
+        for (var i = 0; i < marked.length; i++) {
+            var c = marked[i];
+            if (c === '{') depth++;
+            else if (c === '}' && depth > 0) depth--;
+            if (c === MD_BOLD) { if (depth) out += '**'; }
+            else if (c === MD_EM) { if (depth) out += '*'; }
+            else if (c === MD_LINK_OPEN) { if (depth) out += '['; else inLink = true; }
+            else if (c === MD_LINK_MID) { if (depth) out += ']('; else inLink = 'url'; }
+            else if (c === MD_LINK_CLOSE) { if (depth) out += ')'; else inLink = false; }
+            else if (inLink === 'url') { /* URL of a link outside a comment: dropped */ }
+            else out += c;
+        }
+        return out;
+    }
+
     var paragraphs = Array.prototype.slice.call(body.querySelectorAll('p'));
     for (var i = 0; i < paragraphs.length; i++) {
         var p = paragraphs[i];
         if (!p.parentNode) continue;
-        var lines = p.textContent.split('\n').map(function (s) { return s.trim(); }).filter(function (s) { return s.length; });
+        var lines = pgnText(p).split('\n').map(function (s) { return s.trim(); }).filter(function (s) { return s.length; });
         if (!lines.length || !headerLineRe.test(lines[0])) continue;
 
         // Collect the leading run of "[Tag "value"]" header lines. Anything
@@ -185,7 +228,7 @@
             next = p.nextElementSibling;
             if (next) {
                 if (next.tagName === 'P') {
-                    var t = next.textContent.trim();
+                    var t = pgnText(next).trim();
                     if (movetextRe.test(t)) moveText = t;
                 } else if (next.tagName === 'OL') {
                     // A movetext starting with "1. " is parsed by Markdown as
@@ -195,7 +238,7 @@
                     // valid PGN movetext.
                     var lis = Array.prototype.slice.call(next.querySelectorAll('li'));
                     if (lis.length) {
-                        moveText = '1. ' + lis.map(function (li) { return li.textContent.trim(); }).join(' ');
+                        moveText = '1. ' + lis.map(function (li) { return pgnText(li).trim(); }).join(' ');
                     }
                 }
             }
