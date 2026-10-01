@@ -6,7 +6,7 @@ author: "FM Nazmi Can Doğan"
 column: "Kitap incelemeleri"
 ---
 
-###### Bu yazı ilk olarak 2016 yılında **Satrançsever** dergisinin 4. sayısında yayımlanmıştır.
+###### Bu yazı ilk olarak 2016 yılında **Satrançsever** dergisinin 4. sayısında yayınlanmıştır.
 
 Dünya şampiyonu **Magnus Carlsen**'in (bu yazı yazıldığı sırada Carlsen dünya şampiyonuydu) hayatını konu alan filmin fragmanında "kararlarımı sezgilerimden yola çıkarak veriyorum" cümlesini duyduktan sonra, "acaba oyuncular
 tahta başında nasıl karar veriyorlar?" sorusu aklıma takıldı. Carlsen'in kıyaslanamaz bir oyun
