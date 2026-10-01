@@ -679,6 +679,16 @@ a:hover { border-bottom-style: dotted; }
     margin-right: auto;
 }
 
+/* Italic caption right under a bare FEN diagram (marked by pgn-detect.js):
+   pulled up into the board's own bottom margin and centered on it. */
+.post-body .diagram-caption {
+    margin: -0.4rem auto 1.5rem;
+    max-width: var(--board-size);
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
 /* .video-title is a flex row, and .video-title-text a flex column inside
    it, holding a long, unwrapped ("white-space: nowrap") player/event
    name. Flex items default to min-width: auto, meaning they refuse to

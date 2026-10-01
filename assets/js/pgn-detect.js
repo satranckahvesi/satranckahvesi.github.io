@@ -393,6 +393,18 @@
         }
         p.remove();
         if (next) next.remove();
+
+        // A bare diagram followed by an italic-only paragraph ("*caption*")
+        // gets that paragraph styled as the diagram's caption: centered
+        // right under the board (see .diagram-caption in site.css).
+        if (tagName === 'fen') {
+            var cap = insertNode.nextElementSibling;
+            if (cap && cap.tagName === 'P' && cap.children.length === 1 &&
+                cap.firstElementChild.tagName === 'EM' &&
+                cap.textContent.trim() === cap.firstElementChild.textContent.trim()) {
+                cap.classList.add('diagram-caption');
+            }
+        }
     }
 
     // Two games in a row with nothing between them (no paragraph, no
