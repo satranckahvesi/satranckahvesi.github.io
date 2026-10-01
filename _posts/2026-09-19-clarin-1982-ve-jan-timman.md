@@ -17,17 +17,8 @@ Oyunların önemli anlarında okuyucuyu Timman ile birlikte hamleleri bulmaya da
 [Result "0-1"]
 [WhiteElo "2655"]
 [BlackElo "2605"]
-[Annotator "Black"]
-[Variant "Standard"]
-[ECO "?"]
-[Opening "?"]
-[StudyName "TIMMAN"]
-[ChapterName "Timman, Jan H - Larsen, Bent"]
-[ChapterURL "https://lichess.org/study/F0mOCg4p/pJeYJI7W"]
-[FEN "3rrb1k/3n1qp1/2p1b2p/ppP1p3/4P3/1P2QPP1/PBR1N1B1/5RK1 b - - 3 31"]
-[SetUp "1"]
-[UTCDate "2026.06.19"]
-[UTCTime "19:23:02"]
+[Site ""]
+[Round ""]
 
 { [P] } 31... Bxc5! {  Siyahın güçlü seçeneklerinden yalnızca biri. } 32. Rxc5 Nxc5 33. Bxe5 { [P] [%csl Gh6][%cal Ge3h6] } (33. Qxc5 {  [P] } 33... Rd2 $19 {  Siyahın 31. hamlesinin ana fikri buydu. }) 33... Nd3! $19 {  Kalite fazla olan Siyah, kolaylıkla olmasa da kazanmasını bildi. } 0-1
 
