@@ -39,9 +39,6 @@ hakkında pek az yazılı kaynağa sahip turnuvanın unutulmaz hamlelerine geçe
 [ECO "D41"]
 [PlyCount "101"]
 [EventDate "1938.11.06"]
-[EventType "tourn"]
-[EventRounds "14"]
-[EventCountry "NED"]
 
 1. Nf3 d5 2. d4 Nf6 3. c4 e6 4. Nc3 c5 5. cxd5 Nxd5 6. e3 Nc6 7. Bc4 {Maç için hazırlanmış yenilik!} cxd4 (7... Nf6 {"Eğer siyah 7...Nf6 oynasaydı, Kabul Edilmiş Vezir Gambiti'ne dönüşürdü, sanırım rakibim bunu gözden kaçırdı." - Botvinnik. (1.d4 d5 2.c4 dxc4 3.Nf3 Nf6 4.e3 e6 5.Bxc4 c5 6.Nc3 Nc6 kastediliyor olmalı.)}) 8. exd4 {Botvinnik'in favorisi izole vezir piyonu. Botvinnik'ten önce oyuncular izole vezir piyonuyla oynamaktan kaçınıyorlardı. Kasparov'a göre Botvinnik aktif taş oyunuyla izole vezir piyonunun zayıflığının fazlasıyla karşılandığını sürekli şekilde kanıtlayan ilk oyuncu olmuştur.} Be7 9. O-O O-O 10. Re1 b6 $6 {Vezir kanadındaki beyaz kareleri zayıflatıyor. Botvinnik'in tepkisi öğretici.} ( 10... Nxc3 11. bxc3 b6 {oynamalıydı. -Botvinnik. Ayrıca bu konuma Caro-Kann Savunması'nın Panov Atak varyantından da ulaşılabildiği günümüzde 10.. .Bf6 hamlesinin ana varyant olduğu söylenebilir.}) 11. Nxd5 $1 exd5 12. Bb5 Bd7 $6 13. Qa4 Nb8 {Beyaz haneli fillerin değişimi kaçınılmaz. Beyazın beyaz haneli filleri değişmek istemesinin sebebi birkaç hamle sonra daha iyi anlaşılacak.} (13... Rc8 14. Bf4 {ve ardından Rac1.}) 14. Bf4 Bxb5 15. Qxb5 a6 16. Qa4 Bd6 {"a6-piyonu üzerindeki baskıyı koruyor ve Bxb8 ile piyon kazanmayı tehdit ediyor. Siyahın tek yapabileceği taş değişmeye çalışmak." - Botvinnik.} 17. Bxd6 Qxd6 18. Rac1 Ra7 19. Qc2 $1 { [#] "c-hattı e-hattından çok daha önemli, gelecekte e7 karesini şah koruyabilecekken c7 tehlikelere daha açıktır." - Botvinnik.} Re7 (19... Nd7 20. Qc6 {Bunun gibi bir varyant sayesinde beyaz haneli fillerin değişiminin 10...b6 sürüşüyle zayıflayan beyaz karelerin kullanıma açılması, izole d5 piyonunun temel koruyucusundan yoksun kalması, siyahın atını oyuna girmekte ve taşları arasındaki uyumu sağlamakta zorlanmasıyla anlayabiliyoruz.}) 20. Rxe7 Qxe7 21. Qc7 Qxc7 22. Rxc7 {"Alekhine doğru bir şekilde kalenin kendi başına ciddi bir zarar veremeyeceğini ve kaleyi yedinci yataydan sökebileceği değerlendirmesini yapıyor." - Kasparov.} f6 $1 23. Kf1 (23. Rb7 $2 Rc8 24. Kf1 b5 {"siyah c-dikeyini kontrol ediyor ve onun için bütün tehlike sona erdi." - Kasparov.}) 23... Rf7 24. Rc8+ Rf8 25. Rc3 $1 {Kale uygun bir zamanda yedinci yataya geri dönmek üzere çekiliyor.} g5 {Bu sürüş yeni zayıflıklar yaratabilir fakat Alekhine yedinci yataydaki tehlikeden piyonlarını sürerek kurtulmak istiyor.} (25... Nd7 26. Rc7) 26. Ne1 h5 (26... h6 27. Nc2 Kf7 28. Ne3 Ke6 29. g4 {ve Nf5. Fakat şimdi Botvinnik'ten muhteşem bir hamle geliyor...}) 27. h4 $3 { [#] h5'i sabitliyor ve şah kanadında zayıflık yaratmaya çalışıyor.} (27. Nc2 Kf7 28. Rc7+ Ke6 {Siyah konumunu geliştirmiş olurdu.}) 27... Nd7 (27... Kf7 28. hxg5 fxg5 29. Nf3 Kf6 30. Ne5) (27... gxh4 $2 28. Nf3) 28. Rc7 Rf7 29. Nf3 $1 g4 30. Ne1 {f4-karesini zayıflatmayı başardı, şimdi oraya yöneliyor.} f5 31. Nd3 f4 {"f4-karesini savunuyor, fakat f4-piyonu artık zayıflıklar listesine ekleniyor." - Kasparov.} 32. f3 $1 {"Botvinnik Nb4 ile piyon kazanmanın cazibesine kapılmıyor, yeni bir zayıflığı daha sabitliyor. Büyük materyal kazancın uzakta olmadığını görüyor." - Kasparov.} gxf3 33. gxf3 a5 {Nb4'ü kesiyor.} 34. a4 Kf8 35. Rc6 Ke7 36. Kf2 Rf5 37. b3 { "Aceleye etmeye hiç gerek yok." - Kasparov} Kd8 38. Ke2 Nb8 39. Rg6 $1 (39. Rxb6 $6 Kc7 40. Rg6 Nc6 {karşı şanslarla.}) 39... Kc7 40. Ne5 Na6 {Oyun burada ajurne oluyor. Botvinnik notlarında, Alekhine'in kendisine gelip eğer 41.Rg5! hamlesini oynadıysa terk edeceğini söylüyor. Botvinnik ise eğer hamleyi söylerse zarfa konulan hamlenin gizliliği ortadan kalkacağından tartışmayı sürdürmediğini belirtiyor. Zira 41.Rg5 daha çabuk kazanıyor. } 41. Rg7+ Kc8 42. Nc6 Rf6 43. Ne7+ Kb8 44. Nxd5 {Sonunda önce piyonu sonra oyunu kazanıyor.} Rd6 45. Rg5 Nb4 46. Nxb4 axb4 47. Rxh5 Rc6 (47... Rxd4 48. Rf5 $1 Kb7 49. Rf6 Kc7 50. h5 {- Kasparov}) 48. Rb5 Kc7 49. Rxb4 Rh6 50. Rb5 Rxh4 51. Kd3 {"Turnuvada oynadığım 14 oyundan yalnızca birinde rakibimin benden daha iyi oynadığını hissettim; yedinci turda Botvinnik'le olan oyunumda." - Alekhine.} 1-0
 
@@ -137,13 +134,6 @@ Turnuvaya 5.5/6 ile mükemmel bir başlangıç yapan Reuben Fine, turnuvanın ik
 [EventDate "1938.11.06"]
 [EventType "tourn"]
 [EventRounds "14"]
-[EventCountry "NED"]
-[SourceTitle "Tournaments"]
-[Source "ChessBase"]
-[SourceDate "2004.03.11"]
-[SourceVersion "1"]
-[SourceVersionDate "2004.03.11"]
-[SourceQuality "1"]
 
 { [P] Siyahın piyon önde olduğu bu finalde Reuben Fine Dünya Şampiyonu rakibini, ters renkli fillerin varlığına rağmen güzel bir şekilde yeniyor.} 31... h4 $1 {Beyaz şah uzak geçeri durdurmak zorundayken, siyah şah zayıflamış vezir kanadına dalış yapacak.} 32. Kg2 f5 33. Kh3 Kf6 34. Kg2 Rd4 35. Kh3 g5 36. Bc2 Rxd1 37. Bxd1 Bd6 38. Bc2 Ke5 39. Kg2 Bc5 40. Bd3 a5 41. Bc2 f4 $1 {Piyonların filin rengine konduğu istisnai durumlardan biri.} 42. Bg6 Kd4 43. Bf5 Kc3 44. Bc8 Kb2 45. Bxb7 Kxa2 46. Bxc6 Kxb3 47. Kf1 a4 0-1
 
@@ -159,15 +149,6 @@ Turnuvaya 5.5/6 ile mükemmel bir başlangıç yapan Reuben Fine, turnuvanın ik
 [FEN "r2q1rk1/6pp/2p1pp2/pbP1P3/R7/2Q2N2/2P2PPP/R5K1 w - - 0 20"]
 [PlyCount "23"]
 [EventDate "1938.11.06"]
-[EventType "tourn"]
-[EventRounds "14"]
-[EventCountry "NED"]
-[SourceTitle "Tournaments"]
-[Source "ChessBase"]
-[SourceDate "2004.03.11"]
-[SourceVersion "1"]
-[SourceVersionDate "2004.03.11"]
-[SourceQuality "1"]
 
 { [P] Turnuvanın ilk turunda Fine, geleceğin dünya şampiyonu Botvinnik'in Fransız Savunmasında strateji ve taktik gösterisi sunuyor.} 20. Rd4 $1 { d6-karesine yöneliyor.} (20. Rxa5 $6 Rxa5 21. Qxa5 (21. Rxa5 Qd1+) 21... Qxa5 22. Rxa5 Rd8 $11 {Elbette yetersiz olurdu ve siyahın umduğu devam yoluydu.}) 20... Qe7 21. Rd6 a4 22. Qe3 $1 {Beyazın Nd2-c4 planına karşı siyahın çaresi bulunmuyor!} Ra7 23. Nd2 a3 {Umutsuzluk.} 24. c4 Ba4 25. exf6 Qxf6 26. Rxa3 Re8 27. h3 Raa8 28. Nf3 Qb2 29. Ne5 Qb1+ 30. Kh2 Qf5 31. Qg3 {Siyah taşlar kıpırdayamıyor ve siyah Rf3 karşısında çaresiz.} 1-0
 
@@ -186,12 +167,6 @@ Turnuvaya 5.5/6 ile mükemmel bir başlangıç yapan Reuben Fine, turnuvanın ik
 [EventType "tourn"]
 [EventRounds "14"]
 [EventCountry "NED"]
-[SourceTitle "Tournaments"]
-[Source "ChessBase"]
-[SourceDate "2004.03.11"]
-[SourceVersion "1"]
-[SourceVersionDate "2004.03.11"]
-[SourceQuality "1"]
 
 {Kaçan Fırsat!} 39... hxg5 {Bu konumda Capablanca Rxg5 oynamış ve oyun berabere bitmişti. Beyazın kazanca giden bir yolu olabilir mi?} 40. Rxg5 $4 ( 40. h5 $1 Rb1 41. Kg2 $1 g4 42. h6 Rb5 43. h7 {İlginç olan, normalde sansasyon sayılabilecek bu hatanın turnuva sırasında kimse tarafından fark edilmemesiydi.}) 40... Rb8 41. Kh3 e5 42. Rg1 1/2-1/2
 
@@ -206,16 +181,6 @@ Turnuvaya 5.5/6 ile mükemmel bir başlangıç yapan Reuben Fine, turnuvanın ik
 [SetUp "1"]
 [FEN "r4rk1/pbp1b1pp/np6/3qNp2/3Pp3/4B1P1/PPQ1PPBP/2R2RK1 w - - 0 14"]
 [PlyCount "51"]
-[EventDate "1938.11.06"]
-[EventType "tourn"]
-[EventRounds "14"]
-[EventCountry "NED"]
-[SourceTitle "Tournaments"]
-[Source "ChessBase"]
-[SourceDate "2004.03.11"]
-[SourceVersion "1"]
-[SourceVersionDate "2004.03.11"]
-[SourceQuality "1"]
 
 {[P] İki Dünya Şampiyonu arasında geçen mücadele yarı-açık dikeyde geri kalmış piyon konusuna ders örneği teşkil edecek nitelikte. Siyahın a2-piyonunu almak ve yarı-açık dikeyde geri kalmış piyonunu sürmek (... c7-c5) istediği bu konumda, beyazınsa c7'ye baskı uygulamak, siyahın kenardaki atına karşı oynamak ve f3 ile merkezi parçalamak gibi fikirleri var. "Zihinlerin savaşı" başlıyor!} 14. Nc6 $1 Bxc6 (14... Bd6 {Bu değişim için doğru anı beklemek veya Nb8 hamlesini hazırlamak bilgisayarın fikri.} 15. a3 Nb8 { Kenardaki atından kurtulmaya çalışıyor fakat siyah taşlar arasındaki koordinasyon bozuluyor.} 16. Ne5 Bxe5 17. dxe5 c5 18. Rfd1 Qxe5 $2 19. Qc4+ Kh8 20. Qf7 $1 $18 {Problem at bütün taşların problemine dönüşüyor!}) 15. Qxc6 Qxc6 ({Yanlış görünen} 15... Qxa2 {bilgisayarın ilk tercihi!} 16. Ra1 Nb4 $1 17. Qxc7 (17. Qxa8 Rxa8 18. Rxa2 Nxa2 19. f3 Nb4 20. fxe4 fxe4 21. Bxe4 Re8 $11) 17... Qf7 18. Rxa7 Nd5 19. Qb7 Rxa7 20. Qxa7 Nxe3 21. fxe3 Bg5 {Beyaz piyon fazla ama ters renkli filler siyahın işini kolaylaştırabilir.}) 16. Rxc6 Rf6 17. Rfc1 Rxc6 18. Rxc6 Bd6 19. a3 $1 {Atı kenarda tutuyor ve uygun durumda b4 hazırlıyor.} Re8 20. Bf4 $1 {c7-piyonunun temel savunucusunu yok etmek istiyor.} Bxf4 21. gxf4 Kf7 22. e3 Re6 23. Rc4 $1 (23. Rxe6 $2 Kxe6 { Aktif şahı ile siyahın kötü olması mümkün görünmüyor. Zaten aktif beyaz kale ile pasif siyah kalenin değişilmesi bir hayli mantıksız olurdu.} ) 23... b5 24. Rc3 c6 25. f3 g6 26. fxe4 fxe4 27. a4 $1 bxa4 (27... b4 28. Rc4 {Kenardaki at piyonun savunmasına bağlı kalır. Bu sırada beyaz Kf2, Bh3, Bc8, a5 ile baskıyı arttırabilir.}) 28. Rc4 Kf6 29. Rxa4 c5 $2 (29... Nc7 30. Rxa7 Nd5 31. Kf2 {Daha dirençli olurdu. Oyundaki hamle hemen kaybediyor.}) 30. Bf1 cxd4 31. Rxa6 dxe3 32. Rxe6+ Kxe6 33. Bh3+ Kd5 34. Kf1 Kc4 35. Ke2 Kb3 36. Be6+ Kxb2 37. Bg8 a5 38. Bxh7 a4 39. Bxg6 1-0
 
@@ -230,16 +195,6 @@ Turnuvaya 5.5/6 ile mükemmel bir başlangıç yapan Reuben Fine, turnuvanın ik
 [SetUp "1"]
 [FEN "r1bq1rk1/2p2pb1/2Pp1np1/1N5p/1P6/1Q4PP/1B3PB1/3RR1K1 w - - 0 25"]
 [PlyCount "25"]
-[EventDate "1938.11.06"]
-[EventType "tourn"]
-[EventRounds "14"]
-[EventCountry "NED"]
-[SourceTitle "Tournaments"]
-[Source "ChessBase"]
-[SourceDate "2004.03.11"]
-[SourceVersion "1"]
-[SourceVersionDate "2004.03.11"]
-[SourceQuality "1"]
 
 { [P] Siyahın taşları arasındaki uyum sorununa çözüm bulamadığı bu konumda beyazın bitirici vuruş için her türlü imkanı var gibi görünüyor.} 25. Nxd6 $1 Be6 (25... cxd6 26. c7 {Aynı sonuca götürürdü.} ) 26. Rxe6 $1 fxe6 27. Nf5 $1 Qe8 28. Nxg7 Kxg7 29. Rd7+ Rf7 30. Be5 $1 { Bitirici dokunuş, beyaz basitçe c7'yi almak istiyor. Sonrasında c6-piyonu oyunun kaderini tayin edecek.} Kg8 31. Rxc7 Rxc7 32. Bxc7 Ra1+ 33. Kh2 Ra7 34. Be5 Rf7 35. c7 Nd7 36. Qc2 Rf8 37. c8=Q 1-0
 
@@ -254,16 +209,6 @@ Turnuvaya 5.5/6 ile mükemmel bir başlangıç yapan Reuben Fine, turnuvanın ik
 [SetUp "1"]
 [FEN "r5kr/q2bb1pn/1p2p1Bp/pP1pP2P/N2P1PpN/P3Bn2/1Q4K1/R6R w - - 0 28"]
 [PlyCount "16"]
-[EventDate "1938.11.06"]
-[EventType "tourn"]
-[EventRounds "14"]
-[EventCountry "NED"]
-[SourceTitle "Tournaments"]
-[Source "ChessBase"]
-[SourceDate "2004.03.11"]
-[SourceVersion "1"]
-[SourceVersionDate "2004.03.11"]
-[SourceQuality "1"]
 
 { [P] Önemli Alekhine - Capablanca partilerinden birisi daha! Alekhine'in açılıştan itibaren domine ettiği partide bitirişi de öğretici.} 28. Bxh7+ $1 ({Basit} 28. Nxf3 gxf3+ 29. Kxf3 {devamyolu da kazanç olmalıdır fakat, Alekhine bu "sade" devamyolundan daha fazlasını istiyor.}) 28... Rxh7 (28... Kxh7 29. Qb1+ Kg8 30. Ng6 $18) 29. Ng6 Bd8 30. Rac1 {Plana hemen başlamak için acele etmiyor, yoksa siyah Rc8-Rc4 ile aktifleşecekti.} Be8 31. Kg3 $1 $18 {İşte bu! Beyaz Pg4'ü aldıktan sonra Nf3 için hikayenin sonu geliyor. Bu görevi başarıyla yerine getirecek taş ise şahtan başkası değil.} Qf7 32. Kxg4 Nh4 (32... Ng5 33. fxg5 Qf5+ 34. Kg3 Bxg5 35. Rcf1 $18) 33. Nxh4 Qxh5+ 34. Kg3 Qf7 35. Nf3 h5 {Alekhine, Capablanca ile aralarında oynadıkları son oyunu kazanıyor. Aslında bu, Alekhine'in Capablanca karşısında bir turnuvada kazandığı ilk parti! Ölümsüz rakiplerin aralarındaki ciddi oyunlarında son durum 33 beraberliğe karşın 7-7 olarak tarihe geçiyor.} 1-0
 
@@ -278,16 +223,6 @@ Turnuvaya 5.5/6 ile mükemmel bir başlangıç yapan Reuben Fine, turnuvanın ik
 [SetUp "1"]
 [FEN "5rk1/pp3ppp/2nr1n2/1B2pq2/8/2B1PP2/PP2Q1PP/2R2RK1 w - - 0 20"]
 [PlyCount "17"]
-[EventDate "1938.11.06"]
-[EventType "tourn"]
-[EventRounds "14"]
-[EventCountry "NED"]
-[SourceTitle "Tournaments"]
-[Source "ChessBase"]
-[SourceDate "2004.03.11"]
-[SourceVersion "1"]
-[SourceVersionDate "2004.03.11"]
-[SourceQuality "1"]
 
 { [P] Beyazın çift fili sayesinde avantajlı olduğu konumda basitçe piyon kazanmanın yolu nedir?} 20. Bxc6 $1 {Fil çiftinin en güzel yanının uygun anda bu avantajı başka bir avantajla takas etmek olduğu söylenir. Beyazlar bu değişimle önce piyonu sonra oyunu kazanıyor.} Rxc6 (20... bxc6 21. Bb4) 21. Qb5 {Piyonu kazanıyor.} Rfc8 22. Qxb7 Qd3 (22... Qe6 {Tehdit Rb6-Ra6 ve Qxa2} 23. e4 $1 Qxa2 24. Ra1 $16) 23. e4 Nh5 24. g3 Qe3+ 25. Kg2 Qg5 26. Kf2 f5 $6 27. exf5 Qxf5 28. g4 $18 {... ve Capablanca taş üstün kazanmakta zorlanmadı. } 1-0
 
