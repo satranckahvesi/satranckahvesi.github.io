@@ -25,7 +25,7 @@ fazla düşünmeden oynadığımız bir anda bunu nasıl başardığımızı anl
 kadar kolay olmayabilir. Sahiden satranç tahtası üzerinde verilen kararların tam olarak neye
 dayanması gerektiğini nasıl açıklayabiliriz?
 
-Willy Hendriks ödüllü kitabı "Önce Hamle Yap Sonra Düşün" kitabında kafamda dönen böylesi soruların daha önce verilmiş yanıtlarına eleştirel bir bakış açısı getiriyor.
+**Willy Hendriks** ödüllü eseri **"Önce Hamle Yap Sonra Düşün"**'de kafamda dönen böylesi soruların daha önce verilmiş yanıtlarına eleştirel bir bakış açısı getiriyor.
 
 [Event "Wijk aan Zee"]
 [Site "?"]
