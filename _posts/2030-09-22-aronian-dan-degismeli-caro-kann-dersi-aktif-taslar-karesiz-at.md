@@ -136,8 +136,6 @@ Siyah hafif taşlarının işlevsiz görüntüsüne karşın beyaz taşlar adeta
 [FEN "3r1k2/1R1n1pbp/1p2p1p1/p2p4/3P1B2/3P1N1P/PP3PP1/6K1 w - - 0 26"]
 *
 
-*25... Kf8 sonrası konum*
-
 ### İleri karakol
 
 Eğer **zayıf bir kare**de (piyonlar tarafından savunulamayan özellikle rakibe erişimi yüksek) taşlarımızı konumlandırabilirsek çok etkili olacağı söylenebilir.
@@ -154,8 +152,6 @@ Bu değişimle Beyaz piyon yapısını düzeltiyor ve **ileri karakolunu teorik 
 
 [FEN "2r1k3/1R1n1p1p/1p1Bp1p1/p2pP3/8/3P3P/PP3PP1/6K1 w - - 0 1"]
 *
-
-*Kritik konum!*
 
 ### Problem taş
 
@@ -179,8 +175,6 @@ Kilit hamle! Siyahın Rc2 ve ardından Nc5 ilerleyişi durduruluyor ve Siyah at 
 
 [FEN "3k4/R2n1p2/1p1Bp1pp/p2pP3/3P4/1P5P/P4PPK/2r5 w - - 0 1"]
 *
-
-*Hamle sırası siyahta*
 
 İlginç bir şekilde siyahın yapacak bir şeyi bulunmuyor.
 
