@@ -6,7 +6,7 @@ author: "FM Nazmi Can Doğan"
 column: "Kitap incelemeleri"
 ---
 
-###### Bu yazı ilk olarak 2016 yılında **Satrançsever** dergisinin 4. sayısında yayınlanmıştır.
+###### Bu yazı ilk olarak 2016 yılında **Satrançsever** dergisinin 4. sayısında yayımlanmıştır.
 
 Dünya şampiyonu **Magnus Carlsen**'in (bu yazı yazıldığı sırada Carlsen dünya şampiyonuydu) hayatını konu alan filmin fragmanında "kararlarımı sezgilerimden yola çıkarak veriyorum" cümlesini duyduktan sonra, "acaba oyuncular
 tahta başında nasıl karar veriyorlar?" sorusu aklıma takıldı. Carlsen'in kıyaslanamaz bir oyun
@@ -25,7 +25,7 @@ fazla düşünmeden oynadığımız bir anda bunu nasıl başardığımızı anl
 kadar kolay olmayabilir. Sahiden satranç tahtası üzerinde verilen kararların tam olarak neye
 dayanması gerektiğini nasıl açıklayabiliriz?
 
-**Willy Hendriks** ödüllü eseri **"Önce Hamle Yap Sonra Düşün"**'de kafamda dönen böylesi soruların daha önce verilmiş yanıtlarına eleştirel bir bakış açısı getiriyor.
+**Willy Hendriks**, ödüllü eseri **"Önce Hamle Yap Sonra Düşün"**'de kafamda dönen böylesi soruların daha önce verilmiş yanıtlarına eleştirel bir bakış açısı getiriyor.
 
 [Event "Wijk aan Zee"]
 [Site "?"]
@@ -75,8 +75,8 @@ Konumun özelliklerini ve onlarla eşleşen hamleleri aynı anda görürüz, kon
 hamleyle bağlantılı olmayan bir özelliği basitçe ilgisizdir. Eğer Ng5 ya da Bxf7 gibi hamleler
 görmüyorsak (öncesinde veya aynı anda) f7 karesinde zayıflık görmeyiz."
 
-Yazarın eleştirilerine maruz kalan **Carsten Hansen**'in "Pozisyonel Satrancınızı İlerletin"
-(**_Improve Your Positional Chess_**) kitabıyla ilgili konumu analiz ederken yazarı şöyle eleştiriyor:
+Yazarın eleştirilerine maruz kalan **Carsten Hansen**'in, "Pozisyonel Satrancınızı İlerletin"
+(**_Improve Your Positional Chess_**) kitabıyla ilgili konumu analiz ederken şunları söylüyor:
 
 [Event "Linares 14th"]
 [Site "Linares"]
