@@ -60,8 +60,6 @@ Aronian daha önce belirtildiği gibi tipik c3 sürüşünü neden oynamadığı
 [FEN "r2qkb1r/1p3p1p/p1n1pn2/3pNpB1/3P4/P1N4P/1PP2PP1/R2Q1RK1 w kq - 1 13"]
 *
 
-*Analiz diyagramı - Beyaz oynar, kazanır.*
-
 13. Nxd5!! exd5 14. Re1 dikkate değer bir konum! 14... Nxe5 15. Rxe5+ Kd7 16. Rxf5 Bg7 17. Bxf6 Bxf6 18. Rxd5++-
 
 10. Re1 O-O 11. Bg5 Nxd3 12. cxd3!
@@ -77,7 +75,7 @@ Beyazın üstünlüğü **aktif taş oyunu** yaratabilmesinde. Siyahın sorunu i
 
 Beyaz aktif taş oyununu sürdürdüğü sürece oyunu iyi olacak, ancak küçük bir hata yapısındaki zayıflıkları görünür hale getirebilir. Aronian'ın açılış hazırlığını nasıl yaptığını biraz daha anlamaya başlayacağız. Beyazın duble piyonlarının an itibariyle harika iş çıkardığını ve çok önem e4 karesini kontrol ederek standart **Ne4 karşı saldırısı**nı engellediğini söyleyebiliriz. Beyaz aktif taş oyunu yaparken siyah taşların aktif roller elde etmesine izin verilmiyor. Söz gelimi **Siyah Bf5 oynadığı her durumda Qb3** ile karşılaşacak.
 
-12... Qb6 (12... Bf5 13. Qb3) Stockfish burada **merkezden karşı oyun** için 12... Ne8!? ve devamında ...f6 hamlesini öneriyor.
+12... Qb6 (12... Bf5 13. Qb3 Beyazın 12.cxd3 hamlesinin faydalarından biri!) Stockfish burada **merkezden karşı oyun** için 12... Ne8!? ve devamında ...f6 hamlesini öneriyor.
 
 13. Nf3!
 
@@ -98,8 +96,6 @@ Aktif taş oyunu sürdürülmeli **Bd7 gelmeden**! Şimdi beyazın c dikeyinde o
 
 [FEN "r1b2rk1/1p3pbp/3qpnp1/p2p2B1/N2P4/3P1N1P/PP1Q1PP1/R3R1K1 w - - 0 16"]
 *
-
-*15... a5 sonrası konum*
 
 16. Rac1 Bd7 (16... Qb4 17. Qxb4 axb4 18. Nb6+-)
 
@@ -123,7 +119,6 @@ Beyazın aktif taş oyunu sürüyor.
 [FEN "3r2k1/2Rn1pbp/1p2p1p1/p2p4/3P1B2/3P1N1P/PP3PP1/6K1 w - - 0 1"]
 *
 
-*24... Rd8 sonrası konum*
 
 Siyah hafif taşlarının işlevsiz görüntüsüne karşın beyaz taşlar adeta dans ediyor. Kale yedinci yatayda kariyerinin zirvesini yaşarken d7 karesindeki atı oyun boyunca üzgün göreceğiz. cxd3 alışıyla başlayan kısıtlama operasyonu onu oyunsuz bırakıyor.
 
