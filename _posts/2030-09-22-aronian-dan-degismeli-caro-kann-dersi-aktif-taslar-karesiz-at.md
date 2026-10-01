@@ -5,7 +5,7 @@ date: 2022-02-26
 author:	"FM Nazmi Can Doğan"
 column:	"Analizli oyunlar"
 ---
-
+###### Bu yazı ilk olarak 2022 yılında satranchess.com sitesinde yayınlanmıştır.
 <!--
 ### Levon Aronian - Vincent Keymer 2022 Fide Grand Prix 3. tur mücadelesi
 
@@ -17,7 +17,7 @@ _1. e4_
 
 (1. d4 d5 2. Bf4 c5 3. e3 Nf6 4. Nf3 Nc6 5. Nbd2 cxd4 6. exd4 Bg4 7. c3 e6 8. Qb3 Qc8 9. Bd3 Bu varyantı 4. hamledeki notla kıyaslayınız.)
 
-_1... c6 2. d4 d5 3. exd5 cxd5 4. Bd3_ Aronian bu varyantı ve Londra sistemini kullanıyor bir süredir ve hem Londra Sistemi hem de değişmeli Caro-Kann'ı ondan izlemenizi öneriyorum. **Bu sistemin amacı ilk etapta rakibin beyaz renkli filinin oyuna girişini güçleştirmek**.
+_1... c6 2. d4 d5 3. exd5 cxd5 4. Bd3_ Aronian bu varyantı ve Londra sistemini başarıyla kullanıyor. Bu yönüyle belli tipte piyon yapılarını çalışmanın önemine vurgu yapan bu durumu en üst düzey bir oyuncudan görmüş oluyoruz. **Bu sistemin amacı ilk etapta rakibin beyaz renkli filinin oyuna girişini güçleştirmek**. Beyazın hamle sıralaması buna yönelik.
 
 _4... Nf6_
 
@@ -26,9 +26,7 @@ _4... Nf6_
 _5. h3_
 
 [FEN "rnbqkb1r/pp2pppp/5n2/3p4/3P4/3B3P/PPP2PP1/RNBQK1NR b KQkq - 0 5"]
-*
 
-*5. h3 sonrası konum*
 
 Varyantın ruhuna uygun şekilde c8 filini kısıtlayarak Nf3 oynamak istiyor.
 
@@ -68,7 +66,7 @@ _9. O-O Bg7_
 
 13. Nxd5!! exd5 14. Re1 dikkate değer bir konum! 14... Nxe5 15. Rxe5+ Kd7 16. Rxf5 Bg7 17. Bxf6 Bxf6 18. Rxd5++-
 
-_10. Re1 O-O 11. Bg5 Nxd3 12. cxd3!_
+10. Re1 O-O 11. Bg5 Nxd3 12. cxd3!
 
 [FEN "r1bq1rk1/1p2ppbp/p4np1/3pN1B1/3P4/2NP3P/PP3PP1/R2QR1K1 b - - 0 1"]
 *
@@ -83,13 +81,13 @@ Beyazın üstünlüğü **aktif taş oyunu** yaratabilmesinde. Siyahın sorunu i
 
 Beyaz aktif taş oyununu sürdürdüğü sürece oyunu iyi olacak, ancak küçük bir hata yapısındaki zayıflıkları görünür hale getirebilir. Aronian'ın açılış hazırlığını nasıl yaptığını biraz daha anlamaya başlayacağız. Beyazın duble piyonlarının an itibariyle harika iş çıkardığını ve çok önem e4 karesini kontrol ederek standart **Ne4 karşı saldırısı**nı engellediğini söyleyebiliriz. Beyaz aktif taş oyunu yaparken siyah taşların aktif roller elde etmesine izin verilmiyor. Söz gelimi **Siyah Bf5 oynadığı her durumda Qb3** ile karşılaşacak.
 
-_12... Qb6_ (12... Bf5 13. Qb3) Stockfish burada **merkezden karşı oyun** için 12... Ne8!? ve devamında ...f6 hamlesini öneriyor.
+12... Qb6 (12... Bf5 13. Qb3) Stockfish burada **merkezden karşı oyun** için 12... Ne8!? ve devamında ...f6 hamlesini öneriyor.
 
-_13. Nf3!_
+13. Nf3!
 
 Harika bir geri çekiliş.
 
-_13... e6_
+13... e6
 
 [FEN "r1b2rk1/1p3pbp/pq2pnp1/3p2B1/3P4/2NP1N1P/PP3PP1/R2QR1K1 w - - 0 14"]
 *
