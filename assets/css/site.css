@@ -1502,16 +1502,6 @@ a:hover { border-bottom-style: dotted; }
     }
 }
 
-/* Small mono caption above the view buttons, styled like .post-meta
-   (mono, 0.8rem, muted) and centered over them. */
-.pgn-switcher-label {
-    margin: 0 0 0.5rem;
-    text-align: center;
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    color: var(--muted);
-}
-
 .pgn-switcher {
     display: flex;
     justify-content: center;
