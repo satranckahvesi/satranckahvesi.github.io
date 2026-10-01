@@ -8,19 +8,19 @@ column: "Satranç Açılışları"
 
 Fransız Savunması; kimine göre güvenli bir sığınak, kimisine göre
 agresif bir karşı saldırı silahı. Birinci Dünya Şampiyonu Wilhelm
-Steinitz’ın “açılışların en sıkıcısı” olarak nitelediği, ancak günümüzün en
+Steinitz'ın "açılışların en sıkıcısı" olarak nitelediği, ancak günümüzün en
 renkli oyuncularının da sık kullandığı bir savunma. Morozevich,
 Nakamura, Shirov gibi agresif, eski Dünya Şampiyonu Petrosian gibi
 sağlam, Korchnoi ve Larsen gibi karşı saldırı ustalarının oynadığı
 saygıdeğer bir savunma sisteminin adıdır aynı zamanda Fransız
 Savunması. Short, Bareev, Yusupov, Uhlmann, Timman, M.Gurevich ve
 Dünya Şampiyonu Botvinnik gibi konumsal satrancın devlerini de
-unutmamak gerek. Steinitz “hayatımda asla oynamadım” dese de
+unutmamak gerek. Steinitz "hayatımda asla oynamadım" dese de
 günümüzde 1.e4 hamlesine karşı en sık uygulanan yanıtlardan biridir.
 Şimdi ilk işimiz, ileride her varyantına değinmeyi umduğumuz Fransız
-Savunması’nın Steinitz Varyantı incelemek olacak. Hakkında yazılmış
+Savunması'nın Steinitz Varyantı incelemek olacak. Hakkında yazılmış
 sayısız kitapla incelenmiş ve tüketilmesi mümkün olmayan Fransız
-Savunması’nı burada bütünüyle incelemeyi iddia etmek mümkün olmasa
+Savunması'nı burada bütünüyle incelemeyi iddia etmek mümkün olmasa
 da olabildiğince çok örnekle önemli varyantları sunarak fikir vermeye
 çalışacağız. Önemli varyantlara geçmeden önce Fransız Savunması çin
 tipik kabul edilen konumları ele alalım.
