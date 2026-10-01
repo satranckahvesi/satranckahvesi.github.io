@@ -160,15 +160,15 @@ konumların, modellerin, planların, kombinezonların bilgisiyle ulaşacaktır: 
 tahtada zaten bildiği şeyi görür. Eğer görmüyorsanız, daha iyi bakmanız ya da farklı bir yol
 izlemeniz yardımcı olmaz.**" 
 
-Meraklısı için farklı seviyelerden oyunculara sunulan de Groot’un test konumu aşağıdadır. Satranç psikoloğu De Groot'un bu testinde belirli seviyedeki oyunculardan gördükleri konum hakkında sesli düşünmeleri istenmiştir. (Bu oyuncular
-arasında Keres, Alekhine, Euwe gibi dünya şampiyonları da bulunmaktaydı). Konum üzerine
+Meraklısı için farklı seviyelerden oyunculara sunulan de Groot’un test konumu aşağıdadır. Satranç psikoloğu de Groot'un bu testinde belirli seviyedeki oyunculardan gördükleri konum hakkında sesli düşünmeleri istenmiştir. (Bu oyuncular
+arasında Alekhine ve Euwe gibi dünya şampiyonları, Keres gibi kuvvetli oyuncular da bulunmaktaydı). Konum üzerine
 düşünerek siz de teste katılabilirsiniz.
 
 [Event "?"]
 [Site "?"]
 [Date "????.??.??"]
 [Round "?"]
-[White "De Groot'un Test Konumu"]
+[White "de Groot'un Test Konumu"]
 [Black "?"]
 [Result "*"]
 [SetUp "1"]
