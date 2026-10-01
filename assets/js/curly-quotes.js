@@ -32,6 +32,8 @@
         return false;
     }
 
+    // (This script also turns "--" into an em dash; see toEmDashes below.)
+    //
     // A conventional SmartyPants-style pass: a straight quote right
     // after whitespace, an opening bracket, or the very start of the
     // text becomes an opening curly quote; every other one (mid-word,
@@ -43,11 +45,28 @@
     // **bold**) won't see the word before it — an accepted gap for a
     // script this size, and rare in this site's actual prose.
     function toCurly(text) {
-        return text
+        return toEmDashes(text)
             .replace(/(^|[-—\s(\[{"])'/g, '$1‘')
             .replace(/'/g, '’')
             .replace(/(^|[-—\s(\[{'])"/g, '$1“')
             .replace(/"/g, '”');
+    }
+
+    // Authors type "--" wherever an em dash belongs (e.g. "...zaferi
+    // getiren-- artık", or a source credit like "--Kasparov"), and it
+    // becomes a real — here. Two cases are left alone on purpose:
+    // runs of three or more hyphens, and a "--" standing alone between
+    // whitespace, which in PGN move text is the null-move token (and
+    // curlyPass also reaches the move text of rendered side-lines). A
+    // "--" glued to a word on either side is never a null move.
+    function toEmDashes(text) {
+        return text.replace(/(^|[^-])--(?!-)/g, function (match, before, offset, whole) {
+            var after = whole.charAt(offset + match.length);
+            var aloneBefore = before === '' || /\s/.test(before);
+            var aloneAfter = after === '' || /\s/.test(after);
+            if (aloneBefore && aloneAfter) return match;
+            return before + '—';
+        });
     }
 
     function curlyPass(root) {
@@ -55,7 +74,8 @@
         var targets = [];
         var node;
         while ((node = walker.nextNode())) {
-            if (node.nodeValue.indexOf('"') === -1 && node.nodeValue.indexOf("'") === -1) continue;
+            if (node.nodeValue.indexOf('"') === -1 && node.nodeValue.indexOf("'") === -1 &&
+                node.nodeValue.indexOf('--') === -1) continue;
             if (insideSkippedElement(node, root)) continue;
             targets.push(node);
         }

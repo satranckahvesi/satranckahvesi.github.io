@@ -19,7 +19,7 @@ belli bir seviyenin ötesine geçmenin imkânsız olduğunu hissederiz.
 Böylesine bir kayaya ilk toslayışım epey uzun zaman öncesine dayansa da, hâlâ benzer kayalara toslamaya devam
 ediyorum. Bu konuda yalnız olmadığımı ve sözünü ettiğim durumun yaygın bir sorun
 olduğunu satrançsever dostlarımdan, hayat hikâyelerini bildiğim satranç ustalarından daha
-sonra öğrendim. Bu sorunların bir büyükusta tarafından incelenmiş olduğunu duyduğumda
+sonra öğrendim. Bu sorunların bir Büyükusta tarafından incelenmiş olduğunu duyduğumda
 açıkçası çok merak etmiş, bana satrancı daha iyi oynamanın "sihirli formülünü" sunacağını
 ummuştum. Daha sonra basım tarihi 2005 olan bu kitapla şimdi elinizde tutmakta olduğunuz
 derginin basılmasını sağlayan **Analiz Yayıncılık** standında karşılaştım.
@@ -27,19 +27,19 @@ derginin basılmasını sağlayan **Analiz Yayıncılık** standında karşıla�
 O hâlde, yazılışından kısa bir süre sonra satranç literatüründe saygın bir yer
 edinmeyi başarmış bu eserin yazarından kısaca söz ederek başlayalım: Sayısız turnuva
 zaferinin yanında İngiltere ve İskoçya şampiyonlukları bulunan İskoç Büyükusta Jonathan
-Rowson, satrançtaki tescilli başarısının yanına Oxford ve Harvard’da gördüğü felsefe ve
+Rowson, satrançtaki tescilli başarısının yanına Oxford ve Harvard'da gördüğü felsefe ve
 psikoloji öğrenimlerini de eklemiş. Nöroloji bilimi ve öğrenmenin psikolojisi üzerine bilgilerini
 satranç oyunculuğu ve antrenörlükten edindiği tecrübelerle birleştirmiş: "Kitabı yazmaya
-başladığım sırada 2600’a çok yakındım ve İngiltere şampiyonuydum. Paylaşılmaya değer
+başladığım sırada 2600'a çok yakındım ve İngiltere şampiyonuydum. Paylaşılmaya değer
 şeylerin izini sürdüğümü hissediyordum" diyor. Satranç otoriteleri tarafından takdirle
 karşılanan **_"Seven Deadly Chess Sins"_** ("Yedi Ölümcül Satranç Günahı") kitabından sonra
 karşımızda yine en az onun kadar etkileyici bir kitap var: **_"Chess for Zebras"_** ("Zebralar için
 Satranç").
 
 Kitap üç bölümden oluşuyor: İlk bölüm daha çok satranç oyuncusunun psikolojisine
-değinirken, ikinci bölüm Rowson’ın da belirttiği gibi, oyuncu psikolojisi konusundan ziyade
+değinirken, ikinci bölüm Rowson'ın da belirttiği gibi, oyuncu psikolojisi konusundan ziyade
 teknik olarak satrancın kendisiyle en dolu bölüm. "Benim için işe yarayan bir şey" kısmında
-Rowson, **Kasparov**’un “artık satrancı tam olarak kapsamadığını düşündüğü” üç boyutlu
+Rowson, **Kasparov**'un "artık satrancı tam olarak kapsamadığını düşündüğü" üç boyutlu
 düşünüşünü (Materyal, Nitelik ve Zaman) eleştirip üzerine saat ("clock ticking") faktörünü
 ekleyerek ilerliyor. Özellikle bu kısımlar benim gibi zaman sıkışmasına sık giren oyuncular
 için önemli bölümler barındırıyor. Yazarın "düşünme zamanının fırsat maliyeti" diyerek
@@ -50,12 +50,12 @@ gücün en önemli parçalarından birinin zaman faktörünü böyle anlarda de�
 inanıyorum. (...) Şimdi yirmi dakika kaybedersem, daha sonraki fırsatları kesinlikle
 kaçıracağım; peki böyle bir yatırım yapmaya değer mi?"
 
-Kitap ilerledikçe pek çok büyükustanın fikirlerine, konuşmalarına (Motwani, Suba, Psakhis, McShane, Hübner,
+Kitap ilerledikçe pek çok Büyükustanın fikirlerine, konuşmalarına (Motwani, Suba, Psakhis, McShane, Hübner,
 Seirawan vs.), başka eserlerden referanslara yer verilmesi okumayı çok daha sürükleyici ve
 keyifli kılıyor. Üçüncü bölüm olan "Siyah ve beyaz hakkında rengarenk düşünme"
-bölümünde ise Siyah ve Beyaz'ın avantaj ve dezavantajlarına, açılış ve hazırlık meselesine
+bölümünde ise Siyah ve Beyazın avantaj ve dezavantajlarına, açılış ve hazırlık meselesine
 odaklanıyor: "Çok garip bulduğum bir şey, çoğu oyuncunun en üst seviyelerde açılış
-hazırlığının pek çok oyuncu ve hatta iyi büyükustalar için bile olduğundan çok daha fazla
+hazırlığının pek çok oyuncu ve hatta iyi Büyükustalar için bile olduğundan çok daha fazla
 önemli olduğunu fark edemiyor görünmeleri. (...) Sevdiğiniz oyuncuların hamlelerine ve
 fikirlerine özenmeye çalışmak mantıklı ancak onların yaptığı satranç çalışmasına özenmek
 büyük bir hata olur, **çünkü 2650'yi 2750'ye ulaştırmaya faydalı olacak bir çalışma 1650'yi
@@ -66,10 +66,10 @@ ne yapmalı?"_, _"Satranç neden çok zor?"_ ya da _"Konsantre ol! Konsantre ol?
 ama derin meselelere el atmaktan çekinmeyen bir serbestlikle yazılmış olması çok hoşuma
 gitti. Bu yönüyle daha çok satrançta belli bir seviyeye gelmiş, ilerlemekte güçlük çeken
 yetişkin sporcu veya antrenörlere hitap eder görünümde. Örneğin, konsantre olmaya
-dair söze başlarken Blaise Pascal’dan alıntı yapmaktan çekinmiyor yazar:
+dair söze başlarken Blaise Pascal'dan alıntı yapmaktan çekinmiyor yazar:
 "İnsanlığın bütün sorunları, kişinin tek başına bir odada sessizce oturamamasından
 kaynaklanır." Çünkü yazara göre insan kendi düşüncelerine konsantre olmamak için uğraşır
-ve “konsantre olmak” için satranç oynamayı ister.
+ve "konsantre olmak" için satranç oynamayı ister.
 
 Kitabı için pek çok farklı isim düşündükten sonra _"Chess for Zebras: Thinking
 Differently about Black and White"_ (Zebralar İçin Satranç: Siyah ve Beyaz Hakkında Farklı
@@ -78,27 +78,27 @@ duyunca zebra gelsin aklına." Toynak seslerinin atları çağrıştırması üz
 Rowson, bize zebraları işaret ediyor. Mesaj ise kısaca şudur: "Kendinize farklı düşünmek için
 izin verin."
 
-Peki bu nasıl yapılabilir? Kitap düşünce kalıplarını yıkma fikriyle “farklı
-düşünmenin” izini sürüyor. Daha doğrusu Rowson ustalığa giden yolunda neler öğrendiğini
-ve neleri “unutması” (_unlearning_) gerektiğini anlatıyor. İlerleyen bölümler boyunca döne
-dolaşa aynı şeyi hatırlatıyor okura: **“Gelişme, konfor alanınızın sınırında başlar.”**
+Peki bu nasıl yapılabilir? Kitap düşünce kalıplarını yıkma fikriyle "farklı
+düşünmenin" izini sürüyor. Daha doğrusu Rowson ustalığa giden yolunda neler öğrendiğini
+ve neleri "unutması" (_unlearning_) gerektiğini anlatıyor. İlerleyen bölümler boyunca döne
+dolaşa aynı şeyi hatırlatıyor okura: **"Gelişme, konfor alanınızın sınırında başlar."**
 ("Improvement begins at the edge of your comfort zone") Yani sınırlarınızı zorlamadığınız
 sürece gelişme yok. 
 
-Yalnız yanlış anlaşılmasın, Rowson’ın her derde deva olacak --ve bulmayı
+Yalnız yanlış anlaşılmasın, Rowson'ın her derde deva olacak --ve bulmayı
 umduğum-- türden bir "sihirli formülü" yok. Tam tersine her şeyin kesin olduğu iddia edilen çözümlere
 şüpheyle yaklaşılmasını öğütlüyor ve her şeyin kesin olduğu alandan belirsizliğe geçmeyi
 ilerleme sayıyor. Bunu ise her bölüm için iyi seçilmiş, bazıları yazarın kendisi tarafından
 oynanmış partilerle örnekliyor.
 
-“Oyuncunun gücü arttıkça, kendisine bir konumda ne olduğu sorulduğunda daha büyük
-ihtimalle ‘bilmiyorum’ diyerek başlayacaktır.”
+"Oyuncunun gücü arttıkça, kendisine bir konumda ne olduğu sorulduğunda daha büyük
+ihtimalle 'bilmiyorum' diyerek başlayacaktır."
 
-“Satranca, ‘bilmiyorum, düşünelim’ zihniyeti ile yaklaşmak, ‘bu böyle ve bunu
-kanıtlayacağım’ şeklinde yaklaşmaktan çok daha akıllıcadır.”
+"Satranca, 'bilmiyorum, düşünelim' zihniyeti ile yaklaşmak, 'bu böyle ve bunu
+kanıtlayacağım' şeklinde yaklaşmaktan çok daha akıllıcadır."
 
-Aynı yaklaşımla, “atak bir oyuncuyum”, “konumsal oynamayı severim”, “hesap yapmam, sezgilerimle oynarım” gibi yaklaşımlarla oyuncunun kendi tarzına ve hamlelerine sınırlar çizmesini, onun satrancının gelişimi önündeki en büyük engellerden biri olarak
-görüyor ve kitabın her bölümüne özenle seçilerek konmuş epigraflarından Karpov’a ait olan sözüyle bunu açıklıyor. “Tarz mı? Benim bir tarzım yok.” Burada söylenmek istenen “oyuncunun bir tarzı olmamalı” değil, bu yaklaşımın oyuncunun oynadığı oyuna damga vurması, hamleleri üzerinde etkiye sahip olmasıdır elbette. Karpov’un kendi stili üzerine böyle düşünmesi onun bir tarza sahip olmadığını gösterir mi? Kitap boyunca konuya eşlik eden örneklerde kendi partilerini, oynarkenki düşüncelerini ve hissettiklerini içten (belki de aşırı içten!) bir şekilde paylaşması kitabın en büyük artılarından. Şimdi ilk bölümün kaba bir özeti sayılabilecek bir kısmını paylaşmak istiyorum. Bir satranç kitabında içtenliğiyle böylesine beni yakalayan ve söyledikleriyle bana ayna tutan başka bir bölüm hatırlamıyorum. Sözünü ettiğim, Hikâye Uydurma (Fabulation) alt başlığında Rowson’ın yakın zamanda hayata gözlerini yuman Viktor Korchnoi ile karşılaşmasıdır.
+Aynı yaklaşımla, "atak bir oyuncuyum", "konumsal oynamayı severim", "hesap yapmam, sezgilerimle oynarım" gibi yaklaşımlarla oyuncunun kendi tarzına ve hamlelerine sınırlar çizmesini, onun satrancının gelişimi önündeki en büyük engellerden biri olarak
+görüyor ve kitabın her bölümüne özenle seçilerek konmuş epigraflarından Karpov'a ait olan sözüyle bunu açıklıyor. "Tarz mı? Benim bir tarzım yok." Burada söylenmek istenen "oyuncunun bir tarzı olmamalı" değil, bu yaklaşımın oyuncunun oynadığı oyuna damga vurması, hamleleri üzerinde etkiye sahip olmasıdır elbette. Karpov'un kendi stili üzerine böyle düşünmesi onun bir tarza sahip olmadığını gösterir mi? Kitap boyunca konuya eşlik eden örneklerde kendi partilerini, oynarkenki düşüncelerini ve hissettiklerini içten (belki de aşırı içten!) bir şekilde paylaşması kitabın en büyük artılarından. Şimdi ilk bölümün kaba bir özeti sayılabilecek bir kısmını paylaşmak istiyorum. Bir satranç kitabında içtenliğiyle böylesine beni yakalayan ve söyledikleriyle bana ayna tutan başka bir bölüm hatırlamıyorum. Sözünü ettiğim, Hikâye Uydurma (Fabulation) alt başlığında Rowson'ın yakın zamanda hayata gözlerini yuman Viktor Korchnoi ile karşılaşmasıdır.
 
 [Event "Monarch Assurance 13th"]
 [Site "Port Erin"]
@@ -155,7 +155,7 @@ kontrolüm bulunmuyor. Oldukça iyi direndim, tam sorunlarımı çözmeye
 başlar gibiyken, derince düşündü ve yıkıcı taktiklerin pimini çekti. } 19. e3 O-O-O 20. Be2 Nc5 21. O-O Ne4 22. Qc2 Rd6 23. Bd4 Re8 24. Ne5 f6 25. Nd3 Rc6 26. Qd1 Qa5 27. b4 Qa2 28. Nc5 a6 29. Nxe4 dxe4 30. b5 Rc2 31. bxa6 c5 (31... Rxe2 32. a7 Kd7 33. Bb2+ { varyantı Korchnoi'un dehasının hoş bir
 örneğidir. }) 32. axb7+ Kb8 33. Bxf6 Rd2 34. Bc4 Rxd1 35. Bxa2 Rxf1+ 36. Kxf1 Kxb7 37. Bf7 Rf8 38. Bd5+ Kb6 39. Bc3 Kb5 40. Bxe4 Kc4 41. Be5 Re8 42. f4 Kb3 43. Ke2 Rd8 44. g4 c4 45. f5 gxf5 46. gxf5 c3 47. Bd4 Rc8 48. Bd5+ Kb4 49. Kd1 1-0
 
-“Korchnoi ile oynamak çok özel bir durum, hele onunla daha önce hiç
+"Korchnoi ile oynamak çok özel bir durum, hele onunla daha önce hiç
 oynamadıysanız. Böylesine sıra dışı bir oyundan ve oyun sonrası analizinden sonra, pek çok
 insan bana bu tecrübeyi sormak istedi. Benim açıklamam şu şekildeydi: Düzensiz bir açılış
 oynadı, yanıt olarak biraz fazla yaratıcı oynadım ve sonradan gaf olduğu ortaya çıkan zekice
@@ -172,7 +172,7 @@ daha anlamlı gelen bir hikâye anlattım.
 
 Bu hikâye şunu demek istiyordu: O yaratıcıydı ve ben de yaratıcıydım. Ama ben o kadar
 yaratıcıydım ki kendimi kaptırdım ve onun anahtar hamlesini görmeme rağmen (çünkü, hey,
-ben bir büyükustayım), devamını kaçırdım (çünkü, hey, kimse mükemmel değil).
+ben bir Büyükustayım), devamını kaçırdım (çünkü, hey, kimse mükemmel değil).
 Bu hikâye uydurmada (_fabulation_) beni en çok vuran şey, üçüncü ya da dördüncü kez
 olayların bu versiyonunu anlattığımda **artık kendim de böyle olduğuna inanmaya başladım**!
 O akşam kız arkadaşımla konuştuğumda dahi benzer şeyler söyledim. Ama oyunu

@@ -10,7 +10,7 @@ Bu yazımda siyahla sıklıkla tercih edilen savunmaların beyazla oynanması du
 
 Bazı konumların tersten (reversed) oynandığı durumlarda beyazla fazladan bir hamle hakkımızın olması, sanki siyahken art arda iki hamle yapıyormuşuz gibi tahtaya yansırken; bazı konumlarda ise bu tersten oynama durumu etkisiz kalabiliyor ve hatta dezavantaja bile dönüşebiliyor.
 
-Karmaşık bir giriş yaptığımın farkındayım. İyisi mi, ne anlatmaya çalıştığımı tahta üzerinde inceleyelim. İncelemelere önce büyükustaların oyunlarından başlayacağım. Sonra da 2019 yılında aynı turnuvada, birinde siyah, diğerinde beyaz taşlarla oynayıp aynı konumu elde ettiğim iki farklı oyunu inceleyerek yazımı bitireceğim.
+Karmaşık bir giriş yaptığımın farkındayım. İyisi mi, ne anlatmaya çalıştığımı tahta üzerinde inceleyelim. İncelemelere önce Büyükustaların oyunlarından başlayacağım. Sonra da 2019 yılında aynı turnuvada, birinde siyah, diğerinde beyaz taşlarla oynayıp aynı konumu elde ettiğim iki farklı oyunu inceleyerek yazımı bitireceğim.
 
 [Event "European Club Cup"]
 [Date "2022.10.06"]
@@ -38,7 +38,7 @@ Karmaşık bir giriş yaptığımın farkındayım. İyisi mi, ne anlatmaya çal
 [ChapterURL "https://lichess.org/study/wlA44Flg/A7AEczuU"]
 [Annotator "https://lichess.org/@/hayir_olayneyani"]
 
-1. c4 e5 2. g3 c6 3. Nf3 e4 4. Nd4 { 1. e4 c5 2. c3 Nf6 3. e5 Nd5 biçiminde ilerleyen Sicilya Alapin konumunun tersten hâlinde Beyaz'ın fazladan g3'ü var gibi düşünebiliriz. ''Yarım tempo neyi değiştirir ki?'' diye düşünebilirsiniz. Ancak oyunun ilk 30 hamlesinde Tomashevsky o kadar incelikli oynuyor ki, Grischuk bir anda kendini kötü pozisyonda buluyor. } 4... d5 5. cxd5 Qxd5 6. Nc2 Nf6 7. Nc3 Qe5 8. Bg2 Na6 9. O-O Be7 10. d3 exd3 11. Qxd3 Nc5 12. Qd4 Qxd4 13. Nxd4 O-O 14. Bf4 g6 15. b4 Ne6 16. Nxe6 Bxe6 17. b5 Nd5 18. Nxd5 cxd5 19. Rfd1 Rfd8 20. Rac1 Rd7 21. Be5 f5 22. Bd4 Kf7 23. e3 Bd8 24. Rc2 Bb6 25. a4 Ke7 26. f4 Rad8 27. Kf2 Ra8 28. Rdc1 Rad8 29. Ke2 Ra8? { Siyahın e6 karesindeki kötü fili ve d5 karesindeki izole piyonu göz önünde bulundurulursa Grischuk'un bu kritik anı değerlendirip } (29... Bxd4 $7 30. exd4 Ra8 { varyantına girmesi gerekirdi. Bu konumda Siyah'ın kötü fili olsa da kendisinin berabere şansları olurdu. }) 30. Kd3 $16 { Konumu incelikle işleyen Tomashevsky, üstün konum elde edip sonrasında kazanmayı bildi. }
+1. c4 e5 2. g3 c6 3. Nf3 e4 4. Nd4 { 1. e4 c5 2. c3 Nf6 3. e5 Nd5 biçiminde ilerleyen Sicilya Alapin konumunun tersten hâlinde Beyazın fazladan g3'ü var gibi düşünebiliriz. ''Yarım tempo neyi değiştirir ki?'' diye düşünebilirsiniz. Ancak oyunun ilk 30 hamlesinde Tomashevsky o kadar incelikli oynuyor ki, Grischuk bir anda kendini kötü pozisyonda buluyor. } 4... d5 5. cxd5 Qxd5 6. Nc2 Nf6 7. Nc3 Qe5 8. Bg2 Na6 9. O-O Be7 10. d3 exd3 11. Qxd3 Nc5 12. Qd4 Qxd4 13. Nxd4 O-O 14. Bf4 g6 15. b4 Ne6 16. Nxe6 Bxe6 17. b5 Nd5 18. Nxd5 cxd5 19. Rfd1 Rfd8 20. Rac1 Rd7 21. Be5 f5 22. Bd4 Kf7 23. e3 Bd8 24. Rc2 Bb6 25. a4 Ke7 26. f4 Rad8 27. Kf2 Ra8 28. Rdc1 Rad8 29. Ke2 Ra8? { Siyahın e6 karesindeki kötü fili ve d5 karesindeki izole piyonu göz önünde bulundurulursa Grischuk'un bu kritik anı değerlendirip } (29... Bxd4 $7 30. exd4 Ra8 { varyantına girmesi gerekirdi. Bu konumda Siyahın kötü fili olsa da kendisinin berabere şansları olurdu. }) 30. Kd3 $16 { Konumu incelikle işleyen Tomashevsky, üstün konum elde edip sonrasında kazanmayı bildi. }
 
 [Event "7th Gashimov Memorial Rapid"]
 [Date "2021.12.19"]
@@ -62,7 +62,7 @@ Karmaşık bir giriş yaptığımın farkındayım. İyisi mi, ne anlatmaya çal
 [ChapterURL "https://lichess.org/study/wlA44Flg/BrfWJePS"]
 [Annotator "https://lichess.org/@/hayir_olayneyani"]
 
-1. Nf3 Nf6 2. d4 d5 3. e3 c5 4. dxc5 Nc6 5. a3!? { Konum bir çeşit Tersten Vezir Gambiti: Janowski Varyantı'na dönüyor. Beyaz'ın niyeti çok açık: aldığı piyonun üstüne yatmak. } 5... a5 6. Nc3 g6? 7. Bb5 $16 (7. Na4 { Partide oynanan Bb5 hamlesi de iyiydi. Ancak biraz daha iyisi Na4 olurdu ve bu konumda geride olduğu piyona karşılık Siyah'ın neredeyse hiç kompansasyonu yoktur. }) *
+1. Nf3 Nf6 2. d4 d5 3. e3 c5 4. dxc5 Nc6 5. a3!? { Konum bir çeşit Tersten Vezir Gambiti: Janowski Varyantı'na dönüyor. Beyazın niyeti çok açık: aldığı piyonun üstüne yatmak. } 5... a5 6. Nc3 g6? 7. Bb5 $16 (7. Na4 { Partide oynanan Bb5 hamlesi de iyiydi. Ancak biraz daha iyisi Na4 olurdu ve bu konumda geride olduğu piyona karşılık Siyahın neredeyse hiç kompansasyonu yoktur. }) *
 
 [Event "2019 Türkiye Kulüpler Şampiyonası"]
 [Date "2019.07.17"]
