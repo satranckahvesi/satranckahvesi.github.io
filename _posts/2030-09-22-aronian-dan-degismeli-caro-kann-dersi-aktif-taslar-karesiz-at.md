@@ -5,7 +5,9 @@ date: 2022-02-26
 author:	"FM Nazmi Can Doğan"
 column:	"Analizli oyunlar"
 ---
+
 ###### Bu yazı ilk olarak 2022 yılında satranchess.com sitesinde yayınlanmıştır.
+
 <!--
 ### Levon Aronian - Vincent Keymer 2022 Fide Grand Prix 3. tur mücadelesi
 
