@@ -3,7 +3,7 @@ layout: post
 date: 2030-09-26
 title: "Fransız Savunması Steinitz Varyantı"
 author: "FM Nazmi Can Doğan"
-column: "Satranç Açılışları"
+column: "Satranç açılışları"
 ---
 
 Fransız Savunması; kimine göre güvenli bir sığınak, kimisine göre
@@ -24,7 +24,6 @@ Savunması'nı burada bütünüyle incelemeyi iddia etmek mümkün olmasa
 da olabildiğince çok örnekle önemli varyantları sunarak fikir vermeye
 çalışacağız. Önemli varyantlara geçmeden önce Fransız Savunması çin
 tipik kabul edilen konumları ele alalım.
-
 
 [Event "Nuremberg"]
 [Site "Nuremberg"]
