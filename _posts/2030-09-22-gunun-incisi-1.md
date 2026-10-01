@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Aronian'dan Caro-Kann dersi: Aktif taşlar, karesiz at"
+title: "Aronian'dan Değişmeli Caro-Kann dersi: Aktif taşlar, karesiz at"
 date: 2022-02-26
 author:	"FM Nazmi Can Doğan"
 column:	"Analizli oyunlar"
