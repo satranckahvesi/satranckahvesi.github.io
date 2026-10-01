@@ -13,6 +13,7 @@ Dev oyuncuların oynadığı turnuvaların her bir oyunu, her bir hamlesi elbett
 Zamanın dünya şampiyonu **Mikhail Botvinnik**'in rakibini belirlemek üzere düzenlenen bu turnuva için yazılmış iki önemli kitap bulunmakta: **Miguel Najdorf**'un ve **David Bronstein**'ın turnuvada oynanmış her oyunu detaylı analiz ettikleri muazzam kitapları, hâlâ satranç literatüründe yer alan en değerli yapıtlar arasında görülüyor. 28(!) turluk turnuva sonunda Smyslov 18 puanla birinci olurken, ardından 16 puanla **Bronstein**, **Keres** ve **Reshevsky** geliyordu. Ertesi yıl 1954'te oynanan unvan maçı 12-12 beraberlikle bitecek ve **Botvinnik**, **Smyslov**'a karşı unvanını koruyacaktı. Tartışmalara konu olan bu durumun bir benzerini **Bronstein**'e karşı 1951 yılındaki maçında da yaşamış olan Botvinnik, o maç da 12-12 bitince unvanını korumuştu. O zamanki kurallarda dünya şampiyonu beraberlik hâlinde herhangi bir eşitlik bozmaya gitmeksizin unvanını koruyabiliyordu.
 
 Tarihî detayları meraklı okuyucuya bırakarak hamlelere geçelim.
+
 <!-- 
 [Event "Zürih"]
 [Site "?"]
