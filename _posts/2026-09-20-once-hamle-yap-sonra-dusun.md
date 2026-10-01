@@ -8,9 +8,8 @@ column: "Kitap incelemeleri"
 
 ###### Bu yazı ilk olarak 2016 yılında **Satrançsever** dergisinin 4. sayısında yayınlanmıştır.
 
-dünya şampiyonu **Magnus Carlsen**’in (Bu yazı yazıldığı sırada Carlsen dünya şampiyonuydu) hayatını konu alan filmin fragmanında “kararlarımı
-sezgilerimden yola çıkarak veriyorum” cümlesini duyduktan sonra, “acaba bütün oyuncular
-tahta başında nasıl karar veriyorlar?” sorusu aklıma takıldı. Carlsen’in kıyaslanamaz bir oyun
+Dünya şampiyonu **Magnus Carlsen**’in (bu yazı yazıldığı sırada Carlsen dünya şampiyonuydu) hayatını konu alan filmin fragmanında "kararlarımı sezgilerimden yola çıkarak veriyorum" cümlesini duyduktan sonra, "acaba bütün oyuncular
+tahta başında nasıl karar veriyorlar?" sorusu aklıma takıldı. Carlsen'in kıyaslanamaz bir oyun
 gücü olduğu açık, ancak söylediklerinden bir şey öğrenebilir miyiz diye merak ediyordum. Bir
 başka röportajında ise “Magnus Carlsen için genellikle sezgisel bir oyuncu diyorlar. Acaba
 kendisi ne düşünüyor?” sorusuna “Öyle kabul edilmemin sebebi, bana göre, çocukken
@@ -20,13 +19,13 @@ geliştirdim” cevabını veriyor.
 
 Bizim için kaçınılmaz soru ise aynı: Kararlarımızı nasıl
 alıyoruz? Dahası nasıl almalıyız? Bazı oyunlarımızdan sonra, memnun olmadığımız
-hamlelere bakarak sanki oynayan biz değilmişiz gibi “bunu neden oynadım?”, “bunu nasıl
-görmedim, oysa yeterince zamanım vardı” dediğimiz çok olmuştur. Tam tersi iyi bir hamleyi
+hamlelere bakarak sanki oynayan biz değilmişiz gibi "bunu neden oynadım?", "bunu nasıl
+görmedim, oysa yeterince zamanım vardı" dediğimiz çok olmuştur. Tersine, iyi bir hamleyi
 fazla düşünmeden oynadığımız bir anda bunu nasıl başardığımızı anlatmak sandığımız
 kadar kolay olmayabilir. Sahiden satranç tahtası üzerinde verilen kararların tam olarak neye
 dayanması gerektiğini nasıl açıklayabiliriz?
 
-[Event "Wijk Aan Zee"]
+[Event "Wijk aan Zee"]
 [Site "?"]
 [Date "1982.??.??"]
 [Round "?"]
@@ -37,7 +36,7 @@ dayanması gerektiğini nasıl açıklayabiliriz?
 [FEN "1q1r3r/3bkp2/p2p1b1p/1p1Pp1p1/PB5P/1P2NQ2/1P3PP1/2R2RK1 w - - 0 1"]
 [PlyCount "0"]
 
- 1-0
+*
 
 “**Antrenör**: Konuma bakma şansın oldu. Neler oluyor? Konumun en önemli özellikleri
 nelerdir? Fikrin var mı, Paul?
@@ -71,8 +70,8 @@ aynı anda oluyor**. Bunun açıklamasıysa şu şekilde: eğer (az ya da çok) 
 bağlantılı değilse konumdan anlamlı bir özellik çıkaramazsınız.
 
 Konumun özelliklerini ve onlarla eşleşen hamleleri aynı anda görürüz, konumun etkili bir
-hamleyle bağlantılı olmayan bir özelliği basitçe ilgisizdir. Eğer Ag5 ya da Fxf7 gibi hamleler
-görmüyorsak (öncesinde veya aynı anda) f7-karesinde zayıflık görmeyiz.”
+hamleyle bağlantılı olmayan bir özelliği basitçe ilgisizdir. Eğer Ng5 ya da Bxf7 gibi hamleler
+görmüyorsak (öncesinde veya aynı anda) f7 karesinde zayıflık görmeyiz.”
 
 Yazarın eleştirilerine maruz kalan **Carsten Hansen**’in Pozisyonel Satrancınızı İlerletin
 (**Improve Your Positional Chess**) kitabıyla ilgili konumu analiz ederken şöyle eleştiriyor:
@@ -104,65 +103,65 @@ Yazarın eleştirilerine maruz kalan **Carsten Hansen**’in Pozisyonel Satranc�
 
 {Hansen "Nasıl zayıflık yaratmalı?" başlığı altında diğer şeylerin
 yanı sıra şunu yazıyor: (Rakibiniz konumunda bir zayıflık olmadığı
-durumda) "Konumdaki dengesizliklere (imbalances) bakarak, onları rakibinizin
+durumda) "Konumdaki dengesizliklere (_imbalances_) bakarak onları rakibinizin
 konumunda zayıflık oluşturmak için nasıl kullanacağınızı ya
 rakibinizi buna zorlayarak ya da amaca yönelik oynayarak zayıflık elde
-edebileceğinizi görmelisiniz.  'Örnek' olaraksa sıradaki bölümü sunuyor.
+edebileceğinizi görmelisiniz." Buna örnek olarak sıradaki bölümü sunuyor:
 } 16... g4 $1 17. f4 h4 $1 {Güzel nokta. 18.fxe5 dxe5'ten sonra beyaz atın
-kaçacak yeri yok - Siyahlar taşı iyi bir oyunla geri alır.} 18. Be3 h3 19.
-g3 Nc6 {Siyah küçük bir başarı elde etti: h3-piyonu beyazın vücuduna
+kaçacak yeri yok. Siyah iyi bir oyunla taşı geri alır.} 18. Be3 h3 19.
+g3 Nc6 {Siyah küçük bir başarı elde etti: h3 piyonu beyazın vücuduna
 batan bir diken gibidir. Hansen bölümü daha da ileri götürüyor, fakat
-zayıflık (beyaz karelerdeki) yaratıldı ('amaçlı' bir oyunla)  Sanki
+(beyaz karelerdeki) zayıflık, ('amaçlı' bir oyunla) yaratıldı. Sanki
 resim sanatıyla ilgili bir kılavuz hazırlar gibi, iyi hedeflenmiş hassas
 fırça darbeleri ve olası eserinizle ilgili iyi bir fikirle en güzel
 resimleri yapabileceğinizi iddia edip bunun yanına da Monet’nin bir
 resmini örnek olarak koyuyorsunuz.”} 0-1
 
-Sadece kitaplara değil, iyi bildiğimiz “atasözlerine” dair de eleştirilerde bulunuyor Hendriks:
-“Satranç bize öğretilirken, bir sürü atasözü-gibi tavsiyeler verilir. ‘Kanattaki piyon sürüşünü
+Sadece kitaplara değil, iyi bildiğimiz "atasözlerine" dair de eleştirilerde bulunuyor Hendriks:
+“Satranç bize öğretilirken, bir sürü atasözümsü tavsiyeler verilir. ‘Kanattaki piyon sürüşünü
 merkezden hareketle cevapla’ vecizesini ele alalım. Bir kitap yazarı bunu anlatan ilgi çekici
-örnekler verebilir. Bu konu hakkında bir istatistiki araştırma yapmak zor olurdu fakat
-kanımca, ‘eğer rakibin kanattan piyon sürüşü yaparsa, sakin ol ve çılgınca bir şey yapma’
+örnekler verebilir. Bu konu hakkında istatistiksel bir araştırma yapmak zor olurdu fakat
+kanımca, ‘eğer rakip kanattan piyon sürüşü yaparsa sakin ol ve çılgınca bir şey yapma’
 sözü de aynı şekilde geçerli ya da onun kadar anlamsızdır.” Daha sonra Soltis’in Satranç
 Hakkında Söylenmiş En Akıllıca Sözler kitabının sonraki basımında görmeyi umduğu sözünü
-söylüyor: “**Hiçbir atasözü iyi bir hamleyi alt edemez**.”
+söylüyor: "**Hiçbir atasözü iyi bir hamleyi alt edemez**."
 
 Kitabın iddiasını yazarın sözleriyle kabaca özetleyecek olursak:
 
 “Belki oyunları, egzersizleri üst seviyelere geçiş için anahtar olacak sihirli bir sözcük
-arayışında incelemeden atlayan okurlar için çok hoş bir haber değil ama seviyesini artırmak
+arayışında incelemeden atlayan okurlar için çok hoş bir haber değil. Ama seviyesini artırmak
 isteyen okurlar, verilen materyal üzerinde çalışmaya başlamalı ve kelimelerin bulunduğu
 bölümden fazla bir şey beklememeliler. **Konumlar, daha genel prensipleri açıklamak için
 örnekler değil, asıl öğrenme materyalini oluştururlar! Bir antrenör buna karşı en büyük
 suçu pozisyonları bir genel kuralın içine sıkıştırma yoluyla işleyebilir**.”
 
 <figure class="video-embed">
-    <iframe src="https://www.youtube.com/embed/7CWvB5pz79k?si=Q1Ok9F010fB5WPLI" title="Willy Hendriks - Önce Oyna Sonra Düşün" allowfullscreen loading="lazy"></iframe>
-    <figcaption>Yazar Willy Hendriks London Chess Classic esnasında ödül alan kitabı hakkında konuşuyor. </figcaption>
+    <iframe src="https://www.youtube.com/embed/7CWvB5pz79k?si=Q1Ok9F010fB5WPLI" title="Willy Hendriks - Önce Hamle Yap Sonra Düşün" allowfullscreen loading="lazy"></iframe>
+    <figcaption>Yazar Willy Hendriks London Chess Classic esnasında ödül alan kitabı hakkında konuşuyor.</figcaption>
 </figure>
 
 Jeremy Silman’a göre “yürekten önerdiği” kitabında Hendriks farklı bir şey söylemiyor.
-Hendriks’in eleştirdiği prensipler yeni başlayanlara yol göstermek için vardır diyor ve ekliyor:
+"Hendriks’in eleştirdiği prensipler yeni başlayanlara yol göstermek için vardır" diyor ve ekliyor:
 “Beni budalaca eğitimin başrahibi ilan eden Hendriks fikirlerimin bütün bir öğretmen grubunu
-kötü yönde etkilediğini belirtiyor, ama kendisi de benim hamleleri açıklarken kullandığım
+kötü yönde etkilediğini belirtiyor ama kendisi de benim hamleleri açıklarken kullandığım
 terminolojiyi kullanıyor.” 
 
-Durumu bir yarışmaya benzetirsek; “daha çok mu konum mu bilmeli”, yoksa “konumları daha
-iyi mi yorumlamalı” yarışmasının galibi “daha çok konum bilmelisiniz”. Çünkü daha çok
+Durumu bir yarışmaya benzetirsek “daha çok mu konum bilmeli”, yoksa “konumları daha
+iyi mi yorumlamalı” yarışmasının galibi “daha çok konum bilmek”. Çünkü daha çok
 bilmezseniz daha iyi yorumlayamazsınız.
 
-Beşinci bölümde paylaşılan **Adrian De Groot**’un “Satranç oyuncusunun düşünce süreci”
+Beşinci bölümde paylaşılan **Adriaan de Groot**’un “Satranç oyuncusunun düşünce süreci”
 araştırmasının da gösterdiği gibi, büyükusta daha düşük seviyedeki oyuncudan çok daha
-farklı hesaplamaz, fark nitelikseldir: büyükusta çabucak konumun “ne hakkında” olduğunu,
-umut vaat eden olasılıkları anlarken amatör oyuncu bunları yapabilmek için çok daha fazla
-zamana ihtiyaç duyar ya da hiç o sonuçlara ulaşamaz. Büyükusta kendisine sunulan
-konumun özüne o konumu daha önce görmemişse bile, muazzam deneyimi ve farklı
-konumların, modellerin, planların, kombinezonların bilgisiyle ulaşacaktır: “(...)**Büyükusta
+farklı hesaplamaz, fark nitelikseldir: Büyükusta konumun “ne hakkında” olduğunu,
+umut vaat eden olasılıkları çabucak anlarken amatör oyuncu bunları yapabilmek için çok daha fazla
+zamana ihtiyaç duyar ya da o sonuçlara hiç ulaşamaz. Büyükusta kendisine sunulan
+konumun özüne o konumu daha önce görmemişse bile muazzam deneyimi ve farklı
+konumların, modellerin, planların, kombinezonların bilgisiyle ulaşacaktır: “(...) **Büyükusta
 tahtada zaten bildiği şeyi görür. Eğer görmüyorsanız, daha iyi bakmanız ya da farklı bir yol
-izlemeniz yardımcı olmaz**.” 
+izlemeniz yardımcı olmaz.**" 
 
-Meraklısı için farklı seviyelerden oyunculara sunulan De Groot’un test konumu aşağıdadır. Satranç psikoloğu De Groot testinde belirli seviyedeki oyunculardan gördükleri konum hakkında sesli düşünmeleri istenmiştir (Bu oyuncular
-arasında Keres, Alekhine, Euwe gibi dünya şampiyonları da bulunmaktaydı). Konumu
+Meraklısı için farklı seviyelerden oyunculara sunulan de Groot’un test konumu aşağıdadır. Satranç psikoloğu De Groot'un bu testinde belirli seviyedeki oyunculardan gördükleri konum hakkında sesli düşünmeleri istenmiştir. (Bu oyuncular
+arasında Keres, Alekhine, Euwe gibi dünya şampiyonları da bulunmaktaydı). Konum üzerine
 düşünerek siz de teste katılabilirsiniz.
 
 [Event "?"]
@@ -179,8 +178,8 @@ düşünerek siz de teste katılabilirsiniz.
 *
 
 İkinci bölümde, ülkemizde de yoğun ilgiyle karşılanan ve örneklerinin bolluğuyla Hendriks'in
-de beğenisini kazanan **Cor van Wijgerden**'in **Step-by-Step** serisinde önerilmeyen "**deneme-
-yanılma**" yönteminin öneminden söz etmiş. Hendriks haksız yere göz ardı edilen "deneme-
+de beğenisini kazanan **Cor van Wijgerden**'in **_Step-by-Step_** serisinde önerilmeyen "**deneme-
+yanılma**" yönteminin öneminden söz ediyor. Hendriks haksız yere göz ardı edilen "deneme 
 yanılma" yönteminin bir konumdaki olanakları değerlendirebilmek için en iyi yöntemlerden
 biri olarak değiniyor. Hendriks'in eleştirilerine maruz kalan John Watson [bu kitabı](http://theweekinchess.com/john-watson-reviews/john-watson-book-review-103-challenging-conventional-wisdom) incelerken taktik konumlarda “deneme yanılma” yönteminin “konumu anlama" yöntemine kıyasla daha verimli olduğu konusunda yazara katıldığını ifade ediyor.
 
@@ -210,17 +209,17 @@ biri olarak değiniyor. Hendriks'in eleştirilerine maruz kalan John Watson [bu 
 [SourceQuality "1"]
 
 15... Be8 {Nikolic bu hamleyi oynadı ve konumdaki en iyi hamleydi. Pek çok
-öğrencim 1...e5 hamlesini tercih etti ve o da çekici bir başka
-olasılıktır.  1...Fe8 hamlesini nasıl buldunuz? Büyük olasılıkla bu
+öğrencim 15 ...e5 hamlesini tercih etti ve o da çekici bir başka
+olasılıktır.  14 ...Be8 hamlesini nasıl buldunuz? Büyük olasılıkla bu
 planı "biliyordunuz". Bd7-e8-h5 manevrasını buna az çok benzeyen
 konumlarda gördünüz ve bu konuma bakarken aklınızda canlandı. Bu her
 zaman bilinçli bir seviyede olmak zorunda değildir. "Evet, filin piyonlarım
 tarafından engellenmiş olduğunu gördüm, beyaz hanelerini g2-g3 ile
 zayıflatmıştı ve filimi bu yüzden h5'e götüreyim dedim, hem oluşacak
 açmaz sayesinde önemli d4-e5 kareleri üzerindeki mücadelede yardımcı
-olacak ve f8 kalesiyle iyi çalışarak f3 karesine baskı uygulayacak diye
-düşündüm."  Ve bu hamleyi böylesine ibretlik, akıllıca bir biçimde
-bulduğunuza **kendinizi inandırabilirsiniz**. Böylece öğrencilerinizin
+olacak hem de f8 kalesiyle iyi çalışarak f3 karesine baskı uygulayacak diye
+düşündüm." Bulduğunuz bir hamleyi böylesine ibretlik, akıllıca bir hamle olarak
+gördüğünüzde **kendinizi inandırabilirsiniz**. Böylece öğrencilerinizin
 tıpkı sizin gibi konumun özelliklerine bakarak bu hamleyi bulmalarını
 umabilirsiniz.} 0-1
 
@@ -233,8 +232,8 @@ istenilen miktarda oyun seçmek oldukça kolay. Benimse tek şikâyetim, çok ko
 önemli sayan kitabın **örnek sayısının görece az olması**.
 
 Yazarın dokuzuncu bölümünde “boş nasihat” dediği iyi bilinen satranç deyişlerinin yerine
-uygulama için önerdiği güzel şeyler de var. Bilgisayar ve internet çağında satranç çalışma
-üzerine önemli gördüklerimi aktarmak istedim. 22 ve 23. Bölümde geçen tavsiyelerden
+uygulama için önerdiği güzel şeyler de var. Bilgisayar ve internet çağında satranç çalışmak
+üzerine önemli gördüklerimi aktarmak istedim. 22 ve 23. bölümde geçen tavsiyelerden
 bazıları:
 
 - "Bilgisayar programınızın öğretici oyunları belli bir hızda oynatmasını sağlayın
@@ -249,7 +248,7 @@ size fayda sağlayacaktır."
 
 - "Bugünlerde, internette çok fazla satranç yayını yapılıyor. Bunun için size puan
 verilmese de elit oyuncularla birlikte gerçek zamanlı düşünmek iyi bir yöntem.
-Kendinizi düşündüğünüz hamleleri yazmaya zorlayarak ve favorinizi seçmekle kendinizi
+Kendinizi düşündüğünüz hamleleri yazmaya zorlayarak ve favorinizi seçerek kendinizi
 buna bağlayabilirsiniz. Bir oyunu takip etmek sıkıcı geliyorsa, iki veya daha fazla oyunu takip
 edebilirsiniz. Hızlı oyunlar hızlı karar almanızı gerektirdiği için daha uygun olacaktır.
 Ya da bir turnuvadan pek çok oyun canlı yayınlanıyorsa, alternatif bir egzersiz yapabilirsiniz.
@@ -270,8 +269,7 @@ sırasında ne düşündüğünü çabucak unutur."
 başlangıç olarak, diyelim ki, 5 dakikalık oyunlarda gayet iyi iş çıkarabilir ve onları
 antrenman amaçlı kullanabilirsiniz. (...) Oyunu pratik yapmak, kontrol etmek ve açılış
 repertuarınızı geliştirmek için kullanabilirsiniz. (...) Eğer oyunları sadece oynuyor ve
-bir daha dönüp bakmıyorsanız, öğrenme etkisi gittikçe azalacak ve **tembellik tehlikesi**
-gerçekliğe dönüşecektir."
+bir daha dönüp bakmıyorsanız, öğrenme etkisi gittikçe azalacak ve **tembellik tehlikesi** gerçekliğe dönüşecektir."
 
 Her bir örneği tek tek çözer, açıklamalarını okuyarak kitabı bitirirken (kitabın örneklerden ve
 örneklerin açıklamalarından oluştuğunu belirtmeli) sadece soru çözüyor hissine
@@ -279,9 +277,10 @@ kapılmıyorsunuz. Bazen gülerken, kimi zaman okunmamış bir referans kitabı
 merak ediyorsunuz ve diğer yazarlarla girilen düzeyli polemikle sürekli satranç hakkında
 düşünüyorsunuz. O hâlde masa başında kararlarımızı nasıl alıyoruz? Carlsen, Anand gibi
 yaşayan efsaneleri bilmiyorum fakat bizim gibiler için görünen tek yol var, o da çalışarak olsa
-gerek...
+gerek.
 
-**De Groot testinin cevabı**: 1.Bxd5! (1...Bxd5 2.Bxf6 Bxf6 3.Nd7; 1...Nxd5 2.Nxd5 ve e7'deki fil düşer.)
-1...exd5 2.Qf3 Qd8 (2...Kg7 3.Ng4) 3.Rce1 Beyazlar baskıyı artırır ve siyahın iyi bir
-savunması yoktur, örneğin, 3...Re8 4.Nxc6 Rxc6 5.Rxe7 Qxe7 6.Nxd5 Beyaz materyal
-kazanır.   
+**de Groot testinin cevabı**: 1. Bxd5! (1... Bxd5 2.Bxf6 Bxf6 3.Nd7; 1... Nxd5 2.Nxd5 ve e7'deki fil düşer.)
+1...exd5 2.Qf3 Qd8 (2...Kg7 3.Ng4) 3. Rce1 ile beyaz baskıyı artırır ve siyahın iyi bir
+savunması yoktur. Örneğin 3...Re8 4.Nxc6 Rxc6 5.Rxe7 Qxe7 6.Nxd5 ile beyaz materyal kazanır.
+
+
