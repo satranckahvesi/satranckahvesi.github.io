@@ -1,11 +1,9 @@
 ---
 layout: post
 title: "Günün İncisi"
-tagline: "En üst düzey oyunları anlamanın en iyi yollarından biri de onları bölümlere ayırarak her bir parçaya dikkatle bakmak. Aronian ile Keymer arasında oynanan partide Aronian'ın açılış felsefesini, oyunortasında az rastlanan piyon yapısıyla inisiyatifi ele alışını ve oyun sonunda sürdürdüğü aktif taş oyununu inceleyeceğiz."
-tags: [turnuva, taktik]
 date: 2022-02-26
-image: "https://www.chess-international.com/wp-content/uploads/2023/01/326298758_705969454402028_161010386466383947_n-e1674199975639.jpg"
-photosource: "worldchess.com"
+author:	"FM Nazmi Can Doğan"
+column:	"Analizli oyunlar"
 ---
 
 # Levon Aronian - Vincent Keymer 2022 Fide Grand Prix 3. Tur Mücadelesi
