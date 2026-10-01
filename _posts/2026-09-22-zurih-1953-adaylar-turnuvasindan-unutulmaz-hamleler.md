@@ -14,7 +14,6 @@ Zamanın Dünya Şampiyonu **Mikhail Botvinnik**’in rakibini belirlemek üzere
 
 Tarihi detayları meraklı okuyucuya bırakarak hamlelere geçelim.
 
-
 [Event "Zürich"]
 [Site "?"]
 [Date "1953.??.??"]
@@ -28,23 +27,21 @@ Tarihi detayları meraklı okuyucuya bırakarak hamlelere geçelim.
 [PlyCount "23"]
 [FEN "r2q1rk1/1b2bppp/p3pn2/np4B1/3P4/1BN2N2/PP2QPPP/3RR1K1 w - - 0 14"]
             
-{[P]} {İlk örneğimiz klasik İzole Vezir Piyonu: Siyahın 13... Na5 hamlesinden sonra ... Nd5 ile devam etmek ve konumu sadeleştirmek istiyor. İzole piyona karşı oynayan taraf izole piyonu "bloke" etmeli, izole piyonu olan taraf ise bu blokaja saldırmalı ve izole piyonu sürmeye çalışmalı...} 
+{[P]} {İlk örneğimiz klasik İzole Vezir Piyonu: Siyahın 13... Na5 hamlesinden sonra ... Nd5 ile devam etmek ve konumu sadeleştirmek istiyor. İzole piyona karşı oynayan taraf izole piyonu "bloke" etmeli, izole piyonu olan taraf ise bu blokaja saldırmalı ve izole piyonu sürmeye çalışmalı.} 
 14.d5 $1 Nxb3 
  ( 14...Nxd5 $4 15.Bxd5 Bxd5 16.Bxe7 Qxe7 
      ( 16...Bxf3 17.Rxd8 $18 )
                 17.Nxd5 kazanır. )
  15.dxe6 Qb6 16.axb3 fxe6 17.Nd4 Bd6 18.Qxe6+ Kh8 19.Nf3 Rad8 20.Bf4 Bxf3 $6 21.Rxd6 Rxd6 22.Qxd6 Qxd6 23.Bxd6 Re8 24.Rxe8+ Nxe8 25.Be5 $18 1-0
             
-
 [Event "Zürich"]
 [Site "?"]
 [Date "1953.??.??"]
 [Round "?"]
-[White "Geller, Efim P"]
+[White "Geller, Efim"]
 [Black "Euwe, Max"]
 [Result "0-1"]
 [ECO "E28"]
-[Annotator "Can,Nazmi"]
 [SetUp "1"]
 [FEN "2rqnrk1/pb1p2pp/1p2pp2/5P2/2nPPR2/P2B2N1/6PP/R1BQ2K1 b - - 0 16"]
 [PlyCount "21"]
@@ -61,14 +58,12 @@ siyah Rc2 oynayabiliyor!} 23. Qxh8 Rc2 24. Rc1 $2 {Burada Kasparov 24.d5!! hamle
 [Black "Smyslov, Vassily"]
 [Result "0-1"]
 [ECO "E14"]
-[Annotator "Can,Nazmi"]
 [SetUp "1"]
 [FEN "2rq1rk1/pb3p1p/1p2pbp1/3p3R/2PP4/PP5R/1B3PPP/3Q1BK1 b - - 0 19"]
 [PlyCount "19"]
 [EventDate "1953.??.??"]
 
 {[P]} {Beyazlarla oynayan Keres turnuvanın bu turunda Smyslov'u yarım puan geriden takip ediyor ve kazanmak için tehlikeli bir saldırı başlatıyor. Kaleyi almak güvenli mi?} 19... dxc4 $1 {Smyslov karşı oyun için d5 karesini boşaltan ve tehlikeli c4 piyonunu yaratan bu hamleyi tercih ediyor.} (19... gxh5 20. Qxh5 Re8 21. a4 $3 dxc4 (21... Qd6 22. Qh6 Bg7 23. Qxh7+ Kf8 24. Rg3 Bf6 25. c5 $1 {c6, Ba3 tehditleriyle, örneğin;} bxc5 26. Qh6+ Ke7 27. dxc5 $18) 22. Qxh7+ Kf8 23. Ba3+ Re7 24. Rg3 $1 $18) 20. Rxh7 (20. Qg4 c3 21. Bxc3 Rxc3 22. Rxc3 Qxd4 23. Qxd4 Bxd4 24. Rc7 gxh5 25. Rxb7 {Bronstein, Keres'in burada berabere yapabileceğin fakat atağını devam ettirmek istediğini söylüyor.}) 20... c3 21. Qc1 Qxd4 (21... cxb2 $4 22. Qh6 SQxd4 23. Rh8+ Bxh8 24. Qh7#) 22. Qh6 Rfd8 23. Bc1 Bg7 24. Qg5 Qf6 25. Qg4 c2 26. Be2 Rd4 $1 {a7-g8 çaprazının açılması için f4 sürdürüyor.} 27. f4 Rd1+ 28. Bxd1 Qd4+ 0-1
-
 
 [Event "Zürich"]
 [Site "?"]
@@ -78,14 +73,12 @@ siyah Rc2 oynayabiliyor!} 23. Qxh8 Rc2 24. Rc1 $2 {Burada Kasparov 24.d5!! hamle
 [Black "Reshevsky, Samuel Herman"]
 [Result "1-0"]
 [ECO "E14"]
-[Annotator "Can,Nazmi"]
 [SetUp "1"]
 [FEN "8/8/1p1kp3/4Np2/pPP2P2/n2K2P1/8/8 w - - 0 57"]
 [PlyCount "21"]
 [EventDate "1953.??.??"]
 
 {[P]} {Siyahlar atını tahtanın kenarından kurtarabilirse bir sorunu kalmayacak. Bu sebeple ...b5 oynamak istiyor. Beyazın kazanmak için tek yolu var.} 57. b5 $1 {Beyaz Kc3-Kb2 ile atı almak istiyor, siyahın çaresi yok.} Nxb5 (57... Kc5 58. Nd7+ $18) 58. cxb5 Kc5 59. Nf3 Kxb5 60. Nd4+ Kb4 61. Kc2 e5 62. fxe5 Kc5 63. e6 Kd6 64. Kc3 b5 65. Kb4 Ke7 66. Kc5 a3 67. Kd5 1-0
-
 
 [Event "Zürich"]
 [Site "?"]
@@ -106,11 +99,10 @@ siyah Rc2 oynayabiliyor!} 23. Qxh8 Rc2 24. Rc1 $2 {Burada Kasparov 24.d5!! hamle
 [Site "?"]
 [Date "1953.??.??"]
 [Round "?"]
-[White "Averbakh, Yuri L"]
-[Black "Taimanov, Mark E"]
+[White "Averbakh, Yuri"]
+[Black "Taimanov, Mark"]
 [Result "1-0"]
 [ECO "B88"]
-[Annotator "Can,Nazmi"]
 [SetUp "1"]
 [FEN "r3k2r/1b2bppp/p3p3/np2q2n/3N4/1BN1B2Q/PPP3PP/R4RK1 w kq - 0 16"]
 [PlyCount "7"]
@@ -122,7 +114,7 @@ siyah Rc2 oynayabiliyor!} 23. Qxh8 Rc2 24. Rc1 $2 {Burada Kasparov 24.d5!! hamle
 [Site "?"]
 [Date "1953.??.??"]
 [Round "?"]
-[White "Averbakh, Yuri L"]
+[White "Averbakh, Yuri"]
 [Black "Kotov, Alexander"]
 [Result "0-1"]
 [ECO "A55"]
@@ -144,11 +136,10 @@ Qxd6 R3g6 51. Qb8+ Rg8 0-1
 [Site "?"]
 [Date "1953.??.??"]
 [Round "?"]
-[White "Petrosian, Tigran V"]
+[White "Petrosian, Tigran"]
 [Black "Szabo, Laszlo"]
 [Result "1-0"]
 [ECO "A34"]
-[Annotator "Can,Nazmi"]
 [SetUp "1"]
 [FEN "5qk1/p5b1/2rn2pp/2p1p3/2P4P/3P2P1/P1QNP3/2B1K2R w K - 0 25"]
 [PlyCount "19"]
@@ -159,13 +150,12 @@ hafif taşlarını oyun dışında bırakırken kendisininkiler için iyi bir
 gelecek hazırlıyor.} 25. e4 $1 {Bg7 ve Nd6 birden oyunsuz kalıyor ve beyaz
 Nf1-Ne3-Nd5 planlıyor.} Qc8 26. Nf1 $1 h5 27. Ne3 Ra6 28. Nd5 Qg4 29. Qg2 Nxc4 30. dxc4 Rxa2 31. Qxa2 Qxe4+ 32. Qe2 Qxh1+ 33. Qf1 Qh2 34. Be3 $18 1-0
 
-
 [Event "Zürich"]
 [Site "?"]
 [Date "1953.??.??"]
 [Round "?"]
-[White "Reshevsky, Samuel Herman"]
-[Black "Petrosian, Tigran V"]
+[White "Reshevsky, Samuel"]
+[Black "Petrosian, Tigran"]
 [Result "1/2-1/2"]
 [ECO "E58"]
 [SetUp "1"]
@@ -187,10 +177,9 @@ Qc6 35. Bc1 Qc7 36. a6 Qb6 37. Bd2 b3 38. Qc4 h6 39. h3 b2 40. Rb1 Kh8 41. Be1
 [Date "1953.??.??"]
 [Round "?"]
 [White "Stahlberg, Gideon"]
-[Black "Taimanov, Mark E"]
+[Black "Taimanov, Mark"]
 [Result "0-1"]
 [ECO "E15"]
-[Annotator "Can,Nazmi"]
 [SetUp "1"]
 [FEN "rn2qrk1/p3bppp/bpp1pn2/3pN3/Q1PP4/2N3P1/PP2PPBP/R1B1R1K1 b - - 0 10"]
 [PlyCount "65"]
@@ -209,7 +198,7 @@ Qxf4 33. exf4 d4 34. b3 Rc6 35. axb4 f5 36. h3 Ra6 37. Rbc1 Rxc1 38. Rxc1 Ra2 39
 [Date "1953.??.??"]
 [Round "?"]
 [White "Euwe, Max"]
-[Black "Averbakh, Yuri L"]
+[Black "Averbakh, Yuri"]
 [Result "0-1"]
 [ECO "E58"]
 [SetUp "1"]
@@ -240,7 +229,7 @@ Bc6+ $1 1-0
 [Date "1953.??.??"]
 [Round "?"]
 [White "Szabo, Laszlo"]
-[Black "Bronstein, David I"]
+[Black "Bronstein, David"]
 [Result "1-0"]
 [ECO "A53"]
 [SetUp "1"]
@@ -255,8 +244,8 @@ taçlandırıyor.} 39. Rd8 $1  Qxd8 40. Qh8+ Kf7 41. Qxd8 g5 42. Rh6 1-0
 [Site "?"]
 [Date "1953.??.??"]
 [Round "?"]
-[White "Taimanov, Mark E"]
-[Black "Averbakh, Yuri L"]
+[White "Taimanov, Mark"]
+[Black "Averbakh, Yuri"]
 [Result "1-0"]
 [ECO "E52"]
 [SetUp "1"]
