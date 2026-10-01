@@ -206,7 +206,7 @@ Qxf4 33. exf4 d4 34. b3 Rc6 35. axb4 f5 36. h3 Ra6 37. Rbc1 Rxc1 38. Rxc1 Ra2 39
 [PlyCount "7"]
 [EventDate "1953.??.??"]
 
-{[P]} Siyahın açıkça üstün fakat doğrudan kazanca giden tek yolu  var. 36... Nxa3 37. Bxa3 Nb5 38. Bc1 Nxc3 39. Ne2 Nb1 0-1
+{[P] Siyah açıkça üstün fakat doğrudan kazanca giden tek yolu  var. } 36... Nxa3 37. Bxa3 Nb5 38. Bc1 Nxc3 39. Ne2 Nb1 0-1
 
 [Event "Zürich"]
 [Site "?"]
