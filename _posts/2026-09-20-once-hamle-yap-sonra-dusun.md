@@ -41,13 +41,13 @@ dayanması gerektiğini nasıl açıklayabiliriz?
 "**Antrenör**: Konuma bakma şansın oldu. Neler oluyor? Konumun en önemli özellikleri
 nelerdir? Fikrin var mı, Paul?
 
-**Paul**: Ah, evet, Kc6 oynardım ve alırsa Ad5'im var.
+**Paul**: Ah, evet, Rc6 oynardım ve alırsa Nd5'im var.
 
 **Antrenör**: Evet, doğru hamleleri hemen buldun. Fakat konumun özelliklerine geri dönelim,
 bunlar hakkında bir şey söyleyebilir misin?
 
-**Paul**: Pekala, Kc6 hamlesi d6'yı tehdit ediyor ve siyahın buna karşı ne yapabileceğini
-göremiyorum, alırsa ben de alacağım ve Ad5 geliyor, peki ne yapabilir?
+**Paul**: Pekala, Rc6 hamlesi d6'yı tehdit ediyor ve siyahın buna karşı ne yapabileceğini
+göremiyorum, alırsa ben de alacağım ve Nd5 geliyor, peki ne yapabilir?
 
 Pek çok satranç kitabı buradaki antrenörünkiyle aynı sıkıcı tonda yazılmıştır. Bu kitaplar
 hamlelerinizi rastgele denememeniz gerektiği fikri üzerine kuruludur; ilk önce konumun
