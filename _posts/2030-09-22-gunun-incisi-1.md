@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "Günün İncisi"
+title: "Aronian'dan Caro-Kann dersi: Aktif taşlar, karesiz at"
 date: 2022-02-26
 author:	"FM Nazmi Can Doğan"
 column:	"Analizli oyunlar"
 ---
 
-### Levon Aronian - Vincent Keymer 2022 Fide Grand Prix 3. Tur Mücadelesi
+### Levon Aronian - Vincent Keymer 2022 Fide Grand Prix 3. tur mücadelesi
 
 **2022 Fide Grand Prix** incelemeye değer pek çok oyuna sahne olmuştu ve biz de buradan devam ediyoruz.
 Aronian ve Keymer arasındaki mücadelede, açılış hazırlığı ve oyun anlayışı konusunda çok önemli şeyleri görme şansımız olacak.
