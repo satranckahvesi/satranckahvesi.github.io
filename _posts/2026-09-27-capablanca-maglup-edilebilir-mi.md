@@ -31,8 +31,8 @@ Satranç tahtı sallanıyor. Dünya şampiyonluğu sorunu aslında şöyle de if
 ### Yazıda bahsi geçen bazı oyunlar
 <br>
 
-[Event "Capablanca - Marshall"]
-[Site "New York, NY USA"]
+[Event "Capablanca - Marshall Maçı"]
+[Site "New York"]
 [Date "1909.04.24"]
 [EventDate "1909.04.19"]
 [Round "3"]
@@ -48,10 +48,9 @@ Nxc3 9.bxc3 exd5 10.Qb3 c6 11.Bd3 O-O 12.O-O Nf6 13.Rab1 b6 14.Ne5 c5 15.Qa3 Re8
 b5 24.axb5 Rxb5 25.Rxb5 axb5 26.Rb1 Ra5 27.f3 Qa6 28.Qb2 Qd6 29.Qc2 g6 30.h3 Kg7
 31.e4 Qa6 32.Ng4 Ra2 33.Qc1 Nxg4 34.hxg4 dxe4 35.fxe4 Re2 36.Qf4 Rxg2+ 1/2-1/2
 
-[Event "Lasker - Capablanca World Championship Match"]
-[Site "Havana CUB"]
+[Event "Lasker - Capablanca Dünya Şampiyonluğu Maçı"]
+[Site "Havana"]
 [Date "1921.04.08"]
-[EventDate "?"]
 [Round "10"]
 [Result "0-1"]
 [White "Emanuel Lasker"]
@@ -70,8 +69,8 @@ Rf2+ 54.Ke1 Ra2 55.Kf1 Kg7 56.Re3 Kg6 57.Rd3 f6 58.Re3 Kf7 59.Rd3 Ke7 60.Re3 Kd6
 61.Rd3 Rf2+ 62.Ke1 Rg2 63.Kf1 Ra2 64.Re3 e5 65.Rd3 exd4 66.Rxd4 Kc5 67.Rd1 d4 68.Rc1+
 Kd5 0-1
 
-[Event "New York"]
-[Site "New York, NY USA"]
+[Event "New York 1924 Uluslararası Satranç Turnuvası"]
+[Site "New York"]
 [Date "1924.03.21"]
 [EventDate "1924.03.16"]
 [Round "4"]
@@ -83,8 +82,8 @@ Kd5 0-1
 
 1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. Bg5 Bb4 5. exd5 {[D]} Qxd5 6. Bxf6 Bxc3+ 7. bxc3 gxf6 8. Qd2 Nd7 9. c4 Qe4+ 10. Ne2 Nb6 11. f3 Qc6 12. c5 Nd5 13. c4 Ne7 14. Nc3 f5 15. Be2 Rg8 16. O-O Bd7 17. Qe3 b6 18. Rfd1 bxc5 19. d5 Qd6 20. dxe6 Qxe6 21. Qxc5 Qb6 22. Qf2 f4 23. Rab1 Qxf2+ 24. Kxf2 Bc6 25. Rd4 Ng6 26. Bd3 Nh4 27. Bf1 Ng6 28. Ne2 Ke7 29. Re1 Rgb8 30. Nxf4+ Kf8 31. Nxg6+ hxg6 32. Bd3 Rb2+ 33. Re2 Rab8 34. Be4 Rxe2+ 35. Kxe2 Bxe4 36. fxe4 Ke7 37. Rd2 Ke6 38. Ke3 c6 39. h4 Rh8 40. g3 Rh5 41. Rh2 Ra5 42. Kf4 f6 43. Rc2 Re5 44. c5 Rh5 45. Rc3 a5 46. Rc2 Re5 47. Rc3 Rh5 48. Kf3 Ke7 49. Kg4 Kf7 50. Rc4 Kg7 51. Rd4 Rxc5 52. Rd7+ Kf8 53. Kf4 Kg8 54. Ra7 Kf8 55. a4 Kg8 56. g4 g5+ 57. hxg5 Rxg5 58. Ra6 Rc5 59. Ke3 Kf7 60. Kd4 Rg5 61. Rxc6 Rxg4 62. Rc5 Rg5 1/2-1/2
 
-[Event "New York"]
-[Site "New York, NY USA"]
+[Event "New York 1924 Uluslararası Satranç Turnuvası"]
+[Site "New York"]
 [Date "1924.03.29"]
 [EventDate "1924.03.16"]
 [Round "10"]
