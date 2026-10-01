@@ -156,7 +156,7 @@ Daha önce d7 atının hareket kabiliyetinin sınırlandığını söylemiştik,
 
 Kilit hamle! Siyahın Rc2 ve ardından Nc5 ilerleyişi durduruluyor ve Siyah at tamamen felç oluyor.
 
-(29. g3 Beyazın durumu hafife alması durumunda açık dikeyi ele geçiren Siyah karşı oyun elde edebilir. 29... Rc2 30. Ra7 (30. d4 f6) 30... Nc5)
+(29. g3 Beyazın durumu hafife alması durumunda açık dikeyi ele geçiren Siyah karşı oyun elde edebilir. 29... Rc2 30. Ra7 (30. d4 f6 Siyahın karşı oyunu olurdu.) 30... Nc5 Yine eşitleyen bir karşı oyunla.)
 
 29... Kd8 Siyah d4 piyonunu alabilirse hayata dönecek.
 
@@ -190,7 +190,7 @@ Acaba ikinci cephe açma planı başarısız mı oldu?
 
 42. f5! Siyah terk eder. Güzel bir oyuna, güzel bir son!
 
-[42. f5 gxf5 (42... exf5 43. e6 Nb8 44. Rg7) 43. g6 Ke8 44. g7] 1-0
+[42. f5 gxf5 (42... exf5 43. e6 Nb8 44. Rg7+-) 43. g6 Ke8 44. g7+-] 1-0
 
 Aronian'dan mükemmel bir performans.
 
