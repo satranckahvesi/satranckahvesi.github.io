@@ -18,7 +18,7 @@ Kendisinden büyük teorik atılımlar talep etmek istemiyoruz fakat tespit etme
 
 ![Savielly Grigorievitch Tartakower]({{ '/assets/img/tarta/Ksawery_Tartakower.jpg' | relative_url }} "Dr. Savielly Tartakower (1887–1956)")
 
-Capablanca'yı mağlup edebilmek için parlak bir hayal gücü ve yeterli bir teknik eğitim gösteren gözüpek bir yeni satranççı çıkarsa (Belki Alekhine, belki de Reti?) yüce bir satranç misyonu, Kübalı Capablanca tarafından tamamına erdirilmiş olarak addedilebilir: Savaşçı Steinitz, filozof Lasker'den sonra bir "dünya insanı" geldi ve büyüleyici kişiliği ile zarif oyun tarzıyla satranç sanatının popülerleşmesine muazzam katkılarda bulundu.
+Capablanca'yı mağlup edebilmek için parlak bir hayal gücü ve yeterli bir teknik eğitim gösteren gözüpek bir yeni satranççı çıkarsa (Belki Alekhine, belki de Reti?) yüce bir satranç misyonu, Kübalı Capablanca tarafından tamamına erdirilmiş olarak addedilebilir: Savaşçı Steinitz, filozof Lasker'den sonra bir "dünya insanı" geldi, büyüleyici kişiliği ve zarif oyun tarzıyla satranç sanatının popülerleşmesine muazzam katkılarda bulundu.
 
 Satranç tahtı sallanıyor. Dünya şampiyonluğu sorunu aslında şöyle de ifade edilebilir: 10 bin dolarlık zırh delinebilir mi?
 
