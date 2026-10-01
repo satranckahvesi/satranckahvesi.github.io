@@ -141,7 +141,7 @@ Bu değişimle Beyaz piyon yapısını düzeltiyor ve **ileri karakolunu teorik 
 
 27... Bxe5
 
-(27... Nxe5 28. dxe5)
+(27... Nxe5 28. dxe5 Siyah b6-piyonu korumayı sürdürmek istiyor.)
 
 28. dxe5 Rc8
 
