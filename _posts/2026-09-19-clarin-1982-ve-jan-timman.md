@@ -17,8 +17,6 @@ Oyunların önemli anlarında okuyucuyu Timman ile birlikte hamleleri bulmaya da
 [Result "0-1"]
 [WhiteElo "2655"]
 [BlackElo "2605"]
-[Site " "]
-[Round " "]
 
 { [P] } 31... Bxc5! {  Siyahın güçlü seçeneklerinden yalnızca biri. } 32. Rxc5 Nxc5 33. Bxe5 { [P] [%csl Gh6][%cal Ge3h6] } (33. Qxc5 {  [P] } 33... Rd2 $19 {  Siyahın 31. hamlesinin ana fikri buydu. }) 33... Nd3! $19 {  Kalite fazla olan Siyah, kolaylıkla olmasa da kazanmasını bildi. } 0-1
 
