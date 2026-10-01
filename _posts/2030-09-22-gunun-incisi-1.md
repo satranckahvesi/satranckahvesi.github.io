@@ -30,9 +30,9 @@ _5. h3_
 
 *5. h3 sonrası konum*
 
-Varyantın ruhuna uygun şekilde c8-filini kısıtlayarak Nf3 oynamak istiyor.
+Varyantın ruhuna uygun şekilde c8 filini kısıtlayarak Nf3 oynamak istiyor.
 
-5. c3 Bg4 Genç yıldız **Firouzja**'nın başarıyla kullandığı bir devamyolu. Bu varyantın temel sorunu olan beyaz-renkli fili oyuna çıkmayı başarıyor. 6. Qb3 Qc7 ve Bf4 engellendi: 7. Bf4?? Qxf4 8. Qxb7 Qc1#
+Genç yıldız **Firouzja**'nın başarıyla kullandığı bir devamyolu da 5. c3 Bg4. Bu varyantın temel sorunu olan beyaz renkli fili oyuna çıkmayı başarıyor. 6. Qb3 Qc7 ve Bf4 engellendi: 7. Bf4?? Qxf4 8. Qxb7 Qc1#
 
 _5... Nc6 6. Nf3_
 
@@ -40,9 +40,9 @@ Beyaz yukarıda 1. ve 4. hamledeki açıklamalarda görülen c3 hamlesini yapmad
 
 _6... Nb4_
 
-Beyaz c3-sürüşünü yapmayınca oynanan hamleyle birlikte görece az rastlanan bir devamyoluna ulaşıyoruz, ancak Aronian'ın neden bu varyanta gitmek istediğini kısaca belirtelim: Siyahın bu varyantta bir süredir g6-Bf5 planıyla iyi bir oyun elde ettiği düşünülüyordu, üst düzey oyunlarda genelde iki taraf da iyi bir şekilde hazırlandıkları için buz dağının görünmeyen yüzünü anlamak kolay olmuyor. Biz yine de bir deneme yapalım:
+Beyaz c3 sürüşünü yapmayınca oynanan hamleyle birlikte görece az rastlanan bir devamyoluna ulaşıyoruz, ancak Aronian'ın neden bu varyanta gitmek istediğini kısaca belirtelim: Siyahın bu varyantta bir süredir g6-Bf5 planıyla iyi bir oyun elde ettiği düşünülüyordu, üst düzey oyunlarda genelde iki taraf da iyi bir şekilde hazırlandıkları için buz dağının görünmeyen yüzünü anlamak kolay olmuyor. Biz yine de bir deneme yapalım:
 
-6... g6 7. O-O Bf5 8. Bxf5 gxf5 Siyah e6-Bd6-Qc7 ve uzun rok ile g-dikeyinden saldırmak istiyor. 9. c4! Mantıklı bir piyon fedası. **Siyah gelişimde geriyken konumu açmaya çalışmak** en prensipli yaklaşım. Daha erken aşamada c3-sürüşünden vazgeçmenin fikri bu olabilir. 9... dxc4 10. Nc3 e6 11. Bg5 ve devamında Qa4 ile beyaz inisiyatifi sürdürür.
+6... g6 7. O-O Bf5 8. Bxf5 gxf5 Siyah e6-Bd6-Qc7 ve uzun rok ile g dikeyinden saldırmak istiyor. 9. c4! Mantıklı bir piyon fedası. **Siyah gelişimde geriyken konumu açmaya çalışmak** en prensipli yaklaşım. Daha erken aşamada c3 sürüşünden vazgeçmenin fikri bu olabilir. 9... dxc4 10. Nc3 e6 11. Bg5 ve devamında Qa4 ile beyaz inisiyatifi sürdürür.
 
 _7. Nc3!_
 
@@ -51,11 +51,11 @@ _7. Nc3!_
 
 *7. Nc3 sonrası konum*
 
-Aronian daha önce belirtildiği gibi tipik c3-sürüşünü neden oynamadığını başka bir varyantla daha göstermek istiyor.
+Aronian daha önce belirtildiği gibi tipik c3 sürüşünü neden oynamadığını başka bir varyantla daha göstermek istiyor.
 
 _7... g6 8. Ne5! a6_
 
-(8... Bf5 9. Bb5+ d5-piyonuyla ilgili sorun yaşamamak için çok dikkatli olmak zorunda. 9... Nd7 10. O-O Bxc2?? (10... Nxc2?? 11. Nxd7+-) 11. Qf3+-)
+(8... Bf5 9. Bb5+ d5 piyonuyla ilgili sorun yaşamamak için çok dikkatli olmak zorunda. 9... Nd7 10. O-O Bxc2?? (10... Nxc2?? 11. Nxd7+-) 11. Qf3+-)
 
 _9. O-O Bg7_
 
@@ -77,11 +77,11 @@ _10. Re1 O-O 11. Bg5 Nxd3 12. cxd3!_
 
 ### Açılış felsefesi
 
-Aronian'ın nereye ulaşmak istediğini ancak şimdi anlayabiliyoruz. Siyahın fil çifti var ve Beyazın piyon yapısı adeta felaketi andırıyor. Ancak c ve e dikeylerindeki baskı çok iyi yerleşmiş hafif taşlarla ve c8-karesinde işsiz kalan fil birleşince pratikte siyaha oynanması zor bir durum kalıyor.
+Aronian'ın nereye ulaşmak istediğini ancak şimdi anlayabiliyoruz. Siyahın fil çifti var ve Beyazın piyon yapısı adeta felaketi andırıyor. Ancak c ve e dikeylerindeki baskı çok iyi yerleşmiş hafif taşlarla ve c8 karesinde işsiz kalan fil birleşince pratikte siyaha oynanması zor bir durum kalıyor.
 
 Beyazın üstünlüğü **aktif taş oyunu** yaratabilmesinde. Siyahın sorunu ise **Carlsbad yapısı**nda görüldüğü gibi **azınlık saldırısı** veya merkezden **piyon yarması** ile karşı oyun yaratmadaki güçlüğü.
 
-Beyaz aktif taş oyununu sürdürdüğü sürece oyunu iyi olacak, ancak küçük bir hata yapısındaki zayıflıkları görünür hale getirebilir. Aronian'ın açılış hazırlığını nasıl yaptığını biraz daha anlamaya başlayacağız. Beyazın duble piyonlarının an itibariyle harika iş çıkardığını ve çok önem e4-karesini kontrol ederek standart **Ne4 karşı saldırısı**nı engellediğini söyleyebiliriz. Beyaz aktif taş oyunu yaparken siyah taşların aktif roller elde etmesine izin verilmiyor. Söz gelimi **Siyah Bf5 oynadığı her durumda Qb3** ile karşılaşacak.
+Beyaz aktif taş oyununu sürdürdüğü sürece oyunu iyi olacak, ancak küçük bir hata yapısındaki zayıflıkları görünür hale getirebilir. Aronian'ın açılış hazırlığını nasıl yaptığını biraz daha anlamaya başlayacağız. Beyazın duble piyonlarının an itibariyle harika iş çıkardığını ve çok önem e4 karesini kontrol ederek standart **Ne4 karşı saldırısı**nı engellediğini söyleyebiliriz. Beyaz aktif taş oyunu yaparken siyah taşların aktif roller elde etmesine izin verilmiyor. Söz gelimi **Siyah Bf5 oynadığı her durumda Qb3** ile karşılaşacak.
 
 _12... Qb6_ (12... Bf5 13. Qb3) Stockfish burada **merkezden karşı oyun** için 12... Ne8!? ve devamında ...f6 hamlesini öneriyor.
 
@@ -100,7 +100,7 @@ _13... e6_
 
 _14. Na4!_
 
-Aktif taş oyunu sürdürülmeli **Bd7 gelmeden**! Şimdi beyazın c-dikeyinde oyunu başlıyor.
+Aktif taş oyunu sürdürülmeli **Bd7 gelmeden**! Şimdi beyazın c dikeyinde oyunu başlıyor.
 
  _14... Qd6 15. Qd2 a5_ Qb4 fikriyle: Siyah oyunsonuna gidebilirse rahatlayacak iyi piyon yapısını kullanabilecek.
 
@@ -136,7 +136,7 @@ Beyazın aktif taş oyunu sürüyor.
 
 *24... Rd8 sonrası konum*
 
-Siyah hafif taşlarının işlevsiz görüntüsüne karşın beyaz taşlar adeta dans ediyor. Kale yedinci yatayda kariyerinin zirvesini yaşarken d7-karesindeki atı oyun boyunca üzgün göreceğiz. cxd3 alışıyla başlayan kısıtlama operasyonu onu oyunsuz bırakıyor.
+Siyah hafif taşlarının işlevsiz görüntüsüne karşın beyaz taşlar adeta dans ediyor. Kale yedinci yatayda kariyerinin zirvesini yaşarken d7 karesindeki atı oyun boyunca üzgün göreceğiz. cxd3 alışıyla başlayan kısıtlama operasyonu onu oyunsuz bırakıyor.
 
  _25. Rb7!_
 
@@ -214,6 +214,6 @@ Acaba ikinci cephe açma planı başarısız mı oldu?
 
 _42. f5!_ Siyah terk eder. Güzel bir oyuna, güzel bir son!
 
-Aronian'dan mükemmel bir performans.
+[42. f5 gxf5 (42... exf5 43. e6 Nb8 44. Rg7) 43. g6 Ke8 44. g7] 1-0
 
- [42. f5 gxf5 (42... exf5 43. e6 Nb8 44. Rg7) 43. g6 Ke8 44. g7]1-0
+Aronian'dan mükemmel bir performans.
