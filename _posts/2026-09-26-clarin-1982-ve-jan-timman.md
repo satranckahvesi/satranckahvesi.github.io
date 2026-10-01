@@ -35,14 +35,14 @@ Clarin turnuvasını 1979 senesinde Spassky ve Petrosian'ı da yenerek (!), 1980
 [Date "1982.02.09"]
 [Round "2"]
 [White "Andersson, Ulf"]
-[Black "Timman, Jan H"]
+[Black "Timman, Jan"]
 [Result "1/2-1/2"]
 [WhiteElo "2605"]
 [BlackElo "2655"]
 [Variant "Standard"]
 [ECO "A15"]
 [Opening "English Opening: Anglo-Indian Defense, King's Indian Formation, Double Fianchetto"]
-[ChapterName "Andersson, Ulf - Timman, Jan H"]
+[ChapterName "Andersson, Ulf - Timman, Jan"]
 [ChapterURL "https://lichess.org/study/F0mOCg4p/6MloEaSB"]
 [Annotator "https://lichess.org/@/NaSil"]
 
@@ -61,7 +61,7 @@ Sade, teknik konumlara olan hâkimiyeti nedeniyle bir oyunsonu efsanesi olarak a
 [Site "Mar del Plata ARG"]
 [Date "1982.02.10"]
 [Round "3"]
-[White "Timman, Jan H"]
+[White "Timman, Jan"]
 [Black "Najdorf, Miguel"]
 [Result "1-0"]
 [WhiteElo "2605"]
@@ -82,7 +82,7 @@ Kasparov şöyle aktarıyor: *"Najdorf, tıpkı Arjantin Şampiyonası'nda oldu�
 [Site "Mar del Plata ARG"]
 [Date "1982.02.12"]
 [Round "4"]
-[White "Timman, Jan H"]
+[White "Timman, Jan"]
 [Black "Panno, Oscar"]
 [Result "1-0"]
 [WhiteElo "2605"]
@@ -107,7 +107,7 @@ Arjantin satrancına damga vuran 1935 doğumlu Büyükusta **Oscar Panno**, 1953
 [Date "1982.02.13"]
 [Round "5"]
 [White "Karpov, Anatoly"]
-[Black "Timman, Jan H"]
+[Black "Timman, Jan"]
 [Result "0-1"]
 [WhiteElo "2720"]
 [BlackElo "2655"]
@@ -123,7 +123,7 @@ Ne olursa olsun, Timman'ın kariyerindeki **en beğendiği oyunu** olarak nitele
 [Site "Mar del Plata ARG"]
 [Date "1982.02.14"]
 [Round "6"]
-[White "Timman, Jan H"]
+[White "Timman, Jan"]
 [Black "Giardelli, Sergio Carlos"]
 [Result "1-0"]
 [WhiteElo "2655"]
@@ -143,8 +143,8 @@ Daha sonra Uluslararası Usta unvanına kavuşacak **Sergio Carlos Giardelli** (
 [Site "Mar del Plata ARG"]
 [Date "1982.02.17"]
 [Round "7"]
-[White "Garcia Palermo, Carlos H"]
-[Black "Timman, Jan H"]
+[White "Garcia Palermo, Carlos"]
+[Black "Timman, Jan"]
 [Result "0-1"]
 [WhiteElo "2470"]
 [BlackElo "2655"]
@@ -160,7 +160,7 @@ Daha sonra Büyükusta unvanına kavuşacak olan Garcia Palermo ülkesini ziyare
 [Site "Mar del Plata ARG"]
 [Date "1982.02.18"]
 [Round "8"]
-[White "Timman, Jan H"]
+[White "Timman, Jan"]
 [Black "Quinteros, Miguel Angel"]
 [Result "1-0"]
 [WhiteElo "2655"]
@@ -179,7 +179,7 @@ Fischer'in en yakın dostu ve yardımcısı Arjantinli Büyükusta **Miguel Quin
 [Date "1982.02.19"]
 [Round "9"]
 [White "Portisch, Lajos"]
-[Black "Timman, Jan H"]
+[Black "Timman, Jan"]
 [Result "0-1"]
 [WhiteElo "2630"]
 [BlackElo "2655"]
@@ -187,7 +187,7 @@ Fischer'in en yakın dostu ve yardımcısı Arjantinli Büyükusta **Miguel Quin
 [Variant "Standard"]
 [ECO "E41"]
 [Opening "Nimzo-Indian Defense: Rubinstein System, Hübner Variation"]
-[ChapterName "Portisch, Lajos - Timman, Jan H"]
+[ChapterName "Portisch, Lajos - Timman, Jan"]
 [ChapterURL "https://lichess.org/study/F0mOCg4p/DmI0Z1fA"]
 
 1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. e3 c5 5. Bd3 Nc6 6. Nf3 Bxc3+ 7. bxc3 d6 { Hâlâ revaçta olan bir devam yolu: Hübner Sistemi. Siyah c3-c4 piyonlarını sabitleyerek ve piyonlarını koyu renklere yerleştirerek Beyazın fil çiftine karşı bir oyun planlıyor. } 8. e4 e5 9. h3 h6 10. Be3 b6 11. O-O (11. d5 Ne7 { Merkez kapalı olmasına rağmen zengin bir oyun var. Tarafların savaş alanı şah kanadı olacak gibi duruyor. } 12. g3 Ng6 13. Nd2 O-O 14. Kf1 (14. Nf1 Nh7 15. h4 Bd7 16. h5 Ne7 17. g4 $14 { Jussupow, Artur - Hall, Jesper, 1-0, Bundesliga 9899, 1999, https://lichess.org/cN25alPD }) 14... Ne8 15. Kg2 Ne7 16. f3 f5 $132 { Portisch, Lajos - Browne, Walter S, 0-1, Interpolis, 1982, https://lichess.org/8y5qWUll }) 11... Qc7 (11... g5!? { Kısa rok atılmışken h3 sürmenin eksilerinden birini gösteren bir hamle. } 12. Bc2 Qe7 13. Re1 Rg8 14. Nh2 Na5 15. Bd3 g4 16. h4 g3 $132 { Li Chao2 - Flores, Di, 1-0, 42nd Olympiad 2016, https://lichess.org/HgSaxfZh }) 12. d5 Ne7 (12... Na5 { Beyaz yine oyundakine benzer şekilde oynayabilirdi. } { [%cal Gc8a6] } 13. Nh4 { [%cal Rf2f4,Gh4f5] } 13... g5 14. Qf3 Qe7 15. Nf5 Bxf5 16. Qxf5 $13) 13. Nh4 g5 14. Qf3 Nfg8 15. Nf5 Nxf5 16. exf5 Nf6 17. g4 { Zorunlu bir dizi hamle ardından piyon yapısı değişti. Beyazın Kg2-Rh1-h4 ve a4-a5 ile devam etmek fikirlerine karşı Siyahın rakibinin duble piyonlarına karşı oynamak ve e4-sürüşü ile alan kazanmak fikirleri bulunuyor. } 17... Ba6 18. Qd1 e4 19. Qa4+ (19. Be2 { Oyunda oynanan hamleyi tehdit olarak saklı tutmak daha iyi olabilirdi. } { [%cal Gd1a4] } 19... Bb7 20. Qa4+ Qd7 21. Qa3 { Uzun roku engelleyerek. } 21... Kd8 { [%cal Gd8c7] } 22. Qb3 $36 { [%cal Ga2a4,Ga4a5] }) 19... Kf8 20. Qxa6 exd3 { Beyaz başlattığı operasyon ile d3-piyonunu önünde sonunda alacağını düşünmüş olmalı. } 21. Qa4 Re8 22. Rae1! (22. Rad1?? { Konumun tehlikelerini gösteren bir durum oluşurdu. } 22... Rxe3! 23. fxe3 h5 $19 { Siyah vezirin de dahil olmasıyla hızlıca kazandıran bir saldırıya dönüşür. } { [%csl Gg4][%cal Gc7e7,Gh8h1] }) 22... Qb7!? { [%cal Gb6b5] } 23. Qd1 b5! 24. Qb1 (24. Qxd3 bxc4 25. Qxc4 Qxd5 { Timman tek şansın bu olduğunu belirtmişti. Bu durumda bile Siyahın oyununun iyi olduğunu düşünüyordu. } 26. Qxd5 Nxd5 { Beyaz, belki de daha fazlasını elde edebilmek ümidiyle bu olanaktan kaçınıyor. }) 24... Re4! 25. Qxd3 Rxc4 26. Rd1 Kg7 27. f3 (27. f4 { Beyazın bir hedefi olacaksa bunun şah kanadında yaratılması oldukça mantıklı olurdu. }) 27... Qe7 28. f4? { [P]
@@ -203,7 +203,7 @@ Timman, turnuva hakkında kapsamlı yazılar yayınlayan turnuvanın sponsoru Cl
 [Site "Mar del Plata ARG"]
 [Date "1982.02.21"]
 [Round "10"]
-[White "Timman, Jan H"]
+[White "Timman, Jan"]
 [Black "Franco Ocampos, Zenon"]
 [Result "1-0"]
 [WhiteElo "2655"]
@@ -221,7 +221,7 @@ Siyah e4-e5 ardından vezirleri değişerek rahatlama peşinde, ancak vezir oyun
 [Date "1982.02.22"]
 [Round "11"]
 [White "Braga, Fernando Alberto"]
-[Black "Timman, Jan H"]
+[Black "Timman, Jan"]
 [Result "1/2-1/2"]
 [WhiteElo "2375"]
 [BlackElo "2655"]
@@ -237,7 +237,7 @@ Siyah e4-e5 ardından vezirleri değişerek rahatlama peşinde, ancak vezir oyun
 [Site "Mar del Plata ARG"]
 [Date "1982.02.23"]
 [Round "12"]
-[White "Timman, Jan H"]
+[White "Timman, Jan"]
 [Black "Seirawan, Yasser"]
 [Result "0-1"]
 [WhiteElo "2655"]
@@ -255,7 +255,7 @@ On bir sene sonra Karpov'a karşı FIDE Dünya Şampiyonası maçında (o sırad
 [Date "1982.02.26"]
 [Round "13"]
 [White "Polugaevsky, Lev"]
-[Black "Timman, Jan H"]
+[Black "Timman, Jan"]
 [Result "1/2-1/2"]
 [WhiteElo "2600"]
 [BlackElo "2655"]
@@ -270,19 +270,19 @@ Son tura turnuva şampiyonluğunu garanti ederek giren Timman, bir başka efsane
 Mar del Plata 1982 Uluslararası Satranç Turnuvası çapraz tablosu:
 
 <pre>
-                   1 2 3 4 5 6 7 8 9 0 1 2 3 4
-  1 GM Timman      * 1 0 1 ½ ½ 0 1 1 ½ 1 1 1 1 9½
-  2 GM Portisch     0 * 1 ½ 1 ½ 0 ½ ½ 1 ½ 1 1 ½ 8
- =3 GM Seirawan     1 0 * ½ 1 ½ 0 ½ ½ 0 ½ 1 1 1 7½
- =3 GM Karpov      0 ½ ½ * ½ ½ 1 0 1 1 ½ ½ 1 ½ 7½
- =3 GM Polugaevsky   ½ 0 0 ½ * ½ ½ 1 ½ 1 1 ½ 1 ½ 7½
-  6 GM Andersson    ½ ½ ½ ½ ½ * ½ 1 ½ ½ ½ ½ ½ ½ 7
-  7 GM Larsen      1 1 1 0 ½ ½ * 0 1 0 ½ 0 ½ ½ 6½
- =8 IM Garcia Palermo  0 ½ ½ 1 0 0 1 * ½ ½ 0 ½ 1 ½ 6
- =8 GM Najdorf     0 ½ ½ 0 ½ ½ 0 ½ * 1 ½ ½ 1 ½ 6
- =10  Braga      ½ 0 1 0 0 ½ 1 ½ 0 * ½ 1 0 ½ 5½
- =10 GM Panno      0 ½ ½ ½ 0 ½ ½ 1 ½ ½ * ½ 0 ½ 5½
- =12 GM Quinteros    0 0 0 ½ ½ ½ 1 ½ ½ 0 ½ * 0 1 5
- =12 Franco   0 0 0 0 0 ½ ½ 0 0 1 1 1 * 1 5
- 14 Giardelli    0 ½ 0 ½ ½ ½ ½ ½ ½ ½ ½ 0 0 * 4½
+                      1 2 3 4 5 6 7 8 9 0 1 2 3 4   Puan
+  1 GM Timman         * 1 0 1 ½ ½ 0 1 1 ½ 1 1 1 1  9½
+  2 GM Portisch       0 * 1 ½ 1 ½ 0 ½ ½ 1 ½ 1 1 ½  8
+ =3 GM Seirawan       1 0 * ½ 1 ½ 0 ½ ½ 0 ½ 1 1 1  7½
+ =3 GM Karpov         0 ½ ½ * ½ ½ 1 0 1 1 ½ ½ 1 ½  7½
+ =3 GM Polugaevsky    ½ 0 0 ½ * ½ ½ 1 ½ 1 1 ½ 1 ½  7½
+  6 GM Andersson      ½ ½ ½ ½ ½ * ½ 1 ½ ½ ½ ½ ½ ½  7
+  7 GM Larsen         1 1 1 0 ½ ½ * 0 1 0 ½ 0 ½ ½  6½
+ =8 IM Garcia Palermo 0 ½ ½ 1 0 0 1 * ½ ½ 0 ½ 1 ½  6
+ =8 GM Najdorf        0 ½ ½ 0 ½ ½ 0 ½ * 1 ½ ½ 1 ½  6
+=10    Braga          ½ 0 1 0 0 ½ 1 ½ 0 * ½ 1 0 ½  5½
+=10 GM Panno          0 ½ ½ ½ 0 ½ ½ 1 ½ ½ * ½ 0 ½  5½
+=12 GM Quinteros      0 0 0 ½ ½ ½ 1 ½ ½ 0 ½ * 0 1  5
+=12    Franco         0 0 0 0 0 ½ ½ 0 0 1 1 1 * 1  5
+ 14    Giardelli      0 ½ 0 ½ ½ ½ ½ ½ ½ ½ ½ 0 0 *  4½
 </pre>

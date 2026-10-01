@@ -590,6 +590,8 @@ a:hover { border-bottom-style: dotted; }
 .post-body pre {
     max-width: 100%;
     overflow-x: auto;
+    font-size: 0.75rem;
+    line-height: 1.4;
 }
 
 /* ChessPublica's .pgn-container adds its own 0 1rem side padding, which
