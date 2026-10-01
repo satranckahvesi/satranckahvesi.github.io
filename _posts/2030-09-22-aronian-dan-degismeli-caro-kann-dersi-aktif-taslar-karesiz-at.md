@@ -221,7 +221,7 @@ Aronian'dan mükemmel bir performans.
 ### Oyunun tam PGN'si
 -->
 
-2022 FIDE Grand Prix incelemeye değer pek çok oyuna sahne olmuştu. Aronian ile Keymer arasındaki mücadelede, açılış hazırlığı ve oyun anlayışı konusunda çok önemli şeyleri görme şansımız olacak. Bu oyunu bölümlere ayırıp daha rahat incelemeye çalışacağız. Bazı partilerin açılış bölümlerine daha fazla eğilmemizin sebebi elbette o açılışla daha haşır neşir olmamız veya ilgilenmek istememiz. Örneğin Caro-Kann Savunması'nın değişmeli varyantını ben de beyaz taşlarla oynamayı seviyorum, bu nedenle inceleyeceğimiz oyun benim için ayrıca önemliydi.
+FIDE Grand Prix 2022 incelemeye değer pek çok oyuna sahne olmuştu. Aronian ile Keymer arasındaki mücadelede, açılış hazırlığı ve oyun anlayışı konusunda çok önemli şeyleri görme şansımız olacak. Bu oyunu bölümlere ayırıp daha rahat incelemeye çalışacağız. Bazı partilerin açılış bölümlerine daha fazla eğilmemizin sebebi elbette o açılışla daha haşır neşir olmamız veya ilgilenmek istememiz. Örneğin Caro-Kann Savunması'nın değişmeli varyantını ben de beyaz taşlarla oynamayı seviyorum, bu nedenle inceleyeceğimiz oyun benim için ayrıca önemliydi.
 
 [Event "FIDE Grand Prix"]
 [Site "Berlin"]
