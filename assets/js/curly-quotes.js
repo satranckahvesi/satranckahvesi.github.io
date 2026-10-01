@@ -42,8 +42,8 @@
     // apostrophe (e.g. Turkish "İstanbul'da"), since ’ serves both
     // roles in real typography. Applied per text node, so a quote
     // sitting exactly at the boundary of inline markup (like
-    // **bold**) won't see the word before it — an accepted gap for a
-    // script this size, and rare in this site's actual prose.
+    // **bold**) wouldn't see the word before it by itself — curlyPass
+    // compensates by passing in the preceding sibling's last character.
     function toCurly(text) {
         return toEmDashes(text)
             .replace(/(^|[-—\s(\[{"])'/g, '$1‘')
@@ -80,7 +80,17 @@
             targets.push(node);
         }
         targets.forEach(function (node) {
-            var next = toCurly(node.nodeValue);
+            // A quote opening this text node isn't necessarily at the
+            // start of a word: in **Jan Timman**'ın the apostrophe starts
+            // its own node right after the closing </strong>, so toCurly
+            // alone would take it for an opening quote. Hand it the last
+            // character of the preceding inline sibling as context (then
+            // strip it back off) so it sees the word it really follows.
+            var prev = node.previousSibling;
+            var prevChar = prev ? prev.textContent.slice(-1) : '';
+            var next = prevChar
+                ? toCurly(prevChar + node.nodeValue).slice(prevChar.length)
+                : toCurly(node.nodeValue);
             // Comments get re-checked on every mutation below; skip
             // the write entirely once a comment's already been
             // converted, rather than relying on toCurly's own
