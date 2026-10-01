@@ -29,7 +29,7 @@ Tarihî detayları meraklı okuyucuya bırakarak hamlelere geçelim.
 
 {[P]} {İlk örneğimiz klasik İzole Vezir Piyonu: Siyah, 13... Na5 hamlesinden sonra ...Nd5 ile devam etmek ve konumu sadeleştirmek istiyor. İzole piyona karşı oynayan taraf izole piyonu "bloke" etmeli, izole piyonu olan taraf ise bu blokaja saldırmalı ve **izole piyonu sürmeye çalışmalı**.} 
 14.d5 $1 Nxb3 ( 14...Nxd5 $4 15.Bxd5 Bxd5 16.Bxe7 Qxe7 ( 16...Bxf3 17.Rxd8 $18 ) 17.Nxd5 { kazanır.}) 15.dxe6 Qb6 16.axb3 fxe6 17.Nd4 Bd6 18.Qxe6+ Kh8 19.Nf3 Rad8 20.Bf4 Bxf3 $6 21.Rxd6 Rxd6 22.Qxd6 Qxd6 23.Bxd6 Re8 24.Rxe8+ Nxe8 25.Be5 $18 1-0
--->
+--->
 
 [Event "Zürih"]
 [Site "?"]
@@ -44,7 +44,7 @@ Tarihî detayları meraklı okuyucuya bırakarak hamlelere geçelim.
 [PlyCount "21"]
 [EventDate "1953.??.??"]
 
-{[P]} {Beyazın basitçe Rh4-Qh5 ile mat etmek istediği konumda Euwe'nin tepkisi oldukça öğretici.} 16... b5 $3 {Kanat saldırısına zayıf d4 piyonuna saldırarak yanıt vermek istiyor. Fikir ...Qb6.} 17. Rh4 Qb6 18. e5 $1 {d4 piyonunu kaleyle koruyan bu hamle, beyazın saldırısına karşı siyahın çaresiz olduğunu vurguluyor.} Nxe5 19. fxe6 Nxd3 20. Qxd3 (20. exd7 Rxc1 21. Rxc1 Nxc1 $19) 20... Qxe6 21. Qxh7+ Kf7 22. Bh6 Rh8 $5 {Bu inanılmaz hamle sayesinde beyaz vezir oyun dışına itiliyor ve
+{[P]} {Beyazın basitçe Rh4-Qh5 ile mat etmek istediği konumda Euwe'nin tepkisi oldukça öğretici. Beyazın kanat saldırısına karşı saldırıyı hazırlamak için en etkili yöntem ne olabilir?} 16... b5 $3 {Kanat saldırısına zayıf d4 piyonuna saldırarak yanıt vermek istiyor. Fikir ...Qb6.} 17. Rh4 Qb6 18. e5 $1 {d4 piyonunu kaleyle koruyan bu hamle, beyazın saldırısına karşı siyahın çaresiz olduğunu vurguluyor.} Nxe5 19. fxe6 Nxd3 20. Qxd3 (20. exd7 Rxc1 21. Rxc1 Nxc1 $19) 20... Qxe6 21. Qxh7+ Kf7 22. Bh6 Rh8 $5 {Bu inanılmaz hamle sayesinde beyaz vezir oyun dışına itiliyor ve
 siyah Rc2 oynayabiliyor!} 23. Qxh8 Rc2 24. Rc1 $2 {Burada Kasparov 24.d5!! hamlesinin oyunu kurtardığını söylüyor. Fazla detaya boğmadan fikrine göz atalım.} (24. d5 $3 Bxd5 25. Rd1 $1 { Gözünü file dikerken Rxd5 ve Re4 ile savunma hazırlıyor.} Rxg2+ 26. Kf1 gxh6 27. Rxd5 Qxd5 28. Re4 Ng7 29.Kxg2 f5 30. Qxh6 {Daha iyi savunma olanaklarıyla...}) 24... Rxg2+ 25. Kf1 Qb3 26. Ke1 Qf3 0-1
 
 [Event "Zürih"]
