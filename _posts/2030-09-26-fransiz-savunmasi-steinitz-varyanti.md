@@ -17,12 +17,13 @@ Savunması. Short, Bareev, Yusupov, Uhlmann, Timman, M.Gurevich ve
 Dünya Şampiyonu Botvinnik gibi konumsal satrancın devlerini de
 unutmamak gerek. Steinitz "hayatımda asla oynamadım" dese de
 günümüzde 1.e4 hamlesine karşı en sık uygulanan yanıtlardan biridir.
+
 Şimdi ilk işimiz, ileride her varyantına değinmeyi umduğumuz Fransız
-Savunması'nın Steinitz Varyantı incelemek olacak. Hakkında yazılmış
+Savunması'nın Steinitz Varyantı'nı incelemek olacak. Hakkında yazılmış
 sayısız kitapla incelenmiş ve tüketilmesi mümkün olmayan Fransız
 Savunması'nı burada bütünüyle incelemeyi iddia etmek mümkün olmasa
 da olabildiğince çok örnekle önemli varyantları sunarak fikir vermeye
-çalışacağız. Önemli varyantlara geçmeden önce Fransız Savunması çin
+çalışacağız. Önemli varyantlara geçmeden önce Fransız Savunması için
 tipik kabul edilen konumları ele alalım.
 
 [Event "Nuremberg"]
@@ -36,18 +37,8 @@ tipik kabul edilen konumları ele alalım.
 [SetUp "1"]
 [FEN "r2qk2r/1p1bbp2/1P2p1p1/p2pP2p/n2N1P2/P2PB3/4NQPP/1R3RK1 b kq - 0 20"]
 [PlyCount "14"]
-[EventDate "1896.07.20"]
-[EventType "tourn"]
-[EventRounds "18"]
-[EventCountry "GER"]
-[SourceTitle "HCL"]
-[Source "ChessBase"]
-[SourceDate "1999.07.01"]
-[SourceVersion "2"]
-[SourceVersionDate "1999.07.01"]
-[SourceQuality "1"]
 
-20... Bxa3 {Diagram [#] Steinitz Varyantında ve Klasik Varyantta (1.e4 e6 2.
+20... Bxa3 {[#]} {Steinitz Varyantında ve Klasik Varyantta (1.e4 e6 2.
 d4 d5 3.Nc3 Nf6 4.Bg5) sıklıkla karşılaşılan d4-karesinde atın güçlü
 konumu ve e5-piyonu ile Beyazın alan üstünlüğü kendisine şah
 kanadından oynama imkanı veriyor. Siyah vezir kanadında piyon kazanmış ve
@@ -69,19 +60,9 @@ oyunu 50. hamlede kazanmayı başarıyor.} 1-0
 [Result "1-0"]
 [ECO "C02"]
 [PlyCount "47"]
-[EventDate "1911.08.21"]
-[EventType "tourn"]
-[EventRounds "25"]
-[EventCountry "CZE"]
-[SourceTitle "MainBase"]
-[Source "ChessBase"]
-[SourceDate "1999.07.01"]
-[SourceVersion "2"]
-[SourceVersionDate "1999.07.01"]
-[SourceQuality "1"]
 
 1. e4 e6 2. d4 d5 3. e5 {Nimzowitsch'in favorisi "İlerleme Varyantı".} c5 4.
-c3 Nc6 5. Nf3 Qb6 6. Bd3 Bd7 {Diagram [#]} 7. dxc5 $1 {Hipermodern satrancın
+c3 Nc6 5. Nf3 Qb6 6. Bd3 Bd7 {[#]} 7. dxc5 $1 {Hipermodern satrancın
 babası kabul edilen Aaron Nimzowitsch tarafından "blokaj" konusunun
 işlendiği önemli bir parti. Beyaz merkez piyonlarından gönüllü olarak
 vazgeçerek merkezdeki siyah karelerden blokaj elde etmek istiyor. Siyah
@@ -103,27 +84,17 @@ biçimde savumadı ama bu sayede Beyazın fikirlerini saf haliyle görme
 [Result "1-0"]
 [ECO "C11"]
 [PlyCount "69"]
-[EventDate "1885.??.??"]
-[EventType "game"]
-[EventRounds "1"]
-[EventCountry "USA"]
-[SourceTitle "CBM 060"]
-[Source "ChessBase"]
-[SourceDate "1997.09.29"]
-[SourceVersion "1"]
-[SourceVersionDate "1997.09.29"]
-[SourceQuality "1"]
 
 {İlk olarak varyanta Steinitz Varyantı verilmesinin temel sebeplerinden
 birine gelelim.} 1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. f4 {Steinitz'ın
 kendisinden önceki ustalardan farkı Nce2-c3 ile merkezini sağlamlaştırmak
-yerine böyle oynamasıydı. 5.f4 hamlesi ilk kez incelediğimiz bu partide
+yerine böyle oynamasıydı. 5.f4 hamlesi ilk kez bu partide
 uygulanmıştır.} c5 6. dxc5 {Steinitz günümüzde az rastlanan bu hamleyle
-d4-karesine bir at yerleştirmeyi hayal ediyordu.} Bxc5 7. Nf3 a6 8. Bd3 Nc6 9.
-Qe2 Nb4 {Siyah birkaç tempo kaybederek Beyazın iyi filinden kurtulamak
+d4 karesine bir at yerleştirmeyi hayal ediyordu.} Bxc5 7. Nf3 a6 8. Bd3 Nc6 9.
+Qe2 Nb4 {Siyah birkaç tempo kaybederek Beyazın iyi filinden kurtulmak
 istiyor. Klasiklerin bilgisiyle bunun iyi bir fikir olmadığını
 söyleyebiliyoruz. Ancak bu parti 1885 yılında oynanmıştı.} 10. Bd2 b5 11.
-Nd1 Nxd3+ 12. cxd3 $1 {Bu önemli hamle c-dikeyini açarak Beyazın sadece
+Nd1 Nxd3+ 12. cxd3 $1 {Bu önemli hamle c dikeyini açarak Beyazın sadece
 şah kanadında oynamayacağının işaretlerini veriyor. İlk oynandığı
 zamanlarda için yeni olan bu yaklaşım, şimdi tipik bir yöntemdir.} Qb6 13.
 b4 $1 {Bu hamle siyah fili pasif bir kareye gönderirken, piyonları beyaz
@@ -214,19 +185,13 @@ oluşturdu. 0-1 (53) Smirin,I (2658)-Vallejo Pons,F (2707) Nakhchivan 2011}
 1/2-1/2
 
 [Event "?"]
-[Site "Istanbul"]
+[Site "?"]
 [Date "????.??.??"]
 [Round "1"]
 [White "7...cxd4"]
 [Black "?"]
 [Result "1-0"]
 [ECO "C11"]
-[BlackElo "2556"]
-[PlyCount "105"]
-[EventDate "2003.05.30"]
-[EventType "swiss"]
-[EventRounds "13"]
-[EventCountry "TUR"]
 
 1. e4 e6 2. d4 d5 3. Nc3 Nf6 4. e5 Nfd7 5. f4 c5 6. Nf3 Nc6 7. Be3 cxd4 8. Nxd4
 Bc5 {Ana varyant.} (8... Qb6 {Oldukça kışkırtıcı 8...Qb6 Beyazı piyon
@@ -374,7 +339,7 @@ planın başlangıcı değil.} (19... e5 20. Nxd5 exd4 21. Nxb6 dxe3 22. Nxd7
 Ne4 $13 {artık g2-piyonu alınabilir.}) (19... Rxg2 {Bilgisayarın ilk
 tercihi.} 20. Rhg1 Rxg1 21. Rxg1 Nxd4 22. Qxd4 e5 $1 23. Qd1 (23. Qxd5 $4 Na4)
 23... Ne4 24. Nxd5 Qc5 {Hesaplaması ve anlaması güç.}) 20. Rxd4 Na4 21.
-Nxa4 Bxa4 {Diagram [#] e6-e5 ve c2-piyonu saldırı altında.} 22. Rc1 (22. Bd3
+Nxa4 Bxa4 {[#]} {e6-e5 ve c2-piyonu saldırı altında.} 22. Rc1 (22. Bd3
 {Makinenin tercihi.} Bxc2+ 23. Bxc2 Rxc2 24. Kxc2 Rxg2+ 25. Kd1 Qxb2 26. Ke1
 $18) 22... e5 23. Qxe5 Rce8 24. Qf4 Rxe2 25. Rxa4 $16 {1-0 (38) Kryvoruchko,Y 
 (2701)-Saric,A (2540) Germany GER 2016}) 10. O-O-O a6 11. Qf2 {Beyaz f4-f5
@@ -510,4 +475,3 @@ O-O Nc5 16. Nb2 Qc3 17. Nf3 $1 {Fransız Savunmasında da sıklıkla rastlanan
 Bxh7+ Kxh7 19. Ng5+ Kg6 20. Qg4 f5 21. Qh4 $18) 18. Nxd3 Ba6 19. Nfe1 $14 {
 Siyahın feda ettiği taşa karşılık üç piyonu yeterli olmamıştı. 1-0 
 (42) Bekkesletten,C (2214)-Haugen,A (2559) ICCF email 2009} *
-
