@@ -136,8 +136,8 @@ bölümden fazla bir şey beklememeliler. **Konumlar, daha genel prensipleri aç
 suçu pozisyonları bir genel kuralın içine sıkıştırma yoluyla işleyebilir**.”
 
 <figure class="video-embed">
-    <iframe src="https://www.youtube.com/embed/7CWvB5pz79k?si=Q1Ok9F010fB5WPLI" title="Willy Hendriks - Önce Hamle Yap Sonra Düşün" allowfullscreen loading="lazy"></iframe>
-    <figcaption>Yazar Willy Hendriks London Chess Classic esnasında ödül alan kitabı hakkında konuşuyor.</figcaption>
+<iframe src="https://www.youtube.com/embed/7CWvB5pz79k?si=Q1Ok9F010fB5WPLI" title="Willy Hendriks - Önce Hamle Yap Sonra Düşün" allowfullscreen loading="lazy"></iframe>
+<figcaption>Yazar Willy Hendriks London Chess Classic esnasında ödül alan kitabı hakkında konuşuyor.</figcaption>
 </figure>
 
 Jeremy Silman’a göre Hendriks kitabında pek farklı bir şey söylemiyor.
@@ -178,10 +178,7 @@ düşünerek siz de teste katılabilirsiniz.
 *
 
 İkinci bölümde, ülkemizde de yoğun ilgiyle karşılanan ve örneklerinin bolluğuyla Hendriks'in
-de beğenisini kazanan **Cor van Wijgerden**'in **_Step-by-Step_** serisinde önerilmeyen "**deneme-
-yanılma**" yönteminin öneminden söz ediyor. Hendriks haksız yere göz ardı edilen "deneme 
-yanılma" yönteminin bir konumdaki olanakları değerlendirebilmek için en iyi yöntemlerden
-biri olarak değiniyor. Hendriks'in eleştirilerine maruz kalan John Watson [bu kitabı](http://theweekinchess.com/john-watson-reviews/john-watson-book-review-103-challenging-conventional-wisdom) incelerken taktik konumlarda “deneme yanılma” yönteminin “konumu anlama" yöntemine kıyasla daha verimli olduğu konusunda yazara katıldığını ifade ediyor.
+de beğenisini kazanan **Cor van Wijgerden**'in **_Step-by-Step_** serisinde önerilmeyen "**deneme yanılma**" yönteminin öneminden söz ediyor. Hendriks haksız yere göz ardı edilen "deneme yanılma" yönteminin bir konumdaki olanakları değerlendirebilmek için en iyi yöntemlerden biri olarak değiniyor. Hendriks'in eleştirilerine maruz kalan John Watson [bu kitabı](http://theweekinchess.com/john-watson-reviews/john-watson-book-review-103-challenging-conventional-wisdom) incelerken taktik konumlarda “deneme yanılma” yönteminin “konumu anlama" yöntemine kıyasla daha verimli olduğu konusunda yazara katıldığını ifade ediyor.
 
 [Event "Leningrad"]
 [Site "Leningrad"]
@@ -208,9 +205,9 @@ biri olarak değiniyor. Hendriks'in eleştirilerine maruz kalan John Watson [bu 
 [SourceVersionDate "1988.04.01"]
 [SourceQuality "1"]
 
-15... Be8 {Nikolic bu hamleyi oynadı ve konumdaki en iyi hamleydi. Pek çok
-öğrencim 15 ...e5 hamlesini tercih etti ve o da çekici bir başka
-olasılıktır.  14 ...Be8 hamlesini nasıl buldunuz? Büyük olasılıkla bu
+15... Be8 { Nikolic bu hamleyi oynadı ve konumdaki en iyi hamleydi. Pek çok
+öğrencim 15... e5 hamlesini tercih etti ve o da çekici bir başka
+olasılıktır. 14... Be8 hamlesini nasıl buldunuz? Büyük olasılıkla bu
 planı "biliyordunuz". Bd7-e8-h5 manevrasını buna az çok benzeyen
 konumlarda gördünüz ve bu konuma bakarken aklınızda canlandı. Bu her
 zaman bilinçli bir seviyede olmak zorunda değildir. "Evet, filin piyonlarım
@@ -233,7 +230,7 @@ istenilen miktarda oyun seçmek oldukça kolay. Benimse tek şikâyetim, çok ko
 
 Yazarın dokuzuncu bölümünde “boş nasihat” dediği iyi bilinen satranç deyişlerinin yerine
 uygulama için önerdiği güzel şeyler de var. Bilgisayar ve internet çağında satranç çalışmak
-üzerine önemli gördüklerimi aktarmak istedim. 22 ve 23. bölümde geçen tavsiyelerden
+üzerine önemli gördüklerimi aktarmak istedim. 22. ve 23. bölümlerde geçen tavsiyelerden
 bazıları:
 
 - "Bilgisayar programınızın öğretici oyunları belli bir hızda oynatmasını sağlayın
