@@ -63,7 +63,7 @@ siyah Rc2 oynayabiliyor!} 23. Qxh8 Rc2 24. Rc1 $2 {Burada Kasparov 24.d5!! hamle
 [PlyCount "19"]
 [EventDate "1953.??.??"]
 
-{[P]} {Beyazlarla oynayan Keres turnuvanın bu turunda Smyslov'u yarım puan geriden takip ediyor ve kazanmak için tehlikeli bir saldırı başlatıyor. Kaleyi almak güvenli mi?} 19... dxc4 $1 {Smyslov karşı oyun için d5 karesini boşaltan ve tehlikeli c4 piyonunu yaratan bu hamleyi tercih ediyor.} (19... gxh5 20. Qxh5 Re8 21. a4 $3 dxc4 (21... Qd6 22. Qh6 Bg7 23. Qxh7+ Kf8 24. Rg3 Bf6 25. c5 $1 {c6, Ba3 tehditleriyle, örneğin,} bxc5 26. Qh6+ Ke7 27. dxc5 $18) 22. Qxh7+ Kf8 23. Ba3+ Re7 24. Rg3 $1 $18) 20. Rxh7 (20. Qg4 c3 21. Bxc3 Rxc3 22. Rxc3 Qxd4 23. Qxd4 Bxd4 24. Rc7 gxh5 25. Rxb7 {Bronstein, Keres'in burada berabere yapabileceğin fakat atağını devam ettirmek istediğini söylüyor.}) 20... c3 21. Qc1 Qxd4 (21... cxb2 $4 22. Qh6 SQxd4 23. Rh8+ Bxh8 24. Qh7#) 22. Qh6 Rfd8 23. Bc1 Bg7 24. Qg5 Qf6 25. Qg4 c2 26. Be2 Rd4 $1 {a7-g8 çaprazının açılması için f4 sürdürüyor.} 27. f4 Rd1+ 28. Bxd1 Qd4+ 0-1
+{[P]} {Beyazlarla oynayan Keres turnuvanın bu turunda Smyslov'u yarım puan geriden takip ediyor ve kazanmak için tehlikeli bir saldırı başlatıyor. Kaleyi almak güvenli mi?} 19... dxc4 $1 {Smyslov karşı oyun için d5 karesini boşaltan ve tehlikeli c4 piyonunu yaratan bu hamleyi tercih ediyor.} (19... gxh5 20. Qxh5 Re8 21. a4 $3 dxc4 (21... Qd6 22. Qh6 Bg7 23. Qxh7+ Kf8 24. Rg3 Bf6 25. c5 $1 {c6, Ba3 tehditleriyle, örneğin,} bxc5 26. Qh6+ Ke7 27. dxc5 $18) 22. Qxh7+ Kf8 23. Ba3+ Re7 24. Rg3 $1 $18) 20. Rxh7 (20. Qg4 c3 21. Bxc3 Rxc3 22. Rxc3 Qxd4 23. Qxd4 Bxd4 24. Rc7 gxh5 25. Rxb7 {Bronstein, Keres'in burada berabere yapabileceğin fakat atağını devam ettirmek istediğini söylüyor.}) 20... c3 21. Qc1 Qxd4 (21... cxb2 $4 22. Qh6 Qxd4 23. Rh8+ Bxh8 24. Qh7#) 22. Qh6 Rfd8 23. Bc1 Bg7 24. Qg5 Qf6 25. Qg4 c2 26. Be2 Rd4 $1 {a7-g8 çaprazının açılması için f4 sürdürüyor.} 27. f4 Rd1+ 28. Bxd1 Qd4+ 0-1
 
 [Event "Zürich"]
 [Site "?"]
@@ -206,7 +206,7 @@ Qxf4 33. exf4 d4 34. b3 Rc6 35. axb4 f5 36. h3 Ra6 37. Rbc1 Rxc1 38. Rxc1 Ra2 39
 [PlyCount "7"]
 [EventDate "1953.??.??"]
 
-{[P]} Siyahın açıkça üstün fakat doğrudan kazanca giden tek yolu  var. 36... Nxa3 37. Bxa3 Nb5 38. Bc1 Nxc3 39. Ne2 Nb1 0-1
+{[P] Siyah açıkça üstün fakat doğrudan kazanca giden tek yolu  var. } 36... Nxa3 37. Bxa3 Nb5 38. Bc1 Nxc3 39. Ne2 Nb1 0-1
 
 [Event "Zürich"]
 [Site "?"]

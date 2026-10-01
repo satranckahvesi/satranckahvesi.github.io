@@ -231,6 +231,7 @@ Botvinnik’in o yıllarda dünya satrancındaki yükselişi Alekhine ve Capabla
 *Konu üzerine yazılan [ChessBase makalesi](https://en.chessbase.com/post/what-was-the-strongest-tournament-of-all-time-) istatistiklere dayanarak AVRO 1938’i gelmiş geçmiş en güçlü turnuva kabul ediyor.
 
 Faydalanılan kaynaklar:
+
 - Mikhail Botvinnik, _One Hundred Selected Games_
 - Garry Kasparov, _My Great Predecessors_ (Cilt I ve II)
 - Chesshistory.com

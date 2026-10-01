@@ -176,16 +176,13 @@ düşünerek siz de teste katılabilirsiniz.
 [FEN "2r2rk1/pp2bp1p/1qb1pnp1/3nN1B1/3P4/P1NQ4/BP3PPP/2R2RK1 w - - 0 1"]
 [PlyCount "0"]
 
- *
+*
 
-İkinci bölümde, ülkemizde de yoğun ilgiyle karşılanan ve örneklerinin bolluğuyla Hendriks’in
-de beğenisini kazanan **Cor van Wijgerden**’in **Step-by-Step** serisinde önerilmeyen “**deneme-
-yanılma**” yönteminin öneminden söz etmiş. Hendriks haksız yere göz ardı edilen “deneme-
-yanılma” yönteminin bir konumdaki olanakları değerlendirebilmek için en iyi yöntemlerden
-biri olarak değiniyor. Hendriks’in eleştirilerine maruz kalan John Watson bu kitabı incelerken
-(http://theweekinchess.com/john-watson-reviews/john-watson-book-review-103-challenging-
-conventional-wisdom) taktik konumlarda “deneme yanılma” yönteminin “konumu anlama”
-yöntemine kıyasla daha verimli olduğu konusunda yazara katıldığını ifade ediyor.
+İkinci bölümde, ülkemizde de yoğun ilgiyle karşılanan ve örneklerinin bolluğuyla Hendriks'in
+de beğenisini kazanan **Cor van Wijgerden**'in **Step-by-Step** serisinde önerilmeyen "**deneme-
+yanılma**" yönteminin öneminden söz etmiş. Hendriks haksız yere göz ardı edilen "deneme-
+yanılma" yönteminin bir konumdaki olanakları değerlendirebilmek için en iyi yöntemlerden
+biri olarak değiniyor. Hendriks'in eleştirilerine maruz kalan John Watson [bu kitabı](http://theweekinchess.com/john-watson-reviews/john-watson-book-review-103-challenging-conventional-wisdom) incelerken taktik konumlarda “deneme yanılma” yönteminin “konumu anlama" yöntemine kıyasla daha verimli olduğu konusunda yazara katıldığını ifade ediyor.
 
 [Event "Leningrad"]
 [Site "Leningrad"]
@@ -239,15 +236,18 @@ Yazarın dokuzuncu bölümünde “boş nasihat” dediği iyi bilinen satranç 
 uygulama için önerdiği güzel şeyler de var. Bilgisayar ve internet çağında satranç çalışma
 üzerine önemli gördüklerimi aktarmak istedim. 22 ve 23. Bölümde geçen tavsiyelerden
 bazıları:
-- ”Bilgisayar programınızın öğretici oyunları belli bir hızda oynatmasını sağlayın
+
+- "Bilgisayar programınızın öğretici oyunları belli bir hızda oynatmasını sağlayın
 (diyelim ki her hamle için 5-10 saniye bekleyerek), açıklamalar, varyantlar olmadan.
 Kulaklığınızda belki bir fon müziği olabilir. **Capablanca’nın en iyi oyunsonları Vivaldi
-eşliğinde. Tal’in seçilmiş atak partileri heavy metalle birlikte**.”
-- ”Neredeyse bütün seviyelerdeki oyuncular için geçerli bir tavsiye **en çok sevdiğiniz
+eşliğinde. Tal’in seçilmiş atak partileri heavy metalle birlikte**."
+
+- "Neredeyse bütün seviyelerdeki oyuncular için geçerli bir tavsiye **en çok sevdiğiniz
 şeyi çalışmanız** yönündedir. Belki usta düzeyinde, az sevdiğiniz şeylerin pratiğini
 yapmak alan kazanmanızın tek yoludur. Fakat büyük çoğunlukla kaliteli her çalışma
-size fayda sağlayacaktır.”
-- “Bugünlerde, internette çok fazla satranç yayını yapılıyor. Bunun için size puan
+size fayda sağlayacaktır."
+
+- "Bugünlerde, internette çok fazla satranç yayını yapılıyor. Bunun için size puan
 verilmese de elit oyuncularla birlikte gerçek zamanlı düşünmek iyi bir yöntem.
 Kendinizi düşündüğünüz hamleleri yazmaya zorlayarak ve favorinizi seçmekle kendinizi
 buna bağlayabilirsiniz. Bir oyunu takip etmek sıkıcı geliyorsa, iki veya daha fazla oyunu takip
@@ -259,17 +259,19 @@ uyuyor mu diye izleyin. Ya da turdan sonra oyunları indirip bilgisayarınızla
 değerlendirmelerinizin doğruluğunu test edin. (...) Eğer izlenecek çok fazla oyun varsa,
 **modern TV izleyicisi gibi zap yapabilirsiniz** ve tekrar başa döndüğünüzde yeni bir hamle
 oynanmış olabilir. Fakat onlardan bir şeyler öğrenmek için angaje bir yaklaşım tavsiye edilir.”
-- ”Oyunlarınızı analiz ederken satranç engine’lerini açmak için biraz bekleyin
+
+- "Oyunlarınızı analiz ederken satranç engine’lerini açmak için biraz bekleyin
 (merakınızı yenmek zor olsa da). En azından satranç makinesini açmadan önce oyun
 sırasında düşündüğünüz varyantları, fikirleri, aday hamleleri ekleyin. Bunu hemen
 oyunun ardından yapmak en iyisidir, çünkü pek çok oyuncu oyun bitince oyun
-sırasında ne düşündüğünü çabucak unutur.”
-- “(...) Bütün gece 1 dakikalık oyunlar oynamak pek fayda sağlamayacaktır. Ama
+sırasında ne düşündüğünü çabucak unutur."
+
+- "(...) Bütün gece 1 dakikalık oyunlar oynamak pek fayda sağlamayacaktır. Ama
 başlangıç olarak, diyelim ki, 5 dakikalık oyunlarda gayet iyi iş çıkarabilir ve onları
 antrenman amaçlı kullanabilirsiniz. (...) Oyunu pratik yapmak, kontrol etmek ve açılış
 repertuarınızı geliştirmek için kullanabilirsiniz. (...) Eğer oyunları sadece oynuyor ve
 bir daha dönüp bakmıyorsanız, öğrenme etkisi gittikçe azalacak ve **tembellik tehlikesi**
-gerçekliğe dönüşecektir. ”
+gerçekliğe dönüşecektir."
 
 Her bir örneği tek tek çözer, açıklamalarını okuyarak kitabı bitirirken (kitabın örneklerden ve
 örneklerin açıklamalarından oluştuğunu belirtmeli) sadece soru çözüyor hissine
