@@ -109,7 +109,6 @@ görüyor ve kitabın her bölümüne özenle seçilerek konmuş epigraflarında
 [Variant "Standard"]
 [ECO "A16"]
 [Opening "English Opening: Anglo-Indian Defense, Anglo-Grünfeld Variation"]
-[StudyName "Mert"]
 [ChapterName "Kortschnoj, Viktor - Rowson, Jonathan"]
 [ChapterURL "https://lichess.org/study/UqgOP6FY/nTmurJQO"]
 [Annotator "https://lichess.org/@/NaSil"]
