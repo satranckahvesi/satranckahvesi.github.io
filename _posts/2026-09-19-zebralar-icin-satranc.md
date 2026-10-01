@@ -44,7 +44,7 @@ düşünüşünü (Materyal, Nitelik ve Zaman) eleştirip üzerine saat ("clock 
 ekleyerek ilerliyor. Özellikle bu kısımlar benim gibi zaman sıkışmasına sık giren oyuncular
 için önemli bölümler barındırıyor. Yazarın "düşünme zamanının fırsat maliyeti" diyerek
 açıkladığı bölüm gibi: "Örneğin, bazen iki hamle arasında tercih yapmanız gerekir. Birinin
-yeterli diğerinin çok daha kuvvetli ve hatta forse kazandığını görebiliyorsunuzdur. Ancak,
+yeterli, diğerininse çok daha kuvvetli olduğunu, hatta forse kazandığını görebiliyorsunuzdur. Ancak,
 kazanç olup olmadığını bulabilmek için dakikalarca düşünmeniz gerekmektedir. (...) Pratik
 gücün en önemli parçalarından birinin zaman faktörünü böyle anlarda değerlendirebilmek olduğuna
 inanıyorum. (...) Şimdi yirmi dakika kaybedersem, daha sonraki fırsatları kesinlikle
@@ -80,7 +80,7 @@ izin verin."
 
 Peki bu nasıl yapılabilir? Kitap düşünce kalıplarını yıkma fikriyle "farklı
 düşünmenin" izini sürüyor. Daha doğrusu Rowson ustalığa giden yolunda neler öğrendiğini
-ve neleri "unutması"(unlearning) gerektiğini anlatıyor. İlerleyen bölümler boyunca döne
+ve neleri "unutması" (_unlearning_) gerektiğini anlatıyor. İlerleyen bölümler boyunca döne
 dolaşa aynı şeyi hatırlatıyor okura: **"Gelişme, konfor alanınızın sınırında başlar."**
 ("Improvement begins at the edge of your comfort zone") Yani sınırlarınızı zorlamadığınız
 sürece gelişme yok. 
@@ -159,7 +159,7 @@ başlar gibiyken, derince düşündü ve yıkıcı taktiklerin pimini çekti. } 
 oynamadıysanız. Böylesine sıra dışı bir oyundan ve oyun sonrası analizinden sonra, pek çok
 insan bana bu tecrübeyi sormak istedi. Benim açıklamam şu şekildeydi: Düzensiz bir açılış
 oynadı, yanıt olarak biraz fazla yaratıcı oynadım ve sonradan gaf olduğu ortaya çıkan zekice
-bir hamle yaptım... Bu açıklamayı birkaç kez yaptığımı ve 11...Vf6 hamlesinden söz ettiğimi
+bir hamle yaptım... Bu açıklamayı birkaç kez yaptığımı ve 11... Qf6 hamlesinden söz ettiğimi
 hatırlıyorum. Daha sonra dinleyenlerden "Ya! Demek 12.d5 hamlesini kaçırdın!" diyerek araya
 girenlere çabucak "Hayır, 12. d5'i gördüm fakat d5'i iki kez alabildiğini görmedim" yanıtını
 verdim. **Bu kulağa makul geliyor, fakat aslında, tamamen yalan.**
