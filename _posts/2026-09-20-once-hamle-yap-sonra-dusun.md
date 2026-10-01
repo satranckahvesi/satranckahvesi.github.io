@@ -8,7 +8,7 @@ column: "Kitap incelemeleri"
 
 ###### Bu yazı ilk olarak 2016 yılında **Satrançsever** dergisinin 4. sayısında yayınlanmıştır.
 
-Dünya şampiyonu **Magnus Carlsen**'in (bu yazı yazıldığı sırada Carlsen dünya şampiyonuydu) hayatını konu alan filmin fragmanında "kararlarımı sezgilerimden yola çıkarak veriyorum" cümlesini duyduktan sonra, "acaba bütün oyuncular
+Dünya şampiyonu **Magnus Carlsen**'in (bu yazı yazıldığı sırada Carlsen dünya şampiyonuydu) hayatını konu alan filmin fragmanında "kararlarımı sezgilerimden yola çıkarak veriyorum" cümlesini duyduktan sonra, "acaba oyuncular
 tahta başında nasıl karar veriyorlar?" sorusu aklıma takıldı. Carlsen'in kıyaslanamaz bir oyun
 gücü olduğu açık, ancak söylediklerinden bir şey öğrenebilir miyiz diye merak ediyordum. Bir
 başka röportajında ise "Magnus Carlsen için genellikle sezgisel bir oyuncu diyorlar. Acaba
@@ -16,7 +16,7 @@ kendisi ne düşünüyor?" sorusuna "Öyle kabul edilmemin sebebi, bana göre, �
 yaşadığım tecrübelerden, kendi kendime tahtada geçirdiğim saatler boyunca denediğim
 şeylerden ileri geliyor. Bu demek oluyor ki, en sonunda satranç için his ve oyun anlayışı
 geliştirdim" cevabını veriyor. 
-
+ 
 Bizim için kaçınılmaz soru ise aynı: Kararlarımızı nasıl
 alıyoruz? Dahası nasıl almalıyız? Bazı oyunlarımızdan sonra, memnun olmadığımız
 hamlelere bakarak sanki oynayan biz değilmişiz gibi "bunu neden oynadım?", "bunu nasıl
@@ -24,6 +24,8 @@ görmedim, oysa yeterince zamanım vardı" dediğimiz çok olmuştur. Tersine, i
 fazla düşünmeden oynadığımız bir anda bunu nasıl başardığımızı anlatmak sandığımız
 kadar kolay olmayabilir. Sahiden satranç tahtası üzerinde verilen kararların tam olarak neye
 dayanması gerektiğini nasıl açıklayabiliriz?
+
+Willy Hendriks ödüllü kitabı "Önce Hamle Yap Sonra Düşün" kitabında kafamda dönen böylesi soruların daha önce verilmiş yanıtlarına eleştirel bir bakış açısı getiriyor.
 
 [Event "Wijk aan Zee"]
 [Site "?"]
