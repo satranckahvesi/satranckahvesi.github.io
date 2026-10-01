@@ -27,6 +27,7 @@ _5.h3_
 
 [FEN "rnbqkb1r/pp2pppp/5n2/3p4/3P4/3B3P/PPP2PP1/RNBQK1NR b KQkq - 0 5"]
 *
+
 *5. h3 sonrası konum*
 
 Varyantın ruhuna uygun şekilde c8-filini kısıtlayarak Af3 oynamak istiyor.
@@ -47,6 +48,7 @@ _7.Ac3!_
 
 [FEN "r1bqkb1r/pp2pppp/5n2/3p4/1n1P4/2NB1N1P/PPP2PP1/R1BQK2R b KQkq - 4 7"]
 *
+
 *7. Ac3 sonrası konum*
 
 Aronian daha önce belirtildiği gibi tipik c3-sürüşünü neden oynamadığını başka bir varyantla daha göstermek istiyor.
@@ -61,6 +63,7 @@ _9.0-0 Fg7_
 
 [FEN "r2qkb1r/1p3p1p/p1n1pn2/3pNpB1/3P4/P1N4P/1PP2PP1/R2Q1RK1 w kq - 1 13"]
 *
+
 *Analiz diyagramı - Beyaz oynar, kazanır.*
 
 13.Axd5!! exd5 14.Ke1 dikkate değer bir konum! 14...Axe5 15.Kxe5+ Sd7 16.Kxf5 Fg7 17.Fxf6 Fxf6 18.Kxd5++-
@@ -69,6 +72,7 @@ _10.Ke1 0-0 11.Fg5 Axd3 12.cxd3!_
 
 [FEN "r1bq1rk1/1p2ppbp/p4np1/3pN1B1/3P4/2NP3P/PP3PP1/R2QR1K1 b - - 0 1"]
 *
+
 *12. cxd3 ardından oluşan konum*
 
 ### Açılış felsefesi
@@ -89,6 +93,7 @@ _13...e6_
 
 [FEN "r1b2rk1/1p3pbp/pq2pnp1/3p2B1/3P4/2NP1N1P/PP3PP1/R2QR1K1 w - - 0 14"]
 *
+
 *13... e6 sonrası oluşan konum*
 
 (13...Vxb2 Sezgisel olarak bu alışın yanlış olduğu hemen söylenebilir, siyah **prensip olarak gelişimini umursamadan piyon avcılığına çıkmamalı**. 14.Aa4 Vb5 (14...Va3 15.Ab6 Ka7 16.Kb1 Stockfish Beyaza kazanç değerlendirmesi yapıyor: Siyahın kalesi oyun dışında ama neden kayıp konumda olduğunu anlamak ilk bakışta kolay olmayabilir. Meraklısına ortaya çıkan konumda Siyahın konumunu makineye karşı savunmayı öneriyorum. :)) 15.Kb1 Ve8 16.Ab6 Ka7 17.Axc8 Vxc8 18.Kxe7+-
@@ -101,14 +106,16 @@ Aktif taş oyunu sürdürülmeli **Fd7 gelmeden**! Şimdi beyazın c-dikeyinde o
 
 [FEN "r1b2rk1/1p3pbp/3qpnp1/p2p2B1/N2P4/3P1N1P/PP1Q1PP1/R3R1K1 w - - 0 16"]
 *
+
 *15... a5 sonrası konum*
 
- _16.Kac1 Fd7_ (16...Vb4 17.Vxb4 axb4 18.Ab6+-)
+_16.Kac1 Fd7_ (16...Vb4 17.Vxb4 axb4 18.Ab6+-)
 
 _17.Ac5 b6 18.Ff4 Ve7 19.Axd7 Axd7 20.Kc7_
 
 [FEN "r4rk1/2Rnqpbp/1p2p1p1/p2p4/3P1B2/3P1N1P/PP1Q1PP1/4R1K1 b - - 0 1"]
 *
+
 *20. Kc7 sonrası konum*
 
 Beyazın aktif taş oyunu sürüyor.
@@ -117,6 +124,7 @@ Beyazın aktif taş oyunu sürüyor.
 
 [FEN "r1rq2k1/2Rn1pbp/1p2p1p1/p2p4/3P1B2/3P1N1P/PPQ2PP1/2R3K1 b - - 0 22"]
 *
+
 *22. Vc2 sonrası konum*
 
 Önemli bir karar! Siyahın oyun sonuna gitmek istediğini söylemiştik ancak **beyazın inisiyatifi oyunsonunda da devam ediyor**. Taş değişimleri beyazın aktif taş oyununu etkilemiyor.
@@ -125,6 +133,7 @@ Beyazın aktif taş oyunu sürüyor.
 
 [FEN "3r2k1/2Rn1pbp/1p2p1p1/p2p4/3P1B2/3P1N1P/PP3PP1/6K1 w - - 0 1"]
 *
+
 *24... Kd8 sonrası konum*
 
 Siyah hafif taşlarının işlevsiz görüntüsüne karşın beyaz taşlar adeta dans ediyor. Kale yedinci yatayda kariyerinin zirvesini yaşarken d7-karesindeki atı oyun boyunca üzgün göreceğiz. cxd3 alışıyla başlayan kısıtlama operasyonu onu oyunsuz bırakıyor.
@@ -137,9 +146,10 @@ Siyah hafif taşlarının işlevsiz görüntüsüne karşın beyaz taşlar adeta
 
 [FEN "3r1k2/1R1n1pbp/1p2p1p1/p2p4/3P1B2/3P1N1P/PP3PP1/6K1 w - - 0 26"]
 *
+
 *25... Şf8 sonrası konum*
 
-### **İLERİ KARAKOL**
+### İleri karakol
 
 Eğer **zayıf bir kare**de (piyonlar tarafından savunulamayan özellikle rakibe erişimi yüksek) taşlarımızı konumlandırabilirsek çok etkili olacağı söylenebilir.
 
@@ -155,6 +165,7 @@ _28.dxe5 Kc8_
 
 [FEN "2r1k3/1R1n1p1p/1p1Bp1p1/p2pP3/8/3P3P/PP3PP1/6K1 w - - 0 1"]
 *
+
 *Kritik konum!*
 
 ### Problem taş
@@ -179,6 +190,7 @@ _32.Şh2 h6_
 
 [FEN "3k4/R2n1p2/1p1Bp1pp/p2pP3/3P4/1P5P/P4PPK/2r5 w - - 0 1"]
 *
+
 *Hamle sırası siyahta*
 
 İlginç bir şekilde siyahın yapacak bir şeyi bulunmuyor.
@@ -195,10 +207,13 @@ _36.h5 Kc6 37.Sh4 Kc8 38.g4 Se8 39.f4 Sd8 40.hxg6 fxg6 41.g5 h5_
 
 [FEN "2rk4/R2n4/1p1Bp1p1/p2pP1Pp/3P1P1K/1P6/P7/8 w - - 0 1"]
 *
+
 *Hamle sırası siyahta*
 
- Acaba ikinci cephe açma planı başarısız mı oldu?
+Acaba ikinci cephe açma planı başarısız mı oldu?
 
-_42.f5!_ Siyah terk eder. Güzel bir oyuna, güzel bir son! Aronian'dan mükemmel bir performans.
+_42.f5!_ Siyah terk eder. Güzel bir oyuna, güzel bir son!
+
+Aronian'dan mükemmel bir performans.
 
  [42.f5 gxf5 (42...exf5 43.e6 Ab8 44.Kg7) 43.g6 Se8 44.g7]1-0
