@@ -14,17 +14,17 @@ ettiğimiz anlar ya da daha doğru bir deyişle satrancın daha iyi oynanabilece
 eden rakiplerdir çoğunlukla. İlk kitabımızı ve bizi yenen rakibimizin tavsiyelerini alır çalışırız.
 Taktikler, klasikler, açılışlar, oyunortası ve oyunsonu. İşler tekrar yoluna girer, ta ki ayağımız
 başka bir taşa takılana kadar. Bu taş çoğunlukla sağlam bir kaya olur; ne yapsak etsek de
-belli bir seviyenin ötesine geçmenin imkansız olduğunu hissederiz. 
+belli bir seviyenin ötesine geçmenin imkânsız olduğunu hissederiz. 
 
-Böylesine bir kayaya ilk toslayışım epey uzun zaman öncesine dayansa da, hala benzer kayalara toslamaya devam
+Böylesine bir kayaya ilk toslayışım epey uzun zaman öncesine dayansa da, hâlâ benzer kayalara toslamaya devam
 ediyorum. Bu konuda yalnız olmadığımı ve sözünü ettiğim durumun yaygın bir sorun
-olduğunu satranç sever dostlarımdan, hayat hikayelerini bildiğim satranç ustalarından daha
+olduğunu satranç sever dostlarımdan, hayat hikâyelerini bildiğim satranç ustalarından daha
 sonra öğrendim. Bu sorunların bir büyükusta tarafından incelenmiş olduğunu duyduğumda
 açıkçası çok merak etmiş ve bana satrancı daha iyi oynamanın “sihirli formülünü” sunacağını
 ummuştum. Daha sonra basım tarihi 2005 olan bu kitapla şimdi elinizde tutmakta olduğunuz
 derginin basılmasını sağlayan **Analiz Yayıncılık** standında karşılaştım.
 
-O halde, yazılışından kısa bir süre sonra satranç literatüründe saygın bir yer
+O hâlde, yazılışından kısa bir süre sonra satranç literatüründe saygın bir yer
 edinmeyi başarmış bu eserin yazarından kısaca söz ederek başlayalım: Sayısız turnuva
 zaferinin yanında İngiltere ve İskoçya şampiyonlukları bulunan İskoç Büyükusta Jonathan
 Rowson, satrançtaki tescilli başarısının yanına Oxford ve Harvard’da gördüğü felsefe ve
@@ -65,7 +65,7 @@ Oldukça eğlenceli (Şu başlıklara bakın: “Cebinizde Bir Delik Olduğunu D
 Ne Yapmalı?”, “Satranç Neden Çok Zor?” ya da “Konsantre ol! Konsantre ol? Konsantre ol.”)
 ama derin meselelere el atmaktan çekinmeyen bir serbestlikle yazılmış olması çok hoşuma
 gitti. Bu yönüyle daha çok satrançta belli bir seviyeye gelmiş ilerlemekte güçlük çeken
-yetişkin sporcu veya antrenörlere hitap eder görünümde. Örneğin; konsantre olmaya
+yetişkin sporcu veya antrenörlere hitap eder görünümde. Örneğin, konsantre olmaya
 dair söze başlarken Blaise Pascal’dan alıntı yapmaktan çekinmiyor yazar:
 “İnsanlığın bütün sorunları, kişinin tek başına bir odada sessizce oturamamasından
 kaynaklanır.”. Çünkü yazara göre insan kendi düşüncelerine konsantre olmamak için uğraşır
@@ -98,7 +98,7 @@ ihtimalle ‘bilmiyorum’ diyerek başlayacaktır.”
 kanıtlayacağım’ şeklinde yaklaşmaktan çok daha akıllıcadır.”
 
 Aynı yaklaşımla, “atak bir oyuncuyum”, “konumsal oynamayı severim”, “hesap yapmam, sezgilerimle oynarım” gibi yaklaşımlarla oyuncunun kendi tarzına ve hamlelerine sınırlar çizmesini, onun satrancının gelişimi önündeki en büyük engellerden biri olarak
-görüyor ve kitabın her bölümüne özenle seçilerek konmuş epigraflarından Karpov’a ait olan sözüyle bunu açıklıyor. “Tarz mı? Benim bir tarzım yok.” Burada söylenmek istenen “oyuncunun bir tarzı olmamalı” değil, bu yaklaşımın oyuncunun oynadığı oyuna damga vurması, hamleleri üzerinde etkiye sahip olmasıdır elbette. Karpov’un kendi stili üzerine böyle düşünmesi onun bir tarza sahip olmadığını gösterir mi? Kitap boyunca konuya eşlik eden örneklerde kendi partilerini, oynarkenki düşüncelerini ve hissettiklerini içten (belki de aşırı içten!) bir şekilde paylaşması kitabın en büyük artılarından. Şimdi ilk bölümün kaba bir özeti sayılabilecek bir kısmını paylaşmak istiyorum. Bir satranç kitabında içtenliğiyle böylesine beni yakalayan ve söyledikleriyle bana ayna tutan başka bir bölüm hatırlamıyorum. Sözünü ettiğim, Hikaye Uydurma (Fabulation) alt başlığında Rowson’ın yakın zamanda hayata gözlerini yuman Viktor Korchnoi ile karşılaşmasıdır.
+görüyor ve kitabın her bölümüne özenle seçilerek konmuş epigraflarından Karpov’a ait olan sözüyle bunu açıklıyor. “Tarz mı? Benim bir tarzım yok.” Burada söylenmek istenen “oyuncunun bir tarzı olmamalı” değil, bu yaklaşımın oyuncunun oynadığı oyuna damga vurması, hamleleri üzerinde etkiye sahip olmasıdır elbette. Karpov’un kendi stili üzerine böyle düşünmesi onun bir tarza sahip olmadığını gösterir mi? Kitap boyunca konuya eşlik eden örneklerde kendi partilerini, oynarkenki düşüncelerini ve hissettiklerini içten (belki de aşırı içten!) bir şekilde paylaşması kitabın en büyük artılarından. Şimdi ilk bölümün kaba bir özeti sayılabilecek bir kısmını paylaşmak istiyorum. Bir satranç kitabında içtenliğiyle böylesine beni yakalayan ve söyledikleriyle bana ayna tutan başka bir bölüm hatırlamıyorum. Sözünü ettiğim, Hikâye Uydurma (Fabulation) alt başlığında Rowson’ın yakın zamanda hayata gözlerini yuman Viktor Korchnoi ile karşılaşmasıdır.
 
 [Event "Monarch Assurance 13th"]
 [Site "Port Erin"]
@@ -112,7 +112,6 @@ görüyor ve kitabın her bölümüne özenle seçilerek konmuş epigraflarında
 [Variant "Standard"]
 [ECO "A16"]
 [Opening "English Opening: Anglo-Indian Defense, Anglo-Grünfeld Variation"]
-[StudyName "Mert"]
 [ChapterName "Kortschnoj, Viktor - Rowson, Jonathan"]
 [ChapterURL "https://lichess.org/study/UqgOP6FY/nTmurJQO"]
 [Annotator "https://lichess.org/@/NaSil"]
@@ -128,14 +127,14 @@ kanadındaki beyaz kareleri kontrol altına almak." Kafasını salladı ve
 ekledi: "Anlıyorum.", tahminime göre beni yalnızca test ediyordu. } 11. Nf3 { Bu hamleden sonra bana yardımı olmayan bir iyimserlik büyüsüne kapıldım.
 Bu "iyimserlik etkisi" satrançta kaçınmamız gereken temel psikolojik
 tuzaklardan biridir çünkü konum hakkındaki değerlendirmemizi
-renklendirerek hatalara yol açar. Her halükarda, oyundan önce gergindim
+renklendirerek hatalara yol açar. Her hâlükârda, oyundan önce gergindim
 fakat bu sırada oyunun keyfini çıkarıyordum. Büyük adamla oynadığım
 için ve onunla böylesine zengin ve garip bir konumda mücadele ediyor
 olmaktan ötürü heyecanlıydım. Ancak şimdi rahatsız edici Bg5 ve
 ardından e4 ya da e3 tehdidiyle baş etmek zorundaydım, ki bundan sonra
 beyazlar en azından kötü değildir. Burada pek çok hamleyi düşündüm
 fakat hiçbiri bana konumun gereklerini tamamen yerine getiriyor gibi gelmedi.
-Örneğin; } 11... Qf6? { Bu tuhaf görünümlü hamle iyi olmak için fazla zekice.
+Örneğin, } 11... Qf6? { Bu tuhaf görünümlü hamle iyi olmak için fazla zekice.
 Beyazın e3'ten filini oynayıp ardından e-piyonunu oynaması problemine
 radikal bir çözüm sunuyor. 12.Bg5'ten sonra 12...Qf5 veya 12.Bc1 Qf5 ve
 fikrim mükemmel işliyor ve beyaz hamle bulmakta zorlanıyor olacaktı. Fakat
@@ -157,7 +156,7 @@ başlar gibiyken, derince düşündü ve yıkıcı taktiklerin pimini çekti. } 
 örneğidir. }) 32. axb7+ Kb8 33. Bxf6 Rd2 34. Bc4 Rxd1 35. Bxa2 Rxf1+ 36. Kxf1 Kxb7 37. Bf7 Rf8 38. Bd5+ Kb6 39. Bc3 Kb5 40. Bxe4 Kc4 41. Be5 Re8 42. f4 Kb3 43. Ke2 Rd8 44. g4 c4 45. f5 gxf5 46. gxf5 c3 47. Bd4 Rc8 48. Bd5+ Kb4 49. Kd1 { 1-0 White wins. } 1-0
 
 “Korchnoi ile oynamak çok özel bir durum, hele onunla daha önce hiç
-oynamadıysanız. Böylesine sıradışı bir oyundan ve oyun sonrası analizinden sonra, pek çok
+oynamadıysanız. Böylesine sıra dışı bir oyundan ve oyun sonrası analizinden sonra, pek çok
 insan bana bu tecrübeyi sormak istedi. Benim açıklamam şu şekildeydi: Düzensiz bir açılış
 oynadı, yanıt olarak biraz fazla yaratıcı oynadım ve sonradan gaf olduğu ortaya çıkan zekice
 bir hamle yaptım... Bu açıklamayı birkaç kez yaptığımı ve 11...Vf6 hamlesinden söz ettiğimi
@@ -166,26 +165,26 @@ girenlere çabucak &#39;Hayır! 12.d5&#39;i gördüm fakat d5&#39;i iki kez alab
 verdim. **Bu kulağa makul geliyor, fakat aslında, tamamen yalan.**
 
 Belki de kendime karşı fazla acımasızım ve belki buna kendini kandırma demek daha adildir.
-Sanıyorum bu hikayeyi ilk söylediğimde egomu korumak ve bu oyunun özel durumunu
+Sanıyorum bu hikâyeyi ilk söylediğimde egomu korumak ve bu oyunun özel durumunu
 muhafaza etmek istiyordum. Yaşayan efsaneye karşı oyunun böylesine erken bölümünde
 acemice bir gafla kaybettiğim fikrine isyan ediyordum. Bunun yerine, oyun hakkında kulağa
-daha anlamlı gelen bir hikaye anlattım.
+daha anlamlı gelen bir hikâye anlattım.
 
-Bu hikaye şunu demek istiyordu: O yaratıcıydı ve ben de yaratıcıydım. Ama ben o kadar
+Bu hikâye şunu demek istiyordu: O yaratıcıydı ve ben de yaratıcıydım. Ama ben o kadar
 yaratıcıydım ki kendimi kaptırdım ve onun anahtar hamlesini görmeme rağmen (çünkü, hey,
 ben bir büyükustayım), devamını kaçırdım (çünkü, hey, kimse mükemmel değil).
-Bu hikaye uydurmada (fabulation) beni en çok vuran şey, üçüncü ya da dördüncü kez
+Bu hikâye uydurmada (fabulation) beni en çok vuran şey, üçüncü ya da dördüncü kez
 olayların bu versiyonunu anlattığımda **artık kendim de böyle olduğuna inanmaya başladım**!
 O akşam kız arkadaşımla konuştuğumda dahi benzer şeyler söyledim. Yalnız oyunu
 bilgisayara verdiğimde basitçe 12.d5 hamlesini kaçırdığım gerçeğiyle yüzleştim. Hamleyi
 görmüştüm fakat yalnızca 11...Vf6 hamlesini oynadıktan ‘sonra’. 11...Vf6 hamlesini
-oynadıktan hemen sonra 12.d5 hamlesinin o kadar ciddi olmadığını (rahatlama) hissettim fakat sonra 14.Kxd5 (of!) hamlesini gördüm, muhtemelen oyunun kalanında öz güvenimi sağlam tutmak için kendime kaçırdığım şeyin bu olduğunu söyledim.
+oynadıktan hemen sonra 12.d5 hamlesinin o kadar ciddi olmadığını (rahatlama) hissettim fakat sonra 14.Kxd5 (of!) hamlesini gördüm, muhtemelen oyunun kalanında özgüvenimi sağlam tutmak için kendime kaçırdığım şeyin bu olduğunu söyledim.
 
 Şimdi bu itirafı okuyucuların kendilerine karşı daha dürüst olmaları için cesaretlenmeleri
 amacıyla paylaşıyorum. Kendini kandırma, neredeyse tanımı gereği, çok aldatıcı bir olgudur
-fakat inanıyorum ki bu bizim tecrübelerimizi hikayeleştirme eğilimimizle yakından ilişkilidir.
+fakat inanıyorum ki bu bizim tecrübelerimizi hikâyeleştirme eğilimimizle yakından ilişkilidir.
 Tecrübelerimiz çoğu defa tutarsız ve benlik algımızı tehdit edici olduğunda, tutarlı ya da ilgi
-çeken hikayeler yaratacak şekilde evrimleşmemiz anlamlı görünüyor.”
+çeken hikâyeler yaratacak şekilde evrimleşmemiz anlamlı görünüyor.”
 
 Uzunca bir bölümünü alıntıladığımı kitabın en güzel tavsiyelerinden birisiyle bitiriyorum
 yazımı: “ Daha iyi oyuncu olmak istiyorsanız, daha iyi alışkanlıklara sahip olmak gerekir ve
@@ -196,5 +195,5 @@ düşünüyorum. Bunu olabildiğince sık, uzun vadeli ve disiplinli bir şekild
 konsantre olmayı kolaylaştıracaktır.”
 
 Şimdiye kadar sadece üç kitabı bulunan Büyükusta Jonathan Rowson’ın sıradaki
-eserinin konusunu bilemiyorum fakat, düşünmeyi teşvik eden her cümlesi okunmaya değer
+eserinin konusunu bilemiyorum, fakat düşünmeyi teşvik eden her cümlesi okunmaya değer
 görünüyor...

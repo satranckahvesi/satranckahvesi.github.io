@@ -8,7 +8,7 @@ column: "Kitap incelemeleri"
 
 ###### Bu yazı ilk olarak 2016 yılında **Satrançsever** dergisinin 4. sayısında yayınlanmıştır.
 
-Dünya Şampiyonu **Magnus Carlsen**’in (Bu yazı yazıldığı sırada Carlsen dünya şampiyonuydu) hayatını konu alan filmin fragmanında “kararlarımı
+dünya şampiyonu **Magnus Carlsen**’in (Bu yazı yazıldığı sırada Carlsen dünya şampiyonuydu) hayatını konu alan filmin fragmanında “kararlarımı
 sezgilerimden yola çıkarak veriyorum” cümlesini duyduktan sonra, “acaba bütün oyuncular
 tahta başında nasıl karar veriyorlar?” sorusu aklıma takıldı. Carlsen’in kıyaslanamaz bir oyun
 gücü olduğu açık, ancak söylediklerinden bir şey öğrenebilir miyiz diye merak ediyordum. Bir
@@ -144,7 +144,7 @@ suçu pozisyonları bir genel kuralın içine sıkıştırma yoluyla işleyebili
 Jeremy Silman’a göre “yürekten önerdiği” kitabında Hendriks farklı bir şey söylemiyor.
 Hendriks’in eleştirdiği prensipler yeni başlayanlara yol göstermek için vardır diyor ve ekliyor:
 “Beni budalaca eğitimin başrahibi ilan eden Hendriks fikirlerimin bütün bir öğretmen grubunu
-kötü yönde etkilediğini belirtiyor ama, kendisi de benim hamleleri açıklarken kullandığım
+kötü yönde etkilediğini belirtiyor, ama kendisi de benim hamleleri açıklarken kullandığım
 terminolojiyi kullanıyor.” 
 
 Durumu bir yarışmaya benzetirsek; “daha çok mu konum mu bilmeli”, yoksa “konumları daha
@@ -162,7 +162,7 @@ tahtada zaten bildiği şeyi görür. Eğer görmüyorsanız, daha iyi bakmanız
 izlemeniz yardımcı olmaz**.” 
 
 Meraklısı için farklı seviyelerden oyunculara sunulan De Groot’un test konumu aşağıdadır. Satranç psikoloğu De Groot testinde belirli seviyedeki oyunculardan gördükleri konum hakkında sesli düşünmeleri istenmiştir (Bu oyuncular
-arasında Keres, Alekhine, Euwe gibi Dünya Şampiyonları da bulunmaktaydı). Konumu
+arasında Keres, Alekhine, Euwe gibi dünya şampiyonları da bulunmaktaydı). Konumu
 düşünerek siz de teste katılabilirsiniz.
 
 [Event "?"]
@@ -229,7 +229,7 @@ Mantıklı olmasa da vurgulanmak istenen her şeyin örneklerle kanıtlanabilece
 için bile bir bölüm ayrılmış ve adı şöyle: “Eğer beyaz g4 oynarsa sen de ...g5 ile bu saldırıya
 karşı koy.” Yazar satrancın zenginliğinden faydalanarak seçtiği örneklerle bunu kanıtlamakta
 hiç zorlanmıyor. Çünkü yazara göre herhangi bir prensibi desteklemek için veritabanından
-istenilen miktarda oyun seçmek oldukça kolay. Benimse tek şikayetim, çok konum görmeyi
+istenilen miktarda oyun seçmek oldukça kolay. Benimse tek şikâyetim, çok konum görmeyi
 önemli sayan kitabın **örnek sayısının görece az olması**.
 
 Yazarın dokuzuncu bölümünde “boş nasihat” dediği iyi bilinen satranç deyişlerinin yerine
@@ -277,11 +277,11 @@ Her bir örneği tek tek çözer, açıklamalarını okuyarak kitabı bitirirken
 örneklerin açıklamalarından oluştuğunu belirtmeli) sadece soru çözüyor hissine
 kapılmıyorsunuz. Bazen gülerken, kimi zaman okunmamış bir referans kitabı
 merak ediyorsunuz ve diğer yazarlarla girilen düzeyli polemikle sürekli satranç hakkında
-düşünüyorsunuz. O halde masa başında kararlarımızı nasıl alıyoruz? Carlsen, Anand gibi
+düşünüyorsunuz. O hâlde masa başında kararlarımızı nasıl alıyoruz? Carlsen, Anand gibi
 yaşayan efsaneleri bilmiyorum fakat bizim gibiler için görünen tek yol var, o da çalışarak olsa
 gerek...
 
 **De Groot testinin cevabı**: 1.Bxd5! (1...Bxd5 2.Bxf6 Bxf6 3.Nd7; 1...Nxd5 2.Nxd5 ve e7'deki fil düşer.)
 1...exd5 2.Qf3 Qd8 (2...Kg7 3.Ng4) 3.Rce1 Beyazlar baskıyı artırır ve siyahın iyi bir
-savunması yoktur, örneğin; 3...Re8 4.Nxc6 Rxc6 5.Rxe7 Qxe7 6.Nxd5 Beyaz materyal
+savunması yoktur, örneğin, 3...Re8 4.Nxc6 Rxc6 5.Rxe7 Qxe7 6.Nxd5 Beyaz materyal
 kazanır.   

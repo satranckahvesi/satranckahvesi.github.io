@@ -1,16 +1,16 @@
 ---
 layout: post
 date: 2026-09-22
-title: "Zürih 1953 Adaylar Turnuvasından unutulmaz hamleler"
+title: "Zürih 1953 Adaylar Turnuvası'ndan unutulmaz hamleler"
 author: "FM Nazmi Can Doğan"
 column: "Efsane turnuvalar"
 ---
 
 ###### Bu yazı ilk olarak 2016 yılında **Satrançsever** dergisinin 1. sayısında yayınlanmıştır.
 
-Dev oyuncuların oynadığı turnuvaların her bir oyunu, her bir hamlesi elbette satranççıların kalbinde büyük değer taşır. Ama, ben yine de **Bronstein**’in belirttiği üzere “Satrancı sanat olarak gördüğüm halde, (...) bir müzede gördüğünüz her sanat eserini beğenemezsiniz. Fransız gurmelerinin dediği gibi, damak tadı oldukça kişisel bir konudur.” düşüncesiyle, kendi beğenime hitap eden unutulmaz fikirleri paylaşmak istedim. İlk makalemize konu olacak turnuva 1953 yılında Zürih’te oynanan Adaylar Turnuvası. 
+Dev oyuncuların oynadığı turnuvaların her bir oyunu, her bir hamlesi elbette satranççıların kalbinde büyük değer taşır. Ama ben yine de **Bronstein**’in belirttiği üzere “Satrancı sanat olarak gördüğüm hâlde, (...) bir müzede gördüğünüz her sanat eserini beğenemezsiniz. Fransız gurmelerinin dediği gibi, damak tadı oldukça kişisel bir konudur.” düşüncesiyle, kendi beğenime hitap eden unutulmaz fikirleri paylaşmak istedim. İlk makalemize konu olacak turnuva 1953 yılında Zürih’te oynanan Adaylar Turnuvası. 
 
-Zamanın Dünya Şampiyonu **Mikhail Botvinnik**’in rakibini belirlemek üzere düzenlenen bu turnuva için yazılmış iki önemli kitap bulunmakta: **Miguel Najdorf** ’un ve **David Bronstein**’ın turnuvada oynanmış her oyunu detaylı analiz ettikleri muazzam kitapları, hala satranç literatüründe yer alan en değerli yapıtlar arasında görülüyor. 28(!) turluk turnuva sonunda Smyslov 18 puanla birinci olurken, ardından 16 puanla **Bronstein**, **Keres** ve **Reshevsky** geliyordu. Ertesi yıl 1954’te oynanan unvan maçı 12-12 beraberlikle bitecek ve **Botvinnik**, **Smyslov**'a karşı unvanını koruyacaktı. Tartışmalara konu olan bu durumun bir benzerini **Bronstein**’e karşı 1951 yılındaki maçında da yaşamış olan Botvinnik, o maç da 12-12 bitince unvanını korumuştu. O zamanki kurallarda Dünya Şampiyonu beraberlik halinde herhangi bir eşitlik bozmaya gitmeksizin unvanını koruyabiliyordu.
+Zamanın dünya şampiyonu **Mikhail Botvinnik**’in rakibini belirlemek üzere düzenlenen bu turnuva için yazılmış iki önemli kitap bulunmakta: **Miguel Najdorf** ’un ve **David Bronstein**’ın turnuvada oynanmış her oyunu detaylı analiz ettikleri muazzam kitapları, hâlâ satranç literatüründe yer alan en değerli yapıtlar arasında görülüyor. 28(!) turluk turnuva sonunda Smyslov 18 puanla birinci olurken, ardından 16 puanla **Bronstein**, **Keres** ve **Reshevsky** geliyordu. Ertesi yıl 1954’te oynanan unvan maçı 12-12 beraberlikle bitecek ve **Botvinnik**, **Smyslov**'a karşı unvanını koruyacaktı. Tartışmalara konu olan bu durumun bir benzerini **Bronstein**’e karşı 1951 yılındaki maçında da yaşamış olan Botvinnik, o maç da 12-12 bitince unvanını korumuştu. O zamanki kurallarda dünya şampiyonu beraberlik hâlinde herhangi bir eşitlik bozmaya gitmeksizin unvanını koruyabiliyordu.
 
 Tarihi detayları meraklı okuyucuya bırakarak hamlelere geçelim.
 
@@ -63,7 +63,7 @@ siyah Rc2 oynayabiliyor!} 23. Qxh8 Rc2 24. Rc1 $2 {Burada Kasparov 24.d5!! hamle
 [PlyCount "19"]
 [EventDate "1953.??.??"]
 
-{[P]} {Beyazlarla oynayan Keres turnuvanın bu turunda Smyslov'u yarım puan geriden takip ediyor ve kazanmak için tehlikeli bir saldırı başlatıyor. Kaleyi almak güvenli mi?} 19... dxc4 $1 {Smyslov karşı oyun için d5 karesini boşaltan ve tehlikeli c4 piyonunu yaratan bu hamleyi tercih ediyor.} (19... gxh5 20. Qxh5 Re8 21. a4 $3 dxc4 (21... Qd6 22. Qh6 Bg7 23. Qxh7+ Kf8 24. Rg3 Bf6 25. c5 $1 {c6, Ba3 tehditleriyle, örneğin;} bxc5 26. Qh6+ Ke7 27. dxc5 $18) 22. Qxh7+ Kf8 23. Ba3+ Re7 24. Rg3 $1 $18) 20. Rxh7 (20. Qg4 c3 21. Bxc3 Rxc3 22. Rxc3 Qxd4 23. Qxd4 Bxd4 24. Rc7 gxh5 25. Rxb7 {Bronstein, Keres'in burada berabere yapabileceğin fakat atağını devam ettirmek istediğini söylüyor.}) 20... c3 21. Qc1 Qxd4 (21... cxb2 $4 22. Qh6 Qxd4 23. Rh8+ Bxh8 24. Qh7#) 22. Qh6 Rfd8 23. Bc1 Bg7 24. Qg5 Qf6 25. Qg4 c2 26. Be2 Rd4 $1 {a7-g8 çaprazının açılması için f4 sürdürüyor.} 27. f4 Rd1+ 28. Bxd1 Qd4+ 0-1
+{[P]} {Beyazlarla oynayan Keres turnuvanın bu turunda Smyslov'u yarım puan geriden takip ediyor ve kazanmak için tehlikeli bir saldırı başlatıyor. Kaleyi almak güvenli mi?} 19... dxc4 $1 {Smyslov karşı oyun için d5 karesini boşaltan ve tehlikeli c4 piyonunu yaratan bu hamleyi tercih ediyor.} (19... gxh5 20. Qxh5 Re8 21. a4 $3 dxc4 (21... Qd6 22. Qh6 Bg7 23. Qxh7+ Kf8 24. Rg3 Bf6 25. c5 $1 {c6, Ba3 tehditleriyle, örneğin,} bxc5 26. Qh6+ Ke7 27. dxc5 $18) 22. Qxh7+ Kf8 23. Ba3+ Re7 24. Rg3 $1 $18) 20. Rxh7 (20. Qg4 c3 21. Bxc3 Rxc3 22. Rxc3 Qxd4 23. Qxd4 Bxd4 24. Rc7 gxh5 25. Rxb7 {Bronstein, Keres'in burada berabere yapabileceğin fakat atağını devam ettirmek istediğini söylüyor.}) 20... c3 21. Qc1 Qxd4 (21... cxb2 $4 22. Qh6 Qxd4 23. Rh8+ Bxh8 24. Qh7#) 22. Qh6 Rfd8 23. Bc1 Bg7 24. Qg5 Qf6 25. Qg4 c2 26. Be2 Rd4 $1 {a7-g8 çaprazının açılması için f4 sürdürüyor.} 27. f4 Rd1+ 28. Bxd1 Qd4+ 0-1
 
 [Event "Zürich"]
 [Site "?"]
@@ -123,7 +123,7 @@ siyah Rc2 oynayabiliyor!} 23. Qxh8 Rc2 24. Rc1 $2 {Burada Kasparov 24.d5!! hamle
 [PlyCount "43"]
 [EventDate "1953.??.??"]
 
-{[P]} {Şah-hint savunmasının altın çağını yaşadığı Zurich
+{[P]} {Şah-Hint Savunması'nın altın çağını yaşadığı Zürih
 1953 turnuvasının en güzel oyunlarından biri. Pek çok kombinezon
 kitabında rastlanan bu durumda siyahın hamlesini siz de bulabildiniz mi?} 
 30... Qxh3+ $3 31. Kxh3 Rh6+ 32. Kg4 Nf6+ 33. Kf5 Nd7 {Beyaz vezir fazla fakat
@@ -185,7 +185,7 @@ Qc6 35. Bc1 Qc7 36. a6 Qb6 37. Bd2 b3 38. Qc4 h6 39. h3 b2 40. Rb1 Kh8 41. Be1
 [PlyCount "65"]
 [EventDate "1953.??.??"]
 
-{[P]} 10... b5 $1 {Vezir-hint savunması için tipik, açık
+{[P]} 10... b5 $1 {Vezir-Hint Savunması için tipik, açık
 dikeyler konusuna ders örneği teşkil edecek bir konum.} 11. cxb5 cxb5 12.
 Qd1 b4 13. Nb1 Nc6 14. Nxc6 Qxc6 15. Nd2 Qb6 $1 {Siyahın planı basit:
 c-dikeyinden istila!} 16. e3 Rac8 17. Bf1 Rc6 18. Bxa6 Qxa6 19. Nf3 Rfc8 20.
@@ -221,7 +221,7 @@ Qxf4 33. exf4 d4 34. b3 Rc6 35. axb4 f5 36. h3 Ra6 37. Rbc1 Rxc1 38. Rxc1 Ra2 39
 [PlyCount "1"]
 [EventDate "1953.??.??"]
 
-{[P]} {Beyazlar üstün ama hemen kazanan sadece bir devamyolu var.} 55.
+{[P]} {Beyazlar üstün ama hemen kazanan sadece bir devam yolu var.} 55.
 Bc6+ $1 1-0
 
 [Event "Zürich"]
