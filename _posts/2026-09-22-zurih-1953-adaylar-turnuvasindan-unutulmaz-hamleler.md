@@ -28,7 +28,7 @@ Tarihi detayları meraklı okuyucuya bırakarak hamlelere geçelim.
 [PlyCount "23"]
 [FEN "r2q1rk1/1b2bppp/p3pn2/np4B1/3P4/1BN2N2/PP2QPPP/3RR1K1 w - - 0 14"]
             
-{[P]} {İlk örneğimiz klasik İzole Vezir Piyonu: Siyahın 13...Na5 hamlesinden sonra Nd5 ile devam etmek ve konumu sadeleştirmek istiyor. İzole piyona karşı oynayan taraf izole piyonu "bloke" etmeli, izole piyonu olan taraf ise buna saldırmalı ve izole piyonu sürmeye çalışmalı...} 
+{[P]} {İlk örneğimiz klasik İzole Vezir Piyonu: Siyahın 13... Na5 hamlesinden sonra ... Nd5 ile devam etmek ve konumu sadeleştirmek istiyor. İzole piyona karşı oynayan taraf izole piyonu "bloke" etmeli, izole piyonu olan taraf ise bu blokaja saldırmalı ve izole piyonu sürmeye çalışmalı...} 
 14.d5 $1 Nxb3 
  ( 14...Nxd5 $4 15.Bxd5 Bxd5 16.Bxe7 Qxe7 
      ( 16...Bxf3 17.Rxd8 $18 )
@@ -50,7 +50,7 @@ Tarihi detayları meraklı okuyucuya bırakarak hamlelere geçelim.
 [PlyCount "21"]
 [EventDate "1953.??.??"]
 
-{[P]} {Beyazın basitçe Rf4-Qh5 ile mat etmek istediği konumda Euwe'nin tepkisi oldukça öğretici.} 16... b5 $3 {Kanat saldırısına zayıf d4 piyonuna saldırarak yanıt vermek istiyor. Fikir Qb6.} 17. Rh4 Qb6 18. e5 $1 {d4 piyonunu kaleyle koruyan bu hamle, beyazın saldırısına karşı siyahın çaresiz olduğunu vurguluyor.} Nxe5 19. fxe6 Nxd3 20. Qxd3 (20. exd7 Rxc1 21. Rxc1 Nxc1 $19) 20... Qxe6 21. Qxh7+ Kf7 22. Bh6 Rh8 $5 {Bu inanılmaz hamle sayesinde beyaz vezir oyun dışına itiliyor ve
+{[P]} {Beyazın basitçe Rh4-Qh5 ile mat etmek istediği konumda Euwe'nin tepkisi oldukça öğretici.} 16... b5 $3 {Kanat saldırısına zayıf d4 piyonuna saldırarak yanıt vermek istiyor. Fikir Qb6.} 17. Rh4 Qb6 18. e5 $1 {d4 piyonunu kaleyle koruyan bu hamle, beyazın saldırısına karşı siyahın çaresiz olduğunu vurguluyor.} Nxe5 19. fxe6 Nxd3 20. Qxd3 (20. exd7 Rxc1 21. Rxc1 Nxc1 $19) 20... Qxe6 21. Qxh7+ Kf7 22. Bh6 Rh8 $5 {Bu inanılmaz hamle sayesinde beyaz vezir oyun dışına itiliyor ve
 siyah Rc2 oynayabiliyor!} 23. Qxh8 Rc2 24. Rc1 $2 {Burada Kasparov 24.d5!! hamlesinin oyunu kurtardığını söylüyor. Fazla detaya boğmadan fikrine göz atalım.} (24. d5 $3 Bxd5 25. Rd1 $1 {File gözünü dikiyor Rxd5 ve Re4 ile savunma hazırlıyor.} Rxg2+ 26. Kf1 gxh6 27. Rxd5 Qxd5 28. Re4 Ng7 29.Kxg2 f5 30. Qxh6 {Daha iyi savunma olanakları ile.}) 24... Rxg2+ 25. Kf1 Qb3 26. Ke1 Qf3 0-1
 
 [Event "Zürich"]
@@ -84,7 +84,7 @@ siyah Rc2 oynayabiliyor!} 23. Qxh8 Rc2 24. Rc1 $2 {Burada Kasparov 24.d5!! hamle
 [PlyCount "21"]
 [EventDate "1953.??.??"]
 
-{[P]} {Siyahlar atını kenardan çıkabilirse siyahın sorunu yok. Bu sebeple ...b5 oynamak istiyor. Beyazın kazanmak için tek yolu var.} 57. b5 $1 {Beyaz Kc3-Kb2 ile atı almak istiyor, siyahın çaresi yok.} Nxb5 (57... Kc5 58. Nd7+ $18) 58. cxb5 Kc5 59. Nf3 Kxb5 60. Nd4+ Kb4 61. Kc2 e5 62. fxe5 Kc5 63. e6 Kd6 64. Kc3 b5 65. Kb4 Ke7 66. Kc5 a3 67. Kd5 1-0
+{[P]} {Siyahlar atını tahtanın kenarından kurtarabilirse bir sorunu kalmayacak. Bu sebeple ...b5 oynamak istiyor. Beyazın kazanmak için tek yolu var.} 57. b5 $1 {Beyaz Kc3-Kb2 ile atı almak istiyor, siyahın çaresi yok.} Nxb5 (57... Kc5 58. Nd7+ $18) 58. cxb5 Kc5 59. Nf3 Kxb5 60. Nd4+ Kb4 61. Kc2 e5 62. fxe5 Kc5 63. e6 Kd6 64. Kc3 b5 65. Kb4 Ke7 66. Kc5 a3 67. Kd5 1-0
 
 
 [Event "Zürich"]
@@ -100,7 +100,7 @@ siyah Rc2 oynayabiliyor!} 23. Qxh8 Rc2 24. Rc1 $2 {Burada Kasparov 24.d5!! hamle
 [PlyCount "9"]
 [EventDate "1953.??.??"]
 
-{[P]} {Zayıflamış şah kanadı ve merkezdeki alan üstünlüğü beyaza büyük bir üstünlük veriyor. Smyslov kazanca giden yolu buluyor.} 20. Ne5 $1 Qe7 (20... fxe5 21. Qg5+ Kh8 22. Qf6+ Kg8 23. Rd3 Rfe8 24. Rh3 {ve Qg5-Rxh7 kazanır}) 21. Ng4 $1 Rg8 22. Nh6 $1 {Nf5 tehdidi sayesinde kalite kazanıyor} Qc7 23. Nxg8 Rxg8 24. b3 $18 1-0
+{[P]} {Zayıflamış şah kanadı ve merkezdeki alan üstünlüğü beyaza büyük bir üstünlük veriyor. Smyslov kazanca giden doğru yolu bulmayı başarıyor.} 20. Ne5 $1 Qe7 (20... fxe5 21. Qg5+ Kh8 22. Qf6+ Kg8 23. Rd3 Rfe8 24. Rh3 {ve Qg5-Rxh7 kazanır}) 21. Ng4 $1 Rg8 22. Nh6 $1 {Nf5 tehdidi sayesinde kalite kazanır} Qc7 23. Nxg8 Rxg8 24. b3 $18 1-0
 
 [Event "Zürich"]
 [Site "?"]
@@ -156,7 +156,7 @@ Qxd6 R3g6 51. Qb8+ Rg8 0-1
 
 {[P]} {Siyah ...e4 ile karşı oyun arayışında, Petrosian rakibin
 hafif taşlarını oyun dışında bırakırken kendisininkiler için iyi bir
-gelecek hazırlıyor.} 25. e4 $1 {Bg7 ve Nd6 birden oyunsuz kalıyor ve
+gelecek hazırlıyor.} 25. e4 $1 {Bg7 ve Nd6 birden oyunsuz kalıyor ve beyaz
 Nf1-Ne3-Nd5 planlıyor.} Qc8 26. Nf1 $1 h5 27. Ne3 Ra6 28. Nd5 Qg4 29. Qg2 Nxc4 30. dxc4 Rxa2 31. Qxa2 Qxe4+ 32. Qe2 Qxh1+ 33. Qf1 Qh2 34. Be3 $18 1-0
 
 
@@ -173,7 +173,7 @@ Nf1-Ne3-Nd5 planlıyor.} Qc8 26. Nf1 $1 h5 27. Ne3 Ra6 28. Nd5 Qg4 29. Qg2 Nxc4 
 [PlyCount "32"]
 [EventDate "1953.??.??"]
 
-{[P]} {Bu çok ünlü konumda Petrosian rakibinin tehlikeli merkez
+{[P]} {Bu ünlü konumda Petrosian rakibinin tehlikeli merkez
 piyonlarını durdurmanın mükemmel bir yolunu buluyor.} 25... Re6 $3 {
 Aksi takdirde beyaz e6 sürecekti.} 26. a4 Ne7 27. Bxe6 fxe6 28. Qf1 Nd5 {
 Petrosian'ın meşhur kalite fedalarından yalnız birisi. Siyah materyal
@@ -217,7 +217,7 @@ Qxf4 33. exf4 d4 34. b3 Rc6 35. axb4 f5 36. h3 Ra6 37. Rbc1 Rxc1 38. Rxc1 Ra2 39
 [PlyCount "7"]
 [EventDate "1953.??.??"]
 
-{[P]} Siyahın açıkça üstün fakat doğrudan kazanca giden tek yolu  var! 36... Nxa3 37. Bxa3 Nb5 38. Bc1 Nxc3 39. Ne2 Nb1 0-1
+{[P]} Siyahın açıkça üstün fakat doğrudan kazanca giden tek yolu  var. 36... Nxa3 37. Bxa3 Nb5 38. Bc1 Nxc3 39. Ne2 Nb1 0-1
 
 [Event "Zürich"]
 [Site "?"]
