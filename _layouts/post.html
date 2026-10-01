@@ -11,7 +11,8 @@ layout: default
         · {% include turkish-date.html date=page.date %}
     </p>
     <div class="post-body">
-        {{ content }}
+        {%- comment -%} Yazarın markdown ile yazdığı tüm [..](..) bağlantıları otomatik olarak yeni sekmede açılır. {%- endcomment %}
+        {{ content | replace: '<a href="', '<a target="_blank" rel="noopener noreferrer" href="' }}
     </div>
 </article>
 <script src="{{ '/assets/js/post-figure-captions.js' | relative_url }}" defer></script>

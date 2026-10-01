@@ -2,6 +2,7 @@
 layout: default
 title: "Hakkında"
 permalink: /hakkinda/
+new_tab_links: true
 ---
 
 <div class="section" markdown="1">

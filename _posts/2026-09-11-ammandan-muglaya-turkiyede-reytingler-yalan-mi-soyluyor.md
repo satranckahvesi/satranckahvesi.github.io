@@ -6,7 +6,7 @@ layout: post
 date: 2026-09-19
 ---
 
-Amman'daki evimden binlerce kilometre uzakta, Muğla'da oynadığım uluslararası bir turnuvanın yedinci turunda kendimden beş yüz puana yakın düşük reytingli bir rakiple karşı karşıyaydım. İtiraf etmeliyim ki masaya otururken aklımdan rahat bir galibiyet geçiyordu. Şah-Hint Savunmasında küçük bir yan varyantla rakibimi şaşırtabileceğimi düşündüm ama karşımdaki rakibin hiç de kolay lokma olmadığını hemen fark ettim.
+Amman'daki evimden binlerce kilometre uzakta, Muğla'da oynadığım uluslararası bir turnuvanın yedinci turunda kendimden beş yüz puana yakın düşük reytingli bir rakiple karşı karşıyaydım. İtiraf etmeliyim ki masaya otururken aklımdan rahat bir galibiyet geçiyordu. Şah-Hint Savunması'nda küçük bir yan varyantla rakibimi şaşırtabileceğimi düşündüm ama karşımdaki rakibin hiç de kolay lokma olmadığını hemen fark ettim.
 
 Parti ilerledikçe pozisyonu kontrol altına almayı başarsam da rakibimin kurduğu dirençli savunma bütün kazanma çabalarımı boşa çıkardı. Sonunda elimde kalan tek şey, anlatmaya değer bir hikâye ve pek de gurur duymadığım bir yarım puan oldu. Yorumlar o gün tahta başında aklımdan geçenlerin ta kendisi.
 
@@ -26,7 +26,7 @@ olabildiğince çabuk oynamak için güçlü bir hamle; böylece d4 karesi için
 etmek benim için kolay olmayacak! } 9... Bg4 { Burada güçlü bir stratejik tehdidim var:
 Bxf3'ün ardından Nc6 ve Nd4 } 10. b5! { [D] Nc6'yı önlemek için! } 10... Bxf3 11. Bxf3
 Qe6 { c4 piyonuna saldırıyor. } 12. Nd5!? { [D] En iyi savunma saldırıdır!
-Burada rakibim aynı anda hem savunma yapıyor, hem de hücum! } 12... Rc8 13. Bg5 { Bir
+Burada rakibim aynı anda hem savunma yapıyor hem de hücum ediyor! } 12... Rc8 13. Bg5 { Bir
 ciddi tehdit daha! Nxf6'nın ardından Bg4 } 13... Nbd7 (13... c6?? 14. Nxf6+ Bxf6
 15. Bg4 $18) 14. h3! { [D] ...ve bir tehdit daha! Bu noktada "tahtada ne oluyor" diye
 düşündüm; rakibimin oyunu inanılmaz güçlüydü ve Türkiye'de oyuncuların reytinglerinin oyun kuvvetlerinin ne kadar altında olduğunu gösteriyordu! } 14... h5 { Bg4'ü önlemem gerekiyordu } (14... c6?? {

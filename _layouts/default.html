@@ -39,7 +39,8 @@
             <div class="masthead-rule"></div>
         </div>
     </header>
-    {{ content }}
+    {%- comment -%} new_tab_links: true olan sayfalarda markdown bağlantıları yeni sekmede açılır. {%- endcomment %}
+    {% if page.new_tab_links %}{{ content | replace: '<a href="', '<a target="_blank" rel="noopener noreferrer" href="' }}{% else %}{{ content }}{% endif %}
     <footer class="site-footer">
         <nav class="footer-nav">
             <a class="no-underline" href="{{ '/' | relative_url }}">Ana sayfa</a>
