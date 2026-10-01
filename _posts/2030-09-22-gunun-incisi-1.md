@@ -6,19 +6,18 @@ author:	"FM Nazmi Can Doğan"
 column:	"Analizli oyunlar"
 ---
 
-# Levon Aronian - Vincent Keymer 2022 Fide Grand Prix 3. Tur Mücadelesi
+### Levon Aronian - Vincent Keymer 2022 Fide Grand Prix 3. Tur Mücadelesi
 
 **2022 Fide Grand Prix** incelemeye değer pek çok oyuna sahne olmuştu ve biz de buradan devam ediyoruz.
-Aronian ve Keymer arasındaki mücadelede, açılış hazırlığı ve oyun anlayışı konusunda çok önemli şeyleri görme şansımız olacak.  
+Aronian ve Keymer arasındaki mücadelede, açılış hazırlığı ve oyun anlayışı konusunda çok önemli şeyleri görme şansımız olacak.
 
-Daha önce de [deneyimlediğimiz](https://satranchess.com/2022/02/16/devlerden.html) gibi bu oyunu da bölümlere ayırıp daha rahat anlamaya çalışacağız. Bazı partilerin açılış bölümlerine daha fazla eğilmek istememizin sebebi elbette o açılışla daha haşır neşir olmamız veya ilgilenmek istememiz. Örneğin **Caro-Kann Savunması**'nın değişmeli varyantını ben de beyaz taşlarla oynamayı seviyorum, bu nedenle inceleyeceğimiz oyun benim için ayrıca önemliydi. (_Aşağıdaki diyagramlarda verilen hamleler oynatılabilir, hamleler ileri geri alınabilir._ Ayrıca sayfanın en altında bulunan PGN'i incelemek de mümkün.)  
+Bu oyunu da bölümlere ayırıp daha rahat anlamaya çalışacağız. Bazı partilerin açılış bölümlerine daha fazla eğilmek istememizin sebebi elbette o açılışla daha haşır neşir olmamız veya ilgilenmek istememiz. Örneğin **Caro-Kann Savunması**'nın değişmeli varyantını ben de beyaz taşlarla oynamayı seviyorum, bu nedenle inceleyeceğimiz oyun benim için ayrıca önemliydi.
 
 _1.e4_
 
 (1.d4 d5 2.Ff4 c5 3.e3 Af6 4.Af3 Ac6 5.Abd2 cxd4 6.exd4 Fg4 7.c3 e6 8.Vb3 Vc8 9.Fd3 Bu varyantı 4. hamledeki notla kıyaslayınız.)
 
-_1...c6 2.d4 d5 3.exd5 cxd5 4.Fd3_ Aronian bu varyantı ve Londra sistemini kullanıyor bir süredir ve hem Londra Sistemi hem de değişmeli Caro-Kann'ı ondan izlemenizi öneriyorum.
-**Bu sistemin amacı ilk etapta rakibin beyaz renkli filinin oyuna girişini güçleştirmek**.
+_1...c6 2.d4 d5 3.exd5 cxd5 4.Fd3_ Aronian bu varyantı ve Londra sistemini kullanıyor bir süredir ve hem Londra Sistemi hem de değişmeli Caro-Kann'ı ondan izlemenizi öneriyorum. **Bu sistemin amacı ilk etapta rakibin beyaz renkli filinin oyuna girişini güçleştirmek**.
 
 _4...Af6_
 
@@ -26,12 +25,9 @@ _4...Af6_
 
 _5.h3_
 
-<div class="cbdiagram"
-data-size="400"
-data-fen="rnbqkb1r/pp2pppp/5n2/3p4/3P4/3B3P/PPP2PP1/RNBQK1NR b KQkq - 0 5"
-data-buttons="0"
-data-legend="5.h3 sonrası konum">
-</div>
+[FEN "rnbqkb1r/pp2pppp/5n2/3p4/3P4/3B3P/PPP2PP1/RNBQK1NR b KQkq - 0 5"]
+*
+*5. h3 sonrası konum*
 
 Varyantın ruhuna uygun şekilde c8-filini kısıtlayarak Af3 oynamak istiyor.
 
@@ -49,13 +45,9 @@ Beyaz c3-sürüşünü yapmayınca oynanan hamleyle birlikte görece az rastlana
 
 _7.Ac3!_
 
-<div class="cbdiagram"
-data-size="400"
-data-fen="r1bqkb1r/pp2pppp/5n2/3p4/1n1P4/2NB1N1P/PPP2PP1/R1BQK2R b KQkq - 4 7"
-data-buttons="0"
-data-legend="7.Ac3 sonrası konum">
-</div>
-
+[FEN "r1bqkb1r/pp2pppp/5n2/3p4/1n1P4/2NB1N1P/PPP2PP1/R1BQK2R b KQkq - 4 7"]
+*
+*7. Ac3 sonrası konum*
 
 Aronian daha önce belirtildiği gibi tipik c3-sürüşünü neden oynamadığını başka bir varyantla daha göstermek istiyor.
 
@@ -67,26 +59,19 @@ _9.0-0 Fg7_
 
 (9...Ff5 Bu hamle yine mümkün değil ve hoş bir sebebi var. 10.Fxf5 gxf5 11.Fg5 e6? (11...Fg7 doğrudur.) 12.a3 Ac6
 
-<div class="cbdiagram"
-data-size="400"
-data-fen="r2qkb1r/1p3p1p/p1n1pn2/3pNpB1/3P4/P1N4P/1PP2PP1/R2Q1RK1 w kq - 1 13"
-data-buttons="0"
-data-legend="Analiz Diyagramı - Beyaz Oynar Kazanır!">
-</div>
-
+[FEN "r2qkb1r/1p3p1p/p1n1pn2/3pNpB1/3P4/P1N4P/1PP2PP1/R2Q1RK1 w kq - 1 13"]
+*
+*Analiz diyagramı - Beyaz oynar, kazanır.*
 
 13.Axd5!! exd5 14.Ke1 dikkate değer bir konum! 14...Axe5 15.Kxe5+ Sd7 16.Kxf5 Fg7 17.Fxf6 Fxf6 18.Kxd5++-
 
 _10.Ke1 0-0 11.Fg5 Axd3 12.cxd3!_
 
-<div class="cbdiagram"
-data-size="400"
-data-fen="r1bq1rk1/1p2ppbp/p4np1/3pN1B1/3P4/2NP3P/PP3PP1/R2QR1K1 b - - 0 1"
-data-buttons="0"
-data-legend="12.cxd3 ardından oluşan konum">
-</div>
+[FEN "r1bq1rk1/1p2ppbp/p4np1/3pN1B1/3P4/2NP3P/PP3PP1/R2QR1K1 b - - 0 1"]
+*
+*12. cxd3 ardından oluşan konum*
 
-### **AÇILIŞ FELSEFESİ**
+### Açılış felsefesi
 
 Aronian'ın nereye ulaşmak istediğini ancak şimdi anlayabiliyoruz. Siyahın fil çifti var ve Beyazın piyon yapısı adeta felaketi andırıyor. Ancak c ve e dikeylerindeki baskı çok iyi yerleşmiş hafif taşlarla ve c8-karesinde işsiz kalan fil birleşince pratikte siyaha oynanması zor bir durum kalıyor.
 
@@ -102,12 +87,9 @@ Harika bir geri çekiliş.
 
 _13...e6_
 
-<div class="cbdiagram"
-data-size="400"
-data-fen="r1b2rk1/1p3pbp/pq2pnp1/3p2B1/3P4/2NP1N1P/PP3PP1/R2QR1K1 w - - 0 14"
-data-buttons="0"
-data-legend="13...e6 sonrası oluşan konum">
-</div>
+[FEN "r1b2rk1/1p3pbp/pq2pnp1/3p2B1/3P4/2NP1N1P/PP3PP1/R2QR1K1 w - - 0 14"]
+*
+*13... e6 sonrası oluşan konum*
 
 (13...Vxb2 Sezgisel olarak bu alışın yanlış olduğu hemen söylenebilir, siyah **prensip olarak gelişimini umursamadan piyon avcılığına çıkmamalı**. 14.Aa4 Vb5 (14...Va3 15.Ab6 Ka7 16.Kb1 Stockfish Beyaza kazanç değerlendirmesi yapıyor: Siyahın kalesi oyun dışında ama neden kayıp konumda olduğunu anlamak ilk bakışta kolay olmayabilir. Meraklısına ortaya çıkan konumda Siyahın konumunu makineye karşı savunmayı öneriyorum. :)) 15.Kb1 Ve8 16.Ab6 Ka7 17.Axc8 Vxc8 18.Kxe7+-
 
@@ -117,47 +99,35 @@ Aktif taş oyunu sürdürülmeli **Fd7 gelmeden**! Şimdi beyazın c-dikeyinde o
 
  _14...Vd6 15.Vd2 a5_ Vb4 fikriyle: Siyah oyunsonuna gidebilirse rahatlayacak iyi piyon yapısını kullanabilecek.
 
- <div class="cbdiagram"
-  data-size="400"
-  data-fen="r1b2rk1/1p3pbp/3qpnp1/p2p2B1/N2P4/3P1N1P/PP1Q1PP1/R3R1K1 w - - 0 16"
-  data-buttons="0"
-  data-legend="15...a5 sonrası konum">
-  </div>
+[FEN "r1b2rk1/1p3pbp/3qpnp1/p2p2B1/N2P4/3P1N1P/PP1Q1PP1/R3R1K1 w - - 0 16"]
+*
+*15... a5 sonrası konum*
 
  _16.Kac1 Fd7_ (16...Vb4 17.Vxb4 axb4 18.Ab6+-)
 
 _17.Ac5 b6 18.Ff4 Ve7 19.Axd7 Axd7 20.Kc7_
 
- <div class="cbdiagram"
-  data-size="400"
-  data-fen="r4rk1/2Rnqpbp/1p2p1p1/p2p4/3P1B2/3P1N1P/PP1Q1PP1/4R1K1 b - - 0 1"
-  data-buttons="0"
-  data-legend="20.Kc7 sonrası konum">
-  </div>
+[FEN "r4rk1/2Rnqpbp/1p2p1p1/p2p4/3P1B2/3P1N1P/PP1Q1PP1/4R1K1 b - - 0 1"]
+*
+*20. Kc7 sonrası konum*
 
 Beyazın aktif taş oyunu sürüyor.
 
  _20...Kfc8 21.Kec1 Vd8 22.Vc2!_
 
- <div class="cbdiagram"
-  data-size="400"
-  data-fen=" r1rq2k1/2Rn1pbp/1p2p1p1/p2p4/3P1B2/3P1N1P/PPQ2PP1/2R3K1 b - - 0 22"
-  data-buttons="0"
-  data-legend="22.Vc2 sonrası konum">
-  </div>
+[FEN "r1rq2k1/2Rn1pbp/1p2p1p1/p2p4/3P1B2/3P1N1P/PPQ2PP1/2R3K1 b - - 0 22"]
+*
+*22. Vc2 sonrası konum*
 
 Önemli bir karar! Siyahın oyun sonuna gitmek istediğini söylemiştik ancak **beyazın inisiyatifi oyunsonunda da devam ediyor**. Taş değişimleri beyazın aktif taş oyununu etkilemiyor.
 
  _22...Kxc7 23.Vxc7 Vxc7 24.Kxc7 Kd8_
 
- <div class="cbdiagram"
- data-size="400"
- data-fen="3r2k1/2Rn1pbp/1p2p1p1/p2p4/3P1B2/3P1N1P/PP3PP1/6K1 w - - 0 1"
- data-buttons="0"
- data-legend="24...Kd8 sonrası konum">
- </div>
+[FEN "3r2k1/2Rn1pbp/1p2p1p1/p2p4/3P1B2/3P1N1P/PP3PP1/6K1 w - - 0 1"]
+*
+*24... Kd8 sonrası konum*
 
- Siyah hafif taşlarının işlevsiz görüntüsüne karşın beyaz taşlar adeta dans ediyor. Kale yedinci yatayda kariyerinin zirvesini yaşarken d7-karesindeki atı oyun boyunca üzgün göreceğiz. cxd3 alışıyla başlayan kısıtlama operasyonu onu oyunsuz bırakıyor.
+Siyah hafif taşlarının işlevsiz görüntüsüne karşın beyaz taşlar adeta dans ediyor. Kale yedinci yatayda kariyerinin zirvesini yaşarken d7-karesindeki atı oyun boyunca üzgün göreceğiz. cxd3 alışıyla başlayan kısıtlama operasyonu onu oyunsuz bırakıyor.
 
  _25.Kb7!_
 
@@ -165,12 +135,9 @@ Beyazın aktif taş oyunu sürüyor.
 
  _25...Şf8_
 
- <div class="cbdiagram"
- data-size="400"
- data-fen=" 3r1k2/1R1n1pbp/1p2p1p1/p2p4/3P1B2/3P1N1P/PP3PP1/6K1 w - - 0 26"
- data-buttons="0"
- data-legend="25...Şf8 sonrası konum">
- </div>
+[FEN "3r1k2/1R1n1pbp/1p2p1p1/p2p4/3P1B2/3P1N1P/PP3PP1/6K1 w - - 0 26"]
+*
+*25... Şf8 sonrası konum*
 
 ### **İLERİ KARAKOL**
 
@@ -186,17 +153,13 @@ _27...Fxe5_
 
 _28.dxe5 Kc8_
 
-<div class="cbdiagram"
-data-size="400"
-data-fen="2r1k3/1R1n1p1p/1p1Bp1p1/p2pP3/8/3P3P/PP3PP1/6K1 w - - 0 1"
-data-buttons="0"
-data-legend="Kritik Konum">
-</div>
+[FEN "2r1k3/1R1n1p1p/1p1Bp1p1/p2pP3/8/3P3P/PP3PP1/6K1 w - - 0 1"]
+*
+*Kritik konum!*
 
+### Problem taş
 
-### **PROBLEM TAŞ**
-
-Daha önce d7-atının hareket kabiliyetinin sınırlandığını söylemiştik, ancak hareket kabiliyeti ile sınırlı taşlar daha önce de belirttiğimiz gibi (Aronian - Vidit) taktik sorunların da habercisi olurlar.
+Daha önce d7 atının hareket kabiliyetinin sınırlandığını söylemiştik, ancak hareket kabiliyeti ile sınırlı taşlar daha önce de belirttiğimiz gibi (Aronian - Vidit) taktik sorunların da habercisi olurlar.
 
 _29.d4!_
 
@@ -214,16 +177,13 @@ _30.Ka7! Kc4 31.b3! Kc1+_
 
 _32.Şh2 h6_
 
-<div class="cbdiagram"
-data-size="400"
-data-fen="3k4/R2n1p2/1p1Bp1pp/p2pP3/3P4/1P5P/P4PPK/2r5 w - - 0 1"
-data-buttons="0"
-data-legend="Siyah Oynar">
-</div>
+[FEN "3k4/R2n1p2/1p1Bp1pp/p2pP3/3P4/1P5P/P4PPK/2r5 w - - 0 1"]
+*
+*Hamle sırası siyahta*
 
 İlginç bir şekilde siyahın yapacak bir şeyi bulunmuyor.
 
-### **İKİ ZAYIFLIK PRENSİBi**
+### İki zayıflık prensibi
 
 Daha önce de belirttiğimiz gibi eğer **savaş alanı bir tarafta kazanılamıyorsa bir başka cephe açılmasına ihtiyaç oluyor**, beyaz her ne kadar kale ve filiyle harikalar yaratsa da kazanmak için yeterli durmuyor ve bu yüzden şimdi şah kanadında bir cephe açmaya çalışacak.
 
@@ -233,25 +193,12 @@ _33.Sg3 Kc3+ 34.f3 Kc6 35.h4 Kc8_
 
 _36.h5 Kc6 37.Sh4 Kc8 38.g4 Se8 39.f4 Sd8 40.hxg6 fxg6 41.g5 h5_
 
-<div class="cbdiagram"
-data-size="400"
-data-fen="2rk4/R2n4/1p1Bp1p1/p2pP1Pp/3P1P1K/1P6/P7/8 w - - 0 1"
-data-buttons="0"
-data-legend="Siyah Oynar">
-</div>
+[FEN "2rk4/R2n4/1p1Bp1p1/p2pP1Pp/3P1P1K/1P6/P7/8 w - - 0 1"]
+*
+*Hamle sırası siyahta*
 
  Acaba ikinci cephe açma planı başarısız mı oldu?
 
 _42.f5!_ Siyah terk eder. Güzel bir oyuna, güzel bir son! Aronian'dan mükemmel bir performans.
 
- [42.f5 gxf5 (42...exf5 43.e6 Ab8 44.Kg7) 43.g6 Se8 44.g7]  1-0
-
- <div class="cbreplay" data-url="{{ site.url }}/assets/pgn/Aronian_Keymer_2022.pgn" style="max-width:100%;"></div>    
-
-Değişmeli Caro-Kann'ın ele alındığı bazı videolar:
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/yu52xxAvorU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/HWtizq-Rygk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/pAAmaUmRkWg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ [42.f5 gxf5 (42...exf5 43.e6 Ab8 44.Kg7) 43.g6 Se8 44.g7]1-0
