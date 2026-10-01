@@ -8,10 +8,9 @@ column:	"Analizli oyunlar"
 
 ### Levon Aronian - Vincent Keymer 2022 Fide Grand Prix 3. tur mücadelesi
 
-**2022 Fide Grand Prix** incelemeye değer pek çok oyuna sahne olmuştu ve biz de buradan devam ediyoruz.
-Aronian ve Keymer arasındaki mücadelede, açılış hazırlığı ve oyun anlayışı konusunda çok önemli şeyleri görme şansımız olacak.
+**2022 Fide Grand Prix** incelemeye değer pek çok oyuna sahne olmuştu. Aronian ile Keymer arasındaki mücadelede, açılış hazırlığı ve oyun anlayışı konusunda çok önemli şeyleri görme şansımız olacak.
 
-Bu oyunu da bölümlere ayırıp daha rahat anlamaya çalışacağız. Bazı partilerin açılış bölümlerine daha fazla eğilmek istememizin sebebi elbette o açılışla daha haşır neşir olmamız veya ilgilenmek istememiz. Örneğin **Caro-Kann Savunması**'nın değişmeli varyantını ben de beyaz taşlarla oynamayı seviyorum, bu nedenle inceleyeceğimiz oyun benim için ayrıca önemliydi.
+Bu oyunu bölümlere ayırıp daha rahat incelemeye çalışacağız. Bazı partilerin açılış bölümlerine daha fazla eğilmemizin sebebi elbette o açılışla daha haşır neşir olmamız veya ilgilenmek istememiz. Örneğin **Caro-Kann Savunması**'nın değişmeli varyantını ben de beyaz taşlarla oynamayı seviyorum, bu nedenle inceleyeceğimiz oyun benim için ayrıca önemliydi.
 
 _1. e4_
 
