@@ -8,13 +8,13 @@ column: "Efsane turnuvalar"
 
 ###### Bu yazı ilk olarak 2016 yılında **Satrançsever** dergisinin 1. sayısında yayınlanmıştır.
 
-Dev oyuncuların oynadığı turnuvaların her bir oyunu, her bir hamlesi elbette satranççıların kalbinde büyük değer taşır. Ama ben yine de **Bronstein**’in belirttiği üzere “Satrancı sanat olarak gördüğüm hâlde, (...) bir müzede gördüğünüz her sanat eserini beğenemezsiniz. Fransız gurmelerinin dediği gibi, damak tadı oldukça kişisel bir konudur.” düşüncesiyle, kendi beğenime hitap eden unutulmaz fikirleri paylaşmak istedim. İlk makalemize konu olacak turnuva 1953 yılında Zürih’te oynanan Adaylar Turnuvası. 
+Dev oyuncuların oynadığı turnuvaların her bir oyunu, her bir hamlesi elbette satranççıların kalbinde büyük değer taşır. Ama ben yine de **Bronstein**’in belirttiği _"Satrancı sanat olarak gördüğüm hâlde, (...) bir müzede gördüğünüz her sanat eserini beğenemezsiniz. Fransız gurmelerinin dediği gibi, damak tadı oldukça kişisel bir konudur"_ düşüncesiyle, kendi beğenime hitap eden unutulmaz fikirleri paylaşmak istedim. İlk makalemize konu olacak turnuva 1953 yılında Zürih’te oynanan Adaylar Turnuvası.
 
-Zamanın dünya şampiyonu **Mikhail Botvinnik**’in rakibini belirlemek üzere düzenlenen bu turnuva için yazılmış iki önemli kitap bulunmakta: **Miguel Najdorf** ’un ve **David Bronstein**’ın turnuvada oynanmış her oyunu detaylı analiz ettikleri muazzam kitapları, hâlâ satranç literatüründe yer alan en değerli yapıtlar arasında görülüyor. 28(!) turluk turnuva sonunda Smyslov 18 puanla birinci olurken, ardından 16 puanla **Bronstein**, **Keres** ve **Reshevsky** geliyordu. Ertesi yıl 1954’te oynanan unvan maçı 12-12 beraberlikle bitecek ve **Botvinnik**, **Smyslov**'a karşı unvanını koruyacaktı. Tartışmalara konu olan bu durumun bir benzerini **Bronstein**’e karşı 1951 yılındaki maçında da yaşamış olan Botvinnik, o maç da 12-12 bitince unvanını korumuştu. O zamanki kurallarda dünya şampiyonu beraberlik hâlinde herhangi bir eşitlik bozmaya gitmeksizin unvanını koruyabiliyordu.
+Zamanın dünya şampiyonu **Mikhail Botvinnik**’in rakibini belirlemek üzere düzenlenen bu turnuva için yazılmış iki önemli kitap bulunmakta: **Miguel Najdorf**’un ve **David Bronstein**’ın turnuvada oynanmış her oyunu detaylı analiz ettikleri muazzam kitapları, hâlâ satranç literatüründe yer alan en değerli yapıtlar arasında görülüyor. 28(!) turluk turnuva sonunda Smyslov 18 puanla birinci olurken, ardından 16 puanla **Bronstein**, **Keres** ve **Reshevsky** geliyordu. Ertesi yıl 1954’te oynanan unvan maçı 12-12 beraberlikle bitecek ve **Botvinnik**, **Smyslov**'a karşı unvanını koruyacaktı. Tartışmalara konu olan bu durumun bir benzerini **Bronstein**’e karşı 1951 yılındaki maçında da yaşamış olan Botvinnik, o maç da 12-12 bitince unvanını korumuştu. O zamanki kurallarda dünya şampiyonu beraberlik hâlinde herhangi bir eşitlik bozmaya gitmeksizin unvanını koruyabiliyordu.
 
-Tarihi detayları meraklı okuyucuya bırakarak hamlelere geçelim.
+Tarihî detayları meraklı okuyucuya bırakarak hamlelere geçelim.
 
-[Event "Zürich"]
+[Event "Zürih"]
 [Site "?"]
 [Date "1953.??.??"]
 [Round "?"]
@@ -26,15 +26,11 @@ Tarihi detayları meraklı okuyucuya bırakarak hamlelere geçelim.
 [SetUp "1"]
 [PlyCount "23"]
 [FEN "r2q1rk1/1b2bppp/p3pn2/np4B1/3P4/1BN2N2/PP2QPPP/3RR1K1 w - - 0 14"]
-            
-{[P]} {İlk örneğimiz klasik İzole Vezir Piyonu: Siyahın 13... Na5 hamlesinden sonra ... Nd5 ile devam etmek ve konumu sadeleştirmek istiyor. İzole piyona karşı oynayan taraf izole piyonu "bloke" etmeli, izole piyonu olan taraf ise bu blokaja saldırmalı ve izole piyonu sürmeye çalışmalı.} 
-14.d5 $1 Nxb3 
- ( 14...Nxd5 $4 15.Bxd5 Bxd5 16.Bxe7 Qxe7 
-     ( 16...Bxf3 17.Rxd8 $18 )
-                17.Nxd5 kazanır. )
- 15.dxe6 Qb6 16.axb3 fxe6 17.Nd4 Bd6 18.Qxe6+ Kh8 19.Nf3 Rad8 20.Bf4 Bxf3 $6 21.Rxd6 Rxd6 22.Qxd6 Qxd6 23.Bxd6 Re8 24.Rxe8+ Nxe8 25.Be5 $18 1-0
-            
-[Event "Zürich"]
+
+{[P]} {İlk örneğimiz klasik İzole Vezir Piyonu: Siyah, 13... Na5 hamlesinden sonra ...Nd5 ile devam etmek ve konumu sadeleştirmek istiyor. İzole piyona karşı oynayan taraf izole piyonu "bloke" etmeli, izole piyonu olan taraf ise bu blokaja saldırmalı ve izole piyonu sürmeye çalışmalı.} 
+14.d5 $1 Nxb3 ( 14...Nxd5 $4 15.Bxd5 Bxd5 16.Bxe7 Qxe7 ( 16...Bxf3 17.Rxd8 $18 ) 17.Nxd5 { kazanır.}) 15.dxe6 Qb6 16.axb3 fxe6 17.Nd4 Bd6 18.Qxe6+ Kh8 19.Nf3 Rad8 20.Bf4 Bxf3 $6 21.Rxd6 Rxd6 22.Qxd6 Qxd6 23.Bxd6 Re8 24.Rxe8+ Nxe8 25.Be5 $18 1-0
+
+[Event "Zürih"]
 [Site "?"]
 [Date "1953.??.??"]
 [Round "?"]
@@ -47,10 +43,10 @@ Tarihi detayları meraklı okuyucuya bırakarak hamlelere geçelim.
 [PlyCount "21"]
 [EventDate "1953.??.??"]
 
-{[P]} {Beyazın basitçe Rh4-Qh5 ile mat etmek istediği konumda Euwe'nin tepkisi oldukça öğretici.} 16... b5 $3 {Kanat saldırısına zayıf d4 piyonuna saldırarak yanıt vermek istiyor. Fikir Qb6.} 17. Rh4 Qb6 18. e5 $1 {d4 piyonunu kaleyle koruyan bu hamle, beyazın saldırısına karşı siyahın çaresiz olduğunu vurguluyor.} Nxe5 19. fxe6 Nxd3 20. Qxd3 (20. exd7 Rxc1 21. Rxc1 Nxc1 $19) 20... Qxe6 21. Qxh7+ Kf7 22. Bh6 Rh8 $5 {Bu inanılmaz hamle sayesinde beyaz vezir oyun dışına itiliyor ve
-siyah Rc2 oynayabiliyor!} 23. Qxh8 Rc2 24. Rc1 $2 {Burada Kasparov 24.d5!! hamlesinin oyunu kurtardığını söylüyor. Fazla detaya boğmadan fikrine göz atalım.} (24. d5 $3 Bxd5 25. Rd1 $1 {File gözünü dikiyor Rxd5 ve Re4 ile savunma hazırlıyor.} Rxg2+ 26. Kf1 gxh6 27. Rxd5 Qxd5 28. Re4 Ng7 29.Kxg2 f5 30. Qxh6 {Daha iyi savunma olanakları ile.}) 24... Rxg2+ 25. Kf1 Qb3 26. Ke1 Qf3 0-1
+{[P]} {Beyazın basitçe Rh4-Qh5 ile mat etmek istediği konumda Euwe'nin tepkisi oldukça öğretici.} 16... b5 $3 {Kanat saldırısına zayıf d4 piyonuna saldırarak yanıt vermek istiyor. Fikir ...Qb6.} 17. Rh4 Qb6 18. e5 $1 {d4 piyonunu kaleyle koruyan bu hamle, beyazın saldırısına karşı siyahın çaresiz olduğunu vurguluyor.} Nxe5 19. fxe6 Nxd3 20. Qxd3 (20. exd7 Rxc1 21. Rxc1 Nxc1 $19) 20... Qxe6 21. Qxh7+ Kf7 22. Bh6 Rh8 $5 {Bu inanılmaz hamle sayesinde beyaz vezir oyun dışına itiliyor ve
+siyah Rc2 oynayabiliyor!} 23. Qxh8 Rc2 24. Rc1 $2 {Burada Kasparov 24.d5!! hamlesinin oyunu kurtardığını söylüyor. Fazla detaya boğmadan fikrine göz atalım.} (24. d5 $3 Bxd5 25. Rd1 $1 { Gözünü file dikerken Rxd5 ve Re4 ile savunma hazırlıyor.} Rxg2+ 26. Kf1 gxh6 27. Rxd5 Qxd5 28. Re4 Ng7 29.Kxg2 f5 30. Qxh6 {Daha iyi savunma olanaklarıyla...}) 24... Rxg2+ 25. Kf1 Qb3 26. Ke1 Qf3 0-1
 
-[Event "Zürich"]
+[Event "Zürih"]
 [Site "?"]
 [Date "1953.??.??"]
 [Round "?"]
@@ -63,9 +59,9 @@ siyah Rc2 oynayabiliyor!} 23. Qxh8 Rc2 24. Rc1 $2 {Burada Kasparov 24.d5!! hamle
 [PlyCount "19"]
 [EventDate "1953.??.??"]
 
-{[P]} {Beyazlarla oynayan Keres turnuvanın bu turunda Smyslov'u yarım puan geriden takip ediyor ve kazanmak için tehlikeli bir saldırı başlatıyor. Kaleyi almak güvenli mi?} 19... dxc4 $1 {Smyslov karşı oyun için d5 karesini boşaltan ve tehlikeli c4 piyonunu yaratan bu hamleyi tercih ediyor.} (19... gxh5 20. Qxh5 Re8 21. a4 $3 dxc4 (21... Qd6 22. Qh6 Bg7 23. Qxh7+ Kf8 24. Rg3 Bf6 25. c5 $1 {c6, Ba3 tehditleriyle, örneğin,} bxc5 26. Qh6+ Ke7 27. dxc5 $18) 22. Qxh7+ Kf8 23. Ba3+ Re7 24. Rg3 $1 $18) 20. Rxh7 (20. Qg4 c3 21. Bxc3 Rxc3 22. Rxc3 Qxd4 23. Qxd4 Bxd4 24. Rc7 gxh5 25. Rxb7 {Bronstein, Keres'in burada berabere yapabileceğin fakat atağını devam ettirmek istediğini söylüyor.}) 20... c3 21. Qc1 Qxd4 (21... cxb2 $4 22. Qh6 Qxd4 23. Rh8+ Bxh8 24. Qh7#) 22. Qh6 Rfd8 23. Bc1 Bg7 24. Qg5 Qf6 25. Qg4 c2 26. Be2 Rd4 $1 {a7-g8 çaprazının açılması için f4 sürdürüyor.} 27. f4 Rd1+ 28. Bxd1 Qd4+ 0-1
+{[P]} {Beyazlarla oynayan Keres turnuvanın bu turunda Smyslov'u yarım puan geriden takip ediyor ve kazanmak için tehlikeli bir saldırı başlatıyor. Kaleyi almak güvenli mi?} 19... dxc4 $1 {Smyslov karşı oyun için d5 karesini boşaltan ve tehlikeli c4 piyonunu yaratan bu hamleyi tercih ediyor.} (19... gxh5 20. Qxh5 Re8 21. a4 $3 dxc4 (21... Qd6 22. Qh6 Bg7 23. Qxh7+ Kf8 24. Rg3 Bf6 25. c5 $1 {c6, Ba3 tehditleriyle, örneğin,} bxc5 26. Qh6+ Ke7 27. dxc5 $18) 22. Qxh7+ Kf8 23. Ba3+ Re7 24. Rg3 $1 $18) 20. Rxh7 (20. Qg4 c3 21. Bxc3 Rxc3 22. Rxc3 Qxd4 23. Qxd4 Bxd4 24. Rc7 gxh5 25. Rxb7 {Bronstein, Keres'in burada berabere yapabilmesine rağmen tercihinin atağını devam ettirmek yönünde olduğunu söylüyor.}) 20... c3 21. Qc1 Qxd4 (21... cxb2 $4 22. Qh6 Qxd4 23. Rh8+ Bxh8 24. Qh7#) 22. Qh6 Rfd8 23. Bc1 Bg7 24. Qg5 Qf6 25. Qg4 c2 26. Be2 Rd4 $1 {a7-g8 çaprazının açılması için rakibine f4 sürdürüyor.} 27. f4 Rd1+ 28. Bxd1 Qd4+ 0-1
 
-[Event "Zürich"]
+[Event "Zürih"]
 [Site "?"]
 [Date "1953.??.??"]
 [Round "?"]
@@ -80,7 +76,7 @@ siyah Rc2 oynayabiliyor!} 23. Qxh8 Rc2 24. Rc1 $2 {Burada Kasparov 24.d5!! hamle
 
 {[P]} {Siyahlar atını tahtanın kenarından kurtarabilirse bir sorunu kalmayacak. Bu sebeple ...b5 oynamak istiyor. Beyazın kazanmak için tek yolu var.} 57. b5 $1 {Beyaz Kc3-Kb2 ile atı almak istiyor, siyahın çaresi yok.} Nxb5 (57... Kc5 58. Nd7+ $18) 58. cxb5 Kc5 59. Nf3 Kxb5 60. Nd4+ Kb4 61. Kc2 e5 62. fxe5 Kc5 63. e6 Kd6 64. Kc3 b5 65. Kb4 Ke7 66. Kc5 a3 67. Kd5 1-0
 
-[Event "Zürich"]
+[Event "Zürih"]
 [Site "?"]
 [Date "1953.??.??"]
 [Round "?"]
@@ -93,9 +89,9 @@ siyah Rc2 oynayabiliyor!} 23. Qxh8 Rc2 24. Rc1 $2 {Burada Kasparov 24.d5!! hamle
 [PlyCount "9"]
 [EventDate "1953.??.??"]
 
-{[P]} {Zayıflamış şah kanadı ve merkezdeki alan üstünlüğü beyaza büyük bir üstünlük veriyor. Smyslov kazanca giden doğru yolu bulmayı başarıyor.} 20. Ne5 $1 Qe7 (20... fxe5 21. Qg5+ Kh8 22. Qf6+ Kg8 23. Rd3 Rfe8 24. Rh3 {ve Qg5-Rxh7 kazanır}) 21. Ng4 $1 Rg8 22. Nh6 $1 {Nf5 tehdidi sayesinde kalite kazanır} Qc7 23. Nxg8 Rxg8 24. b3 $18 1-0
+{[P]} {Zayıflamış şah kanadı ve merkezdeki alan üstünlüğü beyaza büyük avantaj sağlıyor. Smyslov kazanca giden doğru yolu bulmayı başarıyor.} 20. Ne5 $1 Qe7 (20... fxe5 21. Qg5+ Kh8 22. Qf6+ Kg8 23. Rd3 Rfe8 24. Rh3 {ve Qg5-Rxh7 kazanır}) 21. Ng4 $1 Rg8 22. Nh6 $1 {Nf5 tehdidi sayesinde kalite kazanır} Qc7 23. Nxg8 Rxg8 24. b3 $18 1-0
 
-[Event "Zürich"]
+[Event "Zürih"]
 [Site "?"]
 [Date "1953.??.??"]
 [Round "?"]
@@ -108,9 +104,9 @@ siyah Rc2 oynayabiliyor!} 23. Qxh8 Rc2 24. Rc1 $2 {Burada Kasparov 24.d5!! hamle
 [PlyCount "7"]
 [EventDate "1953.??.??"]
 
-{[P]} {Sicilya Savunması için tipik bir konum.} 16. Bxe6 $1 fxe6 (16... O-O {Siyah rok atarak kurtulamıyor.} 17. Rf5 Nf4 18. Rxe5 Nxh3+ 19. Bxh3 $18) 17. Nxe6 {Tehdit Bd4, h5'deki at oynarsa Bf4!} Bc8 (17... Nf6 18. Bf4 $18) 18. Qxh5+ $1 Qxh5 19. Nxg7+ $18 1-0
+{[P]} {Sicilya Savunması için tipik bir konum.} 16. Bxe6 $1 fxe6 (16... O-O {Siyah rok atarak kurtulamıyor.} 17. Rf5 Nf4 18. Rxe5 Nxh3+ 19. Bxh3 $18) 17. Nxe6 {Tehdit Bd4, h5 karesindeki atın buradan ayrılması durumunda ise Bf4!} Bc8 (17... Nf6 18. Bf4 $18) 18. Qxh5+ $1 Qxh5 19. Nxg7+ $18 1-0
 
-[Event "Zürich"]
+[Event "Zürih"]
 [Site "?"]
 [Date "1953.??.??"]
 [Round "?"]
@@ -132,7 +128,7 @@ Kf5 Nxd5+ 39. Kg4 Nf6+ 40. Kf5 Ng8+ 41. Kg4 Nf6+ 42. Kf5 Ng8+ 43. Kg4 Bxg5 44.
 Kxg5 Rf7 45. Bh4 Rg6+ 46. Kh5 Rfg7 47. Bg5 Rxg5+ 48. Kh4 Nf6 49. Ng3 Rxg3 50.
 Qxd6 R3g6 51. Qb8+ Rg8 0-1
 
-[Event "Zürich"]
+[Event "Zürih"]
 [Site "?"]
 [Date "1953.??.??"]
 [Round "?"]
@@ -150,7 +146,7 @@ hafif taşlarını oyun dışında bırakırken kendisininkiler için iyi bir
 gelecek hazırlıyor.} 25. e4 $1 {Bg7 ve Nd6 birden oyunsuz kalıyor ve beyaz
 Nf1-Ne3-Nd5 planlıyor.} Qc8 26. Nf1 $1 h5 27. Ne3 Ra6 28. Nd5 Qg4 29. Qg2 Nxc4 30. dxc4 Rxa2 31. Qxa2 Qxe4+ 32. Qe2 Qxh1+ 33. Qf1 Qh2 34. Be3 $18 1-0
 
-[Event "Zürich"]
+[Event "Zürih"]
 [Site "?"]
 [Date "1953.??.??"]
 [Round "?"]
@@ -166,13 +162,13 @@ Nf1-Ne3-Nd5 planlıyor.} Qc8 26. Nf1 $1 h5 27. Ne3 Ra6 28. Nd5 Qg4 29. Qg2 Nxc4 
 {[P]} {Bu ünlü konumda Petrosian rakibinin tehlikeli merkez
 piyonlarını durdurmanın mükemmel bir yolunu buluyor.} 25... Re6 $3 {
 Aksi takdirde beyaz e6 sürecekti.} 26. a4 Ne7 27. Bxe6 fxe6 28. Qf1 Nd5 {
-Petrosian'ın meşhur kalite fedalarından yalnız birisi. Siyah materyal
+Petrosian'ın meşhur kalite fedalarından yalnızca biri. Siyah materyal
 karşılığında mükemmel yerleşmiş bir at ve etkili bir blokaj elde
 ediyor.} 29. Rf3 Bd3 30. Rxd3 cxd3 31. Qxd3 b4 32. cxb4 axb4 33. a5 Ra8 34. Ra1
 Qc6 35. Bc1 Qc7 36. a6 Qb6 37. Bd2 b3 38. Qc4 h6 39. h3 b2 40. Rb1 Kh8 41. Be1
 1/2-1/2
 
-[Event "Zürich"]
+[Event "Zürih"]
 [Site "?"]
 [Date "1953.??.??"]
 [Round "?"]
@@ -193,7 +189,7 @@ Qb3 Ne4 21. Nd2 Rc2 22. Nxe4 dxe4 23. a3 h5 $19 24. d5 R8c4 25. Rd1 exd5 26.
 Bd2 Qf6 27. Rab1 h4 28. Qa4 Qf5 29. Qxa7 Bf8 30. Qb8 g5 31. gxh4 gxh4 32. Qf4
 Qxf4 33. exf4 d4 34. b3 Rc6 35. axb4 f5 36. h3 Ra6 37. Rbc1 Rxc1 38. Rxc1 Ra2 39. Be1 Rb2 40. Kg2 Rxb3 41. Rc8 Rb1 42. Bd2 e3 0-1
 
-[Event "Zürich"]
+[Event "Zürih"]
 [Site "?"]
 [Date "1953.??.??"]
 [Round "?"]
@@ -206,9 +202,9 @@ Qxf4 33. exf4 d4 34. b3 Rc6 35. axb4 f5 36. h3 Ra6 37. Rbc1 Rxc1 38. Rxc1 Ra2 39
 [PlyCount "7"]
 [EventDate "1953.??.??"]
 
-{[P] Siyah açıkça üstün fakat doğrudan kazanca giden tek yolu  var. } 36... Nxa3 37. Bxa3 Nb5 38. Bc1 Nxc3 39. Ne2 Nb1 0-1
+{[P] Siyah açıkça üstün fakat doğrudan kazanca giden tek yolu var. } 36... Nxa3 37. Bxa3 Nb5 38. Bc1 Nxc3 39. Ne2 Nb1 0-1
 
-[Event "Zürich"]
+[Event "Zürih"]
 [Site "?"]
 [Date "1953.??.??"]
 [Round "?"]
@@ -224,7 +220,7 @@ Qxf4 33. exf4 d4 34. b3 Rc6 35. axb4 f5 36. h3 Ra6 37. Rbc1 Rxc1 38. Rxc1 Ra2 39
 {[P]} {Beyazlar üstün ama hemen kazanan sadece bir devam yolu var.} 55.
 Bc6+ $1 1-0
 
-[Event "Zürich"]
+[Event "Zürih"]
 [Site "?"]
 [Date "1953.??.??"]
 [Round "?"]
@@ -237,10 +233,9 @@ Bc6+ $1 1-0
 [PlyCount "7"]
 [EventDate "1953.??.??"]
 
-{[P]} {Beyaz üstün konumunu güzel taktik bir vuruşla
-taçlandırıyor.} 39. Rd8 $1  Qxd8 40. Qh8+ Kf7 41. Qxd8 g5 42. Rh6 1-0
+{[P]} {Beyaz üstün konumunu güzel taktik bir vuruşla taçlandırıyor.} 39. Rd8 $1 Qxd8 40. Qh8+ Kf7 41. Qxd8 g5 42. Rh6 1-0
 
-[Event "Zürich"]
+[Event "Zürih"]
 [Site "?"]
 [Date "1953.??.??"]
 [Round "?"]
@@ -253,6 +248,6 @@ taçlandırıyor.} 39. Rd8 $1  Qxd8 40. Qh8+ Kf7 41. Qxd8 g5 42. Rh6 1-0
 [PlyCount "21"]
 [EventDate "1953.??.??"]
 
-{[P]} {Beyaz atağını sürdürmenin uygun bir yolunu buluyor.} 24. Rd6 $1  Bb7 25. Rad1 Rxd6 26. exd6 f6 27. d7 Bc6 28. h4 Bxd7 29. h5 gxh5 30. e4 e5 31. f4 exf4 32. Rd6 Qe8 33. Bxf6 Rf7 34. Rd5 1-0
+{[P]} {Beyaz atağını sürdürmenin uygun bir yolunu buluyor.} 24. Rd6 $1 Bb7 25. Rad1 Rxd6 26. exd6 f6 27. d7 Bc6 28. h4 Bxd7 29. h5 gxh5 30. e4 e5 31. f4 exf4 32. Rd6 Qe8 33. Bxf6 Rf7 34. Rd5 1-0
 
 
