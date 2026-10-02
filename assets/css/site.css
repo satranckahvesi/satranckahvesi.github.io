@@ -1171,22 +1171,52 @@ a:hover { border-bottom-style: dotted; }
     display: none;
 }
 
-/* ChessPublica's own comment-play-btn (replay-this-line) is
-   position: absolute; bottom: 0; right: 0 inside .video-comment, where it
-   sits over the comment's own last line(s) of text once the comment is
-   long enough to reach the bottom-right corner, and it's drawn as a dark
-   filled disc with a small white icon. Moved into the left column instead,
-   into the left column in place of the comment icon (.comment-icon, 2rem
-   square, first thing in the box once .comment-diagram is hidden above),
-   and restyled as a plain 2rem circle-play glyph in the text color, no
-   disc. The comment icon is hidden (visibility, so the column keeps its
-   width and the text doesn't shift) whenever the play button is present,
-   so only the play icon shows. */
+/* A standalone <pgn-player>'s comment box reads as one running paragraph:
+   the position's own comment (.comment-line) and every variation
+   (.variation-block, nested ones included, with its .variation-content
+   move list and .variation-comment text) flow inline, one after another,
+   instead of ChessPublica's stacked flex rows with an icon column each.
+   The comment icon and the per-variation play icon (.variation-icon) go
+   away; the only control left is the single play button below. Moves stay
+   clickable (.var-move) to walk a variation. */
+.post-body pgn-player .video-comment .comment-line,
+.post-body pgn-player .video-comment .comment-text-block,
+.post-body pgn-player .video-comment .comment-body,
+.post-body pgn-player .video-comment .variation-block,
+.post-body pgn-player .video-comment .variation-content,
+.post-body pgn-player .video-comment .variation-comment {
+    display: inline;
+}
+
+.post-body pgn-player .video-comment .variation-block--nested {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.post-body pgn-player .video-comment .comment-icon,
+.post-body pgn-player .video-comment .variation-icon {
+    display: none;
+}
+
+.post-body pgn-player .video-comment .comment-line::after,
+.post-body pgn-player .video-comment .variation-block::after,
+.post-body pgn-player .video-comment .variation-comment::after {
+    content: " ";
+}
+
+/* ChessPublica's own comment-play-btn is a dark disc pinned to the
+   bottom-right corner of .video-comment, over the comment's last line.
+   Here it is the box's single play control: a plain 2rem circle-play
+   glyph in the text color, centered above the text (the box reserves the
+   room for it only while it's there). Pressing it carries on with the
+   mainline (see pgn-player-variation-fix.js). */
 .post-body pgn-player .video-comment > .comment-play-btn {
     top: 0;
-    left: 0;
+    left: 50%;
     right: auto;
     bottom: auto;
+    transform: translateX(-50%);
     width: 2rem;
     height: 2rem;
     padding: 0;
@@ -1206,30 +1236,17 @@ a:hover { border-bottom-style: dotted; }
 }
 
 .post-body pgn-player .video-comment:has(> .comment-play-btn) {
-    min-height: 2rem;
+    padding-top: 2.75rem;
 }
 
 /* Inside a variation, ChessPublica rebuilds .video-comment on every step
    with a .comment-line holding the current move's own comment, while
-   pgn-player-variation-fix.js puts the variation's whole move list back
-   as a bare .variation-content child — which already shows that same
-   comment inline (.variation-comment). Both showing at once repeats the
-   comment text, so the .comment-line goes whenever the restored list is
-   there. (A variation's very first step, before any restore, wraps its
-   list in .variation-block instead, so it isn't matched.) */
-.post-body pgn-player .video-comment:has(> .variation-content) > .comment-line {
+   pgn-player-variation-fix.js puts the variation lists back, which already
+   shows that same comment inline (.variation-comment). Both at once would
+   repeat the text, so the .comment-line goes while the reader is inside one
+   (.cp-in-variation, set by that script). */
+.post-body pgn-player .video-comment.cp-in-variation > .comment-line {
     display: none;
-}
-
-/* With .comment-line gone, the play/replay button (absolutely placed in
-   the left column) would sit on top of the list's first move number, so
-   the list takes over the indent the comment line had. */
-.post-body pgn-player .video-comment:has(> .variation-content) > .variation-content {
-    margin-left: 2.5rem;
-}
-
-.post-body pgn-player .video-comment:has(> .comment-play-btn) .comment-icon {
-    visibility: hidden;
 }
 
 /* A puzzle's "show solution move" button (.puzzle-hint-btn) ships as a
