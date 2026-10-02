@@ -24,7 +24,7 @@ Oyunların önemli anlarında okuyucuyu Timman ile birlikte hamleleri bulmaya da
 [FEN "3rrb1k/3n1qp1/2p1b2p/ppP1p3/4P3/1P2QPP1/PBR1N1B1/5RK1 b - - 3 31"]
 [SetUp "1"]
 
-{[P]} 31... Bxc5! { Siyahın güçlü seçeneklerinden yalnızca biri. } 32. Rxc5 Nxc5 33. Bxe5 { [P] [%csl Gh6][%cal Ge3h6] } (33. Qxc5 {[P]} 33... Rd2 $19 { Siyahın 31. hamlesinin ana fikri buydu. }) 33... Nd3! $19 { Kalite fazla olan Siyah, kolaylıkla olmasa da kazanmasını bildi. } 0-1
+{[P]} 31... Bxc5! { Siyahın güçlü seçeneklerinden yalnızca biri. } 32. Rxc5 Nxc5 33. Bxe5 { [P] [%csl Gh6][%cal Ge3h6] } (33. Qxc5 {[P]} 33... Rd2 $19 { Siyahın 31. hamlesinin ana fikri buydu. }) 33... Nd3! $19 { Bu hamle sayesinde şimdi 34.Qxh6 olmuyor. Kalite fazla olan Siyah, kolaylıkla olmasa da kazanmasını bildi. } 0-1
 
 Dünyanın ilk on isminden beşinin katıldığı (**Karpov, Timman, Polugaevsky, Portisch, Andersson**) 1982 Mar del Plata turnuvası Timman'ın kariyerinin en önemli zaferlerinden biridir. Oysa öğretici eserleriyle tanınan **Zenon Franco**'nun (1956-2024) aktardığına göre turnuvaya katılmadan önce Timman hastadır. İlk turu Bent Larsen'e kaybederek kötü bir başlangıç yapsa da Güney Amerika havasının kendisine yaradığını sonraki turlarda hissedecek ve Arjantin'de oynanan son Clarin turnuvasını kazanacaktı.
 
