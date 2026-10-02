@@ -84,6 +84,34 @@
         return null; // no mainline [P] marker found
     }
 
+    // ChessBase writes a game's whole engine evaluation curve into one
+    // comment, {[%evp <first ply>,<last ply>,<cp>,<cp>,...]}: one
+    // centipawn value (from White's side) per ply from the starting
+    // position on, 32767 where that ply wasn't evaluated. ChessPublica's
+    // own eval bar (shown by <pgn-player> and <pgn-study> next to the
+    // board) is driven by [%eval <pawns>] markers instead — one per ply,
+    // in order — and its own parser reads an %evp list as a single
+    // number, so every position would come out as 0.00. Rewritten here
+    // into the per-ply [%eval] form before ChessPublica sees it; it
+    // strips every [%...] command from the comment text it displays, so
+    // nothing visible is left behind. An unevaluated ply repeats the
+    // last known value (0 before the first one) so the bar holds still
+    // instead of jumping to the middle.
+    var evpRe = /\[%evp\s+(-?\d+)\s*,\s*-?\d+((?:\s*,\s*-?\d+)+)\s*\]/g;
+    function expandEvp(moveText) {
+        return moveText.replace(evpRe, function (all, firstPly, list) {
+            var values = list.split(',').slice(1).map(Number);
+            var out = [];
+            var last = 0;
+            for (var i = 0; i < Number(firstPly); i++) out.push('[%eval ' + last.toFixed(2) + ']');
+            values.forEach(function (cp) {
+                if (cp !== 32767) last = cp / 100;
+                out.push('[%eval ' + last.toFixed(2) + ']');
+            });
+            return out.join(' ');
+        });
+    }
+
     // For a <pgn> game (not a bare <fen> diagram), the reader can switch
     // between the three ways ChessPublica can show a game. The library only
     // scans the DOM once on load, so switching can't re-render an element
@@ -324,6 +352,8 @@
         if (tagName === 'pgn-study' && moveText !== null) {
             moveText = moveText.replace(/\[P\s*\d*\]/g, '');
         }
+
+        if (moveText !== null && tagName !== 'pgn') moveText = expandEvp(moveText);
 
         var el = document.createElement(tagName);
         el.textContent = moveText !== null ? (headerText + '\n\n' + moveText) : headerText;
