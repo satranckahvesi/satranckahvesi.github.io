@@ -16,8 +16,9 @@ const COLUMN_WIDTHS = { '--left-col-width': '1fr', '--right-col-width': '2fr' };
  * @param {Element} body article body
  * @param {ReturnType<import('../../lib/dom-watch.js').createWatcher>} watcher
  * @param {string|null} pendingCenterKey block to scroll into place once ready
+ * @param {Promise<void>} imagesSized image space reserved; the study's position depends on it
  */
-export function installStudyEnhancements(body, watcher, pendingCenterKey) {
+export function installStudyEnhancements(body, watcher, pendingCenterKey, imagesSized) {
   const studies = toArray(body.querySelectorAll('pgn-study'));
   if (!studies.length) return;
 
@@ -37,7 +38,7 @@ export function installStudyEnhancements(body, watcher, pendingCenterKey) {
     function centerIfPending() {
       if (!pendingKey || study.getAttribute(BLOCK_KEY_ATTR) !== pendingKey) return;
       pendingKey = null;
-      centerWhenSettled(study).then(clearPendingCenter);
+      centerWhenSettled(study, { ready: imagesSized }).then(clearPendingCenter);
     }
 
     function onReady() {

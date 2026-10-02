@@ -23,10 +23,10 @@ if (body) {
   const pendingCenterKey = takePendingCenter();
   const watcher = createWatcher(body);
 
-  wrapFigures(body);
+  const imagesSized = wrapFigures(body);
   const { pendingBlock } = buildPgnBlocks(body, pendingCenterKey);
 
-  installStudyEnhancements(body, watcher, pendingCenterKey);
+  installStudyEnhancements(body, watcher, pendingCenterKey, imagesSized);
   installGlyphBadge(body, watcher);
   installDiagramJoin(body, watcher);
   installVariationFix(body, watcher);
@@ -37,7 +37,7 @@ if (body) {
   curlyPass(document.body);
   keepCommentsCurly(body, watcher);
 
-  scrollPendingBlockIntoView(pendingCenterKey, pendingBlock, watcher);
+  scrollPendingBlockIntoView(pendingCenterKey, pendingBlock, watcher, imagesSized);
 }
 
 installThemeToggle();

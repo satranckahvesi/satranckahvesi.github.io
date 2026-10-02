@@ -10,8 +10,7 @@ Create `_posts/YYYY-MM-DD-title-slug.md`. The date and slug must match the front
 `column`, `description`. `author` and `column` must match the `archive_value` of a page under
 `yazarlar/` or `koseler/`. `bundle exec ruby scripts/check_content_links.rb` checks all of this.
 
-Images need `width` and `height` (natural pixel size) so lazy-loaded images reserve their space:
-`![alt](…){: loading="lazy" width="540" height="960"}`.
+Image sizes need no attributes: the site reads each image's size from the file so lazy images reserve their space.
 
 Posts dated in the future are not published until that date.
 

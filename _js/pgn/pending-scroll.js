@@ -16,8 +16,9 @@ const READY = {
  * @param {string|null} pendingKey block key a view switch asked to scroll to
  * @param {{ view: string, wrapper: Element }|null} pendingBlock that block on this page, from buildPgnBlocks
  * @param {ReturnType<import('../lib/dom-watch.js').createWatcher>} watcher
+ * @param {Promise<void>} imagesSized image space reserved; the block's position depends on it
  */
-export function scrollPendingBlockIntoView(pendingKey, pendingBlock, watcher) {
+export function scrollPendingBlockIntoView(pendingKey, pendingBlock, watcher, imagesSized) {
   if (!pendingKey) return;
   const ready = READY[pendingBlock?.view];
   if (!ready) {
@@ -28,5 +29,5 @@ export function scrollPendingBlockIntoView(pendingKey, pendingBlock, watcher) {
   const { wrapper } = pendingBlock;
   // Aligned to the top: a full game can be thousands of pixels tall, and the
   // switcher the reader just used should stay in view.
-  centerWhenSettled(wrapper, { align: 'top', ready: ready(wrapper, watcher) }).then(clearPendingCenter);
+  centerWhenSettled(wrapper, { align: 'top', ready: Promise.all([ready(wrapper, watcher), imagesSized]) }).then(clearPendingCenter);
 }
