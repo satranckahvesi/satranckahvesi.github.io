@@ -17,7 +17,7 @@ Site, Satranç Kahvesi yazar ve yayın ekibi tarafından işletilmektedir. Veri 
 
 Sitede kullanıcı hesabı, üyelik, yorum ya da form yoktur; adınız, e-posta adresiniz gibi kimliğinizi doğrudan belirleyen bir veri istemeyiz.
 
-Yalnızca ziyaretçi istatistikleri için **Google Analytics 4** kullanıyoruz. Bu hizmet, siteyi ziyaret ettiğinizde şu bilgileri toplayabilir:
+Yalnızca ziyaretçi istatistikleri için **Google Analytics 4** kullanıyoruz. Bu hizmet **yalnızca çerez bandındaki "Kabul et" seçeneğini seçerseniz** etkinleşir; "Reddet" derseniz ya da hiçbir şey seçmezseniz Google Analytics yüklenmez ve çerez bırakılmaz. Kabul ettiğinizde hizmet, siteyi ziyaret ederken şu bilgileri toplayabilir:
 
 - görüntülenen sayfalar ve ziyaret süresi,
 - yaklaşık konum (ülke ve şehir düzeyinde),
@@ -27,9 +27,9 @@ Yalnızca ziyaretçi istatistikleri için **Google Analytics 4** kullanıyoruz. 
 
 Google Analytics 4, IP adreslerini kaydetmez.
 
-### İşleme amacı
+### İşleme amacı ve hukuki sebep
 
-Bu veriler, sitenin ne kadar okunduğunu ve hangi yazıların ilgi gördüğünü anlamak, siteyi geliştirmek amacıyla işlenir. Veriler ziyaretçiyi tek tek tanımak ya da profillemek için kullanılmaz ve üçüncü kişilere satılmaz.
+Bu veriler, açık rızanıza dayanarak, sitenin ne kadar okunduğunu ve hangi yazıların ilgi gördüğünü anlamak, siteyi geliştirmek amacıyla işlenir. Veriler ziyaretçiyi tek tek tanımak ya da profillemek için kullanılmaz ve üçüncü kişilere satılmaz.
 
 ### Çerezler
 
@@ -38,13 +38,17 @@ Bu veriler, sitenin ne kadar okunduğunu ve hangi yazıların ilgi gördüğün�
 | `_ga` | Ziyaretçileri birbirinden ayırmak için rastgele bir kimlik tutar | 2 yıl |
 | `_ga_EQR45VG5M7` | Oturum durumunu korur | 2 yıl |
 
-Tema tercihinizi (açık/koyu) hatırlamak için tarayıcınızın yerel depolamasını (`localStorage`) kullanırız. Bu bilgi yalnızca cihazınızda kalır, sunucuya gönderilmez.
+Tema tercihinizi (açık/koyu) ve çerez seçiminizi hatırlamak için tarayıcınızın yerel depolamasını (`localStorage`) kullanırız. Bu bilgiler yalnızca cihazınızda kalır, sunucuya gönderilmez ve çerez değildir.
 
 ### Verilerin aktarılması
 
 Google Analytics verileri, hizmeti sağlayan Google'a aittir ve yurt dışındaki (Avrupa ve ABD) sunucularında işlenebilir. Sitenin kendisi [GitHub Pages](https://pages.github.com/) üzerinde barındırılır; GitHub, sayfaları sunarken teknik kayıtlar (ör. IP adresi) tutabilir. Satranç diyagramları için kullanılan [ChessPublica](https://chesspublica.github.io/) dosyaları da GitHub üzerinden yüklenir.
 
-### Çerezleri nasıl engellersiniz?
+### Tercihinizi nasıl değiştirirsiniz?
+
+Sayfanın altındaki **Çerez tercihleri** düğmesiyle seçiminizi istediğiniz zaman değiştirebilirsiniz. Daha önce kabul edip sonra reddederseniz Google Analytics çerezleri silinir ve ölçüm durur. Seçiminiz yalnızca bu tarayıcıda, yerel depolamada saklanır.
+
+### Çerezleri başka nasıl engellersiniz?
 
 - Tarayıcınızın ayarlarından çerezleri silebilir ya da engelleyebilirsiniz.
 - Google Analytics ölçümünü tamamen kapatmak için Google'ın [tarayıcı eklentisini](https://tools.google.com/dlpage/gaoptout) kullanabilirsiniz.

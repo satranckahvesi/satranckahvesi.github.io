@@ -8,6 +8,7 @@ import { installGlyphBadge } from './chesspublica/glyph-badge.js';
 import { installLocalization } from './chesspublica/localize.js';
 import { installStudyEnhancements } from './chesspublica/study/index.js';
 import { installVariationFix } from './chesspublica/variation-fix.js';
+import { installCookieConsent } from './consent.js';
 import { markExternalLink } from './external-links.js';
 import { createWatcher } from './lib/dom-watch.js';
 import { buildPgnBlocks } from './pgn/blocks.js';
@@ -41,3 +42,4 @@ if (body) {
 }
 
 installThemeToggle();
+installCookieConsent();
