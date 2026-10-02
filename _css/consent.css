@@ -1,0 +1,62 @@
+/* Cookie consent banner (_includes/cookie-banner.html, _js/consent.js). */
+
+.cookie-banner {
+    position: fixed;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 50;
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    background: var(--bg);
+    color: var(--ink);
+    border: 2px solid var(--ink);
+    font-size: 0.9rem;
+    line-height: 1.45;
+}
+
+.cookie-banner[hidden] { display: none; }
+
+.cookie-banner p { margin: 0; }
+
+.cookie-banner-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+}
+
+.cookie-banner button {
+    font: inherit;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    padding: 0.4rem 1.15rem;
+    border: 1.5px solid var(--ink);
+    border-radius: 999px;
+    background: var(--bg);
+    color: var(--ink);
+    cursor: pointer;
+}
+
+.cookie-banner button[data-consent="granted"],
+.cookie-banner button:hover {
+    background: var(--ink);
+    color: var(--bg);
+}
+
+.cookie-banner button[data-consent="granted"]:hover { opacity: 0.85; }
+
+.cookie-settings {
+    font: inherit;
+    padding: 0 0 1px;
+    border: 0;
+    border-bottom: 1px solid currentColor;
+    background: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.cookie-settings:hover { border-bottom-style: dotted; }
