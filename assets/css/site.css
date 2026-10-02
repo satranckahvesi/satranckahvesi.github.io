@@ -1176,14 +1176,14 @@ a:hover { border-bottom-style: dotted; }
    sits over the comment's own last line(s) of text once the comment is
    long enough to reach the bottom-right corner, and it's drawn as a dark
    filled disc with a small white icon. Moved into the left column instead,
-   directly under the comment icon (.comment-icon, 2rem square, first thing
-   in the box once .comment-diagram is hidden above), and restyled to match
-   it: the same plain 2rem circle-play glyph in the text color, no disc, so
-   the two read as one icon column and the button never eats into the text
-   column. The box gets a min-height that fits icon + gap + button so a
-   one-line comment doesn't let the button spill out below it. */
+   into the left column in place of the comment icon (.comment-icon, 2rem
+   square, first thing in the box once .comment-diagram is hidden above),
+   and restyled as a plain 2rem circle-play glyph in the text color, no
+   disc. The comment icon is hidden (visibility, so the column keeps its
+   width and the text doesn't shift) whenever the play button is present,
+   so only the play icon shows. */
 .post-body pgn-player .video-comment > .comment-play-btn {
-    top: 2.25rem;
+    top: 0;
     left: 0;
     right: auto;
     bottom: auto;
@@ -1206,7 +1206,11 @@ a:hover { border-bottom-style: dotted; }
 }
 
 .post-body pgn-player .video-comment:has(> .comment-play-btn) {
-    min-height: 4.25rem;
+    min-height: 2rem;
+}
+
+.post-body pgn-player .video-comment:has(> .comment-play-btn) .comment-icon {
+    visibility: hidden;
 }
 
 /* A puzzle's "show solution move" button (.puzzle-hint-btn) ships as a
