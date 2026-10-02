@@ -665,27 +665,6 @@ a:hover { border-bottom-style: dotted; }
     margin-right: auto;
 }
 
-/* ChessPublica's evaluation bar (shown beside the board whenever the game
-   carries [%eval] markers — pgn-detect.js expands a ChessBase [%evp] list
-   into them) is a plain black box with a white fill rising from the
-   bottom, no border of its own. On this site's white page the white half
-   disappears into the background, so the bar would read as a half-height
-   black stick instead of a full-height gauge; a hairline border in the
-   muted text color (which flips with the theme) keeps its whole extent
-   visible in both light and dark mode. Thinner than its 10px default, too:
-   it's an at-a-glance hint next to the board, not a control. */
-.post-body .eval-bar {
-    box-sizing: border-box;
-    width: 8px;
-    border: 1px solid var(--muted);
-}
-
-/* Position without an engine evaluation (see eval-bar-hide.js): the bar is
-   hidden, not removed, so the board next to it stays where it is. */
-.post-body .eval-bar.eval-unknown {
-    visibility: hidden;
-}
-
 /* <fen> (a standalone diagram, no movetext) is replaced wholesale by
    ChessPublica's own init with a plain .fen-container div, sized
    width:100%;max-width:var(--board-size) — and ChessPublica's own
