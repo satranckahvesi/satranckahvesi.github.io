@@ -3,25 +3,16 @@ layout: default
 ---
 {% if page.archive_type == "column" %}
 {% assign posts = site.posts | where: "column", page.archive_value | sort: "date" | reverse %}
+{% assign meta = "author" %}
 {% else %}
 {% assign posts = site.posts | where: "author", page.archive_value | sort: "date" | reverse %}
+{% assign meta = "column" %}
 {% endif %}
 <div class="section archive">
     <h3>{{ page.title }}</h3>
     <ul class="post-list">
         {% for post in posts %}
-        {% assign column_slug = post.column | slugify: "latin" %}
-        <li>
-            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-            <span class="post-list-meta">
-                {% if page.archive_type == "column" %}
-                {% include post-author.html post=post %}
-                {% else %}
-                <a href="{{ '/koseler/' | append: column_slug | append: '/' | relative_url }}">{{ post.column }}</a>
-                {% endif %}
-                · {% include turkish-date.html date=post.date %}
-            </span>
-        </li>
+        {% include post-list-item.html post=post meta=meta %}
         {% endfor %}
     </ul>
 </div>

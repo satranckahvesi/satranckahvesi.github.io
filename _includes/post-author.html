@@ -1,3 +1,2 @@
-{%- assign credit_slug = include.post.author | slugify: "latin" -%}
 {%- if include.post.original_author -%}{{ include.post.original_author }} · Türkçesi: {% endif -%}
-<a href="{{ '/yazarlar/' | append: credit_slug | append: '/' | relative_url }}">{{ include.post.author }}</a>
+<a href="{% include author-url.html name=include.post.author %}">{{ include.post.author }}</a>

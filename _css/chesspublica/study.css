@@ -1,0 +1,180 @@
+/* <pgn-study>: a centered panel with the board on the left and the move list
+   on the right (stacked 50/50 below 900px). */
+
+/* Breaks out of the post column and centers on the viewport. 100% font-size
+   passes the post's ambient size through. */
+
+.post-body pgn-study {
+    width: auto;
+    max-width: 90vw;
+    height: auto;
+    max-height: 90vh;
+    margin: 0 calc(50% - 45vw) 1.5rem;
+    font-size: 100%;
+    --frame-pad: 1rem;
+    --frame-pad-bottom: 0.6rem;
+}
+
+/* The loading placeholder ChessPublica inserts before a study gets the same
+   box, so the board does not jump when the real panel swaps in. */
+
+.post-body .pgn-study-loading {
+    width: auto;
+    max-width: 90vw;
+    height: auto;
+    max-height: 90vh;
+    margin: 0 calc(50% - 45vw) 1.5rem;
+    padding: 1rem 1rem 0.6rem;
+}
+
+/* Desktop: rebuild the real panel's 1fr / 6px / 2fr split (the custom
+   properties do not inherit into the placeholder) and zero its flex gap. */
+
+@media (min-width: 900px) {
+    .post-body .pgn-study-loading {
+        /* The column variables live on <pgn-study>, not here, so the 1fr/2fr is
+           written out; the placeholder's own flex gap would add two extra gaps. */
+        grid-template-columns: 1fr 6px 2fr;
+        gap: 0;
+    }
+
+    .post-body .pgn-study-loading-board {
+        grid-column: 1;
+    }
+
+    .post-body .pgn-study-loading-side {
+        grid-column: 3;
+    }
+}
+
+/* The placeholder board is sized like the real one: a ::before measured
+   against the wrapper (a container cannot size itself with cqw). */
+
+.post-body .pgn-study-loading-board {
+    width: 100%;
+    max-width: none;
+    aspect-ratio: auto;
+    background-image: none;
+    container-type: inline-size;
+}
+
+.post-body .pgn-study-loading-board::before {
+    content: "";
+    display: block;
+    width: min(400px, 94cqw);
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+    border-radius: 4px;
+    background-image: conic-gradient(#b58863 90deg, #f0d9b5 90deg 180deg, #b58863 180deg 270deg, #f0d9b5 270deg);
+    background-size: 25% 25%;
+}
+
+@media (min-width: 900px) {
+    .post-body .pgn-study-loading-board::before {
+        width: min(94cqw, 78vh, 480px);
+    }
+}
+
+/* Spacing next to the column splitter on desktop. */
+
+@media (min-width: 900px) {
+    .post-body pgn-study > .pgn-container {
+        padding-left: 1rem;
+    }
+}
+
+/* Below 900px: a fixed 50/50 stack, the board above the full move list, each
+   scrolling on its own. The height has to be definite for flex to split it. */
+
+@media (max-width: 899px) {
+    .post-body pgn-study {
+        height: 90vh;
+    }
+
+    /* The move list already prints the title; hide ChessPublica's mobile copy. */
+    .post-body pgn-study > .pgn-study-mobile-title {
+        display: none;
+    }
+
+    /* The pane's height is fixed, so the board also needs a height ceiling
+       (container-type: size adds the cqh axis; 92 leaves a sliver of margin). */
+    .post-body pgn-study > pgn-player {
+        flex: 1 1 0;
+        min-height: 0;
+        overflow: hidden;
+        container-type: size;
+        --board-size: min(400px, 94cqw, 92cqh);
+    }
+
+    /* No flat height floor: the board's height comes from its half of the split. */
+    .post-body pgn-study pgn-player .player-wrapper {
+        min-height: 0;
+    }
+
+    /* ChessPublica swaps this in for the board; here it shows alongside it. */
+    .post-body pgn-study > .pgn-container {
+        display: block;
+        /* Without an explicit width it collapses to 0 next to container-type. */
+        width: 100%;
+        flex: 1 1 0;
+        min-height: 0;
+        overflow-y: auto;
+        margin-top: 0.75rem;
+        /* overflow-y: auto clips on the left too; room for the 2px box-shadow. */
+        padding-left: 4px;
+    }
+}
+
+/* The comment mirror stays in the DOM (it pins the picker's position, see
+   _js/chesspublica/study/mobile-comment.js) but is never shown; the move list
+   already contains the active comment. On desktop it spans the grid. */
+
+.pgn-study-mobile-comment {
+    display: none;
+}
+
+@media (min-width: 900px) {
+    .pgn-study-mobile-comment {
+        grid-column: 1 / -1;
+    }
+}
+
+/* Ribbon: our prev/next buttons, sized like ChessPublica's icons. Smaller
+   buttons on mobile so all of them fit one row. */
+
+.pgn-study-ribbon-btn[data-pgn-nav] svg {
+    width: 2rem;
+    height: 2rem;
+}
+
+@media (max-width: 899px) {
+    .post-body pgn-study .pgn-study-ribbon-btn {
+        width: 2.25rem;
+        height: 2.25rem;
+    }
+
+    .post-body pgn-study .pgn-study-ribbon-btn .lucide-icon,
+    .post-body pgn-study .pgn-study-ribbon-btn[data-pgn-nav] svg {
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+
+    .post-body pgn-study .pgn-study-ribbon-group {
+        gap: 0.1rem;
+    }
+}
+
+/* The branch picker is hidden: the study always follows the mainline. */
+
+.post-body pgn-study .pgn-study-move-picker {
+    display: none;
+}
+
+/* Board size: proportional to its column, capped so a dragged splitter cannot
+   outgrow the panel's 90vh cap. */
+
+@media (min-width: 900px) {
+    .post-body pgn-study pgn-player {
+        --board-size: min(94cqw, 78vh, 480px);
+    }
+}

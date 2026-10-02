@@ -1,0 +1,2 @@
+{%- assign slug = include.name | slugify: "latin" -%}
+{{- '/yazarlar/' | append: slug | append: '/' | relative_url -}}

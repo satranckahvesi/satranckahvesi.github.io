@@ -1,0 +1,140 @@
+/* <pgn-player>: the board with a move strip and a comment box below. */
+
+/* Centered, with room on the left for the "your move" box-shadow of a puzzle. */
+
+.post-body pgn-player {
+    margin-left: auto;
+    margin-right: auto;
+    /* Clip rather than silently widen the page if something still spills. */
+    overflow-x: hidden;
+    /* Room for the 3px "your move" box-shadow, which would otherwise be clipped. */
+    padding-left: 4px;
+}
+
+.post-body pgn-player .player-wrapper,
+.post-body pgn-player .player-container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* A long player/event title wraps instead of widening the page on mobile. */
+
+.post-body pgn-player .video-title,
+.post-body pgn-player .video-title-text {
+    min-width: 0;
+}
+
+.post-body pgn-player .video-title-players,
+.post-body pgn-player .video-title-event {
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+/* ChessPublica's board is a flat 400px; below 900px it follows the column. A
+   container needs a definite width for cqw to resolve, hence width: 100%. */
+
+@media (max-width: 899px) {
+    .post-body pgn-player {
+        width: 100%;
+        container-type: inline-size;
+        --board-size: min(400px, 94cqw);
+    }
+}
+
+/* The comment box reads as one running paragraph: comment text and every
+   variation flow inline, with a single play button. Moves stay clickable. */
+
+.post-body pgn-player .video-comment .comment-diagram {
+    display: none;
+}
+
+.post-body pgn-player .video-comment .comment-line,
+.post-body pgn-player .video-comment .comment-text-block,
+.post-body pgn-player .video-comment .comment-body,
+.post-body pgn-player .video-comment .variation-block,
+.post-body pgn-player .video-comment .variation-content,
+.post-body pgn-player .video-comment .variation-comment {
+    display: inline;
+}
+
+.post-body pgn-player .video-comment .variation-block--nested {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.post-body pgn-player .video-comment .comment-icon,
+.post-body pgn-player .video-comment .variation-icon {
+    display: none;
+}
+
+.post-body pgn-player .video-comment .comment-line::after,
+.post-body pgn-player .video-comment .variation-block::after,
+.post-body pgn-player .video-comment .variation-comment::after {
+    content: " ";
+}
+
+.post-body pgn-player .video-comment > .comment-play-btn {
+    top: 0.75rem;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    transform: translateX(-50%);
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    background: none;
+    border-radius: 0;
+    color: inherit;
+}
+
+.post-body pgn-player .video-comment > .comment-play-btn:hover {
+    background: none;
+    opacity: 0.7;
+}
+
+.post-body pgn-player .video-comment > .comment-play-btn .lucide-icon {
+    width: 2rem;
+    height: 2rem;
+}
+
+.post-body pgn-player .video-comment:has(> .comment-play-btn) {
+    padding-top: 3.5rem;
+}
+
+/* Inside a variation the restored variation lists already show the comment. */
+
+.post-body pgn-player .video-comment.cp-in-variation > .comment-line {
+    display: none;
+}
+
+/* .video-moves and .video-comment each carry a top margin; keep one. */
+
+.post-body pgn-player .video-moves + .video-comment {
+    margin-top: 0;
+}
+
+/* Puzzle "show solution" button: an outline ring instead of a filled disc.
+   The key glyph is an inline custom property, hence !important. */
+
+.post-body .puzzle-hint-btn {
+    box-sizing: border-box;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    background: none;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    color: inherit;
+}
+
+.post-body .puzzle-hint-btn:hover {
+    background: none;
+    opacity: 0.7;
+}
+
+.post-body .puzzle-hint-btn .lucide-icon {
+    width: 1.05rem;
+    height: 1.05rem;
+    --icon: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M2.586%2017.414A2%202%200%200%200%202%2018.828V21a1%201%200%200%200%201%201h3a1%201%200%200%200%201-1v-1a1%201%200%200%201%201-1h1a1%201%200%200%200%201-1v-1a1%201%200%200%201%201-1h.172a2%202%200%200%200%201.414-.586l.814-.814a6.5%206.5%200%201%200-4-4z%22%2F%3E%3Ccircle%20cx%3D%2216.5%22%20cy%3D%227.5%22%20r%3D%22.5%22%20fill%3D%22currentColor%22%2F%3E%3C%2Fsvg%3E") !important;
+}

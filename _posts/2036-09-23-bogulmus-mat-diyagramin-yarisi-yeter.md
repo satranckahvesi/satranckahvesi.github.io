@@ -4,6 +4,7 @@ date: 2036-09-23
 title: "Boğulmuş mat: Diyagramın yarısı yeter"
 author: "FM Nazmi Can Doğan"
 column: "Analizli oyunlar"
+description: "Boğulmuş mat örneğiyle, tahtanın yalnızca bir yarısını ya da dörtte birini gösteren diyagramlar."
 ---
 
 Bazı pozisyonlarda tahtanın tamamı değil, yalnızca bir köşesi konuşur. Aşağıdaki ünlü "boğulmuş mat" (smothered mate) örneğinde bütün olay üst dört sırada geçiyor; beyaz şahın nerede durduğunun konuyla hiçbir ilgisi yok. Bu yüzden diyagramda tahtanın yalnızca ilk dört yatayını (8. sıradan 5. sıraya kadar) gösteriyoruz.
