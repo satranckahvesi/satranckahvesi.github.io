@@ -1208,11 +1208,12 @@ a:hover { border-bottom-style: dotted; }
 /* ChessPublica's own comment-play-btn is a dark disc pinned to the
    bottom-right corner of .video-comment, over the comment's last line.
    Here it is the box's single play control: a plain 2rem circle-play
-   glyph in the text color, centered above the text (the box reserves the
-   room for it only while it's there). Pressing it carries on with the
+   glyph in the text color, centered above the text with the same 0.75rem
+   of space on either side (the box reserves the room for it only while
+   it's there). Pressing it carries on with the
    mainline (see pgn-player-variation-fix.js). */
 .post-body pgn-player .video-comment > .comment-play-btn {
-    top: 0;
+    top: 0.75rem;
     left: 50%;
     right: auto;
     bottom: auto;
@@ -1236,7 +1237,7 @@ a:hover { border-bottom-style: dotted; }
 }
 
 .post-body pgn-player .video-comment:has(> .comment-play-btn) {
-    padding-top: 2.75rem;
+    padding-top: 3.5rem;
 }
 
 /* Inside a variation, ChessPublica rebuilds .video-comment on every step
