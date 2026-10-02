@@ -102,10 +102,14 @@
     padding-top: 3.5rem;
 }
 
-/* Inside a variation the restored variation lists already show the comment. */
+/* A variation nested in another one reads as a parenthesised aside. */
 
-.post-body pgn-player .video-comment.cp-in-variation > .comment-line {
-    display: none;
+.post-body pgn-player .video-comment .variation-block--nested::before {
+    content: "( ";
+}
+
+.post-body pgn-player .video-comment .variation-block--nested::after {
+    content: " ) ";
 }
 
 /* .video-moves and .video-comment each carry a top margin; keep one. */
