@@ -1221,6 +1221,13 @@ a:hover { border-bottom-style: dotted; }
     display: none;
 }
 
+/* With .comment-line gone, the play/replay button (absolutely placed in
+   the left column) would sit on top of the list's first move number, so
+   the list takes over the indent the comment line had. */
+.post-body pgn-player .video-comment:has(> .variation-content) > .variation-content {
+    margin-left: 2.5rem;
+}
+
 .post-body pgn-player .video-comment:has(> .comment-play-btn) .comment-icon {
     visibility: hidden;
 }
