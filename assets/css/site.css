@@ -1209,6 +1209,25 @@ a:hover { border-bottom-style: dotted; }
     min-height: 2rem;
 }
 
+/* Inside a variation, ChessPublica rebuilds .video-comment on every step
+   with a .comment-line holding the current move's own comment, while
+   pgn-player-variation-fix.js puts the variation's whole move list back
+   as a bare .variation-content child — which already shows that same
+   comment inline (.variation-comment). Both showing at once repeats the
+   comment text, so the .comment-line goes whenever the restored list is
+   there. (A variation's very first step, before any restore, wraps its
+   list in .variation-block instead, so it isn't matched.) */
+.post-body pgn-player .video-comment:has(> .variation-content) > .comment-line {
+    display: none;
+}
+
+/* With .comment-line gone, the play/replay button (absolutely placed in
+   the left column) would sit on top of the list's first move number, so
+   the list takes over the indent the comment line had. */
+.post-body pgn-player .video-comment:has(> .variation-content) > .variation-content {
+    margin-left: 2.5rem;
+}
+
 .post-body pgn-player .video-comment:has(> .comment-play-btn) .comment-icon {
     visibility: hidden;
 }
