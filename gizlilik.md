@@ -4,7 +4,7 @@ title: "Gizlilik ve Çerezler"
 permalink: /gizlilik/
 ---
 
-<div class="section" markdown="1">
+<div class="section legal" markdown="1">
 ## Gizlilik ve Çerezler
 
 Bu sayfa, **Satranç Kahvesi** (satranckahvesi.com) ziyaretçilerinin hangi verilerin, hangi amaçla işlendiğini açıklayan 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında bir aydınlatma metnidir.
