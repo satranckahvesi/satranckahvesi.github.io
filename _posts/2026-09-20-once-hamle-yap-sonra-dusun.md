@@ -4,6 +4,7 @@ date: 2026-09-20
 title: "Önce hamle yap sonra düşün"
 author: "FM Nazmi Can Doğan"
 column: "Kitap incelemeleri"
+description: "Oyuncuların tahta başında nasıl karar verdiğini sezgi ve hesap arasında ele alan bir kitap incelemesi."
 ---
 
 ###### Bu yazı ilk olarak 2016 yılında **Satrançsever** dergisinin 4. sayısında yayınlanmıştır.
@@ -76,7 +77,7 @@ hamleyle bağlantılı olmayan bir özelliği basitçe ilgisizdir. Eğer Ng5 ya 
 görmüyorsak (öncesinde veya aynı anda) f7 karesinde zayıflık görmeyiz."
 
 Yazarın eleştirilerine maruz kalan **Carsten Hansen**'in, "Pozisyonel Satrancınızı İlerletin"
-(**_Improve Your Positional Chess_**) kitabıyla ilgili konumu analiz ederken şunları söylüyor:
+(**_Improve Your Positional Chess_{: lang="en"}**) kitabıyla ilgili konumu analiz ederken şunları söylüyor:
 
 [Event "Linares 14th"]
 [Site "Linares"]
@@ -105,7 +106,7 @@ Yazarın eleştirilerine maruz kalan **Carsten Hansen**'in, "Pozisyonel Satranc�
 
 {Hansen "Nasıl zayıflık yaratmalı?" başlığı altında diğer şeylerin
 yanı sıra şunu yazıyor: (Rakibiniz konumunda bir zayıflık olmadığı
-durumda) "Konumdaki dengesizliklere (_imbalances_) bakarak onları rakibinizin
+durumda) "Konumdaki dengesizliklere (_imbalances_{: lang="en"}) bakarak onları rakibinizin
 konumunda zayıflık oluşturmak için nasıl kullanacağınızı ya
 rakibinizi buna zorlayarak ya da amaca yönelik oynayarak zayıflık elde
 edebileceğinizi görmelisiniz." Buna örnek olarak sıradaki bölümü sunuyor:
@@ -180,7 +181,7 @@ düşünerek siz de teste katılabilirsiniz.
 *
 
 İkinci bölümde, ülkemizde de yoğun ilgiyle karşılanan ve örneklerinin bolluğuyla Hendriks'in
-de beğenisini kazanan **Cor van Wijgerden**'in **_Step-by-Step_** serisinde önerilmeyen "**deneme yanılma**" yönteminin öneminden söz ediyor. Hendriks haksız yere göz ardı edilen "deneme yanılma" yönteminin bir konumdaki olanakları değerlendirebilmek için en iyi yöntemlerden biri olarak değiniyor. Hendriks'in eleştirilerine maruz kalan John Watson [bu kitabı](http://theweekinchess.com/john-watson-reviews/john-watson-book-review-103-challenging-conventional-wisdom) incelerken taktik konumlarda "deneme yanılma" yönteminin "konumu anlama" yöntemine kıyasla daha verimli olduğu konusunda yazara katıldığını ifade ediyor.
+de beğenisini kazanan **Cor van Wijgerden**'in **_Step-by-Step_{: lang="en"}** serisinde önerilmeyen "**deneme yanılma**" yönteminin öneminden söz ediyor. Hendriks haksız yere göz ardı edilen "deneme yanılma" yönteminin bir konumdaki olanakları değerlendirebilmek için en iyi yöntemlerden biri olarak değiniyor. Hendriks'in eleştirilerine maruz kalan John Watson [bu kitabı](http://theweekinchess.com/john-watson-reviews/john-watson-book-review-103-challenging-conventional-wisdom) incelerken taktik konumlarda "deneme yanılma" yönteminin "konumu anlama" yöntemine kıyasla daha verimli olduğu konusunda yazara katıldığını ifade ediyor.
 
 [Event "Leningrad"]
 [Site "Leningrad"]

@@ -1,0 +1,37 @@
+/* Move-list comments in <pgn> / <pgn-study>. See docs/chesspublica-quirks.md. */
+
+/* ChessPublica's own side padding stacks on the post's and over-indents the
+   move list. A little right padding stays: the active comment's 2px
+   box-shadow would otherwise be clipped by the container's overflow-x. */
+
+.post-body .pgn-container {
+    padding-left: 0;
+    padding-right: 4px;
+    container-type: inline-size;
+}
+
+/* Comments in a study use the post's text size. */
+
+.post-body pgn-study .pgn-comment,
+.post-body pgn-study .pgn-comment-inline,
+.post-body pgn-study .video-comment {
+    font-size: 1em;
+}
+
+/* .pgn-comment is a <p>: the post-body paragraph rule beat ChessPublica's
+   margin-top, and its padding-top then doubled the gap before a comment
+   outside <pgn-study>. Both restored to the spacing a variation has. */
+
+.post-body .pgn-comment {
+    margin-top: 1em;
+}
+
+.post-body .pgn-comment {
+    padding-top: 0;
+}
+
+/* The game title inside a study matches other contexts. */
+
+.post-body pgn-study .pgn-title .video-title-text {
+    font-size: 1em;
+}

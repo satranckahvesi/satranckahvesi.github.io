@@ -1,0 +1,12 @@
+{%- comment %}
+  The only place scripts are loaded. Each page loads one bundle (built from _js/ by
+  `npm run build`); on articles ChessPublica must come after it, because the bundle
+  replaces the raw PGN paragraphs ChessPublica then scans for.
+{% endcomment -%}
+{%- assign build = site.time | date: '%s' -%}
+{%- if page.layout == "post" %}
+<script src="{{ '/assets/js/post.js' | relative_url }}?v={{ build }}" defer></script>
+<script src="https://chesspublica.github.io/dist/ChessPublica.all.min.js" defer></script>
+{%- else %}
+<script src="{{ '/assets/js/site.js' | relative_url }}?v={{ build }}" defer></script>
+{%- endif %}

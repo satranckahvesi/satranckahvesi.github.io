@@ -1,0 +1,204 @@
+/* A single article: header, prose, tables, figures, embeds. */
+
+.post {
+    max-width: 42rem;
+    margin: 3.5rem auto 0;
+    padding: 0;
+    text-align: left;
+}
+
+.post-title {
+    font-family: var(--font-serif);
+    font-weight: bold;
+    font-size: 2.5rem;
+    line-height: 1.15;
+    color: var(--ink);
+    margin: 0 0 0.5rem;
+    text-align: left;
+}
+
+.post-meta {
+    text-align: left;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    margin: 0 0 2.5rem;
+}
+
+.post-meta a { color: var(--muted); }
+
+/* Headings are sized in rem against the root scale; margin-top equals the
+   font size, margin-bottom a quarter of it. */
+
+.post-body h1,
+.post-body h2,
+.post-body h3,
+.post-body h4,
+.post-body h5,
+.post-body h6 {
+    margin: 1em 0 0.25em;
+}
+
+.post-body h1 { font-size: 2.5rem; }
+
+.post-body h2 { font-size: 2rem; }
+
+.post-body h3 { font-size: 1.5rem; }
+
+.post-body h4 { font-size: 1.25rem; }
+
+.post-body h5 { font-size: 1rem; }
+
+/* The "originally published in..." note that opens some posts. Its top margin
+   would collapse with .post-meta's large bottom margin; the negative value
+   pulls the gap back to a normal size. */
+
+.post-body h6 {
+    font-size: 0.9rem;
+    font-weight: normal;
+    font-style: italic;
+    text-align: right;
+    color: var(--muted);
+    margin: -1.75rem 0 1rem;
+}
+
+.post-body p,
+.post-body ul,
+.post-body ol {
+    margin: 0 0 1em;
+}
+
+/* Drop cap on the opening paragraph (or the one after the note above). */
+
+.post-body > p:first-child::first-letter,
+.post-body > h6:first-child + p::first-letter {
+    float: left;
+    font-weight: bold;
+    font-size: 3.4em;
+    line-height: 0.82;
+    padding: 0.05em 0.08em 0 0;
+    margin-bottom: -0.05em;
+}
+
+/* Pull-quote: hairline rules above and below instead of a left border. */
+
+.post-body blockquote {
+    margin: 1.75em 0;
+    padding: 0.9em 0;
+    border-top: 1px solid var(--hairline);
+    border-bottom: 1px solid var(--hairline);
+    font-style: italic;
+    font-size: 1.2em;
+    line-height: 1.4;
+}
+
+.post-body blockquote p {
+    margin: 0 0 0.5em;
+}
+
+.post-body blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+.post-body li {
+    margin: 0 0 0.5em;
+}
+
+/* Tables: a hairline between rows, no vertical borders. Scrolls horizontally
+   instead of widening the page. */
+
+.post-body table {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow: auto;
+    border-collapse: collapse;
+    margin: 0 0 1.5em;
+}
+
+.post-body table th {
+    font-weight: bold;
+    text-align: left;
+}
+
+.post-body table th,
+.post-body table td {
+    padding: 1rem 2rem 1rem 0.125rem;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+}
+
+.post-body table tr {
+    border-top: 1px solid var(--ink);
+}
+
+.post-body table tr th {
+    border-top: 2px solid var(--ink);
+    border-bottom: 2px solid var(--ink);
+}
+
+/* A wide <pre> scrolls on its own instead of widening the post column. */
+
+.post-body pre {
+    max-width: 100%;
+    overflow-x: auto;
+    font-size: 0.75rem;
+    line-height: 1.4;
+}
+
+.post-figure {
+    margin: 2rem auto;
+    text-align: center;
+}
+
+.post-figure img {
+    display: inline-block;
+    max-width: 100%;
+    max-height: 480px;
+    width: auto;
+    height: auto;
+    border: 8px solid var(--bg);
+    outline: 1px solid var(--hairline);
+    box-shadow: 0 1px 3px rgba(43, 40, 38, 0.12);
+}
+
+/* An image with width/height attributes gets its final size before it loads
+   (post-figures.js copies them into --w / --h), so lazy images do not shift
+   the page. Content box, so the ratio excludes the 8px border: at most its
+   natural width, at most the column, at most 464px tall (480 with border). */
+.post-figure img[width][height] {
+    box-sizing: content-box;
+    max-width: none;
+    max-height: none;
+    width: min(calc(100% - 16px), calc(var(--w) * 1px), calc(464px * var(--w) / var(--h)));
+    aspect-ratio: var(--w) / var(--h);
+}
+
+.post-figure figcaption {
+    margin-top: 0.7rem;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--muted);
+}
+
+/* A YouTube iframe has no intrinsic size; the box keeps it 16:9. */
+
+.video-embed {
+    margin: 2rem auto;
+    max-width: 100%;
+}
+
+.video-embed iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+}
+
+.video-embed figcaption {
+    margin-top: 0.7rem;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--muted);
+    text-align: center;
+}

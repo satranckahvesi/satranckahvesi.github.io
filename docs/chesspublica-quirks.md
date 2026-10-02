@@ -1,0 +1,83 @@
+# ChessPublica quirks this site works around
+
+The site renders games with [ChessPublica](https://chesspublica.github.io/), loaded unpinned from its CDN.
+Everything below was verified by reading its bundle (`ChessPublica.all.min.js`) and testing in a browser.
+It relies on undocumented behavior, so after ChessPublica changes, walk through this list.
+
+Every access to its internals (`_engine`, `_variation`, `_loopRAF`, `commentBox`) goes through
+`_js/chesspublica/engine.js`, so a rename breaks one file.
+
+## How a PGN block becomes a game
+
+`_js/pgn/blocks.js` finds paragraphs that start with `[Tag "value"]` and replaces them with `<pgn>`,
+`<fen>`, `<pgn-player>` or `<pgn-study>`. This must happen before ChessPublica's script runs, because
+it scans the DOM once on load; `_includes/scripts.html` loads the site bundle first.
+
+- ChessPublica replaces a `<pgn>` element wholesale and drops its attributes, so the block key
+  (`data-pgn-block-key`) is also stamped on the wrapper it never touches.
+- `<pgn>` never fires `cp-ready`. `<pgn-player>` and `<pgn-study>` do.
+- Switching the view stores the choice in `sessionStorage` and reloads the page, since a block cannot
+  change element type after the scan. `view-state.js` also stores which block to scroll back to
+  (`pgn-center-pending`) and turns off native scroll restoration until then.
+- `<puzzle>` renders a bare flipped diagram with no move list, so FEN headers with movetext become `<pgn>`.
+- A `[P]` marker makes a position a puzzle. Studies strip it (nobody expects a quiz mid-article); a puzzle
+  opens in `<pgn-player>` and, if the first marker is on Black's move, gets `[Orientation "black"]`.
+
+## Patches (`_js/chesspublica/`)
+
+| File | Problem | Relied-on internals |
+| --- | --- | --- |
+| `localize.js` | Hardcoded English strings: study loading text, puzzle hint, "show solution" tooltip, "Puzzle solved!". The hint is rewritten via `textContent` on every position change, so appearance alone is not enough. "Puzzle solved!" is appended after a `<br>` only when the caption already holds the winning move's comment; then the generic line is dropped instead of translated. | `.pgn-study-loading-side p`, `.puzzle-hint-text`, `.puzzle-hint-btn`, `.cp-puzzle-caption-text` |
+| `diagram-no-pause.js` | A `{[D]}` comment carries no text but ChessPublica treats it as content worth pausing for; the diagram is hidden under the board anyway. | `engine.commentBox.update(index, comments, variations, diagrams)` |
+| `diagram-join.js` | After each inline diagram ChessPublica starts a new paragraph prefixed `N...`. Diagrams are hidden in a study, leaving `5. exd5` / `5... Qxd5` on separate lines. | `.pgn-mainline`, `.pgn-variation-line`, `.cp-board-wrapper`, `.comment-diagram` |
+| `glyph-badge.js` | Clicking a move nested in a variation never refreshes the `.gm-badge` (stale badge, wrong square, or missing). Derived from the active move's trailing NAG and its `data-to` square. | `.pgn-move-active`, `data-to`, `.gm-badge` |
+| `variation-fix.js` | Stepping inside a variation rebuilds `.video-comment` without the variation lists the reader clicked into. The live nodes are put back (they keep their handlers). Also: one play button that returns to the mainline, and leaving a variation before entering a sibling. | `engine._variation` (`contentEl`, `mainStateIndex`), `exitVariation()`, `goTo()`, `play()` |
+
+## Study view (`_js/chesspublica/study/`)
+
+- **Layout**: the column split is set through `--left-col-width` / `--right-col-width` only, never
+  `grid-template-columns`, so the drag splitter keeps working.
+- **No autoplay**: Play and speed are removed from the ribbon, Space is swallowed, and `_loopRAF` is
+  replaced with a no-op. `play()` itself must stay: the branch picker's mainline row calls it for its single step.
+  A board click also calls `togglePlay()`, and a second board listener treats two clicks within 300 ms as
+  "jump 10 plies"; all board clicks are stopped in the capture phase.
+- **Keyboard**: arrow keys only work when `.player-container` is partly in the viewport, and are sent to a
+  page-wide "active engine" claimed by whichever player was built first (often an earlier puzzle). Before
+  stepping, the container is scrolled into view and a `mouseenter` is dispatched on `.player-wrapper`.
+- **Branch points**: ChessPublica's `goTo()` refuses a plain "next" at a branch until the picker's mainline row
+  is clicked, and nothing outside its bundle can set the flag that click sets. `branch.js` clicks it, then
+  undoes the `playing` state the click causes. Because the click already advances one ply, the same keydown
+  must not also reach ChessPublica's handler (`stopImmediatePropagation`).
+- **Comment mirror**: the active comment is mirrored into `.pgn-study-mobile-comment`. It is appended last,
+  because inserting a sibling between the grid's three children breaks auto-placement, and kept last because the
+  variation picker can be inserted anywhere. It is hidden by CSS.
+- **Collapsing** is disabled by removing `pgn-study-collapsed` whenever it appears (the panel is click-to-expand).
+
+## Scrolling after a view switch (`_js/lib/scroll.js`, `_js/pgn/pending-scroll.js`)
+
+Every view switch reloads the page and then scrolls the block into place. Native scroll restoration is not
+used: the page keeps growing while ChessPublica renders, so it lands anywhere (measured: the same click
+ended up 0 or 1257 px away depending on timing). A study centers itself; a player waits for `cp-ready` and
+aligns to the top.
+
+Piece images load after `cp-ready` and keep changing the panel height, so the scroll target is computed only
+after every image has loaded or failed (3 s cap). A single `scrollTo` is not reliable: something moves the page
+back to the top within a frame to a second later, so the target is re-applied every frame for a second, and
+dropped as soon as the reader scrolls. A plain `<pgn>` has no ready signal and keeps appending content for a
+long time (900+ mutations for a long game), so it waits for 300 ms without mutations (5 s cap) and aligns to the
+top of the block rather than its middle.
+
+## CSS (`_css/chesspublica/`)
+
+- ChessPublica centers `.fen-container` and `.cp-board-wrapper` only inside its own `max-width: 640px` query.
+- `.pgn-comment` is a `<p>`, so `.post-body p { margin: 0 0 1em }` wins over its margin-top; its padding-top is
+  only reset inside `pgn-study`.
+- A standalone `<pgn-player>` has a flat 400px board and `width: fit-content`; `cqw` only resolves against a
+  definite width, hence `width: 100%` below 900px. Inline diagrams are sized with `--diagram-max-width`
+  (not `--board-size`, which `--small` would shrink again).
+- `box-shadow` highlights (active comment, puzzle "your move") spread past the box and get clipped by
+  `overflow-x`; a few pixels of padding give them room.
+- The dark-mode splitter handle uses `color-mix()` to be opaque: two stacked translucent fills of the same
+  color show as a seam.
+- `!important` appears exactly three times (`icons.css`, `player.css`), each to override an `--icon` custom
+  property that ChessPublica sets in an inline `style`, which nothing else can beat.

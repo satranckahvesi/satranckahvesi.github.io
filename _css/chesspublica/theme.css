@@ -1,0 +1,75 @@
+/* Theme: ChessPublica hardcodes light-mode colors in several places. */
+
+/* Game title colors are hardcoded dark; follow the site's ink in both themes. */
+
+.post-body .video-title-players { color: var(--ink); }
+
+.post-body .video-title-event { color: var(--muted); }
+
+/* Dark mode. ChessPublica's ribbon, active comment, controls and move
+   highlights are tuned for white. The splitter handle uses color-mix() so it
+   is opaque: two stacked translucent fills show as a seam. */
+
+:root[data-theme="dark"] .post-body .pgn-study-ribbon,
+:root[data-theme="dark"] .post-body .pgn-container .pgn-comment.pgn-comment-active,
+:root[data-theme="dark"] .post-body .pgn-container .pgn-comment-inline.pgn-comment-active {
+    background: var(--hairline);
+    color: var(--ink);
+}
+
+:root[data-theme="dark"] .post-body .pgn-study-ribbon {
+    border-bottom-color: var(--hairline);
+}
+
+:root[data-theme="dark"] .post-body .pgn-study-ribbon-title-text { color: var(--ink); }
+
+:root[data-theme="dark"] .post-body .pgn-study-ribbon-title-subtext { color: var(--muted); }
+
+:root[data-theme="dark"] .post-body .pgn-study-ribbon-btn,
+:root[data-theme="dark"] .post-body .pgn-study-ribbon-title .lucide-icon {
+    color: var(--ink);
+}
+
+:root[data-theme="dark"] .post-body .pgn-study-ribbon-btn:hover:not(:disabled),
+:root[data-theme="dark"] .post-body .pgn-study-article-btn.active,
+:root[data-theme="dark"] .post-body .pgn-study-toc-entry:hover {
+    background: var(--hairline);
+}
+
+:root[data-theme="dark"] .post-body .pgn-study-resizer:after {
+    background: var(--hairline);
+}
+
+:root[data-theme="dark"] .post-body .pgn-study-resizer-handle {
+    background: color-mix(in srgb, var(--ink) 16%, var(--bg));
+    border-color: var(--hairline);
+    color: var(--muted);
+}
+
+:root[data-theme="dark"] .post-body .pgn-study-resizer:hover:after,
+:root[data-theme="dark"] .post-body .pgn-study-resizer.dragging:after {
+    background: var(--muted);
+}
+
+:root[data-theme="dark"] .post-body .pgn-study-resizer:hover .pgn-study-resizer-handle,
+:root[data-theme="dark"] .post-body .pgn-study-resizer.dragging .pgn-study-resizer-handle {
+    background: color-mix(in srgb, var(--ink) 62%, var(--bg));
+    border-color: var(--muted);
+}
+
+:root[data-theme="dark"] .post-body .pgn-study-toc-move {
+    color: var(--muted);
+}
+
+:root[data-theme="dark"] .post-body .pgn-move:hover {
+    background: var(--hairline);
+}
+
+:root[data-theme="dark"] .post-body .cp-inline-move.active,
+:root[data-theme="dark"] .post-body .move .white-half.active,
+:root[data-theme="dark"] .post-body .var-move.active,
+:root[data-theme="dark"] .post-body .pgn-move-active {
+    background: var(--hairline);
+    color: var(--ink);
+    box-shadow: 0 0 0 2px var(--hairline);
+}

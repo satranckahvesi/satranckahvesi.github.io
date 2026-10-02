@@ -5,9 +5,10 @@ title: "Capablanca mağlup edilebilir mi?"
 author: "FM Tarık Selbes"
 original_author: "Savielly Tartakower"
 column: "Satranç tarihi"
+description: "Savielly Tartakower'in 1925'te Capablanca'nın yenilip yenilemeyeceğini tartışan yazısının Türkçesi."
 ---
 
-###### Bu yazının orijinali ilk olarak Macaristan'da yayınlanan satranç dergisi _Magyar Sakkvilág_'da, çeviride kullanılan metin ise Avusturya'da yayınlanan _Wiener Schachzeitung_'da 1925 yılında basılmıştır.
+###### Bu yazının orijinali ilk olarak Macaristan'da yayınlanan satranç dergisi _Magyar Sakkvilág_{: lang="hu"}'da, çeviride kullanılan metin ise Avusturya'da yayınlanan _Wiener Schachzeitung_{: lang="de"}'da 1925 yılında basılmıştır.
 
 Her savaşçı nihayetinde yaşlandığı, zayıfladığı ve bitap düştüğü için esasen başlıkta yer alan soruyu şu şekilde değiştirmek lazım: "Capablanca şimdiki yüksek formundayken mağlup edilebilir mi?"
 

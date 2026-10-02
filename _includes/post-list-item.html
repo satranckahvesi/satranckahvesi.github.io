@@ -1,0 +1,25 @@
+{%- comment -%}
+  One <li> of a post list.
+    post:        the post
+    meta:        what follows the title: "author_column", "author" or "column"
+    lead_column: true to print the column name before the title
+{%- endcomment -%}
+{%- assign post = include.post -%}
+<li>
+    {%- if include.lead_column %}
+    <span class="post-list-meta"><a href="{% include column-url.html name=post.column %}">{{ post.column }}</a></span>
+    {%- endif %}
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    <span class="post-list-meta">
+        {%- case include.meta %}
+        {%- when "author_column" %}
+        {% include post-author.html post=post %}
+        · <a href="{% include column-url.html name=post.column %}">{{ post.column }}</a>
+        {%- when "column" %}
+        <a href="{% include column-url.html name=post.column %}">{{ post.column }}</a>
+        {%- else %}
+        {% include post-author.html post=post %}
+        {%- endcase %}
+        · {% include turkish-date.html date=post.date %}
+    </span>
+</li>

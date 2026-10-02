@@ -1,0 +1,96 @@
+/* Standalone diagrams (<fen>) and the inline boards in a move list. */
+
+/* ChessPublica centers a diagram only inside its own max-width: 640px query. */
+
+.post-body .fen-container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.post-body .pgn-container .cp-board-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Caption under a bare diagram (an italic-only paragraph). */
+
+.post-body .diagram-caption {
+    margin: -0.4rem auto 1.5rem;
+    max-width: var(--board-size);
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+/* Every inline diagram is exactly as big as <pgn-player>'s board, at any width. */
+
+.post-body .pgn-container .cp-board-wrapper,
+.post-body .pgn-container .cp-board-wrapper--small {
+    --diagram-max-width: min(400px, 94cqw);
+}
+
+/* [Crop "..."] diagrams: the full board is rendered inside a box cut to a half
+   or a quarter of it by aspect-ratio and overflow. Margins are zeroed on both
+   .fen-container and .cp-board, which stack. */
+
+.post-body .board-crop {
+    overflow: hidden;
+    position: relative;
+    margin: 1rem 0;
+    width: 100%;
+    max-width: var(--board-size);
+    aspect-ratio: 2 / 1;
+}
+
+.post-body .board-crop .fen-container,
+.post-body .board-crop .cp-board {
+    margin: 0;
+}
+
+.post-body .board-crop--bottom-half .fen-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.post-body .board-crop--top-left-quarter,
+.post-body .board-crop--top-right-quarter,
+.post-body .board-crop--bottom-left-quarter,
+.post-body .board-crop--bottom-right-quarter {
+    max-width: calc(var(--board-size) / 2);
+    aspect-ratio: 1 / 1;
+}
+
+.post-body .board-crop--top-left-quarter .fen-container,
+.post-body .board-crop--top-right-quarter .fen-container,
+.post-body .board-crop--bottom-left-quarter .fen-container,
+.post-body .board-crop--bottom-right-quarter .fen-container {
+    width: 200%;
+}
+
+.post-body .board-crop--top-right-quarter .fen-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.post-body .board-crop--bottom-left-quarter .fen-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.post-body .board-crop--bottom-right-quarter .fen-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+/* A study already shows the live board; inline diagrams in its move list
+   would only repeat it. */
+
+.post-body pgn-study .pgn-container .cp-board-wrapper,
+.post-body pgn-study .pgn-container .comment-diagram {
+    display: none;
+}

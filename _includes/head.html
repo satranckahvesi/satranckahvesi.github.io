@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+{%- comment %} Applies the saved (or OS) theme before first paint. Key must match _js/theme-toggle.js. {% endcomment %}
+<script>
+(function () {
+    var theme = null;
+    try { theme = localStorage.getItem('satranckahvesi-theme'); } catch (e) {}
+    if (theme !== 'dark' && theme !== 'light') {
+        theme = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    document.documentElement.setAttribute('data-theme', theme);
+})();
+</script>
+<title>{% if page.title and page.title != site.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+{% seo title=false %}
+{% feed_meta %}
+<link rel="icon" type="image/svg+xml" href="{{ '/assets/img/favicon.svg' | relative_url }}">
+{%- if page.layout == "post" %}
+<link rel="preconnect" href="https://chesspublica.github.io">
+<link rel="stylesheet" href="https://chesspublica.github.io/dist/ChessPublica.all.min.css">
+{%- endif %}
+<link rel="preload" href="{{ '/assets/fonts/pt-serif-400-latin.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{ '/assets/fonts/fonts.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v={{ site.time | date: '%s' }}">

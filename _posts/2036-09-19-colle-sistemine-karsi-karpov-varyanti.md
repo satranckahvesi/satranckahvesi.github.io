@@ -3,6 +3,7 @@ layout: post
 author: "Özgün Yalçın"
 date: 2036-09-19
 column: "Analizli oyunlar"
+description: "Türkiye 1. Lig'de oynanan bir oyunda Colle Sistemi'ne karşı Karpov varyantı."
 title: "Colle Sistemi'ne karşı Karpov varyantı"
 ---
 

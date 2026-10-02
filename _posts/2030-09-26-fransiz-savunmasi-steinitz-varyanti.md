@@ -4,6 +4,7 @@ date: 2030-09-26
 title: "Fransız Savunması Steinitz Varyantı"
 author: "FM Nazmi Can Doğan"
 column: "Satranç açılışları"
+description: "Fransız Savunması'nın Steinitz Varyantı."
 ---
 
 Fransız Savunması; kimine göre güvenli bir sığınak, kimisine göre

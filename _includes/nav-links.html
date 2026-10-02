@@ -1,0 +1,6 @@
+{%- if include.with_home %}
+<a class="no-underline" href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Ana sayfa</a>
+{%- endif %}
+{%- for item in site.data.navigation %}
+<a class="no-underline" href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a>
+{%- endfor %}

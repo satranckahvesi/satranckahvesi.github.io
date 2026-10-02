@@ -1,0 +1,179 @@
+/* Page frame: header, navigation, masthead, content sections, footer. */
+
+/* Full-bleed header (breaks out of body's side padding, then re-adds it). */
+
+.site-header {
+    width: 100vw;
+    margin: 0 calc(50% - 50vw);
+    padding: 1.5rem 1rem 0;
+    position: relative;
+}
+
+/* Nav: a right-aligned row above the title below 52em (reading order mirrored
+   with row-reverse so the most wanted link sits nearest the thumb), a column
+   pinned to the header's top-right corner from 52em up. */
+
+.site-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.85rem;
+    max-width: 42rem;
+    margin: 0 auto 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+}
+
+@media (min-width: 52em) {
+    .site-nav {
+        position: absolute;
+        top: 1.5rem;
+        right: 1rem;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.5rem;
+        max-width: none;
+        margin: 0;
+        font-size: 1.1rem;
+    }
+}
+
+.theme-toggle {
+    display: inline-flex;
+    font-style: normal;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: inherit;
+    cursor: pointer;
+}
+
+.theme-toggle svg {
+    width: 1.1em;
+    height: 1.1em;
+}
+
+.theme-toggle-icon-light { display: none; }
+
+:root[data-theme="dark"] .theme-toggle-icon-dark { display: none; }
+
+:root[data-theme="dark"] .theme-toggle-icon-light { display: inline; }
+
+/* The title is the brand mark, not prose: no hover underline. */
+
+.masthead {
+    max-width: 42rem;
+    margin: 7rem auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.masthead a,
+.masthead a:hover {
+    border-bottom: none;
+}
+
+.masthead-title {
+    margin: 0;
+    font-weight: bold;
+    font-style: normal;
+    line-height: 1.02;
+    font-size: clamp(2.5rem, 1.4rem + 6vw, 5rem);
+    color: var(--ink);
+}
+
+.masthead-title a {
+    display: block;
+    color: inherit;
+}
+
+.masthead-tagline {
+    margin: 0;
+    font-size: 1.25rem;
+    line-height: 1.3;
+    color: var(--ink);
+}
+
+/* A short tick under the tagline; full column width on narrow screens. */
+
+.masthead-rule {
+    width: 8.3333%;
+    margin-top: 1rem;
+    border-top: 2px solid var(--ink);
+}
+
+@media (max-width: 52em) {
+    .masthead-rule {
+        width: 100%;
+    }
+}
+
+.section {
+    max-width: 42rem;
+    margin: 3.5rem auto 0;
+    padding: 0;
+    text-align: left;
+}
+
+.section h2 {
+    font-family: var(--font-serif);
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 1.2;
+    color: var(--ink);
+    margin: 0 0 1.5rem;
+}
+
+.section ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+.site-footer {
+    max-width: 42rem;
+    margin: 4.5rem auto 0;
+    padding: 1.5rem 0 2.5rem;
+    border-top: 2px solid var(--ink);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--ink);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.site-footer p { margin: 0; }
+
+.footer-nav {
+    font-family: var(--font-mono);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1.25rem;
+    font-size: 0.9rem;
+}
+
+/* Tightened so all five links fit one row on a phone. */
+
+@media (max-width: 26em) {
+    .footer-nav {
+        gap: 0.35rem 0.6rem;
+        font-size: 0.8rem;
+    }
+}
+
+.section-divider {
+    max-width: 42rem;
+    margin: 3rem auto 0;
+    padding: 0;
+    border-top: 2px solid var(--ink);
+}

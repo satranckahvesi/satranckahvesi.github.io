@@ -4,6 +4,7 @@ date: 2026-09-20
 title: "AVRO 1938: Tarihin en güçlü turnuvası"
 author: "FM Nazmi Can Doğan"
 column: "Efsane turnuvalar"
+description: "Dünyanın en iyi sekiz oyuncusunu bir araya getiren AVRO 1938 turnuvası."
 ---
 
 ###### Bu yazı ilk olarak 2016 yılında _Satrançsever_ dergisinin 2. sayısında yayınlanmıştır.
@@ -236,6 +237,6 @@ Botvinnik'in o yıllarda dünya satrancındaki yükselişi Alekhine ve Capablanc
 
 Faydalanılan kaynaklar:
 
-- Mikhail Botvinnik, _One Hundred Selected Games_
-- Garry Kasparov, _My Great Predecessors_ (Cilt I ve II)
+- Mikhail Botvinnik, _One Hundred Selected Games_{: lang="en"}
+- Garry Kasparov, _My Great Predecessors_{: lang="en"} (Cilt I ve II)
 - Chesshistory.com

@@ -4,6 +4,7 @@ date: 2026-09-22
 title: "Zürih 1953 Adaylar Turnuvası'ndan unutulmaz hamleler"
 author: "FM Nazmi Can Doğan"
 column: "Efsane turnuvalar"
+description: "1953 Zürih Adaylar Turnuvası'ndan yazarın seçtiği unutulmaz hamleler."
 ---
 
 ###### Bu yazı ilk olarak 2016 yılında **Satrançsever** dergisinin 1. sayısında yayınlanmıştır.
