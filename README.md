@@ -1,6 +1,6 @@
 # Satranç Kahvesi
 
-Jekyll site ([satranckahvesi.github.io](https://satranckahvesi.github.io)), built by GitHub Pages.
+Jekyll site ([satranckahvesi.com](https://satranckahvesi.com)), built by GitHub Pages.
 
 ## Writing a post
 
