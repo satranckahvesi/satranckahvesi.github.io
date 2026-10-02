@@ -84,6 +84,42 @@
         return null; // no mainline [P] marker found
     }
 
+    // ChessBase writes a game's whole engine evaluation curve into one
+    // comment, {[%evp <first ply>,<last ply>,<cp>,<cp>,...]}: one
+    // centipawn value (from White's side) per ply from the starting
+    // position on, 32767 where that ply wasn't evaluated. ChessPublica's
+    // own eval bar (shown by <pgn-player> and <pgn-study> next to the
+    // board) is driven by [%eval <pawns>] markers instead — one per ply,
+    // in order — and its own parser reads an %evp list as a single
+    // number, so every position would come out as 0.00. Rewritten here
+    // into the per-ply [%eval] form before ChessPublica sees it; it
+    // strips every [%...] command from the comment text it displays, so
+    // nothing visible is left behind.
+    //
+    // The bar has no "no evaluation" state of its own, so an unevaluated
+    // ply is written as EVAL_UNKNOWN (8, ChessPublica's own clamp) while
+    // every real value is capped just under it at 7.5: the two fill
+    // heights then differ, which eval-bar-hide.js uses to hide the bar on
+    // exactly those positions. The list is padded with unknown markers
+    // up to EVAL_MARKERS so the plies past its last one — including the
+    // final position, where ChessPublica would otherwise fall back to a
+    // fill derived from the game's result — read as unevaluated too.
+    var EVAL_UNKNOWN = 8;
+    var EVAL_MARKERS = 600;
+    var evpRe = /\[%evp\s+(-?\d+)\s*,\s*-?\d+((?:\s*,\s*-?\d+)+)\s*\]/g;
+    function expandEvp(moveText) {
+        return moveText.replace(evpRe, function (all, firstPly, list) {
+            var values = list.split(',').slice(1).map(Number);
+            var out = [];
+            for (var i = 0; i < Number(firstPly); i++) out.push(EVAL_UNKNOWN);
+            values.forEach(function (cp) {
+                out.push(cp === 32767 ? EVAL_UNKNOWN : Math.max(-7.5, Math.min(7.5, cp / 100)));
+            });
+            while (out.length < EVAL_MARKERS) out.push(EVAL_UNKNOWN);
+            return out.map(function (v) { return '[%eval ' + v.toFixed(2) + ']'; }).join(' ');
+        });
+    }
+
     // For a <pgn> game (not a bare <fen> diagram), the reader can switch
     // between the three ways ChessPublica can show a game. The library only
     // scans the DOM once on load, so switching can't re-render an element
@@ -325,6 +361,13 @@
             moveText = moveText.replace(/\[P\s*\d*\]/g, '');
         }
 
+        var hasEvpEvals = false;
+        if (moveText !== null && tagName !== 'pgn') {
+            var expanded = expandEvp(moveText);
+            hasEvpEvals = expanded !== moveText;
+            moveText = expanded;
+        }
+
         var el = document.createElement(tagName);
         el.textContent = moveText !== null ? (headerText + '\n\n' + moveText) : headerText;
         // pgn-study-enhance.js's own centering (see pgnCenterPending above)
@@ -332,6 +375,9 @@
         // ready — attributes set before a custom element upgrades survive
         // the upgrade, so this is still readable from there later.
         if (storageKey) el.setAttribute('data-pgn-block-key', storageKey);
+        // Tells eval-bar-hide.js that this game's [%eval 8] markers mean
+        // "not evaluated" (see expandEvp) rather than a real +8 or more.
+        if (hasEvpEvals) el.setAttribute('data-eval-gaps', '');
 
         // Only a bare diagram is cropped, never a game: <pgn>/<pgn-player>/
         // <pgn-study> stay interactive (move list, replay), and chopping
