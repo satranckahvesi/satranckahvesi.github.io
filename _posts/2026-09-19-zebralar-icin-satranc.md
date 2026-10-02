@@ -12,7 +12,7 @@ Satranca başladığımızda her şeyin iyi gittiği, oyundan zevk alınan güze
 ardından bazı engellerle karşılaşırız. O engeller, aslında yeterince iyi olmadığımızı fark
 ettiğimiz anlar ya da daha doğru bir deyişle satrancın daha iyi oynanabileceğine bizi ikna
 eden rakiplerdir çoğunlukla. İlk kitabımızı ve bizi yenen rakibimizin tavsiyelerini alıp oyunumuz üzerine çalışırız.
-Taktikler, klasikler, açılışlar, oyunortası ve oyunsonu. İşler tekrar yoluna girer, ta ki ayağımız
+Taktikler, klasikler, açılışlar, oyunortası ve oyunsonu... İşler tekrar yoluna girer, ta ki ayağımız
 başka bir taşa takılana kadar. Bu taş çoğunlukla sağlam bir kaya olur; ne yapsak etsek de
 belli bir seviyenin ötesine geçmenin imkânsız olduğunu hissederiz. 
 
