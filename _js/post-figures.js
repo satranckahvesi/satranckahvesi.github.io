@@ -18,6 +18,10 @@ export function wrapFigures(body) {
       caption = { node: host.nextElementSibling };
     }
 
+    // Lets CSS size the image before it loads (see .post-figure img in post.css).
+    img.style.setProperty('--w', img.getAttribute('width'));
+    img.style.setProperty('--h', img.getAttribute('height'));
+
     const figure = document.createElement('figure');
     figure.className = 'post-figure';
     host.before(figure);

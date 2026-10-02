@@ -197,7 +197,7 @@ Bu gecikmenin bedeli ağır olacak. Şimdi beyaz şah, e4 karesi ve diğer açı
 
 Timman'ın Macar Büyükusta **Lajos Portisch** ile olan partileri her zaman incelemeyi hak eder. Öyle ki, 1994 yılında yayınlanan ve kariyerinin 1983-1993 arasında oynadığı 80 oyuna odaklanan _"**Chess the Adventurous Way**"_{: lang="en"} adlı eserinde aralarında oynadıkları 3 oyuna yer vermiştir. Portisch turnuvaya 6 oyunda 5,5 puanla inanılmaz bir başlangıç yapmış, fakat 7. turda Timman'ı da yenen Larsen'e kaybetmişti.
 
-![Chess the Adventurous Way kapağı]({{ '/assets/img/timman/book-cover.jpg' | relative_url }} "Timman'ın 1983-1993 arasında oynadığı 80 oyuna odaklanan _Chess the Adventurous Way_ kitabının kapağı.")
+![Chess the Adventurous Way kapağı]({{ '/assets/img/timman/book-cover.jpg' | relative_url }} "Timman'ın 1983-1993 arasında oynadığı 80 oyuna odaklanan _Chess the Adventurous Way_ kitabının kapağı."){: width="329" height="499" }
 
 Timman, turnuva hakkında kapsamlı yazılar yayınlayan turnuvanın sponsoru Clarin'e şöyle demişti: *"Beyaz taşlarla oynayan Portisch'in her zaman zaferi hedefleyeceğini biliyordum. Dahası, sıralamada yarım puan geride olduğu için beni yakalamasının tek yolu kazanmaktı. Bu yüzden bu oyun önemliydi ve dikkatlice hazırlandım."*
 

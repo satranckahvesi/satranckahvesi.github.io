@@ -21,7 +21,7 @@ Siyah taşlarla istisnasız bir şekilde sağlam İspanyol ve Vezir Gambiti aç�
 
 Eğer fazla analiz edilmemiş herhangi bir varyantta (örneğin Sicilya veya Hollanda Savunması'na karşı) Capablanca'nın takip edebileceği parlak bir model yoksa oyun anlayışı belli bir yüzeysellik gösteriyor, gerçi böyle durumlarda da harika taktik yeteneği daha parlak bir şekilde ışıldıyor!
 
-![Savielly Grigorievitch Tartakower]({{ '/assets/img/tarta/Ksawery_Tartakower.jpg' | relative_url }} "Dr. Savielly Tartakower (1887–1956)")
+![Savielly Grigorievitch Tartakower]({{ '/assets/img/tarta/Ksawery_Tartakower.jpg' | relative_url }} "Dr. Savielly Tartakower (1887–1956)"){: width="204" height="290" }
 
 Capablanca'yı mağlup edebilmek için parlak bir hayal gücü ve yeterli bir teknik eğitim gösteren gözüpek bir yeni satranççı çıkarsa (belki Alekhine, belki de Réti?) yüce bir satranç misyonu, Kübalı Capablanca tarafından tamamına erdirilmiş olarak addedilebilir: Savaşçı Steinitz ve filozof Lasker'den sonra bir "dünya insanı" geldi, büyüleyici kişiliği ve zarif oyun tarzıyla satranç sanatının popülerleşmesine muazzam katkılarda bulundu.
 

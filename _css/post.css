@@ -162,6 +162,18 @@
     box-shadow: 0 1px 3px rgba(43, 40, 38, 0.12);
 }
 
+/* An image with width/height attributes gets its final size before it loads
+   (post-figures.js copies them into --w / --h), so lazy images do not shift
+   the page. Content box, so the ratio excludes the 8px border: at most its
+   natural width, at most the column, at most 464px tall (480 with border). */
+.post-figure img[width][height] {
+    box-sizing: content-box;
+    max-width: none;
+    max-height: none;
+    width: min(calc(100% - 16px), calc(var(--w) * 1px), calc(464px * var(--w) / var(--h)));
+    aspect-ratio: var(--w) / var(--h);
+}
+
 .post-figure figcaption {
     margin-top: 0.7rem;
     font-size: 0.85rem;
