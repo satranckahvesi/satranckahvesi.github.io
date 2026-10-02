@@ -3,6 +3,7 @@ description: Kahve eşliğinde satranç sohbetleri; açılış teorisinden oyun 
 lang: tr
 baseurl: ""
 url: "https://satranckahvesi.com"
+google_analytics: G-EQR45VG5M7
 
 markdown: kramdown
 permalink: /posts/:title/
