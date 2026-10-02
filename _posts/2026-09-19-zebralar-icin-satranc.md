@@ -82,7 +82,7 @@ Peki bu nasıl yapılabilir? Kitap düşünce kalıplarını yıkma fikriyle "fa
 düşünmenin" izini sürüyor. Daha doğrusu Rowson ustalığa giden yolunda neler öğrendiğini
 ve neleri "unutması" (_unlearning_) gerektiğini anlatıyor. İlerleyen bölümler boyunca döne
 dolaşa aynı şeyi hatırlatıyor okura: **"Gelişme, konfor alanınızın sınırında başlar."**
-("Improvement begins at the edge of your comfort zone") Yani sınırlarınızı zorlamadığınız
+(_"Improvement begins at the edge of your comfort zone"_) Yani sınırlarınızı zorlamadığınız
 sürece gelişme yok. 
 
 Yalnız yanlış anlaşılmasın, Rowson'ın her derde deva olacak --ve bulmayı
