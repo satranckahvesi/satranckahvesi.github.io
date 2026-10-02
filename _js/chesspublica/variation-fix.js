@@ -9,6 +9,10 @@ import { engineOf, variationOf } from './engine.js';
 
 // Top-level variation blocks last seen on the mainline, per player.
 const savedBlocks = new WeakMap();
+// The mainline comment those blocks hang off, as a copy: ChessPublica drops it
+// from the box inside a nested variation and fills it with variation text
+// inside the first level.
+const savedLines = new WeakMap();
 
 const isBlock = (el) => el.classList?.contains('variation-block');
 
@@ -39,6 +43,8 @@ function restore(player) {
     box.classList.remove('cp-in-variation');
     const blocks = toArray(box.children).filter(isBlock);
     savedBlocks.set(player, blocks.length ? blocks : null);
+    const line = box.querySelector(':scope > .comment-line');
+    savedLines.set(player, line ? line.cloneNode(true) : null);
     return;
   }
 
@@ -55,7 +61,20 @@ function restore(player) {
   } else if (content && !box.contains(content)) {
     box.append(content);
   }
+  restoreLine(player, box);
   ensurePlayButton(box);
+}
+
+// Keeps the mainline comment ahead of the variations it introduces.
+function restoreLine(player, box) {
+  const line = savedLines.get(player);
+  if (!line) return;
+  const present = toArray(box.children).filter((el) => el.classList.contains('comment-line'));
+  if (present.length === 1 && present[0].dataset.cpSaved) return;
+  present.forEach((el) => el.remove());
+  const copy = line.cloneNode(true);
+  copy.dataset.cpSaved = '1';
+  box.prepend(copy);
 }
 
 // Capture phase: runs ahead of ChessPublica's own handlers.
