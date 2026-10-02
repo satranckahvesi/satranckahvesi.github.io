@@ -94,21 +94,29 @@
     // number, so every position would come out as 0.00. Rewritten here
     // into the per-ply [%eval] form before ChessPublica sees it; it
     // strips every [%...] command from the comment text it displays, so
-    // nothing visible is left behind. An unevaluated ply repeats the
-    // last known value (0 before the first one) so the bar holds still
-    // instead of jumping to the middle.
+    // nothing visible is left behind.
+    //
+    // The bar has no "no evaluation" state of its own, so an unevaluated
+    // ply is written as EVAL_UNKNOWN (8, ChessPublica's own clamp) while
+    // every real value is capped just under it at 7.5: the two fill
+    // heights then differ, which eval-bar-hide.js uses to hide the bar on
+    // exactly those positions. The list is padded with unknown markers
+    // up to EVAL_MARKERS so the plies past its last one — including the
+    // final position, where ChessPublica would otherwise fall back to a
+    // fill derived from the game's result — read as unevaluated too.
+    var EVAL_UNKNOWN = 8;
+    var EVAL_MARKERS = 600;
     var evpRe = /\[%evp\s+(-?\d+)\s*,\s*-?\d+((?:\s*,\s*-?\d+)+)\s*\]/g;
     function expandEvp(moveText) {
         return moveText.replace(evpRe, function (all, firstPly, list) {
             var values = list.split(',').slice(1).map(Number);
             var out = [];
-            var last = 0;
-            for (var i = 0; i < Number(firstPly); i++) out.push('[%eval ' + last.toFixed(2) + ']');
+            for (var i = 0; i < Number(firstPly); i++) out.push(EVAL_UNKNOWN);
             values.forEach(function (cp) {
-                if (cp !== 32767) last = cp / 100;
-                out.push('[%eval ' + last.toFixed(2) + ']');
+                out.push(cp === 32767 ? EVAL_UNKNOWN : Math.max(-7.5, Math.min(7.5, cp / 100)));
             });
-            return out.join(' ');
+            while (out.length < EVAL_MARKERS) out.push(EVAL_UNKNOWN);
+            return out.map(function (v) { return '[%eval ' + v.toFixed(2) + ']'; }).join(' ');
         });
     }
 
@@ -353,7 +361,12 @@
             moveText = moveText.replace(/\[P\s*\d*\]/g, '');
         }
 
-        if (moveText !== null && tagName !== 'pgn') moveText = expandEvp(moveText);
+        var hasEvpEvals = false;
+        if (moveText !== null && tagName !== 'pgn') {
+            var expanded = expandEvp(moveText);
+            hasEvpEvals = expanded !== moveText;
+            moveText = expanded;
+        }
 
         var el = document.createElement(tagName);
         el.textContent = moveText !== null ? (headerText + '\n\n' + moveText) : headerText;
@@ -362,6 +375,9 @@
         // ready — attributes set before a custom element upgrades survive
         // the upgrade, so this is still readable from there later.
         if (storageKey) el.setAttribute('data-pgn-block-key', storageKey);
+        // Tells eval-bar-hide.js that this game's [%eval 8] markers mean
+        // "not evaluated" (see expandEvp) rather than a real +8 or more.
+        if (hasEvpEvals) el.setAttribute('data-eval-gaps', '');
 
         // Only a bare diagram is cropped, never a game: <pgn>/<pgn-player>/
         // <pgn-study> stay interactive (move list, replay), and chopping

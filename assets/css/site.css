@@ -680,6 +680,12 @@ a:hover { border-bottom-style: dotted; }
     border: 1px solid var(--muted);
 }
 
+/* Position without an engine evaluation (see eval-bar-hide.js): the bar is
+   hidden, not removed, so the board next to it stays where it is. */
+.post-body .eval-bar.eval-unknown {
+    visibility: hidden;
+}
+
 /* <fen> (a standalone diagram, no movetext) is replaced wholesale by
    ChessPublica's own init with a plain .fen-container div, sized
    width:100%;max-width:var(--board-size) — and ChessPublica's own
