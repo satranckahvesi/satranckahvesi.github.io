@@ -92,7 +92,7 @@ siyah Rc2 oynayabiliyor!} 23. Qxh8 Rc2 24. Rc1 $2 {Burada Kasparov 24.d5!! hamle
 [PlyCount "9"]
 [EventDate "1953.??.??"]
 
-{[P]} {Zayıflamış şah kanadı ve merkezdeki alan üstünlüğü beyaza büyük avantaj sağlıyor. Smyslov kazanca giden doğru yolu bulmayı başarıyor.} 20. Ne5 $1 Qe7 (20... fxe5 21. Qg5+ Kh8 22. Qf6+ Kg8 23. Rd3 Rfe8 24. Rh3 {ve Qg5-Rxh7 kazanır}) 21. Ng4 $1 Rg8 22. Nh6 $1 {Nf5 tehdidi sayesinde kalite kazanır} Qc7 23. Nxg8 Rxg8 24. b3 $18 1-0
+{[P]} {Zayıflamış şah kanadı ve merkezdeki alan üstünlüğü beyaza büyük avantaj sağlıyor. Smyslov kazanca giden doğru yolu bulmayı başarıyor.} 20. Ne5 $1 Qe7 (20... fxe5 21. Qg5+ Kh8 22. Qf6+ Kg8 23. Rd3 Rfe8 24. Rh3 {ve Qg5-Rxh7 kazanır}) {[P]} 21. Ng4 $1 Rg8 22. Nh6 $1 {Nf5 tehdidi sayesinde kalite kazanır} Qc7 23. Nxg8 Rxg8 24. b3 $18 1-0
 
 [Event "Zürih"]
 [Site "?"]
