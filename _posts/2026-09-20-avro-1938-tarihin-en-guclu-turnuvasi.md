@@ -4,7 +4,6 @@ date: 2026-09-20
 title: "AVRO 1938: Tarihin en güçlü turnuvası"
 author: "FM Nazmi Can Doğan"
 column: "Efsane turnuvalar"
-description: "Dünyanın en iyi sekiz oyuncusunu bir araya getiren AVRO 1938 turnuvası."
 ---
 
 ###### Bu yazı ilk olarak 2016 yılında _Satrançsever_ dergisinin 2. sayısında yayınlanmıştır.

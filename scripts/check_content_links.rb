@@ -28,7 +28,7 @@ require 'set'
 require 'yaml'
 
 ROOT = File.expand_path('..', __dir__)
-REQUIRED_KEYS = %w[layout title date author column description].freeze
+REQUIRED_KEYS = %w[layout title date author column].freeze
 FRONT_MATTER = /\A---[ \t]*\r?\n(.*?\r?\n?)^---[ \t]*$/m.freeze
 FILENAME = /\A(\d{4}-\d{2}-\d{2})-(.+)\.md\z/.freeze
 

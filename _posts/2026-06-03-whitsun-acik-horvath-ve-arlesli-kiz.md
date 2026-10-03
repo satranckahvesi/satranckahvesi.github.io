@@ -4,7 +4,6 @@ date: 2026-06-03
 title: "Whitsun Açık, Horváth ve Arlesli Kız"
 author: "FM Tarık Selbes"
 column: "Turnuva günlükleri"
-description: "Münih Satranç Festivali'ndeki Whitsun Açık'a katılan bir oyuncunun turnuva günlüğü."
 ---
 
 Paskalya'nın 50 gün sonrasında Hristiyanlar için önemli bir gün daha vardır. Almanların _Pfingsten_{: lang="de"}, İngilizlerin _White Sunday_{: lang="en"} veya kısaca _Whitsun_{: lang="en"} dedikleri, _Pentecost_{: lang="en"} (Grekçe: ellinci gün) olarak da bilinen bu günde, Kutsal Ruh'un havarilerin üzerine indiğine inanılır. Her ne kadar inançlı biri olmasam da Paskalya zamanı oynanan Grenke Açık'ı Elo kazancıyla noktalamamın ardından kilise takviminin bir başka önemli gününde yine Almanya'da bir turnuva gördüğümde kayıt yaptırmamı herhalde anlayışla karşılarsınız. Evinin kapısına at nalı asan ünlü fizikçi Niels Bohr gibi, satranççıların da bazı batıl itikatlara sahip olması doğal kuşkusuz. Aslında oyunların en rasyonellerinden birini oynayanların irrasyonel sapmaları hakkında Proust'u kıskandıracak kalınlıkta bir kitap bile yazılır. Ama bu, başka bir yazının konusu olsun, biz Nazizmin doğduğu topraklara, Münih'e geri dönelim.

@@ -4,7 +4,6 @@ title: "Aronian'dan Değişmeli Caro-Kann dersi"
 date: 2022-02-26
 author: "FM Nazmi Can Doğan"
 column: "Analizli oyunlar"
-description: "2022 FIDE Grand Prix'de Aronian–Keymer oyunu üzerinden Değişmeli Caro-Kann'ın açılış hazırlığı ve oyun anlayışı."
 redirect_from: /posts/aronian-dan-degismeli-caro-kann-dersi/
 ---
 
