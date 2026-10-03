@@ -4,7 +4,6 @@ date: 2026-09-19
 title: "Zebralar için satranç"
 author: "FM Nazmi Can Doğan"
 column: "Kitap incelemeleri"
-description: "Satrançsever dergisinin 3. sayısında yayımlanan, Zebralar için satranç kitabının incelemesi."
 ---
 
 ###### Bu yazı ilk olarak 2016 yılında **Satrançsever** dergisinin 3. sayısında yayınlanmıştır.

@@ -4,7 +4,6 @@ date: 2026-09-20
 title: "Önce hamle yap sonra düşün"
 author: "FM Nazmi Can Doğan"
 column: "Kitap incelemeleri"
-description: "Oyuncuların tahta başında nasıl karar verdiğini sezgi ve hesap arasında ele alan bir kitap incelemesi."
 ---
 
 ###### Bu yazı ilk olarak 2016 yılında **Satrançsever** dergisinin 4. sayısında yayınlanmıştır.

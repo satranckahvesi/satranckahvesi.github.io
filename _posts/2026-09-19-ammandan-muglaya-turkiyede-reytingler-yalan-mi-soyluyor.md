@@ -2,7 +2,6 @@
 title: "Amman'dan Muğla'ya: Türkiye'de reytingler yalan mı söylüyor?"
 author: "GM Ahmad Al-Khatib"
 column: "Analizli oyunlar"
-description: "Muğla'da kendinden beş yüz puan düşük reytingli bir rakiple yarım puanla kalan bir parti ve Türkiye'deki reytingler üzerine yorumlar."
 layout: post
 date: 2026-09-19
 ---

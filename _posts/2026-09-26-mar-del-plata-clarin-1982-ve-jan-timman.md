@@ -4,7 +4,6 @@ date: 2026-09-26
 title: "Mar del Plata (Clarin) 1982 ve Jan Timman"
 author: "FM Nazmi Can Doğan"
 column: "Efsane turnuvalar"
-description: "Jan Timman'ın 1982 Mar del Plata (Clarin) turnuvasındaki partileri ve kariyerinden öğretici konumlar."
 redirect_from: /posts/clarin-1982-ve-jan-timman/
 ---
 

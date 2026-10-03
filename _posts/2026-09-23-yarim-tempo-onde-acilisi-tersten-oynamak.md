@@ -4,7 +4,6 @@ title: "Yarım tempo önde: Açılışı tersten oynamak"
 author: "Özgün Yalçın"
 date: 2026-09-23
 column: "Analizli oyunlar"
-description: "Siyahla sık tercih edilen savunmaların beyazla, yani açılış tersten oynandığında ortaya çıkan konumlar."
 ---
 
 Bu yazımda siyahla sıklıkla tercih edilen savunmaların beyazla oynanması durumunda neler olabileceğini inceleyeceğim.
