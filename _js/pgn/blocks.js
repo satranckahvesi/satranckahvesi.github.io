@@ -109,15 +109,13 @@ function cropWrapper(el, crop) {
   return wrap;
 }
 
-// Two switcher blocks in a row with nothing between them get a short rule.
-function separateAdjacentBlocks(switcherBlocks) {
+// Every game is followed by a short rule, whatever comes next.
+function separateBlocks(switcherBlocks) {
   for (const wrap of switcherBlocks) {
-    const prev = wrap.previousElementSibling;
-    if (!prev || !prev.classList.contains('pgn-switcher-block')) continue;
     const divider = document.createElement('div');
     divider.className = 'pgn-divider';
     divider.setAttribute('aria-hidden', 'true');
-    wrap.before(divider);
+    wrap.after(divider);
   }
 }
 
@@ -180,6 +178,6 @@ export function buildPgnBlocks(body, pendingCenterKey) {
     }
   }
 
-  separateAdjacentBlocks(switcherBlocks);
+  separateBlocks(switcherBlocks);
   return { pendingBlock };
 }
