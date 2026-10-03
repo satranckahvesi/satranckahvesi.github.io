@@ -4,33 +4,17 @@ date: 2026-09-20
 title: "AVRO 1938: Tarihin en güçlü turnuvası"
 author: "FM Nazmi Can Doğan"
 column: "Efsane turnuvalar"
-description: "Dünyanın en iyi sekiz oyuncusunu bir araya getiren AVRO 1938 turnuvası."
 ---
 
 ###### Bu yazı ilk olarak 2016 yılında _Satrançsever_ dergisinin 2. sayısında yayınlanmıştır.
 
-Bu yazıda gelmiş geçmiş en güçlü* turnuvalardan kabul edilen **AVRO 1938** satranç turnuvasını ele alacağız. Oyuncuların gücü
-bakımından ender sayılabilecek turnuva, dünyanın en iyi sekiz oyuncusunu bir araya
-getiriyordu: üç dünya şampiyonu **Alekhine**, **Capablanca**, **Euwe**, geleceğin şampiyonu
-**Botvinnik**, "yeni Morphy" **Keres**, **Fine**, **Flohr** ve **Reshevsky**. Her oyuncu birbiriyle ikişer oyun
-oynayacaktı ve turnuva Hollanda'nın değişik kentlerinde sürecekti.
+Bu yazıda gelmiş geçmiş en güçlü* turnuvalardan kabul edilen **AVRO 1938** satranç turnuvasını ele alacağız. Oyuncuların gücü bakımından ender sayılabilecek turnuva, dünyanın en iyi sekiz oyuncusunu bir araya getiriyordu: üç dünya şampiyonu **Alekhine**, **Capablanca**, **Euwe**, geleceğin şampiyonu **Botvinnik**, "yeni Morphy" **Keres**, **Fine**, **Flohr** ve **Reshevsky**. Her oyuncu birbiriyle ikişer oyun oynayacaktı ve turnuva Hollanda'nın değişik kentlerinde sürecekti.
 
-O zamanlar 48 yaşındaki Alekhine ve ellisinde olan Capablanca için zorlayıcı olan bu koşullarda gençler ilk sıraları
-elde ediyordu. Turnuvayı kayıpsız tamamlayan Keres ve turnuvaya 5 galibiyet ve bir
-beraberlik ile başlayan Fine turnuvayı 8,5/14 ile birinci tamamlayacak, ancak eşitlik bozmada
-aralarındaki maçta 1,5-0,5 sonucuyla Fine karşısında galip geldiği için Keres şampiyonluğu
-kazanacaktı.
+O zamanlar 48 yaşındaki Alekhine ve ellisinde olan Capablanca için zorlayıcı olan bu koşullarda gençler ilk sıraları elde ediyordu. Turnuvayı kayıpsız tamamlayan Keres ve turnuvaya 5 galibiyet ve bir beraberlik ile başlayan Fine turnuvayı 8,5/14 ile birinci tamamlayacak, ancak eşitlik bozmada aralarındaki maçta 1,5-0,5 sonucuyla Fine karşısında galip geldiği için Keres şampiyonluğu kazanacaktı.
 
-Gelecekteki dünya şampiyonu Botvinnik 7,5 puanla onları takip ediyor ve o
-sıralar dünya şampiyonu unvanını elinde bulunduran Alekhine ise 7 puanla ancak
-dördüncülüğü paylaşıyordu. Capablanca ise 6 puanla eski formunu ve sağlığını arıyordu,
-zira turnuva sırasında sağlık problemleri yaşıyordu. Keres 22, Fine ise 24 yaşındaydı ve
-gençler yeni bir neslin satranç dünyasını sarsacağının sinyallerini veriyorlardı.
+Gelecekteki dünya şampiyonu Botvinnik 7,5 puanla onları takip ediyor ve o sıralar dünya şampiyonu unvanını elinde bulunduran Alekhine ise 7 puanla ancak dördüncülüğü paylaşıyordu. Capablanca ise 6 puanla eski formunu ve sağlığını arıyordu, zira turnuva sırasında sağlık problemleri yaşıyordu. Keres 22, Fine ise 24 yaşındaydı ve gençler yeni bir neslin satranç dünyasını sarsacağının sinyallerini veriyorlardı.
 
-Turnuva salonunda, turnuvayı kazanan oyuncunun dünya şampiyonu ile oynama hakkı elde etmesi
-gerektiği dedikoduları dolaşıyor olsa da bu asla resmiyete kavuşmadı. Alekhine 1946 yılında
-hayata gözlerini yumduğunda hâlâ dünya şampiyonu unvanını taşıyordu. İlginç bir şekilde
-hakkında pek az yazılı kaynağa sahip olduğumuz turnuvanın unutulmaz hamlelerine geçelim.
+Turnuva salonunda, turnuvayı kazanan oyuncunun dünya şampiyonu ile oynama hakkı elde etmesi gerektiği dedikoduları dolaşıyor olsa da bu asla resmiyete kavuşmadı. Alekhine 1946 yılında hayata gözlerini yumduğunda hâlâ dünya şampiyonu unvanını taşıyordu. İlginç bir şekilde hakkında pek az yazılı kaynağa sahip olduğumuz turnuvanın unutulmaz hamlelerine geçelim.
 
 İlk oyun satranç ders kitaplarında sık karşılaşılan bir oyun. Oyunsonu tekniği bakımından oldukça öğreticidir.
 
