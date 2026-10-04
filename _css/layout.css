@@ -9,9 +9,10 @@
     position: relative;
 }
 
-/* Nav: a right-aligned row above the title below 52em (reading order mirrored
-   with row-reverse so the most wanted link sits nearest the thumb), a column
-   pinned to the header's top-right corner from 52em up. */
+/* Nav: below 52em a right-aligned row of icon buttons above the title, with the
+   links in a column folded behind the menu button (they stay visible when
+   JavaScript is off); from 52em up a column of links pinned to the header's
+   top-right corner. */
 
 .site-nav {
     display: flex;
@@ -26,7 +27,24 @@
     font-size: 0.85rem;
 }
 
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.35rem;
+    flex-basis: 100%;
+}
+
+.site-nav[data-menu]:not([data-open]) .nav-links { display: none; }
+
 @media (min-width: 52em) {
+    .site-nav[data-menu]:not([data-open]) .nav-links { display: flex; }
+
+    .nav-links {
+        flex-basis: auto;
+        gap: 0.5rem;
+    }
+
     .site-nav {
         position: absolute;
         top: 1.5rem;
@@ -40,6 +58,7 @@
     }
 }
 
+.menu-toggle,
 .theme-toggle {
     display: inline-flex;
     font-style: normal;
@@ -51,6 +70,13 @@
     cursor: pointer;
 }
 
+.menu-toggle[hidden] { display: none; }
+
+@media (min-width: 52em) {
+    .menu-toggle { display: none; }
+}
+
+.menu-toggle svg,
 .theme-toggle svg {
     width: 1.1em;
     height: 1.1em;
