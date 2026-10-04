@@ -56,7 +56,7 @@ iPhone ve iPad'de bildirimler yalnızca siteyi Ana Ekran'a ekleyip oradan açtı
 
 ### Verilerin aktarılması
 
-Google Analytics verileri, hizmeti sağlayan Google'a aittir ve yurt dışındaki (Avrupa ve ABD) sunucularında işlenebilir. {% if site.push.endpoint.size > 0 and site.push.public_key.size > 0 %}Bildirim abonelikleri Google Apps Script ve Google E-Tablolar üzerinde saklanır; bu nedenle yurt dışındaki Google sunucularında işlenebilir. {% endif %}Sitenin kendisi [GitHub Pages](https://pages.github.com/) üzerinde barındırılır; GitHub, sayfaları sunarken teknik kayıtlar (ör. IP adresi) tutabilir. Satranç içeriğinin daha iyi sunulması için kullanılan [ChessPublica](https://chesspublica.github.io/) dosyaları da GitHub üzerinden yüklenir.
+Google Analytics verileri, hizmeti sağlayan Google'a aittir ve yurt dışındaki (Avrupa ve ABD) sunucularında işlenebilir. {% if site.push.endpoint.size > 0 and site.push.public_key.size > 0 %}Bildirim abonelikleri Google hizmetlerinde saklanır; bu nedenle yurt dışındaki Google sunucularında işlenebilir. {% endif %}Sitenin kendisi [GitHub Pages](https://pages.github.com/) üzerinde barındırılır; GitHub, sayfaları sunarken teknik kayıtlar (ör. IP adresi) tutabilir. Satranç içeriğinin daha iyi sunulması için kullanılan [ChessPublica](https://chesspublica.github.io/) dosyaları da GitHub üzerinden yüklenir.
 
 ### Tercihinizi nasıl değiştirirsiniz?
 
