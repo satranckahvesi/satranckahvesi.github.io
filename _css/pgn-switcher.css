@@ -1,7 +1,7 @@
 /* The view switcher above each PGN game (built by _js/pgn/view-switcher.js)
    and the rule after each game. */
 
-/* Same short tick as the masthead rule. */
+/* Short tick between sections. */
 
 .pgn-divider {
     width: 3.5rem;

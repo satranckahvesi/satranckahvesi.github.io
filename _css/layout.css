@@ -79,37 +79,18 @@
 
 .masthead-title {
     margin: 0;
-    font-weight: bold;
-    font-style: normal;
-    line-height: 1.02;
-    font-size: clamp(2.5rem, 1.4rem + 6vw, 5rem);
-    color: var(--ink);
+    line-height: 0;
 }
 
-.masthead-title a {
+/* The logo is a mask filled with --ink, so it follows the light/dark theme. */
+
+.masthead-logo {
     display: block;
-    color: inherit;
-}
-
-.masthead-tagline {
-    margin: 0;
-    font-size: 1.25rem;
-    line-height: 1.3;
-    color: var(--ink);
-}
-
-/* A short tick under the tagline; full column width on narrow screens. */
-
-.masthead-rule {
-    width: 8.3333%;
-    margin-top: 1rem;
-    border-top: 2px solid var(--ink);
-}
-
-@media (max-width: 52em) {
-    .masthead-rule {
-        width: 100%;
-    }
+    width: clamp(10rem, 30vw, 15rem);
+    aspect-ratio: 640 / 900;
+    background-color: var(--ink);
+    -webkit-mask: var(--logo) no-repeat left / contain;
+    mask: var(--logo) no-repeat left / contain;
 }
 
 .section {
