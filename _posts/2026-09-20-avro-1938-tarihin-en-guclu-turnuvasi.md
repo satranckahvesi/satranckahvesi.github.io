@@ -1,4 +1,4 @@
----
+<img width="1815" height="948" alt="image" src="https://github.com/user-attachments/assets/173b6f36-8583-4a63-880b-0bf40b99a973" />---
 layout: post
 date: 2026-09-20
 title: "AVRO 1938: Tarihin en güçlü turnuvası"
@@ -216,6 +216,25 @@ Turnuvaya 5,5/6 ile mükemmel bir başlangıç yapan Reuben Fine, turnuvanın ik
 { [P] Beyazın çift fili sayesinde avantajlı olduğu konumda basitçe piyon kazanmanın yolu nedir?} 20. Bxc6 $1 {Fil çiftinin en güzel yanının uygun anda bu avantajı başka bir avantajla takas etmek olduğu söylenir. Beyazlar bu değişimle önce piyonu sonra oyunu kazanıyor.} Rxc6 (20... bxc6 21. Bb4) 21. Qb5 {Piyonu kazanıyor.} Rfc8 22. Qxb7 Qd3 (22... Qe6 {Tehdit Rb6-Ra6 ve Qxa2} 23. e4 $1 Qxa2 24. Ra1 $16) 23. e4 Nh5 24. g3 Qe3+ 25. Kg2 Qg5 26. Kf2 f5 $6 27. exf5 Qxf5 28. g4 $18 {... ve Capablanca bir taş üstün kazanmakta zorlanmadı. } 1-0
 
 Botvinnik'in o yıllarda dünya satrancındaki yükselişi Alekhine ve Capablanca karşısında aldığı muhteşem galibiyetlere bakarak anlaşılabilir.
+
+
+<pre>
+                      1 2 3 4 5 6 7 8 9 0 1 2 3 4
+  1 GM Timman         * 1 0 1 ½ ½ 0 1 1 ½ 1 1 1 1  9½
+  2 GM Portisch       0 * 1 ½ 1 ½ 0 ½ ½ 1 ½ 1 1 ½  8
+ =3 GM Seirawan       1 0 * ½ 1 ½ 0 ½ ½ 0 ½ 1 1 1  7½
+ =3 GM Karpov         0 ½ ½ * ½ ½ 1 0 1 1 ½ ½ 1 ½  7½
+ =3 GM Polugaevsky    ½ 0 0 ½ * ½ ½ 1 ½ 1 1 ½ 1 ½  7½
+  6 GM Andersson      ½ ½ ½ ½ ½ * ½ 1 ½ ½ ½ ½ ½ ½  7
+  7 GM Larsen         1 1 1 0 ½ ½ * 0 1 0 ½ 0 ½ ½  6½
+ =8 IM Garcia Palermo 0 ½ ½ 1 0 0 1 * ½ ½ 0 ½ 1 ½  6
+ =8 GM Najdorf        0 ½ ½ 0 ½ ½ 0 ½ * 1 ½ ½ 1 ½  6
+=10    Braga          ½ 0 1 0 0 ½ 1 ½ 0 * ½ 1 0 ½  5½
+=10 GM Panno          0 ½ ½ ½ 0 ½ ½ 1 ½ ½ * ½ 0 ½  5½
+=12 GM Quinteros      0 0 0 ½ ½ ½ 1 ½ ½ 0 ½ * 0 1  5
+=12    Franco         0 0 0 0 0 ½ ½ 0 0 1 1 1 * 1  5
+ 14    Giardelli      0 ½ 0 ½ ½ ½ ½ ½ ½ ½ ½ 0 0 *  4½
+</pre>
 
 * Konu üzerine yazılan [ChessBase makalesi](https://en.chessbase.com/post/what-was-the-strongest-tournament-of-all-time-) istatistiklere dayanarak AVRO 1938'i gelmiş geçmiş en güçlü turnuva olarak kabul ediyor.
 
