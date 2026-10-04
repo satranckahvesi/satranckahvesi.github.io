@@ -4,4 +4,7 @@
     </nav>
     <p class="footer-credit">{{ site.title }} &copy; {{ site.time | date: '%Y' }} &middot; <a href="{{ '/gizlilik/' | relative_url }}">Gizlilik ve çerezler</a><span class="install-app-wrap" hidden> &middot; <button type="button" class="install-app">Uygulamayı yükle</button></span>{% if site.push.endpoint.size > 0 and site.push.public_key.size > 0 %}<span class="push-wrap" hidden> &middot; <button type="button" class="push-toggle" data-endpoint="{{ site.push.endpoint }}" data-key="{{ site.push.public_key }}">Bildirimleri aç</button></span>{% endif %}{% if jekyll.environment == "production" and site.google_analytics %} &middot; <button type="button" class="cookie-settings">Çerez tercihleri</button>{% endif %}</p>
     <p class="push-status" role="status" aria-live="polite"></p>
+    {%- if site.push.endpoint.size > 0 and site.push.public_key.size > 0 %}
+    <p class="push-hint" hidden>Bildirimleri almak için önce Ana Ekran'a ekleyin: Safari'de <strong>Paylaş</strong> düğmesine dokunup <strong>Ana Ekrana Ekle</strong>'yi seçin, sonra siteyi Ana Ekran'dan açın.</p>
+    {%- endif %}
 </footer>

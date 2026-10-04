@@ -23,8 +23,10 @@
     cursor: progress;
 }
 
-.push-status {
+.push-status,
+.push-hint {
     font-size: 0.85rem;
 }
 
-.push-status:empty { display: none; }
+.push-status:empty,
+.push-hint[hidden] { display: none; }

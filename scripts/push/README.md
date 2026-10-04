@@ -1,7 +1,8 @@
 # Yeni yazı bildirimleri: kurulum
 
 Sitenin altındaki **Bildirimleri aç** düğmesi, bilgisayar ve Android tarayıcılarında
-çalışır (iPhone ve iPad'de gösterilmez). Düğmeye basan ziyaretçinin aboneliği bir Google
+çalışır. iPhone ve iPad'de düğme yalnızca site Ana Ekran'a eklenip oradan açıldığında
+görünür; Safari sekmesinde "önce Ana Ekran'a ekleyin" ipucu çıkar. Düğmeye basan ziyaretçinin aboneliği bir Google
 E-Tablo'ya yazılır. `main`'e yeni bir yazı girdiğinde GitHub Action (`notify.yml`)
 abonelere bildirim gönderir.
 
@@ -112,7 +113,7 @@ Depoda **Settings → Secrets and variables → Actions → New repository secre
 
 ## Notlar
 
-- Geleceğe tarihli yazılar için bildirim gitmez (Jekyll da onları yayımlamaz).
+- Geleceğe tarihli yazılar için bildirim gitmez (Jekyll da onları yayınlamaz).
 - Bildirim göndermeyi denerken geçersiz çıkan abonelikler tablodan otomatik silinir.
 - Abone listesini görmek ya da biri için silme yapmak isterseniz tabloyu doğrudan düzenleyin.
 - Tarayıcılar yalnızca belli bildirim hizmetlerine izin verir (Google, Mozilla, Microsoft,

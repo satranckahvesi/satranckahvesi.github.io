@@ -41,17 +41,17 @@ Bu veriler, açık rızanıza dayanarak, sitenin ne kadar okunduğunu ve hangi y
 {% if site.push.endpoint.size > 0 and site.push.public_key.size > 0 %}
 ### Yeni yazı bildirimleri
 
-Sayfanın altındaki **Bildirimleri aç** düğmesine basar ve tarayıcınızın izin penceresinde izin verirseniz, yeni bir yazı yayımlandığında tarayıcınıza bildirim göndeririz. Bu isteğe bağlıdır; düğmeye basmadığınız ve izin vermediğiniz sürece hiçbir bildirim aboneliği oluşturulmaz. İstatistik çerezlerine verdiğiniz ya da vermediğiniz izinden bağımsızdır.
+Sayfanın altındaki **Bildirimleri aç** düğmesine basar ve tarayıcınızın izin penceresinde izin verirseniz, yeni bir yazı yayınlandığında tarayıcınıza bildirim göndeririz. Bu isteğe bağlıdır; düğmeye basmadığınız ve izin vermediğiniz sürece hiçbir bildirim aboneliği oluşturulmaz. İstatistik çerezlerine verdiğiniz ya da vermediğiniz izinden bağımsızdır.
 
 Abone olduğunuzda tarayıcınızın bu cihaz için ürettiği bildirim adresi ve iki şifreleme anahtarı ile kayıt tarihi saklanır. Adınız, e-posta adresiniz, telefon numaranız, IP adresiniz ya da hangi yazıları okuduğunuz bu kayda eklenmez. Bildirim adresi bir cihaza özgü kalıcı bir tanımlayıcı olduğundan, bunu kişisel veri gibi ele alıyoruz.
 
 - **Amaç ve hukuki sebep:** Yeni yazıları duyurmak; açık rızanız (düğmeye basmanız ve tarayıcıdan izin vermeniz).
 - **Nerede saklanır:** Satranç Kahvesi'nin Google hesabındaki bir Google E-Tablo'da (Google Apps Script üzerinden). Tabloya yalnızca yayın ekibi erişir.
-- **Kimler işler:** Bildirimler, tarayıcınızın bildirim hizmeti (Chrome için Google, Firefox için Mozilla, Edge için Microsoft) üzerinden size ulaşır; bu hizmetler bildirimi iletirken kendi koşullarına göre bağlantı bilgilerinizi işleyebilir. Aboneliği kaydeden istek de Google'ın sunucularına gider.
+- **Kimler işler:** Bildirimler, tarayıcınızın bildirim hizmeti (Chrome için Google, Firefox için Mozilla, Edge için Microsoft, Safari ve iPhone/iPad için Apple) üzerinden size ulaşır; bu hizmetler bildirimi iletirken kendi koşullarına göre bağlantı bilgilerinizi işleyebilir. Aboneliği kaydeden istek de Google'ın sunucularına gider.
 - **Ne kadar saklanır:** Siz aboneliği kapatana, tarayıcı aboneliği geçersiz kılana ya da bildirim göndermeyi denerken adresin artık geçerli olmadığı anlaşılana kadar. Geçersiz kayıtlar otomatik silinir.
 - **Nasıl vazgeçersiniz:** Sayfanın altındaki **Bildirimleri kapat** düğmesiyle ya da tarayıcınızın site ayarlarından bildirim iznini kaldırarak. Kapattığınızda kaydınız tablodan silinir.
 
-iPhone ve iPad'de bildirim sunulmamaktadır.
+iPhone ve iPad'de bildirimler yalnızca siteyi Ana Ekran'a ekleyip oradan açtığınızda sunulur.
 {% endif %}
 
 ### Verilerin aktarılması
@@ -76,7 +76,7 @@ KVKK'nın 11. maddesi uyarınca; verilerinizin işlenip işlenmediğini öğrenm
 ### Güncellemeler
 
 Bu metin, kullandığımız araçlar değiştikçe güncellenebilir.
-Son güncelleme: {% if site.push.endpoint.size > 0 and site.push.public_key.size > 0 %}04.10.2026{% else %}02.10.2026{% endif %}.
+Son güncelleme: {% if site.push.endpoint.size > 0 and site.push.public_key.size > 0 %}05.10.2026{% else %}02.10.2026{% endif %}.
 </div>
 
 
