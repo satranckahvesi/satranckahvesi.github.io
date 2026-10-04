@@ -1,4 +1,4 @@
-<img width="1815" height="948" alt="image" src="https://github.com/user-attachments/assets/173b6f36-8583-4a63-880b-0bf40b99a973" />---
+
 layout: post
 date: 2026-09-20
 title: "AVRO 1938: Tarihin en güçlü turnuvası"
