@@ -14,13 +14,6 @@ kramdown:
     mdash: "---"
     ndash: "--"
 
-# Link preview image (WhatsApp, social cards) for pages that do not set their own.
-defaults:
-  - scope:
-      path: ""
-    values:
-      image: /assets/img/og-image.png
-
 plugins:
   - jekyll-feed
   - jekyll-redirect-from
