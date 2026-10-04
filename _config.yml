@@ -1,5 +1,5 @@
 title: Satranç Kahvesi
-description: Kahve eşliğinde satranç sohbetleri; açılış teorisinden oyun sonlarına, turnuva günlüklerinden kitap incelemelerine köşe yazıları.
+description: Kahve eşliğinde satranç sohbetleri
 lang: tr
 baseurl: ""
 url: "https://satranckahvesi.com"
@@ -13,6 +13,13 @@ kramdown:
     hellip: "..."
     mdash: "---"
     ndash: "--"
+
+# Link preview image (WhatsApp, social cards) for pages that do not set their own.
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/img/og-image.png
 
 plugins:
   - jekyll-feed

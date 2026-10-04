@@ -18,6 +18,7 @@ import { takePendingCenter } from './pgn/view-state.js';
 import { wrapFigures } from './post-figures.js';
 import { curlyPass, keepCommentsCurly } from './text/curly-quotes.js';
 import { installNavMenu } from './nav-menu.js';
+import { installServiceWorker } from './service-worker.js';
 import { installThemeToggle } from './theme-toggle.js';
 
 const body = document.querySelector('.post-body');
@@ -46,4 +47,5 @@ if (body) {
 
 installThemeToggle();
 installNavMenu();
+installServiceWorker();
 installCookieConsent();
