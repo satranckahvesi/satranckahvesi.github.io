@@ -2,35 +2,65 @@
 layout: null
 sitemap: false
 ---
-// Service worker: pages are fetched from the network first and kept for offline
-// reading; files under /assets/ are served from the cache and refreshed in the
-// background. Everything else (analytics, embeds) goes straight to the network.
-// The cache name changes with every build, so a new deploy replaces old caches.
+// Service worker. Two caches:
+//  - VISITED (fixed name, survives updates): pages the reader opened, fetched network-first
+//    and kept for offline reading, plus other /assets/ files, served from the cache and
+//    refreshed in the background. Trimmed to the most recent MAX_VISITED entries.
+//  - SHELL (new name every build): the start page, the offline page and this build's CSS,
+//    scripts, fonts and icons, stored at install so the installed app opens offline right
+//    after an update. The previous SHELL is deleted when the new one activates.
+// Everything else (analytics, embeds) goes straight to the network.
 // Push messages ({title, body, url}, sent by scripts/send-push.mjs) are shown as
 // notifications; tapping one opens its page.
 
-const CACHE = 'satranckahvesi-{{ site.time | date: "%s" }}';
+const VERSION = '{{ site.time | date: "%s" }}';
+const VISITED = 'satranckahvesi-visited';
+const SHELL = 'satranckahvesi-shell-' + VERSION;
+const MAX_VISITED = 120;
 const OFFLINE_URL = '{{ "/offline/" | relative_url }}';
 const ASSETS = '{{ "/assets/" | relative_url }}';
 const ICON = '{{ "/assets/img/icon-192.png" | relative_url }}';
+const PRECACHE = [
+  '{{ "/" | relative_url }}',
+  '{{ "/assets/css/site.css" | relative_url }}?v={{ site.time | date: "%s" }}',
+  '{{ "/assets/js/site.js" | relative_url }}',
+  '{{ "/assets/js/post.js" | relative_url }}',
+  '{{ "/assets/img/icon-192.png" | relative_url }}',
+  '{{ "/assets/img/favicon.svg" | relative_url }}',
+  {%- for file in site.static_files %}{% if file.path contains "/assets/fonts/" %}
+  '{{ file.path | relative_url }}',
+  {%- endif %}{% endfor %}
+];
 
 self.addEventListener('install', (event) => {
-  event.waitUntil(caches.open(CACHE).then((cache) => cache.add(OFFLINE_URL)).then(() => self.skipWaiting()));
+  event.waitUntil(
+    caches
+      .open(SHELL)
+      .then(async (cache) => {
+        await cache.add(OFFLINE_URL);
+        // Best effort: one missing file must not stop the update.
+        await Promise.allSettled(PRECACHE.map((url) => cache.add(url)));
+      })
+      .then(() => self.skipWaiting())
+  );
 });
 
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches
       .keys()
-      .then((keys) => Promise.all(keys.filter((key) => key !== CACHE).map((key) => caches.delete(key))))
+      .then((keys) => Promise.all(keys.filter((key) => key !== VISITED && key !== SHELL).map((key) => caches.delete(key))))
       .then(() => self.clients.claim())
   );
 });
 
 async function store(request, response) {
   if (response.ok && response.type === 'basic') {
-    const cache = await caches.open(CACHE);
+    const cache = await caches.open(VISITED);
     await cache.put(request, response.clone());
+    // keys() lists the oldest entries first.
+    const keys = await cache.keys();
+    await Promise.all(keys.slice(0, Math.max(0, keys.length - MAX_VISITED)).map((key) => cache.delete(key)));
   }
   return response;
 }
