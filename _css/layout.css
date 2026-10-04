@@ -91,16 +91,80 @@
     line-height: 0;
 }
 
-/* The logo is a mask filled with --ink, so it follows the light/dark theme. */
+/* The logo is an inline SVG mark (_includes/logo.html) with the name and tagline
+   as live text on top. Everything is laid out in the SVG's 640 x 900 units and
+   scales with the link's width: --u is one such unit. Colours come from --ink,
+   so the logo follows the light/dark theme. The offsets are baselines read off
+   the original artwork; a line box with line-height 1 puts the baseline
+   --rise em below its top (Playfair Display 0.9155, IBM Plex Mono 0.875). */
 
 .masthead-logo {
+    position: relative;
     display: block;
     width: clamp(15rem, 45vw, 22.5rem);
     margin: 0 auto;
     aspect-ratio: 640 / 900;
-    background-color: var(--ink);
-    -webkit-mask: var(--logo) no-repeat center / contain;
-    mask: var(--logo) no-repeat center / contain;
+    container-type: inline-size;
+    color: var(--ink);
+}
+
+.logo-mark,
+.logo-name,
+.logo-tagline {
+    --u: calc(100cqw / 640);
+    position: absolute;
+    inset: 0;
+}
+
+.logo-mark {
+    width: 100%;
+    height: 100%;
+}
+
+.logo-name,
+.logo-tagline {
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.logo-name-line,
+.logo-tagline {
+    --top: calc(var(--u) * (var(--baseline) - var(--size) * var(--rise)));
+    font-size: calc(var(--u) * var(--size));
+    transform: translateX(calc(var(--u) * var(--dx, 0)));
+}
+
+.logo-name-line {
+    --rise: 0.9155;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: var(--top);
+    font-family: var(--font-logo-serif);
+    font-weight: 900;
+}
+
+.logo-name-line:first-child {
+    --size: 131.5;
+    --baseline: 626;
+    --dx: -5.5;
+}
+
+.logo-name-line:last-child {
+    --size: 150.4;
+    --baseline: 756;
+}
+
+.logo-tagline {
+    --rise: 0.875;
+    --size: 25.8;
+    --baseline: 827;
+    --dx: -2;
+    inset: auto 0 auto 0;
+    top: var(--top);
+    font-family: var(--font-logo-mono);
+    letter-spacing: calc(var(--u) * 0.72);
 }
 
 .section {

@@ -15,6 +15,9 @@ html {
     --font-serif: 'PT Serif', Georgia, 'Times New Roman', serif;
     /* PT Mono ships Regular only: use it where text is neither bold nor italic. */
     --font-mono: 'PT Mono', ui-monospace, Menlo, Consolas, monospace;
+    /* Display faces for the masthead logo only. */
+    --font-logo-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+    --font-logo-mono: 'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace;
     color-scheme: light;
 }
 

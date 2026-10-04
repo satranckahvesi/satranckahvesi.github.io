@@ -7,6 +7,10 @@
         {% include nav-links.html %}
     </nav>
     <div class="masthead">
-        <h1 class="masthead-title"><a class="masthead-logo" href="{{ '/' | relative_url }}" role="img" aria-label="{{ site.title }}: Kahve eşliğinde satranç sohbetleri" style="--logo: url('{{ '/assets/img/logo.svg' | relative_url }}')"></a></h1>
+        <h1 class="masthead-title"><a class="masthead-logo" href="{{ '/' | relative_url }}">
+            {%- include logo.html -%}
+            <span class="logo-name"><span class="logo-name-line">Satranç</span> <span class="logo-name-line">Kahvesi</span></span>
+            <span class="logo-tagline">Kahve eşliğinde satranç sohbetleri</span>
+        </a></h1>
     </div>
 </header>
