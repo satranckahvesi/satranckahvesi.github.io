@@ -155,7 +155,7 @@ Beyaz tehdidi gözden kaçırıyor. } 10... Rb8 11. Qc2 { [P] } 11... Rxb2! 12. 
 
 Daha sonra Büyükusta unvanına kavuşacak olan Garcia Palermo ülkesini ziyarete gelen **Bobby Fischer**'in 25 kişiye karşı oynadığı simultane gösteride yer almıştı. Geleceğin dünya şampiyonunu yalnızca **15 hamlede** devirmeyi [başarmıştı](https://www.chessgames.com/perl/chessgame?gid=1279196).
 
-**Carlos Garcia Palermo** bu başarıyı elde ettiğinde 15 yaşındaydı. (Kaynak: Arjantin'de bulunan <i>Rosario ve Güney Santa Fe Satranç Derneği</i> internet sitesinde, Christian Sánchez imzasıyla 2014 yılında yayımlanan <i>Satranç İncileri: Özelde Rosario'nun, genelde ise Arjantin'in satranç tarihine bir yolculuk</i> başlıklı İspanyolca [makale](https://www.ara.org.ar/chs/ajedrez/perlas/#PA32)).
+**Carlos Garcia Palermo** bu başarıyı elde ettiğinde 15 yaşındaydı. (Kaynak: Arjantin'de bulunan <i>Rosario ve Güney Santa Fe Satranç Derneği</i> internet sitesinde, Christian Sánchez imzasıyla 2014 yılında yayınlanan <i>Satranç İncileri: Özelde Rosario'nun, genelde ise Arjantin'in satranç tarihine bir yolculuk</i> başlıklı İspanyolca [makale](https://www.ara.org.ar/chs/ajedrez/perlas/#PA32)).
 
 [Event "Mar del Plata"]
 [Site "Mar del Plata ARG"]

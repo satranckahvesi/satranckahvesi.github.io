@@ -6,7 +6,7 @@ column: "Analizli oyunlar"
 title: "Colle Sistemi'ne karşı Karpov varyantı"
 ---
 
-Bu yazı, ilk kez Türkiye Satranç Federasyonu Yayın Kurulu'nun katkılarıyla hazırlanan '2025 Türkiye Satranç Birinci Ligi İncelemesi'nde yayımlanmıştır.
+Bu yazı, ilk kez Türkiye Satranç Federasyonu Yayın Kurulu'nun katkılarıyla hazırlanan '2025 Türkiye Satranç Birinci Ligi İncelemesi'nde yayınlanmıştır.
 
 [Event "Türkiye 1. Lig"]
 [Round "9"]

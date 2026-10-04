@@ -41,7 +41,7 @@ Bu veriler, açık rızanıza dayanarak, sitenin ne kadar okunduğunu ve hangi y
 {% if site.push.endpoint.size > 0 and site.push.public_key.size > 0 %}
 ### Yeni yazı bildirimleri
 
-Sayfanın altındaki **Bildirimleri aç** düğmesine basar ve tarayıcınızın izin penceresinde izin verirseniz, yeni bir yazı yayımlandığında tarayıcınıza bildirim göndeririz. Bu isteğe bağlıdır; düğmeye basmadığınız ve izin vermediğiniz sürece hiçbir bildirim aboneliği oluşturulmaz. İstatistik çerezlerine verdiğiniz ya da vermediğiniz izinden bağımsızdır.
+Sayfanın altındaki **Bildirimleri aç** düğmesine basar ve tarayıcınızın izin penceresinde izin verirseniz, yeni bir yazı yayınlandığında tarayıcınıza bildirim göndeririz. Bu isteğe bağlıdır; düğmeye basmadığınız ve izin vermediğiniz sürece hiçbir bildirim aboneliği oluşturulmaz. İstatistik çerezlerine verdiğiniz ya da vermediğiniz izinden bağımsızdır.
 
 Abone olduğunuzda tarayıcınızın bu cihaz için ürettiği bildirim adresi ve iki şifreleme anahtarı ile kayıt tarihi saklanır. Adınız, e-posta adresiniz, telefon numaranız, IP adresiniz ya da hangi yazıları okuduğunuz bu kayda eklenmez. Bildirim adresi bir cihaza özgü kalıcı bir tanımlayıcı olduğundan, bunu kişisel veri gibi ele alıyoruz.
 
