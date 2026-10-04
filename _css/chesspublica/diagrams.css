@@ -43,18 +43,22 @@
 }
 
 /* Same opt-in, plain <pgn> view only (a study or player has no such wrapper
-   above .pgn-container): a variation sits behind a pale vertical rule and is
-   indented from it; sub-variations are italic. The mainline is left as it is.
-   The rule and indent go on the .pgn-variation block: ChessPublica makes its
-   paragraphs display: inline, where text-indent has no effect. A nested
-   variation is a block inside one, so its rule steps in one more level. */
+   above .pgn-container): the text of a variation sits behind a pale vertical
+   rule, drawn on each line of its paragraphs so it never runs beside a
+   diagram; sub-variations are italic. The mainline is left as it is.
+   ChessPublica makes those paragraphs display: inline, hence
+   box-decoration-break: clone to repeat the rule and padding on every wrapped
+   line. A nested variation is a block inside one, so it steps in one level. */
 
-.post-body--faded-diagrams .pgn-container:not(pgn-study .pgn-container, pgn-player .pgn-container) .pgn-variation {
-    padding-left: 1.2em;
+.post-body--faded-diagrams .pgn-container:not(pgn-study .pgn-container, pgn-player .pgn-container) .pgn-variation > p {
+    padding-left: 0.8em;
     border-left: 2px solid color-mix(in srgb, var(--muted) 45%, transparent);
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
 }
 
 .post-body--faded-diagrams .pgn-container:not(pgn-study .pgn-container, pgn-player .pgn-container) .pgn-variation .pgn-variation {
+    padding-left: 1.2em;
     font-style: italic;
 }
 
