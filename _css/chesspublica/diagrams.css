@@ -29,6 +29,19 @@
     --diagram-max-width: min(400px, 94cqw);
 }
 
+/* Opt-in (front matter `faded_diagrams: true`): a diagram inside a variation is
+   smaller and paler than the mainline's, one step more for each nesting level. */
+
+.post-body--faded-diagrams .pgn-container .pgn-variation > .cp-board-wrapper {
+    --diagram-max-width: calc(min(400px, 94cqw) - 1rem);
+    filter: saturate(0.7) opacity(0.85);
+}
+
+.post-body--faded-diagrams .pgn-container .pgn-variation .pgn-variation > .cp-board-wrapper {
+    --diagram-max-width: calc(min(400px, 94cqw) - 2rem);
+    filter: saturate(0.4) opacity(0.7);
+}
+
 /* [Crop "..."] diagrams: the full board is rendered inside a box cut to a half
    or a quarter of it by aspect-ratio and overflow. Margins are zeroed on both
    .fen-container and .cp-board, which stack. */
