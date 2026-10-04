@@ -4,7 +4,7 @@
 import { toArray } from '../../lib/dom.js';
 import { centerWhenSettled } from '../../lib/scroll.js';
 import { BLOCK_KEY_ATTR, clearPendingCenter } from '../../pgn/view-state.js';
-import { disableAutoplayLoop, studyEngine } from '../engine.js';
+import { disableAutoplayLoop, disableVariationLoop, studyEngine } from '../engine.js';
 import { resolveBranch } from './branch.js';
 import { activateEngineFor, installKeyboard } from './keyboard.js';
 import { createCommentMirror } from './mobile-comment.js';
@@ -44,9 +44,12 @@ export function installStudyEnhancements(body, watcher, pendingCenterKey, images
     function onReady() {
       layoutColumns();
       // A board click and the branch picker both call play(); replacing the
-      // continuous loop leaves its single step intact and stops autoplay.
+      // continuous loops (mainline and variation) leaves their single step intact and stops autoplay.
       const engine = studyEngine(study);
-      if (engine) disableAutoplayLoop(engine);
+      if (engine) {
+        disableAutoplayLoop(engine);
+        disableVariationLoop(engine);
+      }
       pruneRibbon(study);
       addNavButtons(study);
 

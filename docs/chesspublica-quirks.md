@@ -4,7 +4,7 @@ The site renders games with [ChessPublica](https://chesspublica.github.io/), loa
 Everything below was verified by reading its bundle (`ChessPublica.all.min.js`) and testing in a browser.
 It relies on undocumented behavior, so after ChessPublica changes, walk through this list.
 
-Every access to its internals (`_engine`, `_variation`, `_loopRAF`, `commentBox`) goes through
+Every access to its internals (`_engine`, `_variation`, `_loopRAF`, `_variationPlayTick`, `commentBox`) goes through
 `_js/chesspublica/engine.js`, so a rename breaks one file.
 
 ## How a PGN block becomes a game
@@ -38,7 +38,8 @@ it scans the DOM once on load; `_includes/scripts.html` loads the site bundle fi
 - **Layout**: the column split is set through `--left-col-width` / `--right-col-width` only, never
   `grid-template-columns`, so the drag splitter keeps working.
 - **No autoplay**: Play and speed are removed from the ribbon, Space is swallowed, and `_loopRAF` is
-  replaced with a no-op. `play()` itself must stay: the branch picker's mainline row calls it for its single step.
+  replaced with a no-op and `_variationPlayTick` (the variation loop, started by clicking a move with
+  sub-variations) with a single step. `play()` itself must stay: the branch picker's mainline row calls it for its single step.
   A board click also calls `togglePlay()`, and a second board listener treats two clicks within 300 ms as
   "jump 10 plies"; all board clicks are stopped in the capture phase.
 - **Keyboard**: arrow keys only work when `.player-container` is partly in the viewport, and are sent to a
