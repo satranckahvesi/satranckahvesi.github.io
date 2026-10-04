@@ -13,7 +13,15 @@
 })();
 </script>
 <title>{% if page.title and page.title != site.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-{% seo title=false %}
+{%- comment %} Link previews (WhatsApp etc.) read og:title: prefix it with the site name on inner pages. {% endcomment %}
+{%- capture seo_tags %}{% seo title=false %}{% endcapture %}
+{%- if page.title and page.title != site.title %}
+  {%- assign og_title = page.title | markdownify | strip_html | strip_newlines | escape_once %}
+  {%- capture og_title_old %}<meta property="og:title" content="{{ og_title }}" />{% endcapture %}
+  {%- capture og_title_new %}<meta property="og:title" content="{{ site.title | escape_once }} · {{ og_title }}" />{% endcapture %}
+  {%- assign seo_tags = seo_tags | replace: og_title_old, og_title_new %}
+{%- endif %}
+{{ seo_tags }}
 {% feed_meta %}
 <link rel="icon" type="image/svg+xml" href="{{ '/assets/img/favicon.svg' | relative_url }}">
 {%- if page.layout == "post" %}
