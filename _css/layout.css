@@ -96,7 +96,7 @@
    scales with the link's width: --u is one such unit. Colours come from --ink,
    so the logo follows the light/dark theme. The offsets are baselines read off
    the original artwork; a line box with line-height 1 puts the baseline
-   --rise em below its top (Playfair Display 0.9155, IBM Plex Mono 0.875). */
+   --rise em below its top (Playfair Display 0.9155, PT Mono 0.875). */
 
 .masthead-logo {
     position: relative;
@@ -158,13 +158,13 @@
 
 .logo-tagline {
     --rise: 0.875;
-    --size: 25.8;
-    --baseline: 827;
-    --dx: -2;
+    --size: 24.5;
+    --baseline: 828;
+    --dx: 1;
     inset: auto 0 auto 0;
     top: var(--top);
-    font-family: var(--font-logo-mono);
-    letter-spacing: calc(var(--u) * 0.72);
+    font-family: var(--font-mono);
+    letter-spacing: calc(var(--u) * 1.35);
 }
 
 .section {
