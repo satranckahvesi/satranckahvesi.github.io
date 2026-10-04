@@ -57,7 +57,7 @@ export function installPushButton() {
   async function describe() {
     if (iosTab) return show('ios');
     const reg = await registration;
-    if (await reg.pushManager.getSubscription()) return show('on', { label: 'Bildirimleri kapat', action: turnOff });
+    if (await reg.pushManager.getSubscription()) return show('on', { label: 'Bildirimleri kapat', action: turnOff, dismissLabel: 'Tamam' });
     if (Notification.permission === 'denied') return show('blocked');
     return showOff();
   }
