@@ -1,8 +1,9 @@
 # Yeni yazı bildirimleri: kurulum
 
-Sitenin altındaki **Bildirimleri aç** düğmesi, bilgisayar ve Android tarayıcılarında
-çalışır. iPhone ve iPad'de düğme yalnızca site Ana Ekran'a eklenip oradan açıldığında
-görünür; Safari sekmesinde "önce Ana Ekran'a ekleyin" ipucu çıkar. Düğmeye basan ziyaretçinin aboneliği bir Google
+Sitenin altındaki **Bildirim tercihleri** düğmesi, çerez tercihleri gibi bir pencere açar;
+bildirimler o pencereden açılıp kapatılır. Bilgisayar ve Android tarayıcılarında çalışır.
+iPhone ve iPad'de pencere yalnızca site Ana Ekran'a eklenip oradan açıldığında seçim sunar;
+Safari sekmesinde "önce Ana Ekran'a ekleyin" mesajını gösterir. Düğmeye basan ziyaretçinin aboneliği bir Google
 E-Tablo'ya yazılır. `main`'e yeni bir yazı girdiğinde GitHub Action (`notify.yml`)
 abonelere bildirim gönderir.
 
@@ -102,9 +103,10 @@ Depoda **Settings → Secrets and variables → Actions → New repository secre
 
 ## 6. Deneyin
 
-1. Siteyi yayına alın, bilgisayarda ya da Android'de **Bildirimleri aç** düğmesine basıp
-   izin verin. E-Tabloda bir satır oluşmalı. Düğme **Bildirimleri kapat** olur; ona basınca
-   satır silinmeli.
+1. Siteyi yayına alın, bilgisayarda ya da Android'de **Bildirim tercihleri** düğmesine basıp
+   açılan pencerede **Bildirimleri aç**'a basın ve izin verin. E-Tabloda bir satır oluşmalı.
+   Pencereyi tekrar açtığınızda **Bildirimleri kapat** düğmesi çıkar; ona basınca satır
+   silinmeli.
 2. Tekrar abone olun. GitHub'da **Actions → Notify subscribers → Run workflow** ile
    mevcut bir yazıyı girin (ör. `_posts/2026-09-20-once-hamle-yap-sonra-dusun.md`).
    Birkaç saniye içinde bildirim gelmeli.
