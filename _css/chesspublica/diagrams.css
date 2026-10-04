@@ -42,6 +42,18 @@
     filter: saturate(0.4) opacity(0.7);
 }
 
+/* Same opt-in: variation paragraphs are indented and sub-variations are italic.
+   The mainline is left as it is. */
+
+.post-body--faded-diagrams .pgn-container .pgn-variation > p {
+    text-indent: 1.5em;
+}
+
+.post-body--faded-diagrams .pgn-container .pgn-variation .pgn-variation,
+.post-body--faded-diagrams pgn-player .video-comment .variation-block--nested {
+    font-style: italic;
+}
+
 /* [Crop "..."] diagrams: the full board is rendered inside a box cut to a half
    or a quarter of it by aspect-ratio and overflow. Margins are zeroed on both
    .fen-container and .cp-board, which stack. */
