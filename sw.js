@@ -2,35 +2,82 @@
 layout: null
 sitemap: false
 ---
-// Service worker: pages are fetched from the network first and kept for offline
-// reading; files under /assets/ are served from the cache and refreshed in the
-// background. Everything else (analytics, embeds) goes straight to the network.
-// The cache name changes with every build, so a new deploy replaces old caches.
+{%- assign offline_posts = 10 %}
+// Service worker. Three caches:
+//  - VISITED (fixed name, survives updates): pages the reader opened, fetched network-first
+//    and kept for offline reading, plus other /assets/ files, served from the cache and
+//    refreshed in the background. Also receives the post (and its images) of every push
+//    notification when it arrives. Trimmed to the most recent MAX_VISITED entries.
+//  - OFFLINE (fixed name): the pages listed in sitemap.xml and the images they use, stored
+//    when the page asks for it ({type: 'sync-offline'}; it does so only inside the installed
+//    app). Of the posts only the newest {{ offline_posts }} are kept; everything else in the
+//    sitemap (home, archives, authors, columns, about) is kept. Pages that dropped out are
+//    removed.
+//  - SHELL (new name every build): the start page, the offline page and this build's CSS,
+//    scripts, fonts and icons, stored at install so the installed app opens offline right
+//    after an update. The previous SHELL is deleted when the new one activates.
+// Everything else (analytics, embeds) goes straight to the network.
 // Push messages ({title, body, url}, sent by scripts/send-push.mjs) are shown as
 // notifications; tapping one opens its page.
 
-const CACHE = 'satranckahvesi-{{ site.time | date: "%s" }}';
+const VERSION = '{{ site.time | date: "%s" }}';
+const VISITED = 'satranckahvesi-visited';
+const OFFLINE = 'satranckahvesi-offline';
+const SHELL = 'satranckahvesi-shell-' + VERSION;
+const MAX_VISITED = 120;
+const POSTS = '{{ "/posts/" | relative_url }}';
+// site.posts is sorted newest first.
+const LATEST_POSTS = [
+  {%- for post in site.posts limit: offline_posts %}
+  '{{ post.url | relative_url }}',
+  {%- endfor %}
+];
 const OFFLINE_URL = '{{ "/offline/" | relative_url }}';
 const ASSETS = '{{ "/assets/" | relative_url }}';
 const ICON = '{{ "/assets/img/icon-192.png" | relative_url }}';
+const SITEMAP = '{{ "/sitemap.xml" | relative_url }}';
+const IMAGES = new RegExp(ASSETS.replace(/\//g, '\\/') + 'img\\/[^"\'\\s)<>]+', 'g');
+const PRECACHE = [
+  '{{ "/" | relative_url }}',
+  '{{ "/assets/css/site.css" | relative_url }}?v={{ site.time | date: "%s" }}',
+  '{{ "/assets/js/site.js" | relative_url }}',
+  '{{ "/assets/js/post.js" | relative_url }}',
+  '{{ "/assets/img/icon-192.png" | relative_url }}',
+  '{{ "/assets/img/favicon.svg" | relative_url }}',
+  {%- for file in site.static_files %}{% if file.path contains "/assets/fonts/" %}
+  '{{ file.path | relative_url }}',
+  {%- endif %}{% endfor %}
+];
 
 self.addEventListener('install', (event) => {
-  event.waitUntil(caches.open(CACHE).then((cache) => cache.add(OFFLINE_URL)).then(() => self.skipWaiting()));
+  event.waitUntil(
+    caches
+      .open(SHELL)
+      .then(async (cache) => {
+        await cache.add(OFFLINE_URL);
+        // Best effort: one missing file must not stop the update.
+        await Promise.allSettled(PRECACHE.map((url) => cache.add(url)));
+      })
+      .then(() => self.skipWaiting())
+  );
 });
 
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches
       .keys()
-      .then((keys) => Promise.all(keys.filter((key) => key !== CACHE).map((key) => caches.delete(key))))
+      .then((keys) => Promise.all(keys.filter((key) => key !== VISITED && key !== OFFLINE && key !== SHELL).map((key) => caches.delete(key))))
       .then(() => self.clients.claim())
   );
 });
 
 async function store(request, response) {
   if (response.ok && response.type === 'basic') {
-    const cache = await caches.open(CACHE);
+    const cache = await caches.open(VISITED);
     await cache.put(request, response.clone());
+    // keys() lists the oldest entries first.
+    const keys = await cache.keys();
+    await Promise.all(keys.slice(0, Math.max(0, keys.length - MAX_VISITED)).map((key) => cache.delete(key)));
   }
   return response;
 }
@@ -53,6 +100,70 @@ async function staleWhileRevalidate(request) {
   return refresh;
 }
 
+// Downloads every page in the sitemap and the images they use into OFFLINE. Resolves to
+// true only when everything was fetched.
+async function syncOffline() {
+  const sitemap = await (await fetch(SITEMAP, { cache: 'no-cache' })).text();
+  const pages = [...new Set([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => new URL(match[1].trim()).pathname))]
+    .filter((path) => !path.startsWith(POSTS) || LATEST_POSTS.includes(path));
+  if (pages.length === 0) return false;
+
+  const cache = await caches.open(OFFLINE);
+  const images = new Set();
+  const wanted = new Set();
+  let failed = false;
+
+  async function download(path, isPage) {
+    try {
+      const response = await fetch(path, { cache: 'no-cache' });
+      if (!response.ok) throw new Error(String(response.status));
+      wanted.add(path);
+      const copy = response.clone();
+      await cache.put(path, response);
+      if (isPage) for (const image of (await copy.text()).match(IMAGES) ?? []) images.add(image);
+    } catch {
+      failed = true;
+    }
+  }
+
+  async function run(paths, isPage) {
+    const queue = [...paths];
+    await Promise.all(Array.from({ length: 4 }, async () => {
+      while (queue.length) await download(queue.shift(), isPage);
+    }));
+  }
+
+  await run(pages, true);
+  await run(images, false);
+
+  if (!failed) {
+    for (const request of await cache.keys()) {
+      if (!wanted.has(new URL(request.url).pathname)) await cache.delete(request);
+    }
+  }
+  return !failed;
+}
+
+async function tell(ok) {
+  for (const client of await self.clients.matchAll({ type: 'window', includeUncontrolled: true })) {
+    client.postMessage({ type: 'offline-synced', ok });
+  }
+}
+
+let running = null;
+
+self.addEventListener('message', (event) => {
+  if (event.data?.type !== 'sync-offline') return;
+  // A page asking while a run is under way waits for that run instead of starting another.
+  running ??= syncOffline().then(
+    (ok) => tell(ok),
+    () => tell(false)
+  ).finally(() => {
+    running = null;
+  });
+  event.waitUntil(running);
+});
+
 self.addEventListener('fetch', (event) => {
   const { request } = event;
   if (request.method !== 'GET') return;
@@ -66,6 +177,18 @@ self.addEventListener('fetch', (event) => {
   }
 });
 
+// Stores the page a notification points to, and its images, so the post can be read
+// offline without the app having been opened. Goes into VISITED, which is trimmed.
+async function cachePostFromNotification(url) {
+  const target = new URL(url || '/', self.location.origin);
+  if (target.origin !== self.location.origin || !target.pathname.startsWith(POSTS)) return;
+  const response = await fetch(target.pathname, { cache: 'no-cache' });
+  if (!response.ok) return;
+  await store(target.pathname, response);
+  const images = [...new Set((await response.text()).match(IMAGES) ?? [])];
+  await Promise.allSettled(images.map(async (image) => store(image, await fetch(image))));
+}
+
 self.addEventListener('push', (event) => {
   let message = {};
   try {
@@ -74,12 +197,16 @@ self.addEventListener('push', (event) => {
     message = {};
   }
   event.waitUntil(
-    self.registration.showNotification(message.title || 'Satranç Kahvesi', {
-      body: message.body || '',
-      icon: ICON,
-      tag: message.url,
-      data: { url: message.url }
-    })
+    Promise.all([
+      self.registration.showNotification(message.title || 'Satranç Kahvesi', {
+        body: message.body || '',
+        icon: ICON,
+        tag: message.url,
+        data: { url: message.url }
+      }),
+      // A failed download must never get in the way of the notification.
+      cachePostFromNotification(message.url).catch(() => {})
+    ])
   );
 });
 
