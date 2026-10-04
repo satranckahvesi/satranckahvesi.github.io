@@ -16,6 +16,6 @@ Bu yazı, sitedeki PGN gösteriminin ana hat diyagramını, varyantları ve alt 
 [Black "Siyah"]
 [Result "*"]
 
-1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 { [D] } ( 3... Nf6 { İki At Savunması. } 4. Ng5 d5 5. exd5 Na5 { [D] } ) ( 3... Be7 { Macar Savunması. } 4. d4 d6 { Siyah merkezi sağlam tutuyor. } ( 4... exd4 5. Nxd4 Nf6 { [D] } ) 5. Nc3 Nf6 6. Be3 ) 4. c3 Nf6 5. d4 exd4 6. cxd4 Bb4+ 7. Nc3 Nxe4 8. O-O Bxc3 9. d5 *
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 { [D] } ( 3... Nf6 { İki At Savunması. } 4. Ng5 d5 5. exd5 Na5 { [D] } ) ( 3... Be7 { Macar Savunması. } 4. d4 d6 { Siyah merkezi sağlam tutuyor. } { 1- Birinci madde } { 2- İkinci madde } { 3- Üçüncü madde } ( 4... exd4 5. Nxd4 Nf6 { [D] } ) 5. Nc3 Nf6 6. Be3 ) 4. c3 Nf6 5. d4 exd4 6. cxd4 Bb4+ 7. Nc3 Nxe4 8. O-O Bxc3 9. d5 *
 
 Yazının geri kalanı yalnızca deneme amaçlı: PGN bloğunun ana hattı, iki varyantı ve bir alt varyantı yukarıda görülebilir.
