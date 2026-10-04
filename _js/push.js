@@ -45,15 +45,18 @@ export function installPushButton() {
   const registration = navigator.serviceWorker.ready;
 
   registration.then(async (reg) => {
-    const existing = await reg.pushManager.getSubscription();
-    if (!existing && Notification.permission === 'denied') return;
-    render(Boolean(existing));
+    render(Boolean(await reg.pushManager.getSubscription()));
     wrap.hidden = false;
   });
 
   async function subscribe(reg) {
-    if ((await Notification.requestPermission()) !== 'granted') {
-      say('Bildirim izni verilmedi. İsterseniz tarayıcı ayarlarından izin verebilirsiniz.');
+    const permission = await Notification.requestPermission();
+    if (permission !== 'granted') {
+      say(
+        permission === 'denied'
+          ? 'Tarayıcı bu site için bildirimleri engelliyor. Adres çubuğundaki ayarlar simgesinden bildirimlere izin verip sayfayı yenileyin.'
+          : 'İzin penceresi kapatıldı. Bildirim almak için düğmeye tekrar basıp izin verin.'
+      );
       return;
     }
     const subscription = await reg.pushManager.subscribe({
