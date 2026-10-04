@@ -43,11 +43,14 @@
 }
 
 /* Same opt-in, plain <pgn> view only (a study or player has no such wrapper
-   above .pgn-container): variation paragraphs are indented behind a pale
-   vertical rule and sub-variations are italic. The mainline is left as it is. */
+   above .pgn-container): a variation sits behind a pale vertical rule and is
+   indented from it; sub-variations are italic. The mainline is left as it is.
+   The rule and indent go on the .pgn-variation block: ChessPublica makes its
+   paragraphs display: inline, where text-indent has no effect. A nested
+   variation is a block inside one, so its rule steps in one more level. */
 
-.post-body--faded-diagrams .pgn-container:not(pgn-study .pgn-container, pgn-player .pgn-container) .pgn-variation > p {
-    text-indent: 1.5em;
+.post-body--faded-diagrams .pgn-container:not(pgn-study .pgn-container, pgn-player .pgn-container) .pgn-variation {
+    padding-left: 1.2em;
     border-left: 2px solid color-mix(in srgb, var(--muted) 45%, transparent);
 }
 
