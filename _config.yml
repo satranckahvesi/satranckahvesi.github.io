@@ -9,7 +9,7 @@ google_analytics: G-EQR45VG5M7
 # scripts/push/README.md for how to fill them in.
 push:
   endpoint: ""    # Apps Script web app URL (ends in /exec)
-  public_key: ""  # VAPID public key
+  public_key: "BJQ31F69KdKyUDcDrH7AtSQQpK-lNsxMM4zjzxIgReIgYcxUkak-UKiHuUR3kZUhd6u6k57q0lEyP3e9hmNAdms"  # VAPID public key
 
 markdown: kramdown
 permalink: /posts/:title/
