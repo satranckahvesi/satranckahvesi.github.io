@@ -66,10 +66,19 @@
 
 .masthead {
     max-width: 42rem;
-    margin: 7rem auto 0;
+    margin: 3.5rem auto 0;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+}
+
+/* From 52em the nav is out of flow, so the header's 1.5rem top padding counts
+   toward the same 3.5rem gap that separates the logo from the first section. */
+
+@media (min-width: 52em) {
+    .masthead {
+        margin-top: 2rem;
+    }
 }
 
 .masthead a,
@@ -86,11 +95,12 @@
 
 .masthead-logo {
     display: block;
-    width: clamp(10rem, 30vw, 15rem);
+    width: clamp(15rem, 45vw, 22.5rem);
+    margin: 0 auto;
     aspect-ratio: 640 / 900;
     background-color: var(--ink);
-    -webkit-mask: var(--logo) no-repeat left / contain;
-    mask: var(--logo) no-repeat left / contain;
+    -webkit-mask: var(--logo) no-repeat center / contain;
+    mask: var(--logo) no-repeat center / contain;
 }
 
 .section {
