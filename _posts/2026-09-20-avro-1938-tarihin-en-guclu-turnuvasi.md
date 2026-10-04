@@ -8,7 +8,7 @@ column: "Efsane turnuvalar"
 
 ###### Bu yazı ilk olarak 2016 yılında _Satrançsever_ dergisinin 2. sayısında yayınlanmıştır.
 
-Bu yazıda gelmiş geçmiş en güçlü* turnuvalardan kabul edilen **AVRO 1938** satranç turnuvasını ele alacağız. Oyuncuların gücü bakımından ender sayılabilecek turnuva, dünyanın en iyi sekiz oyuncusunu bir araya getiriyordu: üç dünya şampiyonu **Alekhine**, **Capablanca**, **Euwe**, geleceğin şampiyonu **Botvinnik**, "yeni Morphy" **Keres**, **Fine**, **Flohr** ve **Reshevsky**. Her oyuncu birbiriyle ikişer oyun oynayacaktı ve turnuva Hollanda'nın değişik kentlerinde sürecekti.
+Bu yazıda gelmiş geçmiş en güçlü[^\*] turnuvalardan kabul edilen **AVRO 1938** satranç turnuvasını ele alacağız. Oyuncuların gücü bakımından ender sayılabilecek turnuva, dünyanın en iyi sekiz oyuncusunu bir araya getiriyordu: üç dünya şampiyonu **Alekhine**, **Capablanca**, **Euwe**, geleceğin şampiyonu **Botvinnik**, "yeni Morphy" **Keres**, **Fine**, **Flohr** ve **Reshevsky**. Her oyuncu birbiriyle ikişer oyun oynayacaktı ve turnuva Hollanda'nın değişik kentlerinde sürecekti.
 
 O zamanlar 48 yaşındaki Alekhine ve ellisinde olan Capablanca için zorlayıcı olan bu koşullarda gençler ilk sıraları elde ediyordu. Turnuvayı kayıpsız tamamlayan Keres ve turnuvaya 5 galibiyet ve bir beraberlik ile başlayan Fine turnuvayı 8,5/14 ile birinci tamamlayacak, ancak eşitlik bozmada aralarındaki maçta 1,5-0,5 sonucuyla Fine karşısında galip geldiği için Keres şampiyonluğu kazanacaktı.
 
@@ -236,7 +236,7 @@ Botvinnik'in o yıllarda dünya satrancındaki yükselişi Alekhine ve Capablanc
  14    Giardelli      0 ½ 0 ½ ½ ½ ½ ½ ½ ½ ½ 0 0 *  4½
 </pre>
 
-* Konu üzerine yazılan [ChessBase makalesi](https://en.chessbase.com/post/what-was-the-strongest-tournament-of-all-time-) istatistiklere dayanarak AVRO 1938'i gelmiş geçmiş en güçlü turnuva olarak kabul ediyor.
+[^\*]: Konu üzerine yazılan [ChessBase makalesi](https://en.chessbase.com/post/what-was-the-strongest-tournament-of-all-time-) istatistiklere dayanarak AVRO 1938'i gelmiş geçmiş en güçlü turnuva olarak kabul ediyor.
 
 Faydalanılan kaynaklar:
 
