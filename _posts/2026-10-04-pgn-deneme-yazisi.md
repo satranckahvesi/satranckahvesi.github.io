@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2026-10-04
-title: "PGN deneme yazısı: Ana hat, varyant ve alt varyant"
+title: "PGN deneme yazısı"
 author: "FM Nazmi Can Doğan"
 column: "Analizli oyunlar"
 ---
