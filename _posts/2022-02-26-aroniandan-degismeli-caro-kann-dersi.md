@@ -7,7 +7,7 @@ column: "Analizli oyunlar"
 redirect_from: /posts/aronian-dan-degismeli-caro-kann-dersi/
 ---
 
-###### Bu yazı ilk olarak 2022 yılında satranchess.com sitesinde yayınlanmıştır.
+###### Bu yazı ilk olarak 2022 yılında satranchess.com web sitesinde yayınlanmıştır.
 
 <!--
 ### Levon Aronian - Vincent Keymer 2022 Fide Grand Prix 3. tur mücadelesi
