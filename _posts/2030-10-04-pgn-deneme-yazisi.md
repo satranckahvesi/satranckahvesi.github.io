@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2026-10-04
+date: 2030-10-04
 title: "PGN deneme yazısı"
 author: "FM Nazmi Can Doğan"
 column: "Analizli oyunlar"
