@@ -1,0 +1,31 @@
+{%- comment %} Logo mark: steaming cup on a checkerboard roof above the name plate. The name and tagline are
+    live text laid over it (see .masthead-logo in _css/layout.css). Drawn in currentColor so it follows the theme. {% endcomment %}
+<svg class="logo-mark" viewBox="0 0 640 900" fill="currentColor" aria-hidden="true" focusable="false">
+    <defs>
+        <mask id="logo-halo" maskUnits="userSpaceOnUse" x="0" y="0" width="640" height="900">
+            <rect width="640" height="900" fill="#fff"/>
+            <g fill="#000" stroke="#000" stroke-width="41" stroke-linejoin="round">
+                <ellipse cx="319.5" cy="205" rx="112.75" ry="55.75"/>
+                <path d="M206.5 205V280C206.5 350 250 390 319.5 390S432.5 350 432.5 280V205Z"/>
+                <path d="M432 220H450A36 34 0 0 1 450 288H432" fill="none"/>
+            </g>
+        </mask>
+    </defs>
+    <g stroke="currentColor" stroke-width="14" stroke-linecap="round" fill="none">
+        <path d="M263.5 56V97M319 26V97M376.5 56V97"/>
+    </g>
+    <g mask="url(#logo-halo)">
+        <path d="M319.5 290H479L530.6 372.5H319.5ZM108.4 372.5H319.5V507H26.5Z"/>
+        <path d="M160 290H479L613 507H26.5Z" fill="none" stroke="currentColor" stroke-width="13" stroke-linejoin="round"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-width="13" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M206.5 205V280C206.5 350 250 390 319.5 390S432.5 350 432.5 280V205"/>
+        <path d="M206.5 205A112.75 55.75 0 0 1 432.5 205"/>
+        <path d="M432 220H450A36 34 0 0 1 450 288H432"/>
+    </g>
+    <ellipse cx="319" cy="212.5" rx="107" ry="32.5"/>
+    <g fill="none" stroke="currentColor" stroke-width="13" stroke-linejoin="round">
+        <path d="M26.5 507H613V866Q613 873.5 605 873.5H34Q26.5 873.5 26.5 866Z"/>
+    </g>
+    <path d="M41 790H598M41 850H598" stroke="currentColor" stroke-width="2.5" fill="none"/>
+</svg>
