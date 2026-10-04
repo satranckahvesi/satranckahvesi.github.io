@@ -2,13 +2,16 @@
 layout: null
 sitemap: false
 ---
-// Service worker. Two caches:
+{%- assign offline_posts = 10 %}
+// Service worker. Three caches:
 //  - VISITED (fixed name, survives updates): pages the reader opened, fetched network-first
 //    and kept for offline reading, plus other /assets/ files, served from the cache and
 //    refreshed in the background. Trimmed to the most recent MAX_VISITED entries.
-//  - OFFLINE (fixed name): every page listed in sitemap.xml and the images they use, stored
+//  - OFFLINE (fixed name): the pages listed in sitemap.xml and the images they use, stored
 //    when the page asks for it ({type: 'sync-offline'}; it does so only inside the installed
-//    app). Pages that left the sitemap are removed.
+//    app). Of the posts only the newest {{ offline_posts }} are kept; everything else in the
+//    sitemap (home, archives, authors, columns, about) is kept. Pages that dropped out are
+//    removed.
 //  - SHELL (new name every build): the start page, the offline page and this build's CSS,
 //    scripts, fonts and icons, stored at install so the installed app opens offline right
 //    after an update. The previous SHELL is deleted when the new one activates.
@@ -21,6 +24,13 @@ const VISITED = 'satranckahvesi-visited';
 const OFFLINE = 'satranckahvesi-offline';
 const SHELL = 'satranckahvesi-shell-' + VERSION;
 const MAX_VISITED = 120;
+const POSTS = '{{ "/posts/" | relative_url }}';
+// site.posts is sorted newest first.
+const LATEST_POSTS = [
+  {%- for post in site.posts limit: offline_posts %}
+  '{{ post.url | relative_url }}',
+  {%- endfor %}
+];
 const OFFLINE_URL = '{{ "/offline/" | relative_url }}';
 const ASSETS = '{{ "/assets/" | relative_url }}';
 const ICON = '{{ "/assets/img/icon-192.png" | relative_url }}';
@@ -93,7 +103,8 @@ async function staleWhileRevalidate(request) {
 // true only when everything was fetched.
 async function syncOffline() {
   const sitemap = await (await fetch(SITEMAP, { cache: 'no-cache' })).text();
-  const pages = [...new Set([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => new URL(match[1].trim()).pathname))];
+  const pages = [...new Set([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => new URL(match[1].trim()).pathname))]
+    .filter((path) => !path.startsWith(POSTS) || LATEST_POSTS.includes(path));
   if (pages.length === 0) return false;
 
   const cache = await caches.open(OFFLINE);
