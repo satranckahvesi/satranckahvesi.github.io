@@ -41,7 +41,7 @@ Bu veriler, açık rızanıza dayanarak, sitenin ne kadar okunduğunu ve hangi y
 {% if site.push.endpoint.size > 0 and site.push.public_key.size > 0 %}
 ### Yeni yazı bildirimleri
 
-Sayfanın altındaki **Bildirimleri aç** düğmesine basar ve tarayıcınızın izin penceresinde izin verirseniz, yeni bir yazı yayınlandığında tarayıcınıza bildirim göndeririz. Bu isteğe bağlıdır; düğmeye basmadığınız ve izin vermediğiniz sürece hiçbir bildirim aboneliği oluşturulmaz. İstatistik çerezlerine verdiğiniz ya da vermediğiniz izinden bağımsızdır.
+Sayfanın altındaki **Bildirim tercihleri** düğmesiyle açılan pencerede **Bildirimleri aç** düğmesine basar ve tarayıcınızın izin penceresinde izin verirseniz, yeni bir yazı yayınlandığında tarayıcınıza bildirim göndeririz. Bu isteğe bağlıdır; düğmeye basmadığınız ve izin vermediğiniz sürece hiçbir bildirim aboneliği oluşturulmaz. İstatistik çerezlerine verdiğiniz ya da vermediğiniz izinden bağımsızdır.
 
 Abone olduğunuzda tarayıcınızın bu cihaz için ürettiği bildirim adresi ve iki şifreleme anahtarı ile kayıt tarihi saklanır. Adınız, e-posta adresiniz, telefon numaranız, IP adresiniz ya da hangi yazıları okuduğunuz bu kayda eklenmez. Bildirim adresi bir cihaza özgü kalıcı bir tanımlayıcı olduğundan, bunu kişisel veri gibi ele alıyoruz.
 
@@ -49,7 +49,7 @@ Abone olduğunuzda tarayıcınızın bu cihaz için ürettiği bildirim adresi v
 - **Nerede saklanır:** Kayıtlar Google hizmetlerinde saklanır. Bu verilere yalnızca yayın ekibi erişebilir.
 - **Kimler işler:** Bildirimler, tarayıcınızın bildirim hizmeti (Chrome için Google, Firefox için Mozilla, Edge için Microsoft, Safari ve iPhone/iPad için Apple) üzerinden size ulaşır; bu hizmetler bildirimi iletirken kendi koşullarına göre bağlantı bilgilerinizi işleyebilir. Aboneliği kaydeden istek de Google'ın sunucularına gider.
 - **Ne kadar saklanır:** Siz aboneliği kapatana, tarayıcı aboneliği geçersiz kılana ya da bildirim göndermeyi denerken adresin artık geçerli olmadığı anlaşılana kadar. Geçersiz kayıtlar otomatik silinir.
-- **Nasıl vazgeçersiniz:** Sayfanın altındaki **Bildirimleri kapat** düğmesiyle ya da tarayıcınızın site ayarlarından bildirim iznini kaldırarak. Kapattığınızda kaydınız tablodan silinir.
+- **Nasıl vazgeçersiniz:** Sayfanın altındaki **Bildirim tercihleri** düğmesiyle açılan pencerede **Bildirimleri kapat** düğmesine basarak ya da tarayıcınızın site ayarlarından bildirim iznini kaldırarak. Kapattığınızda kaydınız tablodan silinir.
 
 iPhone ve iPad'de bildirimler yalnızca siteyi Ana Ekran'a ekleyip oradan açtığınızda sunulur.
 {% endif %}

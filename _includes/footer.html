@@ -2,9 +2,21 @@
     <nav class="footer-nav" aria-label="Alt gezinme">
         {% include nav-links.html with_home=true %}
     </nav>
-    <p class="footer-credit">{{ site.title }} &copy; {{ site.time | date: '%Y' }} &middot; <a href="{{ '/gizlilik/' | relative_url }}">Gizlilik ve çerezler</a><span class="install-app-wrap" hidden> &middot; <button type="button" class="install-app">Uygulamayı yükle</button></span>{% if site.push.endpoint.size > 0 and site.push.public_key.size > 0 %}<span class="push-wrap" hidden> &middot; <button type="button" class="push-toggle" data-endpoint="{{ site.push.endpoint }}" data-key="{{ site.push.public_key }}">Bildirimleri aç</button></span>{% endif %}{% if jekyll.environment == "production" and site.google_analytics %} &middot; <button type="button" class="cookie-settings">Çerez tercihleri</button>{% endif %}</p>
-    <p class="push-status" role="status" aria-live="polite"></p>
-    {%- if site.push.endpoint.size > 0 and site.push.public_key.size > 0 %}
-    <p class="push-hint" hidden>Bildirimleri almak için önce Ana Ekran'a ekleyin: Safari'de <strong>Paylaş</strong> düğmesine dokunup <strong>Ana Ekrana Ekle</strong>'yi seçin, sonra siteyi Ana Ekran'dan açın.</p>
-    {%- endif %}
+    <p class="footer-credit">{{ site.title }} &copy; {{ site.time | date: '%Y' }} &middot; <a href="{{ '/gizlilik/' | relative_url }}">Gizlilik ve çerezler</a><span class="install-app-wrap" hidden> &middot; <button type="button" class="install-app">Uygulamayı yükle</button></span>{% if site.push.endpoint.size > 0 and site.push.public_key.size > 0 %}<span class="push-wrap" hidden> &middot; <button type="button" class="push-toggle" data-endpoint="{{ site.push.endpoint }}" data-key="{{ site.push.public_key }}" aria-controls="push-banner" aria-expanded="false">Bildirim tercihleri</button></span>{% endif %}{% if jekyll.environment == "production" and site.google_analytics %} &middot; <button type="button" class="cookie-settings">Çerez tercihleri</button>{% endif %}</p>
 </footer>
+{%- if site.push.endpoint.size > 0 and site.push.public_key.size > 0 %}
+<div class="push-banner" id="push-banner" role="region" aria-label="Bildirim tercihleri" hidden>
+    <p data-state="off" hidden>Yeni bir yazı yayınlandığında size bir bildirim göndermek istiyoruz. Bildirimleri açarsanız tarayıcınız sizden izin isteyecek. Ayrıntılar için <a href="{{ '/gizlilik/' | relative_url }}">Gizlilik ve çerezler</a> sayfasına bakın.</p>
+    <p data-state="on" hidden>Yeni yazı bildirimleri açık.</p>
+    <p data-state="blocked" hidden>Tarayıcı bu site için bildirimleri engelliyor. Adres çubuğundaki ayarlar simgesinden bildirimlere izin verip sayfayı yenileyin.</p>
+    <p data-state="closed" hidden>İzin penceresi kapatıldı. Bildirim almak için Bildirimleri aç düğmesine tekrar basıp izin verin.</p>
+    <p data-state="ios" hidden>Bildirimleri almak için önce Ana Ekran'a ekleyin: Safari'de <strong>Paylaş</strong> düğmesine dokunup <strong>Ana Ekrana Ekle</strong>'yi seçin, sonra siteyi Ana Ekran'dan açın.</p>
+    <p data-state="enabled" hidden>Bildirimler açıldı. Yeni bir yazı yayınlandığında size bir bildirim göndererek haber vereceğiz.</p>
+    <p data-state="disabled" hidden>Bildirimler kapatıldı.</p>
+    <p data-state="error" hidden>Bir sorun oluştu. Lütfen daha sonra tekrar deneyin.</p>
+    <div class="push-banner-actions">
+        <button type="button" data-push="dismiss">Kapat</button>
+        <button type="button" data-push="primary" hidden>Bildirimleri aç</button>
+    </div>
+</div>
+{%- endif %}
