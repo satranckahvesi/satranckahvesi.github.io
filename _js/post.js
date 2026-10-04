@@ -2,6 +2,7 @@
 // ChessPublica elements before ChessPublica's own script (loaded after this
 // one) scans the page, and before curly quotes are applied.
 
+import { installCommentList } from './chesspublica/comment-list.js';
 import { installDiagramJoin } from './chesspublica/diagram-join.js';
 import { installDiagramNoPause } from './chesspublica/diagram-no-pause.js';
 import { installGlyphBadge } from './chesspublica/glyph-badge.js';
@@ -30,6 +31,7 @@ if (body) {
   installStudyEnhancements(body, watcher, pendingCenterKey, imagesSized);
   installGlyphBadge(body, watcher);
   installDiagramJoin(body, watcher);
+  installCommentList(body, watcher);
   installVariationFix(body, watcher);
   installDiagramNoPause(body);
   installLocalization(watcher);

@@ -9,7 +9,7 @@ layout: default
         <a href="{% include column-url.html name=page.column %}">{{ page.column }}</a>
         · {% include turkish-date.html date=page.date %}
     </p>
-    <div class="post-body{% if page.faded_diagrams %} post-body--faded-diagrams{% endif %}">
+    <div class="post-body">
         {{ content }}
     </div>
 </article>

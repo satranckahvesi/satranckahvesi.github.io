@@ -29,35 +29,35 @@
     --diagram-max-width: min(400px, 94cqw);
 }
 
-/* Opt-in (front matter `faded_diagrams: true`): a diagram inside a variation is
-   smaller and paler than the mainline's, one step more for each nesting level. */
+/* A diagram inside a variation is smaller and paler than the mainline's, one
+   step more for each nesting level. */
 
-.post-body--faded-diagrams .pgn-container .pgn-variation > .cp-board-wrapper {
+.post-body .pgn-container .pgn-variation > .cp-board-wrapper {
     --diagram-max-width: calc(min(400px, 94cqw) - 3rem);
     filter: saturate(0.7) opacity(0.85);
 }
 
-.post-body--faded-diagrams .pgn-container .pgn-variation .pgn-variation > .cp-board-wrapper {
+.post-body .pgn-container .pgn-variation .pgn-variation > .cp-board-wrapper {
     --diagram-max-width: calc(min(400px, 94cqw) - 6rem);
     filter: saturate(0.4) opacity(0.7);
 }
 
-/* Same opt-in, plain <pgn> view only (a study or player has no such wrapper
-   above .pgn-container): the text of a variation sits behind a pale vertical
+/* Plain <pgn> view only (a study or player has a wrapper above
+   .pgn-container): the text of a variation sits behind a pale vertical
    rule, drawn on each line of its paragraphs so it never runs beside a
    diagram; sub-variations are italic. The mainline is left as it is.
    ChessPublica makes those paragraphs display: inline, hence
    box-decoration-break: clone to repeat the rule and padding on every wrapped
    line. A nested variation is a block inside one, so it steps in one level. */
 
-.post-body--faded-diagrams .pgn-container:not(pgn-study .pgn-container, pgn-player .pgn-container) .pgn-variation > p {
+.post-body .pgn-container:not(pgn-study .pgn-container, pgn-player .pgn-container) .pgn-variation > p {
     padding-left: 0.8em;
     border-left: 2px solid color-mix(in srgb, var(--muted) 45%, transparent);
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
 }
 
-.post-body--faded-diagrams .pgn-container:not(pgn-study .pgn-container, pgn-player .pgn-container) .pgn-variation .pgn-variation {
+.post-body .pgn-container:not(pgn-study .pgn-container, pgn-player .pgn-container) .pgn-variation .pgn-variation {
     padding-left: 1.2em;
     font-style: italic;
 }
