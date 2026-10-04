@@ -6,7 +6,8 @@ sitemap: false
 // Service worker. Three caches:
 //  - VISITED (fixed name, survives updates): pages the reader opened, fetched network-first
 //    and kept for offline reading, plus other /assets/ files, served from the cache and
-//    refreshed in the background. Trimmed to the most recent MAX_VISITED entries.
+//    refreshed in the background. Also receives the post (and its images) of every push
+//    notification when it arrives. Trimmed to the most recent MAX_VISITED entries.
 //  - OFFLINE (fixed name): the pages listed in sitemap.xml and the images they use, stored
 //    when the page asks for it ({type: 'sync-offline'}; it does so only inside the installed
 //    app). Of the posts only the newest {{ offline_posts }} are kept; everything else in the
@@ -176,6 +177,18 @@ self.addEventListener('fetch', (event) => {
   }
 });
 
+// Stores the page a notification points to, and its images, so the post can be read
+// offline without the app having been opened. Goes into VISITED, which is trimmed.
+async function cachePostFromNotification(url) {
+  const target = new URL(url || '/', self.location.origin);
+  if (target.origin !== self.location.origin || !target.pathname.startsWith(POSTS)) return;
+  const response = await fetch(target.pathname, { cache: 'no-cache' });
+  if (!response.ok) return;
+  await store(target.pathname, response);
+  const images = [...new Set((await response.text()).match(IMAGES) ?? [])];
+  await Promise.allSettled(images.map(async (image) => store(image, await fetch(image))));
+}
+
 self.addEventListener('push', (event) => {
   let message = {};
   try {
@@ -184,12 +197,16 @@ self.addEventListener('push', (event) => {
     message = {};
   }
   event.waitUntil(
-    self.registration.showNotification(message.title || 'Satranç Kahvesi', {
-      body: message.body || '',
-      icon: ICON,
-      tag: message.url,
-      data: { url: message.url }
-    })
+    Promise.all([
+      self.registration.showNotification(message.title || 'Satranç Kahvesi', {
+        body: message.body || '',
+        icon: ICON,
+        tag: message.url,
+        data: { url: message.url }
+      }),
+      // A failed download must never get in the way of the notification.
+      cachePostFromNotification(message.url).catch(() => {})
+    ])
   );
 });
 
