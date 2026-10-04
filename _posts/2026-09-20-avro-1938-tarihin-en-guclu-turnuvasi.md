@@ -1,4 +1,4 @@
-
+---
 layout: post
 date: 2026-09-20
 title: "AVRO 1938: Tarihin en güçlü turnuvası"
