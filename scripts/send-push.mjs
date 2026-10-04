@@ -154,7 +154,8 @@ async function main() {
     let sent = 0;
     for (const subscription of targets) {
       try {
-        await webpush.sendNotification(subscription, message, { TTL: 60 * 60 * 24 });
+        // "high" asks Android to deliver at once instead of holding the message while the phone dozes.
+        await webpush.sendNotification(subscription, message, { TTL: 60 * 60 * 24, urgency: 'high' });
         sent++;
       } catch (error) {
         // 404/410: the browser dropped the subscription for good.
