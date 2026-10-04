@@ -23,6 +23,8 @@
 {%- endif %}
 {{ seo_tags }}
 {% feed_meta %}
+{%- comment %} No og:image on purpose: without one, WhatsApp shows the PNG icon as a small side thumbnail instead of a large image card. {% endcomment %}
+<link rel="icon" type="image/png" sizes="192x192" href="{{ '/assets/img/icon-192.png' | relative_url }}">
 <link rel="icon" type="image/svg+xml" href="{{ '/assets/img/favicon.svg' | relative_url }}">
 <link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
 <link rel="manifest" href="{{ '/manifest.webmanifest' | relative_url }}">
