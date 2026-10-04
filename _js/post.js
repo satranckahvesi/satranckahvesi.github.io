@@ -17,6 +17,7 @@ import { scrollPendingBlockIntoView } from './pgn/pending-scroll.js';
 import { takePendingCenter } from './pgn/view-state.js';
 import { wrapFigures } from './post-figures.js';
 import { curlyPass, keepCommentsCurly } from './text/curly-quotes.js';
+import { installAppButton } from './install-app.js';
 import { installNavMenu } from './nav-menu.js';
 import { installServiceWorker } from './service-worker.js';
 import { installThemeToggle } from './theme-toggle.js';
@@ -47,5 +48,6 @@ if (body) {
 
 installThemeToggle();
 installNavMenu();
+installAppButton();
 installServiceWorker();
 installCookieConsent();
