@@ -79,7 +79,7 @@ export function installPushButton() {
       throw error;
     }
     render(true);
-    say('Bildirimler açıldı. Yeni bir yazı yayımlandığında haber vereceğiz.');
+    say('Bildirimler açıldı. Yeni bir yazı yayınlandığında size bir bildirim göndererek haber vereceğiz.');
   }
 
   async function unsubscribe(subscription) {
