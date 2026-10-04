@@ -93,20 +93,6 @@
     mask: var(--logo) no-repeat left / contain;
 }
 
-/* A short tick under the logo; full column width on narrow screens. */
-
-.masthead-rule {
-    width: 8.3333%;
-    margin-top: 1rem;
-    border-top: 2px solid var(--ink);
-}
-
-@media (max-width: 52em) {
-    .masthead-rule {
-        width: 100%;
-    }
-}
-
 .section {
     max-width: 42rem;
     margin: 3.5rem auto 0;
