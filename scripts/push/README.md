@@ -1,7 +1,8 @@
 # Yeni yazı bildirimleri: kurulum
 
 Sitenin altındaki **Bildirimleri aç** düğmesi, bilgisayar ve Android tarayıcılarında
-çalışır (iPhone ve iPad'de gösterilmez). Düğmeye basan ziyaretçinin aboneliği bir Google
+çalışır. iPhone ve iPad'de düğme yalnızca site Ana Ekran'a eklenip oradan açıldığında
+görünür; Safari sekmesinde "önce Ana Ekran'a ekleyin" ipucu çıkar. Düğmeye basan ziyaretçinin aboneliği bir Google
 E-Tablo'ya yazılır. `main`'e yeni bir yazı girdiğinde GitHub Action (`notify.yml`)
 abonelere bildirim gönderir.
 

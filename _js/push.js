@@ -1,9 +1,10 @@
 // "Bildirimleri aç / kapat" button in the footer (see _includes/footer.html).
 // Subscribes this browser to Web Push and sends the subscription to the Apps Script
 // endpoint (scripts/push/apps-script.gs), which keeps it in a Google Sheet. The
-// permission prompt opens only from a click. Computers and Android only: iOS needs the
-// site on the Home Screen and is left out on purpose.
-import { isIos } from './lib/platform.js';
+// permission prompt opens only from a click. iOS only offers push to a site that was added
+// to the Home Screen and is opened from there, so in a Safari tab the footer shows a hint
+// to add it first (.push-hint) instead of the button.
+import { isIos, isStandalone } from './lib/platform.js';
 
 const LABEL_ON = 'Bildirimleri aç';
 const LABEL_OFF = 'Bildirimleri kapat';
@@ -31,8 +32,16 @@ export function installPushButton() {
   const button = wrap?.querySelector('.push-toggle');
   const status = document.querySelector('.push-status');
   const { endpoint, key } = button?.dataset ?? {};
+  if (!button || !endpoint || !key) return;
+
+  if (isIos() && !isStandalone()) {
+    const hint = document.querySelector('.push-hint');
+    if (hint) hint.hidden = false;
+    return;
+  }
+
   const supported = 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window;
-  if (!button || !endpoint || !key || !supported || isIos()) return;
+  if (!supported) return;
 
   const say = (message) => {
     status.textContent = message;
