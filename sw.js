@@ -3,7 +3,7 @@ layout: null
 sitemap: false
 ---
 {%- assign offline_posts = 10 %}
-// Service worker. Three caches:
+// Service worker. Four caches:
 //  - VISITED (fixed name, survives updates): pages the reader opened, fetched network-first
 //    and kept for offline reading, plus other /assets/ files, served from the cache and
 //    refreshed in the background. Also receives the post (and its images) of every push
@@ -13,10 +13,13 @@ sitemap: false
 //    app). Of the posts only the newest {{ offline_posts }} are kept; everything else in the
 //    sitemap (home, archives, authors, columns, about) is kept. Pages that dropped out are
 //    removed.
+//  - EXTERNAL (fixed name): the two ChessPublica files and the twelve chess piece images
+//    that every board loads from other sites (see _includes/head.html and scripts.html).
+//    Stored at install and served from here, so boards work offline on a new device too.
 //  - SHELL (new name every build): the start page, the offline page and this build's CSS,
 //    scripts, fonts and icons, stored at install so the installed app opens offline right
 //    after an update. The previous SHELL is deleted when the new one activates.
-// Everything else (analytics, embeds) goes straight to the network.
+// Everything else (analytics, other embeds) goes straight to the network.
 // Push messages ({title, body, url}, sent by scripts/send-push.mjs) are shown as
 // notifications; tapping one opens its page.
 
@@ -36,6 +39,16 @@ const OFFLINE_URL = '{{ "/offline/" | relative_url }}';
 const ASSETS = '{{ "/assets/" | relative_url }}';
 const ICON = '{{ "/assets/img/icon-192.png" | relative_url }}';
 const SITEMAP = '{{ "/sitemap.xml" | relative_url }}';
+// Files other sites serve to the boards. Keep in sync with _includes/head.html and
+// scripts.html (ChessPublica) and with the pieceTheme inside ChessPublica.all.min.js.
+const EXTERNAL = 'satranckahvesi-external';
+const CHESSPUBLICA = 'https://chesspublica.github.io/dist/';
+const PIECES = 'https://chessboardjs.com/img/chesspieces/wikipedia/';
+const EXTERNAL_FILES = [
+  CHESSPUBLICA + 'ChessPublica.all.min.css',
+  CHESSPUBLICA + 'ChessPublica.all.min.js',
+  ...['wK', 'wQ', 'wR', 'wB', 'wN', 'wP', 'bK', 'bQ', 'bR', 'bB', 'bN', 'bP'].map((piece) => PIECES + piece + '.png')
+];
 const IMAGES = new RegExp(ASSETS.replace(/\//g, '\\/') + 'img\\/[^"\'\\s)<>]+', 'g');
 const PRECACHE = [
   '{{ "/" | relative_url }}',
@@ -58,6 +71,7 @@ self.addEventListener('install', (event) => {
         // Best effort: one missing file must not stop the update.
         await Promise.allSettled(PRECACHE.map((url) => cache.add(url)));
       })
+      .then(() => Promise.allSettled(EXTERNAL_FILES.map((url) => storeExternal(url))))
       .then(() => self.skipWaiting())
   );
 });
@@ -66,7 +80,7 @@ self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches
       .keys()
-      .then((keys) => Promise.all(keys.filter((key) => key !== VISITED && key !== OFFLINE && key !== SHELL).map((key) => caches.delete(key))))
+      .then((keys) => Promise.all(keys.filter((key) => ![VISITED, OFFLINE, EXTERNAL, SHELL].includes(key)).map((key) => caches.delete(key))))
       .then(() => self.clients.claim())
   );
 });
@@ -164,11 +178,39 @@ self.addEventListener('message', (event) => {
   event.waitUntil(running);
 });
 
+// ChessPublica answers with CORS headers, so its files are stored as readable responses.
+// The piece images come without them and are stored as opaque responses, which an <img>
+// can still use.
+async function storeExternal(url) {
+  const response = await fetch(url, { mode: url.startsWith(CHESSPUBLICA) ? 'cors' : 'no-cors' });
+  if (!response.ok && response.type !== 'opaque') throw new Error(String(response.status));
+  await (await caches.open(EXTERNAL)).put(url, response.clone());
+  return response;
+}
+
+// The boards break when the ChessPublica files change under the site's own scripts, so
+// those are refreshed in the background; the piece images never change.
+async function external(request) {
+  const cached = await (await caches.open(EXTERNAL)).match(request.url);
+  if (cached) {
+    if (request.url.startsWith(CHESSPUBLICA)) storeExternal(request.url).catch(() => {});
+    return cached;
+  }
+  try {
+    return await storeExternal(request.url);
+  } catch {
+    return fetch(request);
+  }
+}
+
 self.addEventListener('fetch', (event) => {
   const { request } = event;
   if (request.method !== 'GET') return;
   const url = new URL(request.url);
-  if (url.origin !== self.location.origin) return;
+  if (url.origin !== self.location.origin) {
+    if (EXTERNAL_FILES.includes(request.url)) event.respondWith(external(request));
+    return;
+  }
 
   if (request.mode === 'navigate') {
     event.respondWith(networkFirst(request));
