@@ -4,7 +4,6 @@ date: 2026-10-04
 title: "PGN deneme yazısı"
 author: "FM Nazmi Can Doğan"
 column: "Analizli oyunlar"
-faded_diagrams: true
 ---
 
 Bu yazı, sitedeki PGN gösteriminin ana hat diyagramını, varyantları ve alt varyantları doğru çizip çizmediğini denemek için hazırlandı. Aşağıdaki örnek İtalyan Oyunu'nun klasik bir başlangıcını izliyor.
