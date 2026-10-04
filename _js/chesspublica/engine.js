@@ -15,4 +15,17 @@ export const disableAutoplayLoop = (engine) => {
   engine._loopRAF = () => {};
 };
 
+/**
+ * Variations have their own loop, started by clicking a move that has
+ * sub-variations or by a variation's play icon. Keep the single step such a
+ * click performs, but never keep stepping.
+ */
+export const disableVariationLoop = (engine) => {
+  engine._variationPlayTick = (variation) => {
+    if (engine._variation !== variation || !variation.playing) return;
+    variation.playing = false;
+    if (variation.index < variation.maxIndex) engine.variationGoTo(variation.index + 1);
+  };
+};
+
 export const commentBoxOf = (engine) => engine?.commentBox ?? null;
