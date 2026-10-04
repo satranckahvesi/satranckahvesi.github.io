@@ -8,8 +8,8 @@ google_analytics: G-EQR45VG5M7
 # New-post notifications (Web Push). Leave both empty to hide the footer button; see
 # scripts/push/README.md for how to fill them in.
 push:
-  endpoint: ""    # Apps Script web app URL (ends in /exec)
-  public_key: ""  # VAPID public key
+  endpoint: "https://script.google.com/macros/s/AKfycbxRNzMSunM3CqR3LGF93KikhXR-r1VgCQbMwGiyze4X5k6YqxyKvFnEWaqu-_He7XFZ/exec"  # Apps Script web app URL (ends in /exec)
+  public_key: "BJQ31F69KdKyUDcDrH7AtSQQpK-lNsxMM4zjzxIgReIgYcxUkak-UKiHuUR3kZUhd6u6k57q0lEyP3e9hmNAdms"  # VAPID public key
 
 markdown: kramdown
 permalink: /posts/:title/

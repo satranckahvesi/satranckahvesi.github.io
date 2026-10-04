@@ -7,6 +7,10 @@
  * A endpoint, B p256dh, C auth, D kayıt zamanı.
  *
  * Kurulum için scripts/push/README.md dosyasına bakın.
+ *
+ * @OnlyCurrentDoc
+ * (Bu satır önemli: betiğin yalnızca bağlı olduğu E-Tabloya erişmesini sağlar,
+ * Google Drive'daki diğer tablolara değil.)
  */
 
 var SHEET_NAME = 'Abonelikler';

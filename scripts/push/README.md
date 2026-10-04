@@ -67,9 +67,13 @@ Bilgisayarınızda terminal kullanmayı tercih ederseniz: depo klasöründe `npm
 4. **Dağıt → Yeni dağıtım → Tür: Web uygulaması**:
    - Şu kullanıcı olarak çalıştır: **Ben**
    - Erişimi olanlar: **Herkes**
-5. İlk dağıtımda Google tablo erişimi için izin ister. "Bu uygulama doğrulanmadı"
-   uyarısı çıkarsa **Gelişmiş → (proje adı)'na git** deyip izin verin. Bu uyarıyı yalnızca
-   siz görürsünüz.
+5. İlk dağıtımda Google tablo erişimi için izin ister. "Google bu uygulamayı
+   doğrulamadı" uyarısı çıkar; geliştirici olarak kendi e-posta adresinizi görürsünüz.
+   Bu normaldir, çünkü uygulamayı siz yazdınız ve yalnızca siz kullanıyorsunuz. **Gelişmiş →
+   (proje adı)'na git (güvenli değil)** deyip izin verin. Bu uyarıyı ziyaretçiler görmez.
+   İzin ekranında yalnızca bu E-Tabloya erişim istendiğini görmelisiniz; kodun başındaki
+   `@OnlyCurrentDoc` satırı bunu sağlar. Kodu başka bir kaynaktan almışsanız yapıştırmadan
+   önce okuyun.
 6. Dağıtım bitince **Web uygulaması URL'sini** kopyalayın (`.../exec` ile biter).
 
 Koda sonradan bir değişiklik yaparsanız: **Dağıt → Dağıtımları yönet → düzenle → Yeni
