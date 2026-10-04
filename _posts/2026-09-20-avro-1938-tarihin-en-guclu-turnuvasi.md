@@ -240,6 +240,6 @@ Botvinnik'in o yıllarda dünya satrancındaki yükselişi Alekhine ve Capablanc
 
 Faydalanılan kaynaklar:
 
-- Mikhail Botvinnik, _One Hundred Selected Games_{: lang="en"}
-- Garry Kasparov, _My Great Predecessors_{: lang="en"} (Cilt I ve II)
+- Mikhail Botvinnik, _One Hundred Selected Games_
+- Garry Kasparov, _My Great Predecessors_ (Cilt I ve II)
 - Chesshistory.com

@@ -32,8 +32,8 @@ psikoloji öğrenimlerini de eklemiş. Nöroloji bilimi ve öğrenmenin psikoloj
 satranç oyunculuğu ve antrenörlükten edindiği tecrübelerle birleştirmiş: "Kitabı yazmaya
 başladığım sırada 2600'a çok yakındım ve İngiltere şampiyonuydum. Paylaşılmaya değer
 şeylerin izini sürdüğümü hissediyordum" diyor. Satranç otoriteleri tarafından takdirle
-karşılanan **_"Seven Deadly Chess Sins"_{: lang="en"}** ("Yedi Ölümcül Satranç Günahı") kitabından sonra
-karşımızda yine en az onun kadar etkileyici bir kitap var: **_"Chess for Zebras"_{: lang="en"}** ("Zebralar için
+karşılanan **_"Seven Deadly Chess Sins"_** ("Yedi Ölümcül Satranç Günahı") kitabından sonra
+karşımızda yine en az onun kadar etkileyici bir kitap var: **_"Chess for Zebras"_** ("Zebralar için
 Satranç").
 
 Kitap üç bölümden oluşuyor: İlk bölüm daha çok satranç oyuncusunun psikolojisine
@@ -80,9 +80,9 @@ izin verin."
 
 Peki bu nasıl yapılabilir? Kitap düşünce kalıplarını yıkma fikriyle "farklı
 düşünmenin" izini sürüyor. Daha doğrusu Rowson ustalığa giden yolunda neler öğrendiğini
-ve neleri "unutması" (_unlearning_{: lang="en"}) gerektiğini anlatıyor. İlerleyen bölümler boyunca döne
+ve neleri "unutması" (_unlearning_) gerektiğini anlatıyor. İlerleyen bölümler boyunca döne
 dolaşa aynı şeyi hatırlatıyor okura: **"Gelişme, konfor alanınızın sınırında başlar."**
-(_"Improvement begins at the edge of your comfort zone"_{: lang="en"}) Yani sınırlarınızı zorlamadığınız
+(_"Improvement begins at the edge of your comfort zone"_) Yani sınırlarınızı zorlamadığınız
 sürece gelişme yok. 
 
 Yalnız yanlış anlaşılmasın, Rowson'ın her derde deva olacak --ve bulmayı
