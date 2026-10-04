@@ -7,11 +7,11 @@ permalink: /gizlilik/
 <div class="section legal" markdown="1">
 ## Gizlilik ve Çerezler
 
-Bu sayfa, **Satranç Kahvesi** (satranckahvesi.com) ziyaretçilerinin hangi verilerin, hangi amaçla işlendiğini açıklayan 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında bir aydınlatma metnidir.
+Bu sayfa, **Satranç Kahvesi** (satranckahvesi.com) ziyaretçilerinin hangi verilerinin, hangi amaçla işlendiğini açıklayan 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında bir aydınlatma metnidir.
 
 ### Veri sorumlusu
 
-Site, Satranç Kahvesi yazar ve yayın ekibi tarafından işletilmektedir. Veri sorumlusuna ve KVKK kapsamındaki taleplerinize ulaşmak için [GitHub deposu üzerinden bir kayıt açabilirsiniz](https://github.com/satranckahvesi/satranckahvesi.github.io/issues).
+Site, Satranç Kahvesi yayın ekibi tarafından işletilmektedir. Veri sorumlusuna ve KVKK kapsamındaki taleplerinize ulaşmak için [GitHub deposu üzerinden bir kayıt açabilirsiniz](https://github.com/satranckahvesi/satranckahvesi.github.io/issues).
 
 ### Hangi verileri topluyoruz?
 
@@ -38,11 +38,9 @@ Bu veriler, açık rızanıza dayanarak, sitenin ne kadar okunduğunu ve hangi y
 | `_ga` | Ziyaretçileri birbirinden ayırmak için rastgele bir kimlik tutar | 2 yıl |
 | `_ga_EQR45VG5M7` | Oturum durumunu korur | 2 yıl |
 
-Tema tercihinizi (açık/koyu) ve çerez seçiminizi hatırlamak için tarayıcınızın yerel depolamasını (`localStorage`) kullanırız. Bu bilgiler yalnızca cihazınızda kalır, sunucuya gönderilmez ve çerez değildir.
-
 ### Verilerin aktarılması
 
-Google Analytics verileri, hizmeti sağlayan Google'a aittir ve yurt dışındaki (Avrupa ve ABD) sunucularında işlenebilir. Sitenin kendisi [GitHub Pages](https://pages.github.com/) üzerinde barındırılır; GitHub, sayfaları sunarken teknik kayıtlar (ör. IP adresi) tutabilir. Satranç diyagramları için kullanılan [ChessPublica](https://chesspublica.github.io/) dosyaları da GitHub üzerinden yüklenir.
+Google Analytics verileri, hizmeti sağlayan Google'a aittir ve yurt dışındaki (Avrupa ve ABD) sunucularında işlenebilir. Sitenin kendisi [GitHub Pages](https://pages.github.com/) üzerinde barındırılır; GitHub, sayfaları sunarken teknik kayıtlar (ör. IP adresi) tutabilir. Satranç içeriğinin daha iyi sunulması için kullanılan [ChessPublica](https://chesspublica.github.io/) dosyaları da GitHub üzerinden yüklenir.
 
 ### Tercihinizi nasıl değiştirirsiniz?
 
@@ -53,7 +51,7 @@ Sayfanın altındaki **Çerez tercihleri** düğmesiyle seçiminizi istediğiniz
 - Tarayıcınızın ayarlarından çerezleri silebilir ya da engelleyebilirsiniz.
 - Google Analytics ölçümünü tamamen kapatmak için Google'ın [tarayıcı eklentisini](https://tools.google.com/dlpage/gaoptout) kullanabilirsiniz.
 
-Çerezleri engellemeniz sitenin okunmasını etkilemez.
+Çerezleri engellemeniz sitenin görüntülenmesini ve içeriğin okunmasını etkilemez.
 
 ### Haklarınız
 
@@ -61,5 +59,11 @@ KVKK'nın 11. maddesi uyarınca; verilerinizin işlenip işlenmediğini öğrenm
 
 ### Güncellemeler
 
-Bu metin, kullandığımız araçlar değiştikçe güncellenebilir. Son güncelleme: 02.10.2026.
+Bu metin, kullandığımız araçlar değiştikçe güncellenebilir.
+Son güncelleme: 02.10.2026.
 </div>
+
+
+
+
+
