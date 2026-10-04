@@ -38,9 +38,25 @@ Bu veriler, açık rızanıza dayanarak, sitenin ne kadar okunduğunu ve hangi y
 | `_ga` | Ziyaretçileri birbirinden ayırmak için rastgele bir kimlik tutar | 2 yıl |
 | `_ga_EQR45VG5M7` | Oturum durumunu korur | 2 yıl |
 
+{% if site.push.endpoint.size > 0 and site.push.public_key.size > 0 %}
+### Yeni yazı bildirimleri
+
+Sayfanın altındaki **Bildirimleri aç** düğmesine basar ve tarayıcınızın izin penceresinde izin verirseniz, yeni bir yazı yayımlandığında tarayıcınıza bildirim göndeririz. Bu isteğe bağlıdır; düğmeye basmadığınız ve izin vermediğiniz sürece hiçbir bildirim aboneliği oluşturulmaz. İstatistik çerezlerine verdiğiniz ya da vermediğiniz izinden bağımsızdır.
+
+Abone olduğunuzda tarayıcınızın bu cihaz için ürettiği bildirim adresi ve iki şifreleme anahtarı ile kayıt tarihi saklanır. Adınız, e-posta adresiniz, telefon numaranız, IP adresiniz ya da hangi yazıları okuduğunuz bu kayda eklenmez. Bildirim adresi bir cihaza özgü kalıcı bir tanımlayıcı olduğundan, bunu kişisel veri gibi ele alıyoruz.
+
+- **Amaç ve hukuki sebep:** Yeni yazıları duyurmak; açık rızanız (düğmeye basmanız ve tarayıcıdan izin vermeniz).
+- **Nerede saklanır:** Satranç Kahvesi'nin Google hesabındaki bir Google E-Tablo'da (Google Apps Script üzerinden). Tabloya yalnızca yayın ekibi erişir.
+- **Kimler işler:** Bildirimler, tarayıcınızın bildirim hizmeti (Chrome için Google, Firefox için Mozilla, Edge için Microsoft) üzerinden size ulaşır; bu hizmetler bildirimi iletirken kendi koşullarına göre bağlantı bilgilerinizi işleyebilir. Aboneliği kaydeden istek de Google'ın sunucularına gider.
+- **Ne kadar saklanır:** Siz aboneliği kapatana, tarayıcı aboneliği geçersiz kılana ya da bildirim göndermeyi denerken adresin artık geçerli olmadığı anlaşılana kadar. Geçersiz kayıtlar otomatik silinir.
+- **Nasıl vazgeçersiniz:** Sayfanın altındaki **Bildirimleri kapat** düğmesiyle ya da tarayıcınızın site ayarlarından bildirim iznini kaldırarak. Kapattığınızda kaydınız tablodan silinir.
+
+iPhone ve iPad'de bildirim sunulmamaktadır.
+{% endif %}
+
 ### Verilerin aktarılması
 
-Google Analytics verileri, hizmeti sağlayan Google'a aittir ve yurt dışındaki (Avrupa ve ABD) sunucularında işlenebilir. Sitenin kendisi [GitHub Pages](https://pages.github.com/) üzerinde barındırılır; GitHub, sayfaları sunarken teknik kayıtlar (ör. IP adresi) tutabilir. Satranç içeriğinin daha iyi sunulması için kullanılan [ChessPublica](https://chesspublica.github.io/) dosyaları da GitHub üzerinden yüklenir.
+Google Analytics verileri, hizmeti sağlayan Google'a aittir ve yurt dışındaki (Avrupa ve ABD) sunucularında işlenebilir. {% if site.push.endpoint.size > 0 and site.push.public_key.size > 0 %}Bildirim abonelikleri Google Apps Script ve Google E-Tablolar üzerinde saklanır; bu nedenle yurt dışındaki Google sunucularında işlenebilir. {% endif %}Sitenin kendisi [GitHub Pages](https://pages.github.com/) üzerinde barındırılır; GitHub, sayfaları sunarken teknik kayıtlar (ör. IP adresi) tutabilir. Satranç içeriğinin daha iyi sunulması için kullanılan [ChessPublica](https://chesspublica.github.io/) dosyaları da GitHub üzerinden yüklenir.
 
 ### Tercihinizi nasıl değiştirirsiniz?
 
@@ -60,7 +76,7 @@ KVKK'nın 11. maddesi uyarınca; verilerinizin işlenip işlenmediğini öğrenm
 ### Güncellemeler
 
 Bu metin, kullandığımız araçlar değiştikçe güncellenebilir.
-Son güncelleme: 02.10.2026.
+Son güncelleme: {% if site.push.endpoint.size > 0 and site.push.public_key.size > 0 %}04.10.2026{% else %}02.10.2026{% endif %}.
 </div>
 
 

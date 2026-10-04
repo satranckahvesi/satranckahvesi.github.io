@@ -1,0 +1,42 @@
+name: Notify subscribers
+
+# Sends a web push notification for each post added by a push to main. Does nothing
+# until push.endpoint and push.public_key are set in _config.yml and the two secrets
+# exist (see scripts/push/README.md). "Run workflow" sends one post by hand for testing.
+
+on:
+  push:
+    branches: [main]
+    paths: ['_posts/**']
+  workflow_dispatch:
+    inputs:
+      file:
+        description: 'Post to announce, for example _posts/2026-10-04-ornek.md'
+        required: true
+
+concurrency: notify
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Send notifications
+        env:
+          PUSH_ADMIN_SECRET: ${{ secrets.PUSH_ADMIN_SECRET }}
+          VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
+          BEFORE: ${{ github.event.before }}
+          FILE: ${{ inputs.file }}
+        run: |
+          if [ -n "$FILE" ]; then
+            node scripts/send-push.mjs --file "$FILE"
+          else
+            node scripts/send-push.mjs --since "$BEFORE"
+          fi

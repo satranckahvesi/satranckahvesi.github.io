@@ -1,9 +1,11 @@
-/* Footer "Uygulamayı yükle" button and the iOS steps (_includes/footer.html, _js/install-app.js). */
+/* Footer "Uygulamayı yükle" and "Bildirimleri aç / kapat" buttons (_includes/footer.html,
+   _js/install-app.js, _js/push.js). */
 
 .install-app-wrap[hidden],
-.install-help[hidden] { display: none; }
+.push-wrap[hidden] { display: none; }
 
-.install-app {
+.install-app,
+.push-toggle {
     font: inherit;
     padding: 0 0 1px;
     border: 0;
@@ -13,48 +15,16 @@
     cursor: pointer;
 }
 
-.install-app:hover { border-bottom-style: dotted; }
+.install-app:hover,
+.push-toggle:hover { border-bottom-style: dotted; }
 
-.install-help {
-    position: fixed;
-    left: 1rem;
-    right: 1rem;
-    bottom: 1rem;
-    z-index: 50;
-    max-width: 42rem;
-    margin: 0 auto;
-    padding: 1rem 1.25rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.9rem;
-    background: var(--bg);
-    color: var(--ink);
-    border: 2px solid var(--ink);
-    font-size: 0.9rem;
-    line-height: 1.45;
-    text-align: left;
+.push-toggle:disabled {
+    opacity: 0.6;
+    cursor: progress;
 }
 
-.install-help p { margin: 0; }
-
-.install-help-actions {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.install-help button {
-    font: inherit;
-    font-family: var(--font-mono);
+.push-status {
     font-size: 0.85rem;
-    padding: 0.4rem 1.15rem;
-    border: 1.5px solid var(--ink);
-    border-radius: 999px;
-    background: var(--bg);
-    color: var(--ink);
-    cursor: pointer;
 }
 
-.install-help button:hover {
-    background: var(--ink);
-    color: var(--bg);
-}
+.push-status:empty { display: none; }

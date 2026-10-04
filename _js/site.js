@@ -5,6 +5,7 @@ import { markExternalLinks } from './external-links.js';
 import { curlyPass } from './text/curly-quotes.js';
 import { installAppButton } from './install-app.js';
 import { installNavMenu } from './nav-menu.js';
+import { installPushButton } from './push.js';
 import { installServiceWorker } from './service-worker.js';
 import { installThemeToggle } from './theme-toggle.js';
 
@@ -13,5 +14,6 @@ markExternalLinks(document.querySelector('main'));
 installThemeToggle();
 installNavMenu();
 installAppButton();
+installPushButton();
 installServiceWorker();
 installCookieConsent();

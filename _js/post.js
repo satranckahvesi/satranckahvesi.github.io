@@ -19,6 +19,7 @@ import { wrapFigures } from './post-figures.js';
 import { curlyPass, keepCommentsCurly } from './text/curly-quotes.js';
 import { installAppButton } from './install-app.js';
 import { installNavMenu } from './nav-menu.js';
+import { installPushButton } from './push.js';
 import { installServiceWorker } from './service-worker.js';
 import { installThemeToggle } from './theme-toggle.js';
 
@@ -49,5 +50,6 @@ if (body) {
 installThemeToggle();
 installNavMenu();
 installAppButton();
+installPushButton();
 installServiceWorker();
 installCookieConsent();
