@@ -1,6 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="10" fill="#2b2826"/>
-  <text x="32" y="34" text-anchor="middle" dominant-baseline="central"
-        font-family="Georgia, 'Times New Roman', serif" font-weight="700"
-        font-size="30" fill="#fdfaf5" letter-spacing="-1">SK</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="10 -44 620 620" fill="currentColor">
+  <style>
+    :root { color: #2b2826; }
+    @media (prefers-color-scheme: dark) { :root { color: #fdfaf5; } }
+  </style>
+  <defs>
+    <mask id="halo" maskUnits="userSpaceOnUse" x="0" y="-60" width="640" height="640">
+      <rect x="0" y="-60" width="640" height="640" fill="#fff"/>
+      <g fill="#000" stroke="#000" stroke-width="41" stroke-linejoin="round">
+        <ellipse cx="319.5" cy="205" rx="112.75" ry="55.75"/>
+        <path d="M206.5 205V280C206.5 350 250 390 319.5 390S432.5 350 432.5 280V205Z"/>
+        <path d="M432 220H450A36 34 0 0 1 450 288H432" fill="none"/>
+      </g>
+    </mask>
+  </defs>
+  <g stroke="currentColor" stroke-width="14" stroke-linecap="round" fill="none">
+    <path d="M263.5 56V97M319 26V97M376.5 56V97"/>
+  </g>
+  <g mask="url(#halo)">
+    <path d="M319.5 290H479L530.6 372.5H319.5ZM108.4 372.5H319.5V507H26.5Z"/>
+    <path d="M160 290H479L613 507H26.5Z" fill="none" stroke="currentColor" stroke-width="13" stroke-linejoin="round"/>
+  </g>
+  <g fill="none" stroke="currentColor" stroke-width="13" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M206.5 205V280C206.5 350 250 390 319.5 390S432.5 350 432.5 280V205"/>
+    <path d="M206.5 205A112.75 55.75 0 0 1 432.5 205"/>
+    <path d="M432 220H450A36 34 0 0 1 450 288H432"/>
+  </g>
+  <ellipse cx="319" cy="212.5" rx="107" ry="32.5"/>
 </svg>
