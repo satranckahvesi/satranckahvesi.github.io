@@ -86,11 +86,12 @@
 
 .masthead-logo {
     display: block;
-    width: clamp(10rem, 30vw, 15rem);
+    width: clamp(15rem, 45vw, 22.5rem);
+    margin: 0 auto;
     aspect-ratio: 640 / 900;
     background-color: var(--ink);
-    -webkit-mask: var(--logo) no-repeat left / contain;
-    mask: var(--logo) no-repeat left / contain;
+    -webkit-mask: var(--logo) no-repeat center / contain;
+    mask: var(--logo) no-repeat center / contain;
 }
 
 .section {
