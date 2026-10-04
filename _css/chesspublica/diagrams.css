@@ -33,12 +33,12 @@
    smaller and paler than the mainline's, one step more for each nesting level. */
 
 .post-body--faded-diagrams .pgn-container .pgn-variation > .cp-board-wrapper {
-    --diagram-max-width: calc(min(400px, 94cqw) - 1rem);
+    --diagram-max-width: calc(min(400px, 94cqw) - 3rem);
     filter: saturate(0.7) opacity(0.85);
 }
 
 .post-body--faded-diagrams .pgn-container .pgn-variation .pgn-variation > .cp-board-wrapper {
-    --diagram-max-width: calc(min(400px, 94cqw) - 2rem);
+    --diagram-max-width: calc(min(400px, 94cqw) - 6rem);
     filter: saturate(0.4) opacity(0.7);
 }
 
