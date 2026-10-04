@@ -18,16 +18,33 @@ bildirim düğmesini göstermez, Action da hiçbir şey yapmadan çıkar.
 
 ## 1. Anahtar çifti üretin
 
-Kendi bilgisayarınızda, depo klasöründe:
+Her şey tarayıcıdan yapılabilir; hiçbir şey kurmanız gerekmez. Anahtarlar tarayıcınızda
+üretilir ve bir yere gönderilmez.
 
-```
-npm ci
-npx web-push generate-vapid-keys
+1. Herhangi bir `https://` sayfası açın (ör. https://satranckahvesi.com).
+2. Geliştirici araçlarını açın (Chrome'da `F12` ya da `Ctrl+Shift+J`, Mac'te `Cmd+Option+J`)
+   ve **Console** sekmesine geçin.
+3. Chrome yapıştırmaya izin vermiyorsa konsola önce `allow pasting` yazıp Enter'a basın.
+4. Aşağıdaki kodu yapıştırıp Enter'a basın:
+
+```js
+const key = await crypto.subtle.generateKey({ name: 'ECDSA', namedCurve: 'P-256' }, true, ['sign']);
+const jwk = await crypto.subtle.exportKey('jwk', key.privateKey);
+const bytes = (text) => Uint8Array.from(atob(text.replace(/-/g, '+').replace(/_/g, '/') + '='.repeat((4 - (text.length % 4)) % 4)), (c) => c.charCodeAt(0));
+const text = (data) => btoa(String.fromCharCode(...data)).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+console.log('Public Key:  ' + text([4, ...bytes(jwk.x), ...bytes(jwk.y)]));
+console.log('Private Key: ' + jwk.d);
 ```
 
 - **Public Key**: `_config.yml` içinde `push.public_key` alanına yazılacak (gizli değil).
 - **Private Key**: yalnızca GitHub'a gizli değişken olarak girilecek (adım 5). Kimseyle
-  paylaşmayın, sohbete ya da depoya yazmayın.
+  paylaşmayın, sohbete ya da depoya yazmayın. Girdikten sonra konsolu kapatın.
+
+Başka bir siteden hazır anahtar üretmenizi önermem: özel anahtarı bilen biri, adınıza
+bildirim gönderebilir.
+
+Bilgisayarınızda terminal kullanmayı tercih ederseniz: depo klasöründe `npm ci` ve
+`npx web-push generate-vapid-keys` aynı çifti üretir.
 
 ## 2. E-Tabloyu açın
 
@@ -43,8 +60,10 @@ npx web-push generate-vapid-keys
    yapıştırın, kaydedin.
 3. Sol menüde **Proje ayarları → Komut dosyası özellikleri → Komut dosyası özelliği ekle**:
    - Özellik: `ADMIN_SECRET`
-   - Değer: en az 32 karakterlik rastgele bir parola (ör. `openssl rand -hex 32` çıktısı).
-     Aynı değeri adım 5'te GitHub'a da gireceksiniz.
+   - Değer: en az 32 karakterlik rastgele bir parola. Tarayıcı konsolunda
+     `Array.from(crypto.getRandomValues(new Uint8Array(32)), (b) => b.toString(16).padStart(2, '0')).join('')`
+     çalıştırın ya da terminalde `openssl rand -hex 32` kullanın. Aynı değeri adım 5'te
+     GitHub'a da gireceksiniz.
 4. **Dağıt → Yeni dağıtım → Tür: Web uygulaması**:
    - Şu kullanıcı olarak çalıştır: **Ben**
    - Erişimi olanlar: **Herkes**
@@ -58,7 +77,8 @@ sürüm**. Aksi halde eski sürüm çalışmaya devam eder.
 
 ## 4. Siteye bağlayın
 
-`_config.yml` içinde:
+GitHub'da `_config.yml` dosyasını açın, kalem simgesiyle düzenleyin (tarayıcıdan, bir şey
+kurmadan) ve şunu yazın:
 
 ```yaml
 push:
