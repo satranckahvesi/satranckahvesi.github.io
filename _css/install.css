@@ -1,0 +1,30 @@
+/* Footer "Uygulamayı yükle" and "Bildirimleri aç / kapat" buttons (_includes/footer.html,
+   _js/install-app.js, _js/push.js). */
+
+.install-app-wrap[hidden],
+.push-wrap[hidden] { display: none; }
+
+.install-app,
+.push-toggle {
+    font: inherit;
+    padding: 0 0 1px;
+    border: 0;
+    border-bottom: 1px solid currentColor;
+    background: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.install-app:hover,
+.push-toggle:hover { border-bottom-style: dotted; }
+
+.push-toggle:disabled {
+    opacity: 0.6;
+    cursor: progress;
+}
+
+.push-status {
+    font-size: 0.85rem;
+}
+
+.push-status:empty { display: none; }
