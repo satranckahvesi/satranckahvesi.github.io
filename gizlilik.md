@@ -46,7 +46,7 @@ Sayfanın altındaki **Bildirimleri aç** düğmesine basar ve tarayıcınızın
 Abone olduğunuzda tarayıcınızın bu cihaz için ürettiği bildirim adresi ve iki şifreleme anahtarı ile kayıt tarihi saklanır. Adınız, e-posta adresiniz, telefon numaranız, IP adresiniz ya da hangi yazıları okuduğunuz bu kayda eklenmez. Bildirim adresi bir cihaza özgü kalıcı bir tanımlayıcı olduğundan, bunu kişisel veri gibi ele alıyoruz.
 
 - **Amaç ve hukuki sebep:** Yeni yazıları duyurmak; açık rızanız (düğmeye basmanız ve tarayıcıdan izin vermeniz).
-- **Nerede saklanır:** Satranç Kahvesi'nin Google hesabındaki bir Google E-Tablo'da (Google Apps Script üzerinden). Tabloya yalnızca yayın ekibi erişir.
+- **Nerede saklanır:** Kayıtlar Google hizmetlerinde saklanır. Bu verilere yalnızca yayın ekibi erişebilir.
 - **Kimler işler:** Bildirimler, tarayıcınızın bildirim hizmeti (Chrome için Google, Firefox için Mozilla, Edge için Microsoft, Safari ve iPhone/iPad için Apple) üzerinden size ulaşır; bu hizmetler bildirimi iletirken kendi koşullarına göre bağlantı bilgilerinizi işleyebilir. Aboneliği kaydeden istek de Google'ın sunucularına gider.
 - **Ne kadar saklanır:** Siz aboneliği kapatana, tarayıcı aboneliği geçersiz kılana ya da bildirim göndermeyi denerken adresin artık geçerli olmadığı anlaşılana kadar. Geçersiz kayıtlar otomatik silinir.
 - **Nasıl vazgeçersiniz:** Sayfanın altındaki **Bildirimleri kapat** düğmesiyle ya da tarayıcınızın site ayarlarından bildirim iznini kaldırarak. Kapattığınızda kaydınız tablodan silinir.
