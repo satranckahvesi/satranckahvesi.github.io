@@ -42,15 +42,16 @@
     filter: saturate(0.4) opacity(0.7);
 }
 
-/* Same opt-in: variation paragraphs are indented and sub-variations are italic.
-   The mainline is left as it is. */
+/* Same opt-in, plain <pgn> view only (a study or player has no such wrapper
+   above .pgn-container): variation paragraphs are indented behind a pale
+   vertical rule and sub-variations are italic. The mainline is left as it is. */
 
-.post-body--faded-diagrams .pgn-container .pgn-variation > p {
+.post-body--faded-diagrams .pgn-container:not(pgn-study .pgn-container, pgn-player .pgn-container) .pgn-variation > p {
     text-indent: 1.5em;
+    border-left: 2px solid color-mix(in srgb, var(--muted) 45%, transparent);
 }
 
-.post-body--faded-diagrams .pgn-container .pgn-variation .pgn-variation,
-.post-body--faded-diagrams pgn-player .video-comment .variation-block--nested {
+.post-body--faded-diagrams .pgn-container:not(pgn-study .pgn-container, pgn-player .pgn-container) .pgn-variation .pgn-variation {
     font-style: italic;
 }
 
