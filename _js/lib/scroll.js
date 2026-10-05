@@ -78,6 +78,16 @@ export function elementReady(el) {
   });
 }
 
+/**
+ * Resolves once every ChessPublica element (<pgn-player>, <pgn-study>) inside
+ * `root` is ready. Other blocks above the scroll target change the page height
+ * as they render, so the target's position is only stable after all of them.
+ */
+export function allElementsReady(root) {
+  const els = root.querySelectorAll('pgn-player, pgn-study');
+  return Promise.all(Array.from(els, elementReady)).then(() => {});
+}
+
 // Applies the scroll target on every frame for SCROLL_HOLD_MS: layout can still
 // shift under it, and a single scrollTo is not reliable. Any wheel, touch or
 // key input by the reader cancels it immediately.

@@ -12,6 +12,7 @@ import { installVariationFix } from './chesspublica/variation-fix.js';
 import { installCookieConsent } from './consent.js';
 import { markExternalLink } from './external-links.js';
 import { createWatcher } from './lib/dom-watch.js';
+import { allElementsReady } from './lib/scroll.js';
 import { buildPgnBlocks } from './pgn/blocks.js';
 import { scrollPendingBlockIntoView } from './pgn/pending-scroll.js';
 import { takePendingCenter } from './pgn/view-state.js';
@@ -29,8 +30,12 @@ if (body) {
   const pendingCenterKey = takePendingCenter();
   const watcher = createWatcher(body);
 
-  const imagesSized = wrapFigures(body);
+  const figuresSized = wrapFigures(body);
   const { pendingBlock } = buildPgnBlocks(body, pendingCenterKey);
+  // The scroll target sits below other blocks whose rendering shifts the layout.
+  const imagesSized = pendingCenterKey
+    ? Promise.all([figuresSized, allElementsReady(body)]).then(() => {})
+    : figuresSized;
 
   installStudyEnhancements(body, watcher, pendingCenterKey, imagesSized);
   installGlyphBadge(body, watcher);
