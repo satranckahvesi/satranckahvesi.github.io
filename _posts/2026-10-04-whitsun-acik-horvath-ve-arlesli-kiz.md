@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2026-10-4
+date: 2026-10-04
 title: "Whitsun Açık, Horváth ve Arlesli Kız"
 author: "FM Tarık Selbes"
 column: "Turnuva günlükleri"
