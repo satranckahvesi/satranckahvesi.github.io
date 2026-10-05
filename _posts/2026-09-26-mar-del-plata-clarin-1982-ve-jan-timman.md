@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2026-09-26
+date: 2026-09-22
 title: "Mar del Plata (Clarin) 1982 ve Jan Timman"
 author: "FM Nazmi Can Doğan"
 column: "Efsane turnuvalar"
