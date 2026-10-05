@@ -230,8 +230,10 @@
 .site-footer p { margin: 0; }
 
 .footer-columns {
-    display: grid;
-    grid-template-columns: 1.3fr 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
     gap: 1.5rem 2rem;
 }
 
@@ -286,13 +288,6 @@
 }
 
 .footer-credit a { color: inherit; }
-
-/* Brand on its own row, the two link columns side by side beneath it. */
-
-@media (max-width: 34em) {
-    .footer-columns { grid-template-columns: 1fr 1fr; }
-    .footer-brand { grid-column: 1 / -1; }
-}
 
 .section-divider {
     max-width: 42rem;
