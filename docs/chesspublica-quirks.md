@@ -68,6 +68,9 @@ dropped as soon as the reader scrolls. A plain `<pgn>` has no ready signal and k
 long time (900+ mutations for a long game), so it waits for 300 ms without mutations (5 s cap) and aligns to the
 top of the block rather than its middle.
 
+Other blocks on the page (a study or player above the target) also change the page height while they render, so
+the scroll waits for every `<pgn-player>`/`<pgn-study>` to be ready (`allElementsReady`), not only the target.
+
 ## CSS (`_css/chesspublica/`)
 
 - ChessPublica centers `.fen-container` and `.cp-board-wrapper` only inside its own `max-width: 640px` query.
