@@ -19,7 +19,10 @@
             </div>
         </div>
     </div>
-    <p class="footer-credit">&copy; {{ site.time | date: '%Y' }} {{ site.title }} &middot; <a href="{{ '/gizlilik/' | relative_url }}">Gizlilik ve çerezler</a></p>
+    <div class="footer-credit">
+        <a href="{{ '/gizlilik/' | relative_url }}">Gizlilik ve çerezler</a>
+        <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}</p>
+    </div>
 </footer>
 {%- if site.push.endpoint.size > 0 and site.push.public_key.size > 0 %}
 <div class="push-banner" id="push-banner" role="region" aria-label="Bildirim tercihleri" hidden>
