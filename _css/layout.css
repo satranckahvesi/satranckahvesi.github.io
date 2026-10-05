@@ -237,19 +237,10 @@
     gap: 1.5rem 2rem;
 }
 
-.footer-heading {
-    margin-bottom: 0.6rem;
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--muted);
-}
-
 .footer-links {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 0.4rem;
     font-family: var(--font-mono);
 }
@@ -258,6 +249,8 @@
 
 /* The Tercihler column only holds buttons that appear when they apply (see _js/install-app.js
    and _js/push.js), so it stays out of the layout while none of them is showing. */
+.footer-prefs { flex: 1 1 100%; }
+
 .footer-prefs:not(:has(.footer-links > :not([hidden]))) { display: none; }
 
 .footer-brand {
