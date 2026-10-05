@@ -52,7 +52,7 @@ export function installPushButton() {
     run = action ?? null;
   }
 
-  const showOff = () => show('off', { label: 'Bildirimleri aç', action: turnOn, dismissLabel: 'Şimdi değil' });
+  const showOff = () => show('off', { label: 'Bildirimleri aç', action: turnOn, dismissLabel: 'Tamam' });
 
   async function describe() {
     if (iosTab) return show('ios');
@@ -90,7 +90,7 @@ export function installPushButton() {
       await subscription.unsubscribe();
       send(endpoint, { action: 'unsubscribe', endpoint: subscription.endpoint }).catch(() => {});
     }
-    show('disabled', { label: 'Bildirimleri aç', action: turnOn, dismissLabel: 'Tamam' });
+    showOff();
   }
 
   function open() {
