@@ -42,6 +42,18 @@
     filter: saturate(0.4) opacity(0.7);
 }
 
+/* The move-quality badge ("!", "?!", "??", ...) is a fixed 22px circle with 1rem
+   text, which swamps a shrunken diagram. It is scaled with the diagram instead
+   (22px and 1rem at the 400px mainline size); ChessPublica anchors it to the
+   top-right corner of the square, so only its size needs to follow. */
+
+.post-body .cp-board-wrapper .gm-badge {
+    width: calc(var(--diagram-max-width) * 0.055);
+    height: calc(var(--diagram-max-width) * 0.055);
+    font-size: calc(var(--diagram-max-width) * 0.04);
+    box-shadow: 0 1px calc(var(--diagram-max-width) * 0.01) #00000073;
+}
+
 /* Plain <pgn> view only (a study or player has a wrapper above
    .pgn-container): the text of a variation sits behind a pale vertical
    rule, drawn on each line of its paragraphs so it never runs beside a
