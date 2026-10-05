@@ -1,8 +1,31 @@
 <footer class="site-footer">
-    <nav class="footer-nav" aria-label="Alt gezinme">
-        {% include nav-links.html with_home=true %}
-    </nav>
-    <p class="footer-credit">{{ site.title }} &copy; {{ site.time | date: '%Y' }} &middot; <a href="{{ '/gizlilik/' | relative_url }}">Gizlilik ve çerezler</a><span class="install-app-wrap" hidden> &middot; <button type="button" class="install-app">Uygulamayı yükle</button></span>{% if site.push.endpoint.size > 0 and site.push.public_key.size > 0 %}<span class="push-wrap" hidden> &middot; <button type="button" class="push-toggle" data-endpoint="{{ site.push.endpoint }}" data-key="{{ site.push.public_key }}" aria-controls="push-banner" aria-expanded="false">Bildirim tercihleri</button></span>{% endif %}{% if jekyll.environment == "production" and site.google_analytics %} &middot; <button type="button" class="cookie-settings">Çerez tercihleri</button>{% endif %}</p>
+    <div class="footer-columns">
+        <div class="footer-col footer-brand">
+            <a class="footer-brand-link no-underline" href="{{ '/' | relative_url }}">
+                {%- include logo-icon.html -%}
+                <span class="footer-brand-name">{{ site.title }}</span>
+            </a>
+        </div>
+        <nav class="footer-col footer-nav" aria-labelledby="footer-nav-heading">
+            <p class="footer-heading" id="footer-nav-heading">Gezinme</p>
+            <div class="footer-links">
+                {% include nav-links.html with_home=true %}
+            </div>
+        </nav>
+        <div class="footer-col footer-prefs" role="group" aria-labelledby="footer-prefs-heading">
+            <p class="footer-heading" id="footer-prefs-heading">Tercihler</p>
+            <div class="footer-links">
+                <div class="install-app-wrap" hidden><button type="button" class="install-app">Uygulamayı yükle</button></div>
+                {%- if site.push.endpoint.size > 0 and site.push.public_key.size > 0 %}
+                <div class="push-wrap" hidden><button type="button" class="push-toggle" data-endpoint="{{ site.push.endpoint }}" data-key="{{ site.push.public_key }}" aria-controls="push-banner" aria-expanded="false">Bildirim tercihleri</button></div>
+                {%- endif %}
+                {%- if jekyll.environment == "production" and site.google_analytics %}
+                <div><button type="button" class="cookie-settings">Çerez tercihleri</button></div>
+                {%- endif %}
+            </div>
+        </div>
+    </div>
+    <p class="footer-credit">&copy; {{ site.time | date: '%Y' }} {{ site.title }} &middot; <a href="{{ '/gizlilik/' | relative_url }}">Gizlilik ve çerezler</a></p>
 </footer>
 {%- if site.push.endpoint.size > 0 and site.push.public_key.size > 0 %}
 <div class="push-banner" id="push-banner" role="region" aria-label="Bildirim tercihleri" hidden>
