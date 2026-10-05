@@ -251,6 +251,10 @@
    and _js/push.js), so it stays out of the layout while none of them is showing. */
 .footer-prefs:not(:has(.footer-links > :not([hidden]))) { display: none; }
 
+/* Matches the visible space between the logo and the first button: the logo drawing has empty
+   margin inside its box, so the copyright line needs more than the plain gap to look as far away. */
+.footer-credit p { margin-top: 0.825rem; }
+
 .footer-brand-link {
     display: inline-flex;
     align-items: center;
