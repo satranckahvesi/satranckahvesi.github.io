@@ -90,7 +90,7 @@ export function installPushButton() {
       await subscription.unsubscribe();
       send(endpoint, { action: 'unsubscribe', endpoint: subscription.endpoint }).catch(() => {});
     }
-    showOff();
+    show('disabled', { label: 'Bildirimleri aç', action: turnOn, dismissLabel: 'Tamam' });
   }
 
   function open() {
