@@ -6,12 +6,6 @@
                 <span class="footer-brand-name">{{ site.title }}</span>
             </a>
         </div>
-        <nav class="footer-col footer-nav" aria-labelledby="footer-nav-heading">
-            <p class="footer-heading" id="footer-nav-heading">Gezinme</p>
-            <div class="footer-links">
-                {% include nav-links.html with_home=true %}
-            </div>
-        </nav>
         <div class="footer-col footer-prefs" role="group" aria-labelledby="footer-prefs-heading">
             <p class="footer-heading" id="footer-prefs-heading">Tercihler</p>
             <div class="footer-links">
@@ -25,7 +19,10 @@
             </div>
         </div>
     </div>
-    <p class="footer-credit">&copy; {{ site.time | date: '%Y' }} {{ site.title }} &middot; <a href="{{ '/gizlilik/' | relative_url }}">Gizlilik ve çerezler</a></p>
+    <div class="footer-credit">
+        <a href="{{ '/gizlilik/' | relative_url }}">Gizlilik ve çerezler</a>
+        <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}</p>
+    </div>
 </footer>
 {%- if site.push.endpoint.size > 0 and site.push.public_key.size > 0 %}
 <div class="push-banner" id="push-banner" role="region" aria-label="Bildirim tercihleri" hidden>
