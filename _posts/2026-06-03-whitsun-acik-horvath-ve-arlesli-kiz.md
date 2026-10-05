@@ -103,26 +103,20 @@ Bir parantez de kitapçı Hugendubel'e açmam lazım. Stuttgart'ta da gittiğim 
 [White "Selbes, Tarik"]
 [Black "Stoyanov, Tsvetan"]
 [Result "1/2-1/2"]
-[Annotator "Tarik Selbes"]
-[ECO "B23"]
 [WhiteElo "2258"]
-[BlackElo "2445"]
 [WhiteFideId "-1"]
+[BlackElo "2445"]
 [BlackFideId "-1"]
-[PlyCount "39"]
-[Beauty "6597875077156"]
+[Annotator "Tarik Selbes"]
 [GameId "2316327585271569"]
-[EventDate "2026.05.23"]
-[EventType "swiss"]
-[EventRounds "9"]
-[EventCountry "GER"]
-[SourceTitle "Mega2026 Update 31"]
-[SourceDate "2026.06.04"]
-[SourceVersion "1"]
-[SourceVersionDate "2026.06.04"]
-[SourceQuality "1"]
+[Variant "Standard"]
+[ECO "B23"]
+[Opening "Sicilian Defense: Closed"]
+[StudyName "Satranç Kahvesi"]
+[ChapterName "Selbes, Tarik - Stoyanov, Tsvetan"]
+[ChapterURL "https://lichess.org/study/a8usAb97/eamPYEkr"]
 
-1. e4 c5 2. Nc3 {Genç Bulgar IM Stoyanov ile her katıldığımız turnuvada oynuyoruz, bu turnuvada da ismini görünce eşleşeceğimizden şüphem yoktu. Daha önce iki defa siyah taşlarla oynadığım rakibime karşı skorum =1, -1 şeklindeydi ve bu oyun skoru eşitlemek adına iyi bir fırsattı. Rakibimin Kapalı Sicilya'ya a6-b5 oynadığını görünce 2. Nc3 oynamak istedim.} a6 3. g3 b5 4. Bg2 Bb7 5. Nge2 e6 6. O-O Nc6 7. d4 $1 cxd4 8. Nxd4 {Nispeten hızlı bir şekilde bu konuma geldik ve burada rakibim yaklaşık yarım saat düşündü. Konumdaki problemleri çözmek ve doğru hamleyi bulmak kolay değil.} Bc5 $6 {Çok doğal ama iyi değil} (8... Nxd4 $1 9. Qxd4 Ne7 10. a4 Nc6 11. Qe3 b4 12. Nd5 $1 {Konum belki eşit de olsa dakik oynaması gereken taraf siyah!}) 9. Nb3 {Bu bariz hamleyi de hızlıca oynadım} Ba7 {Şimdi düşünme sırası bendeydi. Birden fazla iyi seçenek var gibi ve hangisi daha doğru anlamak zor.} 10. e5 $1 {En iyisi! Jan Markos, "Under the Surface" kitabında Karpov'un filleri bilardo toplarına benzettiğinden bahseder. Filler bir kanattan diğerine geçmek için adeta bir bilardo topu gibi banttan sekmek durumundadır, örneğin a7 fili e7'ye gitmek için c5 karesinden bir bilardo topu gibi sekmeli ama bunu yapamıyor. Bu da özellikle d6 karesinin zayıfladığı anlamına geliyor. Şimdi tehdit Ne4, dolayısıyla siyahın hamlesi zorunlu.} (10. Qg4 {ilk düşünülecek hamlelerden biri fakat} Kf8 {sonrasını anlamak zor.}) (10. Bf4) (10. Qe2 {diğer iyi seçeneklerdi.}) 10... f5 $1 11. exf6 {35 dakikalık bir düşünmenin ardından oynanmış bu hamle maalesef en iyisi değil. Doğru varyantı görmeme karşın tam hesaplayamadığım için cesaret edemedim.} (11. a4 $1 b4 12. Nb5 axb5 13. axb5 {Buraya kadar elbette gördüm ama şimdi çok fazla seçenek var ve hepsini net hesaplaması zor.} Nge7 (13... Bxf2+ 14. Rxf2 Rxa1 15. Nxa1 Na5 16. Bxb7 Nxb7 17. Nb3 Qb6 18. Qh5+ g6 19. Qe2 $16) (13... Nd4 $5 14. Rxa7 $1 (14. Bxb7 Nxb3 15. Bxa8 Nxa1 $11) 14... Bxg2 15. Qxd4 Bxf1 16. Na5 $1 $18) 14. bxc6 Bxc6 15. Bxc6 Nxc6 16. Qh5+ Kf8 17. Rd1 $16) 11... Nxf6 12. Ne4 (12. Bg5 O-O 13. Ne4 Nxe4 14. Bxd8 Nxf2 $11 {Oyunda gördüğüm bir varyanttı. Oyun sürekli şahla berabere olacak ama tehlikede olan taraf kesinlikle beyaz.}) 12... Nxe4 13. Bxe4 O-O $1 $146 {En iyisi ve teknik olarak bir yenilik!} (13... Qf6 14. Qh5+ (14. Nc5 $1 {elbette bunu oynayacaktım} Bxc5 15. Qh5+ Qf7 16. Qxc5 $16) 14... g6 15. Qg5 Qxg5 16. Bxg5 O-O 17. Be3 Bxe3 18. fxe3 d5 19. Bg2 Rxf1+ 20. Bxf1 {0-1 Makka,I (2204)-Botsari,A (2351) GRE-ch (Women) 29th Athens 2006 (3)}) 14. Qh5 {Avantajın kaybedilmesi sonucu beraberliğe razı oluyorum.} (14. Nc5 $4 Bxc5 15. Qh5 Rf5 $1) 14... g6 15. Bxg6 (15. Qe2 {Stoyanov oyundan sonra belki bu hamlenin olabileceğini söyledi fakat yine de siyah için büyük bir sorun görünmüyor.}) 15... hxg6 16. Qxg6+ Kh8 17. Qh6+ Kg8 18. Qg6+ Kh8 19. Qh6+ Kg8 20. Qg6+ 1/2-1/2
+1. e4 c5 2. Nc3 { Genç Bulgar IM Stoyanov ile her katıldığımız turnuvada oynuyoruz, bu turnuvada da ismini görünce eşleşeceğimizden şüphem yoktu. Daha önce iki defa siyah taşlarla oynadığım rakibime karşı skorum =1, -1 şeklindeydi ve bu oyun skoru eşitlemek adına iyi bir fırsattı. Rakibimin Kapalı Sicilya'ya a6-b5 oynadığını görünce 2. Nc3 oynamak istedim. } 2... a6 3. g3 b5 4. Bg2 Bb7 5. Nge2 e6 6. O-O Nc6 7. d4! cxd4 8. Nxd4 { Nispeten hızlı bir şekilde bu konuma geldik ve burada rakibim yaklaşık yarım saat düşündü. Konumdaki problemleri çözmek ve doğru hamleyi bulmak kolay değil. } 8... Bc5?! { Çok doğal ama iyi değil } { [%csl Gd4] } (8... Nxd4! 9. Qxd4 Ne7 10. a4 Nc6 11. Qe3 b4 12. Nd5! $13 { Konum belki eşit de olsa dakik oynaması gereken taraf siyah! } { [%csl Gf8][%cal Rd5b6] }) 9. Nb3 { Bu bariz hamleyi de hızlıca oynadım } 9... Ba7 { Şimdi düşünme sırası bendeydi. Birden fazla iyi seçenek var gibi ve hangisi daha doğru anlamak zor. } 10. e5! { En iyisi! Jan Markos, "Under the Surface" kitabında Karpov'un filleri bilardo toplarına benzettiğinden bahseder. Filler bir kanattan diğerine geçmek için adeta bir bilardo topu gibi banttan sekmek durumundadır, örneğin a7 fili e7'ye gitmek için c5 karesinden bir bilardo topu gibi sekmeli ama bunu yapamıyor. Bu da özellikle d6 karesinin zayıfladığı anlamına geliyor. Şimdi tehdit Ne4, dolayısıyla siyahın hamlesi zorunlu. } { [%csl Gd6] } (10. Qg4 { ilk düşünülecek hamlelerden biri fakat } 10... Kf8 { sonrasını anlamak zor. }) (10. Bf4) (10. Qe2 { diğer iyi seçeneklerdi. }) 10... f5! 11. exf6 { 35 dakikalık bir düşünmenin ardından oynanmış bu hamle maalesef en iyisi değil. Doğru varyantı görmeme karşın tam hesaplayamadığım için cesaret edemedim. } (11. a4! b4 12. Nb5! { [%cal Gb5d6] } 12... axb5 13. axb5 { Buraya kadar elbette gördüm ama şimdi çok fazla seçenek var ve hepsini net hesaplaması zor. } 13... Nge7 (13... Bxf2+ 14. Rxf2 Rxa1 15. Nxa1 Na5 16. Bxb7 Nxb7 17. Nb3 Qb6 18. Qh5+ g6 19. Qe2 $16 { [%csl Gh6,Gg7,Gf6] }) (13... Nd4!? { [%csl Rb7,Ra7,Gd4] } 14. Rxa7! (14. Bxb7 Nxb3 15. Bxa8 Nxa1) 14... Bxg2 15. Qxd4 Bxf1 16. Na5! $18 { [%cal Ga5b7,Gb7d6] }) 14. bxc6 Bxc6 15. Bxc6 Nxc6 16. Qh5+ { [%cal Gg7g6,Rh5h6] } 16... Kf8 17. Rd1 $16) 11... Nxf6 12. Ne4 (12. Bg5 O-O 13. Ne4 Nxe4! { [%csl Gd8,Ga7,Gf8][%cal Ge4f2] } 14. Bxd8 Nxf2 { Oyunda gördüğüm bir varyanttı. Oyun sürekli şahla berabere olacak ama tehlikede olan taraf kesinlikle beyaz. }) 12... Nxe4 13. Bxe4 { [%cal Gd1h5] } 13... O-O! $146 { En iyisi ve teknik olarak bir yenilik! } (13... Qf6 14. Qh5+ (14. Nc5! { elbette bunu oynayacaktım } { [%csl Gc5][%cal Gd1d7] } 14... Bxc5 15. Qh5+ Qf7 16. Qxc5 $16) 14... g6 15. Qg5 Qxg5 16. Bxg5 O-O 17. Be3 Bxe3 18. fxe3 d5 19. Bg2 Rxf1+ 20. Bxf1 { 0-1 Makka,I (2204)-Botsari,A (2351) GRE-ch (Women) 29th Athens 2006 (3) }) 14. Qh5 { Avantajın kaybedilmesi sonucu beraberliğe razı oluyorum. } (14. Nc5?? { [%cal Gd1h5,Gh5c5,Gh5h7] } 14... Bxc5 15. Qh5 Rf5! $19) 14... g6 15. Bxg6 (15. Qe2 { Stoyanov oyundan sonra belki bu hamlenin olabileceğini söyledi fakat yine de siyah için büyük bir sorun görünmüyor. }) 15... hxg6 16. Qxg6+ Kh8 17. Qh6+ Kg8 18. Qg6+ Kh8 19. Qh6+ Kg8 20. Qg6+ { 1/2-1/2 The game is a draw. } 1/2-1/2
 
 Beşinci turda Alman GM Christopher Noe ile eşleştim. Yıllar önce Polonya'da da oynadığım rakibimle başa baş bir oyun oynayabileceğimi biliyordum ama maalesef açılıştaki hatalar ve dikkatsizlik yüzünden daha en baştan kötü konuma düştüm ve bir fırsatı da değerlendiremeyince kaybettim.
 
