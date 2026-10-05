@@ -52,12 +52,12 @@ export function installPushButton() {
     run = action ?? null;
   }
 
-  const showOff = () => show('off', { label: 'Bildirimleri aç', action: turnOn, dismissLabel: 'Şimdi değil' });
+  const showOff = () => show('off', { label: 'Bildirimleri aç', action: turnOn, dismissLabel: 'Tamam' });
 
   async function describe() {
     if (iosTab) return show('ios');
     const reg = await registration;
-    if (await reg.pushManager.getSubscription()) return show('on', { label: 'Bildirimleri kapat', action: turnOff });
+    if (await reg.pushManager.getSubscription()) return show('on', { label: 'Bildirimleri kapat', action: turnOff, dismissLabel: 'Tamam' });
     if (Notification.permission === 'denied') return show('blocked');
     return showOff();
   }
@@ -90,7 +90,7 @@ export function installPushButton() {
       await subscription.unsubscribe();
       send(endpoint, { action: 'unsubscribe', endpoint: subscription.endpoint }).catch(() => {});
     }
-    show('disabled');
+    show('disabled', { label: 'Bildirimleri aç', action: turnOn, dismissLabel: 'Tamam' });
   }
 
   function open() {
