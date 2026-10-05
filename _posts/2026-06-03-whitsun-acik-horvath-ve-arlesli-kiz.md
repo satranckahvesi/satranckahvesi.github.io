@@ -151,25 +151,20 @@ Turnuvanın benim açımdan en moral bozucu oyunu altıncı turdaki Khassenov pa
 [White "Khassenov, Mansur"]
 [Black "Selbes, Tarik"]
 [Result "1/2-1/2"]
-[Annotator "Tarik Selbes"]
-[ECO "A21"]
 [WhiteElo "2010"]
-[BlackElo "2258"]
 [WhiteFideId "-1"]
+[BlackElo "2258"]
 [BlackFideId "-1"]
-[PlyCount "128"]
-[Beauty "4953171036174"]
+[Annotator "Tarik Selbes"]
 [GameId "2316327585316704"]
-[EventDate "2026.05.23"]
-[EventType "swiss"]
-[EventRounds "9"]
-[EventCountry "GER"]
-[SourceDate "2026.06.04"]
-[SourceVersion "1"]
-[SourceVersionDate "2026.06.04"]
-[SourceQuality "1"]
+[Variant "Standard"]
+[ECO "A10"]
+[Opening "English Opening: Anglo-Dutch Defense"]
+[StudyName "Satranç Kahvesi"]
+[ChapterName "Khassenov, Mansur - Selbes, Tarik"]
+[ChapterURL "https://lichess.org/study/a8usAb97/ncUKptgN"]
 
-1. c4 f5 {Kazanmam gereken bir rakibe karşı biraz daha keskin oynamak istedim.} 2. g3 Nf6 3. Bg2 e5 4. Nc3 Be7 5. d4 d6 6. dxe5 {Çok kötü! Beyaz tamamen beraberlik için oynadığını belli ediyor.} dxe5 7. Qxd8+ Bxd8 {Siyah merkezdeki üstünlüğüyle tercih edilmeli.} 8. e4 Nc6 9. Be3 {Bu konumda esas problemim birçok farklı seçeneğin olması ve hepsinin de iyi görünmesi!} O-O {Doğal olsa da en iyisi değil.} (9... Nb4 $1 10. O-O-O fxe4 $17) 10. Bc5 $1 {En iyisi!} Re8 11. exf5 {iyi bir hamle değil.} (11. Nge2 $11) 11... Nd4 $2 (11... e4 $1 {Bu hamleyi neden oynamadım hiçbir fikrim yok!} 12. Nge2 Ne5 13. O-O Bxf5 14. b3 {belki de bu konumdan fazlasını elde etmek istedim.}) 12. O-O-O c6 13. Nf3 Nxf3 14. Bxf3 Bxf5 15. h3 a5 (15... e4 $1 {hâlâ daha iyiydi} 16. Be2 Nd7) 16. b3 (16. g4 $14 Be6 17. b3 a4 18. Kb2 {ve artık bir taraf tercih edilecekse bu beyaz olmalı}) 16... Nd7 17. Be3 Be7 {Rakip şaha bakan çift filimin tehlikeli olacağına inanıyordum.} 18. Kb2 $2 (18. Be4 $1 {ve beyazın hiçbir sorunu yok!}) 18... Nc5 $1 19. Bxc5 Bxc5 20. Be4 Be6 {Yine doğal ama yeterince dakik değil.} (20... Rf8 $1 21. Bxf5 Rxf5 $17 {zayıf f2 piyonu düşüyor.}) 21. f3 Bd4 22. a4 {Rakibim konumu kilitlemeye çalışıyor. Artık tek şansım b5 oynamak.} Rab8 23. Kc2 Rec8 24. f4 b5 25. axb5 $6 (25. fxe5 $1 Bxe5 26. Rhe1 bxc4 27. Bxh7+ Kxh7 28. Rxe5 cxb3+ 29. Kb2 $11) 25... cxb5 26. Nd5 $2 {Kaybetmesi gereken bir hamle.} (26. fxe5 {d4'teki kuvvetli fili dayanağından mahrum bırakmak yine önemliydi.} Bxc3 27. Kxc3 bxc4 28. Rd6 cxb3+ 29. Kb2 {ve beyaz bu konumu kaybetmek zorunda değil.}) 26... bxc4 27. bxc4 Rxc4+ 28. Kd3 Ra4 29. Rb1 Rd8 30. Ne7+ Kf8 31. Nc6 Bc4+ {Burada haklı olarak oyunun bittiğini düşünüyordum.} 32. Kd2 Ra2+ 33. Bc2 Rc8 $4 {Fakat azalan zamanla birlikte güvenli oynama isteği sonucu kazancı kaçıran bu hamleyi oynadım.} (33... Rd6 $1 34. Rb8+ (34. Nxd4 exd4 35. Ra1 d3 $1 $19) 34... Kf7 35. Rb7+ Kf6 $17) 34. Nxd4 exd4 35. Ra1 {Artık yapacak bir şey kalmadı maalesef.} Rxc2+ (35... Rb2 36. Rhb1 $11) 36. Kxc2 Bd5+ 37. Kd3 Bxh1 38. Rxh1 Rc3+ 39. Kxd4 Rxg3 40. Ra1 {Elbette! Oyunda bu hamleyi bir an için unuttum ve itiraf etmek gerekirse tüm bu varyanta girerken sanki a-piyonunu tutuyormuş gibi düşünüyordum.} Rxh3 41. Rxa5 $11 Kf7 42. Ra6 Rg3 43. Ke5 h5 44. Ra7+ Kg6 45. f5+ Kh6 46. Ra6+ Kh7 47. Kf4 Rg4+ 48. Kf3 Kg8 49. Ra7 Rg1 50. Ra4 Kf7 51. Ra6 Rf1+ 52. Ke4 h4 53. Ra3 Kf6 54. Ra6+ Kf7 55. Ra7+ Kg8 56. Ra3 Kf7 57. Ra7+ Kf6 58. Ra6+ Kf7 59. Ra7+ Kg8 60. Ra3 Rh1 61. Kf4 Kh7 62. Kg4 Kh6 63. Ra6+ Kh7 64. Ra3 Kh6 1/2-1/2
+1. c4 f5 { Kazanmam gereken bir rakibe karşı biraz daha keskin oynamak istedim. } 2. g3 Nf6 3. Bg2 e5 4. Nc3 Be7 5. d4 d6 6. dxe5 { Çok kötü! Beyaz tamamen beraberlik için oynadığını belli ediyor. } 6... dxe5 7. Qxd8+ Bxd8 { Siyah merkezdeki üstünlüğüyle tercih edilmeli. } { [%csl Ge5,Gf5] } 8. e4 Nc6 9. Be3 { Bu konumda esas problemim birçok farklı seçeneğin olması ve hepsinin de iyi görünmesi! } 9... O-O { Doğal olsa da en iyisi değil. } (9... Nb4! { [%cal Gb4c2,Gb4d3] } 10. O-O-O fxe4 $17 { [%csl Ga2][%cal Gb4d3] }) 10. Bc5! { En iyisi! } 10... Re8 11. exf5 { [%anno "FM NaSil", nasil] İyi bir hamle değil. } (11. Nge2 { [%anno "FM NaSil", nasil] Daha iyi olurdu. }) 11... Nd4? (11... e4! { Bu hamleyi neden oynamadım hiçbir fikrim yok! } { [%cal Gc6e5] } 12. Nge2 Ne5 13. O-O Bxf5 14. b3 { belki de bu konumdan fazlasını elde etmek istedim. }) 12. O-O-O c6 13. Nf3 Nxf3 14. Bxf3 Bxf5 15. h3 a5 (15... e4! { hâlâ daha iyiydi } { [%cal Gf6d7,Gd7e5] } 16. Be2 Nd7 $132) 16. b3 (16. g4 $14 Be6 17. b3 a4 18. Kb2 { ve artık bir taraf tercih edilecekse bu beyaz olmalı }) 16... Nd7 17. Be3 Be7 { Rakip şaha bakan çift filimin tehlikeli olacağına inanıyordum. } { [%cal Ge7a3] } 18. Kb2? (18. Be4! { ve beyazın hiçbir sorunu yok! }) 18... Nc5! 19. Bxc5 Bxc5 20. Be4 { [%csl Gf2][%cal Gc5f2,Gf8f2] } 20... Be6 { Yine doğal ama yeterince dakik değil. } (20... Rf8! 21. Bxf5 Rxf5 $17 { zayıf f2 piyonu düşüyor. }) 21. f3 Bd4 22. a4 { Rakibim konumu kilitlemeye çalışıyor. Artık tek şansım b5 oynamak. } 22... Rab8 { [%cal Gb7b5] } 23. Kc2 Rec8 24. f4 b5 { [%cal Gc8c2,Gb8b2] } 25. axb5?! (25. fxe5! Bxe5 26. Rhe1 { [%cal Ge1e5] } 26... bxc4 27. Bxh7+ Kxh7 28. Rxe5 cxb3+ 29. Kb2 $10) 25... cxb5 26. Nd5? { Kaybetmesi gereken bir hamle. } (26. fxe5 { d4'teki kuvvetli fili dayanağından mahrum bırakmak yine önemliydi. } 26... Bxc3 27. Kxc3 bxc4 28. Rd6 cxb3+ 29. Kb2 { ve beyaz bu konumu kaybetmek zorunda değil. }) 26... bxc4 27. bxc4 Rxc4+ 28. Kd3 Ra4 29. Rb1 Rd8 30. Ne7+ Kf8 31. Nc6 { [%csl Gd3,Re6,Rd4,Gd8,Ga4] } 31... Bc4+ { Burada haklı olarak oyunun bittiğini düşünüyordum. } 32. Kd2 Ra2+ 33. Bc2 Rc8?? { Fakat azalan zamanla birlikte güvenli oynama isteği sonucu kazancı kaçıran bu hamleyi oynadım. } (33... Rd6! 34. Rb8+ (34. Nxd4 exd4 { [%cal Gd4d3] } 35. Ra1 d3! $19 { [%cal Rd6d2] }) 34... Kf7 35. Rb7+ Kf6 $19) 34. Nxd4 exd4 { [%cal Gd4d3] } 35. Ra1! { Artık yapacak bir şey kalmadı maalesef. } 35... Rxc2+ (35... Rb2 36. Rhb1) 36. Kxc2 Bd5+ 37. Kd3 Bxh1 38. Rxh1 Rc3+ 39. Kxd4 Rxg3 40. Ra1 { Elbette! Oyunda bu hamleyi bir an için unuttum ve itiraf etmek gerekirse tüm bu varyanta girerken sanki a-piyonunu tutuyormuş gibi düşünüyordum. } { [%csl Ga5] } 40... Rxh3 41. Rxa5 Kf7 42. Ra6 Rg3 43. Ke5 h5 44. Ra7+ Kg6 45. f5+ Kh6 46. Ra6+ Kh7 47. Kf4 Rg4+ 48. Kf3 Kg8 49. Ra7 Rg1 50. Ra4 Kf7 51. Ra6 Rf1+ 52. Ke4 h4 53. Ra3 Kf6 54. Ra6+ Kf7 55. Ra7+ Kg8 56. Ra3 Kf7 57. Ra7+ Kf6 58. Ra6+ Kf7 59. Ra7+ Kg8 60. Ra3 Rh1 61. Kf4 Kh7 62. Kg4 Kh6 63. Ra6+ Kh7 64. Ra3 Kh6 { 1/2-1/2 The game is a draw. } 1/2-1/2
 
 Böylelikle aslında fena başlamadığım turnuvanın altıncı turunun sonunda Elo kazançlarımı sıfırlamış ve hatta az da olsa eksiye düşmüştüm. Üstelik yedinci turda Hintli CM Pratik Mulay'ın IM Janzelj karşısında aldığı beraberlik sonucunun gösterdiği üzere yabana atılmaması gereken bir rakipti. Pirimiz FM Nazmi Can Doğan'ın Philidor'a karşı yaptığı bir hazırlığı gözden geçirerek girdiğim turda kısa sürede kendi yoluma saptım. Çoğunlukla olduğu gibi aslında bu yanlış bir yoldu fakat rakibimin becerememesi sonucu rahat bir galibiyete uzandım.
 
