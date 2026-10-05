@@ -218,45 +218,38 @@
     gap: 1.75rem;
 }
 
+/* Every footer item shares one type size and one gap, so the rows read as a single column. */
+
 .site-footer {
+    --footer-gap: 0.75rem;
     max-width: 42rem;
     margin: 4.5rem auto 0;
     padding: 1.5rem 0 2.5rem;
     border-top: 2px solid var(--ink);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--footer-gap);
     color: var(--ink);
+    font-family: var(--font-mono);
     font-size: 0.9rem;
+    text-align: center;
 }
 
 .site-footer p { margin: 0; }
 
-.footer-columns {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 1.5rem 2rem;
-}
-
-.footer-links {
+.footer-columns,
+.footer-links,
+.footer-credit {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.4rem;
-    font-family: var(--font-mono);
+    gap: var(--footer-gap);
 }
 
-.footer-links button { text-align: left; }
-
-/* The Tercihler column only holds buttons that appear when they apply (see _js/install-app.js
+/* The preferences block only holds buttons that appear when they apply (see _js/install-app.js
    and _js/push.js), so it stays out of the layout while none of them is showing. */
-.footer-prefs { flex: 1 1 100%; }
-
 .footer-prefs:not(:has(.footer-links > :not([hidden]))) { display: none; }
-
-.footer-brand {
-    flex: 1 1 100%;
-    text-align: center;
-}
 
 .footer-brand-link {
     display: inline-flex;
@@ -272,19 +265,7 @@
 
 .footer-brand-name {
     font-family: var(--font-logo-serif);
-    font-size: 1.15rem;
-    line-height: 1.2;
-}
-
-.footer-credit {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.35rem;
-    margin-top: 1.25rem;
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    text-align: center;
+    line-height: 1.5;
 }
 
 .section-divider {
