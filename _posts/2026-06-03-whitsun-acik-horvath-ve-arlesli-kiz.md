@@ -225,25 +225,20 @@ Günümüzde oynanan açık turnuvaları takip ediyorsanız özellikle son turla
 [White "Selbes, Tarik"]
 [Black "Aamuktha, Guntaka"]
 [Result "1-0"]
-[Annotator "Tarik Selbes"]
-[ECO "B50"]
 [WhiteElo "2258"]
-[BlackElo "2152"]
 [WhiteFideId "-1"]
+[BlackElo "2152"]
 [BlackFideId "-1"]
-[PlyCount "53"]
-[Beauty "8248887346706"]
+[Annotator "Tarik Selbes"]
 [GameId "2316327585365943"]
-[EventDate "2026.05.23"]
-[EventType "swiss"]
-[EventRounds "9"]
-[EventCountry "GER"]
-[SourceDate "2026.06.04"]
-[SourceVersion "1"]
-[SourceVersionDate "2026.06.04"]
-[SourceQuality "1"]
+[Variant "Standard"]
+[ECO "B50"]
+[Opening "Sicilian Defense: Modern Variations"]
+[StudyName "Satranç Kahvesi"]
+[ChapterName "Selbes, Tarik - Aamuktha, Guntaka"]
+[ChapterURL "https://lichess.org/study/a8usAb97/XmH1Dkui"]
 
-1. e4 c5 2. Nf3 d6 3. h3 $5 {İtiraf edeyim, bu oyuna hazırlığım Yunan açılış uzmanı Nikolaos Ntirlis'in bir tweet serisinden ibaretti. Ntirlis özellikle Najdorf oyuncularına karşı bu hamlenin iyi olduğundan bahsediyordu ki birazdan daha iyi anlayacağız.} Nf6 4. Nc3 a6 5. a4 {Siyah Najdorf hamlelerinin sonuna geldi ve beyaz hâlâ d4 yapma imkânını elinde bulunduruyor. Bu hazırlıktaki amaç rakibe şimdi bir hamle yaptırarak --örneğin oyundaki g6 gibi-- onu Najdorf'tan çıkarmak. Açılış hazırlığının en önemli unsuru avantaj elde etmek değil, rakibinizi bilmediği sularda yüzmeye zorlamak ve bu oyun da bunun bir kanıtı.} g6 {Rakibim Dragon tarzı bir gelişimi tercih etti.} (5... Nbd7 {bu erken Nbd7 de iyi değil örneğin:} 6. d4 cxd4 7. Qxd4 $1) (5... Nc6 6. d4 cxd4 7. Nxd4 {şimdi de yine Najdorf değil Klasik Sicilya oynuyoruz!}) 6. d4 cxd4 7. Nxd4 Bg7 8. Be3 O-O 9. Be2 {a4 oynadığımız için artık kısa roklu oynamak durumunda beyaz.} Nbd7 $6 {İlk hata.} (9... Nc6 $1 {Dragon'da bu atın yeri c6 karesi zira g7 filiyle daha uyumlu çalışıyor.}) 10. a5 $6 (10. O-O {ve sonra a5 daha iyiydi.}) 10... Nc5 $6 (10... b5 $1 11. axb6 Nxb6 {yeniden eşitlerdi.}) 11. Bf3 $16 Nfd7 12. b4 Ne6 13. Nd5 Nxd4 14. Bxd4 e6 15. Bxg7 Kxg7 16. Qd4+ {Bir dizi basit hamleyle Beyaz büyük üstünlük elde etti. Siyahın hem şahı zayıf hem de zayıf kareleri ve --özellikle d6 başta olmak üzere-- zayıf piyonları var. Buna c8 fili kaynaklı gelişim güçlüğü de eklenirse avantajın ne kadar önemli boyutta olduğu daha iyi anlaşılır.} Kg8 17. Ne3 Ne5 18. Rd1 $1 {Hemen d6'ya baskı yapan en hızlı hamle.} Qf6 (18... Nxf3+ 19. gxf3 {ve hem d6 düşüyor hem de şah kanadında saldırı olanakları da var.}) 19. Be2 Bd7 20. O-O Bc6 21. f4 {Beyazın hamlelerinin yoruma ihtiyacı yok, her şey son derece doğal gelişiyor.} Nd7 22. Qxd6 Rfd8 23. Ng4 Qh4 24. f5 $1 {Bu basit hat açma hamlesi oyunu bitiriyor.} Nf6 25. Qe7 {materyal kazancıyla oyun sonlanıyor.} Rxd1 26. Nxf6+ Kg7 27. Ne8+ {Oldukça iyi bir genç rakip karşısında son derece basit bir galibiyet. Bu oyundan üç gün sonra çıkan listede rakibimin Elo'sunun 2334 olduğunu ve hatta sonraki ay da 2351'e yükseldiğini de göz önünde alırsak açılışta rakibi şaşırtmanın ne kadar işinizi kolaylaştırabileceğini daha iyi anlarız.} 1-0
+1. e4 c5 2. Nf3 d6 3. h3!? { İtiraf edeyim, bu oyuna hazırlığım Yunan açılış uzmanı Nikolaos Ntirlis'in bir tweet serisinden ibaretti. Ntirlis özellikle Najdorf oyuncularına karşı bu hamlenin iyi olduğundan bahsediyordu ki birazdan daha iyi anlayacağız. } { [%csl Gh3][%cal Gh2h3] } 3... Nf6 4. Nc3 a6 5. a4 { Siyah Najdorf hamlelerinin sonuna geldi ve beyaz hâlâ d4 yapma imkânını elinde bulunduruyor. Bu hazırlıktaki amaç rakibe şimdi bir hamle yaptırarak --örneğin oyundaki g6 gibi-- onu Najdorf'tan çıkarmak. Açılış hazırlığının en önemli unsuru avantaj elde etmek değil, rakibinizi bilmediği sularda yüzmeye zorlamak ve bu oyun da bunun bir kanıtı. } { [%cal Rb8c6,Rg7g6,Ge7e6,Ge6e5,Gb8d7] } 5... g6 { Rakibim Dragon tarzı bir gelişimi tercih etti. } (5... Nbd7 { bu erken Nbd7 de iyi değil örneğin: } 6. d4 cxd4 7. Qxd4! { [%csl Gd7] }) (5... Nc6 6. d4 cxd4 7. Nxd4 { şimdi de yine Najdorf değil Klasik Sicilya oynuyoruz! } { [%csl Gc6] }) 6. d4 cxd4 7. Nxd4 Bg7 8. Be3 O-O 9. Be2 { a4 oynadığımız için artık kısa roklu oynamak durumunda beyaz. } { [%cal Ge1g1] } 9... Nbd7?! { İlk hata. } (9... Nc6! { Dragon'da bu atın yeri c6 karesi zira g7 filiyle daha uyumlu çalışıyor. }) 10. a5?! (10. O-O { ve sonra a5 daha iyiydi. }) 10... Nc5?! (10... b5! 11. axb6 Nxb6 { yeniden eşitlerdi. }) 11. Bf3 $16 Nfd7 12. b4 Ne6 13. Nd5 Nxd4 14. Bxd4 e6 15. Bxg7 Kxg7 16. Qd4+ { Bir dizi basit hamleyle Beyaz büyük üstünlük elde etti. Siyahın hem şahı zayıf hem de zayıf kareleri ve --özellikle d6 başta olmak üzere-- zayıf piyonları var. Buna c8 fili kaynaklı gelişim güçlüğü de eklenirse avantajın ne kadar önemli boyutta olduğu daha iyi anlaşılır. } { [%csl Rg7,Gd6,Rc8] } 16... Kg8 17. Ne3 Ne5 18. Rd1! { Hemen d6'ya baskı yapan en hızlı hamle. } 18... Qf6 (18... Nxf3+ 19. gxf3 { ve hem d6 düşüyor hem de şah kanadında saldırı olanakları da var. } { [%csl Gd6] }) 19. Be2 { [%cal Re3c4,Rd4f6,Gd4d6] } 19... Bd7 20. O-O Bc6 21. f4 { Beyazın hamlelerinin yoruma ihtiyacı yok, her şey son derece doğal gelişiyor. } 21... Nd7 22. Qxd6 Rfd8 23. Ng4 Qh4 24. f5! { Bu basit hat açma hamlesi oyunu bitiriyor. } { [%cal Rf1f7] } 24... Nf6 25. Qe7 { materyal kazancıyla oyun sonlanıyor. } { [%cal Ge7h4] } 25... Rxd1 26. Nxf6+ Kg7 27. Ne8+ { Oldukça iyi bir genç rakip karşısında son derece basit bir galibiyet. Bu oyundan üç gün sonra çıkan listede rakibimin Elo'sunun 2334 olduğunu ve hatta sonraki ay da 2351'e yükseldiğini de göz önünde alırsak açılışta rakibi şaşırtmanın ne kadar işinizi kolaylaştırabileceğini daha iyi anlarız. } { [%csl Gh4] } 1-0
 
 Shakespeare'in dediği gibi _"all's well that ends well"_, sonu iyi biten her şey iyidir. Mutlu bir şekilde son turdan çıkıp yemeğimi yedim ve akşamki konserin yolunu tuttum. Genç Gürcü piyanist Giorgi Gigaşvili'ye aslında Kütahyalı bir Ermeni olan anne tarafımdan hemşerim Fransız Alexandre Altınoğlu'nun şefliğindeki Münih Filarmoni eşlik ediyordu. Bu Küçük Asya-Kafkasya paktına bir Türk olarak mutlaka benim de eşlik etmem gerekiyordu. Mussorgski'nin "Hovanşçina" uvertürü, Haçaturyan'ın Ermeni ezgilerinin yer yer hissedildiği piyano konçertosu ve Bizet'in meşhur "L'Arlésienne" süitleri romantik ve popüler bir program sunuyordu ve birçok ihtiyar Almanla aynı salonda olacağımı maalesef biliyordum.
 
