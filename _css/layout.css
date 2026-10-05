@@ -258,14 +258,15 @@
 }
 
 .footer-logo {
-    width: 2.25rem;
-    height: 2.25rem;
+    width: 3.5rem;
+    height: 3.5rem;
     flex: none;
 }
 
 .footer-brand-name {
     font-family: var(--font-logo-serif);
-    line-height: 1.5;
+    font-size: 1.5rem;
+    line-height: 1.3;
 }
 
 .section-divider {
