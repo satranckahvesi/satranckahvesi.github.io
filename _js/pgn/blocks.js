@@ -4,6 +4,7 @@
 import { isItalicCaption, toArray } from '../lib/dom.js';
 import { pgnText } from './markdown-text.js';
 import { PUZZLE_MARKER_RE, puzzleMoverColor, stripPuzzleMarkers } from './puzzle.js';
+import { createLazyBoards } from './lazy-boards.js';
 import { createSwitcherBlock } from './view-switcher.js';
 import { BLOCK_KEY_ATTR, DEFAULT_VIEW, blockKey, forgetView, readView } from './view-state.js';
 
@@ -124,14 +125,18 @@ function separateBlocks(switcherBlocks) {
  *
  * @param {Element} body article body
  * @param {string|null} pendingCenterKey block that should be scrolled into place afterwards
- * @returns {{ pendingBlock: { view: string, wrapper: Element }|null }} the view and wrapper of
- *   the block named by `pendingCenterKey`, if this page has it
+ * @returns {{ pendingBlock: { view: string, wrapper: Element }|null, firstPass: Promise<void> }}
+ *   the view and wrapper of the block named by `pendingCenterKey`, if this page has it, and a
+ *   promise that resolves once the boards near the top of the page are drawn
  */
 export function buildPgnBlocks(body, pendingCenterKey) {
   const allKeys = [];
   const switcherBlocks = [];
   let pendingBlock = null;
   let blockIndex = 0;
+  // Texts and diagrams are drawn as they near the screen. Not when a view switch is about to scroll
+  // to a block: everything above it must have its final height by then.
+  const lazyBoards = createLazyBoards();
 
   for (const p of toArray(body.querySelectorAll('p'))) {
     if (!p.parentNode) continue;
@@ -160,10 +165,13 @@ export function buildPgnBlocks(body, pendingCenterKey) {
     const el = buildElement(tagName, headerText, moveText);
     if (key) el.setAttribute(BLOCK_KEY_ATTR, key);
 
-    let inserted = el;
-    if (parsed.crop && tagName === 'fen') inserted = cropWrapper(el, parsed.crop);
+    const lazy = !pendingCenterKey && (tagName === 'pgn' || tagName === 'fen');
+    const boardEl = lazy ? lazyBoards.defer(el, tagName) : el;
+
+    let inserted = boardEl;
+    if (parsed.crop && tagName === 'fen') inserted = cropWrapper(boardEl, parsed.crop);
     if (key) {
-      inserted = createSwitcherBlock({ boardEl: el, key, activeView: tagName, allKeys });
+      inserted = createSwitcherBlock({ boardEl, key, activeView: tagName, allKeys });
       switcherBlocks.push(inserted);
       if (key === pendingCenterKey) pendingBlock = { view: tagName, wrapper: inserted };
     }
@@ -179,5 +187,5 @@ export function buildPgnBlocks(body, pendingCenterKey) {
   }
 
   separateBlocks(switcherBlocks);
-  return { pendingBlock };
+  return { pendingBlock, firstPass: lazyBoards.start() };
 }
