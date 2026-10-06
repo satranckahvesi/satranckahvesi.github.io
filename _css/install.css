@@ -127,3 +127,12 @@
 }
 
 @keyframes refresh-spin { to { transform: rotate(-360deg); } }
+
+/* After a refresh the page stays hidden under the notice until it has rendered. The animation
+   reveals it anyway if the script that lifts the notice never runs. */
+
+html.app-refreshing body { animation: refresh-reveal 0s 35s forwards; visibility: hidden; }
+
+.refresh-overlay { visibility: visible; }
+
+@keyframes refresh-reveal { to { visibility: visible; } }

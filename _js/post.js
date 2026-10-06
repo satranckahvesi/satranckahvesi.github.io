@@ -14,6 +14,7 @@ import { markExternalLink } from './external-links.js';
 import { createWatcher } from './lib/dom-watch.js';
 import { allElementsReady } from './lib/scroll.js';
 import { buildPgnBlocks } from './pgn/blocks.js';
+import { boardsRendered } from './pgn/render-ready.js';
 import { scrollPendingBlockIntoView } from './pgn/pending-scroll.js';
 import { takePendingCenter } from './pgn/view-state.js';
 import { wrapFigures } from './post-figures.js';
@@ -21,7 +22,7 @@ import { curlyPass, keepCommentsCurly } from './text/curly-quotes.js';
 import { installAppButton } from './install-app.js';
 import { installNavMenu } from './nav-menu.js';
 import { installPushButton } from './push.js';
-import { installRefreshButton } from './refresh-app.js';
+import { holdRefreshNotice, installRefreshButton } from './refresh-app.js';
 import { installServiceWorker } from './service-worker.js';
 import { installThemeToggle } from './theme-toggle.js';
 
@@ -51,6 +52,9 @@ if (body) {
   keepCommentsCurly(body, watcher);
 
   scrollPendingBlockIntoView(pendingCenterKey, pendingBlock, watcher, imagesSized);
+  holdRefreshNotice(boardsRendered(body, watcher));
+} else {
+  holdRefreshNotice(Promise.resolve());
 }
 
 installThemeToggle();

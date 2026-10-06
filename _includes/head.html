@@ -10,6 +10,11 @@
         theme = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
     document.documentElement.setAttribute('data-theme', theme);
+    // The installed app's refresh button asks for the page to stay covered until it has rendered
+    // (_js/refresh-app.js lifts the cover). Key must match.
+    try {
+        if (sessionStorage.getItem('satranckahvesi-refreshing')) document.documentElement.classList.add('app-refreshing');
+    } catch (e) {}
 })();
 </script>
 <title>{% if page.title and page.title != site.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>

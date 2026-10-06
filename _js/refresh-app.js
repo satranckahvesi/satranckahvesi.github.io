@@ -4,11 +4,15 @@
 // the site's files and the pages for offline reading, then reloads from the network. A full-screen
 // notice covers the page meanwhile.
 import { isStandalone } from './lib/platform.js';
-import { writeLocal } from './lib/session.js';
+import { readSession, removeSession, writeLocal, writeSession } from './lib/session.js';
 
 const SYNC_KEY = 'satranckahvesi-offline-sync';
+// Set just before the reload, so the next page keeps the notice up until it has finished rendering.
+// Must match the inline script in _includes/head.html, which hides the page until then.
+const REFRESHING_KEY = 'satranckahvesi-refreshing';
 // A slow or broken download must not keep the reader behind the notice forever.
 const GIVE_UP_AFTER = 2 * 60 * 1000;
+const RENDER_GIVE_UP_AFTER = 30 * 1000;
 
 async function reset() {
   const registrations = await navigator.serviceWorker.getRegistrations();
@@ -95,7 +99,24 @@ export function installRefreshButton() {
       await reset();
       await Promise.race([download(), new Promise((resolve) => setTimeout(resolve, GIVE_UP_AFTER))]);
     } finally {
+      writeSession(REFRESHING_KEY, '1');
       location.reload();
     }
   });
+}
+
+/**
+ * On the page that follows a refresh, covers it with the same notice until `ready` resolves
+ * (or RENDER_GIVE_UP_AFTER passes), then lifts it. Does nothing on any other load.
+ *
+ * @param {Promise<void>} ready resolves when the page has finished drawing
+ */
+export async function holdRefreshNotice(ready) {
+  if (!readSession(REFRESHING_KEY)) return;
+  removeSession(REFRESHING_KEY);
+
+  const notice = createOverlay('Yazılar yükleniyor...');
+  await Promise.race([ready.catch(() => {}), new Promise((resolve) => setTimeout(resolve, RENDER_GIVE_UP_AFTER))]);
+  notice.remove();
+  document.documentElement.classList.remove('app-refreshing');
 }
