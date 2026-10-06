@@ -125,17 +125,19 @@ function separateBlocks(switcherBlocks) {
  *
  * @param {Element} body article body
  * @param {string|null} pendingCenterKey block that should be scrolled into place afterwards
- * @returns {{ pendingBlock: { view: string, wrapper: Element }|null, firstPass: Promise<void> }}
- *   the view and wrapper of the block named by `pendingCenterKey`, if this page has it, and a
- *   promise that resolves once the boards near the top of the page are drawn
+ * @returns {{ pendingBlock: { view: string, wrapper: Element }|null, firstPass: Promise<void>, startLazy: () => void }}
+ *   the view and wrapper of the block named by `pendingCenterKey`, if this page has it; a promise
+ *   that resolves once the boards near the viewport are drawn; and the function that sets that
+ *   going. The caller starts it: a page about to scroll to a block waits until it has scrolled, or
+ *   it would draw the boards at the top that the reader is about to leave behind.
  */
 export function buildPgnBlocks(body, pendingCenterKey) {
   const allKeys = [];
   const switcherBlocks = [];
   let pendingBlock = null;
   let blockIndex = 0;
-  // Texts and diagrams are drawn as they near the screen. Not when a view switch is about to scroll
-  // to a block: everything above it must have its final height by then.
+  // Texts and diagrams are drawn as they near the screen, except the block a view switch is about
+  // to scroll to: it is needed at once.
   const lazyBoards = createLazyBoards();
 
   for (const p of toArray(body.querySelectorAll('p'))) {
@@ -165,7 +167,7 @@ export function buildPgnBlocks(body, pendingCenterKey) {
     const el = buildElement(tagName, headerText, moveText);
     if (key) el.setAttribute(BLOCK_KEY_ATTR, key);
 
-    const lazy = !pendingCenterKey && (tagName === 'pgn' || tagName === 'fen');
+    const lazy = !(key && key === pendingCenterKey) && (tagName === 'pgn' || tagName === 'fen');
     const boardEl = lazy ? lazyBoards.defer(el, tagName) : el;
 
     let inserted = boardEl;
@@ -187,5 +189,5 @@ export function buildPgnBlocks(body, pendingCenterKey) {
   }
 
   separateBlocks(switcherBlocks);
-  return { pendingBlock, firstPass: lazyBoards.start() };
+  return { pendingBlock, firstPass: lazyBoards.firstPass, startLazy: lazyBoards.start };
 }

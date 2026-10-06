@@ -33,7 +33,9 @@ if (body) {
   const watcher = createWatcher(body);
 
   const figuresSized = wrapFigures(body);
-  const { pendingBlock, firstPass } = buildPgnBlocks(body, pendingCenterKey);
+  const { pendingBlock, firstPass, startLazy } = buildPgnBlocks(body, pendingCenterKey);
+  // Listens from now on, before ChessPublica starts drawing (see render-ready.js).
+  const playersReady = allElementsReady(body);
   // The scroll target sits below other blocks whose rendering shifts the layout.
   const imagesSized = pendingCenterKey
     ? Promise.all([figuresSized, allElementsReady(body)]).then(() => {})
@@ -51,8 +53,9 @@ if (body) {
   curlyPass(document.body);
   keepCommentsCurly(body, watcher);
 
-  scrollPendingBlockIntoView(pendingCenterKey, pendingBlock, watcher, imagesSized);
-  holdLoadNotice(boardsRendered(body, watcher, firstPass));
+  // The loading notice stays up until the page has also been scrolled to the block a view switch asked for.
+  const scrolled = scrollPendingBlockIntoView(pendingCenterKey, pendingBlock, watcher, imagesSized, startLazy);
+  holdLoadNotice(Promise.all([boardsRendered(body, watcher, firstPass, playersReady), scrolled]));
 } else {
   holdLoadNotice(Promise.resolve());
 }

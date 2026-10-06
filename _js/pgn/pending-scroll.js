@@ -17,17 +17,28 @@ const READY = {
  * @param {{ view: string, wrapper: Element }|null} pendingBlock that block on this page, from buildPgnBlocks
  * @param {ReturnType<import('../lib/dom-watch.js').createWatcher>} watcher
  * @param {Promise<void>} imagesSized image space reserved; the block's position depends on it
+ * @param {() => void} onScroll called once the page has been scrolled to the block, or at once
+ *   when there is nothing to scroll to
+ * @returns {Promise<void>} resolves when the scroll has settled (immediately when there is none)
  */
-export function scrollPendingBlockIntoView(pendingKey, pendingBlock, watcher, imagesSized) {
-  if (!pendingKey) return;
+export function scrollPendingBlockIntoView(pendingKey, pendingBlock, watcher, imagesSized, onScroll) {
+  if (!pendingKey) {
+    onScroll();
+    return Promise.resolve();
+  }
   const ready = READY[pendingBlock?.view];
   if (!ready) {
     // A study scrolls itself; anything else (or no block) means nothing will consume it.
     if (pendingBlock?.view !== 'pgn-study') clearPendingCenter();
-    return;
+    onScroll();
+    return Promise.resolve();
   }
   const { wrapper } = pendingBlock;
   // Aligned to the top: a full game can be thousands of pixels tall, and the
   // switcher the reader just used should stay in view.
-  centerWhenSettled(wrapper, { align: 'top', ready: Promise.all([ready(wrapper, watcher), imagesSized]) }).then(clearPendingCenter);
+  return centerWhenSettled(wrapper, {
+    align: 'top',
+    ready: Promise.all([ready(wrapper, watcher), imagesSized]),
+    onScroll
+  }).then(clearPendingCenter);
 }
