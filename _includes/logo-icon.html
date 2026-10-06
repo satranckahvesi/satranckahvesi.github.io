@@ -1,8 +1,9 @@
 {%- comment %} Cup mark only (the same drawing as assets/img/favicon.svg), inlined so it follows the theme through
     currentColor, which the favicon file cannot do when the theme is switched by hand. {% endcomment %}
+{%- assign halo = include.halo | default: "footer-logo-halo" -%}
 <svg class="footer-logo" viewBox="10 -44 620 620" fill="currentColor" aria-hidden="true" focusable="false">
     <defs>
-        <mask id="footer-logo-halo" maskUnits="userSpaceOnUse" x="0" y="-60" width="640" height="640">
+        <mask id="{{ halo }}" maskUnits="userSpaceOnUse" x="0" y="-60" width="640" height="640">
             <rect x="0" y="-60" width="640" height="640" fill="#fff"/>
             <g fill="#000" stroke="#000" stroke-width="41" stroke-linejoin="round">
                 <ellipse cx="319.5" cy="205" rx="112.75" ry="55.75"/>
@@ -14,7 +15,7 @@
     <g stroke="currentColor" stroke-width="14" stroke-linecap="round" fill="none">
         <path d="M263.5 56V97M319 26V97M376.5 56V97"/>
     </g>
-    <g mask="url(#footer-logo-halo)">
+    <g mask="url(#{{ halo }})">
         <path d="M319.5 290H479L530.6 372.5H319.5ZM108.4 372.5H319.5V507H26.5Z"/>
         <path d="M160 290H479L613 507H26.5Z" fill="none" stroke="currentColor" stroke-width="13" stroke-linejoin="round"/>
     </g>
