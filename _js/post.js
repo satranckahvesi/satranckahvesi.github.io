@@ -33,7 +33,7 @@ if (body) {
   const watcher = createWatcher(body);
 
   const figuresSized = wrapFigures(body);
-  const { pendingBlock } = buildPgnBlocks(body, pendingCenterKey);
+  const { pendingBlock, firstPass } = buildPgnBlocks(body, pendingCenterKey);
   // The scroll target sits below other blocks whose rendering shifts the layout.
   const imagesSized = pendingCenterKey
     ? Promise.all([figuresSized, allElementsReady(body)]).then(() => {})
@@ -52,7 +52,7 @@ if (body) {
   keepCommentsCurly(body, watcher);
 
   scrollPendingBlockIntoView(pendingCenterKey, pendingBlock, watcher, imagesSized);
-  holdLoadNotice(boardsRendered(body, watcher));
+  holdLoadNotice(boardsRendered(body, watcher, firstPass));
 } else {
   holdLoadNotice(Promise.resolve());
 }

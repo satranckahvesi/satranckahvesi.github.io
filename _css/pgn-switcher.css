@@ -70,3 +70,10 @@
     background: var(--ink);
     border-color: var(--ink);
 }
+
+/* A game or diagram that is not drawn yet (_js/pgn/lazy-boards.js) keeps roughly its place, so the
+   page does not jump much when it is drawn. */
+
+.board-lazy { min-height: 14rem; }
+
+.board-lazy--fen { min-height: 24rem; }
