@@ -5,8 +5,8 @@ sitemap: false
 {%- assign offline_posts = 10 %}
 // Service worker. Four caches:
 //  - VISITED (fixed name, survives updates): pages the reader opened, fetched network-first
-//    and kept for offline reading, plus other /assets/ files, served from the cache and
-//    refreshed in the background. Also receives the post (and its images) of every push
+//    (a stored copy is shown if the network takes over 1.5 s) and kept for offline reading, plus
+//    other /assets/ files, served from the cache and refreshed in the background. Also receives the post (and its images) of every push
 //    notification when it arrives. Trimmed to the most recent MAX_VISITED entries.
 //  - OFFLINE (fixed name): the pages listed in sitemap.xml and the images they use, stored
 //    when the page asks for it ({type: 'sync-offline'}; it does so only inside the installed
@@ -96,12 +96,23 @@ async function store(request, response) {
   return response;
 }
 
+// A page already stored is shown after at most PATIENCE: a slow connection must not leave the
+// reader tapping a frozen screen when the page is sitting in the cache. The fresh copy still
+// replaces the stored one for next time.
+const PATIENCE = 1500;
+
 async function networkFirst(request) {
-  try {
-    return await store(request, await fetch(request));
-  } catch {
-    return (await caches.match(request)) ?? (await caches.match(OFFLINE_URL));
+  const fresh = fetch(request).then((response) => store(request, response));
+  const cached = await caches.match(request);
+  if (!cached) {
+    try {
+      return await fresh;
+    } catch {
+      return caches.match(OFFLINE_URL);
+    }
   }
+  const timeout = new Promise((resolve) => setTimeout(() => resolve(cached), PATIENCE));
+  return Promise.race([fresh.catch(() => cached), timeout]);
 }
 
 async function staleWhileRevalidate(request) {

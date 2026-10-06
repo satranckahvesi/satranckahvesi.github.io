@@ -45,40 +45,19 @@ async function download() {
   await synced;
 }
 
-// `spinStart` (a Date.now() value) lets the notice on the next page carry on turning from where
-// the previous one stopped instead of starting over.
-function createOverlay(message, spinStart = Date.now()) {
-  const overlay = document.createElement('div');
-  overlay.className = 'refresh-overlay';
-  overlay.setAttribute('role', 'status');
+// The notice itself is markup in every page (_includes/loading-notice.html), shown by the
+// `app-refreshing` class on <html>. `spinStart` (a Date.now() value) lets the notice on the next
+// page carry on turning from where the previous one stopped instead of starting over.
+const notice = () => document.querySelector('.refresh-overlay');
 
-  // The cup mark is already on the page (footer); ids must stay unique, so the copy gets its own.
-  const logo = document.querySelector('.footer-logo');
-  if (logo) {
-    const mark = document.createElement('div');
-    mark.className = 'refresh-overlay-logo';
-    mark.innerHTML = logo.outerHTML.replaceAll('footer-logo-halo', 'refresh-overlay-halo');
-    overlay.append(mark);
-  }
+function showNotice(spinStart = Date.now()) {
+  const spinner = notice()?.querySelector('.refresh-overlay-spinner');
+  if (spinner) spinner.style.animationDelay = `${-((Date.now() - spinStart) % SPIN_MS)}ms`;
+  document.documentElement.classList.add('app-refreshing');
+}
 
-  const name = document.createElement('p');
-  name.className = 'refresh-overlay-name';
-  name.textContent = document.querySelector('.footer-brand-name')?.textContent ?? '';
-
-  // The turning element is a plain <div>: an animated <svg> is repainted on the main thread and
-  // stalls while the page is busy drawing boards, a <div> is turned by the compositor.
-  const spinner = document.createElement('div');
-  spinner.className = 'refresh-overlay-spinner';
-  spinner.style.animationDelay = `${-((Date.now() - spinStart) % SPIN_MS)}ms`;
-  spinner.append(document.querySelector('.refresh-app svg').cloneNode(true));
-
-  const text = document.createElement('p');
-  text.className = 'refresh-overlay-message';
-  text.textContent = message;
-
-  overlay.append(name, spinner, text);
-  document.body.append(overlay);
-  return overlay;
+function hideNotice() {
+  document.documentElement.classList.remove('app-refreshing');
 }
 
 export function installRefreshButton() {
@@ -93,20 +72,24 @@ export function installRefreshButton() {
     running = true;
 
     if (!navigator.onLine) {
-      const notice = createOverlay('İnternet bağlantısı yok.');
-      notice.querySelector('.refresh-overlay-spinner').remove();
+      const overlay = notice();
+      const message = overlay.querySelector('.refresh-overlay-message');
+      const original = message.textContent;
+      message.textContent = 'İnternet bağlantısı yok.';
+      overlay.classList.add('is-offline');
+      showNotice();
       setTimeout(() => {
-        notice.remove();
+        hideNotice();
+        overlay.classList.remove('is-offline');
+        message.textContent = original;
         running = false;
       }, 2000);
       return;
     }
 
-    // Same setting as the page that follows the reload (see head.html): page hidden, no scrolling,
-    // so the notice sits in exactly the same place on both.
-    document.documentElement.classList.add('app-refreshing');
+    // The same notice, in the same setting, as on the page that follows the reload.
     const spinStart = Date.now();
-    createOverlay('Yazılar yükleniyor...', spinStart);
+    showNotice(spinStart);
     try {
       await reset();
       await Promise.race([download(), new Promise((resolve) => setTimeout(resolve, GIVE_UP_AFTER))]);
@@ -131,8 +114,36 @@ export async function holdLoadNotice(ready) {
   removeSession(REFRESHING_KEY);
   if (!flag && !document.documentElement.classList.contains('app-refreshing')) return;
 
-  const notice = createOverlay('Yazılar yükleniyor...', Number(flag) || Date.now());
+  showNotice(Number(flag) || Date.now());
   await Promise.race([ready.catch(() => {}), new Promise((resolve) => setTimeout(resolve, RENDER_GIVE_UP_AFTER))]);
-  notice.remove();
-  document.documentElement.classList.remove('app-refreshing');
+  hideNotice();
+}
+
+/**
+ * Inside the installed app, tapping a link to an article covers the page with the notice at once,
+ * instead of leaving the old page frozen while the article is fetched and parsed. The article's
+ * own page then keeps the notice up (head.html) until its boards have drawn.
+ */
+export function installLinkNotice() {
+  if (!isStandalone()) return;
+
+  document.addEventListener('click', (event) => {
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    const link = event.target.closest?.('a[href]');
+    if (!link || link.target === '_blank' || link.hasAttribute('download')) return;
+    const url = new URL(link.href, location.href);
+    const isArticle = url.pathname.startsWith('/posts/') && url.pathname.length > '/posts/'.length;
+    if (url.origin !== location.origin || !isArticle || url.pathname === location.pathname) return;
+
+    const spinStart = Date.now();
+    writeSession(REFRESHING_KEY, String(spinStart));
+    showNotice(spinStart);
+    // The tap may not lead anywhere (navigation refused or failed): never keep the reader waiting on it.
+    setTimeout(hideNotice, RENDER_GIVE_UP_AFTER);
+  });
+
+  // Coming back to a page kept in memory shows it as it was left, notice included.
+  window.addEventListener('pageshow', (event) => {
+    if (event.persisted) hideNotice();
+  });
 }

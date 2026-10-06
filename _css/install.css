@@ -83,10 +83,10 @@
    (_js/refresh-app.js). */
 
 .refresh-overlay {
+    display: none;
     position: fixed;
     inset: 0;
     z-index: 100;
-    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -142,6 +142,11 @@ html.app-refreshing { overflow: hidden; }
 
 html.app-refreshing body { animation: refresh-reveal 0s 35s forwards; visibility: hidden; }
 
-.refresh-overlay { visibility: visible; }
+html.app-refreshing .refresh-overlay {
+    display: flex;
+    visibility: visible;
+}
+
+.refresh-overlay.is-offline .refresh-overlay-spinner { display: none; }
 
 @keyframes refresh-reveal { to { visibility: visible; } }

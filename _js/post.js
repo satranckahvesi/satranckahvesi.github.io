@@ -22,7 +22,7 @@ import { curlyPass, keepCommentsCurly } from './text/curly-quotes.js';
 import { installAppButton } from './install-app.js';
 import { installNavMenu } from './nav-menu.js';
 import { installPushButton } from './push.js';
-import { holdLoadNotice, installRefreshButton } from './refresh-app.js';
+import { holdLoadNotice, installLinkNotice, installRefreshButton } from './refresh-app.js';
 import { installServiceWorker } from './service-worker.js';
 import { installThemeToggle } from './theme-toggle.js';
 
@@ -62,5 +62,6 @@ installNavMenu();
 installAppButton();
 installPushButton();
 installRefreshButton();
+installLinkNotice();
 installServiceWorker();
 installCookieConsent();
