@@ -135,7 +135,7 @@
 
 @keyframes refresh-spin { to { transform: rotate(-360deg); } }
 
-/* After a refresh the page stays hidden under the notice until it has rendered. The animation
+/* While the loading notice is up the page stays hidden under the notice until it has rendered. The animation
    reveals it anyway if the script that lifts the notice never runs. */
 
 html.app-refreshing { overflow: hidden; }

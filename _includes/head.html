@@ -10,11 +10,14 @@
         theme = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
     document.documentElement.setAttribute('data-theme', theme);
-    // The installed app's refresh button asks for the page to stay covered until it has rendered
-    // (_js/refresh-app.js lifts the cover). Key must match.
-    try {
-        if (sessionStorage.getItem('satranckahvesi-refreshing')) document.documentElement.classList.add('app-refreshing');
-    } catch (e) {}
+    // The page stays covered by a loading notice until it has rendered (_js/refresh-app.js lifts
+    // it): after the installed app's refresh button (key must match), and on every article opened
+    // inside the installed app, where the boards take a while to draw.
+    var post = {% if page.layout == "post" %}true{% else %}false{% endif %};
+    var standalone = window.matchMedia && matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+    var refreshed = false;
+    try { refreshed = !!sessionStorage.getItem('satranckahvesi-refreshing'); } catch (e) {}
+    if (refreshed || (post && standalone)) document.documentElement.classList.add('app-refreshing');
 })();
 </script>
 <title>{% if page.title and page.title != site.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>

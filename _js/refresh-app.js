@@ -118,15 +118,18 @@ export function installRefreshButton() {
 }
 
 /**
- * On the page that follows a refresh, covers it with the same notice until `ready` resolves
- * (or RENDER_GIVE_UP_AFTER passes), then lifts it. Does nothing on any other load.
+ * Covers the page with the same notice until `ready` resolves (or RENDER_GIVE_UP_AFTER passes),
+ * then lifts it. It is wanted on the page that follows a refresh, and on every article opened
+ * inside the installed app, where the boards take a while to draw. Both are marked by the
+ * `app-refreshing` class that head.html puts on <html> before first paint; any other load is
+ * left alone.
  *
  * @param {Promise<void>} ready resolves when the page has finished drawing
  */
-export async function holdRefreshNotice(ready) {
+export async function holdLoadNotice(ready) {
   const flag = readSession(REFRESHING_KEY);
-  if (!flag) return;
   removeSession(REFRESHING_KEY);
+  if (!flag && !document.documentElement.classList.contains('app-refreshing')) return;
 
   const notice = createOverlay('Yazılar yükleniyor...', Number(flag) || Date.now());
   await Promise.race([ready.catch(() => {}), new Promise((resolve) => setTimeout(resolve, RENDER_GIVE_UP_AFTER))]);
