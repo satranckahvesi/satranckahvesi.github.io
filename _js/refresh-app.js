@@ -13,6 +13,8 @@ const REFRESHING_KEY = 'satranckahvesi-refreshing';
 // A slow or broken download must not keep the reader behind the notice forever.
 const GIVE_UP_AFTER = 2 * 60 * 1000;
 const RENDER_GIVE_UP_AFTER = 30 * 1000;
+// Length of one turn of the spinner (keep in step with _css/install.css).
+const SPIN_MS = 1200;
 
 async function reset() {
   const registrations = await navigator.serviceWorker.getRegistrations();
@@ -43,7 +45,9 @@ async function download() {
   await synced;
 }
 
-function createOverlay(message) {
+// `spinStart` (a Date.now() value) lets the notice on the next page carry on turning from where
+// the previous one stopped instead of starting over.
+function createOverlay(message, spinStart = Date.now()) {
   const overlay = document.createElement('div');
   overlay.className = 'refresh-overlay';
   overlay.setAttribute('role', 'status');
@@ -61,8 +65,12 @@ function createOverlay(message) {
   name.className = 'refresh-overlay-name';
   name.textContent = document.querySelector('.footer-brand-name')?.textContent ?? '';
 
-  const spinner = document.querySelector('.refresh-app svg').cloneNode(true);
-  spinner.classList.add('refresh-overlay-spinner');
+  // The turning element is a plain <div>: an animated <svg> is repainted on the main thread and
+  // stalls while the page is busy drawing boards, a <div> is turned by the compositor.
+  const spinner = document.createElement('div');
+  spinner.className = 'refresh-overlay-spinner';
+  spinner.style.animationDelay = `${-((Date.now() - spinStart) % SPIN_MS)}ms`;
+  spinner.append(document.querySelector('.refresh-app svg').cloneNode(true));
 
   const text = document.createElement('p');
   text.className = 'refresh-overlay-message';
@@ -94,12 +102,16 @@ export function installRefreshButton() {
       return;
     }
 
-    createOverlay('Yazılar yükleniyor...');
+    // Same setting as the page that follows the reload (see head.html): page hidden, no scrolling,
+    // so the notice sits in exactly the same place on both.
+    document.documentElement.classList.add('app-refreshing');
+    const spinStart = Date.now();
+    createOverlay('Yazılar yükleniyor...', spinStart);
     try {
       await reset();
       await Promise.race([download(), new Promise((resolve) => setTimeout(resolve, GIVE_UP_AFTER))]);
     } finally {
-      writeSession(REFRESHING_KEY, '1');
+      writeSession(REFRESHING_KEY, String(spinStart));
       location.reload();
     }
   });
@@ -112,10 +124,11 @@ export function installRefreshButton() {
  * @param {Promise<void>} ready resolves when the page has finished drawing
  */
 export async function holdRefreshNotice(ready) {
-  if (!readSession(REFRESHING_KEY)) return;
+  const flag = readSession(REFRESHING_KEY);
+  if (!flag) return;
   removeSession(REFRESHING_KEY);
 
-  const notice = createOverlay('Yazılar yükleniyor...');
+  const notice = createOverlay('Yazılar yükleniyor...', Number(flag) || Date.now());
   await Promise.race([ready.catch(() => {}), new Promise((resolve) => setTimeout(resolve, RENDER_GIVE_UP_AFTER))]);
   notice.remove();
   document.documentElement.classList.remove('app-refreshing');
