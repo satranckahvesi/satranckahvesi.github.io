@@ -1,12 +1,10 @@
-/* Footer "Uygulamayı yükle" and "Bildirimleri aç / kapat" and "Uygulamayı yenile" buttons (_includes/footer.html,
+/* Footer "Uygulamayı yükle" and "Bildirimleri aç / kapat" buttons (_includes/footer.html,
    _js/install-app.js, _js/push.js). */
 
 .install-app-wrap[hidden],
-.refresh-app-wrap[hidden],
 .push-wrap[hidden] { display: none; }
 
 .install-app,
-.refresh-app,
 .push-toggle {
     font: inherit;
     padding: 0 0 1px;
@@ -18,10 +16,8 @@
 }
 
 .install-app:hover,
-.refresh-app:hover,
 .push-toggle:hover { border-bottom-style: dotted; }
 
-.refresh-app:disabled,
 .push-toggle:disabled {
     opacity: 0.6;
     cursor: progress;
@@ -82,3 +78,52 @@
     opacity: 0.6;
     cursor: progress;
 }
+
+/* Full-screen notice while the installed app's "Yenile" button downloads the site again
+   (_js/refresh-app.js). */
+
+.refresh-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--bg);
+    color: var(--ink);
+    text-align: center;
+}
+
+.refresh-overlay-logo svg {
+    width: 7rem;
+    height: 7rem;
+}
+
+.refresh-overlay-name {
+    margin: 0;
+    font-family: var(--font-logo-serif);
+    font-size: 1.6rem;
+    font-weight: 900;
+}
+
+.refresh-overlay-spinner {
+    width: 2rem;
+    height: 2rem;
+    margin-top: 0.5rem;
+}
+
+.refresh-overlay-message {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .refresh-overlay-spinner { animation: refresh-spin 1.2s linear infinite; }
+}
+
+@keyframes refresh-spin { to { transform: rotate(-360deg); } }

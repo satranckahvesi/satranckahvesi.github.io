@@ -9,7 +9,6 @@
         <div class="footer-col footer-prefs">
             <div class="footer-links">
                 <div class="install-app-wrap" hidden><button type="button" class="install-app">Uygulamayı yükle</button></div>
-                <div class="refresh-app-wrap" hidden><button type="button" class="refresh-app">Uygulamayı yenile</button></div>
                 {%- if site.push.endpoint.size > 0 and site.push.public_key.size > 0 %}
                 <div class="push-wrap" hidden><button type="button" class="push-toggle" data-endpoint="{{ site.push.endpoint }}" data-key="{{ site.push.public_key }}" aria-controls="push-banner" aria-expanded="false">Bildirim tercihleri</button></div>
                 {%- endif %}
