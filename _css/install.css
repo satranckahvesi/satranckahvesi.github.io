@@ -1,10 +1,12 @@
-/* Footer "Uygulamayı yükle" and "Bildirimleri aç / kapat" buttons (_includes/footer.html,
+/* Footer "Uygulamayı yükle" and "Bildirimleri aç / kapat" and "Uygulamayı yenile" buttons (_includes/footer.html,
    _js/install-app.js, _js/push.js). */
 
 .install-app-wrap[hidden],
+.refresh-app-wrap[hidden],
 .push-wrap[hidden] { display: none; }
 
 .install-app,
+.refresh-app,
 .push-toggle {
     font: inherit;
     padding: 0 0 1px;
@@ -16,8 +18,10 @@
 }
 
 .install-app:hover,
+.refresh-app:hover,
 .push-toggle:hover { border-bottom-style: dotted; }
 
+.refresh-app:disabled,
 .push-toggle:disabled {
     opacity: 0.6;
     cursor: progress;
