@@ -113,6 +113,13 @@
     width: 2rem;
     height: 2rem;
     margin-top: 0.5rem;
+    will-change: transform;
+}
+
+.refresh-overlay-spinner svg {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 .refresh-overlay-message {
@@ -130,6 +137,8 @@
 
 /* After a refresh the page stays hidden under the notice until it has rendered. The animation
    reveals it anyway if the script that lifts the notice never runs. */
+
+html.app-refreshing { overflow: hidden; }
 
 html.app-refreshing body { animation: refresh-reveal 0s 35s forwards; visibility: hidden; }
 
