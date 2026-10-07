@@ -186,7 +186,9 @@
     /* On mobile the rule sits under the ribbon, between it and the move list. */
     .post-body pgn-study.cp-ready > .pgn-study-ribbon {
         order: 2;
-        padding: 0 0 0.4rem;
+        /* Full-bleed: out to the panel's border, buttons kept at the content edge. */
+        margin: 0.5rem calc(-1 * var(--frame-pad)) 0;
+        padding: 0 var(--frame-pad) 0.4rem;
         border-top: 0;
         border-bottom: 1px solid #e4e4e7;
     }
