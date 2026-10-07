@@ -19,6 +19,7 @@
 
 :root[data-theme="dark"] .post-body .pgn-study-ribbon {
     border-top-color: var(--hairline);
+    border-bottom-color: var(--hairline);
 }
 
 :root[data-theme="dark"] .post-body .pgn-study-ribbon-title-text { color: var(--ink); }
