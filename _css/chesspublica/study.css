@@ -139,6 +139,59 @@
     }
 }
 
+/* Ribbon below the board. ChessPublica puts it on top as a full-bleed bar
+   (negative margins, a bottom rule); here it becomes a plain bar with a top
+   rule. Desktop: under the board, left column only, so every child is placed
+   explicitly (rows: board 1fr, ribbon auto) and the move list spans both rows.
+   Mobile: flex `order` puts it between the board and the move list. */
+
+.post-body pgn-study.cp-ready > .pgn-study-ribbon {
+    margin: 0.5rem 0 0;
+    padding: 0.4rem 0 0;
+    border-bottom: 0;
+    border-top: 1px solid #e4e4e7;
+}
+
+@media (min-width: 900px) {
+    .post-body pgn-study {
+        grid-template-rows: 1fr auto;
+    }
+
+    .post-body pgn-study > pgn-player {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .post-body pgn-study > .pgn-study-ribbon {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .post-body pgn-study > .pgn-study-resizer {
+        grid-column: 2;
+        grid-row: 1 / -1;
+    }
+
+    .post-body pgn-study > .pgn-container {
+        grid-column: 3;
+        grid-row: 1 / -1;
+    }
+}
+
+@media (max-width: 899px) {
+    .post-body pgn-study > pgn-player {
+        order: 1;
+    }
+
+    .post-body pgn-study > .pgn-study-ribbon {
+        order: 2;
+    }
+
+    .post-body pgn-study > .pgn-container {
+        order: 3;
+    }
+}
+
 /* Ribbon: our prev/next buttons, sized like ChessPublica's icons. Smaller
    buttons on mobile so all of them fit one row. */
 
