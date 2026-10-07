@@ -61,11 +61,13 @@ export function createLazyBoards() {
       return placeholder;
     },
 
-    /** Call once the placeholders are in the page. `firstPass` resolves when the first batch is drawn. */
+    /** Resolves once the first batch of boards (the ones near the viewport) is drawn. */
+    firstPass,
+
+    /** Starts watching the placeholders; call once they are in the page. */
     start() {
       if (!held.size) firstPassDone();
       for (const placeholder of held.keys()) observer.observe(placeholder);
-      return firstPass;
     }
   };
 }

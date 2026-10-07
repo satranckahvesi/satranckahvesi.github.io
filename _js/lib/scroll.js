@@ -2,13 +2,17 @@ import {
   CONTENT_MAX_WAIT_MS,
   CONTENT_QUIET_MS,
   IMAGE_SETTLE_TIMEOUT_MS,
+  SCROLL_HOLD_MAX_MS,
   SCROLL_HOLD_MS,
   SCROLL_TOP_MARGIN_PX
 } from './timing.js';
 
-/** Resolves once every image inside `el` has loaded or failed (or the timeout hits). */
-export function imagesSettled(el, timeoutMs = IMAGE_SETTLE_TIMEOUT_MS) {
-  const images = el.querySelectorAll('img');
+/**
+ * Resolves once every image inside `el` has loaded or failed (or the timeout hits). With
+ * `skipLazy`, images the browser holds back until they near the screen are not waited for.
+ */
+export function imagesSettled(el, timeoutMs = IMAGE_SETTLE_TIMEOUT_MS, { skipLazy = false } = {}) {
+  const images = [...el.querySelectorAll('img')].filter((img) => !(skipLazy && img.loading === 'lazy' && !img.complete));
   return new Promise((resolve) => {
     let remaining = images.length;
     if (!remaining) {
@@ -89,9 +93,11 @@ export function allElementsReady(root) {
 }
 
 // Applies the scroll target on every frame for SCROLL_HOLD_MS: layout can still
-// shift under it, and a single scrollTo is not reliable. Any wheel, touch or
-// key input by the reader cancels it immediately.
-function holdScroll(top) {
+// shift under it, and a single scrollTo is not reliable. The target is measured again each
+// frame, so a shift moves the scroll with it; while the page keeps changing height (boards
+// drawn near the target) the hold is extended, up to SCROLL_HOLD_MAX_MS. Any wheel, touch or
+// key input by the reader cancels it immediately. Resolves when the hold ends.
+function holdScroll(topOf) {
   const abort = new AbortController();
   let interrupted = false;
   const interrupt = () => {
@@ -101,13 +107,27 @@ function holdScroll(top) {
   for (const type of ['wheel', 'touchmove', 'keydown']) {
     window.addEventListener(type, interrupt, { passive: true, once: true, signal: abort.signal });
   }
-  const deadline = Date.now() + SCROLL_HOLD_MS;
-  (function reassert() {
-    if (interrupted) return;
-    window.scrollTo(0, top);
-    if (Date.now() < deadline) requestAnimationFrame(reassert);
-    else abort.abort();
-  })();
+  return new Promise((resolve) => {
+    const hardStop = Date.now() + SCROLL_HOLD_MAX_MS;
+    let deadline = Date.now() + SCROLL_HOLD_MS;
+    let height = document.documentElement.scrollHeight;
+    (function reassert() {
+      if (interrupted) return resolve();
+      window.scrollTo(0, topOf());
+      const now = Date.now();
+      const newHeight = document.documentElement.scrollHeight;
+      if (newHeight !== height) {
+        height = newHeight;
+        deadline = now + SCROLL_HOLD_MS;
+      }
+      if (now < Math.min(deadline, hardStop)) {
+        requestAnimationFrame(reassert);
+      } else {
+        abort.abort();
+        resolve();
+      }
+    })();
+  });
 }
 
 /**
@@ -117,15 +137,21 @@ function holdScroll(top) {
  * @param {object} [options]
  * @param {'center'|'top'} [options.align] where `el` ends up in the viewport
  * @param {Promise<void>} [options.ready] extra condition to wait for first
- * @returns {Promise<void>} resolves when the scroll has been issued
+ * @param {() => void} [options.onScroll] called right after the first scroll has been issued
+ * @returns {Promise<void>} resolves when the scroll has been held long enough to stay put
  */
-export async function centerWhenSettled(el, { align = 'center', ready } = {}) {
+export async function centerWhenSettled(el, { align = 'center', ready, onScroll } = {}) {
   if (ready) await ready;
   await imagesSettled(el);
-  const rect = el.getBoundingClientRect();
-  const top =
-    align === 'top'
-      ? rect.top + window.scrollY - SCROLL_TOP_MARGIN_PX
-      : rect.top + window.scrollY + rect.height / 2 - window.innerHeight / 2;
-  holdScroll(Math.max(0, top));
+  const topOf = () => {
+    const rect = el.getBoundingClientRect();
+    const top =
+      align === 'top'
+        ? rect.top + window.scrollY - SCROLL_TOP_MARGIN_PX
+        : rect.top + window.scrollY + rect.height / 2 - window.innerHeight / 2;
+    return Math.max(0, top);
+  };
+  const held = holdScroll(topOf);
+  onScroll?.();
+  await held;
 }

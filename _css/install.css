@@ -122,6 +122,8 @@
     height: 100%;
 }
 
+.refresh-overlay-message:empty { display: none; }
+
 .refresh-overlay-message {
     margin: 0;
     font-family: var(--font-mono);
