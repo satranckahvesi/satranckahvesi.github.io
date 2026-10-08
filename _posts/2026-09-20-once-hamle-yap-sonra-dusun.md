@@ -142,13 +142,8 @@ suçu pozisyonları bir genel kuralın içine sıkıştırma yoluyla işleyebili
 <figcaption>Yazar Willy Hendriks London Chess Classic esnasında ödül alan kitabı hakkında konuşuyor.</figcaption>
 </figure>
 
-Jeremy Silman'a göre Hendriks kitabında pek farklı bir şey söylemiyor.
-"Hendriks'in eleştirdiği prensipler yeni başlayanlara yol göstermek için vardır" diyor ve ekliyor:
-"Beni budalaca eğitimin başrahibi ilan eden Hendriks fikirlerimin bütün bir öğretmen grubunu
-kötü yönde etkilediğini belirtiyor ama kendisi de benim hamleleri açıklarken kullandığım
-terminolojiyi kullanıyor." 
-
-Durumu bir yarışmaya benzetirsek "daha çok mu konum bilmeli", yoksa "konumları daha
+Peki Hendriks'in eleştirilerine hedef olan yazarlar ne diyor? Jeremy Silman, kendisine yönelik eleştirilere şöyle cevap veriyor: "Hendriks'in eleştirdiği prensipler yeni başlayanlara yol göstermek için vardır." Ardından şunu ekliyor: "Beni budalaca eğitimin başrahibi ilan eden Hendriks, fikirlerimin bütün bir öğretmen grubunu kötü yönde etkilediğini belirtiyor; ama kendisi de benim hamleleri açıklarken kullandığım terminolojiyi kullanıyor."
+Silman'ın bu savunması, tartışmanın aslında bir "ya o ya bu" meselesi olmadığını gösteriyor. Durumu bir yarışmaya benzetirsek "daha çok mu konum bilmeli", yoksa "konumları daha
 iyi mi yorumlamalı" yarışmasının galibi "daha çok konum bilmek". Çünkü daha çok
 bilmezseniz daha iyi yorumlayamazsınız.
 
