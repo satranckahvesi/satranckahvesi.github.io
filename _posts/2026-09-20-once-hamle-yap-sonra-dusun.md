@@ -274,9 +274,7 @@ Her bir örneği tek tek çözer, açıklamalarını okuyarak kitabı bitirirken
 örneklerin açıklamalarından oluştuğunu belirtmeli) sadece soru çözüyor hissine
 kapılmıyorsunuz. Bazen gülerken, kimi zaman okunmamış bir referans kitabı
 merak ediyorsunuz ve diğer yazarlarla girilen düzeyli polemikle sürekli satranç hakkında
-düşünüyorsunuz. O hâlde masa başında kararlarımızı nasıl alıyoruz? Carlsen, Anand gibi
-yaşayan efsaneleri bilmiyorum fakat bizim gibiler için görünen tek yol var, o da çalışarak olsa
-gerek.
+düşünüyorsunuz. O hâlde masa başında kararlarımızı nasıl alıyoruz? Kitap, kesin bir formül sunmuyor; ama satrançta ilerlemenin sihirli bir cümlede değil, konumlarla boğuşmakta yattığını gösteriyor. Carlsen'in sezgisi de muhtemelen binlerce saatlik bu boğuşmanın ürünü. 
 
 **de Groot testinin cevabı**: 1. Bxd5! (1... Bxd5 2.Bxf6 Bxf6 3.Nd7; 1... Nxd5 2.Nxd5 ve e7'deki fil düşer.)
 1...exd5 2.Qf3 Qd8 (2...Kg7 3.Ng4) 3. Rce1 ile beyaz baskıyı artırır ve siyahın iyi bir
