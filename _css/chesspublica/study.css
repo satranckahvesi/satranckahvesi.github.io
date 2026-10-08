@@ -162,9 +162,12 @@
         grid-row: 1;
     }
 
-    .post-body pgn-study > .pgn-study-ribbon {
+    .post-body pgn-study.cp-ready > .pgn-study-ribbon {
         grid-column: 1;
         grid-row: 2;
+        /* Out to the panel's left border, buttons kept at the content edge. */
+        margin-left: calc(-1 * var(--frame-pad));
+        padding-left: var(--frame-pad);
     }
 
     .post-body pgn-study > .pgn-study-resizer {
