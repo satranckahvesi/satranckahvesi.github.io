@@ -258,7 +258,7 @@ değerlendirmelerinizin doğruluğunu test edin. (...) Eğer izlenecek çok fazl
 **modern TV izleyicisi gibi zap yapabilirsiniz** ve tekrar başa döndüğünüzde yeni bir hamle
 oynanmış olabilir. Fakat onlardan bir şeyler öğrenmek için angaje bir yaklaşım tavsiye edilir."
 
-- "Oyunlarınızı analiz ederken satranç engine'lerini açmak için biraz bekleyin
+- "Oyunlarınızı analiz ederken satranç motorlarını açmak için biraz bekleyin
 (merakınızı yenmek zor olsa da). En azından satranç makinesini açmadan önce oyun
 sırasında düşündüğünüz varyantları, fikirleri, aday hamleleri ekleyin. Bunu hemen
 oyunun ardından yapmak en iyisidir, çünkü pek çok oyuncu oyun bitince oyun
