@@ -219,21 +219,15 @@ Botvinnik'in o yıllarda dünya satrancındaki yükselişi Alekhine ve Capablanc
 
 
 <pre>
-                      1 2 3 4 5 6 7 8 9 0 1 2 3 4
-  1 GM Timman         * 1 0 1 ½ ½ 0 1 1 ½ 1 1 1 1  9½
-  2 GM Portisch       0 * 1 ½ 1 ½ 0 ½ ½ 1 ½ 1 1 ½  8
- =3 GM Seirawan       1 0 * ½ 1 ½ 0 ½ ½ 0 ½ 1 1 1  7½
- =3 GM Karpov         0 ½ ½ * ½ ½ 1 0 1 1 ½ ½ 1 ½  7½
- =3 GM Polugaevsky    ½ 0 0 ½ * ½ ½ 1 ½ 1 1 ½ 1 ½  7½
-  6 GM Andersson      ½ ½ ½ ½ ½ * ½ 1 ½ ½ ½ ½ ½ ½  7
-  7 GM Larsen         1 1 1 0 ½ ½ * 0 1 0 ½ 0 ½ ½  6½
- =8 IM Garcia Palermo 0 ½ ½ 1 0 0 1 * ½ ½ 0 ½ 1 ½  6
- =8 GM Najdorf        0 ½ ½ 0 ½ ½ 0 ½ * 1 ½ ½ 1 ½  6
-=10    Braga          ½ 0 1 0 0 ½ 1 ½ 0 * ½ 1 0 ½  5½
-=10 GM Panno          0 ½ ½ ½ 0 ½ ½ 1 ½ ½ * ½ 0 ½  5½
-=12 GM Quinteros      0 0 0 ½ ½ ½ 1 ½ ½ 0 ½ * 0 1  5
-=12    Franco         0 0 0 0 0 ½ ½ 0 0 1 1 1 * 1  5
- 14    Giardelli      0 ½ 0 ½ ½ ½ ½ ½ ½ ½ ½ 0 0 *  4½
+               1  2  3  4  5  6  7  8
+=1 Keres       ** 1½ ½½ ½½ ½½ 1½ 1½ ½½  8½
+=1 Fine        0½ ** 1½ 11 10 10 ½½ 1½  8½
+ 3 Botvinnik   ½½ 0½ ** 1½ ½0 1½ ½1 ½½  7½
+=4 Alekhine    ½½ 00 0½ ** 1½ ½½ ½1 ½1  7
+=4 Euwe        ½½ 01 ½1 0½ ** 0½ 01 1½  7
+=4 Reshevsky   0½ 01 0½ ½½ 1½ ** ½½ 1½  7
+ 7 Capablanca  0½ ½½ ½0 ½0 10 ½½ ** 1½  6
+ 8 Flohr       ½½ 0½ ½½ ½0 0½ 0½ 0½ **  4½
 </pre>
 
 [^\*]: Konu üzerine yazılan [ChessBase makalesi](https://en.chessbase.com/post/what-was-the-strongest-tournament-of-all-time-) istatistiklere dayanarak AVRO 1938'i gelmiş geçmiş en güçlü turnuva olarak kabul ediyor.
