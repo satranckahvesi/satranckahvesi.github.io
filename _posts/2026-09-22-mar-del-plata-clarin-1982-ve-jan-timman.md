@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2026-09-22
-title: "Mar del Plata (Clarin) 1982 ve Jan Timman"
+title: "Bir Zaferin Anatomisi: Timman, Mar del Plata 1982"
 author: "FM Nazmi Can Doğan"
 column: "Efsane turnuvalar"
 redirect_from: /posts/clarin-1982-ve-jan-timman/
