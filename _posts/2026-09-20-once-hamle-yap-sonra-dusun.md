@@ -142,10 +142,7 @@ suçu pozisyonları bir genel kuralın içine sıkıştırma yoluyla işleyebili
 <figcaption>Yazar Willy Hendriks London Chess Classic esnasında ödül alan kitabı hakkında konuşuyor.</figcaption>
 </figure>
 
-Peki Hendriks'in eleştirilerine hedef olan yazarlar ne diyor? Jeremy Silman, kendisine yönelik eleştirilere şöyle cevap veriyor: "Hendriks'in eleştirdiği prensipler yeni başlayanlara yol göstermek için vardır." Ardından şunu ekliyor: "Beni budalaca eğitimin başrahibi ilan eden Hendriks, fikirlerimin bütün bir öğretmen grubunu kötü yönde etkilediğini belirtiyor; ama kendisi de benim hamleleri açıklarken kullandığım terminolojiyi kullanıyor."
-Silman'ın bu savunması, tartışmanın aslında bir "ya o ya bu" meselesi olmadığını gösteriyor. Durumu bir yarışmaya benzetirsek "daha çok mu konum bilmeli", yoksa "konumları daha
-iyi mi yorumlamalı" yarışmasının galibi "daha çok konum bilmek". Çünkü daha çok
-bilmezseniz daha iyi yorumlayamazsınız.
+Peki Hendriks'in eleştirilerine hedef olan yazarlar ne diyor? Jeremy Silman, kendisine yönelik eleştirilere şöyle cevap veriyor: "Hendriks'in eleştirdiği prensipler yeni başlayanlara yol göstermek için vardır." Ardından şunu ekliyor: "Beni budalaca eğitimin başrahibi ilan eden Hendriks, fikirlerimin bütün bir öğretmen grubunu kötü yönde etkilediğini belirtiyor; ama kendisi de benim hamleleri açıklarken kullandığım terminolojiyi kullanıyor." Silman'ın bu cevabı, aslında Hendriks'in kitabının merkezindeki soruyu daha da önemli kılıyor: Kararlarımızı gerçekten nasıl alıyoruz? 
 
 Beşinci bölümde paylaşılan **Adriaan de Groot**'un "Satranç oyuncusunun düşünce süreci"
 araştırmasının da gösterdiği gibi, Büyükusta daha düşük seviyedeki oyuncudan çok daha
