@@ -10,7 +10,7 @@ import { activateEngineFor, installKeyboard } from './keyboard.js';
 import { createCommentMirror } from './mobile-comment.js';
 import { addNavButtons, pruneRibbon } from './ribbon.js';
 
-const COLUMN_WIDTHS = { '--left-col-width': '1fr', '--right-col-width': '2fr' };
+const COLUMN_WIDTHS = { '--left-col-width': '3fr', '--right-col-width': '4fr' };
 
 /**
  * @param {Element} body article body

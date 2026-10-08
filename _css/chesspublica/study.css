@@ -27,14 +27,14 @@
     padding: 1rem 1rem 0.6rem;
 }
 
-/* Desktop: rebuild the real panel's 1fr / 6px / 2fr split (the custom
+/* Desktop: rebuild the real panel's 3fr / 6px / 4fr split (the custom
    properties do not inherit into the placeholder) and zero its flex gap. */
 
 @media (min-width: 900px) {
     .post-body .pgn-study-loading {
-        /* The column variables live on <pgn-study>, not here, so the 1fr/2fr is
+        /* The column variables live on <pgn-study>, not here, so the 3fr/4fr is
            written out; the placeholder's own flex gap would add two extra gaps. */
-        grid-template-columns: 1fr 6px 2fr;
+        grid-template-columns: 3fr 6px 4fr;
         gap: 0;
     }
 
