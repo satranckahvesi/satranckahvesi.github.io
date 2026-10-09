@@ -4,7 +4,9 @@ date: 2026-09-22
 title: "Bir Zaferin Anatomisi: Timman, Mar del Plata 1982"
 author: "FM Nazmi Can Doğan"
 column: "Efsane turnuvalar"
-redirect_from: /posts/clarin-1982-ve-jan-timman/
+redirect_from:
+  - /posts/clarin-1982-ve-jan-timman/
+  - /posts/mar-del-plata-clarin-1982-ve-jan-timman/
 ---
 
 Bu yazı, geçtiğimiz aylarda yaşamını yitiren satranç efsanesi **Jan Timman**'ın (1951-2026) yaşantısından küçük bir bölüme odaklanacak. Timman'ın reyting listesinde dünya şampiyonu **Karpov'un ardından ikinci sırada** yer aldığı 1982 senesine gideceğiz. Buenos Aires'in iyileştirici havasında Timman'ın partilerinin öğretici anlarına odaklanacağız. Yazının ikinci bölümünde ise Timman'ın kariyerinin farklı bölümlerinden derlediğim öğretici konumlara yer vereceğim.
