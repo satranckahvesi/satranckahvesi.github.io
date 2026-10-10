@@ -11,8 +11,9 @@ const NAV_BUTTONS = [
 // ChessPublica exposes no stable hook for individual ribbon buttons, so they
 // are matched by accessible name. Removed: the mobile article toggle (the
 // board stays visible and the active comment is mirrored below it), the table
-// of contents, collapse/expand, and Play with its speed control (no autoplay).
-const REMOVED_LABEL = /table.*of.*contents|\btoc\b|collapse|expand|^play\b|speed/i;
+// of contents, collapse/expand, Play with its speed control (no autoplay), and
+// the settings gear (its panel only held speed, Download and Flip).
+const REMOVED_LABEL = /table.*of.*contents|\btoc\b|collapse|expand|^play\b|speed|setting/i;
 
 const labelOf = (btn) => (btn.getAttribute('aria-label') || btn.getAttribute('title') || btn.textContent || '').trim();
 
@@ -21,9 +22,6 @@ export function pruneRibbon(study) {
     const label = labelOf(btn);
     if (btn.classList.contains('pgn-study-article-btn') || REMOVED_LABEL.test(label)) {
       btn.remove();
-    } else if (/setting/i.test(label)) {
-      btn.setAttribute('aria-label', 'Ayarlar');
-      btn.title = 'Ayarlar';
     } else if (/download/i.test(label)) {
       relabel(btn, 'PGN indir');
     } else if (/flip/i.test(label)) {
@@ -37,19 +35,15 @@ function relabel(btn, text) {
   btn.title = text;
 }
 
-// Ribbon layout: the settings gear on the left; on the right Download and
-// Flip (pulled out of the gear's hidden panel so they are always visible),
-// then previous/next at the very end. ChessPublica binds its handlers to the
-// button elements themselves, so moving them keeps them working.
+// Ribbon layout: Download and Flip (pulled out of the settings panel, whose
+// gear is removed, so they are always visible), then previous/next at the very
+// end. ChessPublica binds its handlers to the button elements themselves, so
+// moving them keeps them working.
 export function addNavButtons(study) {
   const ribbon = study.querySelector('.pgn-study-ribbon');
   if (!ribbon || study.querySelector('[data-pgn-nav]')) return;
 
-  const left = study.querySelector('.pgn-study-ribbon-left') || ribbon;
   const right = study.querySelector('.pgn-study-ribbon-right') || ribbon;
-
-  const gear = ribbon.querySelector('[data-ribbon-action="settings"]');
-  if (gear) left.append(gear);
 
   for (const action of ['download', 'flip']) {
     const btn = ribbon.querySelector(`[data-ribbon-action="${action}"]`);
