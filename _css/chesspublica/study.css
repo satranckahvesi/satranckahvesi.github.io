@@ -205,8 +205,15 @@
    buttons on mobile so all of them fit one row. */
 
 .pgn-study-ribbon-btn[data-pgn-nav] svg {
-    width: 2rem;
-    height: 2rem;
+    width: 2.4rem;
+    height: 2.4rem;
+}
+
+/* Download and Flip (left group) are secondary: a little smaller. */
+
+.post-body pgn-study .pgn-study-ribbon-left .pgn-study-ribbon-btn .lucide-icon {
+    width: 1.7rem;
+    height: 1.7rem;
 }
 
 @media (max-width: 899px) {
@@ -215,10 +222,19 @@
         height: 2.25rem;
     }
 
-    .post-body pgn-study .pgn-study-ribbon-btn .lucide-icon,
-    .post-body pgn-study .pgn-study-ribbon-btn[data-pgn-nav] svg {
+    .post-body pgn-study .pgn-study-ribbon-btn .lucide-icon {
         width: 1.2rem;
         height: 1.2rem;
+    }
+
+    .post-body pgn-study .pgn-study-ribbon-btn[data-pgn-nav] svg {
+        width: 1.45rem;
+        height: 1.45rem;
+    }
+
+    .post-body pgn-study .pgn-study-ribbon-left .pgn-study-ribbon-btn .lucide-icon {
+        width: 1.05rem;
+        height: 1.05rem;
     }
 
     .post-body pgn-study .pgn-study-ribbon-group {
