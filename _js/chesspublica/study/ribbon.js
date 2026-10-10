@@ -35,19 +35,20 @@ function relabel(btn, text) {
   btn.title = text;
 }
 
-// Ribbon layout: Download and Flip (pulled out of the settings panel, whose
-// gear is removed, so they are always visible), then previous/next at the very
-// end. ChessPublica binds its handlers to the button elements themselves, so
+// Ribbon layout: Download and Flip on the left (pulled out of the settings
+// panel, whose gear is removed, so they are always visible), previous/next on
+// the right. ChessPublica binds its handlers to the button elements themselves, so
 // moving them keeps them working.
 export function addNavButtons(study) {
   const ribbon = study.querySelector('.pgn-study-ribbon');
   if (!ribbon || study.querySelector('[data-pgn-nav]')) return;
 
+  const left = study.querySelector('.pgn-study-ribbon-left') || ribbon;
   const right = study.querySelector('.pgn-study-ribbon-right') || ribbon;
 
   for (const action of ['download', 'flip']) {
     const btn = ribbon.querySelector(`[data-ribbon-action="${action}"]`);
-    if (btn) right.append(btn);
+    if (btn) left.append(btn);
   }
 
   for (const { dir, label, icon } of NAV_BUTTONS) {
