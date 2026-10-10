@@ -11,8 +11,9 @@ const NAV_BUTTONS = [
 // ChessPublica exposes no stable hook for individual ribbon buttons, so they
 // are matched by accessible name. Removed: the mobile article toggle (the
 // board stays visible and the active comment is mirrored below it), the table
-// of contents, collapse/expand, and Play with its speed control (no autoplay).
-const REMOVED_LABEL = /table.*of.*contents|\btoc\b|collapse|expand|^play\b|speed/i;
+// of contents, collapse/expand, Play with its speed control (no autoplay), and
+// the settings gear (its panel only held speed, Download and Flip).
+const REMOVED_LABEL = /table.*of.*contents|\btoc\b|collapse|expand|^play\b|speed|setting/i;
 
 const labelOf = (btn) => (btn.getAttribute('aria-label') || btn.getAttribute('title') || btn.textContent || '').trim();
 
@@ -21,20 +22,34 @@ export function pruneRibbon(study) {
     const label = labelOf(btn);
     if (btn.classList.contains('pgn-study-article-btn') || REMOVED_LABEL.test(label)) {
       btn.remove();
-    } else if (/setting/i.test(label)) {
-      btn.setAttribute('aria-label', 'Ayarlar');
-      btn.title = 'Ayarlar';
+    } else if (/download/i.test(label)) {
+      relabel(btn, 'PGN indir');
+    } else if (/flip/i.test(label)) {
+      relabel(btn, 'Tahtayı çevir');
     }
   }
 }
 
-// Previous/next buttons, where Play used to be. The remaining buttons
-// (Download, Flip) live in a settings panel that stays hidden until opened.
+function relabel(btn, text) {
+  btn.setAttribute('aria-label', text);
+  btn.title = text;
+}
+
+// Ribbon layout: Download and Flip (pulled out of the settings panel, whose
+// gear is removed, so they are always visible), then previous/next at the very
+// end. ChessPublica binds its handlers to the button elements themselves, so
+// moving them keeps them working.
 export function addNavButtons(study) {
   const ribbon = study.querySelector('.pgn-study-ribbon');
   if (!ribbon || study.querySelector('[data-pgn-nav]')) return;
 
-  const group = study.querySelector('.pgn-study-ribbon-left') || ribbon;
+  const right = study.querySelector('.pgn-study-ribbon-right') || ribbon;
+
+  for (const action of ['download', 'flip']) {
+    const btn = ribbon.querySelector(`[data-ribbon-action="${action}"]`);
+    if (btn) right.append(btn);
+  }
+
   for (const { dir, label, icon } of NAV_BUTTONS) {
     const btn = document.createElement('button');
     btn.type = 'button';
@@ -44,6 +59,6 @@ export function addNavButtons(study) {
     btn.title = label;
     btn.innerHTML = icon;
     btn.addEventListener('click', () => stepStudy(study, dir));
-    group.append(btn);
+    right.append(btn);
   }
 }
