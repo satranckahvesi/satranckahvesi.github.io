@@ -24,17 +24,38 @@ export function pruneRibbon(study) {
     } else if (/setting/i.test(label)) {
       btn.setAttribute('aria-label', 'Ayarlar');
       btn.title = 'Ayarlar';
+    } else if (/download/i.test(label)) {
+      relabel(btn, 'PGN indir');
+    } else if (/flip/i.test(label)) {
+      relabel(btn, 'Tahtayı çevir');
     }
   }
 }
 
-// Previous/next buttons, where Play used to be. The remaining buttons
-// (Download, Flip) live in a settings panel that stays hidden until opened.
+function relabel(btn, text) {
+  btn.setAttribute('aria-label', text);
+  btn.title = text;
+}
+
+// Ribbon layout: the settings gear on the left; on the right Download and
+// Flip (pulled out of the gear's hidden panel so they are always visible),
+// then previous/next at the very end. ChessPublica binds its handlers to the
+// button elements themselves, so moving them keeps them working.
 export function addNavButtons(study) {
   const ribbon = study.querySelector('.pgn-study-ribbon');
   if (!ribbon || study.querySelector('[data-pgn-nav]')) return;
 
-  const group = study.querySelector('.pgn-study-ribbon-left') || ribbon;
+  const left = study.querySelector('.pgn-study-ribbon-left') || ribbon;
+  const right = study.querySelector('.pgn-study-ribbon-right') || ribbon;
+
+  const gear = ribbon.querySelector('[data-ribbon-action="settings"]');
+  if (gear) left.append(gear);
+
+  for (const action of ['download', 'flip']) {
+    const btn = ribbon.querySelector(`[data-ribbon-action="${action}"]`);
+    if (btn) right.append(btn);
+  }
+
   for (const { dir, label, icon } of NAV_BUTTONS) {
     const btn = document.createElement('button');
     btn.type = 'button';
@@ -44,6 +65,6 @@ export function addNavButtons(study) {
     btn.title = label;
     btn.innerHTML = icon;
     btn.addEventListener('click', () => stepStudy(study, dir));
-    group.append(btn);
+    right.append(btn);
   }
 }
