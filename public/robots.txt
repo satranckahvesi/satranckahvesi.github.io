@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://satranckahvesi.com/yeni-deneme/sitemap.xml
+Sitemap: https://satranckahvesi.com/sitemap.xml
