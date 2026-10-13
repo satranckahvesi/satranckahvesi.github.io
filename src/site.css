@@ -12,3 +12,7 @@
 .kb { animation: kenburns 2.4s cubic-bezier(.2,.7,.1,1) both; }
 .hscroll::-webkit-scrollbar { display:none; }
 @media (prefers-reduced-motion: reduce) { .rise,.kb{animation:none} .reveal.pre{opacity:1;transform:none} }
+
+/* Makaledeki satranç diyagramları: geniş ekranda sütunu doldurmaz, ortalanır (telefonda tam genişlik). */
+.cp-game .jc-board-wrapper { width: 100%; max-width: min(100%, 440px); margin-left: auto; margin-right: auto; }
+.cp-game .jc-board-wrapper [class*="board-b72b1"] { margin-left: auto; margin-right: auto; }

@@ -3,7 +3,7 @@ import timmanMd from '@/content/mar-del-plata-1982.md?raw';
 import data from './articles.json';
 
 export type Article = {
-  id: string; slug: string; cat: string; title: string; dek: string; author: string; read: string;
+  id: string; slug: string; cat: string; title: string; dek?: string; author: string; read: string;
   excerpt?: string; date?: string; chunks?: string[]; photo?: boolean; body: string[];
 };
 
