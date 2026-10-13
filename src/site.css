@@ -30,7 +30,7 @@
 .cp-game .comment-icon,
 .cp-game .variation-icon,
 .cp-game .puzzle-hint-prompt .lucide-icon { display: none; }
-/* Oyun başlığı (oyuncular, etkinlik, tarih) tur başlığının altında React tarafından yazılır; ChessPublica'nınkiler gizlenir */
+/* Oyun başlığı (oyuncular, etkinlik, tarih) gösterilmez: bilgi tur başlığında (GameSection) var */
 .cp-game .pgn-headers { display: none; }
 .cp-game .video-title:has(.video-title-text) { display: none; }
 

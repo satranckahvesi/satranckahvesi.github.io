@@ -85,19 +85,11 @@ function PgnGame({ header, moves }: { header: string; moves: string }) {
 }
 
 // İçindekiler: yazıdaki tüm oyunlar, [Event] başlıklarından otomatik çıkarılır.
-type GameItem = { id: string; round: string; label: string; result: string; meta: string };
+type GameItem = { id: string; round: string; label: string; result: string };
 type TocItem = { id: string; label: string };
 
 function surname(name?: string) {
   return (name ?? '').split(',')[0].trim();
-}
-
-// PGN tarihi (1982.02.08, bilinmeyen kısımlar ?? ile) -> 08.02.1982
-function dottedDate(date?: string) {
-  const m = (date ?? '').trim().match(/^(\d{4}|\?{4})\.(\d{2}|\?{2})\.(\d{2}|\?{2})$/);
-  if (!m) return date ?? '';
-  const [, y, mo, d] = m;
-  return [d, mo, y].filter((x) => !x.includes('?')).join('.');
 }
 
 function gameToc(chunks: string[]): GameItem[] {
@@ -111,7 +103,6 @@ function gameToc(chunks: string[]): GameItem[] {
       round: t.Round || String(n),
       label: `${surname(t.White)} – ${surname(t.Black)}`,
       result: (t.Result ?? '').replace('1/2-1/2', '½–½').replace(/-/g, '–'),
-      meta: [t.Event, dottedDate(t.Date)].filter(Boolean).join(', '),
     });
   });
   return items;
@@ -173,7 +164,6 @@ function GameSection({ item, children }: { item: GameItem; children: React.React
         <span className="flex-1">{item.label}</span>
         <span className="f-mono text-[#A89A88]">{item.result}</span>
       </h4>
-      {item.meta && <p className="-mt-2 mb-4 text-[#A89A88]">{item.meta}</p>}
       {children}
     </section>
   );
