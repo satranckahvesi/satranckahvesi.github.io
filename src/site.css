@@ -18,6 +18,8 @@
 .cp-game .jc-board-wrapper [class*="board-b72b1"] { margin-left: auto; margin-right: auto; }
 /* ChessPublica kutusunun yatay iç boşluğu kaldırıldı: oyun metni yazı metniyle aynı hizada başlar. */
 .cp-game .pgn-container { padding-left: 0; padding-right: 0; }
+/* <pgn-player> sayfada ortalanır */
+.cp-game pgn-player { display: block; width: fit-content; max-width: 100%; margin-left: auto; margin-right: auto; }
 /* <pgn-player> başlığı koyu zeminde okunsun */
 .cp-game .video-title-players { color: #E8DECF; }
 .cp-game .video-title-event { color: #A89A88; }
