@@ -101,7 +101,7 @@ Reyting sıralamasında Karpov'dan sonra ikinci sırada yer alan Timman'ın, Mer
 
 Karpov ise bundan önceki Clarín turnuvası ile beraber o yıllarda neredeyse önüne çıkan **her turnuvayı kazanmaktaydı**. Timman ve Polugaevsky'e göre, **Korchnoi**'ya karşı henüz birkaç ay önce **ünvanını savunmuş** olması şampiyonun 1982 Clarín turnuvasındaki performansını olumsuz etkilemişti.
 
-![Anatoli Karpov ön planda, Jan Timman arka planda (siyah-beyaz fotoğraf)](images/karpov-timman-1979.jpg "Karpov ön planda, Timman arka planda: Tilburg'daki Interpolis satranç turnuvasının 2. turu. Fotoğraf: Koen Suyk / Anefo — Nationaal Archief (Hollanda Ulusal Arşivi), 3 Kasım 1979 · Envanter no 2.24.01.05, madde 930-5234. Lisans: [CC0 1.0 (Kamu Malı Bağışı)](https://creativecommons.org/publicdomain/zero/1.0/deed.tr). Kaynak: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:2e_Ronde_Karpov_op_de_voorgrond,_Timman_op_de_achtergrond,_Bestanddeelnr_930-5234.jpg)")
+![Anatoli Karpov ön planda, Jan Timman arka planda (siyah-beyaz fotoğraf)](images/karpov-timman-1979.jpg "Ön planda Karpov, arka planda Timman, 1979. · Fotoğraf: Koen Suyk / Anefo — Nationaal Archief (Hollanda Ulusal Arşivi) · Envanter no 2.24.01.05, madde 930-5234. Lisans: [CC0 1.0 (Kamu Bağışı)](https://creativecommons.org/publicdomain/zero/1.0/deed.tr). Kaynak: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:2e_Ronde_Karpov_op_de_voorgrond,_Timman_op_de_achtergrond,_Bestanddeelnr_930-5234.jpg)")
 
 [Event "Mar del Plata"]
 [Site "Mar del Plata ARG"]
