@@ -29,7 +29,7 @@ export default function Post() {
 
   return (
     <div className="sk min-h-screen bg-[#0E0C0A]">
-      <Link to="/" aria-label="Ana sayfaya dön" className="fixed top-5 right-5 z-10 w-12 h-12 rounded-full bg-[#F1E9DC] text-[#0E0C0A] grid place-items-center hover:bg-[#C8893E]"><X /></Link>
+      <Link to="/" aria-label="Ana sayfaya dön" className="fixed top-5 right-5 z-50 w-12 h-12 rounded-full bg-[#F1E9DC] text-[#0E0C0A] grid place-items-center hover:bg-[#C8893E]"><X /></Link>
       <article className="max-w-[760px] mx-auto px-6 pt-32 relative pb-32">
         <p className="f-mono text-[#C8893E]">{a.cat} · {a.read ? `${a.read} okuma` : a.date}</p>
         <h1 className="f-display text-[clamp(44px,6vw,88px)] mt-6">{a.title}</h1>
