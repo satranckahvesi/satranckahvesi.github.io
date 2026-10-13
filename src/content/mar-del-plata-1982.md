@@ -162,7 +162,7 @@ Beyaz tehdidi gözden kaçırıyor. } 10... Rb8 11. Qc2 { [P] } 11... Rxb2! 12. 
 
 Fischer'in en yakın dostu ve yardımcısı Arjantinli Büyükusta **Miguel Quinteros** 1972'de Spassky'e karşı hazırlanırken Fischer'e yardım etmiş ve hatta 1992 senesindeki rövanş maçında da Fischer'in yanında bulunmuştur. Orijinal oyun stiliyle bilinen Quinteros, aynı zamanda **Apartheid** rejimi zamanında yasaklı Güney Afrika'da satranç oynayıp yasağı delen ve bundan ötürü "üç yıl men" cezası alan oldukça tartışmalı bir figürdür.
 
-![Jan Timman hamle sırası kendisinde, Amsterdam, 1978 (siyah-beyaz fotoğraf)](images/jan-timman-amsterdam-1978-b.jpg "Hamle sırası Timman'da: Amsterdam'daki IBM satranç turnuvasının 3. turu, 1978. Fotoğraf: Rob Croes / Anefo — Nationaal Archief (Hollanda Ulusal Arşivi), 15 Temmuz 1978 · Envanter no 2.24.01.05, madde 929-8190. Lisans: [CC0 1.0 (Kamu Malı Bağışı)](https://creativecommons.org/publicdomain/zero/1.0/deed.tr). Kaynak: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:IBM_schaaktoernooi_3e_ronde_Timman_aan_zet,_Bestanddeelnr_929-8190.jpg)")
+![Jan Timman hamle sırası kendisinde, Amsterdam, 1978 (siyah-beyaz fotoğraf)](images/jan-timman-amsterdam-1978-b.jpg "Jan Timman, 1978. · Fotoğraf: Rob Croes / Anefo — Nationaal Archief (Hollanda Ulusal Arşivi) · Envanter no 2.24.01.05, madde 929-8190. Lisans: [CC0 1.0 (Kamu Bağışı)](https://creativecommons.org/publicdomain/zero/1.0/deed.tr). Kaynak: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:IBM_schaaktoernooi_3e_ronde_Timman_aan_zet,_Bestanddeelnr_929-8190.jpg)")
 
 [Event "Mar del Plata"]
 [Site "Mar del Plata ARG"]
