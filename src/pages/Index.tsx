@@ -140,7 +140,7 @@ export default function Index() {
       <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${scrolled ? 'bg-[#0E0C0A]/90 backdrop-blur border-b border-[#2E2620]' : ''}`}>
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 h-20 flex items-center justify-between">
           <a href="#kapak" className="flex items-center gap-3">
-            <span className="grid grid-cols-2 w-7 h-7 border border-[#F1E9DC]"><span className="bg-[#F1E9DC]" /><span /><span /><span className="bg-[#C8893E]" /></span>
+            <span className="grid grid-cols-2 w-7 h-7 border border-[#F1E9DC]"><span className="bg-[#C8893E]" /><span /><span /><span className="bg-[#F1E9DC]" /></span>
             <span className="f-display text-2xl tracking-tight">Satranç <em className="italic">vs.</em></span>
           </a>
           <nav className="hidden lg:flex gap-10">
@@ -173,8 +173,8 @@ export default function Index() {
           <div className="max-w-[1440px] mx-auto px-6 md:px-10 pb-12 md:pb-16">
             <p className="f-mono text-[#C8893E] mb-6">{cover.cat} — {cover.read} okuma</p>
             <h1 className="f-display text-[clamp(52px,9vw,160px)] max-w-[14ch]">
-              <span className="block overflow-hidden"><span className="rise">Şahın</span></span>
-              <span className="block overflow-hidden"><span className="rise italic text-[#C8893E]" style={{ animationDelay: '.15s' }}>yalnızlığı.</span></span>
+              <span className="block overflow-hidden pb-[0.2em] -mb-[0.2em]"><span className="rise">Şahın</span></span>
+              <span className="block overflow-hidden pb-[0.2em] -mb-[0.2em]"><span className="rise italic text-[#C8893E]" style={{ animationDelay: '.15s' }}>yalnızlığı.</span></span>
             </h1>
             <div className="mt-10 flex flex-col md:flex-row md:items-end justify-between gap-8">
               <p className="max-w-md text-lg text-[#F1E9DC]/80">{cover.dek} <span className="f-mono text-[#A89A88] block mt-3">Yazan: {cover.author}</span></p>
@@ -183,18 +183,6 @@ export default function Index() {
           </div>
         </div>
       </section>
-
-      <div className="border-y border-[#2E2620] py-6 overflow-hidden bg-[#F1E9DC] text-[#0E0C0A]">
-        <div className="marquee flex whitespace-nowrap w-max">
-          {Array.from({ length: 2 }).map((_, k) => (
-            <div key={k} className="flex">
-              {['Oyunsonu', '♞', 'Sicilya Savunması', '♜', 'Röportajlar', '♝', 'Damı Gambiti', '♛', 'Satranç Tarihi', '♚'].map((w, i) => (
-                <span key={i} className="f-display italic text-5xl md:text-6xl px-8">{w}</span>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
 
       {/* ÖNE ÇIKANLAR */}
       <section id="yazilar" className="max-w-[1440px] mx-auto px-6 md:px-10 py-24 md:py-40">
@@ -299,7 +287,7 @@ export default function Index() {
           </div>
         </div>
         <div className="overflow-hidden border-t border-[#2E2620]">
-          <p className="f-display text-[17vw] leading-[0.8] whitespace-nowrap text-center pt-6 -mb-[2vw]">Satranç <em className="italic text-[#C8893E]">vs.</em></p>
+          <p className="f-display text-[17vw] leading-[1] whitespace-nowrap text-center pt-6 pb-[2vw]">Satranç <em className="italic text-[#C8893E]">vs.</em></p>
         </div>
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 py-6 flex justify-between f-mono text-[#A89A88]">
           <span>© 2026 Satranç vs. Dergisi</span><span>a1 — h8</span>

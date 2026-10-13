@@ -2,15 +2,13 @@
 
 .sk { background:#0E0C0A; color:#F1E9DC; font-family:'Manrope',sans-serif; }
 .sk ::selection { background:#C8893E; color:#0E0C0A; }
-.f-display { font-family:'Fraunces',serif; letter-spacing:-0.04em; line-height:.9; font-weight:300; }
+.f-display { font-family:'Fraunces',serif; letter-spacing:-0.04em; line-height:.9; font-weight:300; font-variation-settings:'opsz' 72; }
 .f-mono { font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.2em; text-transform:uppercase; }
 .reveal { transition: transform .9s cubic-bezier(.2,.7,.1,1), opacity .9s cubic-bezier(.2,.7,.1,1); }
 .reveal.pre { opacity:0; transform:translateY(40px); }
-@keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
-.marquee { animation: marquee 40s linear infinite; }
-@keyframes rise { from{transform:translateY(105%)} to{transform:translateY(0)} }
+@keyframes rise { from{transform:translateY(130%)} to{transform:translateY(0)} }
 .rise { display:inline-block; animation: rise 1.1s cubic-bezier(.2,.7,.1,1) both; }
 @keyframes kenburns { from{transform:scale(1.15)} to{transform:scale(1)} }
 .kb { animation: kenburns 2.4s cubic-bezier(.2,.7,.1,1) both; }
 .hscroll::-webkit-scrollbar { display:none; }
-@media (prefers-reduced-motion: reduce) { .marquee,.rise,.kb{animation:none} .reveal.pre{opacity:1;transform:none} }
+@media (prefers-reduced-motion: reduce) { .rise,.kb{animation:none} .reveal.pre{opacity:1;transform:none} }
