@@ -1,5 +1,4 @@
-import { Fragment, useEffect, useRef, useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { Fragment, useEffect, useRef } from 'react';
 import Markdown from 'markdown-to-jsx';
 import { useChessPublica } from '@/lib/chesspublica';
 import { curlyComments, curlyProse, watchComments } from '@/lib/curly-dom';
@@ -86,14 +85,15 @@ function PgnGame({ header, moves }: { header: string; moves: string }) {
 }
 
 // İçindekiler: yazıdaki tüm oyunlar, [Event] başlıklarından otomatik çıkarılır.
-type TocItem = { id: string; round: string; label: string; result: string };
+type GameItem = { id: string; round: string; label: string; result: string };
+type TocItem = { id: string; label: string };
 
 function surname(name?: string) {
   return (name ?? '').split(',')[0].trim();
 }
 
-function gameToc(chunks: string[]): TocItem[] {
-  const items: TocItem[] = [];
+function gameToc(chunks: string[]): GameItem[] {
+  const items: GameItem[] = [];
   chunks.forEach((c) => {
     if (!c.trim().startsWith('[Event ')) return;
     const t = parseTags(c);
@@ -108,24 +108,45 @@ function gameToc(chunks: string[]): TocItem[] {
   return items;
 }
 
-function Toc({ items, allOpen, onGo, onAll }: { items: TocItem[]; allOpen: boolean; onGo: (id: string) => void; onAll: (open: boolean) => void }) {
-  const btn = 'f-mono text-[#A89A88] hover:text-[#C8893E] transition-colors';
+// İçindekiler: yazıdaki "###" başlıkları. Başlık metnindeki *vurgu* işaretleri kaldırılır, kimlik başlıktan türetilir.
+const TR_MAP: Record<string, string> = { ç: 'c', ğ: 'g', ı: 'i', ö: 'o', ş: 's', ü: 'u', â: 'a', î: 'i', û: 'u' };
+function slugify(text: string) {
+  return text
+    .toLowerCase()
+    .replace(/[çğıöşüâîû]/g, (ch) => TR_MAP[ch])
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+const headingText = (chunk: string) => chunk.replace(/^###\s+/, '').trim();
+const headingLabel = (chunk: string) => headingText(chunk).replace(/[*_]/g, '');
+
+function sectionToc(chunks: string[]): TocItem[] {
+  const seen = new Set<string>();
+  const items: TocItem[] = [];
+  chunks.forEach((c) => {
+    if (!c.trim().startsWith('### ')) return;
+    const label = headingLabel(c.trim());
+    let id = slugify(label) || `bolum-${items.length + 1}`;
+    while (seen.has(id)) id += '-2';
+    seen.add(id);
+    items.push({ id, label });
+  });
+  return items;
+}
+
+function Toc({ items, onGo }: { items: TocItem[]; onGo: (id: string) => void }) {
   return (
     <nav aria-label="İçindekiler" className="mt-16 mb-10">
-      <div className="flex items-end justify-between gap-4 mb-6">
-        <h3 className="f-display text-3xl md:text-4xl text-[#F1E9DC]">İçindekiler</h3>
-        <div className="pb-1">
-          <button type="button" onClick={() => onAll(!allOpen)} className={btn}>{allOpen ? 'Tümünü kapat' : 'Tümünü aç'}</button>
-        </div>
-      </div>
+      <h3 className="f-display text-3xl md:text-4xl text-[#F1E9DC] mb-6">İçindekiler</h3>
       <ol className="border-t border-[#2E2620]">
-        {items.map((it) => (
+        {items.map((it, n) => (
           <li key={it.id} className="border-b border-[#2E2620]">
             <a href={`#${it.id}`} onClick={(e) => { e.preventDefault(); onGo(it.id); }}
               className="group flex items-baseline gap-4 py-3 text-[#F1E9DC]/85 hover:text-[#C8893E] transition-colors">
-              <span className="f-mono text-[#C8893E] w-[5rem] shrink-0">{it.round}. tur</span>
+              <span className="f-mono text-[#C8893E] w-[3rem] shrink-0">{String(n + 1).padStart(2, '0')}</span>
               <span className="flex-1">{it.label}</span>
-              <span className="f-mono text-[#A89A88] group-hover:text-[#C8893E]">{it.result}</span>
             </a>
           </li>
         ))}
@@ -134,31 +155,16 @@ function Toc({ items, allOpen, onGo, onAll }: { items: TocItem[]; allOpen: boole
   );
 }
 
-// Katlanabilir oyun kutusu. İçerik kapalıyken de DOM'da kalır (satır yüksekliği 0'a iner), böylece
-// ChessPublica tahtaları gizliyken değil, gerçek genişlikte çizer; kapalı içerik `inert` ile erişilemez olur.
-function GameBox({ item, open, onToggle, children }: { item: TocItem; open: boolean; onToggle: () => void; children: React.ReactNode }) {
-  const inner = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const el = inner.current;
-    if (!el) return;
-    if (open) el.removeAttribute('inert');
-    else el.setAttribute('inert', '');
-  }, [open]);
-  const regionId = `${item.id}-icerik`;
+// Oyun bölümü: tur başlığı ve altında oyun (her zaman açık).
+function GameSection({ item, children }: { item: GameItem; children: React.ReactNode }) {
   return (
     <section id={item.id} className="my-4 border-b border-[#2E2620] scroll-mt-8">
-      <h4>
-        <button type="button" aria-expanded={open} aria-controls={regionId} onClick={onToggle}
-          className="group flex w-full items-baseline gap-4 py-4 text-left text-[#F1E9DC]/90 hover:text-[#C8893E] transition-colors">
-          <span className="f-mono text-[#C8893E] w-[5rem] shrink-0">{item.round}. tur</span>
-          <span className="flex-1">{item.label}</span>
-          <span className="f-mono text-[#A89A88] group-hover:text-[#C8893E]">{item.result}</span>
-          <ChevronDown aria-hidden size={18} className={`self-center shrink-0 transition-transform duration-300 ${open ? 'rotate-180' : ''}`} />
-        </button>
+      <h4 className="flex items-baseline gap-4 py-4 text-[#F1E9DC]/90">
+        <span className="f-mono text-[#C8893E] w-[5rem] shrink-0">{item.round}. tur</span>
+        <span className="flex-1">{item.label}</span>
+        <span className="f-mono text-[#A89A88]">{item.result}</span>
       </h4>
-      <div id={regionId} className="grid transition-[grid-template-rows] duration-300 ease-out" style={{ gridTemplateRows: open ? '1fr' : '0fr' }}>
-        <div ref={inner} className="min-h-0 overflow-hidden">{children}</div>
-      </div>
+      {children}
     </section>
   );
 }
@@ -176,11 +182,13 @@ function Figure({ chunk }: { chunk: string }) {
   const m = chunk.match(IMG_CHUNK);
   if (!m) return null;
   const [, alt, path, caption] = m;
+  // Kitap kapağı küçük gösterilir; dar görselin altındaki künye okunabilsin diye künye kapaktan geniş tutulur.
+  const cover = /^images\/[^/]*adventurous-way/.test(path);
   return (
-    <figure className="my-10 mx-auto w-fit max-w-full">
-      <ProgressiveImage path={path} alt={alt} />
+    <figure className={`my-10 mx-auto max-w-full ${cover ? 'w-full md:max-w-[480px] text-center' : 'w-fit'}`}>
+      <ProgressiveImage path={path} alt={alt} cover={cover} />
       {caption && (
-        <figcaption className="credit mt-3 w-0 min-w-full text-[#A89A88]">
+        <figcaption className={`credit mt-3 text-[#A89A88] ${cover ? '' : 'w-0 min-w-full'}`}>
           <Markdown options={captionOptions}>{caption}</Markdown>
         </figcaption>
       )}
@@ -241,16 +249,9 @@ export default function ArticleBody({ chunks }: { chunks: string[] }) {
   const cp = useChessPublica(hasGames);
   // ChessPublica yüklenemezse eski düz metin görünümüne düşülür.
   const useFallback = cp === 'error';
-  const toc = gameToc(chunks);
-  // Oyunlar varsayılan olarak kapalıdır; açık olanların kimlikleri burada tutulur.
-  const [openIds, setOpenIds] = useState<Set<string>>(() => new Set());
-  const setOpen = (id: string, open: boolean) =>
-    setOpenIds((prev) => {
-      const next = new Set(prev);
-      if (open) next.add(id); else next.delete(id);
-      return next;
-    });
-  const openAll = (open: boolean) => setOpenIds(open ? new Set(toc.map((t) => t.id)) : new Set());
+  const games = gameToc(chunks);
+  const toc = sectionToc(chunks);
+  let headingNo = 0;
   // Tembel yüklenen fotoğraflar kaydırma sırasında sayfa yüksekliğini değiştirir; bu yüzden kaydırma
   // bittikten sonra konum (scroll-mt-8 = 32 px) gerekirse yeniden düzeltilir.
   const scrollToGame = (id: string, smooth: boolean) => {
@@ -264,11 +265,8 @@ export default function ArticleBody({ chunks }: { chunks: string[] }) {
     );
   };
   const goTo = (id: string) => {
-    setOpen(id, true);
-    window.setTimeout(() => {
-      scrollToGame(id, true);
-      window.history.replaceState(null, '', `#${id}`);
-    }, 60);
+    scrollToGame(id, true);
+    window.history.replaceState(null, '', `#${id}`);
   };
   let gameNo = 0;
   let tocPlaced = false;
@@ -295,32 +293,38 @@ export default function ArticleBody({ chunks }: { chunks: string[] }) {
     }
   }, [cp]);
 
-  // Adresteki #oyun-N bağlantısı ile açılırsa, oyunlar çizildikten sonra o oyunu açar ve kaydırır.
+  // Adresteki #oyun-N bağlantısı ile açılırsa, oyunlar çizildikten sonra o oyuna kaydırır.
   useEffect(() => {
     if (cp !== 'ready' && cp !== 'error') return;
     const id = decodeURIComponent(window.location.hash.slice(1));
     if (!id) return;
-    if (toc.some((t) => t.id === id)) setOpen(id, true);
     window.setTimeout(() => scrollToGame(id, false), 80);
   }, [cp]); // eslint-disable-line react-hooks/exhaustive-deps
 
   for (let i = 0; i < chunks.length; i++) {
     const c = chunks[i].trim();
     if (toc.length && !tocPlaced && c.startsWith('### ')) {
-      out.push(<Toc key="toc" items={toc} allOpen={toc.length > 0 && openIds.size === toc.length} onGo={goTo} onAll={openAll} />);
+      out.push(<Toc key="toc" items={toc} onGo={goTo} />);
       tocPlaced = true;
     }
     if (c.startsWith('[Event ')) {
-      const item = toc[gameNo++];
+      const item = games[gameNo++];
       const game = useFallback
         ? <Game header={c} moves={chunks[i + 1] ?? ''} />
         : <PgnGame header={c} moves={chunks[i + 1] ?? ''} />;
       out.push(
-        <GameBox key={i} item={item} open={openIds.has(item.id)} onToggle={() => setOpen(item.id, !openIds.has(item.id))}>
+        <GameSection key={i} item={item}>
           {game}
-        </GameBox>,
+        </GameSection>,
       );
       i++;
+    } else if (c.startsWith('### ')) {
+      const section = toc[headingNo++];
+      out.push(
+        <h3 key={i} id={section?.id} className="f-display text-4xl md:text-5xl mt-16 mb-6 text-[#F1E9DC] scroll-mt-8">
+          <Markdown options={{ forceInline: true }}>{headingText(c)}</Markdown>
+        </h3>,
+      );
     } else if (c.startsWith('<pre>')) {
       out.push(
         <pre key={i} className="crosstable my-10 overflow-x-auto">
@@ -339,7 +343,7 @@ export default function ArticleBody({ chunks }: { chunks: string[] }) {
       );
     }
   }
-  if (toc.length && !tocPlaced) out.unshift(<Toc key="toc" items={toc} allOpen={toc.length > 0 && openIds.size === toc.length} onGo={goTo} onAll={openAll} />);
+  if (toc.length && !tocPlaced) out.unshift(<Toc key="toc" items={toc} onGo={goTo} />);
   return (
     <div ref={rootRef} className="text-lg leading-[1.8] text-[#F1E9DC]/85" data-cp={cp}>
       {out}
