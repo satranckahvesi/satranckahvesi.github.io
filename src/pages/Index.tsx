@@ -157,7 +157,13 @@ export default function Index() {
             </div>
           </div>
         </div>
-        {cover.photo && <PhotoCredit className="absolute bottom-3 inset-x-6 md:inset-x-10 z-20 max-w-[1440px] mx-auto md:max-w-[520px] md:left-10 md:right-auto md:mx-0 pointer-events-auto" />}
+        {cover.photo && (
+          <div className="absolute inset-x-0 bottom-3 z-20 pointer-events-none">
+            <div className="max-w-[1440px] mx-auto px-6 md:px-10 flex md:justify-end">
+              <PhotoCredit className="max-w-[520px] md:text-right pointer-events-auto" />
+            </div>
+          </div>
+        )}
       </section>
 
       {/* ÖNE ÇIKANLAR */}
