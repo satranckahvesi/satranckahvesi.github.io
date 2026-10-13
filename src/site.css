@@ -13,6 +13,8 @@
 .hscroll::-webkit-scrollbar { display:none; }
 @media (prefers-reduced-motion: reduce) { .rise,.kb{animation:none} .reveal.pre{opacity:1;transform:none} }
 
-/* Makaledeki satranç diyagramları: geniş ekranda sütunu doldurmaz, ortalanır (telefonda tam genişlik). */
-.cp-game .jc-board-wrapper { width: 100%; max-width: min(100%, 440px); margin-left: auto; margin-right: auto; }
+/* Makaledeki satranç diyagramları: küçük boyutta, ortalanmış, üstte/altta 1rem boşlukla (telefonda sütuna sığar). */
+.cp-game .jc-board-wrapper { width: 100%; max-width: min(100%, 340px); margin: 1rem auto; }
 .cp-game .jc-board-wrapper [class*="board-b72b1"] { margin-left: auto; margin-right: auto; }
+/* ChessPublica kutusunun yatay iç boşluğu kaldırıldı: oyun metni yazı metniyle aynı hizada başlar. */
+.cp-game .pgn-container { padding-left: 0; padding-right: 0; }
