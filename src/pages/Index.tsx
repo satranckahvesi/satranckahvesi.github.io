@@ -173,8 +173,8 @@ export default function Index() {
           <div className="max-w-[1440px] mx-auto px-6 md:px-10 pb-12 md:pb-16">
             <p className="f-mono text-[#C8893E] mb-6">{cover.cat} — {cover.read} okuma</p>
             <h1 className="f-display text-[clamp(52px,9vw,160px)] max-w-[14ch]">
-              <span className="block overflow-hidden"><span className="rise">Şahın</span></span>
-              <span className="block overflow-hidden"><span className="rise italic text-[#C8893E]" style={{ animationDelay: '.15s' }}>yalnızlığı.</span></span>
+              <span className="block overflow-hidden pb-[0.2em] -mb-[0.2em]"><span className="rise">Şahın</span></span>
+              <span className="block overflow-hidden pb-[0.2em] -mb-[0.2em]"><span className="rise italic text-[#C8893E]" style={{ animationDelay: '.15s' }}>yalnızlığı.</span></span>
             </h1>
             <div className="mt-10 flex flex-col md:flex-row md:items-end justify-between gap-8">
               <p className="max-w-md text-lg text-[#F1E9DC]/80">{cover.dek} <span className="f-mono text-[#A89A88] block mt-3">Yazan: {cover.author}</span></p>
