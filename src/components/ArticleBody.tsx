@@ -107,15 +107,14 @@ function gameToc(chunks: string[]): TocItem[] {
   return items;
 }
 
-function Toc({ items, onGo, onAll }: { items: TocItem[]; onGo: (id: string) => void; onAll: (open: boolean) => void }) {
+function Toc({ items, allOpen, onGo, onAll }: { items: TocItem[]; allOpen: boolean; onGo: (id: string) => void; onAll: (open: boolean) => void }) {
   const btn = 'f-mono text-[#A89A88] hover:text-[#C8893E] transition-colors';
   return (
     <nav aria-label="İçindekiler" className="mt-16 mb-10">
       <div className="flex items-end justify-between gap-4 mb-6">
         <h3 className="f-display text-3xl md:text-4xl text-[#F1E9DC]">İçindekiler</h3>
-        <div className="flex gap-4 pb-1">
-          <button type="button" onClick={() => onAll(true)} className={btn}>Tümünü aç</button>
-          <button type="button" onClick={() => onAll(false)} className={btn}>Tümünü kapat</button>
+        <div className="pb-1">
+          <button type="button" onClick={() => onAll(!allOpen)} className={btn}>{allOpen ? 'Tümünü kapat' : 'Tümünü aç'}</button>
         </div>
       </div>
       <ol className="border-t border-[#2E2620]">
@@ -306,7 +305,7 @@ export default function ArticleBody({ chunks }: { chunks: string[] }) {
   for (let i = 0; i < chunks.length; i++) {
     const c = chunks[i].trim();
     if (toc.length && !tocPlaced && c.startsWith('### ')) {
-      out.push(<Toc key="toc" items={toc} onGo={goTo} onAll={openAll} />);
+      out.push(<Toc key="toc" items={toc} allOpen={toc.length > 0 && openIds.size === toc.length} onGo={goTo} onAll={openAll} />);
       tocPlaced = true;
     }
     if (c.startsWith('[Event ')) {
@@ -338,7 +337,7 @@ export default function ArticleBody({ chunks }: { chunks: string[] }) {
       );
     }
   }
-  if (toc.length && !tocPlaced) out.unshift(<Toc key="toc" items={toc} onGo={goTo} onAll={openAll} />);
+  if (toc.length && !tocPlaced) out.unshift(<Toc key="toc" items={toc} allOpen={toc.length > 0 && openIds.size === toc.length} onGo={goTo} onAll={openAll} />);
   return (
     <div ref={rootRef} className="text-lg leading-[1.8] text-[#F1E9DC]/85" data-cp={cp}>
       {out}
