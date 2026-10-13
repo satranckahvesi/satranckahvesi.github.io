@@ -297,12 +297,6 @@ export default function ArticleBody({ chunks }: { chunks: string[] }) {
   return (
     <div className="text-lg leading-[1.8] text-[#F1E9DC]/85" data-cp={cp}>
       {out}
-      {hasGames && !useFallback && (
-        <p className="mt-12 text-[11px] leading-relaxed text-[#A89A88]">
-          Satranç tahtaları ChessPublica ile çizilmiştir (MIT). Taş görselleri: Colin M.L. Burnett,{' '}
-          <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.tr" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-[#F1E9DC]">CC BY-SA 3.0</a>.
-        </p>
-      )}
     </div>
   );
 }
