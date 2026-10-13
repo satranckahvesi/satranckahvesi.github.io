@@ -281,6 +281,6 @@ _Mar del Plata 1982 Uluslararası Satranç Turnuvası_ çapraz tablosu:
  14    Giardelli      0 ½ 0 ½ ½ ½ ½ ½ ½ ½ ½ 0 0 *  4½
 </pre>
 
-Sadece oynadığı oyunlarla değil, yazdığı kitaplar, hazırladığı etüdler ve satranca adanmış yaşamıyla satranç aşkının ölümsüz bir sembolü olan Jan Timman hayat perdesini kapatsa da eserleri ve tahtada bıraktığı miras her zaman bizimle kalacak.
+Sadece oynadığı oyunlarla değil; yazdığı kitaplar, hazırladığı etütler ve satranca adanmış yaşamıyla satranç aşkının ölümsüz bir sembolü olan Jan Timman, hayat perdesini kapatmış olsa da eserleri ve tahtada bıraktığı miras her zaman bizimle kalacak.
 
 Jan Timman'ın (1951-2026) anısına saygıyla...
