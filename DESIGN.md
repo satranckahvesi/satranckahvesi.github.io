@@ -1,4 +1,4 @@
-# Satranç Kahvesi — DESIGN
+# Satranç vs. — DESIGN
 
 ## Direction & Layout
 - Purpose: Satranç oynanabilen kahve mekânı için editoryal, sinematik vitrin. Mood: gece, gergin bir oyun anı, sıcak kahve buharı. Defining idea: hero'da imleçle aydınlanan 8x8 satranç ızgarası + devasa serif "Hamle sende." başlığı. Reference: Awwwards SOTD editoryal restoran siteleri.
