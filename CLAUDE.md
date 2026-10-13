@@ -21,3 +21,4 @@ CSS in `src/site.css`. The note at the top of that file lists how this site diff
 - Article photos use `src/components/ProgressiveImage.tsx` (blurred LQIP + reserved space, fades in on load). Sizes and placeholders live in `src/data/image-meta.json`; after adding a photo to `public/images/` run `python3 scripts/image-placeholders.py` (Pillow).
 - `src/lib/inline-play.ts`: moves the player's comment play button into the last line of the comment text (inline). Comments with variations keep it below. Depends on `.video-comment > .comment-play-btn` and `.comment-body` in `pgn-player.js`.
 - Book covers live in `public/images/` with `adventurous-way` in the name are shown small and in color (`cover` mode in `ProgressiveImage`/`Figure`); other photos are grayscale.
+- Game titles: ChessPublica's own title blocks (`.video-title`, `.pgn-headers`) are hidden; `GameSection` in `ArticleBody.tsx` shows the round heading and an "Event, dd.mm.yyyy" line from the PGN tags.
