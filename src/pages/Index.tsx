@@ -1,30 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowUpRight, Menu as MenuIcon, X, Instagram, Twitter, Youtube, Mail } from 'lucide-react';
-import ArticleBody, { splitArticle } from '../components/ArticleBody';
-import timmanMd from '../content/mar-del-plata-1982.md?raw';
+import { Link } from 'react-router-dom';
+import PhotoCredit, { PHOTO } from '@/components/PhotoCredit';
+import { ARTICLES, articlePath } from '@/data/articles';
 import '../site.css';
-
-const TIMMAN = splitArticle(timmanMd);
-
-const PHOTO = {
-  src: `${import.meta.env.BASE_URL}images/jan-timman-1973.jpg`,
-  alt: 'Jan Timman, AVRO satranç turnuvası, 1973 (siyah-beyaz fotoğraf)',
-  page: 'https://commons.wikimedia.org/wiki/File:AVRO-schaaktoernooi,_Jan_Timman,_Bestanddeelnr_926-4781.jpg',
-  license: 'https://creativecommons.org/publicdomain/zero/1.0/deed.tr',
-};
-
-function PhotoCredit({ full = false, className = '' }: { full?: boolean; className?: string }) {
-  const link = 'underline underline-offset-2 hover:text-[#F1E9DC]';
-  return (
-    <p className={`text-[11px] leading-relaxed text-[#A89A88] ${className}`}>
-      Fotoğraf: Rob Mieremet / Anefo — Nationaal Archief (Hollanda Ulusal Arşivi), 12 Haziran 1973
-      {full && <> · Envanter no 2.24.01.05, madde 926-4781 · Konu: Jan Timman</>}
-      . Lisans: <a href={PHOTO.license} target="_blank" rel="noreferrer" className={link}>CC0 1.0 (Kamu Malı Bağışı)</a>.
-      {' '}Kaynak: <a href={PHOTO.page} target="_blank" rel="noreferrer" className={link}>Wikimedia Commons</a>
-      {full && <></>}
-    </p>
-  );
-}
 
 const NAV = [
   ['Kapak', 'kapak'],
@@ -33,26 +12,6 @@ const NAV = [
   ['Yazarlar', 'yazarlar'],
   ['Hakkında', 'hakkinda'],
 ] as const;
-
-type Article = { id: string; cat: string; title: string; dek: string; author: string; read: string; excerpt?: string; date?: string; chunks?: string[]; photo?: boolean; body: string[] };
-
-const ARTICLES: Article[] = [
-  { id: 'kapak', cat: 'Satranç tarihi', title: 'Mar del Plata 1982: Jan Timman ve bir zaferin anatomisi', dek: TIMMAN.dek.replace(/_/g, ''), excerpt: 'İlk turda Larsen’e yenilerek başlayan Jan Timman, 1982 Mar del Plata turnuvasını Karpov’un da aralarında olduğu rakiplerinin önünde nasıl kazandı?', author: 'FM Nazmi Can Doğan', read: '', date: '22 Eylül 2026', chunks: TIMMAN.chunks, photo: true, body: [] },
-  { id: 'roportaj', cat: 'Röportaj', title: '“Kaybetmeyi öğrenmeden ustalaşamazsın”', dek: 'Genç bir büyükusta ile hazırlık, yorgunluk ve turnuva psikolojisi üzerine.', author: 'Selin Kaya', read: '11 dk',
-    body: ['Bir turnuvanın son turunda, saat düşerken neler hissedilir? Konuğumuz kariyerinin dönüm noktalarını anlatıyor.', '“İlk yıllarda her yenilgi bir hakaret gibiydi. Sonra fark ettim ki en çok kaybettiğim partilerden öğreniyorum.”'] },
-  { id: 'analiz', cat: 'Analiz', title: 'Kale oyunsonlarında Lucena köprüsü', dek: 'Her kulüp oyuncusunun bilmesi gereken pozisyonu adım adım çözüyoruz.', author: 'Kerem Aydın', read: '8 dk',
-    body: ['Lucena pozisyonu, piyonu yedinci yataya ulaşmış kale oyunsonlarında kazanç tekniğidir.', 'Anahtar fikir: kaleyi dördüncü yataya getirip şaha bir “köprü” kurmak. Böylece rakip kalenin yandan şahları kesilir.'] },
-  { id: 'tarih', cat: 'Tarih', title: 'İstanbul kahvehanelerinde satrancın yüz yılı', dek: 'Osmanlı’dan Cumhuriyet’e, masa başında oynanan partilerin izinde.', author: 'Ayşe Demir', read: '16 dk',
-    body: ['19. yüzyıl sonunda İstanbul’da satranç, belirli kahvehanelerde toplanan meraklıların oyunuydu.', 'Arşiv kayıtları ve eski gazete sütunları üzerinden bu kayıp kültürü yeniden kuruyoruz.'] },
-  { id: 'acilis', cat: 'Açılışlar', title: 'Damı Gambiti’nin yeniden doğuşu', dek: 'Klasik bir açılış, modern motorlarla nasıl yeni bir hayat buldu?', author: 'Kerem Aydın', read: '10 dk',
-    body: ['Damı Gambiti yüz yılı aşkın süredir üst düzey satrancın merkezinde.', 'Bu yazıda ana varyantları ve son yıllarda öne çıkan yan yolları inceliyoruz.'] },
-  { id: 'turnuva', cat: 'Turnuva', title: 'Bir hafta sonunda dokuz tur', dek: 'Açık turnuvaların yorucu ve büyüleyici dünyasından notlar.', author: 'Selin Kaya', read: '7 dk',
-    body: ['Sabah dokuzda başlayan ilk tur, gece yarısına doğru biten son parti…', 'Açık turnuvalar, satrancın en demokratik sahnesi.'] },
-  { id: 'blitz', cat: 'Analiz', title: 'Blitzde zaman yönetimi', dek: '3+2 tempoda saatini nasıl kullanmalısın? Pratik ilkeler.', author: 'Deniz Arslan', read: '6 dk',
-    body: ['Blitzde en iyi hamle, zamanında yapılan iyi hamledir.', 'Açılışta hızlı, kritik anlarda yavaş: süreyi bütçelemenin üç kuralı.'] },
-  { id: 'egitim', cat: 'Eğitim', title: 'Çocuklara satranç öğretirken', dek: 'Kuralları değil, merakı öğretmek üzerine bir eğitmenin notları.', author: 'Ayşe Demir', read: '9 dk',
-    body: ['İlk derste kuralları değil, bir hikâyeyi anlatıyoruz: piyonun vezire dönüşme yolculuğunu.', 'Oyun, merak sürdükçe öğrenilir.'] },
-];
 
 const CATS = ['Tümü', ...Array.from(new Set(ARTICLES.map((a) => a.cat)))];
 
@@ -116,39 +75,9 @@ function ChessGrid() {
   );
 }
 
-function Reader({ a, onClose }: { a: Article; onClose: () => void }) {
-  useEffect(() => {
-    const k = (e: KeyboardEvent) => e.key === 'Escape' && onClose();
-    document.body.style.overflow = 'hidden';
-    window.addEventListener('keydown', k);
-    return () => { document.body.style.overflow = ''; window.removeEventListener('keydown', k); };
-  }, [onClose]);
-  return (
-    <div role="dialog" aria-modal aria-label={a.title} className="fixed inset-0 z-[70] bg-[#0E0C0A] overflow-y-auto">
-      <button aria-label="Yazıyı kapat" onClick={onClose} className="fixed top-5 right-5 z-10 w-12 h-12 rounded-full bg-[#F1E9DC] text-[#0E0C0A] grid place-items-center hover:bg-[#C8893E]"><X /></button>
-      <article className="max-w-[760px] mx-auto px-6 pt-32 relative pb-32">
-        <p className="f-mono text-[#C8893E]">{a.cat} · {a.read ? `${a.read} okuma` : a.date}</p>
-        <h1 className="f-display text-[clamp(44px,6vw,88px)] mt-6">{a.title}</h1>
-        <p className="text-xl text-[#F1E9DC]/80 mt-8 italic" style={{ fontFamily: 'Fraunces, serif' }}>{a.dek}</p>
-        <p className="f-mono text-[#A89A88] mt-8 pb-8 border-b border-[#2E2620]">Yazan: {a.author}</p>
-        {a.photo && (
-          <figure className="mt-10">
-            <img src={PHOTO.src} alt={PHOTO.alt} className="w-full h-auto grayscale" />
-            <figcaption className="mt-3"><PhotoCredit full /></figcaption>
-          </figure>
-        )}
-        <div className="mt-10 space-y-6 text-lg leading-[1.8] text-[#F1E9DC]/85">
-          {a.chunks ? <ArticleBody chunks={a.chunks} /> : a.body.map((p, i) => <p key={i} className={i === 0 ? 'first-letter:f-display first-letter:text-7xl first-letter:float-left first-letter:mr-3 first-letter:text-[#C8893E] first-letter:leading-[0.8]' : ''}>{p}</p>)}
-        </div>
-      </article>
-    </div>
-  );
-}
-
 export default function Index() {
   const [open, setOpen] = useState(false);
   const [cat, setCat] = useState('Tümü');
-  const [reading, setReading] = useState<Article | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const [y, setY] = useState(0);
   const [email, setEmail] = useState('');
@@ -215,7 +144,7 @@ export default function Index() {
             </h1>
             <div className="mt-10 flex flex-col md:flex-row md:items-end justify-between gap-8">
               <p className="max-w-md text-lg text-[#F1E9DC]/80">{cover.excerpt ?? cover.dek} <span className="f-mono text-[#A89A88] block mt-3">Yazan: {cover.author}</span></p>
-              <button onClick={() => setReading(cover)} className="pointer-events-auto inline-flex items-center gap-3 rounded-full bg-[#F1E9DC] text-[#0E0C0A] h-14 px-8 font-semibold hover:bg-[#C8893E] transition-colors self-start">Yazıyı oku <ArrowUpRight size={18} /></button>
+              <Link to={articlePath(cover)} className="pointer-events-auto inline-flex items-center gap-3 rounded-full bg-[#F1E9DC] text-[#0E0C0A] h-14 px-8 font-semibold hover:bg-[#C8893E] transition-colors self-start">Yazıyı oku <ArrowUpRight size={18} /></Link>
             </div>
           </div>
         </div>
@@ -231,13 +160,13 @@ export default function Index() {
         </div>
         <div className="grid md:grid-cols-12 gap-10 mt-16">
           {featured.map((a, i) => (
-            <button key={a.id} onClick={() => setReading(a)}
-              className={`group text-left reveal ${i === 0 ? 'md:col-span-7 md:row-span-2' : 'md:col-span-5'}`}>
+            <Link key={a.id} to={articlePath(a)}
+              className={`group block text-left reveal ${i === 0 ? 'md:col-span-7 md:row-span-2' : 'md:col-span-5'}`}>
               <p className="f-mono text-[#C8893E] mt-6">{a.cat} · {a.read || a.date}</p>
               <h3 className={`f-display mt-3 group-hover:italic transition-all ${i === 0 ? 'text-5xl md:text-6xl' : 'text-3xl md:text-4xl'}`}>{a.title}</h3>
               <p className="text-[#F1E9DC]/70 mt-3 max-w-xl">{a.dek}</p>
               <p className="f-mono text-[#A89A88] mt-4">{a.author}</p>
-            </button>
+            </Link>
           ))}
         </div>
       </section>
@@ -258,7 +187,7 @@ export default function Index() {
           <ul className="md:col-span-8">
             {list.map((a, i) => (
               <li key={cat + a.id}>
-                <button onClick={() => setReading(a)} className="group w-full text-left grid grid-cols-[48px_1fr_auto] md:grid-cols-[48px_1fr_auto] items-center gap-4 md:gap-6 py-7 border-b border-[#0E0C0A]/15">
+                <Link to={articlePath(a)} className="group w-full text-left grid grid-cols-[48px_1fr_auto] md:grid-cols-[48px_1fr_auto] items-center gap-4 md:gap-6 py-7 border-b border-[#0E0C0A]/15">
                   <span className="f-mono text-[#0E0C0A]/40">{String.fromCharCode(97 + (i % 8))}{i + 1}</span>
                   <div>
                     <p className="f-mono text-[#9A5F1E] text-[11px]">{a.cat}</p>
@@ -266,7 +195,7 @@ export default function Index() {
                     <p className="text-sm text-[#0E0C0A]/60 mt-2">{a.author} · {a.read || a.date}</p>
                   </div>
                   <ArrowUpRight className="group-hover:rotate-45 transition-transform" />
-                </button>
+                </Link>
               </li>
             ))}
           </ul>
@@ -332,7 +261,6 @@ export default function Index() {
         </div>
       </footer>
 
-      {reading && <Reader a={reading} onClose={() => setReading(null)} />}
     </div>
   );
 }

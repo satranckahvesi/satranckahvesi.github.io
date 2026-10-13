@@ -37,6 +37,55 @@ function ensureBuildOutDir() {
   };
 }
 
+const SITE_URL = 'https://satranckahvesi.com/yeni-deneme';
+
+// Her yazı için dist/posts/<slug>/index.html üretir (yazıya özel başlık, açıklama ve paylaşım
+// etiketleriyle) ve sitemap.xml'i yazı adresleriyle birlikte oluşturur.
+function articlePages() {
+  let outDir = path.resolve(__dirname, 'dist');
+  const esc = (t: string) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
+  const setMeta = (html: string, attr: string, key: string, value: string) =>
+    html.replace(new RegExp(`(<meta[^>]*${attr}="${key}"[^>]*content=")[^"]*(")`), `$1${esc(value)}$2`);
+  return {
+    name: 'article-pages',
+    configResolved(config) {
+      outDir = path.resolve(config.root, config.build.outDir);
+    },
+    closeBundle: {
+      order: 'post' as const,
+      handler() {
+        const articles = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'src/data/articles.json'), 'utf8'));
+        const template = fs.readFileSync(path.join(outDir, 'index.html'), 'utf8');
+        const urls = [`${SITE_URL}/`];
+        for (const a of articles) {
+          const url = `${SITE_URL}/posts/${a.slug}/`;
+          const title = `${a.title} — Satranç vs.`;
+          const desc = (a.excerpt ?? a.dek).replace(/_/g, '');
+          let html = template.replace(/<title[^>]*>[^<]*<\/title>/, `<title>${esc(title)}</title>`);
+          html = setMeta(html, 'name', 'description', desc);
+          html = setMeta(html, 'property', 'og:title', title);
+          html = setMeta(html, 'property', 'og:description', desc);
+          html = setMeta(html, 'property', 'og:type', 'article');
+          html = setMeta(html, 'name', 'twitter:title', title);
+          html = setMeta(html, 'name', 'twitter:description', desc);
+          const extra = [`<link rel="canonical" href="${url}" />`, `<meta property="og:url" content="${url}" />`];
+          if (a.photo) {
+            const img = `${SITE_URL}/images/jan-timman-1973.jpg`;
+            extra.push(`<meta property="og:image" content="${img}" />`, `<meta name="twitter:image" content="${img}" />`, '<meta name="twitter:card" content="summary_large_image" />');
+          }
+          html = html.replace('</head>', `    ${extra.join('\n    ')}\n  </head>`);
+          const dir = path.join(outDir, 'posts', a.slug);
+          fs.mkdirSync(dir, { recursive: true });
+          fs.writeFileSync(path.join(dir, 'index.html'), html);
+          urls.push(url);
+        }
+        const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `  <url><loc>${u}</loc></url>`).join('\n')}\n</urlset>\n`;
+        fs.writeFileSync(path.join(outDir, 'sitemap.xml'), xml);
+      },
+    },
+  };
+}
+
 // https://vitejs.dev/config/
 export default defineConfig(({ command }) => {
   const blogPrerenderRoutes = command === 'build' ? getBlogRoutes() : [];
@@ -51,6 +100,7 @@ export default defineConfig(({ command }) => {
       react(),
       atoms(),
       ensureBuildOutDir(),
+      articlePages(),
       ...(blogPrerenderRoutes.length > 0
         ? vitePrerenderPlugin({
             renderTarget: '#root',
