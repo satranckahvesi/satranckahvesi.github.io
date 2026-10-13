@@ -201,7 +201,7 @@ function Video({ chunk }: { chunk: string }) {
   const src = `https://www.youtube-nocookie.com/embed/${id[1]}${id[2] ? `?start=${id[2]}` : ''}`;
   const href = `https://www.youtube.com/watch?v=${id[1]}${id[2] ? `&t=${id[2]}s` : ''}`;
   return (
-    <figure className="my-10">
+    <figure className="my-10 mx-auto w-full md:max-w-[600px]">
       <div className="relative w-full overflow-hidden bg-black" style={{ aspectRatio: '16 / 9' }}>
         <iframe
           src={src}
