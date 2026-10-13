@@ -78,9 +78,10 @@ const mdOptions = {
   },
 };
 
+// Markdown dosyasını paragraf bloklarına böler. Giriş (dek) metni articles.json'dan gelir;
+// dosyanın hiçbir paragrafı sayfadan ayrılmaz.
 export function splitArticle(md: string) {
-  const [dek, ...chunks] = md.trim().split(/\n\s*\n/);
-  return { dek, chunks };
+  return { chunks: md.trim().split(/\n\s*\n/) };
 }
 
 export default function ArticleBody({ chunks }: { chunks: string[] }) {
