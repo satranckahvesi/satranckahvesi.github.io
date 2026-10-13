@@ -57,18 +57,33 @@ function Label({ n, children }: { n: string; children: string }) {
   return <p className="f-mono text-[#A89A88]"><span className="text-[#C8893E]">{n}</span> — {children}</p>;
 }
 
+const CELL = 96;
+
 function ChessGrid() {
   const ref = useRef<HTMLDivElement>(null);
   const [pos, setPos] = useState({ x: -999, y: -999 });
+  const [size, setSize] = useState({ w: 0, h: 0 });
+  useEffect(() => {
+    const el = ref.current!;
+    const measure = () => setSize({ w: el.clientWidth, h: el.clientHeight });
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+  // Kare hücreler: sütun sayısı genişliğe göre seçilir, hücre kenarı genişliği tam böler.
+  const cols = Math.max(1, Math.round(size.w / CELL));
+  const s = size.w / cols;
+  const rows = s > 0 ? Math.ceil(size.h / s) : 0;
   return (
     <div ref={ref} aria-hidden
       onMouseMove={(e) => { const r = ref.current!.getBoundingClientRect(); setPos({ x: e.clientX - r.left, y: e.clientY - r.top }); }}
       onMouseLeave={() => setPos({ x: -999, y: -999 })}
-      className="absolute inset-0 grid grid-cols-8 grid-rows-8 z-10">
-      {Array.from({ length: 64 }).map((_, i) => {
-        const col = i % 8, row = Math.floor(i / 8);
-        const w = ref.current?.clientWidth ?? 1, h = ref.current?.clientHeight ?? 1;
-        const d = Math.hypot((col + 0.5) * (w / 8) - pos.x, (row + 0.5) * (h / 8) - pos.y);
+      className="absolute inset-0 grid overflow-hidden z-10"
+      style={{ gridTemplateColumns: `repeat(${cols}, ${s}px)`, gridAutoRows: `${s}px` }}>
+      {Array.from({ length: cols * rows }).map((_, i) => {
+        const col = i % cols, row = Math.floor(i / cols);
+        const d = Math.hypot((col + 0.5) * s - pos.x, (row + 0.5) * s - pos.y);
         const a = Math.max(0, 1 - d / 260);
         const dark = (col + row) % 2 === 1;
         return <div key={i} className="border-[0.5px] border-[#F1E9DC]/[0.04] transition-colors duration-500"
