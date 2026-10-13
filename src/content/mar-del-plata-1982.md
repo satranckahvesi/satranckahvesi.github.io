@@ -4,7 +4,7 @@ Oyunların önemli anlarında okuyucuyu Timman ile birlikte hamleleri bulmaya da
 
 ### Kötü başlangıç ve toparlanma
 
-İlk mağlubiyetle turnuvanın başında tanışan Timman'ın rakibi bu turnuvanın önceki şampiyonlarından Bent Larsen'den başkası değildi.
+İlk mağlubiyetle turnuvanın başında tanışan Timman'ın ilk turdaki rakibi Bent Larsen, önceki yıllarda bu geleneksel turnuvanın şampiyonlarından biri olmuştu.
 
 [Event "Mar del Plata"]
 [Site "Mar del Plata"]
@@ -53,6 +53,8 @@ Clarín turnuvasını 1979 senesinde Spassky ve Petrosian'ı da yenerek, 1980'de
 
 Sade, teknik konumlara olan hâkimiyeti nedeniyle bir oyunsonu efsanesi olarak anılan Andersson, 1982 Clarín turnuvasını bir galibiyet ve on iki beraberlikle bitirmişti.
 
+### *Don Miguel* karşısında
+
 Turnuva oynandığı sırada yetmiş bir yaşında olan **Miguel Najdorf**, yaşına rağmen bu devler arenasında yalnızca üç oyun kaybetmişti. Otuz yaşındaki rakibi Timman ise belki de bu oyunun yarattığı ivmeyle turnuva zaferine imza atacaktı.
 
 Garry Kasparov, _"My Great Predecessors"_ (Benim Ustalarım) serisinin dördüncü cildinde _**Najdorf**_'a ayırdığı bölümde şöyle anlatıyordu:
@@ -73,6 +75,8 @@ Garry Kasparov, _"My Great Predecessors"_ (Benim Ustalarım) serisinin dördünc
 [Annotator "FM Nazmi Can Doğan"]
 
 1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7 6. Bxc6 { Günümüzde de üst seviyelerde karşılaşılan bu hamlenin amacı, 1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Bxc6 dxc6 hamleleriyle girilen Kırışmalı İspanyol'u, Siyahın az önce geliştirdiği atın ve filin uygunsuz konumda olduğu iddiasıyla oynamak. } 6... dxc6 { [%csl Re7,Rf6] } 7. d3 { [%csl Ge5][%cal Gf3e5] } 7... Nd7 { Siyah hemen uygunsuz durumdaki atının yerini düzelterek başlıyor. Artık f-piyonu kullanılabilir. } 8. Nbd2 O-O { Beyaz genel olarak d4 veya f4 sürüşü ile merkezdeki üstünlüğünü ve taş etkinliğini artırmak ister. Siyahın ise fil çiftiyle uzun vadeli bir oyun hedeflediği söylenebilir. } 9. Nc4 Bf6 (9... f6 { Bu hamle daha sık tercih ediliyor. } 10. Nh4 { Siyahın oyundaki fikriyle kaçınmak istediği hamle budur. } { [%cal Gh4f5] } 10... Nc5 11. Nf5 Bxf5 12. exf5 Qd5 13. Qg4 e4 14. Ne3 Qe5 15. Nc4 Qd5 { Karpov, Anatoly - Petrosian, Tigran V, 1/2-1/2, URS-chT. }) 10. b4!? { [D] Siyahın vezir kanadı piyonlarının ilerleyişini önleyerek filini geliştirmek istiyor. } { [%csl Gc6,Gc7,Gb7,Ga6][%cal Gc1b2] } (10. b3 { Piyonlara artık tahtada olmayan açık renkli filinin görevini vermek daha yaygın bir yöntem. } 10... Re8 11. Bb2 c5 12. a4 b6 13. h3 { [%cal Gf3h2,Gf2f4] } 13... Rb8 14. Nh2 b5 15. axb5 axb5 16. Ne3 $14 { Kholmov, Ratmir D - Beliavsky, Alexander G, 1-0, URS, 1982. } { [%cal Gf2f4,Ge3d5,Ge3f5] }) 10... Re8 11. Bb2 b6 { [%cal Gc8b7,Ga6a5] } 12. Bc3 g6 13. Nfd2 { [%csl Gf4][%cal Gf2f4] } 13... c5 14. a3 cxb4 15. axb4 Nb8?! { [P] İlk kritik an. Siyah zaman bulabilirse atını d4-karesine götürmek istiyor. Bunu başarırsa güzel bir konumu olacak. } (15... b5 16. Ne3 { [%cal Gd2b3,Ge3d5] } 16... Nb6 { daha sağlamdı. } { [%cal Gb6a4] }) 16. f4! exf4 17. Bxf6 (17. e5 Bg7 18. Qf3 { [%csl Ra8] } 18... Ra7 19. Qxf4 Be6 20. Ne4 $16) 17... Qxf6 18. e5 Qc6 19. Ne4 { [%cal Ge4f6] } 19... Nd7 20. Rxf4 Bb7 { [P] } 21. Qd2! (21. Qf3?! b5 22. Na5 Qb6+ 23. Kh1 Nxe5! 24. Nf6+?? Qxf6 $19) 21... b5 22. Ne3 (22. Na5 Qb6+ 23. Kh1? Bxe4 24. Rxe4 Rxe5 $17) 22... Qb6 (22... Rxe5? { [D] Beyaz atların gazabından kurtulmanın olanaksızlığını gösteren bir egzersiz olurdu. } 23. Ng4! { [%cal Gg4h6,Rg4f6] } 23... Re7 24. Nef6+ Nxf6 (24... Kh8 25. Nxd7 Rxd7 26. Ne5 $18) 25. Rxf6 { Siyah vezire kaçacak uygun bir kare yok. } 25... Qd5 { [D] } 26. Rxg6+! $18) 23. d4 (23. Nc5! Nxc5 (23... Rxe5 24. Ng4! Nxc5 25. bxc5 Rxc5 26. d4 Rd5 27. Nh6+! $18) 24. bxc5 Qxc5 25. d4 $18 { [%cal Ge3g4] }) 23... Bxe4 24. Rxe4 Rad8 { [%cal Gd7e5] } 25. Qf2 Nf6?! (25... f6 { Şahı böylesine zayıflatmak riskli görünüyor ancak Stockfish'e göre çok daha iyi savunma olanakları sunardı. }) 26. Rf4 Nh5 27. Rxf7 Qxd4 { [%csl Ga1][%cal Gd4a1] } 28. Rf1 Qxe5 { [P] } 29. Ng4! { Atın koyu renklerden saldırısı belirleyici olacak. } { [%cal Gg4h6,Gg4e5] } 29... Qg5 { [%csl Gh6] } (29... Qd4 30. Qxd4 Rxd4 31. Nh6+ Kh8 { [D] } 32. g4! $18 { Bu kazandıran ayrıntı nedeniyle Siyah vezirleri değişemez. }) 30. h3 { Siyah neredeyse _zugzwang_ durumunda, ancak yine de hemen kazanmak mümkün değil. } 30... c6 31. Qf3 Qd2 32. c3 Qg5 33. Qxc6 Rf8 34. Qe6 Rxf7 35. Qxf7+ Kh8 36. Qc7 Qd2?? { Bu hamleyle birlikte Siyah belki de terk ediyor. } (36... Re8) 37. Qe5+ Ng7 38. Rf7 Rg8 39. Nf6 $18 { [%cal Rf6e8,Gf6g8] } 1-0
+
+### Durdurulamayan kazanç serisi
 
 Arjantin satrancına damga vuran 1935 doğumlu Büyükusta **Oscar Panno**, 1953'te Dünya Gençler Şampiyonu ve yine aynı sene Arjantin şampiyonu olmuştu. Oyunlarını incelediğimiz geleneksel Mar del Plata turnuvasını farklı yıllarda kazanmıştı.
 
@@ -126,7 +130,7 @@ Daha sonra Uluslararası Usta ünvanına kavuşacak **Sergio Carlos Giardelli** 
 [Date "14.02.1982"]
 [Round "6"]
 [White "Jan Timman"]
-[Black "Giardelli, Sergio Carlos"]
+[Black "Sergio Carlos Giardelli"]
 [Result "1-0"]
 [WhiteElo "2655"]
 [BlackElo "2460"]
@@ -205,6 +209,8 @@ Yazdığı sayısız kitapla satranç dünyasında iz bırakan **Zenón Franco O
 1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Ba6 5. b3 Bb4+ 6. Bd2 Be7 7. Nc3 Bb7 8. Bg2 O-O 9. O-O c5 { [P] Beyazın sonraki hamlesinin oynanabildiği durumlarda ...c5 sürüşü dikkatle oynanmalı. Timman siyah taşlarla Vezir-Hint Savunması uzmanı olduğu için beyaz taşlarla oynarken karşısına çıkan bu fırsatı elbette kaçırmıyor. } 10. d5! exd5 { [P] } 11. Ne1! (11. Nh4 Ne4 { [%cal Ge7h4] } 12. Nf5 Bf6 $10) 11... Na6?! (11... Ne4 12. Nxd5 Bxd5 13. cxd5 Nxd2 14. Qxd2 d6 $14 { Veritabanında bu konumdan başlayan yazışmalı partiler beraberlik ile sonuçlanmış. Objektif olarak Benoni formasyonunda iki hafif taş kesmiş olan Siyahın endişe edecek çok şey olmaması gerekir. Beyazın merkezde ve vezir kanadında ilerleyişine Siyah da vezir kanadında yanıt üretecek. } { [%csl Gg3][%cal Ge2e4,Gf2f4,Ge4e5,Gg3g4,Gb6b5] }) 12. cxd5 d6 13. Nd3 (13. e4! $14 { [%csl Gf4][%cal Gf2f4] }) 13... Nc7 (13... Nb4! { Benoni'de taş değişimi olanakları kollanmalı. Zira siyah taşların manevra alanı kısıtlı. }) 14. e4 Nd7 15. f4 Rb8 { Bu hamle ...♗f6'yı hazırlıyor. } (15... Bf6! { Taktik olarak yanlış gibi dursa da Stockfish'in bize öğreteceği bir şeyler var. } { [%cal Rf6d4] } 16. e5 dxe5 17. d6 { Siyah materyal kaybetti gibi duruyor. } 17... e4 18. dxc7 Qxc7 { [%cal Rf6d4,Ge4e3] } 19. Ne5 Nxe5 20. fxe5 Bxe5 $13 { Stockfish 0.00 sularında geziniyor. Biz ise şunu biliyoruz: At karşılığında alınan üç piyon, siyahın aktif taşları sayesinde güzel bir oyun sunar. } { [%cal Ge5d4,Ge4e3,Ga8d8] }) 16. Qc2 Bf6 17. Rad1 Ba6 { Benoni'de Beyaz e4-e5 ilerleyişini başarırsa rahatça üstünlük iddiasında bulunabiliyor. Bu nedenle çoğu zaman Siyahın agresif bir tutum sergilemesi gerekiyor. } (17... Bd4+ 18. Kh1 f5 $132 19. exf5 (19. e5 dxe5 20. fxe5 Nxe5 21. Nxe5 Bxe5 22. Rxf5 $10) 19... Nf6) 18. Rfe1 { [%cal Ge4e5] } 18... Nb5 { 13. hamlede yapılması gereken bu attan kurtulmaya çalışmaktı. } 19. Nxb5 Bxb5 20. Nf2 Re8 21. Kh1 Bd4 22. Be3 Bxe3 23. Rxe3 { Siyah iki çift taş değişmeyi başardı fakat Beyazın e4-e5 fikrine karşı oyunu nerede? } 23... Qf6 24. Qd2 Rbc8 25. Ree1 h5 (25... Qd4 { Stockfish'in ...c4-sürüşü ile karşı oyun elde etmek için bir başka öğretici fikri. } 26. Qc1! (26. Qxd4 cxd4 $132 { [%cal Gc8c2] }) 26... Qb4 { [%csl Gc4][%cal Gc5c4] } (26... Qxf2 27. Rd2 $18) 27. Re3! { [%cal Ga2a3] } 27... c4 28. a3 Qc5 29. b4 Qc7 30. Qc3 $16 { Beyaz e4-e5 sürüşü için çalışmalarına devam eder. }) 26. Bh3 Rc7 27. Kg1 Qh6 { [P] Siyah e4-e5 ardından vezirleri değişerek rahatlama peşinde, ancak vezir oyuna dönemeyecek. } 28. e5! { Uzun süredir beklenen tipik ilerleme gerçekleştirildi. d dikeyinde çok güçlü bir geçer ve merkezileşen beyaz taşların dağınık siyah taşlara karşı oyunu öğretici. } 28... dxe5 { [P] } 29. a4! { Çok akıllıca bir saptırma. d6 sürüşünün ardından gelebilecek ... ♗c6 dönüşü engellenmiş oldu. } 29... Ba6 30. d6 Rb7 31. Qd5 Nf6 32. Qc6 { [%csl Gd6][%cal Gd6d7] } 32... Rbb8 33. d7 Rf8 34. Qc7 { Ordusu dağılan Siyah terk etti. } { [%csl Ga6][%cal Gc7a7,Gd7d8] } 1-0
 
 ![Jan Timman bir partide, IBM turnuvası 12. tur, 1978 (siyah-beyaz fotoğraf)](images/jan-timman-ibm-1978-12-tur.jpg "Jan Timman, 1978 · Fotoğraf: Hans Peters / Anefo · Hollanda Ulusal Arşivi · Lisans: [CC0 1.0 (Kamu Bağışı)](https://creativecommons.org/publicdomain/zero/1.0/deed.tr) · Kaynak: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:IBM_schaaktoernooi,_12e_ronde_Timman_tijdens_partij_tegen_Romanistren,_Bestanddeelnr_929-8370.jpg)")
+
+### Son turlara girerken
 
 [Event "Mar del Plata"]
 [Site "Mar del Plata"]
