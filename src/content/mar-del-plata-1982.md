@@ -53,7 +53,7 @@ Clarín turnuvasını 1979 senesinde Spassky ve Petrosian'ı da yenerek, 1980'de
 
 Sade, teknik konumlara olan hâkimiyeti nedeniyle bir oyunsonu efsanesi olarak anılan Andersson, 1982 Clarín turnuvasını bir galibiyet ve on iki beraberlikle bitirmişti.
 
-### *Don Miguel* karşısında
+### *Don Miguel* karşısında ilk kazanç
 
 Turnuva oynandığı sırada yetmiş bir yaşında olan **Miguel Najdorf**, yaşına rağmen bu devler arenasında yalnızca üç oyun kaybetmişti. Otuz yaşındaki rakibi Timman ise belki de bu oyunun yarattığı ivmeyle turnuva zaferine imza atacaktı.
 
