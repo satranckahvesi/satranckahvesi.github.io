@@ -126,7 +126,7 @@ Daha sonra Uluslararası Usta ünvanına kavuşacak **Sergio Carlos Giardelli** 
 [Date "14.02.1982"]
 [Round "6"]
 [White "Jan Timman"]
-[Black "Giardelli, Sergio Carlos"]
+[Black "Sergio Carlos Giardelli"]
 [Result "1-0"]
 [WhiteElo "2655"]
 [BlackElo "2460"]
