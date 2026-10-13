@@ -146,7 +146,7 @@ export default function Index() {
         </div>
         <div className="absolute inset-x-0 bottom-0 z-20 pointer-events-none">
           <div className="max-w-[1440px] mx-auto px-6 md:px-10 pb-28 md:pb-16">
-            <p className="f-mono text-[#C8893E] mb-6">{cover.cat} — {cover.date}</p>
+            <p className="f-mono text-[#C8893E] mb-6">{cover.cat} — Ekim 2026</p>
             <h1 className="f-display text-[clamp(40px,6.5vw,112px)] max-w-[26ch]">
               <span className="block overflow-hidden pb-[0.2em] -mb-[0.2em]"><span className="rise">Mar del Plata 1982:</span></span>
               <span className="block overflow-hidden pb-[0.2em] -mb-[0.2em]"><span className="rise italic text-[#C8893E]" style={{ animationDelay: '.15s' }}>Jan Timman</span></span>
