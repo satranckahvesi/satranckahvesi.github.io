@@ -16,7 +16,7 @@ const NAV = [
 const CATS = ['Tümü', ...Array.from(new Set(ARTICLES.map((a) => a.cat)))];
 
 const AUTHORS = [
-  { name: 'Nazmi Can Doğan', role: 'Genel Yayın Yönetmeni', bio: 'FIDE Usta (FM). Satranç tarihi yazıları.' },
+  { name: 'Nazmi Can Doğan', role: 'Genel Yayın Yönetmeni', bio: 'FIDE Ustası (FM)' },
   { name: 'Selin Kaya', role: 'Röportaj & Turnuva', bio: 'Turnuva salonlarından haber ve portreler.' },
   { name: 'Kerem Aydın', role: 'Analiz Editörü', bio: 'Açılış teorisi ve motor destekli analizler.' },
   { name: 'Ayşe Demir', role: 'Tarih & Eğitim', bio: 'Satranç tarihi araştırmacısı ve eğitmen.' },
@@ -204,7 +204,7 @@ export default function Index() {
             {list.map((a, i) => (
               <li key={cat + a.id}>
                 <Link to={articlePath(a)} className="group w-full text-left grid grid-cols-[48px_1fr_auto] md:grid-cols-[48px_1fr_auto] items-center gap-4 md:gap-6 py-7 border-b border-[#0E0C0A]/15">
-                  <span className="f-mono text-[#0E0C0A]/40">{String.fromCharCode(97 + (i % 8))}{i + 1}</span>
+                  <span className="f-mono normal-case text-[#0E0C0A]/40">{String.fromCharCode(97 + (i % 8))}{i + 1}</span>
                   <div>
                     <p className="f-mono text-[#9A5F1E] text-[11px]">{a.cat}</p>
                     <p className="f-display text-2xl md:text-4xl mt-2 group-hover:italic group-hover:translate-x-2 transition-all duration-500">{a.title}</p>
@@ -222,7 +222,7 @@ export default function Index() {
       <section id="yazarlar" className="py-24 md:py-40">
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 reveal">
           <Label n="03">Yazarlar</Label>
-          <h2 className="f-display text-[clamp(48px,7vw,120px)] mt-8">Kalemi <em className="italic text-[#C8893E]">tutanlar</em></h2>
+          <h2 className="f-display text-[clamp(48px,7vw,120px)] mt-8">Katkıda <em className="italic text-[#C8893E]">bulunanlar</em></h2>
         </div>
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 mt-16 grid sm:grid-cols-2 lg:grid-cols-4 border-t border-[#2E2620]">
           {AUTHORS.map((au, i) => (
@@ -273,7 +273,7 @@ export default function Index() {
           <p className="f-display text-[17vw] leading-[1] whitespace-nowrap text-center pt-6 pb-[2vw]">Satranç <em className="italic text-[#C8893E]">vs.</em></p>
         </div>
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 py-6 flex justify-between f-mono text-[#A89A88]">
-          <span>© 2026 Satranç vs. Dergisi</span><span>a1 — h8</span>
+          <span>© 2026 Satranç vs. Dergisi</span>
         </div>
       </footer>
 

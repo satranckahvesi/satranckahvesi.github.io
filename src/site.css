@@ -14,12 +14,12 @@
 @media (prefers-reduced-motion: reduce) { .rise,.kb{animation:none} .reveal.pre{opacity:1;transform:none} }
 
 /* Makaledeki satranç diyagramları: küçük boyutta, ortalanmış, üstte/altta 1rem boşlukla (telefonda sütuna sığar). */
-.cp-game .jc-board-wrapper { width: 100%; max-width: min(100%, 340px); margin: 1rem auto; }
+.cp-game .jc-board-wrapper { width: 100%; max-width: min(100%, 400px); margin: 1rem auto; }
 .cp-game .jc-board-wrapper [class*="board-b72b1"] { margin-left: auto; margin-right: auto; }
 /* ChessPublica kutusunun yatay iç boşluğu kaldırıldı: oyun metni yazı metniyle aynı hizada başlar. */
 .cp-game .pgn-container { padding-left: 0; padding-right: 0; }
 /* <pgn-player> sayfada ortalanır */
-.cp-game pgn-player { display: block; width: fit-content; max-width: 100%; margin-left: auto; margin-right: auto; }
+.cp-game pgn-player { --board-size: min(400px, calc(100vw - 3rem)); display: block; width: fit-content; max-width: 100%; margin-left: auto; margin-right: auto; }
 /* Yorumun sağ altına oturan oynat düğmesi metnin son satırını kapatmasın */
 .cp-game .video-comment:has(.comment-play-btn) { padding-bottom: 3rem; }
 /* <pgn-player> süs ikonları: başlık simgesi, ipucu satırı simgesi, yorum balonu ve varyant oynat simgeleri. Kalanlar: ayarlar çubuğu (dişli, indir,
@@ -28,6 +28,10 @@
 .cp-game .comment-icon,
 .cp-game .variation-icon,
 .cp-game .puzzle-hint-prompt .lucide-icon { display: none; }
+/* <pgn> oyun başlığı, <pgn-player> başlığıyla aynı görünür; hamle listesinden önce küçük bir boşluk kalır */
+.cp-game .pgn-headers { margin: 0 0 .5rem; line-height: 1.25; }
+.cp-game .pgn-players { font-size: 1rem; font-weight: 700; color: #E8DECF; }
+.cp-game .pgn-meta { font-size: 1rem; font-weight: 400; color: #A89A88; }
 /* <pgn-player> başlığı koyu zeminde okunsun */
 .cp-game .video-title-players { color: #E8DECF; }
 .cp-game .video-title-event { color: #A89A88; }
