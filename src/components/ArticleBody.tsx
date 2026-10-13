@@ -134,16 +134,36 @@ function Figure({ chunk }: { chunk: string }) {
   );
 }
 
+// YouTube videosu: markdown'daki <figure class="video-embed"> bloğundan video kimliği, başlangıç saniyesi,
+// başlık ve açıklama okunur; gizlilik dostu youtube-nocookie alan adıyla gömülü oynatıcı çizilir.
 function Video({ chunk }: { chunk: string }) {
   const id = chunk.match(/embed\/([\w-]+)(?:\?start=(\d+))?/);
-  const cap = chunk.match(/<figcaption>([\s\S]*?)<\/figcaption>/)?.[1].replace(/<br\s*\/?>/g, ' ').replace(/<[^>]+>/g, '').trim();
   if (!id) return null;
+  const title = chunk.match(/<iframe[^>]*\btitle="([^"]*)"/)?.[1] ?? 'YouTube videosu';
+  const capLines = (chunk.match(/<figcaption>([\s\S]*?)<\/figcaption>/)?.[1] ?? '')
+    .split(/<br\s*\/?>/)
+    .map((l) => l.replace(/<[^>]+>/g, '').trim())
+    .filter(Boolean);
+  const src = `https://www.youtube-nocookie.com/embed/${id[1]}${id[2] ? `?start=${id[2]}` : ''}`;
   const href = `https://www.youtube.com/watch?v=${id[1]}${id[2] ? `&t=${id[2]}s` : ''}`;
   return (
-    <p className="my-8 border-l-2 border-[#C8893E] pl-5 text-[#F1E9DC]/75">
-      <a href={href} target="_blank" rel="noreferrer" className="text-[#C8893E] underline underline-offset-4">Videoyu YouTube'da izle</a>
-      {cap && <span className="block mt-2 text-base">{cap}</span>}
-    </p>
+    <figure className="my-10">
+      <div className="relative w-full overflow-hidden bg-black" style={{ aspectRatio: '16 / 9' }}>
+        <iframe
+          src={src}
+          title={title}
+          loading="lazy"
+          allowFullScreen
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          className="absolute inset-0 h-full w-full border-0"
+        />
+      </div>
+      <figcaption className="mt-3 text-[11px] leading-relaxed text-[#A89A88]">
+        {capLines.map((l, i) => <span key={i} className="block">{l}</span>)}
+        <a href={href} target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-[#F1E9DC]">YouTube'da aç</a>
+      </figcaption>
+    </figure>
   );
 }
 
