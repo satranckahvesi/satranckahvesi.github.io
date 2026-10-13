@@ -31,7 +31,7 @@ Timman şöyle [anlatıyordu](https://es.chessbase.com/post/zenon-franco-683-mag
 
 Clarín turnuvasını 1979 senesinde Spassky ve Petrosian'ı da yenerek, 1980'de ise Karpov ve Timman önünde kazanan Bent Larsen, 1982'ye gelindiğinde harika bir sonuç elde edemese de ilk tura zaferle başlamıştı. Aynı yıl Buenos Aires'e taşınan Larsen ömrünün sonuna kadar orada ikamet etmiştir.
 
-![Jan Timman, Amsterdam, 1978 (siyah-beyaz fotoğraf)](images/jan-timman-amsterdam-1978-a.jpg "Jan Timman bir partide: Amsterdam'daki IBM satranç turnuvası, 1978. Fotoğraf: Koen Suyk / Anefo — Nationaal Archief (Hollanda Ulusal Arşivi), 13 Temmuz 1978 · Envanter no 2.24.01.05, madde 929-8170. Lisans: [CC0 1.0 (Kamu Malı Bağışı)](https://creativecommons.org/publicdomain/zero/1.0/deed.tr). Kaynak: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:IBM_schaaktoernooi_Amsterdam_Jan_Timman_in_actie,_Bestanddeelnr_929-8170.jpg)")
+![Jan Timman, Amsterdam, 1978 (siyah-beyaz fotoğraf)](images/jan-timman-amsterdam-1978-a.jpg "Jan Timman, 1978. · Fotoğraf: Koen Suyk / Anefo — Nationaal Archief (Hollanda Ulusal Arşivi) · Envanter no 2.24.01.05, madde 929-8170. Lisans: [CC0 1.0 (Kamu Bağışı)](https://creativecommons.org/publicdomain/zero/1.0/deed.tr). Kaynak: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:IBM_schaaktoernooi_Amsterdam_Jan_Timman_in_actie,_Bestanddeelnr_929-8170.jpg)")
 
 [Event "Mar del Plata"]
 [Site "Mar del Plata ARG"]
