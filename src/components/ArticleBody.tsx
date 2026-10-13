@@ -123,10 +123,10 @@ function Figure({ chunk }: { chunk: string }) {
   const [, alt, path, caption] = m;
   const src = /^(https?:)?\/\//.test(path) ? path : `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
   return (
-    <figure className="my-10 mx-auto max-w-[480px]">
-      <img src={src} alt={alt} loading="lazy" className="w-full h-auto grayscale" />
+    <figure className="my-10 mx-auto w-fit max-w-full">
+      <img src={src} alt={alt} loading="lazy" className="block mx-auto w-auto h-auto max-w-full max-h-[720px] md:max-w-[600px] grayscale" />
       {caption && (
-        <figcaption className="mt-3 text-[11px] leading-relaxed text-[#A89A88]">
+        <figcaption className="mt-3 w-0 min-w-full text-[11px] leading-relaxed text-[#A89A88]">
           <Markdown options={captionOptions}>{caption}</Markdown>
         </figcaption>
       )}
