@@ -112,7 +112,7 @@ Primary content must be visible on initial render; do not depend on scrolling or
 
 - Import components from `@/components/ui` in your React components
 - Customize the UI by modifying the Tailwind configuration
-- Do not stop after editing isolated components or only `src/App.tsx`. The default template homepage lives in `src/pages/Index.tsx`, and leaving `Welcome to Atoms` there means the app is still unfinished.
+- Do not stop after editing isolated components or only `src/App.tsx`. The default template homepage lives in `src/pages/Index.tsx`.
 - Completion check: either replace `src/pages/Index.tsx` with your real homepage, or update the `/` route in `src/App.tsx` so the live homepage no longer renders the default placeholder page.
 
 ### Hot updates
