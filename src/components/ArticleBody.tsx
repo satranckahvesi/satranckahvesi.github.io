@@ -3,6 +3,7 @@ import { ChevronDown } from 'lucide-react';
 import Markdown from 'markdown-to-jsx';
 import { useChessPublica } from '@/lib/chesspublica';
 import { curlyComments, curlyProse, watchComments } from '@/lib/curly-dom';
+import { watchLocalization } from '@/lib/localize-dom';
 
 // Makale gövdesi: markdown metni + PGN oyun blokları + çapraz tablo + video bağlantısı.
 
@@ -281,7 +282,9 @@ export default function ArticleBody({ chunks }: { chunks: string[] }) {
     if (!el) return;
     curlyProse(el);
     curlyComments(el);
-    return watchComments(el);
+    const stopCurly = watchComments(el);
+    const stopLocalize = watchLocalization(el);
+    return () => { stopCurly(); stopLocalize(); };
   }, [chunks]);
   useEffect(() => {
     const el = rootRef.current;
