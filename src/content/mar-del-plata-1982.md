@@ -4,7 +4,7 @@ Oyunların önemli anlarında okuyucuyu Timman ile birlikte hamleleri bulmaya da
 
 ### Kötü başlangıç ve toparlanma
 
-İlk mağlubiyetle turnuvanın başında tanışan Timman'ın rakibi bu turnuvanın önceki şampiyonlarından Bent Larsen'den başkası değildi.
+İlk mağlubiyetle turnuvanın başında tanışan Timman'ın ilk turdaki rakibi Bent Larsen, önceki yıllarda bu geleneksel turnuvanın şampiyonlarından biri olmuştu.
 
 [Event "Mar del Plata"]
 [Site "Mar del Plata"]
