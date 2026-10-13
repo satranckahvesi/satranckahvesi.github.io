@@ -22,6 +22,11 @@
 .cp-game pgn-player { display: block; width: fit-content; max-width: 100%; margin-left: auto; margin-right: auto; }
 /* Yorumun sağ altına oturan oynat düğmesi metnin son satırını kapatmasın */
 .cp-game .video-comment:has(.comment-play-btn) { padding-bottom: 3rem; }
+/* <pgn-player> süs ikonları: başlık simgesi, ayarlar çubuğu (dişli, indir, çevir, hız), ipucu satırı simgesi.
+   Kalanlar: tahtanın ortasındaki ve yorum sonundaki oynat düğmeleri, çözüm (anahtar) düğmesi. */
+.cp-game .video-title-emoji,
+.cp-game .board-toolbar,
+.cp-game .puzzle-hint-prompt .lucide-icon { display: none; }
 /* <pgn-player> başlığı koyu zeminde okunsun */
 .cp-game .video-title-players { color: #E8DECF; }
 .cp-game .video-title-event { color: #A89A88; }
