@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { X } from 'lucide-react';
 import ArticleBody from '@/components/ArticleBody';
+import ProgressiveImage from '@/components/ProgressiveImage';
 import PhotoCredit, { PHOTO } from '@/components/PhotoCredit';
 import { articleBySlug } from '@/data/articles';
 import NotFound from './NotFound';
@@ -37,7 +38,7 @@ export default function Post() {
         {lead && <div className="mt-10"><ArticleBody chunks={[lead]} /></div>}
         {a.photo && (
           <figure className="mt-10 mx-auto w-fit max-w-full">
-            <img src={PHOTO.src} alt={PHOTO.alt} className="block mx-auto w-auto h-auto max-w-full max-h-[720px] md:max-w-[600px] grayscale" />
+            <ProgressiveImage path="images/jan-timman-1973.jpg" alt={PHOTO.alt} lazy={false} />
             <figcaption className="mt-3 w-0 min-w-full"><PhotoCredit /></figcaption>
           </figure>
         )}

@@ -3,6 +3,7 @@ import { ChevronDown } from 'lucide-react';
 import Markdown from 'markdown-to-jsx';
 import { useChessPublica } from '@/lib/chesspublica';
 import { curlyComments, curlyProse, watchComments } from '@/lib/curly-dom';
+import ProgressiveImage from '@/components/ProgressiveImage';
 import { watchLocalization } from '@/lib/localize-dom';
 
 // Makale gövdesi: markdown metni + PGN oyun blokları + çapraz tablo + video bağlantısı.
@@ -106,15 +107,14 @@ function gameToc(chunks: string[]): TocItem[] {
   return items;
 }
 
-function Toc({ items, onGo, onAll }: { items: TocItem[]; onGo: (id: string) => void; onAll: (open: boolean) => void }) {
+function Toc({ items, allOpen, onGo, onAll }: { items: TocItem[]; allOpen: boolean; onGo: (id: string) => void; onAll: (open: boolean) => void }) {
   const btn = 'f-mono text-[#A89A88] hover:text-[#C8893E] transition-colors';
   return (
     <nav aria-label="İçindekiler" className="mt-16 mb-10">
       <div className="flex items-end justify-between gap-4 mb-6">
         <h3 className="f-display text-3xl md:text-4xl text-[#F1E9DC]">İçindekiler</h3>
-        <div className="flex gap-4 pb-1">
-          <button type="button" onClick={() => onAll(true)} className={btn}>Tümünü aç</button>
-          <button type="button" onClick={() => onAll(false)} className={btn}>Tümünü kapat</button>
+        <div className="pb-1">
+          <button type="button" onClick={() => onAll(!allOpen)} className={btn}>{allOpen ? 'Tümünü kapat' : 'Tümünü aç'}</button>
         </div>
       </div>
       <ol className="border-t border-[#2E2620]">
@@ -175,10 +175,9 @@ function Figure({ chunk }: { chunk: string }) {
   const m = chunk.match(IMG_CHUNK);
   if (!m) return null;
   const [, alt, path, caption] = m;
-  const src = /^(https?:)?\/\//.test(path) ? path : `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
   return (
     <figure className="my-10 mx-auto w-fit max-w-full">
-      <img src={src} alt={alt} loading="lazy" className="block mx-auto w-auto h-auto max-w-full max-h-[720px] md:max-w-[600px] grayscale" />
+      <ProgressiveImage path={path} alt={alt} />
       {caption && (
         <figcaption className="credit mt-3 w-0 min-w-full text-[#A89A88]">
           <Markdown options={captionOptions}>{caption}</Markdown>
@@ -306,7 +305,7 @@ export default function ArticleBody({ chunks }: { chunks: string[] }) {
   for (let i = 0; i < chunks.length; i++) {
     const c = chunks[i].trim();
     if (toc.length && !tocPlaced && c.startsWith('### ')) {
-      out.push(<Toc key="toc" items={toc} onGo={goTo} onAll={openAll} />);
+      out.push(<Toc key="toc" items={toc} allOpen={toc.length > 0 && openIds.size === toc.length} onGo={goTo} onAll={openAll} />);
       tocPlaced = true;
     }
     if (c.startsWith('[Event ')) {
@@ -338,7 +337,7 @@ export default function ArticleBody({ chunks }: { chunks: string[] }) {
       );
     }
   }
-  if (toc.length && !tocPlaced) out.unshift(<Toc key="toc" items={toc} onGo={goTo} onAll={openAll} />);
+  if (toc.length && !tocPlaced) out.unshift(<Toc key="toc" items={toc} allOpen={toc.length > 0 && openIds.size === toc.length} onGo={goTo} onAll={openAll} />);
   return (
     <div ref={rootRef} className="text-lg leading-[1.8] text-[#F1E9DC]/85" data-cp={cp}>
       {out}
