@@ -16,7 +16,7 @@ const NAV = [
 const CATS = ['Tümü', ...Array.from(new Set(ARTICLES.map((a) => a.cat)))];
 
 const AUTHORS = [
-  { name: 'Nazmi Can Doğan', role: 'Genel Yayın Yönetmeni', bio: 'FIDE Usta (FM). Satranç tarihi yazıları.' },
+  { name: 'Nazmi Can Doğan', role: 'Genel Yayın Yönetmeni', bio: 'FIDE Ustası (FM)' },
   { name: 'Selin Kaya', role: 'Röportaj & Turnuva', bio: 'Turnuva salonlarından haber ve portreler.' },
   { name: 'Kerem Aydın', role: 'Analiz Editörü', bio: 'Açılış teorisi ve motor destekli analizler.' },
   { name: 'Ayşe Demir', role: 'Tarih & Eğitim', bio: 'Satranç tarihi araştırmacısı ve eğitmen.' },
