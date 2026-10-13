@@ -4,6 +4,7 @@ import Markdown from 'markdown-to-jsx';
 import { useChessPublica } from '@/lib/chesspublica';
 import { curlyComments, curlyProse, watchComments } from '@/lib/curly-dom';
 import ProgressiveImage from '@/components/ProgressiveImage';
+import { watchInlinePlay } from '@/lib/inline-play';
 import { watchLocalization } from '@/lib/localize-dom';
 
 // Makale gövdesi: markdown metni + PGN oyun blokları + çapraz tablo + video bağlantısı.
@@ -283,7 +284,8 @@ export default function ArticleBody({ chunks }: { chunks: string[] }) {
     curlyComments(el);
     const stopCurly = watchComments(el);
     const stopLocalize = watchLocalization(el);
-    return () => { stopCurly(); stopLocalize(); };
+    const stopInlinePlay = watchInlinePlay(el);
+    return () => { stopCurly(); stopLocalize(); stopInlinePlay(); };
   }, [chunks]);
   useEffect(() => {
     const el = rootRef.current;
