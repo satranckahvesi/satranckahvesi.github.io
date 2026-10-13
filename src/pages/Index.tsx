@@ -10,11 +10,12 @@ const NAV = [
   ['Hakkında', 'hakkinda'],
 ] as const;
 
-type Article = { id: string; cat: string; title: string; dek: string; author: string; read: string; body: string[] };
+type Article = { id: string; cat: string; title: string; dek: string; author: string; read: string; date?: string; url?: string; body: string[] };
 
 const ARTICLES: Article[] = [
-  { id: 'kapak', cat: 'Kapak Dosyası', title: 'Şahın yalnızlığı: Oyunsonunda karar vermek', dek: 'Tahtada az taş kaldığında asıl oyun başlar. Oyunsonunun sessiz matematiği üzerine uzun bir okuma.', author: 'Deniz Arslan', read: '14 dk',
-    body: ['Oyunsonu, satrancın en dürüst evresidir. Tuzaklar azalır, taktik gürültü diner; geriye hesap, sabır ve bir planın ne kadar sağlam olduğunu gösteren çıplak bir tahta kalır.', 'Capablanca öğrencilerine oyunsonuyla başlamalarını öğütlerdi. Çünkü az taşla çalışmak, her taşın gerçek değerini görmeyi öğretir.', 'Bu dosyada üç klasik pozisyonu ve modern motorların bize bu pozisyonlar hakkında öğrettiklerini inceliyoruz.'] },
+  { id: 'kapak', cat: 'Satranç tarihi', title: 'Mar del Plata 1982: Jan Timman ve bir zaferin anatomisi', dek: 'İlk turda Larsen’e yenilerek başlayan Jan Timman, 1982 Mar del Plata turnuvasını Karpov’un da aralarında olduğu rakiplerinin önünde nasıl kazandı?', author: 'FM Nazmi Can Doğan', read: '', date: '22 Eylül 2026',
+    url: 'https://satranckahvesi.com/posts/mar-del-plata-1982-jan-timman-ve-bir-zaferin-anatomisi/',
+    body: [] },
   { id: 'roportaj', cat: 'Röportaj', title: '“Kaybetmeyi öğrenmeden ustalaşamazsın”', dek: 'Genç bir büyükusta ile hazırlık, yorgunluk ve turnuva psikolojisi üzerine.', author: 'Selin Kaya', read: '11 dk',
     body: ['Bir turnuvanın son turunda, saat düşerken neler hissedilir? Konuğumuz kariyerinin dönüm noktalarını anlatıyor.', '“İlk yıllarda her yenilgi bir hakaret gibiydi. Sonra fark ettim ki en çok kaybettiğim partilerden öğreniyorum.”'] },
   { id: 'analiz', cat: 'Analiz', title: 'Kale oyunsonlarında Lucena köprüsü', dek: 'Her kulüp oyuncusunun bilmesi gereken pozisyonu adım adım çözüyoruz.', author: 'Kerem Aydın', read: '8 dk',
@@ -131,6 +132,11 @@ export default function Index() {
     return () => window.removeEventListener('scroll', on);
   }, []);
 
+  const openArticle = (a: Article) => {
+    if (a.url) window.open(a.url, '_blank', 'noopener,noreferrer');
+    else setReading(a);
+  };
+
   const [cover, ...rest] = ARTICLES;
   const featured = rest.slice(0, 3);
   const list = ARTICLES.filter((a) => cat === 'Tümü' || a.cat === cat);
@@ -171,14 +177,14 @@ export default function Index() {
         </div>
         <div className="absolute inset-x-0 bottom-0 z-20 pointer-events-none">
           <div className="max-w-[1440px] mx-auto px-6 md:px-10 pb-12 md:pb-16">
-            <p className="f-mono text-[#C8893E] mb-6">{cover.cat} — {cover.read} okuma</p>
-            <h1 className="f-display text-[clamp(52px,9vw,160px)] max-w-[14ch]">
-              <span className="block overflow-hidden pb-[0.2em] -mb-[0.2em]"><span className="rise">Şahın</span></span>
-              <span className="block overflow-hidden pb-[0.2em] -mb-[0.2em]"><span className="rise italic text-[#C8893E]" style={{ animationDelay: '.15s' }}>yalnızlığı.</span></span>
+            <p className="f-mono text-[#C8893E] mb-6">{cover.cat} — {cover.date}</p>
+            <h1 className="f-display text-[clamp(40px,6.5vw,112px)] max-w-[18ch]">
+              <span className="block overflow-hidden pb-[0.2em] -mb-[0.2em]"><span className="rise">Mar del Plata 1982:</span></span>
+              <span className="block overflow-hidden pb-[0.2em] -mb-[0.2em]"><span className="rise italic text-[#C8893E]" style={{ animationDelay: '.15s' }}>Jan Timman ve bir zaferin anatomisi.</span></span>
             </h1>
             <div className="mt-10 flex flex-col md:flex-row md:items-end justify-between gap-8">
               <p className="max-w-md text-lg text-[#F1E9DC]/80">{cover.dek} <span className="f-mono text-[#A89A88] block mt-3">Yazan: {cover.author}</span></p>
-              <button onClick={() => setReading(cover)} className="pointer-events-auto inline-flex items-center gap-3 rounded-full bg-[#F1E9DC] text-[#0E0C0A] h-14 px-8 font-semibold hover:bg-[#C8893E] transition-colors self-start">Kapak dosyasını oku <ArrowUpRight size={18} /></button>
+              <button onClick={() => openArticle(cover)} className="pointer-events-auto inline-flex items-center gap-3 rounded-full bg-[#F1E9DC] text-[#0E0C0A] h-14 px-8 font-semibold hover:bg-[#C8893E] transition-colors self-start">Yazıyı oku <ArrowUpRight size={18} /></button>
             </div>
           </div>
         </div>
@@ -193,9 +199,9 @@ export default function Index() {
         </div>
         <div className="grid md:grid-cols-12 gap-10 mt-16">
           {featured.map((a, i) => (
-            <button key={a.id} onClick={() => setReading(a)}
+            <button key={a.id} onClick={() => openArticle(a)}
               className={`group text-left reveal ${i === 0 ? 'md:col-span-7 md:row-span-2' : 'md:col-span-5'}`}>
-              <p className="f-mono text-[#C8893E] mt-6">{a.cat} · {a.read}</p>
+              <p className="f-mono text-[#C8893E] mt-6">{a.cat} · {a.read || a.date}</p>
               <h3 className={`f-display mt-3 group-hover:italic transition-all ${i === 0 ? 'text-5xl md:text-6xl' : 'text-3xl md:text-4xl'}`}>{a.title}</h3>
               <p className="text-[#F1E9DC]/70 mt-3 max-w-xl">{a.dek}</p>
               <p className="f-mono text-[#A89A88] mt-4">{a.author}</p>
@@ -220,12 +226,12 @@ export default function Index() {
           <ul className="md:col-span-8">
             {list.map((a, i) => (
               <li key={cat + a.id}>
-                <button onClick={() => setReading(a)} className="group w-full text-left grid grid-cols-[48px_1fr_auto] md:grid-cols-[48px_1fr_auto] items-center gap-4 md:gap-6 py-7 border-b border-[#0E0C0A]/15">
+                <button onClick={() => openArticle(a)} className="group w-full text-left grid grid-cols-[48px_1fr_auto] md:grid-cols-[48px_1fr_auto] items-center gap-4 md:gap-6 py-7 border-b border-[#0E0C0A]/15">
                   <span className="f-mono text-[#0E0C0A]/40">{String.fromCharCode(97 + (i % 8))}{i + 1}</span>
                   <div>
                     <p className="f-mono text-[#9A5F1E] text-[11px]">{a.cat}</p>
                     <p className="f-display text-2xl md:text-4xl mt-2 group-hover:italic group-hover:translate-x-2 transition-all duration-500">{a.title}</p>
-                    <p className="text-sm text-[#0E0C0A]/60 mt-2">{a.author} · {a.read}</p>
+                    <p className="text-sm text-[#0E0C0A]/60 mt-2">{a.author} · {a.read || a.date}</p>
                   </div>
                   <ArrowUpRight className="group-hover:rotate-45 transition-transform" />
                 </button>
