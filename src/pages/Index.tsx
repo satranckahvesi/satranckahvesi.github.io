@@ -126,7 +126,7 @@ export default function Index() {
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 h-20 flex items-center justify-between">
           <a href="#kapak" className="flex items-center gap-3">
             <span className="grid grid-cols-2 w-7 h-7 border border-[#F1E9DC]"><span className="bg-[#F1E9DC]" /><span /><span /><span className="bg-[#C8893E]" /></span>
-            <span className="f-display text-2xl tracking-tight">Satranç <em className="italic">Kahvesi</em></span>
+            <span className="f-display text-2xl tracking-tight">Satranç <em className="italic">vs.</em></span>
           </a>
           <nav className="hidden lg:flex gap-10">
             {NAV.map(([l, id], i) => (
@@ -256,7 +256,7 @@ export default function Index() {
         <div className="md:col-span-7 reveal">
           <Label n="04">Hakkında</Label>
           <h2 className="f-display text-[clamp(40px,5.5vw,88px)] mt-8">Satranç bir oyundan fazlası; <em className="italic text-[#C8893E]">bir düşünme biçimi.</em></h2>
-          <p className="text-[#F1E9DC]/75 leading-relaxed mt-10 max-w-xl">Satranç Kahvesi, satranç üzerine uzun okumalar, analizler ve hikâyeler yayımlayan bağımsız bir dergidir. Bir fincan kahve eşliğinde, acele etmeden okunsun diye.</p>
+          <p className="text-[#F1E9DC]/75 leading-relaxed mt-10 max-w-xl">Satranç vs., satranç üzerine uzun okumalar, analizler ve hikâyeler yayımlayan bağımsız bir dergidir. Bir fincan kahve eşliğinde, acele etmeden okunsun diye.</p>
         </div>
         <div id="bulten" className="md:col-span-12 mt-10 border border-[#2E2620] p-8 md:p-14 grid md:grid-cols-2 gap-8 items-end">
           <div><p className="f-mono text-[#C8893E]">Bülten</p><h3 className="f-display text-4xl md:text-6xl mt-4">Her ay bir hamle, <em className="italic">e-postanda.</em></h3></div>
@@ -284,10 +284,10 @@ export default function Index() {
           </div>
         </div>
         <div className="overflow-hidden border-t border-[#2E2620]">
-          <p className="f-display text-[17vw] leading-[0.8] whitespace-nowrap text-center pt-6 -mb-[2vw]">Satranç <em className="italic text-[#C8893E]">Kahvesi</em></p>
+          <p className="f-display text-[17vw] leading-[0.8] whitespace-nowrap text-center pt-6 -mb-[2vw]">Satranç <em className="italic text-[#C8893E]">vs.</em></p>
         </div>
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 py-6 flex justify-between f-mono text-[#A89A88]">
-          <span>© 2026 Satranç Kahvesi Dergisi</span><span>a1 — h8</span>
+          <span>© 2026 Satranç vs. Dergisi</span><span>a1 — h8</span>
         </div>
       </footer>
 
