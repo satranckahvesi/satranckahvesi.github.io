@@ -179,7 +179,7 @@ function GameSection({ item, children }: { item: GameItem; children: React.React
     <section id={item.id} className="my-4 border-b border-[#2E2620] scroll-mt-8">
       <h4 className="flex items-baseline gap-4 py-4 mb-4 text-[#F1E9DC]/90 md:grid md:grid-cols-[1fr_400px_1fr] md:gap-0">
         <span className="f-mono text-[#C8893E] w-[5rem] shrink-0">{item.round}. tur</span>
-        <span className="flex-1">{item.label}</span>
+        <span className="flex-1 md:text-center">{item.label}</span>
         <span className="f-mono text-[#A89A88] md:justify-self-end">{item.result}</span>
       </h4>
       {children}
