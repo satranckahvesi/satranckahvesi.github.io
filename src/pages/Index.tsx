@@ -273,7 +273,7 @@ export default function Index() {
           <p className="f-display text-[17vw] leading-[1] whitespace-nowrap text-center pt-6 pb-[2vw]">Satranç <em className="italic text-[#C8893E]">vs.</em></p>
         </div>
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 py-6 flex justify-between f-mono text-[#A89A88]">
-          <span>© 2026 Satranç vs. Dergisi</span><span>a1 — h8</span>
+          <span>© 2026 Satranç vs. Dergisi</span>
         </div>
       </footer>
 
