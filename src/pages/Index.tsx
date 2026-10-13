@@ -184,18 +184,6 @@ export default function Index() {
         </div>
       </section>
 
-      <div className="border-y border-[#2E2620] py-6 overflow-hidden bg-[#F1E9DC] text-[#0E0C0A]">
-        <div className="marquee flex whitespace-nowrap w-max">
-          {Array.from({ length: 2 }).map((_, k) => (
-            <div key={k} className="flex">
-              {['Oyunsonu', '♞', 'Sicilya Savunması', '♜', 'Röportajlar', '♝', 'Damı Gambiti', '♛', 'Satranç Tarihi', '♚'].map((w, i) => (
-                <span key={i} className="f-display italic text-5xl md:text-6xl px-8">{w}</span>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
-
       {/* ÖNE ÇIKANLAR */}
       <section id="yazilar" className="max-w-[1440px] mx-auto px-6 md:px-10 py-24 md:py-40">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 reveal">
