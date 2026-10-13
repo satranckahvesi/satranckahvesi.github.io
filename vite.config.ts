@@ -74,11 +74,9 @@ function articlePages() {
             extra.push(`<meta property="og:image" content="${img}" />`, `<meta name="twitter:image" content="${img}" />`, '<meta name="twitter:card" content="summary_large_image" />');
           }
           html = html.replace('</head>', `    ${extra.join('\n    ')}\n  </head>`);
-          // Yeni adres + eski /posts/<slug>/ adresi (aynı sayfa, kanonik adres yenisi).
-          for (const dir of [path.join(outDir, a.slug), path.join(outDir, 'posts', a.slug)]) {
-            fs.mkdirSync(dir, { recursive: true });
-            fs.writeFileSync(path.join(dir, 'index.html'), html);
-          }
+          const dir = path.join(outDir, a.slug);
+          fs.mkdirSync(dir, { recursive: true });
+          fs.writeFileSync(path.join(dir, 'index.html'), html);
           urls.push(url);
         }
         const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `  <url><loc>${u}</loc></url>`).join('\n')}\n</urlset>\n`;
