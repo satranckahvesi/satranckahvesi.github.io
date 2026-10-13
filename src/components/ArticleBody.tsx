@@ -2,6 +2,7 @@ import { Fragment, useEffect, useRef, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import Markdown from 'markdown-to-jsx';
 import { useChessPublica } from '@/lib/chesspublica';
+import { curlyComments, curlyProse, watchComments } from '@/lib/curly-dom';
 
 // Makale gövdesi: markdown metni + PGN oyun blokları + çapraz tablo + video bağlantısı.
 
@@ -249,6 +250,24 @@ export default function ArticleBody({ chunks }: { chunks: string[] }) {
   let tocPlaced = false;
   const out: JSX.Element[] = [];
 
+  // Curly quotes: yazı metni ve oyunların YORUMLARI (hamle metni değil). ChessPublica yorumları geç çizdiği için
+  // gözlemci bağlanır; oyunlar hazır olunca son bir geçiş daha yapılır.
+  const rootRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = rootRef.current;
+    if (!el) return;
+    curlyProse(el);
+    curlyComments(el);
+    return watchComments(el);
+  }, [chunks]);
+  useEffect(() => {
+    const el = rootRef.current;
+    if (el && (cp === 'ready' || cp === 'error')) {
+      curlyProse(el);
+      curlyComments(el);
+    }
+  }, [cp]);
+
   // Adresteki #oyun-N bağlantısı ile açılırsa, oyunlar çizildikten sonra o oyunu açar ve kaydırır.
   useEffect(() => {
     if (cp !== 'ready' && cp !== 'error') return;
@@ -295,7 +314,7 @@ export default function ArticleBody({ chunks }: { chunks: string[] }) {
   }
   if (toc.length && !tocPlaced) out.unshift(<Toc key="toc" items={toc} onGo={goTo} onAll={openAll} />);
   return (
-    <div className="text-lg leading-[1.8] text-[#F1E9DC]/85" data-cp={cp}>
+    <div ref={rootRef} className="text-lg leading-[1.8] text-[#F1E9DC]/85" data-cp={cp}>
       {out}
     </div>
   );
