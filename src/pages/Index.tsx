@@ -222,7 +222,7 @@ export default function Index() {
       <section id="yazarlar" className="py-24 md:py-40">
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 reveal">
           <Label n="03">Yazarlar</Label>
-          <h2 className="f-display text-[clamp(48px,7vw,120px)] mt-8">Kalemi <em className="italic text-[#C8893E]">tutanlar</em></h2>
+          <h2 className="f-display text-[clamp(48px,7vw,120px)] mt-8">Katkıda <em className="italic text-[#C8893E]">bulunanlar</em></h2>
         </div>
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 mt-16 grid sm:grid-cols-2 lg:grid-cols-4 border-t border-[#2E2620]">
           {AUTHORS.map((au, i) => (
