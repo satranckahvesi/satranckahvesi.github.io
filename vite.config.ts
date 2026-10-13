@@ -39,7 +39,7 @@ function ensureBuildOutDir() {
 
 const SITE_URL = 'https://satranckahvesi.com/yeni-deneme';
 
-// Her yazı için dist/posts/<slug>/index.html üretir (yazıya özel başlık, açıklama ve paylaşım
+// Her yazı için dist/<slug>/index.html üretir (yazıya özel başlık, açıklama ve paylaşım
 // etiketleriyle) ve sitemap.xml'i yazı adresleriyle birlikte oluşturur.
 function articlePages() {
   let outDir = path.resolve(__dirname, 'dist');
@@ -58,7 +58,7 @@ function articlePages() {
         const template = fs.readFileSync(path.join(outDir, 'index.html'), 'utf8');
         const urls = [`${SITE_URL}/`];
         for (const a of articles) {
-          const url = `${SITE_URL}/posts/${a.slug}/`;
+          const url = `${SITE_URL}/${a.slug}/`;
           const title = `${a.title} — Satranç vs.`;
           const desc = (a.excerpt ?? a.dek).replace(/_/g, '');
           let html = template.replace(/<title[^>]*>[^<]*<\/title>/, `<title>${esc(title)}</title>`);
@@ -74,9 +74,11 @@ function articlePages() {
             extra.push(`<meta property="og:image" content="${img}" />`, `<meta name="twitter:image" content="${img}" />`, '<meta name="twitter:card" content="summary_large_image" />');
           }
           html = html.replace('</head>', `    ${extra.join('\n    ')}\n  </head>`);
-          const dir = path.join(outDir, 'posts', a.slug);
-          fs.mkdirSync(dir, { recursive: true });
-          fs.writeFileSync(path.join(dir, 'index.html'), html);
+          // Yeni adres + eski /posts/<slug>/ adresi (aynı sayfa, kanonik adres yenisi).
+          for (const dir of [path.join(outDir, a.slug), path.join(outDir, 'posts', a.slug)]) {
+            fs.mkdirSync(dir, { recursive: true });
+            fs.writeFileSync(path.join(dir, 'index.html'), html);
+          }
           urls.push(url);
         }
         const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `  <url><loc>${u}</loc></url>`).join('\n')}\n</urlset>\n`;

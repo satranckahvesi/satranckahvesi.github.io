@@ -16,4 +16,4 @@ export const ARTICLES: Article[] = (data as Article[]).map((a) =>
 );
 
 export const articleBySlug = (slug?: string) => ARTICLES.find((a) => a.slug === slug);
-export const articlePath = (a: Article) => `/posts/${a.slug}/`;
+export const articlePath = (a: Article) => `/${a.slug}/`;
