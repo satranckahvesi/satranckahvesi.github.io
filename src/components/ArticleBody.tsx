@@ -177,10 +177,10 @@ function Toc({ items, onGo }: { items: TocItem[]; onGo: (id: string) => void }) 
 function GameSection({ item, children }: { item: GameItem; children: React.ReactNode }) {
   return (
     <section id={item.id} className="my-4 border-b border-[#2E2620] scroll-mt-8">
-      <h4 className="mx-auto flex w-full max-w-[400px] items-baseline gap-3 py-4 mb-4 text-[#F1E9DC]/90">
-        <span className="f-mono text-[#C8893E] w-[4.25rem] shrink-0">{item.round}. tur</span>
+      <h4 className="flex items-baseline gap-4 py-4 mb-4 text-[#F1E9DC]/90 md:grid md:grid-cols-[1fr_400px_1fr] md:gap-0">
+        <span className="f-mono text-[#C8893E] w-[5rem] shrink-0">{item.round}. tur</span>
         <span className="flex-1">{item.label}</span>
-        <span className="f-mono text-[#A89A88]">{item.result}</span>
+        <span className="f-mono text-[#A89A88] md:justify-self-end">{item.result}</span>
       </h4>
       {children}
     </section>
