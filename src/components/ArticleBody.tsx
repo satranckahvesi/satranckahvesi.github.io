@@ -1,5 +1,6 @@
 import { Fragment } from 'react';
 import Markdown from 'markdown-to-jsx';
+import { useChessPublica } from '@/lib/chesspublica';
 
 // Makale gövdesi: markdown metni + PGN oyun blokları + çapraz tablo + video bağlantısı.
 
@@ -48,6 +49,13 @@ function Game({ header, moves }: { header: string; moves: string }) {
   );
 }
 
+// ChessPublica <pgn> öğesini çizerken DOM'u kendisi değiştirdiği için oyun, React'in içine
+// dokunmadığı bir kutuda (dangerouslySetInnerHTML) durur.
+function PgnGame({ header, moves }: { header: string; moves: string }) {
+  const raw = `${header.trim()}\n\n${moves.trim()}`.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  return <div className="cp-game my-10" dangerouslySetInnerHTML={{ __html: `<pgn>\n${raw}\n</pgn>` }} />;
+}
+
 function Video({ chunk }: { chunk: string }) {
   const id = chunk.match(/embed\/([\w-]+)(?:\?start=(\d+))?/);
   const cap = chunk.match(/<figcaption>([\s\S]*?)<\/figcaption>/)?.[1].replace(/<br\s*\/?>/g, ' ').replace(/<[^>]+>/g, '').trim();
@@ -76,11 +84,17 @@ export function splitArticle(md: string) {
 }
 
 export default function ArticleBody({ chunks }: { chunks: string[] }) {
+  const hasGames = chunks.some((c) => c.trim().startsWith('[Event '));
+  const cp = useChessPublica(hasGames);
+  // ChessPublica yüklenemezse eski düz metin görünümüne düşülür.
+  const useFallback = cp === 'error';
   const out: JSX.Element[] = [];
   for (let i = 0; i < chunks.length; i++) {
     const c = chunks[i].trim();
     if (c.startsWith('[Event ')) {
-      out.push(<Game key={i} header={c} moves={chunks[i + 1] ?? ''} />);
+      out.push(useFallback
+        ? <Game key={i} header={c} moves={chunks[i + 1] ?? ''} />
+        : <PgnGame key={i} header={c} moves={chunks[i + 1] ?? ''} />);
       i++;
     } else if (c.startsWith('<pre>')) {
       out.push(
@@ -98,5 +112,15 @@ export default function ArticleBody({ chunks }: { chunks: string[] }) {
       );
     }
   }
-  return <div className="text-lg leading-[1.8] text-[#F1E9DC]/85">{out}</div>;
+  return (
+    <div className="text-lg leading-[1.8] text-[#F1E9DC]/85" data-cp={cp}>
+      {out}
+      {hasGames && !useFallback && (
+        <p className="mt-12 text-[11px] leading-relaxed text-[#A89A88]">
+          Satranç tahtaları ChessPublica ile çizilmiştir (MIT). Taş görselleri: Colin M.L. Burnett,{' '}
+          <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.tr" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-[#F1E9DC]">CC BY-SA 3.0</a>.
+        </p>
+      )}
+    </div>
+  );
 }
