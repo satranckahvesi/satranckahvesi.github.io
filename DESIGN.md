@@ -1,8 +1,8 @@
 # Satranç vs. — DESIGN
 
 ## Direction & Layout
-- Purpose: Satranç oynanabilen kahve mekânı için editoryal, sinematik vitrin. Mood: gece, gergin bir oyun anı, sıcak kahve buharı. Defining idea: hero'da imleçle aydınlanan 8x8 satranç ızgarası + devasa serif "Hamle sende." başlığı. Reference: Awwwards SOTD editoryal restoran siteleri.
-- Should feel: sakin, zeki, karanlık-sıcak. Should NOT feel: kafe şablonu, pastel, mor gradient.
+- Purpose: Satranç e-dergisi için editoryal, sinematik vitrin. Mood: gece, gergin bir oyun anı, sıcak kahve buharı. Defining idea: hero'da imleçle aydınlanan 8x8 satranç ızgarası.
+- Should feel: sakin, zeki, karanlık-sıcak. Should NOT feel: Pastel, mor gradient.
 - Max width 1440px, 12 kolon, gutter 24px; section padding 160px desktop / 96px mobile. Asimetrik 7/5 kompozisyonlar.
 - Breakpoints: <768 tek kolon, nav menüsü tam ekran overlay; 768–1024 iki kolon; >1024 tam asimetrik.
 - Do: koordinat etiketleri (a–h, 1–8) dekor olarak, büyük numaralı bölümler (01–06). Don't: yuvarlak kartlar, glassmorphism, emoji.
