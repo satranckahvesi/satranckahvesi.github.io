@@ -10,7 +10,6 @@ const PHOTO = {
   src: `${import.meta.env.BASE_URL}images/jan-timman-1973.jpg`,
   alt: 'Jan Timman, AVRO satranç turnuvası, 1973 (siyah-beyaz fotoğraf)',
   page: 'https://commons.wikimedia.org/wiki/File:AVRO-schaaktoernooi,_Jan_Timman,_Bestanddeelnr_926-4781.jpg',
-  archive: 'http://proxy.handle.net/10648/ac2efbbc-d0b4-102d-bcf8-003048976d84',
   license: 'https://creativecommons.org/publicdomain/zero/1.0/deed.tr',
 };
 
@@ -19,10 +18,10 @@ function PhotoCredit({ full = false, className = '' }: { full?: boolean; classNa
   return (
     <p className={`text-[11px] leading-relaxed text-[#A89A88] ${className}`}>
       Fotoğraf: Rob Mieremet / Anefo — Nationaal Archief (Hollanda Ulusal Arşivi), 12 Haziran 1973
-      {full && <> · Envanter no 2.24.01.05, madde 926-4781 · Konu: AVRO satranç turnuvası, Jan Timman</>}
+      {full && <> · Envanter no 2.24.01.05, madde 926-4781 · Konu: Jan Timman</>}
       . Lisans: <a href={PHOTO.license} target="_blank" rel="noreferrer" className={link}>CC0 1.0 (Kamu Malı Bağışı)</a>.
       {' '}Kaynak: <a href={PHOTO.page} target="_blank" rel="noreferrer" className={link}>Wikimedia Commons</a>
-      {full && <> · <a href={PHOTO.archive} target="_blank" rel="noreferrer" className={link}>Nationaal Archief kaydı</a></>}
+      {full && <></>}
     </p>
   );
 }
@@ -35,10 +34,10 @@ const NAV = [
   ['Hakkında', 'hakkinda'],
 ] as const;
 
-type Article = { id: string; cat: string; title: string; dek: string; author: string; read: string; date?: string; chunks?: string[]; photo?: boolean; body: string[] };
+type Article = { id: string; cat: string; title: string; dek: string; author: string; read: string; excerpt?: string; date?: string; chunks?: string[]; photo?: boolean; body: string[] };
 
 const ARTICLES: Article[] = [
-  { id: 'kapak', cat: 'Satranç tarihi', title: 'Mar del Plata 1982: Jan Timman ve bir zaferin anatomisi', dek: TIMMAN.dek.replace(/_/g, ''), author: 'FM Nazmi Can Doğan', read: '', date: '22 Eylül 2026', chunks: TIMMAN.chunks, photo: true, body: [] },
+  { id: 'kapak', cat: 'Satranç tarihi', title: 'Mar del Plata 1982: Jan Timman ve bir zaferin anatomisi', dek: TIMMAN.dek.replace(/_/g, ''), excerpt: 'İlk turda Larsen’e yenilerek başlayan Jan Timman, 1982 Mar del Plata turnuvasını Karpov’un da aralarında olduğu rakiplerinin önünde nasıl kazandı?', author: 'FM Nazmi Can Doğan', read: '', date: '22 Eylül 2026', chunks: TIMMAN.chunks, photo: true, body: [] },
   { id: 'roportaj', cat: 'Röportaj', title: '“Kaybetmeyi öğrenmeden ustalaşamazsın”', dek: 'Genç bir büyükusta ile hazırlık, yorgunluk ve turnuva psikolojisi üzerine.', author: 'Selin Kaya', read: '11 dk',
     body: ['Bir turnuvanın son turunda, saat düşerken neler hissedilir? Konuğumuz kariyerinin dönüm noktalarını anlatıyor.', '“İlk yıllarda her yenilgi bir hakaret gibiydi. Sonra fark ettim ki en çok kaybettiğim partilerden öğreniyorum.”'] },
   { id: 'analiz', cat: 'Analiz', title: 'Kale oyunsonlarında Lucena köprüsü', dek: 'Her kulüp oyuncusunun bilmesi gereken pozisyonu adım adım çözüyoruz.', author: 'Kerem Aydın', read: '8 dk',
@@ -134,7 +133,7 @@ function Reader({ a, onClose }: { a: Article; onClose: () => void }) {
         <p className="f-mono text-[#A89A88] mt-8 pb-8 border-b border-[#2E2620]">Yazan: {a.author}</p>
         {a.photo && (
           <figure className="mt-10">
-            <img src={PHOTO.src} alt={PHOTO.alt} className="w-full max-h-[70vh] object-cover object-[50%_20%] grayscale" />
+            <img src={PHOTO.src} alt={PHOTO.alt} className="w-full h-auto grayscale" />
             <figcaption className="mt-3"><PhotoCredit full /></figcaption>
           </figure>
         )}
@@ -215,7 +214,7 @@ export default function Index() {
               <span className="block overflow-hidden pb-[0.2em] -mb-[0.2em]"><span className="rise italic text-[#C8893E]" style={{ animationDelay: '.15s' }}>Jan Timman ve bir zaferin anatomisi.</span></span>
             </h1>
             <div className="mt-10 flex flex-col md:flex-row md:items-end justify-between gap-8">
-              <p className="max-w-md text-lg text-[#F1E9DC]/80">{cover.dek} <span className="f-mono text-[#A89A88] block mt-3">Yazan: {cover.author}</span></p>
+              <p className="max-w-md text-lg text-[#F1E9DC]/80">{cover.excerpt ?? cover.dek} <span className="f-mono text-[#A89A88] block mt-3">Yazan: {cover.author}</span></p>
               <button onClick={() => setReading(cover)} className="pointer-events-auto inline-flex items-center gap-3 rounded-full bg-[#F1E9DC] text-[#0E0C0A] h-14 px-8 font-semibold hover:bg-[#C8893E] transition-colors self-start">Yazıyı oku <ArrowUpRight size={18} /></button>
             </div>
           </div>
