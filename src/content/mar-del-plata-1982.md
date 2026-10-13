@@ -8,7 +8,7 @@ Oyunların önemli anlarında okuyucuyu Timman ile birlikte hamleleri bulmaya da
 
 [Event "Mar del Plata"]
 [Site "Mar del Plata"]
-[Date "1982.02.08"]
+[Date "08.02.1982"]
 [Round "1"]
 [White "Jan Timman"]
 [Black "Bent Larsen"]
@@ -35,7 +35,7 @@ Clarín turnuvasını 1979 senesinde Spassky ve Petrosian'ı da yenerek, 1980'de
 
 [Event "Mar del Plata"]
 [Site "Mar del Plata"]
-[Date "1982.02.09"]
+[Date "09.02.1982"]
 [Round "2"]
 [White "Ulf Andersson"]
 [Black "Jan Timman"]
@@ -63,7 +63,7 @@ Garry Kasparov, _"My Great Predecessors"_ (Benim Ustalarım) serisinin dördünc
 
 [Event "Mar del Plata"]
 [Site "Mar del Plata"]
-[Date "1982.02.10"]
+[Date "10.02.1982"]
 [Round "3"]
 [White "Jan Timman"]
 [Black "Miguel Najdorf"]
@@ -84,7 +84,7 @@ Yıldızının parladığı yıllarda profesyonel satranç oynamak yerine mühen
 
 [Event "Mar del Plata"]
 [Site "Mar del Plata"]
-[Date "1982.02.12"]
+[Date "12.02.1982"]
 [Round "4"]
 [White "Jan Timman"]
 [Black "Oscar Panno"]
@@ -193,7 +193,7 @@ Yazdığı sayısız kitapla satranç dünyasında iz bırakan **Zenón Franco O
 
 [Event "Mar del Plata"]
 [Site "Mar del Plata"]
-[Date "1982.02.21"]
+[Date "21.01.1982"]
 [Round "10"]
 [White "Jan Timman"]
 [Black "Zenón Franco Ocampos"]
