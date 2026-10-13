@@ -173,7 +173,6 @@ export default function Index() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 reveal">
           <div><Label n="01">Bu Sayıda</Label>
             <h2 className="f-display text-[clamp(48px,7vw,120px)] mt-8">Öne <em className="italic text-[#C8893E]">çıkanlar</em></h2></div>
-          <p className="max-w-sm text-[#F1E9DC]/70">Analizler, röportajlar ve tarihten hikâyeler. Her ay, tahtanın ötesine bakan yazılar.</p>
         </div>
         <div className="grid md:grid-cols-12 gap-10 mt-16">
           {featured.map((a, i) => (
