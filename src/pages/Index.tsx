@@ -1,6 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowUpRight, Menu as MenuIcon, X, Instagram, Twitter, Youtube, Mail } from 'lucide-react';
+import ArticleBody, { splitArticle } from '../components/ArticleBody';
+import timmanMd from '../content/mar-del-plata-1982.md?raw';
 import '../site.css';
+
+const TIMMAN = splitArticle(timmanMd);
 
 const NAV = [
   ['Kapak', 'kapak'],
@@ -10,12 +14,10 @@ const NAV = [
   ['Hakkında', 'hakkinda'],
 ] as const;
 
-type Article = { id: string; cat: string; title: string; dek: string; author: string; read: string; date?: string; url?: string; body: string[] };
+type Article = { id: string; cat: string; title: string; dek: string; author: string; read: string; date?: string; chunks?: string[]; body: string[] };
 
 const ARTICLES: Article[] = [
-  { id: 'kapak', cat: 'Satranç tarihi', title: 'Mar del Plata 1982: Jan Timman ve bir zaferin anatomisi', dek: 'İlk turda Larsen’e yenilerek başlayan Jan Timman, 1982 Mar del Plata turnuvasını Karpov’un da aralarında olduğu rakiplerinin önünde nasıl kazandı?', author: 'FM Nazmi Can Doğan', read: '', date: '22 Eylül 2026',
-    url: 'https://satranckahvesi.com/posts/mar-del-plata-1982-jan-timman-ve-bir-zaferin-anatomisi/',
-    body: [] },
+  { id: 'kapak', cat: 'Satranç tarihi', title: 'Mar del Plata 1982: Jan Timman ve bir zaferin anatomisi', dek: TIMMAN.dek.replace(/_/g, ''), author: 'FM Nazmi Can Doğan', read: '', date: '22 Eylül 2026', chunks: TIMMAN.chunks, body: [] },
   { id: 'roportaj', cat: 'Röportaj', title: '“Kaybetmeyi öğrenmeden ustalaşamazsın”', dek: 'Genç bir büyükusta ile hazırlık, yorgunluk ve turnuva psikolojisi üzerine.', author: 'Selin Kaya', read: '11 dk',
     body: ['Bir turnuvanın son turunda, saat düşerken neler hissedilir? Konuğumuz kariyerinin dönüm noktalarını anlatıyor.', '“İlk yıllarda her yenilgi bir hakaret gibiydi. Sonra fark ettim ki en çok kaybettiğim partilerden öğreniyorum.”'] },
   { id: 'analiz', cat: 'Analiz', title: 'Kale oyunsonlarında Lucena köprüsü', dek: 'Her kulüp oyuncusunun bilmesi gereken pozisyonu adım adım çözüyoruz.', author: 'Kerem Aydın', read: '8 dk',
@@ -105,12 +107,12 @@ function Reader({ a, onClose }: { a: Article; onClose: () => void }) {
     <div role="dialog" aria-modal aria-label={a.title} className="fixed inset-0 z-[70] bg-[#0E0C0A] overflow-y-auto">
       <button aria-label="Yazıyı kapat" onClick={onClose} className="fixed top-5 right-5 z-10 w-12 h-12 rounded-full bg-[#F1E9DC] text-[#0E0C0A] grid place-items-center hover:bg-[#C8893E]"><X /></button>
       <article className="max-w-[760px] mx-auto px-6 pt-32 relative pb-32">
-        <p className="f-mono text-[#C8893E]">{a.cat} · {a.read} okuma</p>
+        <p className="f-mono text-[#C8893E]">{a.cat} · {a.read ? `${a.read} okuma` : a.date}</p>
         <h1 className="f-display text-[clamp(44px,6vw,88px)] mt-6">{a.title}</h1>
         <p className="text-xl text-[#F1E9DC]/80 mt-8 italic" style={{ fontFamily: 'Fraunces, serif' }}>{a.dek}</p>
         <p className="f-mono text-[#A89A88] mt-8 pb-8 border-b border-[#2E2620]">Yazan: {a.author}</p>
         <div className="mt-10 space-y-6 text-lg leading-[1.8] text-[#F1E9DC]/85">
-          {a.body.map((p, i) => <p key={i} className={i === 0 ? 'first-letter:f-display first-letter:text-7xl first-letter:float-left first-letter:mr-3 first-letter:text-[#C8893E] first-letter:leading-[0.8]' : ''}>{p}</p>)}
+          {a.chunks ? <ArticleBody chunks={a.chunks} /> : a.body.map((p, i) => <p key={i} className={i === 0 ? 'first-letter:f-display first-letter:text-7xl first-letter:float-left first-letter:mr-3 first-letter:text-[#C8893E] first-letter:leading-[0.8]' : ''}>{p}</p>)}
         </div>
       </article>
     </div>
@@ -131,11 +133,6 @@ export default function Index() {
     window.addEventListener('scroll', on, { passive: true });
     return () => window.removeEventListener('scroll', on);
   }, []);
-
-  const openArticle = (a: Article) => {
-    if (a.url) window.open(a.url, '_blank', 'noopener,noreferrer');
-    else setReading(a);
-  };
 
   const [cover, ...rest] = ARTICLES;
   const featured = rest.slice(0, 3);
@@ -184,7 +181,7 @@ export default function Index() {
             </h1>
             <div className="mt-10 flex flex-col md:flex-row md:items-end justify-between gap-8">
               <p className="max-w-md text-lg text-[#F1E9DC]/80">{cover.dek} <span className="f-mono text-[#A89A88] block mt-3">Yazan: {cover.author}</span></p>
-              <button onClick={() => openArticle(cover)} className="pointer-events-auto inline-flex items-center gap-3 rounded-full bg-[#F1E9DC] text-[#0E0C0A] h-14 px-8 font-semibold hover:bg-[#C8893E] transition-colors self-start">Yazıyı oku <ArrowUpRight size={18} /></button>
+              <button onClick={() => setReading(cover)} className="pointer-events-auto inline-flex items-center gap-3 rounded-full bg-[#F1E9DC] text-[#0E0C0A] h-14 px-8 font-semibold hover:bg-[#C8893E] transition-colors self-start">Yazıyı oku <ArrowUpRight size={18} /></button>
             </div>
           </div>
         </div>
@@ -199,7 +196,7 @@ export default function Index() {
         </div>
         <div className="grid md:grid-cols-12 gap-10 mt-16">
           {featured.map((a, i) => (
-            <button key={a.id} onClick={() => openArticle(a)}
+            <button key={a.id} onClick={() => setReading(a)}
               className={`group text-left reveal ${i === 0 ? 'md:col-span-7 md:row-span-2' : 'md:col-span-5'}`}>
               <p className="f-mono text-[#C8893E] mt-6">{a.cat} · {a.read || a.date}</p>
               <h3 className={`f-display mt-3 group-hover:italic transition-all ${i === 0 ? 'text-5xl md:text-6xl' : 'text-3xl md:text-4xl'}`}>{a.title}</h3>
@@ -226,7 +223,7 @@ export default function Index() {
           <ul className="md:col-span-8">
             {list.map((a, i) => (
               <li key={cat + a.id}>
-                <button onClick={() => openArticle(a)} className="group w-full text-left grid grid-cols-[48px_1fr_auto] md:grid-cols-[48px_1fr_auto] items-center gap-4 md:gap-6 py-7 border-b border-[#0E0C0A]/15">
+                <button onClick={() => setReading(a)} className="group w-full text-left grid grid-cols-[48px_1fr_auto] md:grid-cols-[48px_1fr_auto] items-center gap-4 md:gap-6 py-7 border-b border-[#0E0C0A]/15">
                   <span className="f-mono text-[#0E0C0A]/40">{String.fromCharCode(97 + (i % 8))}{i + 1}</span>
                   <div>
                     <p className="f-mono text-[#9A5F1E] text-[11px]">{a.cat}</p>
