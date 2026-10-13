@@ -108,6 +108,32 @@ function Toc({ items }: { items: TocItem[] }) {
   );
 }
 
+// Markdown resim bloğu: ![alt](yol "açıklama") — açıklama satır içi markdown (bağlantı) içerebilir.
+// Yol göreliyse sitenin kök adresine (BASE_URL) göre çözülür. Resim, makale sütununda ortalanır.
+const IMG_CHUNK = /^!\[([^\]]*)\]\(([^)\s]+)(?:\s+"([\s\S]*)")?\)$/;
+
+const captionOptions = {
+  forceInline: true,
+  overrides: { a: { props: { className: 'underline underline-offset-2 hover:text-[#F1E9DC]', target: '_blank', rel: 'noreferrer' } } },
+};
+
+function Figure({ chunk }: { chunk: string }) {
+  const m = chunk.match(IMG_CHUNK);
+  if (!m) return null;
+  const [, alt, path, caption] = m;
+  const src = /^(https?:)?\/\//.test(path) ? path : `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
+  return (
+    <figure className="my-10 mx-auto max-w-[480px]">
+      <img src={src} alt={alt} loading="lazy" className="w-full h-auto grayscale" />
+      {caption && (
+        <figcaption className="mt-3 text-[11px] leading-relaxed text-[#A89A88]">
+          <Markdown options={captionOptions}>{caption}</Markdown>
+        </figcaption>
+      )}
+    </figure>
+  );
+}
+
 function Video({ chunk }: { chunk: string }) {
   const id = chunk.match(/embed\/([\w-]+)(?:\?start=(\d+))?/);
   const cap = chunk.match(/<figcaption>([\s\S]*?)<\/figcaption>/)?.[1].replace(/<br\s*\/?>/g, ' ').replace(/<[^>]+>/g, '').trim();
@@ -171,6 +197,8 @@ export default function ArticleBody({ chunks }: { chunks: string[] }) {
           {c.replace(/<\/?pre>/g, '').replace(/^\n/, '')}
         </pre>,
       );
+    } else if (IMG_CHUNK.test(c)) {
+      out.push(<Figure key={i} chunk={c} />);
     } else if (c.startsWith('<figure')) {
       out.push(<Video key={i} chunk={c} />);
     } else {
