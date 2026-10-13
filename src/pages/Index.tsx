@@ -140,7 +140,7 @@ export default function Index() {
       <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${scrolled ? 'bg-[#0E0C0A]/90 backdrop-blur border-b border-[#2E2620]' : ''}`}>
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 h-20 flex items-center justify-between">
           <a href="#kapak" className="flex items-center gap-3">
-            <span className="grid grid-cols-2 w-7 h-7 border border-[#F1E9DC]"><span className="bg-[#F1E9DC]" /><span /><span /><span className="bg-[#C8893E]" /></span>
+            <span className="grid grid-cols-2 w-7 h-7 border border-[#F1E9DC]"><span className="bg-[#C8893E]" /><span /><span /><span className="bg-[#F1E9DC]" /></span>
             <span className="f-display text-2xl tracking-tight">Satranç <em className="italic">vs.</em></span>
           </a>
           <nav className="hidden lg:flex gap-10">
