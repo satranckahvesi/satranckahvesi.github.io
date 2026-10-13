@@ -2,6 +2,8 @@ import { Fragment, useEffect, useRef, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import Markdown from 'markdown-to-jsx';
 import { useChessPublica } from '@/lib/chesspublica';
+import { curlyComments, curlyProse, watchComments } from '@/lib/curly-dom';
+import { watchLocalization } from '@/lib/localize-dom';
 
 // Makale gövdesi: markdown metni + PGN oyun blokları + çapraz tablo + video bağlantısı.
 
@@ -50,13 +52,36 @@ function Game({ header, moves }: { header: string; moves: string }) {
   );
 }
 
-// ChessPublica <pgn> öğesini çizerken DOM'u kendisi değiştirdiği için oyun, React'in içine
-// dokunmadığı bir kutuda (dangerouslySetInnerHTML) durur.
-function PgnGame({ header, moves }: { header: string; moves: string }) {
-  const raw = `${header.trim()}\n\n${moves.trim()}`.replace(/&/g, '&amp;').replace(/</g, '&lt;');
-  return <div className="cp-game pb-4" dangerouslySetInnerHTML={{ __html: `<pgn>\n${raw}\n</pgn>` }} />;
+// Bulmaca işareti: yorumda [P] ya da [P2] (çözülecek yarım hamle sayısı).
+const PUZZLE_MARK = /\[P\s*\d*\]/;
+
+// Ana hattaki ilk [P] işaretinde hamle sırası kimdeyse onu döndürür ('w' | 'b'); işaret yoksa null.
+function puzzleSide(header: string, moves: string): 'w' | 'b' | null {
+  const fen = header.match(/\[FEN\s+"([^"]+)"\]/i)?.[1];
+  const blackFirst = fen ? fen.split(' ')[1] === 'b' : false;
+  let plies = 0;
+  let depth = 0;
+  const re = /\{[^}]*\}|[()]|\$\d+|\d+\.+|1-0|0-1|1\/2-1\/2|\*|[^\s(){}]+/g;
+  for (const m of moves.matchAll(re)) {
+    const t = m[0];
+    if (t === '(') depth++;
+    else if (t === ')') depth--;
+    else if (t[0] === '{') { if (depth === 0 && PUZZLE_MARK.test(t)) return (plies % 2 === 0) !== blackFirst ? 'w' : 'b'; }
+    else if (depth === 0 && /^[A-Za-z]/.test(t) && !/^\d/.test(t)) plies++;
+  }
+  return null;
 }
 
+// ChessPublica <pgn> öğesini çizerken DOM'u kendisi değiştirdiği için oyun, React'in içine
+// dokunmadığı bir kutuda (dangerouslySetInnerHTML) durur. [P] işaretli oyunlar <pgn-player>
+// ile çizilir (bulmaca görünümü); ilk işaret Siyah'ın hamlesindeyse tahta Siyah tarafından açılır.
+function PgnGame({ header, moves }: { header: string; moves: string }) {
+  const side = puzzleSide(header, moves);
+  const head = side === 'b' && !/\[Orientation\s/i.test(header) ? `${header.trim()}\n[Orientation "black"]` : header.trim();
+  const raw = `${head}\n\n${moves.trim()}`.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  const tag = side ? 'pgn-player' : 'pgn';
+  return <div className="cp-game pb-4" dangerouslySetInnerHTML={{ __html: `<${tag}>\n${raw}\n</${tag}>` }} />;
+}
 
 // İçindekiler: yazıdaki tüm oyunlar, [Event] başlıklarından otomatik çıkarılır.
 type TocItem = { id: string; round: string; label: string; result: string };
@@ -155,7 +180,7 @@ function Figure({ chunk }: { chunk: string }) {
     <figure className="my-10 mx-auto w-fit max-w-full">
       <img src={src} alt={alt} loading="lazy" className="block mx-auto w-auto h-auto max-w-full max-h-[720px] md:max-w-[600px] grayscale" />
       {caption && (
-        <figcaption className="mt-3 w-0 min-w-full text-[11px] leading-relaxed text-[#A89A88]">
+        <figcaption className="credit mt-3 w-0 min-w-full text-[#A89A88]">
           <Markdown options={captionOptions}>{caption}</Markdown>
         </figcaption>
       )}
@@ -188,8 +213,8 @@ function Video({ chunk }: { chunk: string }) {
           className="absolute inset-0 h-full w-full border-0"
         />
       </div>
-      <figcaption className="mt-3 text-[11px] leading-relaxed text-[#A89A88]">
-        {capLines.map((l, i) => <span key={i} className="block">{l}</span>)}
+      <figcaption className="credit mt-3 text-[#A89A88]">
+        {capLines.map((l) => (/[.!?…]$/.test(l) ? l : `${l}.`)).join(' ')}{' '}
         <a href={href} target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-[#F1E9DC]">YouTube'da aç</a>
       </figcaption>
     </figure>
@@ -249,6 +274,26 @@ export default function ArticleBody({ chunks }: { chunks: string[] }) {
   let tocPlaced = false;
   const out: JSX.Element[] = [];
 
+  // Curly quotes: yazı metni ve oyunların YORUMLARI (hamle metni değil). ChessPublica yorumları geç çizdiği için
+  // gözlemci bağlanır; oyunlar hazır olunca son bir geçiş daha yapılır.
+  const rootRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = rootRef.current;
+    if (!el) return;
+    curlyProse(el);
+    curlyComments(el);
+    const stopCurly = watchComments(el);
+    const stopLocalize = watchLocalization(el);
+    return () => { stopCurly(); stopLocalize(); };
+  }, [chunks]);
+  useEffect(() => {
+    const el = rootRef.current;
+    if (el && (cp === 'ready' || cp === 'error')) {
+      curlyProse(el);
+      curlyComments(el);
+    }
+  }, [cp]);
+
   // Adresteki #oyun-N bağlantısı ile açılırsa, oyunlar çizildikten sonra o oyunu açar ve kaydırır.
   useEffect(() => {
     if (cp !== 'ready' && cp !== 'error') return;
@@ -295,14 +340,8 @@ export default function ArticleBody({ chunks }: { chunks: string[] }) {
   }
   if (toc.length && !tocPlaced) out.unshift(<Toc key="toc" items={toc} onGo={goTo} onAll={openAll} />);
   return (
-    <div className="text-lg leading-[1.8] text-[#F1E9DC]/85" data-cp={cp}>
+    <div ref={rootRef} className="text-lg leading-[1.8] text-[#F1E9DC]/85" data-cp={cp}>
       {out}
-      {hasGames && !useFallback && (
-        <p className="mt-12 text-[11px] leading-relaxed text-[#A89A88]">
-          Satranç tahtaları ChessPublica ile çizilmiştir (MIT). Taş görselleri: Colin M.L. Burnett,{' '}
-          <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.tr" target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-[#F1E9DC]">CC BY-SA 3.0</a>.
-        </p>
-      )}
     </div>
   );
 }

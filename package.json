@@ -6,7 +6,8 @@
     "build": "vite build",
     "lint": "eslint --quiet ./src",
     "preview": "vite preview",
-    "postinstall": "echo 'Dependencies installed successfully'"
+    "postinstall": "echo 'Dependencies installed successfully'",
+    "test": "node --test tests/*.test.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
@@ -89,6 +90,7 @@
     "typescript-eslint": "^8.0.1",
     "vite": "^5.4.1",
     "vite-plugin-sitemap": "^0.8.2",
-    "vite-prerender-plugin": "^0.5.13"
+    "vite-prerender-plugin": "^0.5.13",
+    "web-push": "^3.6.7"
   }
 }
