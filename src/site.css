@@ -30,13 +30,9 @@
 .cp-game .comment-icon,
 .cp-game .variation-icon,
 .cp-game .puzzle-hint-prompt .lucide-icon { display: none; }
-/* <pgn> oyun başlığı, <pgn-player> başlığıyla aynı görünür; hamle listesinden önce küçük bir boşluk kalır */
-.cp-game .pgn-headers { margin: 0 0 .5rem; line-height: 1.25; }
-.cp-game .pgn-players { font-size: 1rem; font-weight: 700; color: #E8DECF; }
-.cp-game .pgn-meta { font-size: 1rem; font-weight: 400; color: #A89A88; }
-/* <pgn-player> başlığı koyu zeminde okunsun */
-.cp-game .video-title-players { color: #E8DECF; }
-.cp-game .video-title-event { color: #A89A88; }
+/* Oyun başlığı (oyuncular, etkinlik, tarih) tur başlığının altında React tarafından yazılır; ChessPublica'nınkiler gizlenir */
+.cp-game .pgn-headers { display: none; }
+.cp-game .video-title:has(.video-title-text) { display: none; }
 
 /* Çapraz tablo: sabit genişlikli, okunaklı bir mono font (IBM Plex Mono) ve hafif bir çerçeve. */
 .crosstable { font-family: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace; font-size: 13.5px; line-height: 1.75;
