@@ -203,13 +203,14 @@ export default function Index() {
           <ul className="md:col-span-8">
             {list.map((a, i) => (
               <li key={cat + a.id}>
-                <Link to={articlePath(a)} className="group w-full text-left grid grid-cols-[48px_1fr] items-center gap-4 md:gap-6 py-7 border-b border-[#0E0C0A]/15">
+                <Link to={articlePath(a)} className="group w-full text-left grid grid-cols-[48px_1fr_auto] md:grid-cols-[48px_1fr_auto] items-center gap-4 md:gap-6 py-7 border-b border-[#0E0C0A]/15">
                   <span className="f-mono normal-case text-[#0E0C0A]/40">{String.fromCharCode(97 + (i % 8))}{i + 1}</span>
                   <div>
                     <p className="f-mono text-[#9A5F1E] text-[11px]">{a.cat}</p>
-                    <p className="f-display text-2xl md:text-4xl mt-2 group-hover:italic group-hover:translate-x-2 transition-all duration-500">{a.title}<ArrowUpRight aria-hidden className="ml-3 inline-block align-middle group-hover:rotate-45 transition-transform" /></p>
+                    <p className="f-display text-2xl md:text-4xl mt-2 group-hover:italic group-hover:translate-x-2 transition-all duration-500">{a.title}</p>
                     <p className="text-sm text-[#0E0C0A]/60 mt-2">{a.author} · {a.read || a.date}</p>
                   </div>
+                  <ArrowUpRight className="group-hover:rotate-45 transition-transform" />
                 </Link>
               </li>
             ))}
