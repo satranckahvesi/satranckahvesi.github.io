@@ -2,19 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import { ArrowUpRight, Menu as MenuIcon, X, Instagram, Twitter, Youtube, Mail } from 'lucide-react';
 import '../site.css';
 
-const CDN = 'https://mgx-backend-cdn.metadl.com/generate/images/951522/2026-10-12/';
-const IMG = {
-  hero: CDN + 'yi52nqqaaliq/mag-hero-king.png',
-  portrait: CDN + 'yi52n5icalia/mag-portrait-player.png',
-  endgame: CDN + 'yi52okicalhq/mag-endgame.png',
-  books: CDN + 'yi52oxacalha/mag-history-books.png',
-  knight: CDN + 'yi52pdycalgq/mag-knight-macro.png',
-  tournament: CDN + 'yi5p77icalga/event-tournament.png',
-  workshop: CDN + 'yi5qamacaliq/event-workshop.png',
-  blitz: CDN + 'yi5qazacalia/event-blitz.png',
-  fallen: CDN + 'yi5qb7qcalgq/gallery-fallen-king.png',
-};
-
 const NAV = [
   ['Kapak', 'kapak'],
   ['Yazılar', 'yazilar'],
@@ -23,24 +10,24 @@ const NAV = [
   ['Hakkında', 'hakkinda'],
 ] as const;
 
-type Article = { id: string; cat: string; title: string; dek: string; author: string; read: string; img: string; body: string[] };
+type Article = { id: string; cat: string; title: string; dek: string; author: string; read: string; body: string[] };
 
 const ARTICLES: Article[] = [
-  { id: 'kapak', cat: 'Kapak Dosyası', title: 'Şahın yalnızlığı: Oyunsonunda karar vermek', dek: 'Tahtada az taş kaldığında asıl oyun başlar. Oyunsonunun sessiz matematiği üzerine uzun bir okuma.', author: 'Deniz Arslan', read: '14 dk', img: IMG.hero,
+  { id: 'kapak', cat: 'Kapak Dosyası', title: 'Şahın yalnızlığı: Oyunsonunda karar vermek', dek: 'Tahtada az taş kaldığında asıl oyun başlar. Oyunsonunun sessiz matematiği üzerine uzun bir okuma.', author: 'Deniz Arslan', read: '14 dk',
     body: ['Oyunsonu, satrancın en dürüst evresidir. Tuzaklar azalır, taktik gürültü diner; geriye hesap, sabır ve bir planın ne kadar sağlam olduğunu gösteren çıplak bir tahta kalır.', 'Capablanca öğrencilerine oyunsonuyla başlamalarını öğütlerdi. Çünkü az taşla çalışmak, her taşın gerçek değerini görmeyi öğretir.', 'Bu dosyada üç klasik pozisyonu ve modern motorların bize bu pozisyonlar hakkında öğrettiklerini inceliyoruz.'] },
-  { id: 'roportaj', cat: 'Röportaj', title: '“Kaybetmeyi öğrenmeden ustalaşamazsın”', dek: 'Genç bir büyükusta ile hazırlık, yorgunluk ve turnuva psikolojisi üzerine.', author: 'Selin Kaya', read: '11 dk', img: IMG.portrait,
+  { id: 'roportaj', cat: 'Röportaj', title: '“Kaybetmeyi öğrenmeden ustalaşamazsın”', dek: 'Genç bir büyükusta ile hazırlık, yorgunluk ve turnuva psikolojisi üzerine.', author: 'Selin Kaya', read: '11 dk',
     body: ['Bir turnuvanın son turunda, saat düşerken neler hissedilir? Konuğumuz kariyerinin dönüm noktalarını anlatıyor.', '“İlk yıllarda her yenilgi bir hakaret gibiydi. Sonra fark ettim ki en çok kaybettiğim partilerden öğreniyorum.”'] },
-  { id: 'analiz', cat: 'Analiz', title: 'Kale oyunsonlarında Lucena köprüsü', dek: 'Her kulüp oyuncusunun bilmesi gereken pozisyonu adım adım çözüyoruz.', author: 'Kerem Aydın', read: '8 dk', img: IMG.endgame,
+  { id: 'analiz', cat: 'Analiz', title: 'Kale oyunsonlarında Lucena köprüsü', dek: 'Her kulüp oyuncusunun bilmesi gereken pozisyonu adım adım çözüyoruz.', author: 'Kerem Aydın', read: '8 dk',
     body: ['Lucena pozisyonu, piyonu yedinci yataya ulaşmış kale oyunsonlarında kazanç tekniğidir.', 'Anahtar fikir: kaleyi dördüncü yataya getirip şaha bir “köprü” kurmak. Böylece rakip kalenin yandan şahları kesilir.'] },
-  { id: 'tarih', cat: 'Tarih', title: 'İstanbul kahvehanelerinde satrancın yüz yılı', dek: 'Osmanlı’dan Cumhuriyet’e, masa başında oynanan partilerin izinde.', author: 'Ayşe Demir', read: '16 dk', img: IMG.books,
+  { id: 'tarih', cat: 'Tarih', title: 'İstanbul kahvehanelerinde satrancın yüz yılı', dek: 'Osmanlı’dan Cumhuriyet’e, masa başında oynanan partilerin izinde.', author: 'Ayşe Demir', read: '16 dk',
     body: ['19. yüzyıl sonunda İstanbul’da satranç, belirli kahvehanelerde toplanan meraklıların oyunuydu.', 'Arşiv kayıtları ve eski gazete sütunları üzerinden bu kayıp kültürü yeniden kuruyoruz.'] },
-  { id: 'acilis', cat: 'Açılışlar', title: 'Damı Gambiti’nin yeniden doğuşu', dek: 'Klasik bir açılış, modern motorlarla nasıl yeni bir hayat buldu?', author: 'Kerem Aydın', read: '10 dk', img: IMG.knight,
+  { id: 'acilis', cat: 'Açılışlar', title: 'Damı Gambiti’nin yeniden doğuşu', dek: 'Klasik bir açılış, modern motorlarla nasıl yeni bir hayat buldu?', author: 'Kerem Aydın', read: '10 dk',
     body: ['Damı Gambiti yüz yılı aşkın süredir üst düzey satrancın merkezinde.', 'Bu yazıda ana varyantları ve son yıllarda öne çıkan yan yolları inceliyoruz.'] },
-  { id: 'turnuva', cat: 'Turnuva', title: 'Bir hafta sonunda dokuz tur', dek: 'Açık turnuvaların yorucu ve büyüleyici dünyasından notlar.', author: 'Selin Kaya', read: '7 dk', img: IMG.tournament,
+  { id: 'turnuva', cat: 'Turnuva', title: 'Bir hafta sonunda dokuz tur', dek: 'Açık turnuvaların yorucu ve büyüleyici dünyasından notlar.', author: 'Selin Kaya', read: '7 dk',
     body: ['Sabah dokuzda başlayan ilk tur, gece yarısına doğru biten son parti…', 'Açık turnuvalar, satrancın en demokratik sahnesi.'] },
-  { id: 'blitz', cat: 'Analiz', title: 'Blitzde zaman yönetimi', dek: '3+2 tempoda saatini nasıl kullanmalısın? Pratik ilkeler.', author: 'Deniz Arslan', read: '6 dk', img: IMG.blitz,
+  { id: 'blitz', cat: 'Analiz', title: 'Blitzde zaman yönetimi', dek: '3+2 tempoda saatini nasıl kullanmalısın? Pratik ilkeler.', author: 'Deniz Arslan', read: '6 dk',
     body: ['Blitzde en iyi hamle, zamanında yapılan iyi hamledir.', 'Açılışta hızlı, kritik anlarda yavaş: süreyi bütçelemenin üç kuralı.'] },
-  { id: 'egitim', cat: 'Eğitim', title: 'Çocuklara satranç öğretirken', dek: 'Kuralları değil, merakı öğretmek üzerine bir eğitmenin notları.', author: 'Ayşe Demir', read: '9 dk', img: IMG.workshop,
+  { id: 'egitim', cat: 'Eğitim', title: 'Çocuklara satranç öğretirken', dek: 'Kuralları değil, merakı öğretmek üzerine bir eğitmenin notları.', author: 'Ayşe Demir', read: '9 dk',
     body: ['İlk derste kuralları değil, bir hikâyeyi anlatıyoruz: piyonun vezire dönüşme yolculuğunu.', 'Oyun, merak sürdükçe öğrenilir.'] },
 ];
 
@@ -101,8 +88,7 @@ function Reader({ a, onClose }: { a: Article; onClose: () => void }) {
   return (
     <div role="dialog" aria-modal aria-label={a.title} className="fixed inset-0 z-[70] bg-[#0E0C0A] overflow-y-auto">
       <button aria-label="Yazıyı kapat" onClick={onClose} className="fixed top-5 right-5 z-10 w-12 h-12 rounded-full bg-[#F1E9DC] text-[#0E0C0A] grid place-items-center hover:bg-[#C8893E]"><X /></button>
-      <div className="h-[60vh] relative"><img src={a.img} alt="" className="w-full h-full object-cover" /><div className="absolute inset-0 bg-gradient-to-t from-[#0E0C0A] to-transparent" /></div>
-      <article className="max-w-[760px] mx-auto px-6 -mt-40 relative pb-32">
+      <article className="max-w-[760px] mx-auto px-6 pt-32 relative pb-32">
         <p className="f-mono text-[#C8893E]">{a.cat} · {a.read} okuma</p>
         <h1 className="f-display text-[clamp(44px,6vw,88px)] mt-6">{a.title}</h1>
         <p className="text-xl text-[#F1E9DC]/80 mt-8 italic" style={{ fontFamily: 'Fraunces, serif' }}>{a.dek}</p>
@@ -162,8 +148,6 @@ export default function Index() {
 
       {/* KAPAK */}
       <section id="kapak" className="relative h-[100svh] min-h-[680px] overflow-hidden">
-        <img src={cover.img} alt="Tahtada ayakta duran siyah şah ve devrilmiş beyaz şah" className="kb absolute inset-0 w-full h-full object-cover" style={{ transform: `translateY(${y * 0.25}px)` }} />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0E0C0A] via-[#0E0C0A]/60 to-transparent" />
         <ChessGrid />
         <div className="absolute top-24 inset-x-0 z-20 pointer-events-none">
           <div className="max-w-[1440px] mx-auto px-6 md:px-10 flex justify-between f-mono text-[#A89A88]">
@@ -208,9 +192,6 @@ export default function Index() {
           {featured.map((a, i) => (
             <button key={a.id} onClick={() => setReading(a)}
               className={`group text-left reveal ${i === 0 ? 'md:col-span-7 md:row-span-2' : 'md:col-span-5'}`}>
-              <div className={`overflow-hidden ${i === 0 ? 'aspect-[4/5]' : 'aspect-[16/10]'}`}>
-                <img src={a.img} alt={a.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[1.2s]" />
-              </div>
               <p className="f-mono text-[#C8893E] mt-6">{a.cat} · {a.read}</p>
               <h3 className={`f-display mt-3 group-hover:italic transition-all ${i === 0 ? 'text-5xl md:text-6xl' : 'text-3xl md:text-4xl'}`}>{a.title}</h3>
               <p className="text-[#F1E9DC]/70 mt-3 max-w-xl">{a.dek}</p>
@@ -236,14 +217,13 @@ export default function Index() {
           <ul className="md:col-span-8">
             {list.map((a, i) => (
               <li key={cat + a.id}>
-                <button onClick={() => setReading(a)} className="group w-full text-left grid grid-cols-[48px_1fr_auto] md:grid-cols-[48px_1fr_120px_auto] items-center gap-4 md:gap-6 py-7 border-b border-[#0E0C0A]/15">
+                <button onClick={() => setReading(a)} className="group w-full text-left grid grid-cols-[48px_1fr_auto] md:grid-cols-[48px_1fr_auto] items-center gap-4 md:gap-6 py-7 border-b border-[#0E0C0A]/15">
                   <span className="f-mono text-[#0E0C0A]/40">{String.fromCharCode(97 + (i % 8))}{i + 1}</span>
                   <div>
                     <p className="f-mono text-[#9A5F1E] text-[11px]">{a.cat}</p>
                     <p className="f-display text-2xl md:text-4xl mt-2 group-hover:italic group-hover:translate-x-2 transition-all duration-500">{a.title}</p>
                     <p className="text-sm text-[#0E0C0A]/60 mt-2">{a.author} · {a.read}</p>
                   </div>
-                  <div className="hidden md:block w-[120px] aspect-[4/3] overflow-hidden"><img src={a.img} alt="" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" /></div>
                   <ArrowUpRight className="group-hover:rotate-45 transition-transform" />
                 </button>
               </li>
@@ -277,9 +257,6 @@ export default function Index() {
           <Label n="04">Hakkında</Label>
           <h2 className="f-display text-[clamp(40px,5.5vw,88px)] mt-8">Satranç bir oyundan fazlası; <em className="italic text-[#C8893E]">bir düşünme biçimi.</em></h2>
           <p className="text-[#F1E9DC]/75 leading-relaxed mt-10 max-w-xl">Satranç Kahvesi, satranç üzerine uzun okumalar, analizler ve hikâyeler yayımlayan bağımsız bir dergidir. Bir fincan kahve eşliğinde, acele etmeden okunsun diye.</p>
-        </div>
-        <div className="md:col-span-5 relative reveal">
-          <div className="aspect-[3/4] overflow-hidden"><img src={IMG.fallen} alt="Tahtada devrilmiş şah" className="w-full h-full object-cover" /></div>
         </div>
         <div id="bulten" className="md:col-span-12 mt-10 border border-[#2E2620] p-8 md:p-14 grid md:grid-cols-2 gap-8 items-end">
           <div><p className="f-mono text-[#C8893E]">Bülten</p><h3 className="f-display text-4xl md:text-6xl mt-4">Her ay bir hamle, <em className="italic">e-postanda.</em></h3></div>
