@@ -9,9 +9,17 @@ export default function PhotoCredit({ full = false, className = '' }: { full?: b
   const link = 'underline underline-offset-2 hover:text-[#F1E9DC]';
   return (
     <p className={`credit text-[#A89A88] ${className}`}>
-      Fotoğraf: Rob Mieremet / Anefo — Nationaal Archief (Hollanda Ulusal Arşivi), 12 Haziran 1973
-      {full && <> · Envanter no 2.24.01.05, madde 926-4781 · Konu: Jan Timman</>}
-      . Lisans: <a href={PHOTO.license} target="_blank" rel="noreferrer" className={link}>CC0 1.0 (Kamu Malı Bağışı)</a>.
+      {full ? (
+        <>
+          Jan Timman, 1973. · Fotoğraf: Rob Mieremet / Anefo — Nationaal Archief (Hollanda Ulusal Arşivi), · Envanter no 2.24.01.05, madde 926-4781 · Lisans:{' '}
+          <a href={PHOTO.license} target="_blank" rel="noreferrer" className={link}>CC0 1.0 (Kamu Bağışı)</a>.
+        </>
+      ) : (
+        <>
+          Fotoğraf: Rob Mieremet / Anefo — Nationaal Archief (Hollanda Ulusal Arşivi), 12 Haziran 1973. Lisans:{' '}
+          <a href={PHOTO.license} target="_blank" rel="noreferrer" className={link}>CC0 1.0 (Kamu Malı Bağışı)</a>.
+        </>
+      )}
       {' '}Kaynak: <a href={PHOTO.page} target="_blank" rel="noreferrer" className={link}>Wikimedia Commons</a>
     </p>
   );
