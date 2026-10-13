@@ -34,7 +34,7 @@ export default function Post() {
         <p className="f-mono text-[#C8893E]">{a.cat} · {a.read ? `${a.read} okuma` : a.date}</p>
         <h1 className="f-display text-[clamp(44px,6vw,88px)] mt-6">{a.title}</h1>
         {a.dek && <p className="text-xl text-[#F1E9DC]/80 mt-8 italic" style={{ fontFamily: 'Fraunces, serif' }}>{a.dek}</p>}
-        <p className="f-mono text-[#A89A88] mt-8 pb-8 border-b border-[#2E2620]">Yazan: {a.author}</p>
+        <p className="f-mono text-[#A89A88] mt-8 pb-8 border-b border-[#2E2620]">Yazan: {a.author}{a.translator && ` · Türkçesi: ${a.translator}`}</p>
         {lead && <div className="mt-10"><ArticleBody chunks={[lead]} /></div>}
         {a.photo && (
           <figure className="mt-10 mx-auto w-fit max-w-full">
