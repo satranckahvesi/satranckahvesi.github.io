@@ -23,7 +23,7 @@ Oyunların önemli anlarında okuyucuyu Timman ile birlikte hamleleri bulmaya da
 
 Dünya satrancının ilk on isminden beşinin katıldığı (**Karpov, Timman, Polugaevsky, Portisch, Andersson**) 1982 Mar del Plata turnuvası, Timman'ın kariyerinin en önemli zaferlerinden biriydi.
 
-Öğretici eserleriyle tanınan **Zenón Franco Ocampos**'un (1956-2024) aktardığına göre turnuvanın hemen öncesinde Timman hastaydı. İlk turu kaybederek kötü bir başlangıç yapan Timman, Güney Amerika havasının kendisine yaradığını sonraki turlarda hissedecek ve Arjantin'de oynanan son Clarín turnuvasını kazanacaktı.
+Öğretici eserleriyle tanınan **Zenón Franco Ocampos**'un (1956-2024) [aktardığına göre](https://es.chessbase.com/post/zenon-franco-683-magistral-clarin-1982) turnuvanın hemen öncesinde Timman hastaydı. İlk turu kaybederek kötü bir başlangıç yapan Timman, Güney Amerika havasının kendisine yaradığını sonraki turlarda hissedecek ve Arjantin'de oynanan son Clarín turnuvasını kazanacaktı.
 
 Timman şöyle [anlatıyordu](https://es.chessbase.com/post/zenon-franco-683-magistral-clarin-1982):
 
