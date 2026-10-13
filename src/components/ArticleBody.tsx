@@ -1,10 +1,11 @@
-import { Fragment, useEffect, useRef } from 'react';
+import { Fragment, useEffect, useRef, useState } from 'react';
 import Markdown from 'markdown-to-jsx';
 import { useChessPublica } from '@/lib/chesspublica';
 import { curlyComments, curlyProse, watchComments } from '@/lib/curly-dom';
 import ProgressiveImage from '@/components/ProgressiveImage';
 import { watchInlinePlay } from '@/lib/inline-play';
 import { watchLocalization } from '@/lib/localize-dom';
+import { watchVariationFix } from '@/lib/variation-fix';
 
 // Makale gövdesi: markdown metni + PGN oyun blokları + çapraz tablo + video bağlantısı.
 
@@ -76,12 +77,29 @@ function puzzleSide(header: string, moves: string): 'w' | 'b' | null {
 // ChessPublica <pgn> öğesini çizerken DOM'u kendisi değiştirdiği için oyun, React'in içine
 // dokunmadığı bir kutuda (dangerouslySetInnerHTML) durur. [P] işaretli oyunlar <pgn-player>
 // ile çizilir (bulmaca görünümü); ilk işaret Siyah'ın hamlesindeyse tahta Siyah tarafından açılır.
+// Oyunlar ekrana yaklaşınca (1500 px kala) yüklenir: sayfa açılırken 13 oyun birden kurulmaz, ham PGN metni de
+// görünmez (kutu, oyun gelene kadar boş bir yer tutucudur). Adreste #bağlantı varsa kaydırma konumu doğru
+// hesaplansın diye hepsi hemen kurulur.
 function PgnGame({ header, moves }: { header: string; moves: string }) {
   const side = puzzleSide(header, moves);
   const head = side === 'b' && !/\[Orientation\s/i.test(header) ? `${header.trim()}\n[Orientation "black"]` : header.trim();
   const raw = `${head}\n\n${moves.trim()}`.replace(/&/g, '&amp;').replace(/</g, '&lt;');
   const tag = side ? 'pgn-player' : 'pgn';
-  return <div className="cp-game pb-4" dangerouslySetInnerHTML={{ __html: `<${tag}>\n${raw}\n</${tag}>` }} />;
+  const box = useRef<HTMLDivElement>(null);
+  const [near, setNear] = useState(() => typeof window === 'undefined' || typeof IntersectionObserver === 'undefined' || !!window.location.hash);
+  useEffect(() => {
+    if (near || !box.current) return;
+    const io = new IntersectionObserver((entries) => {
+      if (entries.some((e) => e.isIntersecting)) { setNear(true); io.disconnect(); }
+    }, { rootMargin: '1500px 0px' });
+    io.observe(box.current);
+    return () => io.disconnect();
+  }, [near]);
+  // Sonradan kurulan düz <pgn> öğeleri için ChessPublica yeniden taratılır (<pgn-player> kendini kurar).
+  useEffect(() => { if (near) window.ChessPublica?.initAll(); }, [near]);
+  return near
+    ? <div ref={box} className="cp-game pb-4" dangerouslySetInnerHTML={{ __html: `<${tag}>\n${raw}\n</${tag}>` }} />
+    : <div ref={box} className="cp-game cp-placeholder pb-4" />;
 }
 
 // İçindekiler: yazıdaki tüm oyunlar, [Event] başlıklarından otomatik çıkarılır.
@@ -283,7 +301,8 @@ export default function ArticleBody({ chunks }: { chunks: string[] }) {
     const stopCurly = watchComments(el);
     const stopLocalize = watchLocalization(el);
     const stopInlinePlay = watchInlinePlay(el);
-    return () => { stopCurly(); stopLocalize(); stopInlinePlay(); };
+    const stopVariationFix = watchVariationFix(el);
+    return () => { stopCurly(); stopLocalize(); stopInlinePlay(); stopVariationFix(); };
   }, [chunks]);
   useEffect(() => {
     const el = rootRef.current;
