@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
-import { Link, Navigate, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { X } from 'lucide-react';
 import ArticleBody from '@/components/ArticleBody';
 import PhotoCredit, { PHOTO } from '@/components/PhotoCredit';
 import { articleBySlug } from '@/data/articles';
+import NotFound from './NotFound';
 import '../site.css';
 
 export default function Post() {
@@ -18,7 +19,7 @@ export default function Post() {
     return () => { document.title = prev; };
   }, [a]);
 
-  if (!a) return <Navigate to="/" replace />;
+  if (!a) return <NotFound />;
 
   return (
     <div className="sk min-h-screen bg-[#0E0C0A]">
