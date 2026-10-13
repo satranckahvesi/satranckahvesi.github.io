@@ -37,7 +37,7 @@ function ensureBuildOutDir() {
   };
 }
 
-const SITE_URL = 'https://satranckahvesi.com/yeni-deneme';
+const SITE_URL = 'https://satranckahvesi.com';
 
 // Her yazı için dist/<slug>/index.html üretir (yazıya özel başlık, açıklama ve paylaşım
 // etiketleriyle) ve sitemap.xml'i yazı adresleriyle birlikte oluşturur.
@@ -91,7 +91,7 @@ export default defineConfig(({ command }) => {
   const blogPrerenderRoutes = command === 'build' ? getBlogRoutes() : [];
 
   return {
-    base: '/yeni-deneme/',
+    base: '/',
     plugins: [
       viteSourceLocator({
         prefix: 'mgx', // Prefix used to identify source locations; do not change.
