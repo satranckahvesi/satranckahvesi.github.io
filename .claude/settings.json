@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp /home/user/chesspublica/chesspublica.github.io/assets/*.js public/chesspublica/)"
+    ]
+  }
+}
