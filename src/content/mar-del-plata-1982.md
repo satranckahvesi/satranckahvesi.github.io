@@ -7,10 +7,10 @@ Oyunların önemli anlarında okuyucuyu Timman ile birlikte hamleleri bulmaya da
 İlk mağlubiyetle turnuvanın başında tanışan Timman'ın rakibi bu turnuvanın önceki şampiyonlarından Bent Larsen'den başkası değildi.
 
 [Event "Mar del Plata"]
-[Site "Mar del Plata ARG"]
+[Site "Mar del Plata"]
 [Date "1982.02.08"]
 [Round "1"]
-[White "Timman, Jan"]
+[White "Jan Timman"]
 [Black "Larsen, Bent"]
 [Result "0-1"]
 [WhiteElo "2655"]
@@ -34,11 +34,11 @@ Clarín turnuvasını 1979 senesinde Spassky ve Petrosian'ı da yenerek, 1980'de
 ![Jan Timman, Amsterdam, 1978 (siyah-beyaz fotoğraf)](images/jan-timman-amsterdam-1978-a.jpg "Jan Timman, 1978. · Fotoğraf: Koen Suyk / Anefo — Nationaal Archief (Hollanda Ulusal Arşivi). Lisans: [CC0 1.0 (Kamu Bağışı)](https://creativecommons.org/publicdomain/zero/1.0/deed.tr). Kaynak: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:IBM_schaaktoernooi_Amsterdam_Jan_Timman_in_actie,_Bestanddeelnr_929-8170.jpg)")
 
 [Event "Mar del Plata"]
-[Site "Mar del Plata ARG"]
+[Site "Mar del Plata"]
 [Date "1982.02.09"]
 [Round "2"]
 [White "Andersson, Ulf"]
-[Black "Timman, Jan"]
+[Black "Jan Timman"]
 [Result "1/2-1/2"]
 [WhiteElo "2605"]
 [BlackElo "2655"]
@@ -62,10 +62,10 @@ Garry Kasparov, _"My Great Predecessors"_ (Benim Ustalarım) serisinin dördünc
 İkinci Dünya Savaşı nedeniyle ülkesine dönmeyerek Arjantin'de kalan Najdorf, ülke satrancının gelişimine katkı sunmuş ve Oscar Panno gibi isimlere ilham kaynağı olmuştu.
 
 [Event "Mar del Plata"]
-[Site "Mar del Plata ARG"]
+[Site "Mar del Plata"]
 [Date "1982.02.10"]
 [Round "3"]
-[White "Timman, Jan"]
+[White "Jan Timman"]
 [Black "Najdorf, Miguel"]
 [Result "1-0"]
 [WhiteElo "2605"]
@@ -83,10 +83,10 @@ Arjantin satrancına damga vuran 1935 doğumlu Büyükusta **Oscar Panno**, 1953
 Yıldızının parladığı yıllarda profesyonel satranç oynamak yerine mühendislik yapmayı tercih eden Panno, bu satırların yazarının da sevdiği Şah-Hint Savunması'nda günümüzde hâlâ sevilen bir varyanta adını vermiştir. Şu an aktif olmasa da kısa bir süre aktif kalan bir [YouTube kanalı](https://www.youtube.com/@GMOscarPanno) da bulunan Büyükusta Oscar Panno, İspanyolca içerikler üretmiş, **Aronian** ve **Anand** gibi isimlerle analizler yapmıştı.
 
 [Event "Mar del Plata"]
-[Site "Mar del Plata ARG"]
+[Site "Mar del Plata"]
 [Date "1982.02.12"]
 [Round "4"]
-[White "Timman, Jan"]
+[White "Jan Timman"]
 [Black "Panno, Oscar"]
 [Result "1-0"]
 [WhiteElo "2605"]
@@ -101,24 +101,18 @@ Reyting sıralamasında Karpov'dan sonra ikinci sırada yer alan Timman'ın, Mer
 
 Karpov ise bundan önceki Clarín turnuvası ile beraber o yıllarda neredeyse önüne çıkan **her turnuvayı kazanmaktaydı**. Timman ve Polugaevsky'e göre, **Korchnoi**'ya karşı henüz birkaç ay önce **ünvanını savunmuş** olması şampiyonun 1982 Clarín turnuvasındaki performansını olumsuz etkilemişti.
 
-![Anatoli Karpov ön planda, Jan Timman arka planda (siyah-beyaz fotoğraf)](images/karpov-timman-1979.jpg "Ön planda Karpov, arka planda Timman, 1979. · Fotoğraf: Koen Suyk / Anefo — Nationaal Archief (Hollanda Ulusal Arşivi). Lisans: [CC0 1.0 (Kamu Bağışı)](https://creativecommons.org/publicdomain/zero/1.0/deed.tr). Kaynak: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:2e_Ronde_Karpov_op_de_voorgrond,_Timman_op_de_achtergrond,_Bestanddeelnr_930-5234.jpg)")
+![Anatoly Karpov ön planda, Jan Timman arka planda (siyah-beyaz fotoğraf)](images/karpov-timman-1979.jpg "Ön planda Karpov, arka planda Timman, 1979. · Fotoğraf: Koen Suyk / Anefo — Nationaal Archief (Hollanda Ulusal Arşivi). Lisans: [CC0 1.0 (Kamu Bağışı)](https://creativecommons.org/publicdomain/zero/1.0/deed.tr). Kaynak: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:2e_Ronde_Karpov_op_de_voorgrond,_Timman_op_de_achtergrond,_Bestanddeelnr_930-5234.jpg)")
 
 [Event "Mar del Plata"]
-[Site "Mar del Plata ARG"]
-[Date "1982.02.13"]
+[Site "Mar del Plata"]
+[Date "13.02.1982"]
 [Round "5"]
-[White "Karpov, Anatoly"]
-[Black "Timman, Jan"]
+[White "Anatoly Karpov"]
+[Black "Jan Timman"]
 [Result "0-1"]
 [WhiteElo "2720"]
 [BlackElo "2655"]
 [Annotator "FM Nazmi Can Doğan"]
-[Variant "Standard"]
-[ECO "B81"]
-[Opening "Sicilian Defense: Scheveningen Variation, Keres Attack"]
-[StudyName "Satranç Kahvesi"]
-[ChapterName "Karpov, Anatoly - Timman, Jan"]
-[ChapterURL "https://lichess.org/study/a8usAb97/XtyYZQjG"]
 
 1. e4 c5 2. Nf3 e6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 d6 { Scheveningen varyantı günümüzde Karpov'un sonraki hamlesi nedeniyle görece az tercih ediliyor. } 6. g4! { Keres Atağı bilgisayarların açılışlarda yarattığı köklü değişime karşın en iyi hamle olma özelliğini koruyor. } 6... h6 7. Rg1 Be7 { Timman'ın 1983'te Plovdiv'de oynanan Avrupa Takımlar Şampiyonası'nda Karpov'a karşı oyunu şöyle devam etti: } (7... Nc6 8. Be3 a6 9. Qe2 Nxd4 10. Bxd4 e5 11. Be3 Be6 12. h4 g6! { Açılış çalışmalarını her zaman iyi yapan Timman'ın bu yeniliği ona açılışta rahat bir konum vermiş ve oyun berabere sonuçlanmıştı. (Karpov - Timman, Plovdiv 1983) }) 8. Be3 Nc6 9. Be2 { g4-piyonu için endişelenmeden Qd2 ile devam edebilmek istiyor. } (9. Qe2 { Timman, _"On the Attack"_ isimli eserinde ertesi sene oynanmış Karpov - Sax partisini incelemiştir. Hâlâ ana devam yolu olan 9. Qe2 hamlesi o partide Karpov'a harika bir galibiyet getirmişti. }) (9. Qd2 { Hemen bu hamleyi yapmak daha sonraları yazışmalı oyunlarda denendi. } 9... Nxd4 10. Qxd4 e5 11. Qa4+ Bd7 12. Bb5 a6 13. Bxd7+ Qxd7 14. Qxd7+ Kxd7 15. O-O-O Rac8 $10 { Bragesjö, Tomas - Perez, Brigiliano, 1/2-1/2, SWE - PHI 2022. }) 9... a6 10. Qd2 Nxd4 11. Qxd4 e5 12. Qd2 (12. Qd3 { Vezirleri değişmeden, e4-piyonunu kaybetmeden sorunsuz şekilde Nd5 zıplayabilmek için. } 12... Be6 13. O-O-O Nd7! (13... Qa5 14. Kb1 Rc8 15. Nd5 $14 { Movsesian, S. - Plat, V., 1-0, 14th Teplice Open 2019. }) 14. Nd5 Bg5 { Vogt, Lothar - Foisor, Ovidiu Doru, 1-0, Rubinstein Memorial 20th, 1982.
 Oyunda göreceğimiz fikir aynı yıl içinde bir başka partide de uygulandı. }) 12... Be6 { Siyah ...d5 oynamak istiyor. } { [%cal Rd6d5] } 13. Bf3 (13. O-O-O Qa5! $132) 13... Nd7! 14. Nd5 { [P] } (14. O-O-O Qa5! { Yine Beyazın Nd5'i etkisiz hâle getirilmiş olurdu. } { [%cal Ra5d2,Ga5a2] }) 14... Bg5! 15. O-O-O Rc8 16. Kb1 Bxd5 17. exd5 { d5-karesi artık "ölü nokta" haline geliyor. } (17. Qxd5 Bxe3 18. fxe3 Rc6 19. Be2 { d5-karesini beyaz taşlar için uygun tutardı. } { [%csl Gd5] }) 17... Nc5 18. Rh1 { h-piyonunu feda etmeden saldırmak istiyor ve aynı zamanda Siyahın rok atmasını bekliyor. } 18... Qf6 { [%cal Gf6f3] } 19. Bg2 (19. h4 { Stockfish bu hamlenin oynanabilir olduğunu söylüyor. }) 19... Bxe3 20. fxe3 { [P] Artık Beyaz h4 sürmek için hazır. } 20... Qh4! 21. Bf3 O-O 22. Qe1 Qd8!? (22... Qxe1 $17 { Bu tip Sicilya oyunsonları genelde Siyaha oldukça rahat bir oyun verir, ancak Timman vezir-at ikilisinin gücüne güvenerek vezirleri tahtada tutmaktan çekinmiyor. }) 23. e4 Qb6 { Bitirici ...Na4 tehdidi ile. } { [%cal Gc5a4] } 24. Qe3 Qb5 25. h4 Na4 26. Qb3 Rc5 { İbrenin eşitliği gösterdiği bu konumda Beyazın dakik olması gerekiyor. } { [%csl Gc8][%cal Gf8c8] } 27. Rh3 (27. g5! { [%csl Gg4][%cal Gf3g4] } 27... Rfc8 28. Rc1 Qa5 { [%cal Gc5b5] } 29. Bg4 { Bu incelik c7-karesinin vezire kapanması ile ilişkili taktiksel bir detayı barındırıyor. } (29. c4 b5 30. Be2? bxc4 31. Rxc4 Rxc4 32. Bxc4 Qc7 $19) 29... Rb5 (29... R8c7 { [%cal Gc5b5] } 30. c4 b5 31. Be2 bxc4 32. Rxc4 Rxc4 33. Bxc4 { Burada Qc7 oynanabilmesi durumunda Siyahın üstünlüğü olacaktı. }) 30. Bxc8 Rxb3 31. cxb3 $10) 27... Rfc8 28. c3 (28. Rc1?? Rxc2 29. Rxc2 Qf1+ $19) 28... R8c7 29. Ka1 Qd7 { [%csl Gc5][%cal Gc5b5] } 30. Be2 b5 { Kritik konuma ulaşıldı. } { [%cal Gb5b4] } 31. a3 { Belki de Beyaz için işleri geri dönülmez şekilde zorlaştıran hamle! Rakibin oynadığı taraftan yapılan piyon sürüşleri rakibe hedefler verir. Bekleyerek savunmanın inceliklerini gösteren çok hoş bir varyant şöyle olabilirdi: } (31. Rf1 b4 32. Qc2!! { Orijinal ve öğretici bir konsept! Beyaz bxc3 durumunda b3 ile devam etmek ve şah kanadı saldırısını sürdürmek istiyor. } 32... bxc3 33. b3! $132 { [%cal Gh3g3,Gg4g5] } 33... Rb7 34. Rg3 { [%cal Gg4g5] } 34... g6! 35. Rgf3 { Makinenin eşitlik gösterdiği ve üç sonucun da masada olduğu anlaşılması güç bir konum. }) 31... a5! 32. Kb1 Rb7 33. Rg3 g6! { Yine öğretici bir savunma hamlesi. } { [%cal Rg4g5,Rh6h5,Bh4h5,Bg6g5] } 34. g5 h5 35. Bf1 Rcc7! { ...Nc5 ve ...b4 fikirleriyle! } { [%cal Ga4c5] } 36. Qc2 b4 37. axb4 axb4 38. c4 b3 39. Qg2 (39. Rxb3 Rxb3 40. Qxb3 Nc5 { [%cal Gd7a4,Gc5e4,Rd7g4,Gc7b7] } 41. Qc3 Rb7 $19) 39... Rb4 40. Qh3 Qxh3 { Her yol Roma'ya! } 41. Rxh3 Nc5 { [%cal Gb4a4,Gc7a7] } 42. Kc1 Nxe4 43. Re3 Nc5 44. Kd2 Na4 45. Rc1 (45. Rb1 Nb6 $19) 45... Nxb2! 46. c5 (46. Kc3 Nxc4 47. Kxb4 Nxe3 48. Rxc7 Nxd5+ $19) 46... Rd4+ 47. Ke2 Rxc5 48. Rxc5 dxc5 49. Rxb3 Nc4 50. Rc3 Rxh4 51. Ke1 Re4+ { Beyaz terk etti. } 0-1
@@ -128,10 +122,10 @@ Dünyanın iki numarası için yine kazanılması gereken bir oyun. Henüz Ulusl
 Daha sonra Uluslararası Usta ünvanına kavuşacak **Sergio Carlos Giardelli** (1955-2015) bu turnuvada sonuncu olsa da, ülkesini olimpiyatlarda temsil etmiş ve ülke şampiyonalarında dereceler elde etmiş bir oyuncu olarak Arjantin satrancının önemli isimlerindendi.
 
 [Event "Mar del Plata"]
-[Site "Mar del Plata ARG"]
-[Date "1982.02.14"]
+[Site "Mar del Plata"]
+[Date "14.02.1982"]
 [Round "6"]
-[White "Timman, Jan"]
+[White "Jan Timman"]
 [Black "Giardelli, Sergio Carlos"]
 [Result "1-0"]
 [WhiteElo "2655"]
@@ -147,11 +141,11 @@ Daha sonra Büyükusta ünvanına kavuşacak olan Garcia Palermo ülkesini ziyar
 **Carlos Garcia Palermo** bu başarıyı elde ettiğinde henüz on yedi yaşındaydı. (Kaynak: Arjantin'de bulunan <i>Rosario ve Güney Santa Fe Satranç Derneği</i> internet sitesinde, Christian Sánchez imzasıyla 2014 yılında yayınlanan <i>Satranç İncileri: Özelde Rosario'nun, genelde ise Arjantin'in satranç tarihine bir yolculuk</i> başlıklı İspanyolca [makale](https://www.ara.org.ar/chs/ajedrez/perlas/#PA32)).
 
 [Event "Mar del Plata"]
-[Site "Mar del Plata ARG"]
-[Date "1982.02.17"]
+[Site "Mar del Plata"]
+[Date "17.02.1982"]
 [Round "7"]
-[White "Garcia Palermo, Carlos"]
-[Black "Timman, Jan"]
+[White "Carlos Garcia Palermo"]
+[Black "Jan Timman"]
 [Result "0-1"]
 [WhiteElo "2470"]
 [BlackElo "2655"]
@@ -165,18 +159,17 @@ Fischer'in yakın dostu ve yardımcısı Arjantinli Büyükusta **Miguel Quinter
 ![Jan Timman hamle sırası kendisinde, Amsterdam, 1978 (siyah-beyaz fotoğraf)](images/jan-timman-amsterdam-1978-b.jpg "Jan Timman, 1978. · Fotoğraf: Rob Croes / Anefo — Nationaal Archief (Hollanda Ulusal Arşivi). Lisans: [CC0 1.0 (Kamu Bağışı)](https://creativecommons.org/publicdomain/zero/1.0/deed.tr). Kaynak: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:IBM_schaaktoernooi_3e_ronde_Timman_aan_zet,_Bestanddeelnr_929-8190.jpg)")
 
 [Event "Mar del Plata"]
-[Site "Mar del Plata ARG"]
-[Date "1982.02.18"]
+[Site "Mar del Plata"]
+[Date "18.02.1982"]
 [Round "8"]
-[White "Timman, Jan"]
-[Black "Quinteros, Miguel Angel"]
+[White "Jan Timman"]
+[Black "Miguel Angel Quinteros"]
 [Result "1-0"]
 [WhiteElo "2655"]
 [BlackElo "2505"]
 [Annotator "FM Nazmi Can Doğan"]
 
-1. e4 c5 2. Nf3 Qc7 { Sicilya Savunması, Quinteros Varyantı. Siyah taşlarla oynayan oyuncu hakkında çok şey söyleyen ilginç bir hamle. Arjantinli Büyükusta orijinal devam yollarını ve tahtada kaosu seven bir oyuncuydu. } 3. c3!? { Beyaz, Alapin varyantında ...Qc7'nin yarayışlı olmayacağını iddia ediyor. } 3... Nf6 4. e5 Nd5 5. d4 (5. c4! $146 { Alapin'de 1. e4 c5 2. c3 Nf6 3. e5 Nd5 4. c4? durumunda konumsal intihar olabilecek bu hamle burada oldukça güçlü. Beyaz pek çok durumda siyah vezirin konumundan da faydalanarak hızla d4 ile merkezi açabiliyor. } 5... Nb4 6. Nc3 N4c6 7. Be2 Nxe5 8. d4 Nxf3+ 9. Bxf3 cxd4 10. Nd5 Qd8 11. Qxd4 $44) 5... cxd4 6. cxd4 d6 7. Bd3 dxe5 (7... Bg4 8. O-O e6 { Açık renkli filin durumu oyundakiyle kıyaslayınca belki de böylesi daha iyidir. }) 8. Nxe5 e6 9. O-O Nc6 10. Nxc6 bxc6! { İzole piyona karşı oynarken bu tipik yaklaşım d5 karesinin kontrolü için önemlidir. } 11. Nd2 c5 { Anlaşılır görünse de Siyah bu tip durumlarda genelde c6-piyonundan kurtulmak için bu denli hevesli olmaz. Belki de Beyazın Qg4 veya Qh5 ile başlayacak olası şah kanadı saldırısı Siyaha korkutucu göründü. } 12. Nf3 (12. Re1! cxd4 13. Qa4+ Bd7 14. Qxd4 $40) 12... Bd6? { [P]
-Stockfish gerçek hatanın bu olduğunu söylüyor. Filin nereden geliştirildiği şah güvenliği için önemlidir. } (12... Be7 13. dxc5 O-O { Siyah şah güvendedir ve durum eşittir. }) 13. dxc5! Qxc5 { [P] } 14. Qa4+! Bd7 { [P] } 15. Qg4! { Bu mükemmel vezir manevrası sayesinde Beyaz girişimi elde eder. } 15... g6 { [P] } 16. Bh6! Bf8 17. Bxf8 Kxf8 { Şimdi Siyahın ...Kg7 ardından koordinasyonu sağlamasına izin vermemek gerek. } 18. Rac1 Qb6 19. Ne5 Be8 20. Nc4 Qd8 21. Be4! { [%cal Gf1d1] } 21... Qf6 22. Bxd5 exd5 23. Ne3 Qxb2? (23... Rd8 { ile savunmak ve ...d4 sürüşünü hazırlamak daha iyi savunma şansları verirdi. }) 24. Nxd5 { Siyahın en büyük sorunu, koyu renkli karelerinin ve şahının oldukça zayıf olması. Üstelik merkezin tamamen açık olması, durumunu daha da güçleştirmektedir. } 24... Kg7 25. Rc3! { Qd4 ile başlayacak saldırı engellenemez. Siyah terk etti. Örneğin, } { [%cal Gg4d4] } 25... Qd2 { [P] } 26. Qe4! { [%csl Ge5][%cal Ge4e5] } (26. Rd1 Bd7 27. Qf3 Rhe8 28. Qf6+ Kg8 29. Rcc1 $18) 26... Qg5 27. h4 Qf5 28. Qd4+ f6 29. Re1 Bf7 30. Re7 $18 { [%csl Ge7,Gf7,Gf5,Gf6][%cal Ge7f7,Gg2g4] } 1-0
+1. e4 c5 2. Nf3 Qc7 { Sicilya Savunması, Quinteros Varyantı. Siyah taşlarla oynayan oyuncu hakkında çok şey söyleyen ilginç bir hamle. Arjantinli Büyükusta orijinal devam yollarını ve tahtada kaosu seven bir oyuncuydu. } 3. c3!? { Beyaz, Alapin varyantında ...Qc7'nin yarayışlı olmayacağını iddia ediyor. } 3... Nf6 4. e5 Nd5 5. d4 (5. c4! $146 { Alapin'de 1. e4 c5 2. c3 Nf6 3. e5 Nd5 4. c4? durumunda konumsal intihar olabilecek bu hamle burada oldukça güçlü. Beyaz pek çok durumda siyah vezirin konumundan da faydalanarak hızla d4 ile merkezi açabiliyor. } 5... Nb4 6. Nc3 N4c6 7. Be2 Nxe5 8. d4 Nxf3+ 9. Bxf3 cxd4 10. Nd5 Qd8 11. Qxd4 $44) 5... cxd4 6. cxd4 d6 7. Bd3 dxe5 (7... Bg4 8. O-O e6 { Açık renkli filin durumu oyundakiyle kıyaslayınca belki de böylesi daha iyidir. }) 8. Nxe5 e6 9. O-O Nc6 10. Nxc6 bxc6! { İzole piyona karşı oynarken bu tipik yaklaşım d5 karesinin kontrolü için önemlidir. } 11. Nd2 c5 { Anlaşılır görünse de Siyah bu tip durumlarda genelde c6-piyonundan kurtulmak için bu denli hevesli olmaz. Belki de Beyazın Qg4 veya Qh5 ile başlayacak olası şah kanadı saldırısı Siyaha korkutucu göründü. } 12. Nf3 (12. Re1! cxd4 13. Qa4+ Bd7 14. Qxd4 $40) 12... Bd6? { [P] Stockfish gerçek hatanın bu olduğunu söylüyor. Filin nereden geliştirildiği şah güvenliği için önemlidir. } (12... Be7 13. dxc5 O-O { Siyah şah güvendedir ve durum eşittir. }) 13. dxc5! Qxc5 { [P] } 14. Qa4+! Bd7 { [P] } 15. Qg4! { Bu mükemmel vezir manevrası sayesinde Beyaz girişimi elde eder. } 15... g6 { [P] } 16. Bh6! Bf8 17. Bxf8 Kxf8 { Şimdi Siyahın ...Kg7 ardından koordinasyonu sağlamasına izin vermemek gerek. } 18. Rac1 Qb6 19. Ne5 Be8 20. Nc4 Qd8 21. Be4! { [%cal Gf1d1] } 21... Qf6 22. Bxd5 exd5 23. Ne3 Qxb2? (23... Rd8 { ile savunmak ve ...d4 sürüşünü hazırlamak daha iyi savunma şansları verirdi. }) 24. Nxd5 { Siyahın en büyük sorunu, koyu renkli karelerinin ve şahının oldukça zayıf olması. Üstelik merkezin tamamen açık olması, durumunu daha da güçleştirmektedir. } 24... Kg7 25. Rc3! { Qd4 ile başlayacak saldırı engellenemez. Siyah terk etti. Örneğin, } { [%cal Gg4d4] } 25... Qd2 { [P] } 26. Qe4! { [%csl Ge5][%cal Ge4e5] } (26. Rd1 Bd7 27. Qf3 Rhe8 28. Qf6+ Kg8 29. Rcc1 $18) 26... Qg5 27. h4 Qf5 28. Qd4+ f6 29. Re1 Bf7 30. Re7 $18 { [%csl Ge7,Gf7,Gf5,Gf6][%cal Ge7f7,Gg2g4] } 1-0
 
 Timman'ın Macar Büyükusta **Lajos Portisch** ile olan partileri her zaman incelemeyi hak eder. Öyle ki, 1994 yılında yayınlanan ve kariyerinin 1983-1993 arasında oynadığı seksen oyuna odaklanan _"**Chess the Adventurous Way**"_ adlı eserinde aralarında oynadıkları üç oyuna yer vermiştir. Portisch turnuvaya altı oyunda 5,5 puanla inanılmaz bir başlangıç yapmış, fakat yedinci turda Timman'ı da yenen Larsen'e kaybetmişti.
 
@@ -185,11 +178,11 @@ Timman, turnuva hakkında kapsamlı yazılar yayınlayan turnuvanın sponsoru _C
 > "Beyaz taşlarla oynayan Portisch'in her zaman zaferi hedefleyeceğini biliyordum. Dahası, sıralamada yarım puan geride olduğu için beni yakalamasının tek yolu kazanmaktı. Bu yüzden bu oyun önemliydi ve dikkatlice hazırlandım."
 
 [Event "Mar del Plata"]
-[Site "Mar del Plata ARG"]
-[Date "1982.02.19"]
+[Site "Mar del Plata"]
+[Date "19.02.1982"]
 [Round "9"]
-[White "Portisch, Lajos"]
-[Black "Timman, Jan"]
+[White "Lajos Portisch"]
+[Black "Jan Timman"]
 [Result "0-1"]
 [WhiteElo "2630"]
 [BlackElo "2655"]
@@ -197,30 +190,29 @@ Timman, turnuva hakkında kapsamlı yazılar yayınlayan turnuvanın sponsoru _C
 
 1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. e3 c5 5. Bd3 Nc6 6. Nf3 Bxc3+ 7. bxc3 d6 { Hâlâ revaçta olan bir devam yolu: Hübner Sistemi. Siyah c3-c4 piyonlarını sabitleyerek ve piyonlarını koyu renklere yerleştirerek Beyazın fil çiftine karşı bir oyun planlıyor. } 8. e4 e5 9. h3 h6 10. Be3 b6 11. O-O (11. d5 Ne7 { Merkez kapalı olmasına rağmen zengin bir oyun var. Tarafların savaş alanı şah kanadı olacak gibi duruyor. } 12. g3 Ng6 13. Nd2 O-O 14. Kf1 (14. Nf1 Nh7 15. h4 Bd7 16. h5 Ne7 17. g4 $14 { Jussupow, Artur - Hall, Jesper, 1-0, Bundesliga 9899, 1999. }) 14... Ne8 15. Kg2 Ne7 16. f3 f5 $132 { Portisch, Lajos - Browne, Walter S, 0-1, Interpolis, 1982. }) 11... Qc7 (11... g5!? { Kısa rok atılmışken h3 sürmenin eksilerinden birini gösteren bir hamle. } 12. Bc2 Qe7 13. Re1 Rg8 14. Nh2 Na5 15. Bd3 g4 16. h4 g3 $132 { Li Chao2 - Flores, Di, 1-0, 42nd Olympiad 2016. }) 12. d5 Ne7 (12... Na5 { Beyaz yine oyundakine benzer şekilde oynayabilirdi. } { [%cal Gc8a6] } 13. Nh4 { [%cal Rf2f4,Gh4f5] } 13... g5 14. Qf3 Qe7 15. Nf5 Bxf5 16. Qxf5 $13) 13. Nh4 g5 14. Qf3 Nfg8 15. Nf5 Nxf5 16. exf5 Nf6 17. g4 { Zorunlu bir dizi hamle ardından piyon yapısı değişti. Beyazın Kg2-Rh1-h4 ve a4-a5 ile devam etmek fikirlerine karşı Siyahın rakibinin duble piyonlarına karşı oynamak ve e4-sürüşü ile alan kazanmak fikirleri bulunuyor. } 17... Ba6 18. Qd1 e4 19. Qa4+ (19. Be2 { Oyunda oynanan hamleyi tehdit olarak saklı tutmak daha iyi olabilirdi. } { [%cal Gd1a4] } 19... Bb7 20. Qa4+ Qd7 21. Qa3 { Uzun roku engelleyerek. } 21... Kd8 { [%cal Gd8c7] } 22. Qb3 $36 { [%cal Ga2a4,Ga4a5] }) 19... Kf8 20. Qxa6 exd3 { Beyaz başlattığı operasyon ile d3-piyonunu önünde sonunda alacağını düşünmüş olmalı. } 21. Qa4 Re8 22. Rae1! (22. Rad1?? { Konumun tehlikelerini gösteren bir durum oluşurdu. } 22... Rxe3! 23. fxe3 h5 $19 { Siyah vezirin de dahil olmasıyla hızlıca kazandıran bir saldırıya dönüşür. } { [%csl Gg4][%cal Gc7e7,Gh8h1] }) 22... Qb7!? { [%cal Gb6b5] } 23. Qd1 b5! 24. Qb1 (24. Qxd3 bxc4 25. Qxc4 Qxd5 { Timman tek şansın bu olduğunu belirtmişti. Bu durumda bile Siyahın oyununun iyi olduğunu düşünüyordu. } 26. Qxd5 Nxd5 { Beyaz, belki de daha fazlasını elde edebilmek ümidiyle bu olanaktan kaçınıyor. }) 24... Re4! 25. Qxd3 Rxc4 26. Rd1 Kg7 27. f3 (27. f4 { Beyazın bir hedefi olacaksa bunun şah kanadında yaratılması oldukça mantıklı olurdu. }) 27... Qe7 28. f4? { [P] Bu gecikmenin bedeli ağır olacak. Şimdi beyaz şah, e4 karesi ve diğer açık renkler kalıcı olarak zayıflıyor. } (28. Kg2) 28... Re8! 29. Bc1 { [P] } (29. Rfe1 Qe4 $19) 29... Qe2! 30. fxg5 hxg5 31. Qg3 (31. Bxg5 Rxg4+! 32. hxg4 Qxg4+ { [%cal Re8h8,Gg1h1,Gg1h2] } 33. Kf2 Ne4+ $19) 31... Ne4 32. f6+ Kg6 33. Qg2 Nxc3 34. Rd2 Qxg2+ 35. Kxg2 Ne2 { Beyaz daha fazla direnç göstermenin gereksiz olduğunu düşünerek terk ediyor. } 0-1
 
-Yazdığı sayısız kitapla satranç dünyasında iz bırakan Zenon Franco, 2024'te altmış sekiz yaşında hayatını kaybetti. Franco, Timman'ın şampiyonluk yolundaki rakiplerinden biriydi.
+Yazdığı sayısız kitapla satranç dünyasında iz bırakan Zenon Franco Ocampos, 2024'te altmış sekiz yaşında hayatını kaybetti. Ocampos, Timman'ın şampiyonluk yolundaki rakiplerinden biriydi.
 
 [Event "Mar del Plata"]
-[Site "Mar del Plata ARG"]
+[Site "Mar del Plata"]
 [Date "1982.02.21"]
 [Round "10"]
-[White "Timman, Jan"]
-[Black "Franco Ocampos, Zenon"]
+[White "Jan Timman"]
+[Black "Zenón Franco Ocampos"]
 [Result "1-0"]
 [WhiteElo "2655"]
 [BlackElo "2505"]
 [Annotator "FM Nazmi Can Doğan"]
 
-1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Ba6 5. b3 Bb4+ 6. Bd2 Be7 7. Nc3 Bb7 8. Bg2 O-O 9. O-O c5 { [P] Beyazın sonraki hamlesinin oynanabildiği durumlarda ...c5 sürüşü dikkatle oynanmalı. Timman siyah taşlarla Vezir-Hint Savunması uzmanı olduğu için beyaz taşlarla oynarken karşısına çıkan bu fırsatı elbette kaçırmıyor. } 10. d5! exd5 { [P] } 11. Ne1! (11. Nh4 Ne4 { [%cal Ge7h4] } 12. Nf5 Bf6 $10) 11... Na6?! (11... Ne4 12. Nxd5 Bxd5 13. cxd5 Nxd2 14. Qxd2 d6 $14 { Veritabanında bu konumdan başlayan yazışmalı partiler beraberlik ile sonuçlanmış. Objektif olarak Benoni formasyonunda iki hafif taş kesmiş olan Siyahın endişe edecek çok şey olmaması gerekir. Beyazın merkezde ve vezir kanadında ilerleyişine Siyah da vezir kanadında yanıt üretecek. } { [%csl Gg3][%cal Ge2e4,Gf2f4,Ge4e5,Gg3g4,Gb6b5] }) 12. cxd5 d6 13. Nd3 (13. e4! $14 { [%csl Gf4][%cal Gf2f4] }) 13... Nc7 (13... Nb4! { Benoni'de taş değişimi olanakları kollanmalı. Zira siyah taşların manevra alanı kısıtlı. }) 14. e4 Nd7 15. f4 Rb8 { Bu hamle ...♗f6'yı hazırlıyor. } (15... Bf6! { Taktik olarak yanlış gibi dursa da Stockfish'in bize öğreteceği bir şeyler var. } { [%cal Rf6d4] } 16. e5 dxe5 17. d6 { Siyah materyal kaybetti gibi duruyor. } 17... e4 18. dxc7 Qxc7 { [%cal Rf6d4,Ge4e3] } 19. Ne5 Nxe5 20. fxe5 Bxe5 $13 { Stockfish 0.00 sularında geziniyor. Biz ise şunu biliyoruz: At karşılığında alınan üç piyon, siyahın aktif taşları sayesinde güzel bir oyun sunar. } { [%cal Ge5d4,Ge4e3,Ga8d8] }) 16. Qc2 Bf6 17. Rad1 Ba6 { Benoni'de Beyaz e4-e5 ilerleyişini başarırsa rahatça üstünlük iddiasında bulunabiliyor. Bu nedenle çoğu zaman Siyahın agresif bir tutum sergilemesi gerekiyor. } (17... Bd4+ 18. Kh1 f5 $132 19. exf5 (19. e5 dxe5 20. fxe5 Nxe5 21. Nxe5 Bxe5 22. Rxf5 $10) 19... Nf6) 18. Rfe1 { [%cal Ge4e5] } 18... Nb5 { 13. hamlede yapılması gereken bu attan kurtulmaya çalışmaktı. } 19. Nxb5 Bxb5 20. Nf2 Re8 21. Kh1 Bd4 22. Be3 Bxe3 23. Rxe3 { Siyah iki çift taş değişmeyi başardı fakat Beyazın e4-e5 fikrine karşı oyunu nerede? } 23... Qf6 24. Qd2 Rbc8 25. Ree1 h5 (25... Qd4 { Stockfish'in ...c4-sürüşü ile karşı oyun elde etmek için bir başka öğretici fikri. } 26. Qc1! (26. Qxd4 cxd4 $132 { [%cal Gc8c2] }) 26... Qb4 { [%csl Gc4][%cal Gc5c4] } (26... Qxf2 27. Rd2 $18) 27. Re3! { [%cal Ga2a3] } 27... c4 28. a3 Qc5 29. b4 Qc7 30. Qc3 $16 { Beyaz e4-e5 sürüşü için çalışmalarına devam eder. }) 26. Bh3 Rc7 27. Kg1 Qh6 { [P]
-Siyah e4-e5 ardından vezirleri değişerek rahatlama peşinde, ancak vezir oyuna dönemeyecek. } 28. e5! { Uzun süredir beklenen tipik ilerleme gerçekleştirildi. d dikeyinde çok güçlü bir geçer ve merkezileşen beyaz taşların dağınık siyah taşlara karşı oyunu öğreticidir. } 28... dxe5 { [P] } 29. a4! { Çok akıllıca bir saptırma. d6 sürüşünün ardından gelebilecek ... ♗c6 dönüşü engellenmiş oldu. } 29... Ba6 30. d6 Rb7 31. Qd5 Nf6 32. Qc6 { [%csl Gd6][%cal Gd6d7] } 32... Rbb8 33. d7 Rf8 34. Qc7 { Ordusu dağılan Siyah terk etti. } { [%csl Ga6][%cal Gc7a7,Gd7d8] } 1-0
+1. d4 Nf6 2. c4 e6 3. Nf3 b6 4. g3 Ba6 5. b3 Bb4+ 6. Bd2 Be7 7. Nc3 Bb7 8. Bg2 O-O 9. O-O c5 { [P] Beyazın sonraki hamlesinin oynanabildiği durumlarda ...c5 sürüşü dikkatle oynanmalı. Timman siyah taşlarla Vezir-Hint Savunması uzmanı olduğu için beyaz taşlarla oynarken karşısına çıkan bu fırsatı elbette kaçırmıyor. } 10. d5! exd5 { [P] } 11. Ne1! (11. Nh4 Ne4 { [%cal Ge7h4] } 12. Nf5 Bf6 $10) 11... Na6?! (11... Ne4 12. Nxd5 Bxd5 13. cxd5 Nxd2 14. Qxd2 d6 $14 { Veritabanında bu konumdan başlayan yazışmalı partiler beraberlik ile sonuçlanmış. Objektif olarak Benoni formasyonunda iki hafif taş kesmiş olan Siyahın endişe edecek çok şey olmaması gerekir. Beyazın merkezde ve vezir kanadında ilerleyişine Siyah da vezir kanadında yanıt üretecek. } { [%csl Gg3][%cal Ge2e4,Gf2f4,Ge4e5,Gg3g4,Gb6b5] }) 12. cxd5 d6 13. Nd3 (13. e4! $14 { [%csl Gf4][%cal Gf2f4] }) 13... Nc7 (13... Nb4! { Benoni'de taş değişimi olanakları kollanmalı. Zira siyah taşların manevra alanı kısıtlı. }) 14. e4 Nd7 15. f4 Rb8 { Bu hamle ...♗f6'yı hazırlıyor. } (15... Bf6! { Taktik olarak yanlış gibi dursa da Stockfish'in bize öğreteceği bir şeyler var. } { [%cal Rf6d4] } 16. e5 dxe5 17. d6 { Siyah materyal kaybetti gibi duruyor. } 17... e4 18. dxc7 Qxc7 { [%cal Rf6d4,Ge4e3] } 19. Ne5 Nxe5 20. fxe5 Bxe5 $13 { Stockfish 0.00 sularında geziniyor. Biz ise şunu biliyoruz: At karşılığında alınan üç piyon, siyahın aktif taşları sayesinde güzel bir oyun sunar. } { [%cal Ge5d4,Ge4e3,Ga8d8] }) 16. Qc2 Bf6 17. Rad1 Ba6 { Benoni'de Beyaz e4-e5 ilerleyişini başarırsa rahatça üstünlük iddiasında bulunabiliyor. Bu nedenle çoğu zaman Siyahın agresif bir tutum sergilemesi gerekiyor. } (17... Bd4+ 18. Kh1 f5 $132 19. exf5 (19. e5 dxe5 20. fxe5 Nxe5 21. Nxe5 Bxe5 22. Rxf5 $10) 19... Nf6) 18. Rfe1 { [%cal Ge4e5] } 18... Nb5 { 13. hamlede yapılması gereken bu attan kurtulmaya çalışmaktı. } 19. Nxb5 Bxb5 20. Nf2 Re8 21. Kh1 Bd4 22. Be3 Bxe3 23. Rxe3 { Siyah iki çift taş değişmeyi başardı fakat Beyazın e4-e5 fikrine karşı oyunu nerede? } 23... Qf6 24. Qd2 Rbc8 25. Ree1 h5 (25... Qd4 { Stockfish'in ...c4-sürüşü ile karşı oyun elde etmek için bir başka öğretici fikri. } 26. Qc1! (26. Qxd4 cxd4 $132 { [%cal Gc8c2] }) 26... Qb4 { [%csl Gc4][%cal Gc5c4] } (26... Qxf2 27. Rd2 $18) 27. Re3! { [%cal Ga2a3] } 27... c4 28. a3 Qc5 29. b4 Qc7 30. Qc3 $16 { Beyaz e4-e5 sürüşü için çalışmalarına devam eder. }) 26. Bh3 Rc7 27. Kg1 Qh6 { [P] Siyah e4-e5 ardından vezirleri değişerek rahatlama peşinde, ancak vezir oyuna dönemeyecek. } 28. e5! { Uzun süredir beklenen tipik ilerleme gerçekleştirildi. d dikeyinde çok güçlü bir geçer ve merkezileşen beyaz taşların dağınık siyah taşlara karşı oyunu öğreticidir. } 28... dxe5 { [P] } 29. a4! { Çok akıllıca bir saptırma. d6 sürüşünün ardından gelebilecek ... ♗c6 dönüşü engellenmiş oldu. } 29... Ba6 30. d6 Rb7 31. Qd5 Nf6 32. Qc6 { [%csl Gd6][%cal Gd6d7] } 32... Rbb8 33. d7 Rf8 34. Qc7 { Ordusu dağılan Siyah terk etti. } { [%csl Ga6][%cal Gc7a7,Gd7d8] } 1-0
 
 ![Jan Timman bir partide, IBM turnuvası 12. tur, 1978 (siyah-beyaz fotoğraf)](images/jan-timman-ibm-1978-12-tur.jpg "Jan Timman, 1978. · Fotoğraf: Hans Peters / Anefo — Nationaal Archief (Hollanda Ulusal Arşivi). Lisans: [CC0 1.0 (Kamu Bağışı)](https://creativecommons.org/publicdomain/zero/1.0/deed.tr). Kaynak: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:IBM_schaaktoernooi,_12e_ronde_Timman_tijdens_partij_tegen_Romanistren,_Bestanddeelnr_929-8370.jpg)")
 
 [Event "Mar del Plata"]
-[Site "Mar del Plata ARG"]
-[Date "1982.02.22"]
+[Site "Mar del Plata"]
+[Date "22.02.1982"]
 [Round "11"]
-[White "Braga, Fernando Alberto"]
-[Black "Timman, Jan"]
+[White "Fernando Braga"]
+[Black "Jan Timman"]
 [Result "1/2-1/2"]
 [WhiteElo "2375"]
 [BlackElo "2655"]
@@ -231,11 +223,11 @@ Siyah e4-e5 ardından vezirleri değişerek rahatlama peşinde, ancak vezir oyun
 On bir sene sonra Karpov'a karşı FIDE Dünya Şampiyonası maçında (o sırada FIDE'ye bayrak açan **Kasparov** da **Short** ile PCA Dünya Şampiyonası maçında karşılaşıyordu) **Ulf Andersson** ve **Jeroen Piket** ile birlikte Timman'a yardımcı olacak **Yasser Seirawan**, turnuva liderine karşı siyah taşlarla gözde silahı Caro-Kann'a sarılmıştı.
 
 [Event "Mar del Plata"]
-[Site "Mar del Plata ARG"]
-[Date "1982.02.23"]
+[Site "Mar del Plata"]
+[Date "23.02.1982"]
 [Round "12"]
-[White "Timman, Jan"]
-[Black "Seirawan, Yasser"]
+[White "Jan Timman"]
+[Black "Yasser Seirawan"]
 [Result "0-1"]
 [WhiteElo "2655"]
 [BlackElo "2575"]
@@ -246,11 +238,11 @@ On bir sene sonra Karpov'a karşı FIDE Dünya Şampiyonası maçında (o sırad
 Son tura turnuva şampiyonluğunu garanti ederek giren Timman, bir başka efsane **Polugaevsky**'nin gözünü korkutmuşa benziyor.
 
 [Event "Mar del Plata"]
-[Site "Mar del Plata ARG"]
-[Date "1982.02.26"]
+[Site "Mar del Plata"]
+[Date "26.02.1982"]
 [Round "13"]
-[White "Polugaevsky, Lev"]
-[Black "Timman, Jan"]
+[White "Lev Polugaevsky"]
+[Black "Jan Timman"]
 [Result "1/2-1/2"]
 [WhiteElo "2600"]
 [BlackElo "2655"]
