@@ -23,3 +23,6 @@
 .crosstable { font-family: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace; font-size: 13.5px; line-height: 1.75;
   letter-spacing: 0; text-transform: none; font-variant-ligatures: none; color: rgba(241,233,220,.88);
   background: #14110E; border-top: 1px solid #2E2620; border-bottom: 1px solid #2E2620; padding: 1.25rem 1.5rem; tab-size: 2; }
+
+/* Fotoğraf künyeleri: sitenin mono fontu, okunur boyutta (f-mono'dan farkı: büyük harf ve geniş harf aralığı yok). */
+.credit { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 11px; line-height: 1.75; letter-spacing: 0; text-transform: none; }
