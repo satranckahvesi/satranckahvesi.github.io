@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 // Paket (jQuery + chess.js + chessboard.js + ChessPublica) bu repo'da public/chesspublica/ altında durur
 // ve yalnızca oyun içeren sayfalarda yüklenir. Paket üzerinde yapılan düzeltmeler:
 //  - pgn-player.js'i yüklemeye çalışan, tek dosya paketinde hata fırlatan blok kaldırıldı;
+//  - paketin kendi basit <pgn-player> tanımı kaldırıldı; <pgn-player> artık ayrı ES modülünden
+//    (pgn-player.js + helpers/pgn/icons/board.js) gelir ve [P] ile bulmaca görünümü sağlar;
 //  - global nesneye window.ChessPublica takma adı eklendi (paket yalnızca window.JekyllChess veriyordu).
 const BASE = `${import.meta.env.BASE_URL}chesspublica`;
 
@@ -25,7 +27,15 @@ function load(): Promise<void> {
     const js = document.createElement('script');
     js.src = `${BASE}/ChessPublica.all.min.js`;
     js.async = true;
-    js.onload = () => resolve();
+    js.onload = () => {
+      // <pgn-player> öğesini tanımlayan modül, paketin global Chess/Chessboard nesnelerini kullanır.
+      const mod = document.createElement('script');
+      mod.type = 'module';
+      mod.src = `${BASE}/pgn-player.js`;
+      mod.onload = () => resolve();
+      mod.onerror = () => { loading = null; reject(new Error('pgn-player yüklenemedi')); };
+      document.head.appendChild(mod);
+    };
     js.onerror = () => { loading = null; reject(new Error('ChessPublica yüklenemedi')); };
     document.head.appendChild(js);
   });

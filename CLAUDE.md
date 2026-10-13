@@ -16,3 +16,4 @@ CSS in `src/site.css`. The note at the top of that file lists how this site diff
 - `src/lib/curly.js` (+ `tests/curly.test.js`) and `src/lib/curly-dom.ts`: curly quotes, em dashes and "1/2" → "½" for
   article prose and PGN comments (never move text). Run the tests with `pnpm test`.
 - Still to port if wanted: `scripts/check_content_links.rb`, `scripts/build-assets.mjs` (Jekyll-specific), other tests.
+- `<pgn-player>` (puzzle view): `public/chesspublica/pgn-player.js` + `helpers.js`, `pgn.js`, `icons.js`, `board.js` are copied verbatim from ChessPublica's `assets/`; the bundle's own `<pgn-player>` definition was removed so the module can define it. Games with a `[P]`/`[Pn]` comment render as `<pgn-player>` (`PgnGame` in `ArticleBody.tsx`), others as `<pgn>`.

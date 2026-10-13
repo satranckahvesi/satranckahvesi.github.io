@@ -51,13 +51,36 @@ function Game({ header, moves }: { header: string; moves: string }) {
   );
 }
 
-// ChessPublica <pgn> öğesini çizerken DOM'u kendisi değiştirdiği için oyun, React'in içine
-// dokunmadığı bir kutuda (dangerouslySetInnerHTML) durur.
-function PgnGame({ header, moves }: { header: string; moves: string }) {
-  const raw = `${header.trim()}\n\n${moves.trim()}`.replace(/&/g, '&amp;').replace(/</g, '&lt;');
-  return <div className="cp-game pb-4" dangerouslySetInnerHTML={{ __html: `<pgn>\n${raw}\n</pgn>` }} />;
+// Bulmaca işareti: yorumda [P] ya da [P2] (çözülecek yarım hamle sayısı).
+const PUZZLE_MARK = /\[P\s*\d*\]/;
+
+// Ana hattaki ilk [P] işaretinde hamle sırası kimdeyse onu döndürür ('w' | 'b'); işaret yoksa null.
+function puzzleSide(header: string, moves: string): 'w' | 'b' | null {
+  const fen = header.match(/\[FEN\s+"([^"]+)"\]/i)?.[1];
+  const blackFirst = fen ? fen.split(' ')[1] === 'b' : false;
+  let plies = 0;
+  let depth = 0;
+  const re = /\{[^}]*\}|[()]|\$\d+|\d+\.+|1-0|0-1|1\/2-1\/2|\*|[^\s(){}]+/g;
+  for (const m of moves.matchAll(re)) {
+    const t = m[0];
+    if (t === '(') depth++;
+    else if (t === ')') depth--;
+    else if (t[0] === '{') { if (depth === 0 && PUZZLE_MARK.test(t)) return (plies % 2 === 0) !== blackFirst ? 'w' : 'b'; }
+    else if (depth === 0 && /^[A-Za-z]/.test(t) && !/^\d/.test(t)) plies++;
+  }
+  return null;
 }
 
+// ChessPublica <pgn> öğesini çizerken DOM'u kendisi değiştirdiği için oyun, React'in içine
+// dokunmadığı bir kutuda (dangerouslySetInnerHTML) durur. [P] işaretli oyunlar <pgn-player>
+// ile çizilir (bulmaca görünümü); ilk işaret Siyah'ın hamlesindeyse tahta Siyah tarafından açılır.
+function PgnGame({ header, moves }: { header: string; moves: string }) {
+  const side = puzzleSide(header, moves);
+  const head = side === 'b' && !/\[Orientation\s/i.test(header) ? `${header.trim()}\n[Orientation "black"]` : header.trim();
+  const raw = `${head}\n\n${moves.trim()}`.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  const tag = side ? 'pgn-player' : 'pgn';
+  return <div className="cp-game pb-4" dangerouslySetInnerHTML={{ __html: `<${tag}>\n${raw}\n</${tag}>` }} />;
+}
 
 // İçindekiler: yazıdaki tüm oyunlar, [Event] başlıklarından otomatik çıkarılır.
 type TocItem = { id: string; round: string; label: string; result: string };

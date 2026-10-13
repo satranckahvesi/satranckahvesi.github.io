@@ -18,6 +18,9 @@
 .cp-game .jc-board-wrapper [class*="board-b72b1"] { margin-left: auto; margin-right: auto; }
 /* ChessPublica kutusunun yatay iç boşluğu kaldırıldı: oyun metni yazı metniyle aynı hizada başlar. */
 .cp-game .pgn-container { padding-left: 0; padding-right: 0; }
+/* <pgn-player> başlığı koyu zeminde okunsun */
+.cp-game .video-title-players { color: #E8DECF; }
+.cp-game .video-title-event { color: #A89A88; }
 
 /* Çapraz tablo: sabit genişlikli, okunaklı bir mono font (IBM Plex Mono) ve hafif bir çerçeve. */
 .crosstable { font-family: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace; font-size: 13.5px; line-height: 1.75;
