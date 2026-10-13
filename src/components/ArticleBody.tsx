@@ -104,7 +104,7 @@ function PgnGame({ header, moves }: { header: string; moves: string }) {
 
 // İçindekiler: yazıdaki tüm oyunlar, [Event] başlıklarından otomatik çıkarılır.
 type GameItem = { id: string; round: string; label: string; result: string };
-type TocItem = { id: string; label: string };
+type TocItem = { id: string; label: string; markup: string };
 
 function surname(name?: string) {
   return (name ?? '').split(',')[0].trim();
@@ -149,7 +149,7 @@ function sectionToc(chunks: string[]): TocItem[] {
     let id = slugify(label) || `bolum-${items.length + 1}`;
     while (seen.has(id)) id += '-2';
     seen.add(id);
-    items.push({ id, label });
+    items.push({ id, label, markup: headingText(c.trim()) });
   });
   return items;
 }
@@ -164,7 +164,7 @@ function Toc({ items, onGo }: { items: TocItem[]; onGo: (id: string) => void }) 
             <a href={`#${it.id}`} onClick={(e) => { e.preventDefault(); onGo(it.id); }}
               className="group flex items-baseline gap-4 py-3 text-[#F1E9DC]/85 hover:text-[#C8893E] transition-colors">
               <span className="f-mono text-[#C8893E] w-[3rem] shrink-0">{String(n + 1).padStart(2, '0')}</span>
-              <span className="flex-1">{it.label}</span>
+              <span className="flex-1"><Markdown options={{ forceInline: true }}>{it.markup}</Markdown></span>
             </a>
           </li>
         ))}
