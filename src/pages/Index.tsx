@@ -166,7 +166,7 @@ export default function Index() {
         <ChessGrid />
         <div className="absolute top-24 inset-x-0 z-20 pointer-events-none">
           <div className="max-w-[1440px] mx-auto px-6 md:px-10 flex justify-between f-mono text-[#A89A88]">
-            <span>Sayı 47 · Ekim 2026</span><span className="hidden sm:inline">Satranç üzerine yazılar</span>
+            <span>Sayı 1 · Ekim 2026</span><span className="hidden sm:inline">Satranç üzerine yazılar</span>
           </div>
         </div>
         <div className="absolute inset-x-0 bottom-0 z-20 pointer-events-none">
