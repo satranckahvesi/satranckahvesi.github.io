@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowUpRight, Menu as MenuIcon, X, Instagram, Twitter, Youtube, Mail } from 'lucide-react';
+import Markdown from 'markdown-to-jsx';
 import { Link } from 'react-router-dom';
 import PhotoCredit, { PHOTO } from '@/components/PhotoCredit';
 import { ARTICLES, articlePath } from '@/data/articles';
@@ -153,7 +154,7 @@ export default function Index() {
               <span className="block overflow-hidden pb-[0.2em] -mb-[0.2em]"><span className="rise italic text-[#C8893E]" style={{ animationDelay: '.3s' }}>ve bir zaferin anatomisi</span></span>
             </h1>
             <div className="mt-10 flex flex-col md:flex-row md:items-end justify-between gap-8">
-              <p className="max-w-md text-lg text-[#F1E9DC]/80">{cover.excerpt ?? cover.dek} <span className="f-mono text-[#A89A88] block mt-3">Yazan: {cover.author}</span></p>
+              <p className="max-w-md text-lg text-[#F1E9DC]/80"><Markdown options={{ forceInline: true }}>{cover.excerpt ?? cover.dek ?? ''}</Markdown> <span className="f-mono text-[#A89A88] block mt-3">Yazan: {cover.author}</span></p>
               <Link to={articlePath(cover)} className="pointer-events-auto inline-flex items-center gap-3 rounded-full bg-[#F1E9DC] text-[#0E0C0A] h-14 px-8 font-semibold hover:bg-[#C8893E] transition-colors self-start">Yazıyı oku <ArrowUpRight size={18} /></Link>
             </div>
           </div>
@@ -172,7 +173,6 @@ export default function Index() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 reveal">
           <div><Label n="01">Bu Sayıda</Label>
             <h2 className="f-display text-[clamp(48px,7vw,120px)] mt-8">Öne <em className="italic text-[#C8893E]">çıkanlar</em></h2></div>
-          <p className="max-w-sm text-[#F1E9DC]/70">Analizler, röportajlar ve tarihten hikâyeler. Her ay, tahtanın ötesine bakan yazılar.</p>
         </div>
         <div className="grid md:grid-cols-12 gap-10 mt-16">
           {featured.map((a, i) => (
@@ -190,7 +190,7 @@ export default function Index() {
       {/* KATEGORİLER / ARŞİV */}
       <section id="kategoriler" className="bg-[#F1E9DC] text-[#0E0C0A]">
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 py-24 md:py-40 grid md:grid-cols-12 gap-10">
-          <div className="md:col-span-4 reveal">
+          <div className="md:col-span-3 reveal">
             <p className="f-mono text-[#0E0C0A]/60"><span className="text-[#9A5F1E]">02</span> — Kategoriler</p>
             <h2 className="f-display text-[clamp(56px,7vw,120px)] mt-8">Tüm<br /><em className="italic">yazılar</em></h2>
             <div role="tablist" className="flex flex-wrap gap-x-6 gap-y-2 mt-12">
@@ -200,7 +200,7 @@ export default function Index() {
               ))}
             </div>
           </div>
-          <ul className="md:col-span-8">
+          <ul className="md:col-span-9">
             {list.map((a, i) => (
               <li key={cat + a.id}>
                 <Link to={articlePath(a)} className="group w-full text-left grid grid-cols-[48px_1fr_auto] md:grid-cols-[48px_1fr_auto] items-center gap-4 md:gap-6 py-7 border-b border-[#0E0C0A]/15">

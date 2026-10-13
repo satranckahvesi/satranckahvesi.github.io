@@ -60,7 +60,7 @@ function articlePages() {
         for (const a of articles) {
           const url = `${SITE_URL}/${a.slug}/`;
           const title = `${a.title} — Satranç vs.`;
-          const desc = (a.excerpt ?? a.dek).replace(/_/g, '');
+          const desc = (a.excerpt ?? a.dek).replace(/[*_]/g, '');
           let html = template.replace(/<title[^>]*>[^<]*<\/title>/, `<title>${esc(title)}</title>`);
           html = setMeta(html, 'name', 'description', desc);
           html = setMeta(html, 'property', 'og:title', title);
