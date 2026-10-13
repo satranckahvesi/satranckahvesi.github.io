@@ -3,6 +3,7 @@ import { ChevronDown } from 'lucide-react';
 import Markdown from 'markdown-to-jsx';
 import { useChessPublica } from '@/lib/chesspublica';
 import { curlyComments, curlyProse, watchComments } from '@/lib/curly-dom';
+import ProgressiveImage from '@/components/ProgressiveImage';
 import { watchLocalization } from '@/lib/localize-dom';
 
 // Makale gövdesi: markdown metni + PGN oyun blokları + çapraz tablo + video bağlantısı.
@@ -175,10 +176,9 @@ function Figure({ chunk }: { chunk: string }) {
   const m = chunk.match(IMG_CHUNK);
   if (!m) return null;
   const [, alt, path, caption] = m;
-  const src = /^(https?:)?\/\//.test(path) ? path : `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
   return (
     <figure className="my-10 mx-auto w-fit max-w-full">
-      <img src={src} alt={alt} loading="lazy" className="block mx-auto w-auto h-auto max-w-full max-h-[720px] md:max-w-[600px] grayscale" />
+      <ProgressiveImage path={path} alt={alt} />
       {caption && (
         <figcaption className="credit mt-3 w-0 min-w-full text-[#A89A88]">
           <Markdown options={captionOptions}>{caption}</Markdown>
