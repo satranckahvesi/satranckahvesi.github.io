@@ -6,6 +6,27 @@ import '../site.css';
 
 const TIMMAN = splitArticle(timmanMd);
 
+const PHOTO = {
+  src: `${import.meta.env.BASE_URL}images/jan-timman-1973.jpg`,
+  alt: 'Jan Timman, AVRO satranç turnuvası, 1973 (siyah-beyaz fotoğraf)',
+  page: 'https://commons.wikimedia.org/wiki/File:AVRO-schaaktoernooi,_Jan_Timman,_Bestanddeelnr_926-4781.jpg',
+  archive: 'http://proxy.handle.net/10648/ac2efbbc-d0b4-102d-bcf8-003048976d84',
+  license: 'https://creativecommons.org/publicdomain/zero/1.0/deed.tr',
+};
+
+function PhotoCredit({ full = false, className = '' }: { full?: boolean; className?: string }) {
+  const link = 'underline underline-offset-2 hover:text-[#F1E9DC]';
+  return (
+    <p className={`text-[11px] leading-relaxed text-[#A89A88] ${className}`}>
+      Fotoğraf: Rob Mieremet / Anefo — Nationaal Archief (Hollanda Ulusal Arşivi), 12 Haziran 1973
+      {full && <> · Envanter no 2.24.01.05, madde 926-4781 · Konu: AVRO satranç turnuvası, Jan Timman</>}
+      . Lisans: <a href={PHOTO.license} target="_blank" rel="noreferrer" className={link}>CC0 1.0 (Kamu Malı Bağışı)</a>.
+      {' '}Kaynak: <a href={PHOTO.page} target="_blank" rel="noreferrer" className={link}>Wikimedia Commons</a>
+      {full && <> · <a href={PHOTO.archive} target="_blank" rel="noreferrer" className={link}>Nationaal Archief kaydı</a></>}
+    </p>
+  );
+}
+
 const NAV = [
   ['Kapak', 'kapak'],
   ['Yazılar', 'yazilar'],
@@ -14,10 +35,10 @@ const NAV = [
   ['Hakkında', 'hakkinda'],
 ] as const;
 
-type Article = { id: string; cat: string; title: string; dek: string; author: string; read: string; date?: string; chunks?: string[]; body: string[] };
+type Article = { id: string; cat: string; title: string; dek: string; author: string; read: string; date?: string; chunks?: string[]; photo?: boolean; body: string[] };
 
 const ARTICLES: Article[] = [
-  { id: 'kapak', cat: 'Satranç tarihi', title: 'Mar del Plata 1982: Jan Timman ve bir zaferin anatomisi', dek: TIMMAN.dek.replace(/_/g, ''), author: 'FM Nazmi Can Doğan', read: '', date: '22 Eylül 2026', chunks: TIMMAN.chunks, body: [] },
+  { id: 'kapak', cat: 'Satranç tarihi', title: 'Mar del Plata 1982: Jan Timman ve bir zaferin anatomisi', dek: TIMMAN.dek.replace(/_/g, ''), author: 'FM Nazmi Can Doğan', read: '', date: '22 Eylül 2026', chunks: TIMMAN.chunks, photo: true, body: [] },
   { id: 'roportaj', cat: 'Röportaj', title: '“Kaybetmeyi öğrenmeden ustalaşamazsın”', dek: 'Genç bir büyükusta ile hazırlık, yorgunluk ve turnuva psikolojisi üzerine.', author: 'Selin Kaya', read: '11 dk',
     body: ['Bir turnuvanın son turunda, saat düşerken neler hissedilir? Konuğumuz kariyerinin dönüm noktalarını anlatıyor.', '“İlk yıllarda her yenilgi bir hakaret gibiydi. Sonra fark ettim ki en çok kaybettiğim partilerden öğreniyorum.”'] },
   { id: 'analiz', cat: 'Analiz', title: 'Kale oyunsonlarında Lucena köprüsü', dek: 'Her kulüp oyuncusunun bilmesi gereken pozisyonu adım adım çözüyoruz.', author: 'Kerem Aydın', read: '8 dk',
@@ -111,6 +132,12 @@ function Reader({ a, onClose }: { a: Article; onClose: () => void }) {
         <h1 className="f-display text-[clamp(44px,6vw,88px)] mt-6">{a.title}</h1>
         <p className="text-xl text-[#F1E9DC]/80 mt-8 italic" style={{ fontFamily: 'Fraunces, serif' }}>{a.dek}</p>
         <p className="f-mono text-[#A89A88] mt-8 pb-8 border-b border-[#2E2620]">Yazan: {a.author}</p>
+        {a.photo && (
+          <figure className="mt-10">
+            <img src={PHOTO.src} alt={PHOTO.alt} className="w-full max-h-[70vh] object-cover object-[50%_20%] grayscale" />
+            <figcaption className="mt-3"><PhotoCredit full /></figcaption>
+          </figure>
+        )}
         <div className="mt-10 space-y-6 text-lg leading-[1.8] text-[#F1E9DC]/85">
           {a.chunks ? <ArticleBody chunks={a.chunks} /> : a.body.map((p, i) => <p key={i} className={i === 0 ? 'first-letter:f-display first-letter:text-7xl first-letter:float-left first-letter:mr-3 first-letter:text-[#C8893E] first-letter:leading-[0.8]' : ''}>{p}</p>)}
         </div>
@@ -166,6 +193,14 @@ export default function Index() {
 
       {/* KAPAK */}
       <section id="kapak" className="relative h-[100svh] min-h-[680px] overflow-hidden">
+        {cover.photo && (
+          <>
+            <img src={PHOTO.src} alt={PHOTO.alt} className="absolute inset-y-0 right-0 h-full w-full md:w-[55%] object-cover object-[50%_20%] grayscale opacity-40 md:opacity-80" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0E0C0A] via-[#0E0C0A]/70 md:via-[#0E0C0A]/40 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#0E0C0A] to-transparent" />
+            <div className="absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-[#0E0C0A] to-transparent" />
+          </>
+        )}
         <ChessGrid />
         <div className="absolute top-24 inset-x-0 z-20 pointer-events-none">
           <div className="max-w-[1440px] mx-auto px-6 md:px-10 flex justify-between f-mono text-[#A89A88]">
@@ -173,7 +208,7 @@ export default function Index() {
           </div>
         </div>
         <div className="absolute inset-x-0 bottom-0 z-20 pointer-events-none">
-          <div className="max-w-[1440px] mx-auto px-6 md:px-10 pb-12 md:pb-16">
+          <div className="max-w-[1440px] mx-auto px-6 md:px-10 pb-28 md:pb-16">
             <p className="f-mono text-[#C8893E] mb-6">{cover.cat} — {cover.date}</p>
             <h1 className="f-display text-[clamp(40px,6.5vw,112px)] max-w-[18ch]">
               <span className="block overflow-hidden pb-[0.2em] -mb-[0.2em]"><span className="rise">Mar del Plata 1982:</span></span>
@@ -185,6 +220,7 @@ export default function Index() {
             </div>
           </div>
         </div>
+        {cover.photo && <PhotoCredit className="absolute bottom-3 inset-x-6 md:inset-x-10 z-20 max-w-[1440px] mx-auto md:max-w-[520px] md:left-10 md:right-auto md:mx-0 pointer-events-auto" />}
       </section>
 
       {/* ÖNE ÇIKANLAR */}
