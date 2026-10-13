@@ -1,5 +1,3 @@
-Efsanevi Büyükusta Jan Timman'ın kariyerinin en önemli zaferlerinden biri 1982 _Mar del Plata (Clarín)_ turnuvasıydı. Turnuvaya kötü başlayan Timman hızla toparlanıp Karpov, Portisch ve Polugaevsky gibi devlerin önünde zirveye nasıl ulaştı?
-
 Bu yazı, geçtiğimiz aylarda yaşamını yitiren Hollandalı Büyükusta **Jan Timman**'ın (1951-2026) kariyerinden bir turnuvaya odaklanacak. Timman'ın reyting listesinde dünya şampiyonu **Karpov'un ardından ikinci sırada** yer aldığı 1982 senesine gideceğiz. Arjantin'in iyileştirici havasında Timman'ın partilerinin öğretici anlarına odaklanacağız.
 
 Oyunların önemli anlarında okuyucuyu Timman ile birlikte hamleleri bulmaya davet ediyorum. Timman'ın turnuva oyunlarını incelerken satranç tarihinin başka efsane isimlerine de elbette değinme şansımız olacak. Benim için öğretici olan bu denemenin okuyucu için de faydalı olacağını umuyorum.
