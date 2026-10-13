@@ -1,16 +1,28 @@
 // <pgn-player> yorumlarının sonundaki oynat düğmesini yorum metninin son satırına taşır (satır içi öğe gibi):
 // satır sonunda yer varsa metnin hemen yanında, yoksa bir alt satırda durur. Düğme her adımda yeniden oluşturulduğu
-// için taşıma, eklenen düğmeler izlenerek yapılır. Varyant içeren yorumlarda düğme olduğu yerde (altta) kalır.
+// için taşıma, eklenen düğmeler izlenerek yapılır. Varyantlı yorumlarda en son varyantın son metin satırına girer.
 const GAME = '.cp-game';
+
+// Düğmenin gireceği yer: yorumun (varyant varsa en son varyantın) son metin öğesi.
+function lastTextTarget(container: Element): Element {
+  const last = container.lastElementChild;
+  if (last?.matches('.variation-block')) return lastTextTarget(last.querySelector('.variation-content') ?? last);
+  if (last?.matches('.variation-comment')) return last.lastElementChild ?? last;
+  return container;
+}
 
 function move(btn: Element) {
   const comment = btn.parentElement;
   if (!comment?.classList.contains('video-comment') || !comment.closest(GAME)) return;
-  if (comment.querySelector('.variation-block')) return;
+  const blocks = comment.querySelectorAll(':scope > .variation-block');
   const bodies = comment.querySelectorAll('.comment-body');
+  const lastBlock = blocks[blocks.length - 1];
+  const target = lastBlock ? lastTextTarget(lastBlock.querySelector('.variation-content') ?? lastBlock) : bodies[bodies.length - 1];
+  if (!target) return;
+  btn.classList.add('cp-inline');
   // Düğmeden önce sıradan bir boşluk: satır sonunda yer varsa metinle arasında boşluk kalır, bir alt satıra inerse
   // boşluk satır sonunda erir ve düğme metinle aynı sol kenardan başlar (margin kullanılırsa girinti kalırdı).
-  bodies[bodies.length - 1]?.append(document.createTextNode(' '), btn);
+  target.append(document.createTextNode(' '), btn);
 }
 
 export function watchInlinePlay(root: Element) {

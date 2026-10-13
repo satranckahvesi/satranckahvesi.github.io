@@ -23,7 +23,7 @@
 /* Varyantlı yorumlarda sağ alta oturan oynat düğmesi metnin son satırını kapatmasın */
 .cp-game .video-comment:has(> .comment-play-btn) { padding-bottom: 3rem; }
 /* Yorumun son satırına taşınan oynat düğmesi: satır içi, metinle aynı hizada */
-.cp-game .comment-body > .comment-play-btn { position: static; display: inline-flex; vertical-align: middle; width: 2rem; height: 2rem; margin: -.5rem 0; }
+.cp-game .comment-play-btn.cp-inline { position: static; display: inline-flex; vertical-align: middle; width: 2rem; height: 2rem; margin: -.5rem 0; }
 /* <pgn-player> süs ikonları: başlık simgesi, ipucu satırı simgesi, yorum balonu ve varyant oynat simgeleri. Kalanlar: ayarlar çubuğu (dişli, indir,
    çevir, hız), tahtanın ortasındaki ve yorum sonundaki oynat düğmeleri, çözüm (anahtar) düğmesi. */
 .cp-game .video-title-emoji,

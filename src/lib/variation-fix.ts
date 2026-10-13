@@ -24,7 +24,8 @@ const savedBlocks = new WeakMap<Player, Element[] | null>();
 const savedLines = new WeakMap<Player, Element | null>();
 
 function ensurePlayButton(box: Element) {
-  let button = box.querySelector(':scope > .comment-play-btn');
+  // Düğme satır içine taşınmış olabilir (inline-play.ts): kutunun herhangi bir yerinde aranır, ikincisi eklenmez.
+  let button = box.querySelector('.comment-play-btn');
   if (!button) {
     button = document.createElement('button');
     button.className = 'comment-play-btn';
