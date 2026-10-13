@@ -36,9 +36,9 @@ export default function Post() {
         <p className="f-mono text-[#A89A88] mt-8 pb-8 border-b border-[#2E2620]">Yazan: {a.author}</p>
         {lead && <div className="mt-10"><ArticleBody chunks={[lead]} /></div>}
         {a.photo && (
-          <figure className="mt-10">
-            <img src={PHOTO.src} alt={PHOTO.alt} className="w-full h-auto grayscale" />
-            <figcaption className="mt-3"><PhotoCredit full /></figcaption>
+          <figure className="mt-10 mx-auto w-fit max-w-full">
+            <img src={PHOTO.src} alt={PHOTO.alt} className="block mx-auto w-auto h-auto max-w-full max-h-[720px] md:max-w-[600px] grayscale" />
+            <figcaption className="mt-3 w-0 min-w-full"><PhotoCredit full /></figcaption>
           </figure>
         )}
         <div className="mt-10 space-y-6 text-lg leading-[1.8] text-[#F1E9DC]/85">
