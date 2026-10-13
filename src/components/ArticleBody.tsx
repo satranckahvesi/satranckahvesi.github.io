@@ -154,11 +154,13 @@ function Figure({ chunk }: { chunk: string }) {
   const m = chunk.match(IMG_CHUNK);
   if (!m) return null;
   const [, alt, path, caption] = m;
+  // Kitap kapağı küçük gösterilir; dar görselin altındaki künye okunabilsin diye künye kapaktan geniş tutulur.
+  const cover = /^images\/[^/]*adventurous-way/.test(path);
   return (
-    <figure className="my-10 mx-auto w-fit max-w-full">
-      <ProgressiveImage path={path} alt={alt} />
+    <figure className={`my-10 mx-auto max-w-full ${cover ? 'w-full md:max-w-[480px] text-center' : 'w-fit'}`}>
+      <ProgressiveImage path={path} alt={alt} cover={cover} />
       {caption && (
-        <figcaption className="credit mt-3 w-0 min-w-full text-[#A89A88]">
+        <figcaption className={`credit mt-3 text-[#A89A88] ${cover ? '' : 'w-0 min-w-full'}`}>
           <Markdown options={captionOptions}>{caption}</Markdown>
         </figcaption>
       )}

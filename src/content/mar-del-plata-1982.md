@@ -176,6 +176,8 @@ Fischer'in yakın dostu ve yardımcısı Arjantinli Büyükusta **Miguel Quinter
 
 Timman'ın Macar Büyükusta **Lajos Portisch** ile olan partileri her zaman incelemeyi hak eder. Öyle ki, 1994 yılında yayınlanan ve kariyerinin 1983-1993 arasında oynadığı seksen oyuna odaklanan _"**Chess the Adventurous Way**"_ adlı eserinde aralarında oynadıkları üç oyuna yer vermişti. Portisch turnuvaya altı oyunda 5,5 puanla inanılmaz bir başlangıç yapmış, fakat yedinci turda Timman'ı da yenen Larsen'e kaybetmişti.
 
+![Jan Timman, “Timman's Selected Games: Chess the Adventurous Way” kitabının kapağı](images/timman-chess-the-adventurous-way.jpg "Jan Timman, “Timman's Selected Games: Chess the Adventurous Way” (kitabın İngilizce baskısı) · Cadogan Chess, 1995 · Kapak görseli: Cadogan Chess · Kaynak: [Open Library](https://openlibrary.org/isbn/9781857441215)")
+
 Timman, turnuva hakkında kapsamlı yazılar yayınlayan turnuvanın sponsoru _Clarín_ gazetesine şöyle demişti:
 
 > "Beyaz taşlarla oynayan Portisch'in her zaman zaferi hedefleyeceğini biliyordum. Dahası, sıralamada yarım puan geride olduğu için beni yakalamasının tek yolu kazanmaktı. Bu yüzden bu oyun önemliydi ve dikkatlice hazırlandım."
