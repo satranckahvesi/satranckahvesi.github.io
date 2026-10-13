@@ -98,7 +98,7 @@ function PgnGame({ header, moves }: { header: string; moves: string }) {
   // Sonradan kurulan düz <pgn> öğeleri için ChessPublica yeniden taratılır (<pgn-player> kendini kurar).
   useEffect(() => { if (near) window.ChessPublica?.initAll(); }, [near]);
   return near
-    ? <div ref={box} className="cp-game pb-4" dangerouslySetInnerHTML={{ __html: `<${tag}>\n${raw}\n</${tag}>` }} />
+    ? <div ref={box} className="cp-game pb-4" dangerouslySetInnerHTML={{ __html: `<div class="cp-loading">Oyun yükleniyor...</div><${tag}>\n${raw}\n</${tag}>` }} />
     : <div ref={box} className="cp-game cp-placeholder pb-4" />;
 }
 

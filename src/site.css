@@ -43,8 +43,16 @@
 /* Oyun henüz kurulmadıysa ham PGN metni görünmesin; kutu o sırada boş bir yer tutucu olur (sayfa kaymasın) */
 .cp-game pgn,
 .cp-game pgn-player:not(:has(.player-wrapper)) { display: none; }
-.cp-game.cp-placeholder,
-.cp-game:has(> pgn, > pgn-player:not(:has(.player-wrapper))) { min-height: 36rem; background: rgba(241, 233, 220, .03); }
+/* Oyun kurulana kadar kutu ortalı bir "Oyun yükleniyor..." yazısı gösterir (yer tutucuda ::before, kurulmuş
+   kutuda .cp-loading); oyun gelince yazı kalkar, min-height de biter. (:has içinde :has kullanılamaz.) */
+.cp-game:not(:has(.player-wrapper, .pgn-container, .jc-board-wrapper)) {
+  min-height: 36rem; background: rgba(241, 233, 220, .03);
+  display: flex; align-items: center; justify-content: center;
+}
+.cp-game.cp-placeholder::before { content: "Oyun yükleniyor..."; }
+.cp-game.cp-placeholder::before,
+.cp-loading { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0; color: #A89A88; }
+.cp-game:has(.player-wrapper, .pgn-container, .jc-board-wrapper) .cp-loading { display: none; }
 
 /* Çapraz tablo: sabit genişlikli, okunaklı bir mono font (IBM Plex Mono) ve hafif bir çerçeve. */
 .crosstable { font-family: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace; font-size: 13.5px; line-height: 1.75;
