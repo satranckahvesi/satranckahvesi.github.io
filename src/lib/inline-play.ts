@@ -8,7 +8,9 @@ function move(btn: Element) {
   if (!comment?.classList.contains('video-comment') || !comment.closest(GAME)) return;
   if (comment.querySelector('.variation-block')) return;
   const bodies = comment.querySelectorAll('.comment-body');
-  bodies[bodies.length - 1]?.appendChild(btn);
+  // Düğmeden önce sıradan bir boşluk: satır sonunda yer varsa metinle arasında boşluk kalır, bir alt satıra inerse
+  // boşluk satır sonunda erir ve düğme metinle aynı sol kenardan başlar (margin kullanılırsa girinti kalırdı).
+  bodies[bodies.length - 1]?.append(document.createTextNode(' '), btn);
 }
 
 export function watchInlinePlay(root: Element) {
