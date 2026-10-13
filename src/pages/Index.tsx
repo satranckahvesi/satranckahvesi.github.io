@@ -41,22 +41,17 @@ function Label({ n, children }: { n: string; children: string }) {
 
 const CELL = 96;
 
-function ChessGrid() {
+// Kare hücreler: sütun sayısı genişliğe göre seçilir, hücre kenarı genişliği tam böler.
+function gridMetrics(w: number, h: number) {
+  const cols = Math.max(1, Math.round(w / CELL));
+  const s = w / cols;
+  return { cols, s, rows: s > 0 ? Math.ceil(h / s) : 0 };
+}
+
+function ChessGrid({ w, h }: { w: number; h: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const [pos, setPos] = useState({ x: -999, y: -999 });
-  const [size, setSize] = useState({ w: 0, h: 0 });
-  useEffect(() => {
-    const el = ref.current!;
-    const measure = () => setSize({ w: el.clientWidth, h: el.clientHeight });
-    measure();
-    const ro = new ResizeObserver(measure);
-    ro.observe(el);
-    return () => ro.disconnect();
-  }, []);
-  // Kare hücreler: sütun sayısı genişliğe göre seçilir, hücre kenarı genişliği tam böler.
-  const cols = Math.max(1, Math.round(size.w / CELL));
-  const s = size.w / cols;
-  const rows = s > 0 ? Math.ceil(size.h / s) : 0;
+  const { cols, s, rows } = gridMetrics(w, h);
   return (
     <div ref={ref} aria-hidden
       onMouseMove={(e) => { const r = ref.current!.getBoundingClientRect(); setPos({ x: e.clientX - r.left, y: e.clientY - r.top }); }}
@@ -83,6 +78,19 @@ export default function Index() {
   const [email, setEmail] = useState('');
   const [subbed, setSubbed] = useState(false);
   useReveal();
+  const heroRef = useRef<HTMLElement>(null);
+  const [hero, setHero] = useState({ w: 0, h: 0 });
+  useEffect(() => {
+    const el = heroRef.current!;
+    const measure = () => setHero({ w: el.clientWidth, h: el.clientHeight });
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
+  // Fotoğrafın sol kenarı, parlayan karelerin bir dikey çizgisine oturur (masaüstünde ~%45'ten sonraki ilk çizgi).
+  const grid = gridMetrics(hero.w, hero.h);
+  const photoLeft = hero.w >= 768 ? Math.ceil(grid.cols * 0.45) * grid.s : 0;
   useEffect(() => {
     const on = () => { setScrolled(window.scrollY > 40); setY(window.scrollY); };
     window.addEventListener('scroll', on, { passive: true });
@@ -120,16 +128,17 @@ export default function Index() {
       )}
 
       {/* KAPAK */}
-      <section id="kapak" className="relative h-[100svh] min-h-[680px] overflow-hidden">
-        {cover.photo && (
+      <section id="kapak" ref={heroRef} className="relative h-[100svh] min-h-[680px] overflow-hidden">
+        {cover.photo && hero.w > 0 && (
           <>
-            <img src={PHOTO.src} alt={PHOTO.alt} className="absolute inset-y-0 right-0 h-full w-full md:w-[55%] object-cover object-[50%_20%] grayscale opacity-40 md:opacity-80" />
+            <img src={PHOTO.src} alt={PHOTO.alt} className="absolute inset-y-0 right-0 h-full object-cover object-[50%_20%] grayscale opacity-40 md:opacity-80"
+              style={{ width: hero.w - photoLeft }} />
             <div className="absolute inset-0 bg-gradient-to-r from-[#0E0C0A] via-[#0E0C0A]/70 md:via-[#0E0C0A]/40 to-transparent" />
             <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#0E0C0A] to-transparent" />
             <div className="absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-[#0E0C0A] to-transparent" />
           </>
         )}
-        <ChessGrid />
+        <ChessGrid w={hero.w} h={hero.h} />
         <div className="absolute top-24 inset-x-0 z-20 pointer-events-none">
           <div className="max-w-[1440px] mx-auto px-6 md:px-10 flex justify-between f-mono text-[#A89A88]">
             <span>Sayı 1 · Ekim 2026</span><span className="hidden sm:inline">Satranç üzerine yazılar</span>
