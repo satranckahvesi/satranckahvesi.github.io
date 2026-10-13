@@ -85,14 +85,15 @@ function PgnGame({ header, moves }: { header: string; moves: string }) {
 }
 
 // İçindekiler: yazıdaki tüm oyunlar, [Event] başlıklarından otomatik çıkarılır.
-type TocItem = { id: string; round: string; label: string; result: string };
+type GameItem = { id: string; round: string; label: string; result: string };
+type TocItem = { id: string; label: string };
 
 function surname(name?: string) {
   return (name ?? '').split(',')[0].trim();
 }
 
-function gameToc(chunks: string[]): TocItem[] {
-  const items: TocItem[] = [];
+function gameToc(chunks: string[]): GameItem[] {
+  const items: GameItem[] = [];
   chunks.forEach((c) => {
     if (!c.trim().startsWith('[Event ')) return;
     const t = parseTags(c);
@@ -107,18 +108,45 @@ function gameToc(chunks: string[]): TocItem[] {
   return items;
 }
 
+// İçindekiler: yazıdaki "###" başlıkları. Başlık metnindeki *vurgu* işaretleri kaldırılır, kimlik başlıktan türetilir.
+const TR_MAP: Record<string, string> = { ç: 'c', ğ: 'g', ı: 'i', ö: 'o', ş: 's', ü: 'u', â: 'a', î: 'i', û: 'u' };
+function slugify(text: string) {
+  return text
+    .toLowerCase()
+    .replace(/[çğıöşüâîû]/g, (ch) => TR_MAP[ch])
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+const headingText = (chunk: string) => chunk.replace(/^###\s+/, '').trim();
+const headingLabel = (chunk: string) => headingText(chunk).replace(/[*_]/g, '');
+
+function sectionToc(chunks: string[]): TocItem[] {
+  const seen = new Set<string>();
+  const items: TocItem[] = [];
+  chunks.forEach((c) => {
+    if (!c.trim().startsWith('### ')) return;
+    const label = headingLabel(c.trim());
+    let id = slugify(label) || `bolum-${items.length + 1}`;
+    while (seen.has(id)) id += '-2';
+    seen.add(id);
+    items.push({ id, label });
+  });
+  return items;
+}
+
 function Toc({ items, onGo }: { items: TocItem[]; onGo: (id: string) => void }) {
   return (
     <nav aria-label="İçindekiler" className="mt-16 mb-10">
       <h3 className="f-display text-3xl md:text-4xl text-[#F1E9DC] mb-6">İçindekiler</h3>
       <ol className="border-t border-[#2E2620]">
-        {items.map((it) => (
+        {items.map((it, n) => (
           <li key={it.id} className="border-b border-[#2E2620]">
             <a href={`#${it.id}`} onClick={(e) => { e.preventDefault(); onGo(it.id); }}
               className="group flex items-baseline gap-4 py-3 text-[#F1E9DC]/85 hover:text-[#C8893E] transition-colors">
-              <span className="f-mono text-[#C8893E] w-[5rem] shrink-0">{it.round}. tur</span>
+              <span className="f-mono text-[#C8893E] w-[3rem] shrink-0">{String(n + 1).padStart(2, '0')}</span>
               <span className="flex-1">{it.label}</span>
-              <span className="f-mono text-[#A89A88] group-hover:text-[#C8893E]">{it.result}</span>
             </a>
           </li>
         ))}
@@ -128,7 +156,7 @@ function Toc({ items, onGo }: { items: TocItem[]; onGo: (id: string) => void }) 
 }
 
 // Oyun bölümü: tur başlığı ve altında oyun (her zaman açık).
-function GameSection({ item, children }: { item: TocItem; children: React.ReactNode }) {
+function GameSection({ item, children }: { item: GameItem; children: React.ReactNode }) {
   return (
     <section id={item.id} className="my-4 border-b border-[#2E2620] scroll-mt-8">
       <h4 className="flex items-baseline gap-4 py-4 text-[#F1E9DC]/90">
@@ -221,7 +249,9 @@ export default function ArticleBody({ chunks }: { chunks: string[] }) {
   const cp = useChessPublica(hasGames);
   // ChessPublica yüklenemezse eski düz metin görünümüne düşülür.
   const useFallback = cp === 'error';
-  const toc = gameToc(chunks);
+  const games = gameToc(chunks);
+  const toc = sectionToc(chunks);
+  let headingNo = 0;
   // Tembel yüklenen fotoğraflar kaydırma sırasında sayfa yüksekliğini değiştirir; bu yüzden kaydırma
   // bittikten sonra konum (scroll-mt-8 = 32 px) gerekirse yeniden düzeltilir.
   const scrollToGame = (id: string, smooth: boolean) => {
@@ -278,7 +308,7 @@ export default function ArticleBody({ chunks }: { chunks: string[] }) {
       tocPlaced = true;
     }
     if (c.startsWith('[Event ')) {
-      const item = toc[gameNo++];
+      const item = games[gameNo++];
       const game = useFallback
         ? <Game header={c} moves={chunks[i + 1] ?? ''} />
         : <PgnGame header={c} moves={chunks[i + 1] ?? ''} />;
@@ -288,6 +318,13 @@ export default function ArticleBody({ chunks }: { chunks: string[] }) {
         </GameSection>,
       );
       i++;
+    } else if (c.startsWith('### ')) {
+      const section = toc[headingNo++];
+      out.push(
+        <h3 key={i} id={section?.id} className="f-display text-4xl md:text-5xl mt-16 mb-6 text-[#F1E9DC] scroll-mt-8">
+          <Markdown options={{ forceInline: true }}>{headingText(c)}</Markdown>
+        </h3>,
+      );
     } else if (c.startsWith('<pre>')) {
       out.push(
         <pre key={i} className="crosstable my-10 overflow-x-auto">
