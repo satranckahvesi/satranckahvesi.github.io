@@ -188,8 +188,8 @@ function Video({ chunk }: { chunk: string }) {
           className="absolute inset-0 h-full w-full border-0"
         />
       </div>
-      <figcaption className="mt-3 text-[11px] leading-relaxed text-[#A89A88]">
-        {capLines.map((l, i) => <span key={i} className="block">{l}</span>)}
+      <figcaption className="credit mt-3 text-[#A89A88]">
+        {capLines.map((l) => (/[.!?…]$/.test(l) ? l : `${l}.`)).join(' ')}{' '}
         <a href={href} target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-[#F1E9DC]">YouTube'da aç</a>
       </figcaption>
     </figure>
