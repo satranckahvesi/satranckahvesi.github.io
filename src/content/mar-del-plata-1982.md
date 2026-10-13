@@ -15,9 +15,9 @@ Oyunların önemli anlarında okuyucuyu Timman ile birlikte hamleleri bulmaya da
 [Result "0-1"]
 [WhiteElo "2655"]
 [BlackElo "2605"]
-[FEN "3rrb1k/3n1qp1/2p1b2p/ppP1p3/4P3/1P2QPP1/PBR1N1B1/5RK1 b - - 3 31"]
-[SetUp "1"]
 [Annotator "FM Nazmi Can Doğan"]
+[SetUp "1"]
+[FEN "3rrb1k/3n1qp1/2p1b2p/ppP1p3/4P3/1P2QPP1/PBR1N1B1/5RK1 b - - 3 31"]
 
 {[P]} 31... Bxc5! { Siyahın güçlü seçeneklerinden yalnızca biri. } 32. Rxc5 Nxc5 33. Bxe5 { [P] } ( 33. Qxc5 Rd2 $19 { Siyahın 31. hamlesinin ana fikri buydu. } ) 33... Nd3! $19 { Bu hamle sayesinde artık 34. Qxh6+ üstünlük sağlamaz. Siyahın ...Nxe5 tehdidi bu fikrin başarılı olmasına engel oluyor. Kalite fazla olan Siyah, kolaylıkla olmasa da oyunu kazanmayı bildi. } 0-1
 
