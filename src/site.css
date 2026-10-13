@@ -30,6 +30,8 @@
 .cp-game .comment-icon,
 .cp-game .variation-icon,
 .cp-game .puzzle-hint-prompt .lucide-icon { display: none; }
+/* <pgn-player> yorumlarındaki [D] diyagramı: tahta zaten üstte duruyor, tekrar göstermeye gerek yok */
+.cp-game pgn-player .comment-diagram { display: none; }
 /* Varyant içinde yalnızca varyant metnindeki yorumu tekrar eden yorum satırı gizlenir (bkz. variation-fix.ts) */
 .cp-game .video-comment .comment-line.cp-duplicate { display: none; }
 /* Bulmaca konumunda tahtanın çerçevesi mavi yerine sitenin turuncusu (#C8893E, tur numaralarındaki renk) */
