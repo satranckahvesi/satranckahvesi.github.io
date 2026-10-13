@@ -32,6 +32,7 @@ export default function ProgressiveImage({ path, alt, lazy = true, cover = false
         width={meta.w}
         height={meta.h}
         loading={lazy ? 'lazy' : undefined}
+        fetchPriority={lazy ? undefined : 'high'}
         decoding="async"
         onLoad={() => setLoaded(true)}
         onError={() => setLoaded(true)}
