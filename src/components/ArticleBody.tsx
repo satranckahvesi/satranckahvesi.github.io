@@ -5,6 +5,7 @@ import { curlyComments, curlyProse, watchComments } from '@/lib/curly-dom';
 import ProgressiveImage from '@/components/ProgressiveImage';
 import { watchInlinePlay } from '@/lib/inline-play';
 import { watchLocalization } from '@/lib/localize-dom';
+import { watchVariationFix } from '@/lib/variation-fix';
 
 // Makale gövdesi: markdown metni + PGN oyun blokları + çapraz tablo + video bağlantısı.
 
@@ -283,7 +284,8 @@ export default function ArticleBody({ chunks }: { chunks: string[] }) {
     const stopCurly = watchComments(el);
     const stopLocalize = watchLocalization(el);
     const stopInlinePlay = watchInlinePlay(el);
-    return () => { stopCurly(); stopLocalize(); stopInlinePlay(); };
+    const stopVariationFix = watchVariationFix(el);
+    return () => { stopCurly(); stopLocalize(); stopInlinePlay(); stopVariationFix(); };
   }, [chunks]);
   useEffect(() => {
     const el = rootRef.current;

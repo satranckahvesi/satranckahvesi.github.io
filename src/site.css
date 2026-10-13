@@ -30,6 +30,8 @@
 .cp-game .comment-icon,
 .cp-game .variation-icon,
 .cp-game .puzzle-hint-prompt .lucide-icon { display: none; }
+/* Varyant içinde yalnızca varyant metnindeki yorumu tekrar eden yorum satırı gizlenir (bkz. variation-fix.ts) */
+.cp-game .video-comment .comment-line.cp-duplicate { display: none; }
 /* Bulmaca konumunda tahtanın çerçevesi mavi yerine sitenin turuncusu (#C8893E, tur numaralarındaki renk) */
 .cp-game .player-container.puzzle-active .board-wrap .board-b72b1 { box-shadow: 0 0 0 3px #C8893E; }
 /* Oyun başlığı (oyuncular, etkinlik, tarih) gösterilmez: bilgi tur başlığında (GameSection) var */
