@@ -1,4 +1,5 @@
-import { Fragment, useEffect } from 'react';
+import { Fragment, useEffect, useRef, useState } from 'react';
+import { ChevronDown } from 'lucide-react';
 import Markdown from 'markdown-to-jsx';
 import { useChessPublica } from '@/lib/chesspublica';
 
@@ -26,12 +27,12 @@ function cleanMoves(raw: string) {
     .trim();
 }
 
-function Game({ header, moves, id }: { header: string; moves: string; id?: string }) {
+function Game({ header, moves }: { header: string; moves: string }) {
   const t = parseTags(header);
   const result = (t.Result ?? '').replace('1/2-1/2', '½–½').replace(/-/g, '–');
   const parts = cleanMoves(moves).split(/(\{[^}]*\})/g).filter(Boolean);
   return (
-    <figure id={id} className="my-10 border-y border-[#2E2620] py-6 scroll-mt-8">
+    <figure className="border-t border-[#2E2620] pt-4 pb-4">
       <figcaption className="f-mono text-[#C8893E] leading-relaxed">
         {t.Round && <span>{t.Round}. tur · </span>}
         {t.White} {t.WhiteElo && `(${t.WhiteElo})`} — {t.Black} {t.BlackElo && `(${t.BlackElo})`} · {result}
@@ -51,9 +52,9 @@ function Game({ header, moves, id }: { header: string; moves: string; id?: strin
 
 // ChessPublica <pgn> öğesini çizerken DOM'u kendisi değiştirdiği için oyun, React'in içine
 // dokunmadığı bir kutuda (dangerouslySetInnerHTML) durur.
-function PgnGame({ header, moves, id }: { header: string; moves: string; id?: string }) {
+function PgnGame({ header, moves }: { header: string; moves: string }) {
   const raw = `${header.trim()}\n\n${moves.trim()}`.replace(/&/g, '&amp;').replace(/</g, '&lt;');
-  return <div id={id} className="cp-game my-10 scroll-mt-8" dangerouslySetInnerHTML={{ __html: `<pgn>\n${raw}\n</pgn>` }} />;
+  return <div className="cp-game pb-4" dangerouslySetInnerHTML={{ __html: `<pgn>\n${raw}\n</pgn>` }} />;
 }
 
 
@@ -80,22 +81,21 @@ function gameToc(chunks: string[]): TocItem[] {
   return items;
 }
 
-function goTo(e: React.MouseEvent, id: string) {
-  const el = document.getElementById(id);
-  if (!el) return;
-  e.preventDefault();
-  el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  window.history.replaceState(null, '', `#${id}`);
-}
-
-function Toc({ items }: { items: TocItem[] }) {
+function Toc({ items, onGo, onAll }: { items: TocItem[]; onGo: (id: string) => void; onAll: (open: boolean) => void }) {
+  const btn = 'f-mono text-[#A89A88] hover:text-[#C8893E] transition-colors';
   return (
     <nav aria-label="İçindekiler" className="mt-16 mb-10">
-      <h3 className="f-display text-3xl md:text-4xl mb-6 text-[#F1E9DC]">İçindekiler</h3>
+      <div className="flex items-end justify-between gap-4 mb-6">
+        <h3 className="f-display text-3xl md:text-4xl text-[#F1E9DC]">İçindekiler</h3>
+        <div className="flex gap-4 pb-1">
+          <button type="button" onClick={() => onAll(true)} className={btn}>Tümünü aç</button>
+          <button type="button" onClick={() => onAll(false)} className={btn}>Tümünü kapat</button>
+        </div>
+      </div>
       <ol className="border-t border-[#2E2620]">
         {items.map((it) => (
           <li key={it.id} className="border-b border-[#2E2620]">
-            <a href={`#${it.id}`} onClick={(e) => goTo(e, it.id)}
+            <a href={`#${it.id}`} onClick={(e) => { e.preventDefault(); onGo(it.id); }}
               className="group flex items-baseline gap-4 py-3 text-[#F1E9DC]/85 hover:text-[#C8893E] transition-colors">
               <span className="f-mono text-[#C8893E] w-[5rem] shrink-0">{it.round}. tur</span>
               <span className="flex-1">{it.label}</span>
@@ -105,6 +105,35 @@ function Toc({ items }: { items: TocItem[] }) {
         ))}
       </ol>
     </nav>
+  );
+}
+
+// Katlanabilir oyun kutusu. İçerik kapalıyken de DOM'da kalır (satır yüksekliği 0'a iner), böylece
+// ChessPublica tahtaları gizliyken değil, gerçek genişlikte çizer; kapalı içerik `inert` ile erişilemez olur.
+function GameBox({ item, open, onToggle, children }: { item: TocItem; open: boolean; onToggle: () => void; children: React.ReactNode }) {
+  const inner = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const el = inner.current;
+    if (!el) return;
+    if (open) el.removeAttribute('inert');
+    else el.setAttribute('inert', '');
+  }, [open]);
+  const regionId = `${item.id}-icerik`;
+  return (
+    <section id={item.id} className="my-4 border-b border-[#2E2620] scroll-mt-8">
+      <h4>
+        <button type="button" aria-expanded={open} aria-controls={regionId} onClick={onToggle}
+          className="group flex w-full items-baseline gap-4 py-4 text-left text-[#F1E9DC]/90 hover:text-[#C8893E] transition-colors">
+          <span className="f-mono text-[#C8893E] w-[5rem] shrink-0">{item.round}. tur</span>
+          <span className="flex-1">{item.label}</span>
+          <span className="f-mono text-[#A89A88] group-hover:text-[#C8893E]">{item.result}</span>
+          <ChevronDown aria-hidden size={18} className={`self-center shrink-0 transition-transform duration-300 ${open ? 'rotate-180' : ''}`} />
+        </button>
+      </h4>
+      <div id={regionId} className="grid transition-[grid-template-rows] duration-300 ease-out" style={{ gridTemplateRows: open ? '1fr' : '0fr' }}>
+        <div ref={inner} className="min-h-0 overflow-hidden">{children}</div>
+      </div>
+    </section>
   );
 }
 
@@ -134,16 +163,36 @@ function Figure({ chunk }: { chunk: string }) {
   );
 }
 
+// YouTube videosu: markdown'daki <figure class="video-embed"> bloğundan video kimliği, başlangıç saniyesi,
+// başlık ve açıklama okunur; gizlilik dostu youtube-nocookie alan adıyla gömülü oynatıcı çizilir.
 function Video({ chunk }: { chunk: string }) {
   const id = chunk.match(/embed\/([\w-]+)(?:\?start=(\d+))?/);
-  const cap = chunk.match(/<figcaption>([\s\S]*?)<\/figcaption>/)?.[1].replace(/<br\s*\/?>/g, ' ').replace(/<[^>]+>/g, '').trim();
   if (!id) return null;
+  const title = chunk.match(/<iframe[^>]*\btitle="([^"]*)"/)?.[1] ?? 'YouTube videosu';
+  const capLines = (chunk.match(/<figcaption>([\s\S]*?)<\/figcaption>/)?.[1] ?? '')
+    .split(/<br\s*\/?>/)
+    .map((l) => l.replace(/<[^>]+>/g, '').trim())
+    .filter(Boolean);
+  const src = `https://www.youtube-nocookie.com/embed/${id[1]}${id[2] ? `?start=${id[2]}` : ''}`;
   const href = `https://www.youtube.com/watch?v=${id[1]}${id[2] ? `&t=${id[2]}s` : ''}`;
   return (
-    <p className="my-8 border-l-2 border-[#C8893E] pl-5 text-[#F1E9DC]/75">
-      <a href={href} target="_blank" rel="noreferrer" className="text-[#C8893E] underline underline-offset-4">Videoyu YouTube'da izle</a>
-      {cap && <span className="block mt-2 text-base">{cap}</span>}
-    </p>
+    <figure className="my-10">
+      <div className="relative w-full overflow-hidden bg-black" style={{ aspectRatio: '16 / 9' }}>
+        <iframe
+          src={src}
+          title={title}
+          loading="lazy"
+          allowFullScreen
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          className="absolute inset-0 h-full w-full border-0"
+        />
+      </div>
+      <figcaption className="mt-3 text-[11px] leading-relaxed text-[#A89A88]">
+        {capLines.map((l, i) => <span key={i} className="block">{l}</span>)}
+        <a href={href} target="_blank" rel="noreferrer" className="underline underline-offset-2 hover:text-[#F1E9DC]">YouTube'da aç</a>
+      </figcaption>
+    </figure>
   );
 }
 
@@ -168,32 +217,67 @@ export default function ArticleBody({ chunks }: { chunks: string[] }) {
   // ChessPublica yüklenemezse eski düz metin görünümüne düşülür.
   const useFallback = cp === 'error';
   const toc = gameToc(chunks);
+  // Oyunlar varsayılan olarak kapalıdır; açık olanların kimlikleri burada tutulur.
+  const [openIds, setOpenIds] = useState<Set<string>>(() => new Set());
+  const setOpen = (id: string, open: boolean) =>
+    setOpenIds((prev) => {
+      const next = new Set(prev);
+      if (open) next.add(id); else next.delete(id);
+      return next;
+    });
+  const openAll = (open: boolean) => setOpenIds(open ? new Set(toc.map((t) => t.id)) : new Set());
+  // Tembel yüklenen fotoğraflar kaydırma sırasında sayfa yüksekliğini değiştirir; bu yüzden kaydırma
+  // bittikten sonra konum (scroll-mt-8 = 32 px) gerekirse yeniden düzeltilir.
+  const scrollToGame = (id: string, smooth: boolean) => {
+    const go = (behavior: ScrollBehavior) => document.getElementById(id)?.scrollIntoView({ behavior, block: 'start' });
+    go(smooth ? 'smooth' : 'auto');
+    [900, 1800].forEach((ms) =>
+      window.setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el && Math.abs(el.getBoundingClientRect().top - 32) > 4) go('auto');
+      }, ms),
+    );
+  };
+  const goTo = (id: string) => {
+    setOpen(id, true);
+    window.setTimeout(() => {
+      scrollToGame(id, true);
+      window.history.replaceState(null, '', `#${id}`);
+    }, 60);
+  };
   let gameNo = 0;
   let tocPlaced = false;
   const out: JSX.Element[] = [];
 
-  // Adresteki #oyun-N bağlantısı ile açılırsa, oyunlar çizildikten sonra o oyuna kaydırır.
+  // Adresteki #oyun-N bağlantısı ile açılırsa, oyunlar çizildikten sonra o oyunu açar ve kaydırır.
   useEffect(() => {
     if (cp !== 'ready' && cp !== 'error') return;
     const id = decodeURIComponent(window.location.hash.slice(1));
-    if (id) document.getElementById(id)?.scrollIntoView();
-  }, [cp]);
+    if (!id) return;
+    if (toc.some((t) => t.id === id)) setOpen(id, true);
+    window.setTimeout(() => scrollToGame(id, false), 80);
+  }, [cp]); // eslint-disable-line react-hooks/exhaustive-deps
 
   for (let i = 0; i < chunks.length; i++) {
     const c = chunks[i].trim();
     if (toc.length && !tocPlaced && c.startsWith('### ')) {
-      out.push(<Toc key="toc" items={toc} />);
+      out.push(<Toc key="toc" items={toc} onGo={goTo} onAll={openAll} />);
       tocPlaced = true;
     }
     if (c.startsWith('[Event ')) {
-      const id = toc[gameNo++]?.id;
-      out.push(useFallback
-        ? <Game key={i} id={id} header={c} moves={chunks[i + 1] ?? ''} />
-        : <PgnGame key={i} id={id} header={c} moves={chunks[i + 1] ?? ''} />);
+      const item = toc[gameNo++];
+      const game = useFallback
+        ? <Game header={c} moves={chunks[i + 1] ?? ''} />
+        : <PgnGame header={c} moves={chunks[i + 1] ?? ''} />;
+      out.push(
+        <GameBox key={i} item={item} open={openIds.has(item.id)} onToggle={() => setOpen(item.id, !openIds.has(item.id))}>
+          {game}
+        </GameBox>,
+      );
       i++;
     } else if (c.startsWith('<pre>')) {
       out.push(
-        <pre key={i} className="my-10 overflow-x-auto f-mono !normal-case !tracking-normal text-[13px] leading-6 text-[#F1E9DC]/85">
+        <pre key={i} className="crosstable my-10 overflow-x-auto">
           {c.replace(/<\/?pre>/g, '').replace(/^\n/, '')}
         </pre>,
       );
@@ -209,7 +293,7 @@ export default function ArticleBody({ chunks }: { chunks: string[] }) {
       );
     }
   }
-  if (toc.length && !tocPlaced) out.unshift(<Toc key="toc" items={toc} />);
+  if (toc.length && !tocPlaced) out.unshift(<Toc key="toc" items={toc} onGo={goTo} onAll={openAll} />);
   return (
     <div className="text-lg leading-[1.8] text-[#F1E9DC]/85" data-cp={cp}>
       {out}
