@@ -190,7 +190,7 @@ export default function Index() {
       {/* KATEGORİLER / ARŞİV */}
       <section id="kategoriler" className="bg-[#F1E9DC] text-[#0E0C0A]">
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 py-24 md:py-40 grid md:grid-cols-12 gap-10">
-          <div className="md:col-span-4 reveal">
+          <div className="md:col-span-3 reveal">
             <p className="f-mono text-[#0E0C0A]/60"><span className="text-[#9A5F1E]">02</span> — Kategoriler</p>
             <h2 className="f-display text-[clamp(56px,7vw,120px)] mt-8">Tüm<br /><em className="italic">yazılar</em></h2>
             <div role="tablist" className="flex flex-wrap gap-x-6 gap-y-2 mt-12">
@@ -200,7 +200,7 @@ export default function Index() {
               ))}
             </div>
           </div>
-          <ul className="md:col-span-8">
+          <ul className="md:col-span-9">
             {list.map((a, i) => (
               <li key={cat + a.id}>
                 <Link to={articlePath(a)} className="group w-full text-left grid grid-cols-[48px_1fr_auto] md:grid-cols-[48px_1fr_auto] items-center gap-4 md:gap-6 py-7 border-b border-[#0E0C0A]/15">
