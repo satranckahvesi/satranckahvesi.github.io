@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Manrope:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Manrope:wght@400;500;600&family=JetBrains+Mono:wght@400&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 .sk { background:#0E0C0A; color:#F1E9DC; font-family:'Manrope',sans-serif; }
 .sk ::selection { background:#C8893E; color:#0E0C0A; }
@@ -18,3 +18,8 @@
 .cp-game .jc-board-wrapper [class*="board-b72b1"] { margin-left: auto; margin-right: auto; }
 /* ChessPublica kutusunun yatay iç boşluğu kaldırıldı: oyun metni yazı metniyle aynı hizada başlar. */
 .cp-game .pgn-container { padding-left: 0; padding-right: 0; }
+
+/* Çapraz tablo: sabit genişlikli, okunaklı bir mono font (IBM Plex Mono) ve hafif bir çerçeve. */
+.crosstable { font-family: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace; font-size: 13.5px; line-height: 1.75;
+  letter-spacing: 0; text-transform: none; font-variant-ligatures: none; color: rgba(241,233,220,.88);
+  background: #14110E; border-top: 1px solid #2E2620; border-bottom: 1px solid #2E2620; padding: 1.25rem 1.5rem; tab-size: 2; }

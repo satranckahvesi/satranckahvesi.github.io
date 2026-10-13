@@ -16,7 +16,7 @@ const NAV = [
 const CATS = ['Tümü', ...Array.from(new Set(ARTICLES.map((a) => a.cat)))];
 
 const AUTHORS = [
-  { name: 'Deniz Arslan', role: 'Genel Yayın Yönetmeni', bio: 'FIDE Usta. Oyunsonu ve satranç felsefesi üzerine yazıyor.' },
+  { name: 'Nazmi Can Doğan', role: 'Genel Yayın Yönetmeni', bio: 'FIDE Usta (FM). Satranç tarihi yazıları.' },
   { name: 'Selin Kaya', role: 'Röportaj & Turnuva', bio: 'Turnuva salonlarından haber ve portreler.' },
   { name: 'Kerem Aydın', role: 'Analiz Editörü', bio: 'Açılış teorisi ve motor destekli analizler.' },
   { name: 'Ayşe Demir', role: 'Tarih & Eğitim', bio: 'Satranç tarihi araştırmacısı ve eğitmen.' },
@@ -141,7 +141,7 @@ export default function Index() {
         <ChessGrid w={hero.w} h={hero.h} />
         <div className="absolute top-24 inset-x-0 z-20 pointer-events-none">
           <div className="max-w-[1440px] mx-auto px-6 md:px-10 flex justify-between f-mono text-[#A89A88]">
-            <span>Sayı 1 · Ekim 2026</span><span className="hidden sm:inline">Satranç üzerine yazılar</span>
+            <span>Sayı 1 · Ekim 2026</span><span className="hidden sm:inline">Dijital satranç dergisi</span>
           </div>
         </div>
         <div className="absolute inset-x-0 bottom-0 z-20 pointer-events-none">
@@ -171,7 +171,7 @@ export default function Index() {
       <section id="yazilar" className="max-w-[1440px] mx-auto px-6 md:px-10 py-24 md:py-40">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 reveal">
           <div><Label n="01">Bu Sayıda</Label>
-            <h2 className="f-display text-[clamp(48px,7vw,120px)] mt-8">Öne <em className="italic text-[#C8893E]">çıkanlar.</em></h2></div>
+            <h2 className="f-display text-[clamp(48px,7vw,120px)] mt-8">Öne <em className="italic text-[#C8893E]">çıkanlar</em></h2></div>
           <p className="max-w-sm text-[#F1E9DC]/70">Analizler, röportajlar ve tarihten hikâyeler. Her ay, tahtanın ötesine bakan yazılar.</p>
         </div>
         <div className="grid md:grid-cols-12 gap-10 mt-16">
@@ -222,7 +222,7 @@ export default function Index() {
       <section id="yazarlar" className="py-24 md:py-40">
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 reveal">
           <Label n="03">Yazarlar</Label>
-          <h2 className="f-display text-[clamp(48px,7vw,120px)] mt-8">Kalemi <em className="italic text-[#C8893E]">tutanlar.</em></h2>
+          <h2 className="f-display text-[clamp(48px,7vw,120px)] mt-8">Kalemi <em className="italic text-[#C8893E]">tutanlar</em></h2>
         </div>
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 mt-16 grid sm:grid-cols-2 lg:grid-cols-4 border-t border-[#2E2620]">
           {AUTHORS.map((au, i) => (
@@ -231,7 +231,7 @@ export default function Index() {
               <h3 className="f-display text-3xl">{au.name}</h3>
               <p className="f-mono text-[#C8893E] mt-3">{au.role}</p>
               <p className="text-[#F1E9DC]/70 mt-4">{au.bio}</p>
-              <p className="f-mono text-[#A89A88] mt-6">{ARTICLES.filter((a) => a.author === au.name).length} yazı</p>
+              <p className="f-mono text-[#A89A88] mt-6">{ARTICLES.filter((a) => a.author.replace(/^FM\s+/, '') === au.name).length} yazı</p>
             </div>
           ))}
         </div>
