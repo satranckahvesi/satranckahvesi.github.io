@@ -18,14 +18,14 @@
 .cp-game .jc-board-wrapper [class*="board-b72b1"] { margin-left: auto; margin-right: auto; }
 /* ChessPublica kutusunun yatay iç boşluğu kaldırıldı: oyun metni yazı metniyle aynı hizada başlar. */
 .cp-game .pgn-container { padding-left: 0; padding-right: 0; container-type: inline-size; }
-/* Satır içi diyagramlar (eski siteden): ana hat diyagramı <pgn-player> tahtası kadar (400px, dar ekranda sütun genişliği);
-   varyant içindeki diyagram daha küçük ve soluk, her iç içe düzeyde bir adım daha. cqw, yukarıdaki container-type'a bağlıdır. */
-.cp-game .pgn-container .cp-board-wrapper,
-.cp-game .pgn-container .cp-board-wrapper--small { --diagram-max-width: min(400px, 94cqw); }
-.cp-game .pgn-container .pgn-variation > .cp-board-wrapper { --diagram-max-width: calc(min(400px, 94cqw) - 3rem); filter: saturate(0.7) opacity(0.85); }
-.cp-game .pgn-container .pgn-variation .pgn-variation > .cp-board-wrapper { --diagram-max-width: calc(min(400px, 94cqw) - 6rem); filter: saturate(0.4) opacity(0.7); }
+/* Satır içi diyagramlar (eski siteden): ana hat diyagramı 400px (dar ekranda sütun genişliği); varyant içindeki diyagram daha küçük ve soluk,
+   her iç içe düzeyde bir adım daha. Bu ChessPublica sürümünde diyagram `.jc-board-wrapper`'dır (chessboard.js, kurulurken kapsayıcının
+   genişliğine göre boyutlanır; max-width bu yüzden tahtayı gerçekten küçültür). cqw, yukarıdaki container-type'a bağlıdır. */
+.cp-game .pgn-container .jc-board-wrapper { --dw: min(400px, 94cqw); max-width: var(--dw); }
+.cp-game .pgn-container .pgn-variation > .jc-board-wrapper { --dw: calc(min(400px, 94cqw) - 3rem); filter: saturate(0.7) opacity(0.85); }
+.cp-game .pgn-container .pgn-variation .pgn-variation > .jc-board-wrapper { --dw: calc(min(400px, 94cqw) - 6rem); filter: saturate(0.4) opacity(0.7); }
 /* Hamle kalitesi rozeti (!, ?!, ??) sabit 22px'tir ve küçülmüş diyagramı bastırır; diyagramla birlikte ölçeklenir (400px'te 22px). */
-.cp-game .cp-board-wrapper .gm-badge { width: calc(var(--diagram-max-width) * 0.055); height: calc(var(--diagram-max-width) * 0.055); font-size: calc(var(--diagram-max-width) * 0.04); box-shadow: 0 1px calc(var(--diagram-max-width) * 0.01) #00000073; }
+.cp-game .jc-board-wrapper .gm-badge { width: calc(var(--dw, 400px) * 0.055); height: calc(var(--dw, 400px) * 0.055); font-size: calc(var(--dw, 400px) * 0.04); box-shadow: 0 1px calc(var(--dw, 400px) * 0.01) #00000073; }
 /* Yalnızca düz <pgn> görünümü (study/player değil): varyant metninin solunda soluk dikey çizgi; her satırda tekrarlanır ki diyagramın yanından geçmesin.
    ChessPublica bu paragrafları satır içi yapar, bu yüzden box-decoration-break: clone. İç içe varyant bir kademe içeri girer ve italik olur. */
 .cp-game .pgn-container:not(pgn-study .pgn-container, pgn-player .pgn-container) .pgn-variation > p { padding-left: 0.8em; border-left: 2px solid color-mix(in srgb, #A89A88 45%, transparent); -webkit-box-decoration-break: clone; box-decoration-break: clone; }
