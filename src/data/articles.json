@@ -90,19 +90,6 @@
     ]
   },
   {
-    "id": "egitim",
-    "slug": "cocuklara-satranc-ogretirken",
-    "cat": "Eğitim",
-    "title": "Çocuklara satranç öğretirken",
-    "dek": "Kuralları değil, merakı öğretmek üzerine bir eğitmenin notları.",
-    "author": "Ayşe Demir",
-    "read": "9 dk",
-    "body": [
-      "İlk derste kuralları değil, bir hikâyeyi anlatıyoruz: piyonun vezire dönüşme yolculuğunu.",
-      "Oyun, merak sürdükçe öğrenilir."
-    ]
-  },
-  {
     "id": "mugla",
     "slug": "ammandan-mugladan-turkiyede-reytingler-aldatici-mi",
     "cat": "Analizli oyunlar",
