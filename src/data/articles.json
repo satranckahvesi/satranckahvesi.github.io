@@ -27,7 +27,7 @@
   {
     "id": "analiz",
     "slug": "kale-oyunsonlarinda-lucena-koprusu",
-    "cat": "Analiz",
+    "cat": "Analizli oyunlar",
     "title": "Kale oyunsonlarında Lucena köprüsü",
     "dek": "Her kulüp oyuncusunun bilmesi gereken pozisyonu adım adım çözüyoruz.",
     "author": "Kerem Aydın",
@@ -79,7 +79,7 @@
   {
     "id": "blitz",
     "slug": "blitzde-zaman-yonetimi",
-    "cat": "Analiz",
+    "cat": "Analizli oyunlar",
     "title": "Blitzde zaman yönetimi",
     "dek": "3+2 tempoda saatini nasıl kullanmalısın? Pratik ilkeler.",
     "author": "Deniz Arslan",
