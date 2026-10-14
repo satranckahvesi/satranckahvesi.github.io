@@ -20,7 +20,7 @@ const AUTHORS = [
   { name: 'Nazmi Can Doğan', role: 'Genel Yayın Yönetmeni', bio: 'FIDE Ustası (FM)' },
   { name: 'Selin Kaya', role: 'Röportaj & Turnuva', bio: 'Turnuva salonlarından haber ve portreler.' },
   { name: 'Kerem Aydın', role: 'Analiz Editörü', bio: 'Açılış teorisi ve motor destekli analizler.' },
-  { name: 'Ahmad Al-Khatib', role: 'Konuk yazar', bio: 'Ürdünlü Büyükusta (GM)' },
+  { name: 'Ahmad Al-Khatib', role: 'Konuk yazar', bio: 'Ürdün’ün ilk Büyükustası (GM)' },
 ];
 
 function useReveal() {
