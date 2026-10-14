@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { X } from 'lucide-react';
+import Markdown from 'markdown-to-jsx';
 import ArticleBody from '@/components/ArticleBody';
 import ProgressiveImage from '@/components/ProgressiveImage';
 import PhotoCredit, { PHOTO } from '@/components/PhotoCredit';
@@ -33,8 +34,12 @@ export default function Post() {
       <article className="max-w-[760px] mx-auto px-6 pt-32 relative pb-32">
         <p className="f-mono text-[#C8893E]">{a.cat} · {a.read ? `${a.read} okuma` : a.date}</p>
         <h1 className="f-display text-[clamp(44px,6vw,88px)] mt-6">{a.title}</h1>
-        {a.dek && <p className="text-xl text-[#F1E9DC]/80 mt-8 italic" style={{ fontFamily: 'Fraunces, serif' }}>{a.dek}</p>}
-        <p className="f-mono text-[#A89A88] mt-8 pb-8 border-b border-[#2E2620]">Yazan: {a.author}{a.translator && ` · Türkçesi: ${a.translator}`}</p>
+        {(a.dek ?? a.excerpt) && (
+          <p className="text-xl font-normal text-[#F1E9DC]/80 mt-8 italic [&_em]:not-italic" style={{ fontFamily: 'Fraunces, serif', fontVariationSettings: "'opsz' 72" }}>
+            <Markdown options={{ forceInline: true }}>{(a.dek ?? a.excerpt) as string}</Markdown>
+          </p>
+        )}
+        <p className="f-mono text-[#A89A88] mt-8 pb-8 border-b border-[#2E2620]">Yazar: {a.author}{a.translator && ` · Türkçesi: ${a.translator}`}</p>
         {lead && <div className="mt-10"><ArticleBody chunks={[lead]} /></div>}
         {a.photo && (
           <figure className="mt-10 mx-auto w-fit max-w-full">
