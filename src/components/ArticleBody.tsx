@@ -277,6 +277,27 @@ export function splitArticle(md: string) {
   return { chunks: md.trim().split(/\n\s*\n/) };
 }
 
+// Oyunun hamle metni başlıktan sonraki paragraftır. [View "player"] başlığının ardından hamle metni gelmiyorsa
+// (yalnızca etiketler yazılmışsa), oyuncu yazıdaki daha önceki, Round/White/Black/Date etiketleri aynı olan oyunun
+// hamle metnini kullanır; böylece aynı PGN iki kez yazılmaz. `own`: hamle metni bu başlığın kendi paragrafıdır.
+const MOVETEXT_START = /^\s*(\d+\s*\.|\{)/;
+const gameKey = (header: string) => {
+  const t = parseTags(header);
+  return [t.White, t.Black, t.Date, t.Round].join('|');
+};
+function gameMoves(chunks: string[], i: number): { moves: string; own: boolean } {
+  const next = chunks[i + 1] ?? '';
+  if (!WATCH_TAG.test(chunks[i]) || MOVETEXT_START.test(next)) return { moves: next, own: true };
+  const key = gameKey(chunks[i]);
+  for (let j = 0; j < i; j++) {
+    const h = chunks[j].trim();
+    if (h.startsWith('[Event ') && !WATCH_TAG.test(h) && gameKey(h) === key && MOVETEXT_START.test(chunks[j + 1] ?? '')) {
+      return { moves: chunks[j + 1], own: false };
+    }
+  }
+  return { moves: next, own: true };
+}
+
 export default function ArticleBody({ chunks }: { chunks: string[] }) {
   const hasGames = chunks.some((c) => c.trim().startsWith('[Event '));
   const cp = useChessPublica(hasGames);
@@ -343,15 +364,16 @@ export default function ArticleBody({ chunks }: { chunks: string[] }) {
     }
     if (c.startsWith('[Event ')) {
       const item = games[gameNo++];
+      const { moves, own } = gameMoves(chunks, i);
       const game = useFallback
-        ? <Game header={c} moves={chunks[i + 1] ?? ''} />
-        : <PgnGame header={c} moves={chunks[i + 1] ?? ''} />;
+        ? <Game header={c} moves={moves} />
+        : <PgnGame header={c} moves={moves} />;
       out.push(
         <GameSection key={i} item={item}>
           {game}
         </GameSection>,
       );
-      i++;
+      if (own) i++;
     } else if (c.startsWith('### ')) {
       const section = toc[headingNo++];
       out.push(
