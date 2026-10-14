@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowUpRight, Menu as MenuIcon, X, Mail } from 'lucide-react';
 import Markdown from 'markdown-to-jsx';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import PhotoCredit, { PHOTO } from '@/components/PhotoCredit';
 import SiteFooter from '@/components/SiteFooter';
 import { ARTICLES, articlePath } from '@/data/articles';
@@ -80,6 +80,9 @@ export default function Index() {
   const [email, setEmail] = useState('');
   const [subbed, setSubbed] = useState(false);
   useReveal();
+  // Yazı sayfasındaki büyük “Satranç vs.” yazısı buraya state={{ top: true }} ile gelir: sayfa başına git.
+  const { state } = useLocation();
+  useEffect(() => { if ((state as { top?: boolean } | null)?.top) window.scrollTo(0, 0); }, [state]);
   const heroRef = useRef<HTMLElement>(null);
   const [hero, setHero] = useState({ w: 0, h: 0 });
   useEffect(() => {

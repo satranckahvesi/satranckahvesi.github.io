@@ -27,7 +27,7 @@ export default function SiteFooter({ page = 'home' }: { page?: 'home' | 'post' }
       <div className={`overflow-hidden ${page === 'home' ? 'border-t border-[#2E2620]' : ''}`}>
         {page === 'home'
           ? <button type="button" onClick={toTop} aria-label="Sayfanın başına dön" className={WORDMARK_CLASS}><Wordmark /></button>
-          : <Link to="/" aria-label="Ana sayfaya git" className={WORDMARK_CLASS}><Wordmark /></Link>}
+          : <Link to="/" state={{ top: true }} aria-label="Ana sayfaya git" className={WORDMARK_CLASS}><Wordmark /></Link>}
       </div>
       <div className="max-w-[1440px] mx-auto px-6 md:px-10 py-6 flex justify-between f-mono text-[#A89A88]">
         <span>© 2026 Satranç vs. Dergisi</span>
