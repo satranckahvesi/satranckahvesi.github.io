@@ -14,8 +14,47 @@ export default function Post() {
   const { slug } = useParams();
   const a = articleBySlug(slug);
 
+  // Okuma konumu: yazı sayfası yenilendiğinde ya da sonradan tekrar açıldığında kaldığın yerden devam eder.
+  // Tarayıcının kendi geri yüklemesi tembel yüklenen fotoğraf/oyunlar yüzünden yanlış yere düşebildiği için
+  // konum yazı başına localStorage'da tutulur ve yazı yüksekliği oturana kadar birkaç kez uygulanır.
   useEffect(() => {
+    if (!a) return;
+    const key = `scroll:${a.slug}`;
+    const read = () => { try { return Number(localStorage.getItem(key)) || 0; } catch { return 0; } };
+    const write = (y: number) => { try { if (y > 300) localStorage.setItem(key, String(Math.round(y))); else localStorage.removeItem(key); } catch { /* özel pencere vb. */ } };
+    window.history.scrollRestoration = 'manual'; // geri yüklemeyi biz yaparız; tekrar 'auto' yapılmaz (ana sayfaya geri dönüşte yüklenmesin)
+    const target = window.location.hash ? 0 : read();
     window.scrollTo(0, 0);
+    let restoring = target > 0; // geri yükleme bitene kadar konum kaydedilmez (0'ı kaydedip silmesin)
+    let timers: number[] = [];
+    const stop = () => { restoring = false; timers.forEach(clearTimeout); timers = []; };
+    if (restoring) {
+      const apply = () => { if (restoring) window.scrollTo(0, target); };
+      apply();
+      timers = [150, 500, 1200, 2500].map((ms) => window.setTimeout(apply, ms));
+      timers.push(window.setTimeout(stop, 2700));
+      // Kullanıcı kendisi kaydırmaya başlarsa geri yükleme bırakılır.
+      ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach((ev) => window.addEventListener(ev, stop, { once: true, passive: true }));
+    }
+    let raf = 0;
+    const onScroll = () => {
+      if (restoring || raf) return;
+      raf = window.setTimeout(() => { raf = 0; write(window.scrollY); }, 250);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    const onHide = () => { if (!restoring) write(window.scrollY); };
+    window.addEventListener('pagehide', onHide);
+    return () => {
+      // Ayrılırken yazılmaz: ana sayfa kaydırmayı sıfırladıktan sonra çalışır ve kayıtlı konumu silerdi.
+      stop();
+      clearTimeout(raf);
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('pagehide', onHide);
+      ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach((ev) => window.removeEventListener(ev, stop));
+    };
+  }, [a]);
+
+  useEffect(() => {
     if (!a) return;
     const prev = document.title;
     document.title = `${a.title} — Satranç vs.`;

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { ArrowUpRight, Menu as MenuIcon, X, Mail } from 'lucide-react';
 import Markdown from 'markdown-to-jsx';
 import { Link, useLocation } from 'react-router-dom';
@@ -80,7 +80,12 @@ export default function Index() {
   const [email, setEmail] = useState('');
   const [subbed, setSubbed] = useState(false);
   useReveal();
-  useEffect(() => () => { window.history.scrollRestoration = 'auto'; }, []);
+  // Ana sayfa her açılışta (yenileme, geri tuşu dahil) sayfa başında görünür: tarayıcı bu girişin kaydırma konumunu
+  // geri yüklemesin. Sonraki girişler (yazı sayfaları) kendi kaydırma konumunu hatırlar, bkz. Post.tsx.
+  useLayoutEffect(() => {
+    window.history.scrollRestoration = 'manual';
+    window.scrollTo(0, 0);
+  }, []);
   // Yazı sayfasındaki büyük “Satranç vs.” yazısı buraya state={{ top: true }} ile gelir: sayfa başına git.
   const { state } = useLocation();
   useEffect(() => { if ((state as { top?: boolean } | null)?.top) window.scrollTo(0, 0); }, [state]);
