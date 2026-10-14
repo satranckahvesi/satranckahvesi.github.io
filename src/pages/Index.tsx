@@ -80,6 +80,7 @@ export default function Index() {
   const [email, setEmail] = useState('');
   const [subbed, setSubbed] = useState(false);
   useReveal();
+  useEffect(() => () => { window.history.scrollRestoration = 'auto'; }, []);
   // Yazı sayfasındaki büyük “Satranç vs.” yazısı buraya state={{ top: true }} ile gelir: sayfa başına git.
   const { state } = useLocation();
   useEffect(() => { if ((state as { top?: boolean } | null)?.top) window.scrollTo(0, 0); }, [state]);
