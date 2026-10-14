@@ -108,7 +108,7 @@ function PgnGame({ header, moves }: { header: string; moves: string }) {
 }
 
 // İçindekiler: yazıdaki tüm oyunlar, [Event] başlıklarından otomatik çıkarılır.
-type GameItem = { id: string; round: string; label: string; result: string; watch: boolean; players: string };
+type GameItem = { id: string; round: string; label: string; result: string; watch: boolean; players: string; place: string };
 type TocItem = { id: string; label: string; markup: string };
 
 function surname(name?: string) {
@@ -125,6 +125,7 @@ function gameToc(chunks: string[]): GameItem[] {
     items.push({
       id: `oyun-${t.Round || n}${watch ? '-izle' : ''}`,
       watch,
+      place: [t.Site, (t.Date ?? '').match(/^\d{4}/)?.[0]].filter(Boolean).join(', '),
       players: `${t.White}${t.WhiteElo ? ` (${t.WhiteElo})` : ''} – ${t.Black}${t.BlackElo ? ` (${t.BlackElo})` : ''}`,
       round: t.Round || String(n),
       label: `${surname(t.White)} – ${surname(t.Black)}`,
@@ -185,7 +186,12 @@ function Toc({ items, onGo }: { items: TocItem[]; onGo: (id: string) => void }) 
 function GameSection({ item, children }: { item: GameItem; children: React.ReactNode }) {
   return (
     <section id={item.id} className="my-4 border-b border-[#2E2620] scroll-mt-8">
-      {item.watch && <h4 className="mx-auto mb-4 w-full max-w-[400px] py-2 text-center text-[#F1E9DC]/90">{item.players}</h4>}
+      {item.watch && (
+        <div className="mx-auto mb-4 w-full max-w-[400px] py-2 text-center">
+          <h4 className="text-[#F1E9DC]/90">{item.players}</h4>
+          {item.place && <p className="mt-1 text-[#A89A88]">{item.place}</p>}
+        </div>
+      )}
       {!item.watch && <h4 className="flex items-baseline gap-4 py-4 mb-4 text-[#F1E9DC]/90 md:grid md:grid-cols-[1fr_400px_1fr] md:gap-0">
         <span className="f-mono text-[#C8893E] w-[5rem] shrink-0">{item.round}. tur</span>
         <span className="flex-1 md:text-center">{item.label}</span>
