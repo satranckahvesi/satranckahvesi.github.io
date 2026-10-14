@@ -203,10 +203,13 @@ export default function Index() {
           <div className="md:col-span-3 reveal">
             <p className="f-mono text-[#0E0C0A]/60"><span className="text-[#9A5F1E]">02</span> — Köşeler</p>
             <h2 className="f-display text-[clamp(56px,7vw,120px)] mt-8">Tüm<br /><em className="italic">yazılar</em></h2>
-            <div role="tablist" className="flex flex-wrap gap-x-6 gap-y-2 mt-12">
-              {CATS.map((k) => (
-                <button key={k} role="tab" aria-selected={cat === k} onClick={() => setCat(k)}
+            <div role="tablist" className="flex flex-wrap items-center gap-x-3 gap-y-2 mt-12">
+              {CATS.map((k, i) => (
+                <span key={k} className="inline-flex items-center gap-x-3 whitespace-nowrap">
+                <button role="tab" aria-selected={cat === k} onClick={() => setCat(k)}
                   className={`f-mono h-11 border-b-2 transition-colors ${cat === k ? 'border-[#C8893E] text-[#0E0C0A]' : 'border-transparent text-[#0E0C0A]/50 hover:text-[#0E0C0A]'}`}>{k}</button>
+                {i < CATS.length - 1 && <span aria-hidden className="f-mono text-[#0E0C0A]/35">·</span>}
+                </span>
               ))}
             </div>
           </div>
