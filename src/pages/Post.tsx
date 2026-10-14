@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { X } from 'lucide-react';
 import Markdown from 'markdown-to-jsx';
+import SiteFooter from '@/components/SiteFooter';
 import ArticleBody from '@/components/ArticleBody';
 import ProgressiveImage from '@/components/ProgressiveImage';
 import PhotoCredit, { PHOTO } from '@/components/PhotoCredit';
@@ -51,6 +52,7 @@ export default function Post() {
           {rest ? <ArticleBody chunks={rest} /> : a.body.map((p, i) => <p key={i} className={i === 0 ? 'first-letter:f-display first-letter:text-7xl first-letter:float-left first-letter:mr-3 first-letter:text-[#C8893E] first-letter:leading-[0.8]' : ''}>{p}</p>)}
         </div>
       </article>
+      <SiteFooter page="post" />
     </div>
   );
 }
