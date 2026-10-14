@@ -20,7 +20,6 @@ const AUTHORS = [
   { name: 'Nazmi Can Doğan', role: 'Genel Yayın Yönetmeni', bio: 'FIDE Ustası (FM)' },
   { name: 'Selin Kaya', role: 'Röportaj & Turnuva', bio: 'Turnuva salonlarından haber ve portreler.' },
   { name: 'Kerem Aydın', role: 'Analiz Editörü', bio: 'Açılış teorisi ve motor destekli analizler.' },
-  { name: 'Ayşe Demir', role: 'Tarih & Eğitim', bio: 'Satranç tarihi araştırmacısı ve eğitmen.' },
   { name: 'Ahmad Al-Khatib', role: 'Konuk yazar', bio: 'Ürdünlü Büyükusta (GM)' },
 ];
 
@@ -225,7 +224,7 @@ export default function Index() {
           <Label n="03">Yazarlar</Label>
           <h2 className="f-display text-[clamp(48px,7vw,120px)] mt-8">Katkıda <em className="italic text-[#C8893E]">bulunanlar</em></h2>
         </div>
-        <div className="max-w-[1440px] mx-auto px-6 md:px-10 mt-16 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 border-t border-[#2E2620]">
+        <div className="max-w-[1440px] mx-auto px-6 md:px-10 mt-16 grid sm:grid-cols-2 lg:grid-cols-4 border-t border-[#2E2620]">
           {AUTHORS.map((au, i) => (
             <div key={au.name} className="group p-8 border-b sm:border-r border-[#2E2620] hover:bg-[#1A1512] transition-colors">
               <span className={`block w-14 h-14 mb-8 ${(i % 2) ? 'bg-[#F1E9DC]' : 'bg-[#3A2C22]'} grid place-items-center f-display text-3xl ${(i % 2) ? 'text-[#0E0C0A]' : 'text-[#C8893E]'}`}>{'♔♕♖♘♗'[i]}</span>
