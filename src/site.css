@@ -32,6 +32,8 @@
 .cp-game .puzzle-hint-prompt .lucide-icon { display: none; }
 /* <pgn-player> yorumlarındaki [D] diyagramı: tahta zaten üstte duruyor, tekrar göstermeye gerek yok */
 .cp-game pgn-player .comment-diagram { display: none; }
+/* <pgn-player> hamle listesinin altındaki kaydırma çubuğu: kırmızı yerine sitenin turuncusu */
+.cp-game .video-moves::-webkit-scrollbar-thumb { background: #C8893E; }
 /* Varyant içinde yalnızca varyant metnindeki yorumu tekrar eden yorum satırı gizlenir (bkz. variation-fix.ts) */
 .cp-game .video-comment .comment-line.cp-duplicate { display: none; }
 /* Bulmaca konumunda tahtanın çerçevesi mavi yerine sitenin turuncusu (#C8893E, tur numaralarındaki renk) */
