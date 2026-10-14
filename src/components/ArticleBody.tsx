@@ -80,11 +80,16 @@ function puzzleSide(header: string, moves: string): 'w' | 'b' | null {
 // Oyunlar ekrana yaklaşınca (1500 px kala) yüklenir: sayfa açılırken 13 oyun birden kurulmaz, ham PGN metni de
 // görünmez (kutu, oyun gelene kadar boş bir yer tutucudur). Adreste #bağlantı varsa kaydırma konumu doğru
 // hesaplansın diye hepsi hemen kurulur.
+const WATCH_TAG = /^\[View\s+"player"\]\s*$/im;
+
 function PgnGame({ header, moves }: { header: string; moves: string }) {
-  const side = puzzleSide(header, moves);
-  const head = side === 'b' && !/\[Orientation\s/i.test(header) ? `${header.trim()}\n[Orientation "black"]` : header.trim();
+  // [View "player"] etiketi oyunu (bulmaca işareti olmasa da) <pgn-player> ile çizdirir; ChessPublica'ya geçirilmez.
+  const watch = WATCH_TAG.test(header);
+  const clean = header.replace(WATCH_TAG, '').trim();
+  const side = puzzleSide(clean, moves);
+  const head = side === 'b' && !/\[Orientation\s/i.test(clean) ? `${clean}\n[Orientation "black"]` : clean;
   const raw = `${head}\n\n${moves.trim()}`.replace(/&/g, '&amp;').replace(/</g, '&lt;');
-  const tag = side ? 'pgn-player' : 'pgn';
+  const tag = side || watch ? 'pgn-player' : 'pgn';
   const box = useRef<HTMLDivElement>(null);
   const [near, setNear] = useState(() => typeof window === 'undefined' || typeof IntersectionObserver === 'undefined' || !!window.location.hash);
   useEffect(() => {
@@ -103,7 +108,7 @@ function PgnGame({ header, moves }: { header: string; moves: string }) {
 }
 
 // İçindekiler: yazıdaki tüm oyunlar, [Event] başlıklarından otomatik çıkarılır.
-type GameItem = { id: string; round: string; label: string; result: string };
+type GameItem = { id: string; round: string; label: string; result: string; watch: boolean };
 type TocItem = { id: string; label: string; markup: string };
 
 function surname(name?: string) {
@@ -116,8 +121,10 @@ function gameToc(chunks: string[]): GameItem[] {
     if (!c.trim().startsWith('[Event ')) return;
     const t = parseTags(c);
     const n = items.length + 1;
+    const watch = WATCH_TAG.test(c);
     items.push({
-      id: `oyun-${t.Round || n}`,
+      id: `oyun-${t.Round || n}${watch ? '-izle' : ''}`,
+      watch,
       round: t.Round || String(n),
       label: `${surname(t.White)} – ${surname(t.Black)}`,
       result: (t.Result ?? '').replace('1/2-1/2', '½–½').replace(/-/g, '–'),
@@ -177,11 +184,11 @@ function Toc({ items, onGo }: { items: TocItem[]; onGo: (id: string) => void }) 
 function GameSection({ item, children }: { item: GameItem; children: React.ReactNode }) {
   return (
     <section id={item.id} className="my-4 border-b border-[#2E2620] scroll-mt-8">
-      <h4 className="flex items-baseline gap-4 py-4 mb-4 text-[#F1E9DC]/90 md:grid md:grid-cols-[1fr_400px_1fr] md:gap-0">
+      {!item.watch && <h4 className="flex items-baseline gap-4 py-4 mb-4 text-[#F1E9DC]/90 md:grid md:grid-cols-[1fr_400px_1fr] md:gap-0">
         <span className="f-mono text-[#C8893E] w-[5rem] shrink-0">{item.round}. tur</span>
         <span className="flex-1 md:text-center">{item.label}</span>
         <span className="f-mono text-[#A89A88] md:justify-self-end">{item.result}</span>
-      </h4>
+      </h4>}
       {children}
     </section>
   );
@@ -322,7 +329,7 @@ export default function ArticleBody({ chunks }: { chunks: string[] }) {
 
   for (let i = 0; i < chunks.length; i++) {
     const c = chunks[i].trim();
-    if (toc.length && !tocPlaced && c.startsWith('### ')) {
+    if (toc.length > 1 && !tocPlaced && c.startsWith('### ')) {
       out.push(<Toc key="toc" items={toc} onGo={goTo} />);
       tocPlaced = true;
     }
@@ -362,7 +369,7 @@ export default function ArticleBody({ chunks }: { chunks: string[] }) {
       );
     }
   }
-  if (toc.length && !tocPlaced) out.unshift(<Toc key="toc" items={toc} onGo={goTo} />);
+  if (toc.length > 1 && !tocPlaced) out.unshift(<Toc key="toc" items={toc} onGo={goTo} />);
   return (
     <div ref={rootRef} className="text-lg leading-[1.8] text-[#F1E9DC]/85" data-cp={cp}>
       {out}
