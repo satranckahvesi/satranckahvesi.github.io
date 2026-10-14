@@ -52,7 +52,7 @@ export default function Post() {
           {rest ? <ArticleBody chunks={rest} /> : a.body.map((p, i) => <p key={i} className={i === 0 ? 'first-letter:f-display first-letter:text-7xl first-letter:float-left first-letter:mr-3 first-letter:text-[#C8893E] first-letter:leading-[0.8]' : ''}>{p}</p>)}
         </div>
       </article>
-      <SiteFooter />
+      <SiteFooter page="post" />
     </div>
   );
 }
