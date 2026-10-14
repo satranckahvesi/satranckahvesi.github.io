@@ -7,6 +7,7 @@ import { atoms } from '@metagptx/web-sdk/plugins';
 import { vitePrerenderPlugin } from 'vite-prerender-plugin';
 import { getBlogRoutes } from './prerender/blog-routes.js';
 import { reactHmrGuard } from './plugins/react-hmr-guard';
+import { toTypography } from './src/lib/curly.js';
 
 function escapeHtmlAttr(str: string): string {
   return str
@@ -59,8 +60,8 @@ function articlePages() {
         const urls = [`${SITE_URL}/`];
         for (const a of articles) {
           const url = `${SITE_URL}/${a.slug}/`;
-          const title = `${a.title} — Satranç vs.`;
-          const desc = (a.excerpt ?? a.dek).replace(/[*_]/g, '');
+          const title = `${toTypography(a.title)} — Satranç vs.`;
+          const desc = toTypography((a.excerpt ?? a.dek).replace(/[*_]/g, ''));
           let html = template.replace(/<title[^>]*>[^<]*<\/title>/, `<title>${esc(title)}</title>`);
           html = setMeta(html, 'name', 'description', desc);
           html = setMeta(html, 'property', 'og:title', title);
