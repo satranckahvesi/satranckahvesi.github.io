@@ -77,8 +77,6 @@ export default function Index() {
   const [cat, setCat] = useState('Tümü');
   const [scrolled, setScrolled] = useState(false);
   const [y, setY] = useState(0);
-  const [email, setEmail] = useState('');
-  const [subbed, setSubbed] = useState(false);
   useReveal();
   // Ana sayfa her açılışta (yenileme, geri tuşu dahil) sayfa başında görünür: tarayıcı bu girişin kaydırma konumunu
   // geri yüklemesin. Sonraki girişler (yazı sayfaları) kendi kaydırma konumunu hatırlar, bkz. Post.tsx.
@@ -125,7 +123,8 @@ export default function Index() {
               <a key={id} href={`#${id}`} className="f-mono text-[#A89A88] hover:text-[#F1E9DC] transition-colors"><span className="text-[#C8893E]">0{i + 1}</span> {l}</a>
             ))}
           </nav>
-          <a href="#bulten" className="hidden lg:inline-flex rounded-full bg-[#F1E9DC] text-[#0E0C0A] px-6 h-11 items-center text-sm font-semibold hover:bg-[#C8893E] transition-colors">Bültene Abone Ol</a>
+          {/* Bülten servisi hazır olana kadar devre dışı. */}
+          <span title="Yakında..." aria-disabled="true" className="hidden lg:inline-flex rounded-full bg-[#F1E9DC] text-[#0E0C0A] px-6 h-11 items-center text-sm font-semibold opacity-50 cursor-not-allowed select-none">Bültene Abone Ol</span>
           <button aria-label="Menüyü aç" onClick={() => setOpen(true)} className="lg:hidden w-11 h-11 grid place-items-center"><MenuIcon /></button>
         </div>
       </header>
@@ -259,16 +258,13 @@ export default function Index() {
         </div>
         <div id="bulten" className="md:col-span-12 mt-10 border border-[#2E2620] p-8 md:p-14 grid md:grid-cols-2 gap-8 items-end">
           <div><p className="f-mono text-[#C8893E]">Bülten</p><h3 className="f-display text-4xl md:text-6xl mt-4">Her ay bir hamle, <em className="italic">e-postanda.</em></h3></div>
-          {subbed ? (
-            <p className="text-lg">Teşekkürler! <span className="text-[#C8893E]">{email}</span> adresi listeye eklendi.</p>
-          ) : (
-            <form onSubmit={(e) => { e.preventDefault(); if (/\S+@\S+\.\S+/.test(email)) setSubbed(true); }} className="flex flex-col sm:flex-row gap-3">
-              <label htmlFor="em" className="sr-only">E-posta</label>
-              <input id="em" type="email" required value={email} onChange={(e) => setEmail(e.target.value)} placeholder="e-posta adresin"
-                className="flex-1 h-14 bg-transparent border-b border-[#F1E9DC]/40 focus:border-[#C8893E] outline-none text-lg" />
-              <button className="h-14 px-8 rounded-full bg-[#F1E9DC] text-[#0E0C0A] font-semibold hover:bg-[#C8893E] inline-flex items-center gap-2 justify-center"><Mail size={18} /> Abone ol</button>
-            </form>
-          )}
+          {/* Bülten servisi hazır olana kadar devre dışı; devre dışı öğeler tooltip göstermediği için title kapsayıcıda. */}
+          <form onSubmit={(e) => e.preventDefault()} title="Yakında..." aria-disabled="true" className="flex flex-col sm:flex-row gap-3 cursor-not-allowed opacity-60">
+            <label htmlFor="em" className="sr-only">E-posta</label>
+            <input id="em" type="email" disabled placeholder="e-posta adresin"
+              className="flex-1 h-14 bg-transparent border-b border-[#F1E9DC]/40 outline-none text-lg cursor-not-allowed" />
+            <button type="button" disabled className="h-14 px-8 rounded-full bg-[#F1E9DC] text-[#0E0C0A] font-semibold inline-flex items-center gap-2 justify-center cursor-not-allowed"><Mail size={18} /> Abone ol</button>
+          </form>
         </div>
       </section>
 
