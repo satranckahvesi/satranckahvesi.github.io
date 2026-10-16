@@ -261,7 +261,7 @@ Son tura turnuva şampiyonluğunu garanti ederek giren Timman, bir başka efsane
 
 ![Jan Timman, Tilburg, 1979 (siyah-beyaz fotoğraf)](images/jan-timman-tilburg-1979.jpg "Jan Timman, 1979 · Fotoğraf: Rob C. Croes / Anefo · Hollanda Ulusal Arşivi · Lisans: [CC0 1.0 (Kamu Bağışı)](https://creativecommons.org/publicdomain/zero/1.0/deed.tr) · Kaynak: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:4e_Ronde_Jan_Timman,_Bestanddeelnr_930-5268.jpg)")
 
-Ocak 1982 reyting listesinde 2720 puanlı Dünya Şampiyonu Anatoly Karpov'un ardından 2655 Elo ile ikinci sırada yer alan Jan Timman, bu turnuvayla sıralamadaki yerinin tesadüf olmadığını satranç dünyasına gösteriyordu. Ne var ki bu, Timman'ın kariyerinin zirvesiydi. Sonraki yıllarda ise Kasparov'un yükselişiyle birlikte Elo sıralamasında ancak üçüncü sıraya kadar çıkabilmişti.
+Ocak 1982 reyting listesinde 2720 puanlı dünya şampiyonu Anatoly Karpov'un ardından 2655 Elo ile ikinci sırada yer alan Jan Timman, bu turnuvayla sıralamadaki yerinin tesadüf olmadığını satranç dünyasına gösteriyordu. Ne var ki bu, Timman'ın kariyerinin zirvesiydi. Sonraki yıllarda ise Kasparov'un yükselişiyle birlikte Elo sıralamasında ancak üçüncü sıraya kadar çıkabilmişti.
 
 _Mar del Plata 1982 Uluslararası Satranç Turnuvası_ çapraz tablosu:
 
