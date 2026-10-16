@@ -30,7 +30,7 @@ export default function SiteFooter({ page = 'home' }: { page?: 'home' | 'post' }
           : <Link to="/" state={{ top: true }} aria-label="Ana sayfaya git" className={WORDMARK_CLASS}><Wordmark /></Link>}
       </div>
       <div className="max-w-[1440px] mx-auto px-6 md:px-10 py-6 flex justify-between f-mono text-[#A89A88]">
-        <span>© 2026 Satranç vs. Dergisi</span>
+        <span>© 2026 Satranç vs. Dijital Satranç Dergisi</span>
       </div>
     </footer>
   );
