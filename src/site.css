@@ -54,10 +54,15 @@
 .cp-game .pgn-headers { display: none; }
 .cp-game .video-title:has(.video-title-text) { display: none; }
 
-/* Ana sayfa kartındaki statik diyagram (<fen>): kare yer tutucu, ham FEN metni gizli, tahta kutuyu doldurur. */
-.fen-diagram { width: 100%; max-width: 400px; aspect-ratio: 1; background: rgba(241, 233, 220, .03); }
+/* Ana sayfa kartındaki statik diyagram (<fen>): boyutu FenDiagram.tsx verir; ham FEN metni gizli, tahta kutuyu doldurur. */
+.fen-diagram { position: relative; width: 100%; max-width: 400px; aspect-ratio: 1; }
+.fen-diagram:not(:has(.jc-board)) { background: rgba(241, 233, 220, .03); }
+/* md ve üstünde (FenDiagram `fill`): kutu kartın kalan yüksekliğini doldurur; boyutu FenDiagram.tsx ölçüp tahtayı ona göre kurar. */
+@media (min-width: 768px) { .fen-diagram.fen-fill { max-width: none; aspect-ratio: auto; flex: 1 1 0; min-height: 0; } }
 .fen-diagram fen { display: none; }
-.fen-diagram .fen-container, .fen-diagram .jc-board { width: 100%; }
+/* ChessPublica .fen-container'ı --board-size ile sınırlar ve dikey boşluk verir; burada boyutu kutu belirler. */
+.fen-diagram .fen-container { max-width: none; margin: 0; width: 100%; }
+.fen-diagram .jc-board { width: 100%; }
 
 /* Oyun henüz kurulmadıysa ham PGN metni görünmesin; kutu o sırada boş bir yer tutucu olur (sayfa kaymasın) */
 .cp-game pgn,
