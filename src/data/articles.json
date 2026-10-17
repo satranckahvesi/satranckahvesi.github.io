@@ -12,33 +12,33 @@
     "body": []
   },
   {
-    "id": "coban",
-    "slug": "coban-mati-dort-hamlede-biten-oyun",
-    "cat": "Açılışlar",
-    "title": "Çoban matı: dört hamlede biten oyun",
-    "dek": "En bilinen açılış tuzaklarından biri nasıl kurulur, nasıl önlenir?",
-    "author": "Satranç vs.",
-    "read": "3 dk",
-    "body": [
-      "Çoban matı, vezir ve filin f7 karesine birlikte yönelmesiyle dört hamlede gelen mattır.",
-      "Önlemek için f7'yi her hamlede saymak yeterli."
-    ],
-    "diagram": "r1bqkb1r/pppp1ppp/2n2n2/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR w KQkq - 4 4",
-    "diagramAlt": "1. e4 e5 2. Fc4 Ac6 3. Vh5 Af6 sonrası konum: Beyaz oynar ve f7'de mat eder"
+    "id": "karlsruhe",
+    "slug": "karlsruhe-ve-yol-ayrimlari",
+    "cat": "Analizli oyunlar",
+    "title": "Karlsruhe ve yol ayrımları",
+    "author": "FM Tarık Selbes",
+    "read": "",
+    "date": "Yakında",
+    "draft": true,
+    "diagram": "5rk1/1pq4p/2pp2p1/r3bn2/p1P2BbP/2NP2P1/PP1Q2BK/4RR2 b - - 1 22",
+    "diagramOrientation": "black",
+    "diagramAlt": "Watarkar–Selbes partisinde 22. Ff4! sonrası konum: Siyah oynar",
+    "diagramCaption": "Watarkar – Selbes, GRENKE Açık A kategorisi, 02.04.2026. 22. Ff4! sonrası, Siyah oynar.",
+    "body": []
   },
   {
     "id": "zebra",
     "slug": "zebralar-icin-satranc",
     "cat": "Kitap incelemeleri",
     "title": "Zebralar için Satranç",
-    "dek": "Siyah-beyaz tahtaya ilk kez bakanlar için kısa bir başlangıç.",
+    "dek": "Büyükusta Jonathan Rowson'ın \"Chess for Zebras\" kitabı üzerine: satrançta takılıp kaldığımızda farklı düşünmek.",
     "author": "FM Nazmi Can Doğan",
-    "read": "2 dk",
+    "read": "10 dk",
     "thumb": "images/three-zebras-drinking.jpg",
     "thumbAlt": "Su içen üç zebra",
     "body": [
-      "Satranç tahtasına ilk kez bakan biri için en kolay benzetme belki de bir zebradır.",
-      "Başlangıç için akılda tutulacak üç şey: tahta, fil ve taşların yürüyüşü."
+      "Masamızın üzerinde, dünyanın bir numarası Magnus Carlsen'in de çok ilgi çekici bulduğu kitaplardan biri var.",
+      "Büyükusta Jonathan Rowson'ın \"Chess for Zebras\" kitabı üzerine bir inceleme."
     ]
   },
   {
@@ -68,19 +68,6 @@
     ]
   },
   {
-    "id": "tarih",
-    "slug": "istanbul-kahvehanelerinde-satrancin-yuz-yili",
-    "cat": "Tarih",
-    "title": "İstanbul kahvehanelerinde satrancın yüz yılı",
-    "dek": "Osmanlı’dan Cumhuriyet’e, masa başında oynanan partilerin izinde.",
-    "author": "Kerem Aydın",
-    "read": "16 dk",
-    "body": [
-      "19. yüzyıl sonunda İstanbul’da satranç, belirli kahvehanelerde toplanan meraklıların oyunuydu.",
-      "Arşiv kayıtları ve eski gazete sütunları üzerinden bu kayıp kültürü yeniden kuruyoruz."
-    ]
-  },
-  {
     "id": "acilis",
     "slug": "dami-gambitinin-yeniden-dogusu",
     "cat": "Açılışlar",
@@ -104,19 +91,6 @@
     "body": [
       "Sabah dokuzda başlayan ilk tur, gece yarısına doğru biten son parti…",
       "Açık turnuvalar, satrancın en demokratik sahnesi."
-    ]
-  },
-  {
-    "id": "blitz",
-    "slug": "blitzde-zaman-yonetimi",
-    "cat": "Analizli oyunlar",
-    "title": "Blitzde zaman yönetimi",
-    "dek": "3+2 tempoda saatini nasıl kullanmalısın? Pratik ilkeler.",
-    "author": "Deniz Arslan",
-    "read": "6 dk",
-    "body": [
-      "Blitzde en iyi hamle, zamanında yapılan iyi hamledir.",
-      "Açılışta hızlı, kritik anlarda yavaş: süreyi bütçelemenin üç kuralı."
     ]
   },
   {

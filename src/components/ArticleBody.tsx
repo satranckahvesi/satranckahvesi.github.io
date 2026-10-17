@@ -217,7 +217,7 @@ function Figure({ chunk }: { chunk: string }) {
   if (!m) return null;
   const [, alt, path, caption] = m;
   // Kitap kapağı küçük gösterilir; dar görselin altındaki künye okunabilsin diye künye kapaktan geniş tutulur.
-  const cover = /^images\/[^/]*adventurous-way/.test(path);
+  const cover = /^images\/[^/]*(adventurous-way|chess-for-zebras)/.test(path);
   return (
     <figure className={`my-10 mx-auto max-w-full ${cover ? 'w-full md:max-w-[480px] text-center' : 'w-fit'}`}>
       <ProgressiveImage path={path} alt={alt} cover={cover} />

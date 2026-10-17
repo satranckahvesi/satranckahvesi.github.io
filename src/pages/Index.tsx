@@ -7,7 +7,7 @@ import SiteFooter from '@/components/SiteFooter';
 import FaviconBullet from '@/components/FaviconBullet';
 import ProgressiveImage from '@/components/ProgressiveImage';
 import FenDiagram from '@/components/FenDiagram';
-import { ARTICLES, articlePath } from '@/data/articles';
+import { ARTICLES, PUBLISHED, articlePath } from '@/data/articles';
 import '../site.css';
 
 const NAV = [
@@ -18,7 +18,7 @@ const NAV = [
   ['Hakkında', 'hakkinda'],
 ] as const;
 
-const CATS = ['Tümü', ...Array.from(new Set(ARTICLES.map((a) => a.cat)))];
+const CATS = ['Tümü', ...Array.from(new Set(PUBLISHED.map((a) => a.cat)))];
 
 const AUTHORS = [
   { name: 'Nazmi Can Doğan', role: 'Genel Yayın Yönetmeni', bio: 'FIDE Ustası (FM)' },
@@ -113,7 +113,7 @@ export default function Index() {
 
   const [cover, ...rest] = ARTICLES;
   const featured = rest.slice(0, 3);
-  const list = ARTICLES.filter((a) => cat === 'Tümü' || a.cat === cat);
+  const list = PUBLISHED.filter((a) => cat === 'Tümü' || a.cat === cat);
 
   return (
     <div className="sk min-h-screen overflow-x-hidden">
@@ -189,17 +189,23 @@ export default function Index() {
             <h2 className="f-display text-[clamp(48px,7vw,120px)] mt-8">Öne <em className="italic text-[#C8893E]">çıkanlar</em></h2></div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 mt-16">
-          {featured.map((a, i) => (
-            <Link key={a.id} to={articlePath(a)}
-              className={`group block text-left reveal ${i === 0 ? 'md:col-span-7 md:row-span-2' : 'md:col-span-5'}${a.diagram ? ' md:flex md:flex-col' : ''}`}>
-              {a.thumb && <ProgressiveImage path={a.thumb} alt={a.thumbAlt ?? ''} />}
-              {a.diagram && <FenDiagram fen={a.diagram} label={a.diagramAlt ?? a.title} fill={i === 0} />}
-              <p className="f-mono text-[#C8893E] mt-6">{a.cat} · {a.read || a.date}</p>
-              <h3 className={`f-display mt-3 group-hover:italic transition-all ${i === 0 ? 'text-5xl md:text-6xl' : 'text-3xl md:text-4xl'}`}>{a.title}</h3>
-              <p className="text-[#F1E9DC]/70 mt-3 max-w-xl">{a.dek}</p>
-              <p className="f-mono text-[#A89A88] mt-4">{a.author}</p>
-            </Link>
-          ))}
+          {featured.map((a, i) => {
+            const cls = `block text-left reveal ${i === 0 ? 'md:col-span-7 md:row-span-2' : 'md:col-span-5'}${a.diagram ? ' md:flex md:flex-col' : ''}`;
+            const inner = (
+              <>
+                {a.thumb && <ProgressiveImage path={a.thumb} alt={a.thumbAlt ?? ''} />}
+                {a.diagram && <FenDiagram fen={a.diagram} orientation={a.diagramOrientation} label={a.diagramAlt ?? a.title} caption={a.diagramCaption} fill={i === 0} />}
+                <p className="f-mono text-[#C8893E] mt-6">{a.cat} · {a.read || a.date}</p>
+                <h3 className={`f-display mt-3 ${a.draft ? '' : 'group-hover:italic'} transition-all ${i === 0 ? 'text-5xl md:text-6xl' : 'text-3xl md:text-4xl'}`}>{a.title}</h3>
+                {a.dek && <p className="text-[#F1E9DC]/70 mt-3 max-w-xl">{a.dek}</p>}
+                <p className="f-mono text-[#A89A88] mt-4">{a.author}</p>
+              </>
+            );
+            // Taslak (yayımlanmamış) yazı tıklanmaz: sayfası yok.
+            return a.draft
+              ? <div key={a.id} className={cls}>{inner}</div>
+              : <Link key={a.id} to={articlePath(a)} className={`group ${cls}`}>{inner}</Link>;
+          })}
         </div>
       </section>
 
@@ -250,7 +256,7 @@ export default function Index() {
               <h3 className="f-display text-3xl">{au.name}</h3>
               <p className="f-mono text-[#C8893E] mt-3">{au.role}</p>
               <p className="text-[#F1E9DC]/70 mt-4">{au.bio}</p>
-              <p className="f-mono text-[#A89A88] mt-6">{ARTICLES.filter((a) => a.author.replace(/^(FM|GM)\s+/, '') === au.name).length} yazı</p>
+              <p className="f-mono text-[#A89A88] mt-6">{PUBLISHED.filter((a) => a.author.replace(/^(FM|GM)\s+/, '') === au.name).length} yazı</p>
             </div>
           ))}
         </div>
