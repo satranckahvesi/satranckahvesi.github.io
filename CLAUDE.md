@@ -1,7 +1,7 @@
 # Satranç vs. (satranckahvesi.github.io)
 
 React + Vite + Tailwind site, deployed to GitHub Pages from `main` (`.github/workflows/deploy.yml`) at the root of
-https://satranckahvesi.com. Articles live in `src/data/articles.json` (metadata) and `src/content/*.md` (body).
+https://satrancvs.com. Articles live in `src/data/articles.json` (metadata) and `src/content/*.md` (body).
 
 ## Read this before touching chess rendering
 **`docs/chesspublica-quirks.md`** documents the undocumented ChessPublica behavior the old site (`satranckahvesi-eski`)

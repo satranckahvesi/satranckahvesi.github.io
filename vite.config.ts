@@ -38,7 +38,7 @@ function ensureBuildOutDir() {
   };
 }
 
-const SITE_URL = 'https://satranckahvesi.com';
+const SITE_URL = 'https://satrancvs.com';
 
 // Her yazı için dist/<slug>/index.html üretir (yazıya özel başlık, açıklama ve paylaşım
 // etiketleriyle) ve sitemap.xml'i yazı adresleriyle birlikte oluşturur.
