@@ -6,7 +6,7 @@ const WORDMARK_CLASS = 'block w-full f-display text-[17vw] leading-[1] whitespac
 
 const Wordmark = () => (
   <>
-    <FaviconBullet />
+    <FaviconBullet className="inline-block align-top mt-[0.135em] mr-[0.1em]" />
     Satranç <em className="italic text-[#C8893E]">vs.</em>
   </>
 );
