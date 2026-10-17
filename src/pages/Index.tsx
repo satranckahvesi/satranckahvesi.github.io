@@ -4,6 +4,7 @@ import Markdown from 'markdown-to-jsx';
 import { Link, useLocation } from 'react-router-dom';
 import PhotoCredit, { PHOTO } from '@/components/PhotoCredit';
 import SiteFooter from '@/components/SiteFooter';
+import FaviconBullet from '@/components/FaviconBullet';
 import { ARTICLES, articlePath } from '@/data/articles';
 import '../site.css';
 
@@ -116,7 +117,7 @@ export default function Index() {
         <div className="max-w-[1440px] mx-auto px-6 md:px-10 h-20 flex items-center justify-between">
           <a href="#kapak" className="flex items-center gap-3">
             <span className="grid grid-cols-2 w-7 h-7 border border-[#F1E9DC]"><span className="bg-[#C8893E]" /><span /><span /><span className="bg-[#F1E9DC]" /></span>
-            <span className="f-display text-2xl tracking-tight">Satranç <em className="italic">vs.</em></span>
+            <span className="f-display text-2xl tracking-tight">Satranç <em className="italic text-[#C8893E]">vs.</em></span>
           </a>
           <nav className="hidden lg:flex gap-10">
             {NAV.map(([l, id], i) => (
@@ -253,7 +254,7 @@ export default function Index() {
       <section id="hakkinda" className="max-w-[1440px] mx-auto px-6 md:px-10 pb-24 md:pb-40 grid md:grid-cols-12 gap-10">
         <div className="md:col-span-7 reveal">
           <Label n="04">Hakkında</Label>
-          <h2 className="f-display text-[clamp(40px,5.5vw,88px)] mt-8">Satranç vs.<br /><em className="italic text-[#C8893E]">‘Satranç ve siz’ demek.</em></h2>
+          <h2 className="f-display text-[clamp(40px,5.5vw,88px)] mt-8"><FaviconBullet hang />Satranç <em className="italic text-[#C8893E]">vs.</em><br /><em className="italic text-[#C8893E]">‘Satranç ve siz’ demek.</em></h2>
           <p className="text-[#F1E9DC]/75 leading-relaxed mt-10 max-w-xl">Satranç vs., satranç üzerine uzun okumalar, analizler ve hikâyeler yayımlayan bağımsız bir dergidir. Bir fincan kahve eşliğinde, acele etmeden okunsun diye.</p>
         </div>
         <div id="bulten" className="md:col-span-12 mt-10 border border-[#2E2620] p-8 md:p-14 grid md:grid-cols-2 gap-8 items-end">

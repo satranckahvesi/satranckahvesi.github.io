@@ -1,12 +1,12 @@
 import { Instagram, Twitter, Youtube } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import FaviconBullet from '@/components/FaviconBullet';
 
 const WORDMARK_CLASS = 'block w-full f-display text-[17vw] leading-[1] whitespace-nowrap text-center pt-6 pb-[2vw] hover:opacity-80 transition-opacity';
 
-// Küçük favicon, liste işareti gibi yazının sol üst köşesinde durur.
 const Wordmark = () => (
   <>
-    <img src={`${import.meta.env.BASE_URL}favicon.svg`} alt="" aria-hidden="true" className="inline-block align-top w-[0.15em] h-[0.15em] mt-[0.135em] mr-[0.1em]" />
+    <FaviconBullet />
     Satranç <em className="italic text-[#C8893E]">vs.</em>
   </>
 );
