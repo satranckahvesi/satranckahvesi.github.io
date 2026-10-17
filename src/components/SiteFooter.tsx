@@ -3,7 +3,13 @@ import { Link } from 'react-router-dom';
 
 const WORDMARK_CLASS = 'block w-full f-display text-[17vw] leading-[1] whitespace-nowrap text-center pt-6 pb-[2vw] hover:opacity-80 transition-opacity';
 
-const Wordmark = () => <>Satranç <em className="italic text-[#C8893E]">vs.</em></>;
+// Küçük favicon, liste işareti gibi yazının sol üst köşesinde durur.
+const Wordmark = () => (
+  <>
+    <img src={`${import.meta.env.BASE_URL}favicon.svg`} alt="" aria-hidden="true" className="inline-block align-top w-[0.15em] h-[0.15em] mt-[0.135em] mr-[0.1em]" />
+    Satranç <em className="italic text-[#C8893E]">vs.</em>
+  </>
+);
 
 // `page`: ana sayfada iletişim satırı görünür, büyük yazı yukarı kaydırır; yazı sayfalarında iletişim gizlidir, büyük yazı ana sayfaya gider.
 export default function SiteFooter({ page = 'home' }: { page?: 'home' | 'post' }) {
