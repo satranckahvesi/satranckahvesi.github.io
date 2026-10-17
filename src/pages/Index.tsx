@@ -85,6 +85,8 @@ export default function Index() {
     window.history.scrollRestoration = 'manual';
     window.scrollTo(0, 0);
   }, []);
+  // Yazı adresi doğrudan açıldıysa sekme başlığı yazının başlığıdır; yazı sayfası çıkarken onu geri yüklediği için burada sabitliyoruz.
+  useEffect(() => { document.title = 'Satranç vs.'; }, []);
   // Yazı sayfasındaki büyük “Satranç vs.” yazısı buraya state={{ top: true }} ile gelir: sayfa başına git.
   const { state } = useLocation();
   useEffect(() => { if ((state as { top?: boolean } | null)?.top) window.scrollTo(0, 0); }, [state]);
