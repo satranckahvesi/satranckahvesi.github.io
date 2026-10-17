@@ -1,6 +1,7 @@
 import { splitArticle } from '@/components/ArticleBody';
 import timmanMd from '@/content/mar-del-plata-1982.md?raw';
 import muglaMd from '@/content/amman-mugla.md?raw';
+import cobanMd from '@/content/coban-mati.md?raw';
 import { toTypography } from '@/lib/curly';
 import data from './articles.json';
 
@@ -13,6 +14,7 @@ export type Article = {
 const CHUNKS: Record<string, string[]> = {
   kapak: splitArticle(timmanMd).chunks,
   mugla: splitArticle(muglaMd).chunks,
+  coban: splitArticle(cobanMd).chunks,
 };
 
 // Makale metinleri/üst bilgileri articles.json'da (build sırasında prerender de bunu okur);

@@ -108,7 +108,7 @@ function PgnGame({ header, moves }: { header: string; moves: string }) {
 }
 
 // İçindekiler: yazıdaki tüm oyunlar, [Event] başlıklarından otomatik çıkarılır.
-type GameItem = { id: string; round: string; label: string; result: string; watch: boolean; players: string; place: string };
+type GameItem = { id: string; round: string; hasRound: boolean; label: string; result: string; watch: boolean; players: string; place: string };
 type TocItem = { id: string; label: string; markup: string };
 
 function surname(name?: string) {
@@ -128,6 +128,7 @@ function gameToc(chunks: string[]): GameItem[] {
       place: [t.Site, (t.Date ?? '').match(/^\d{4}/)?.[0]].filter(Boolean).join(', '),
       players: `${t.White}${t.WhiteElo ? ` (${t.WhiteElo})` : ''} – ${t.Black}${t.BlackElo ? ` (${t.BlackElo})` : ''}`,
       round: t.Round || String(n),
+      hasRound: !!t.Round,
       label: `${surname(t.White)} – ${surname(t.Black)}`,
       result: (t.Result ?? '').replace('1/2-1/2', '½–½').replace(/-/g, '–'),
     });
@@ -193,7 +194,7 @@ function GameSection({ item, children }: { item: GameItem; children: React.React
         </div>
       )}
       {!item.watch && <h4 className="flex items-baseline gap-4 py-4 mb-4 text-[#F1E9DC]/90 md:grid md:grid-cols-[1fr_400px_1fr] md:gap-0">
-        <span className="f-mono text-[#C8893E] w-[5rem] shrink-0">{item.round}. tur</span>
+        <span className="f-mono text-[#C8893E] w-[5rem] shrink-0">{item.hasRound && `${item.round}. tur`}</span>
         <span className="flex-1 md:text-center">{item.label}</span>
         <span className="f-mono text-[#A89A88] md:justify-self-end">{item.result}</span>
       </h4>}

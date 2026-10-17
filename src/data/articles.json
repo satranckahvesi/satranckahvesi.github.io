@@ -12,6 +12,19 @@
     "body": []
   },
   {
+    "id": "coban",
+    "slug": "coban-mati-dort-hamlede-biten-oyun",
+    "cat": "Açılışlar",
+    "title": "Çoban matı: dört hamlede biten oyun",
+    "dek": "En bilinen açılış tuzaklarından biri nasıl kurulur, nasıl önlenir?",
+    "author": "Satranç vs.",
+    "read": "3 dk",
+    "body": [
+      "Çoban matı, vezir ve filin f7 karesine birlikte yönelmesiyle dört hamlede gelen mattır.",
+      "Önlemek için f7'yi her hamlede saymak yeterli."
+    ]
+  },
+  {
     "id": "roportaj",
     "slug": "kaybetmeyi-ogrenmeden-ustalasamazsin",
     "cat": "Röportaj",
