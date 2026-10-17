@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://satranckahvesi.com/sitemap.xml
+Sitemap: https://satrancvs.com/sitemap.xml
