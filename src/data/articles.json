@@ -22,7 +22,9 @@
     "body": [
       "Çoban matı, vezir ve filin f7 karesine birlikte yönelmesiyle dört hamlede gelen mattır.",
       "Önlemek için f7'yi her hamlede saymak yeterli."
-    ]
+    ],
+    "diagram": "r1bqkb1r/pppp1ppp/2n2n2/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR w KQkq - 4 4",
+    "diagramAlt": "1. e4 e5 2. Fc4 Ac6 3. Vh5 Af6 sonrası konum: Beyaz oynar ve f7'de mat eder"
   },
   {
     "id": "zebra",

@@ -8,7 +8,7 @@ import data from './articles.json';
 
 export type Article = {
   id: string; slug: string; cat: string; title: string; dek?: string; author: string; translator?: string; read: string;
-  excerpt?: string; date?: string; chunks?: string[]; photo?: boolean; thumb?: string; thumbAlt?: string; body: string[];
+  excerpt?: string; date?: string; chunks?: string[]; photo?: boolean; thumb?: string; thumbAlt?: string; diagram?: string; diagramAlt?: string; body: string[];
 };
 
 // Gövdesi markdown dosyasından gelen yazılar (id -> dosya)

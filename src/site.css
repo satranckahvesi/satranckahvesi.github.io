@@ -54,6 +54,11 @@
 .cp-game .pgn-headers { display: none; }
 .cp-game .video-title:has(.video-title-text) { display: none; }
 
+/* Ana sayfa kartındaki statik diyagram (<fen>): kare yer tutucu, ham FEN metni gizli, tahta kutuyu doldurur. */
+.fen-diagram { width: 100%; max-width: 400px; aspect-ratio: 1; background: rgba(241, 233, 220, .03); }
+.fen-diagram fen { display: none; }
+.fen-diagram .fen-container, .fen-diagram .jc-board { width: 100%; }
+
 /* Oyun henüz kurulmadıysa ham PGN metni görünmesin; kutu o sırada boş bir yer tutucu olur (sayfa kaymasın) */
 .cp-game pgn,
 .cp-game pgn-player:not(:has(.player-wrapper)) { display: none; }

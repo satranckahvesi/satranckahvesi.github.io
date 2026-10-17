@@ -6,6 +6,7 @@ import PhotoCredit, { PHOTO } from '@/components/PhotoCredit';
 import SiteFooter from '@/components/SiteFooter';
 import FaviconBullet from '@/components/FaviconBullet';
 import ProgressiveImage from '@/components/ProgressiveImage';
+import FenDiagram from '@/components/FenDiagram';
 import { ARTICLES, articlePath } from '@/data/articles';
 import '../site.css';
 
@@ -192,6 +193,7 @@ export default function Index() {
             <Link key={a.id} to={articlePath(a)}
               className={`group block text-left reveal ${i === 0 ? 'md:col-span-7 md:row-span-2' : 'md:col-span-5'}`}>
               {a.thumb && <ProgressiveImage path={a.thumb} alt={a.thumbAlt ?? ''} />}
+              {a.diagram && <FenDiagram fen={a.diagram} label={a.diagramAlt ?? a.title} />}
               <p className="f-mono text-[#C8893E] mt-6">{a.cat} · {a.read || a.date}</p>
               <h3 className={`f-display mt-3 group-hover:italic transition-all ${i === 0 ? 'text-5xl md:text-6xl' : 'text-3xl md:text-4xl'}`}>{a.title}</h3>
               <p className="text-[#F1E9DC]/70 mt-3 max-w-xl">{a.dek}</p>
