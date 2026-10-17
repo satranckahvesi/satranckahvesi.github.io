@@ -25,6 +25,21 @@
     ]
   },
   {
+    "id": "zebra",
+    "slug": "zebralar-icin-satranc",
+    "cat": "Açılışlar",
+    "title": "Zebralar için Satranç",
+    "dek": "Siyah-beyaz tahtaya ilk kez bakanlar için kısa bir başlangıç.",
+    "author": "Satranç vs.",
+    "read": "2 dk",
+    "thumb": "images/three-zebras-drinking.jpg",
+    "thumbAlt": "Su içen üç zebra",
+    "body": [
+      "Satranç tahtasına ilk kez bakan biri için en kolay benzetme belki de bir zebradır.",
+      "Başlangıç için akılda tutulacak üç şey: tahta, fil ve taşların yürüyüşü."
+    ]
+  },
+  {
     "id": "roportaj",
     "slug": "kaybetmeyi-ogrenmeden-ustalasamazsin",
     "cat": "Röportaj",

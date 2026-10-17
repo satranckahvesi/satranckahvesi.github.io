@@ -5,6 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 import PhotoCredit, { PHOTO } from '@/components/PhotoCredit';
 import SiteFooter from '@/components/SiteFooter';
 import FaviconBullet from '@/components/FaviconBullet';
+import ProgressiveImage from '@/components/ProgressiveImage';
 import { ARTICLES, articlePath } from '@/data/articles';
 import '../site.css';
 
@@ -186,10 +187,11 @@ export default function Index() {
           <div><Label n="01">Bu Sayıda</Label>
             <h2 className="f-display text-[clamp(48px,7vw,120px)] mt-8">Öne <em className="italic text-[#C8893E]">çıkanlar</em></h2></div>
         </div>
-        <div className="grid md:grid-cols-12 gap-10 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 mt-16">
           {featured.map((a, i) => (
             <Link key={a.id} to={articlePath(a)}
               className={`group block text-left reveal ${i === 0 ? 'md:col-span-7 md:row-span-2' : 'md:col-span-5'}`}>
+              {a.thumb && <ProgressiveImage path={a.thumb} alt={a.thumbAlt ?? ''} />}
               <p className="f-mono text-[#C8893E] mt-6">{a.cat} · {a.read || a.date}</p>
               <h3 className={`f-display mt-3 group-hover:italic transition-all ${i === 0 ? 'text-5xl md:text-6xl' : 'text-3xl md:text-4xl'}`}>{a.title}</h3>
               <p className="text-[#F1E9DC]/70 mt-3 max-w-xl">{a.dek}</p>
