@@ -1,21 +1,19 @@
 import { splitArticle } from '@/components/ArticleBody';
 import timmanMd from '@/content/mar-del-plata-1982.md?raw';
 import muglaMd from '@/content/amman-mugla.md?raw';
-import cobanMd from '@/content/coban-mati.md?raw';
 import zebraMd from '@/content/zebralar-icin-satranc.md?raw';
 import { toTypography } from '@/lib/curly';
 import data from './articles.json';
 
 export type Article = {
   id: string; slug: string; cat: string; title: string; dek?: string; author: string; translator?: string; read: string;
-  excerpt?: string; date?: string; chunks?: string[]; photo?: boolean; thumb?: string; thumbAlt?: string; diagram?: string; diagramAlt?: string; body: string[];
+  excerpt?: string; date?: string; chunks?: string[]; photo?: boolean; thumb?: string; thumbAlt?: string; diagram?: string; diagramAlt?: string; diagramCaption?: string; diagramOrientation?: 'white' | 'black'; draft?: boolean; body: string[];
 };
 
 // Gövdesi markdown dosyasından gelen yazılar (id -> dosya)
 const CHUNKS: Record<string, string[]> = {
   kapak: splitArticle(timmanMd).chunks,
   mugla: splitArticle(muglaMd).chunks,
-  coban: splitArticle(cobanMd).chunks,
   zebra: splitArticle(zebraMd).chunks,
 };
 
@@ -32,5 +30,9 @@ const typo = (a: Article): Article => ({
 
 export const ARTICLES: Article[] = (data as Article[]).map((a) => typo(CHUNKS[a.id] ? { ...a, chunks: CHUNKS[a.id] } : a));
 
-export const articleBySlug = (slug?: string) => ARTICLES.find((a) => a.slug === slug);
+// `draft`: henüz yayımlanmamış yazı. Yalnızca ana sayfadaki "Öne çıkanlar" kartında görünür (tıklanmaz); sayfası, sitemap kaydı, listesi ve
+// bildirimi yoktur. Yazı hazır olunca `draft` kaldırılır.
+export const PUBLISHED = ARTICLES.filter((a) => !a.draft);
+
+export const articleBySlug = (slug?: string) => PUBLISHED.find((a) => a.slug === slug);
 export const articlePath = (a: Article) => `/${a.slug}/`;

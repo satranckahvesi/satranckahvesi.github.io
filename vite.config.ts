@@ -55,7 +55,7 @@ function articlePages() {
     closeBundle: {
       order: 'post' as const,
       handler() {
-        const articles = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'src/data/articles.json'), 'utf8'));
+        const articles = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'src/data/articles.json'), 'utf8')).filter((a: { draft?: boolean }) => !a.draft);
         const template = fs.readFileSync(path.join(outDir, 'index.html'), 'utf8');
         const urls = [`${SITE_URL}/`];
         for (const a of articles) {

@@ -46,8 +46,9 @@ export const articlePath = (slug) => `/${slug}/`;
 // base commit) nothing is announced, so the first run never notifies about every existing article.
 export function newArticles(before, after) {
   if (!Array.isArray(before) || !Array.isArray(after)) return [];
-  const known = new Set(before.map((article) => article.slug));
-  return after.filter((article) => article.slug && !known.has(article.slug));
+  // `draft: true` yazılar henüz yayımlanmamıştır; taslak olmaktan çıktıkları gün "yeni" sayılırlar.
+  const known = new Set(before.filter((article) => !article.draft).map((article) => article.slug));
+  return after.filter((article) => article.slug && !article.draft && !known.has(article.slug));
 }
 
 function articlesAt(commit) {
